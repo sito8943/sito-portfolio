@@ -1,9 +1,6 @@
 // sito components
 import SitoContainer from "sito-container";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 import { useRoute } from "../../contexts/RouteProvider";

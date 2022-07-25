@@ -20,7 +20,6 @@ const Navbar = () => {
   const { active } = routeState;
 
   const extraCSS = css({
-    width: "100%",
     padding: "0 20px",
   });
 
