@@ -20,7 +20,7 @@ const Navbar = () => {
   const { active } = routeState;
 
   const extraCSS = css({
-    padding: "0 20px",
+    padding: "0 65px 0 40px",
   });
 
   const logoCSS = css({

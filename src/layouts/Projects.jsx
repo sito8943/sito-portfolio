@@ -1,10 +1,11 @@
-import React from "react";
+import { useLanguage } from "../contexts/LanguageProvider";
 
 const Projects = () => {
+  const { languageState } = useLanguage();
   return (
     <div className="uk-section uk-section-muted uk-section-large">
       <div className="uk-container">
-        <h3>Section</h3>
+        <h2>{languageState.texts.Projects.Title}</h2>
 
         <div className="uk-grid-match uk-child-width-1-3@m" data-uk-grid>
           <div>
