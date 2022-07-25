@@ -1,0 +1,18 @@
+{
+  "es": {
+    "Navbar": {
+      "Links": [
+        {
+          "id": "home",
+          "label": "Inico",
+          "to": "#"
+        },
+        {
+          "id": "contact",
+          "label": "Contacto",
+          "to": "#contact"
+        }
+      ]
+    }
+  }
+}
