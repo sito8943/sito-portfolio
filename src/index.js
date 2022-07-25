@@ -6,12 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 
 // contexts
 import { LanguageProvider } from "./contexts/LanguageProvider";
+import { RouteProvider } from "./contexts/RouteProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <LanguageProvider>
-      <App />
+      <RouteProvider>
+        <App />
+      </RouteProvider>
     </LanguageProvider>
   </React.StrictMode>
 );

@@ -11,6 +11,11 @@
           "id": "contact",
           "label": "Contacto",
           "to": "#contact"
+        },
+        {
+          "id": "projects",
+          "label": "Proyectos",
+          "to": "#projects"
         }
       ]
     }

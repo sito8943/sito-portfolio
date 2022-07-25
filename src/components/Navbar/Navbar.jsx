@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
+
+// sito components
+import SitoContainer from "sito-container";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -10,11 +12,12 @@ import OffCanvas from "../OffCanvas/OffCanvas";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
+import { useRoute } from "../../contexts/RouteProvider";
 
 const Navbar = () => {
   const { languageState } = useLanguage();
-
-  const [active, setActive] = useState("home");
+  const { routeState, setRouteState } = useRoute();
+  const { active } = routeState;
 
   const extraCSS = css({
     width: "100%",
@@ -40,20 +43,20 @@ const Navbar = () => {
           Sito
         </a>
 
-        <div className="uk-navbar-right uk-visible@s">
+        <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
           <ul className="uk-navbar-nav">
             {languageState.texts.Navbar.Links.map((item) => (
               <li
                 key={item.label}
                 className={item.id === active ? "uk-active" : ""}
               >
-                <a onClick={() => setActive(item.id)} href={item.to}>
+                <a onClick={() => setRouteState(item.id)} href={item.to}>
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </SitoContainer>
       </nav>
     </>
   );
