@@ -3,7 +3,10 @@ import { useLanguage } from "../contexts/LanguageProvider";
 const About = () => {
   const { languageState } = useLanguage();
   return (
-    <div className="uk-section uk-section-primary uk-light uk-section-large">
+    <div
+      id="section-about"
+      className="uk-section uk-section-primary uk-light uk-section-large"
+    >
       <div className="uk-container">
         <h2>{languageState.texts.About.Title}</h2>
 

@@ -3,7 +3,10 @@ import { useLanguage } from "../contexts/LanguageProvider";
 const Projects = () => {
   const { languageState } = useLanguage();
   return (
-    <div className="uk-section uk-section-muted uk-section-large">
+    <div
+      id="section-projects"
+      className="uk-section uk-section-muted uk-section-large"
+    >
       <div className="uk-container">
         <h2>{languageState.texts.Projects.Title}</h2>
 

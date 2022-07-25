@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { useState, useEffect, useCallback } from "react";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -14,13 +15,23 @@ import OffCanvas from "../OffCanvas/OffCanvas";
 import { useLanguage } from "../../contexts/LanguageProvider";
 import { useRoute } from "../../contexts/RouteProvider";
 
+// utils
+import { scrollTo } from "../../utils/functions";
+
 const Navbar = () => {
   const { languageState } = useLanguage();
   const { routeState, setRouteState } = useRoute();
   const { active } = routeState;
 
+  const [transparency, setTransparency] = useState(true);
+
   const extraCSS = css({
-    padding: "0 65px 0 40px",
+    paddingTop: 0,
+    paddingBottom: 0,
+    top: 0,
+    position: "fixed",
+    display: "flex",
+    width: "-webkit-fill-available",
   });
 
   const logoCSS = css({
@@ -28,10 +39,42 @@ const Navbar = () => {
     marginBottom: "4px",
   });
 
+  const linksCSS = css({
+    textTransform: "none",
+  });
+
+  const linkTo = (e) => {
+    const { id } = e.target;
+    setRouteState(id);
+    console.log(id);
+    scrollTo(`section-${id}`);
+  };
+
+  const onScroll = useCallback(
+    (e) => {
+      const top = window.pageYOffset || document.documentElement.scrollTop;
+      if (top < 100) setTransparency(true);
+      else setTransparency(false);
+    },
+    [setTransparency]
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [onScroll]);
+
   return (
     <>
       <OffCanvas />
-      <nav className={`uk-navbar-container ${extraCSS}`} data-uk-navbar>
+      <nav
+        className={`uk-navbar-container uk-padding-large ${extraCSS} ${
+          transparency ? "uk-navbar-transparent uk-light" : ""
+        }`}
+        data-uk-navbar
+      >
         <a
           className="uk-navbar-toggle uk-hidden@s"
           data-uk-navbar-toggle-icon
@@ -49,9 +92,14 @@ const Navbar = () => {
                 key={item.label}
                 className={item.id === active ? "uk-active" : ""}
               >
-                <a onClick={() => setRouteState(item.id)} href={item.to}>
+                <button
+                  className={`uk-button uk-button-link ${linksCSS}`}
+                  id={item.id}
+                  onClick={linkTo}
+                  href={item.to}
+                >
                   {item.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

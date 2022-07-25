@@ -4,7 +4,7 @@ const Contact = () => {
   const { languageState } = useLanguage();
 
   return (
-    <div className="uk-section uk-section-large">
+    <div id="section-contact" className="uk-section uk-section-large">
       <div className="uk-container">
         <h2>{languageState.texts.Contact.Title}</h2>
 

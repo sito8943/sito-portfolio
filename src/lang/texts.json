@@ -8,14 +8,19 @@
           "to": "#"
         },
         {
-          "id": "contact",
-          "label": "Contacto",
-          "to": "#contact"
-        },
-        {
           "id": "projects",
           "label": "Proyectos",
           "to": "#projects"
+        },
+        {
+          "id": "about",
+          "label": "Acerca de",
+          "to": "#about"
+        },
+        {
+          "id": "contact",
+          "label": "Contacto",
+          "to": "#contact"
         }
       ]
     },
