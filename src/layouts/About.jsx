@@ -1,13 +1,27 @@
+// @nextui-org
+import { Container } from "@nextui-org/react";
+
+// contexts
 import { useLanguage } from "../contexts/LanguageProvider";
 
 const About = () => {
   const { languageState } = useLanguage();
+
   return (
-    <div
-      id="section-about"
-      className="uk-section uk-section-primary uk-light uk-section-large"
+    <Container
+      css={{
+        padding: "100px 40px",
+        height: "100vh",
+      }}
     >
-      <div className="uk-container">
+      <Container
+        id="about"
+        justify="center"
+        alignItems="center"
+        display="flex"
+        direction="column"
+        css={{ height: "100%", width: "100%" }}
+      >
         <h2>{languageState.texts.About.Title}</h2>
 
         <div className="uk-grid-match uk-child-width-1-3@m" data-uk-grid>
@@ -30,8 +44,8 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 

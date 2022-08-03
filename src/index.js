@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+
 import { NextUIProvider } from "@nextui-org/react";
+
+import { lightTheme, darkTheme } from "./assets/theme/theme";
 
 import App from "./App";
 
@@ -16,9 +20,18 @@ root.render(
   <React.StrictMode>
     <LanguageProvider>
       <RouteProvider>
-        <NextUIProvider>
-          <App />
-        </NextUIProvider>
+        <NextThemesProvider
+          defaultTheme="system"
+          attribute="class"
+          value={{
+            light: lightTheme.className,
+            dark: darkTheme.className,
+          }}
+        >
+          <NextUIProvider>
+            <App />
+          </NextUIProvider>
+        </NextThemesProvider>
       </RouteProvider>
     </LanguageProvider>
   </React.StrictMode>

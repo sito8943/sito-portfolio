@@ -1,8 +1,5 @@
 // @nextui-org
-import { Container, Text } from "@nextui-org/react";
-
-// react-icons
-import FaAngleDown from "react-icons/fa/FaAngleDown";
+import { Container, Link, Text } from "@nextui-org/react";
 
 // own components
 import ButtonTo from "../components/ButtonTo/ButtonTo";
@@ -14,22 +11,35 @@ const Hero = () => {
   const { languageState } = useLanguage();
 
   return (
-    <Container
-      id="section-home"
-      justify="center"
-      alignItems="center"
-      display="flex"
-      direction="column"
-      css={{ padding: "100px 40px", height: "100vh" }}
-    >
-      <Text h1>
-        {languageState.texts.Hero.Title}
-        <a href=""></a>
-        {languageState.texts.Hero.Name}
-      </Text>
+    <Container css={{ padding: "100px 40px", height: "100vh" }}>
+      <Container
+        id="home"
+        justify="center"
+        alignItems="center"
+        display="flex"
+        direction="column"
+        css={{ height: "100%", width: "100%" }}
+      >
+        <Text h1>
+          {languageState.texts.Hero.Title}
+          <Link href="#about">{languageState.texts.Hero.Name}</Link>
+        </Text>
 
-      <Text>{languageState.texts.Hero.Text}</Text>
-      <ButtonTo target="about" icon="About" css={{ borderRadius: "100%" }} />
+        <Text>{languageState.texts.Hero.Text}</Text>
+        <ButtonTo
+          target="about"
+          icon="fa-arrow-down"
+          css={{
+            borderRadius: "100%",
+            marginTop: "15px",
+            minWidth: "40px !important",
+            transition: "all 500ms ease",
+            "&:hover": {
+              transform: "translateY(-5px)",
+            },
+          }}
+        />
+      </Container>
     </Container>
   );
 };

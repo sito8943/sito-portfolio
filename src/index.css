@@ -9,6 +9,12 @@ body {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  transition: all 400ms ease;
+  scroll-behavior: smooth;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -8,8 +8,9 @@ export const scrollTo = (target = 0) => {
     const element = document.getElementById(target);
     if (element !== null) localTarget = element.offsetTop;
   }
+  console.log(localTarget, document.getElementById(target));
   window.scroll({
-    top: target > 55 ? target - 55 : localTarget,
+    top: localTarget || target,
     left: 0,
     behavior: "smooth",
   });

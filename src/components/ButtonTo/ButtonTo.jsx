@@ -9,8 +9,8 @@ import { scrollTo } from "../../utils/functions";
 const ButtonTo = (props) => {
   const { target, icon, css, text } = props;
   return (
-    <Button onClick={scrollTo(target)} css={css} icon={icon}>
-      {icon}
+    <Button onPress={() => scrollTo(target)} css={css}>
+      {icon && <i className={`fa ${icon}`} aria-hidden="true" />}
       {text}
     </Button>
   );
@@ -19,7 +19,6 @@ const ButtonTo = (props) => {
 ButtonTo.defaultProps = {
   css: {},
   text: "",
-  icon: <></>,
 };
 
 ButtonTo.propTypes = {
