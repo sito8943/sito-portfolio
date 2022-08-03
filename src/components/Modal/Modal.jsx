@@ -13,6 +13,8 @@ const Modal = (props) => {
 
   return (
     <NextModal
+      closeButton
+      blur
       scroll
       width="600px"
       aria-labelledby="modal-title"
