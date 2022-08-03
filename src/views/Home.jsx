@@ -11,11 +11,11 @@ import Contact from "../layouts/Contact";
 const Home = () => {
   return (
     <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
-      <Projects />
-      <About />
-      <Contact />
+      {/* <Projects /> */}
+      {/* <About /> */}
+      {/* <Contact /> */}
     </SitoContainer>
   );
 };

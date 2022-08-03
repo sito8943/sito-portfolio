@@ -1,22 +1,36 @@
+// @nextui-org
+import { Container, Text } from "@nextui-org/react";
+
+// react-icons
+import FaAngleDown from "react-icons/fa/FaAngleDown";
+
+// own components
+import ButtonTo from "../components/ButtonTo/ButtonTo";
+
+// contexts
 import { useLanguage } from "../contexts/LanguageProvider";
 
 const Hero = () => {
   const { languageState } = useLanguage();
 
   return (
-    <div
+    <Container
       id="section-home"
-      className="uk-section uk-section-secondary uk-light uk-section-large"
+      justify="center"
+      alignItems="center"
+      display="flex"
+      direction="column"
+      css={{ padding: "100px 40px", height: "100vh" }}
     >
-      <div className="uk-container uk-padding-large">
-        <h1>{languageState.texts.Hero.Title}</h1>
+      <Text h1>
+        {languageState.texts.Hero.Title}
+        <a href=""></a>
+        {languageState.texts.Hero.Name}
+      </Text>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor.
-        </p>
-      </div>
-    </div>
+      <Text>{languageState.texts.Hero.Text}</Text>
+      <ButtonTo target="about" icon="About" css={{ borderRadius: "100%" }} />
+    </Container>
   );
 };
 
