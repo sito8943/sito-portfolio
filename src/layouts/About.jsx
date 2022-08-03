@@ -1,5 +1,5 @@
 // @nextui-org
-import { Container } from "@nextui-org/react";
+import { Container, Button, Link } from "@nextui-org/react";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
@@ -25,24 +25,39 @@ const About = () => {
         <h2>{languageState.texts.About.Title}</h2>
 
         <div className="uk-grid-match uk-child-width-1-3@m" data-uk-grid>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
-            </p>
-          </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
-            </p>
-          </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
-            </p>
-          </div>
+          <Link
+            href={languageState.texts.About.Github.Link}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i className="fa fa-github" aria-hidden="true" />
+            {languageState.texts.About.Github.Text}
+          </Link>
+
+          <Link
+            href={languageState.texts.About.Instagram.Link}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i className="fa fa-instagram" aria-hidden="true" />
+            {languageState.texts.About.Instagram.Text}
+          </Link>
+          <Link
+            href={languageState.texts.About.Twitter.Link}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i className="fa fa-twitter" aria-hidden="true" />
+            {languageState.texts.About.Twitter.Text}
+          </Link>
+          <Link
+            href={languageState.texts.About.Facebook.Link}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i className="fa fa-facebook" aria-hidden="true" />
+            {languageState.texts.About.Facebook.Text}
+          </Link>
         </div>
       </Container>
     </Container>
