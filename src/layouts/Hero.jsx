@@ -20,7 +20,7 @@ const Hero = () => {
         direction="column"
         css={{ height: "100%", width: "100%" }}
       >
-        <Text h1>
+        <Text h1 css={{ textAlign: "center" }}>
           {languageState.texts.Hero.Title}
           <Link href="#about">{languageState.texts.Hero.Name}</Link>
         </Text>
