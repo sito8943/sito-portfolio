@@ -9,10 +9,14 @@ import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
 
 // own components
 import Card from "../components/Card/Card";
+import Modal from "../components/Modal/Modal";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
-import Modal from "../components/Modal/Modal";
+
+// images
+import code from "../assets/images/coding.webp";
+import piano from "../assets/images/piano.webp";
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -112,6 +116,7 @@ const About = () => {
           >
             <motion.div variants={item}>
               <Card
+                image={code}
                 onClick={() => showModal("Me")}
                 text={languageState.texts.About.Me.Text}
                 more={languageState.texts.About.Me.More}
@@ -126,6 +131,7 @@ const About = () => {
             </motion.div>
             <motion.div variants={item}>
               <Card
+                image={piano}
                 onClick={() => showModal("FreeTime")}
                 text={languageState.texts.About.FreeTime.Text}
                 more={languageState.texts.About.FreeTime.More}

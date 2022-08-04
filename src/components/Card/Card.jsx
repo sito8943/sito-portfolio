@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Card as NextCard, Image, Text } from "@nextui-org/react";
 
 const Card = (props) => {
-  const { onClick, text, more } = props;
+  const { onClick, text, more, image, alt } = props;
   return (
     <NextCard
       isPressable
@@ -19,13 +19,7 @@ const Card = (props) => {
         flexDirection: "column !important",
       }}
     >
-      <Image
-        width={320}
-        height={180}
-        src="https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true"
-        alt="Default Image"
-        objectFit="cover"
-      />
+      <Image width={320} height={180} src={image} alt={alt} objectFit="cover" />
       <NextCard.Body
         css={{ display: "flex", flexDirection: "column !important" }}
       >
@@ -40,6 +34,8 @@ Card.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   more: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Card;
