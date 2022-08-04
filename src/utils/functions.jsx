@@ -6,11 +6,10 @@ export const scrollTo = (target = 0) => {
   let localTarget = 0;
   if (typeof target === "string") {
     const element = document.getElementById(target);
-    if (element !== null) localTarget = element.offsetTop;
+    if (element !== null) localTarget = element.offsetTop - 100;
   }
-  console.log(localTarget, document.getElementById(target));
   window.scroll({
-    top: localTarget || target,
+    top: localTarget > 100 ? localTarget : target,
     left: 0,
     behavior: "smooth",
   });

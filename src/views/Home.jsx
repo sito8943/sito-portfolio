@@ -17,8 +17,8 @@ const Home = () => {
       <ToTop />
       {/* <Navbar /> */}
       <Hero />
-      {/* <Projects /> */}
       <About />
+      <Projects />
       {/* <Contact /> */}
     </SitoContainer>
   );

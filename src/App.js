@@ -14,6 +14,7 @@ const App = () => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     const home = document.getElementById("home");
     const about = document.getElementById("about");
+    const projects = document.getElementById("projects");
     if (home.offsetTop <= top) {
       console.log("home");
       setTheme("dark");
@@ -21,6 +22,10 @@ const App = () => {
     if (about.offsetTop - 400 <= top) {
       console.log("about");
       setTheme("light");
+    }
+    if (projects.offsetTop - 400 <= top) {
+      console.log("projects");
+      setTheme("dark");
     }
   }, []);
 

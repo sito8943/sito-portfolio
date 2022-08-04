@@ -41,10 +41,13 @@ const About = () => {
     },
   };
 
-  useEffect(() => {
+  const showModal = (which) => {
+    setShow(which);
     if (show !== "") setVisible(true);
     else setVisible(false);
-  }, [show]);
+  };
+
+  useEffect(() => {}, [show]);
 
   return (
     <Container
@@ -100,34 +103,33 @@ const About = () => {
             display="flex"
             wrap="wrap"
             css={{
+              flexDirection: "row !important",
               div: {
                 display: "flex",
                 flexDirection: "row",
               },
             }}
           >
-            <motion.div variants={container} initial="hidden" animate="visible">
-              <motion.div variants={item}>
-                <Card
-                  onClick={() => setShow("Me")}
-                  text={languageState.texts.About.Me.Text}
-                  more={languageState.texts.About.Me.More}
-                />
-              </motion.div>
-              <motion.div variants={item}>
-                <Card
-                  onClick={() => setShow("Optional")}
-                  text={languageState.texts.About.Optional.Text}
-                  more={languageState.texts.About.Optional.More}
-                />
-              </motion.div>
-              <motion.div variants={item}>
-                <Card
-                  onClick={() => setShow("FreeTime")}
-                  text={languageState.texts.About.FreeTime.Text}
-                  more={languageState.texts.About.FreeTime.More}
-                />
-              </motion.div>
+            <motion.div variants={item}>
+              <Card
+                onClick={() => showModal("Me")}
+                text={languageState.texts.About.Me.Text}
+                more={languageState.texts.About.Me.More}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <Card
+                onClick={() => showModal("Optional")}
+                text={languageState.texts.About.Optional.Text}
+                more={languageState.texts.About.Optional.More}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <Card
+                onClick={() => showModal("FreeTime")}
+                text={languageState.texts.About.FreeTime.Text}
+                more={languageState.texts.About.FreeTime.More}
+              />
             </motion.div>
           </Container>
           <motion.div variants={item}>
@@ -139,9 +141,11 @@ const About = () => {
             display="flex"
             justify="center"
             css={{
+              flexDirection: "row !important",
               gap: "15px",
               a: {
                 fontSize: "30px",
+                marginRight: "10px",
                 transition: "all 500ms ease",
                 "&:hover": { transform: "translateY(-5px)" },
               },
@@ -152,43 +156,41 @@ const About = () => {
             }}
             wrap="wrap"
           >
-            <motion.div variants={container} initial="hidden" animate="visible">
-              <motion.div variants={item}>
-                <Link
-                  href={languageState.texts.About.Github.Link}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-github" aria-hidden="true" />
-                </Link>
-              </motion.div>
-              <motion.div variants={item}>
-                <Link
-                  href={languageState.texts.About.Instagram.Link}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-instagram" aria-hidden="true" />
-                </Link>
-              </motion.div>
-              <motion.div variants={item}>
-                <Link
-                  href={languageState.texts.About.Twitter.Link}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-twitter" aria-hidden="true" />
-                </Link>
-              </motion.div>
-              <motion.div variants={item}>
-                <Link
-                  href={languageState.texts.About.Facebook.Link}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-facebook" aria-hidden="true" />
-                </Link>
-              </motion.div>
+            <motion.div variants={item}>
+              <Link
+                href={languageState.texts.About.Github.Link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className="fa fa-github" aria-hidden="true" />
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link
+                href={languageState.texts.About.Instagram.Link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className="fa fa-instagram" aria-hidden="true" />
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link
+                href={languageState.texts.About.Twitter.Link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className="fa fa-twitter" aria-hidden="true" />
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link
+                href={languageState.texts.About.Facebook.Link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className="fa fa-facebook" aria-hidden="true" />
+              </Link>
             </motion.div>
           </Container>
         </motion.div>

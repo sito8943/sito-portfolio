@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 // @nextui-org
-import { Card as NextCard, Text } from "@nextui-org/react";
+import { Card as NextCard, Image, Text } from "@nextui-org/react";
 
 const Card = (props) => {
   const { onClick, text, more } = props;
@@ -19,6 +19,13 @@ const Card = (props) => {
         flexDirection: "column !important",
       }}
     >
+      <Image
+        width={320}
+        height={180}
+        src="https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true"
+        alt="Default Image"
+        objectFit="cover"
+      />
       <NextCard.Body
         css={{ display: "flex", flexDirection: "column !important" }}
       >
