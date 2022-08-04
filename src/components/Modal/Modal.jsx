@@ -1,13 +1,19 @@
 import PropTypes from "prop-types";
 
 // @nextui-org
-import { Modal as NextModal, Button, Text } from "@nextui-org/react";
+import {
+  Modal as NextModal,
+  Container,
+  Image,
+  Button,
+  Text,
+} from "@nextui-org/react";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Modal = (props) => {
-  const { onClose, bindings, title, content } = props;
+  const { onClose, bindings, title, content, image, alt } = props;
 
   const { languageState } = useLanguage();
 
@@ -19,6 +25,7 @@ const Modal = (props) => {
       width="600px"
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
+      css={{ position: "relative" }}
       {...bindings}
     >
       <NextModal.Header>
@@ -42,6 +49,8 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Modal;

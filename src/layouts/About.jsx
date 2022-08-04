@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // framer-motion
 import { motion } from "framer-motion";
@@ -16,6 +16,7 @@ import { useLanguage } from "../contexts/LanguageProvider";
 
 // images
 import code from "../assets/images/coding.webp";
+import trip from "../assets/images/trips.webp";
 import piano from "../assets/images/piano.webp";
 
 const About = () => {
@@ -24,6 +25,32 @@ const About = () => {
   const [show, setShow] = useState("");
 
   const { setVisible, bindings } = useModal();
+
+  const getImage = () => {
+    switch (show) {
+      case "Me":
+        return code;
+      case "Optional":
+        return;
+      case "FreeTime":
+        return piano;
+      default:
+        return "";
+    }
+  };
+
+  const getAlt = () => {
+    switch (show) {
+      case "Me":
+        return "code";
+      case "Optional":
+        return "optional";
+      case "FreeTime":
+        return "piano";
+      default:
+        return "";
+    }
+  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -47,11 +74,9 @@ const About = () => {
 
   const showModal = (which) => {
     setShow(which);
-    if (show !== "") setVisible(true);
+    if (show === "") setVisible(true);
     else setVisible(false);
   };
-
-  useEffect(() => {}, [show]);
 
   return (
     <Container
@@ -65,6 +90,8 @@ const About = () => {
     >
       {show && (
         <Modal
+          image={getImage()}
+          alt={getAlt()}
           onClose={() => setVisible(false)}
           bindings={bindings}
           title={languageState.texts.About[show].Title}
@@ -117,6 +144,7 @@ const About = () => {
             <motion.div variants={item}>
               <Card
                 image={code}
+                alt="about"
                 onClick={() => showModal("Me")}
                 text={languageState.texts.About.Me.Text}
                 more={languageState.texts.About.Me.More}
@@ -124,6 +152,8 @@ const About = () => {
             </motion.div>
             <motion.div variants={item}>
               <Card
+                alt="optional"
+                image={trip}
                 onClick={() => showModal("Optional")}
                 text={languageState.texts.About.Optional.Text}
                 more={languageState.texts.About.Optional.More}
@@ -132,6 +162,7 @@ const About = () => {
             <motion.div variants={item}>
               <Card
                 image={piano}
+                alt="free-time"
                 onClick={() => showModal("FreeTime")}
                 text={languageState.texts.About.FreeTime.Text}
                 more={languageState.texts.About.FreeTime.More}
@@ -171,6 +202,7 @@ const About = () => {
                 <i className="fa fa-github" aria-hidden="true" />
               </Link>
             </motion.div>
+            <Link href="#about">{languageState.texts.Projects.Name}</Link>
             <motion.div variants={item}>
               <Link
                 href={languageState.texts.About.Instagram.Link}

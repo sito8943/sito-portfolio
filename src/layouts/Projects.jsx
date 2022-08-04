@@ -5,10 +5,14 @@ import { motion } from "framer-motion";
 import { Container, Link, Text } from "@nextui-org/react";
 
 // own components
-import ButtonTo from "../components/ButtonTo/ButtonTo";
+import Card from "../components/Card/Card";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
+
+// images
+import code from "../assets/images/coding.webp";
+import piano from "../assets/images/piano.webp";
 
 const Projects = () => {
   const { languageState } = useLanguage();
@@ -61,27 +65,44 @@ const Projects = () => {
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
               {languageState.texts.Projects.Title}
-              <Link href="#about">{languageState.texts.Projects.Name}</Link>
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.Projects.Text}</Text>
+            <Text>
+              {languageState.texts.Projects.Text}
+              <Link
+                href={languageState.texts.About.Github.Link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {languageState.texts.Projects.SeeMore}
+              </Link>
+            </Text>
           </motion.div>
-          <motion.div variants={item}>
-            <ButtonTo
-              target="about"
-              icon="fa-arrow-down"
-              css={{
-                borderRadius: "100%",
-                marginTop: "15px",
-                minWidth: "40px !important",
-                transition: "all 500ms ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                },
-              }}
-            />
-          </motion.div>
+          <Container
+            justify="center"
+            display="flex"
+            wrap="wrap"
+            css={{
+              flexDirection: "row !important",
+              div: {
+                display: "flex",
+                flexDirection: "row",
+              },
+            }}
+          >
+            {languageState.texts.Projects.Projects.map((item) => (
+              <motion.div variants={item}>
+                <Card
+                  image={code}
+                  alt="about"
+                  onClick={() => console.log("hola")}
+                  text={item.Title}
+                  more={item.Text}
+                />
+              </motion.div>
+            ))}
+          </Container>
         </motion.div>
       </Container>
     </Container>
