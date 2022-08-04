@@ -11,9 +11,17 @@ const Card = (props) => {
       isHoverable
       onPress={onClick}
       variant="bordered"
-      css={{ width: "250px", marginRight: "10px", marginBottom: "10px" }}
+      css={{
+        width: "250px",
+        marginRight: "10px",
+        marginBottom: "10px",
+        display: "flex",
+        flexDirection: "column !important",
+      }}
     >
-      <NextCard.Body>
+      <NextCard.Body
+        css={{ display: "flex", flexDirection: "column !important" }}
+      >
         <Text css={{ marginLeft: "10px" }}>{text}</Text>
         <Text css={{ marginLeft: "10px" }}>{more}</Text>
       </NextCard.Body>
