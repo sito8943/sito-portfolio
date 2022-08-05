@@ -22,35 +22,9 @@ import piano from "../assets/images/piano.webp";
 const About = () => {
   const { languageState } = useLanguage();
 
-  const [show, setShow] = useState("");
+  const [show, setShow] = useState("Me");
 
   const { setVisible, bindings } = useModal();
-
-  const getImage = () => {
-    switch (show) {
-      case "Me":
-        return code;
-      case "Optional":
-        return;
-      case "FreeTime":
-        return piano;
-      default:
-        return "";
-    }
-  };
-
-  const getAlt = () => {
-    switch (show) {
-      case "Me":
-        return "code";
-      case "Optional":
-        return "optional";
-      case "FreeTime":
-        return "piano";
-      default:
-        return "";
-    }
-  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -74,8 +48,9 @@ const About = () => {
 
   const showModal = (which) => {
     setShow(which);
-    if (show === "") setVisible(true);
-    else setVisible(false);
+    console.log(which);
+    if (show === "") setVisible(false);
+    else setVisible(true);
   };
 
   return (
@@ -88,16 +63,12 @@ const About = () => {
         minHeight: "100vh",
       }}
     >
-      {show && (
-        <Modal
-          image={getImage()}
-          alt={getAlt()}
-          onClose={() => setVisible(false)}
-          bindings={bindings}
-          title={languageState.texts.About[show].Title}
-          content={languageState.texts.About[show].BigText}
-        />
-      )}
+      <Modal
+        onClose={() => setVisible(false)}
+        bindings={bindings}
+        title={languageState.texts.About[show].Title}
+        content={languageState.texts.About[show].BigText}
+      />
       <Container
         id="about"
         justify="center"

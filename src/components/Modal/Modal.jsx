@@ -49,8 +49,6 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
 };
 
 export default Modal;
