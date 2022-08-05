@@ -95,7 +95,7 @@ const Projects = () => {
             {languageState.texts.Projects.Projects.map((item) => (
               <motion.div variants={item} key={item.Title}>
                 <Card
-                  image={code}
+                  image={item.Image}
                   alt="about"
                   onClick={() => console.log("hola")}
                   text={item.Title}

@@ -51,18 +51,21 @@
           "Title": "Santiago Cultural",
           "Text": "¡Ven a Santiago de los Caballeros y explora nuestras maravillas!",
           "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
+          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
           "See": "Ver"
         },
         {
           "Title": "Inmersoft Webpage",
           "Text": "Guías digitales interactivas, inmersión y páginas creativas",
           "Link": "https://inmersoft-dev.github.io/inmersoft-webpage",
+          "Image": "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/240587957_2176667392485762_7543974056661189756_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=cZplwHHTHJ4AX8xrTlO&_nc_ht=scontent-mia3-2.xx&oh=00_AT-OUBpQZC-KwBUYzkxR6Xovdpo4cAoCfZyIje8nw4yx8g&oe=62F1E716",
           "See": "Ver"
         },
         {
           "Title": "Santiago Market",
-          "Text": "Explora Santiago de los Caballeros en búsqueda de la oportunidad",
+          "Text": "Explora Santiago de los Caballeros",
           "Link": "https://inmersoft-dev.github.io/santiago-market",
+          "Image": "https://inmersoft-dev.github.io/santiago-market/static/media/banner2.4e5d49630f27d8245da4.jpg",
           "See": "Ver"
         }
       ]
