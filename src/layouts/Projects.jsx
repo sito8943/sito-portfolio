@@ -93,7 +93,7 @@ const Projects = () => {
             }}
           >
             {languageState.texts.Projects.Projects.map((item) => (
-              <motion.div variants={item}>
+              <motion.div variants={item} key={item.Title}>
                 <Card
                   image={code}
                   alt="about"

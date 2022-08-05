@@ -21,10 +21,14 @@ const Card = (props) => {
     >
       <Image width={320} height={180} src={image} alt={alt} objectFit="cover" />
       <NextCard.Body
-        css={{ display: "flex", flexDirection: "column !important" }}
+        css={{
+          display: "flex",
+          flexDirection: "column !important",
+          alignItems: "center",
+        }}
       >
-        <Text css={{ marginLeft: "10px" }}>{text}</Text>
-        <Text css={{ marginLeft: "10px" }}>{more}</Text>
+        <Text css={{ marginLeft: "10px", textAlign: "center" }}>{text}</Text>
+        <Text css={{ marginLeft: "10px", textAlign: "center" }}>{more}</Text>
       </NextCard.Body>
     </NextCard>
   );
