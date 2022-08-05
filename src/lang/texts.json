@@ -80,19 +80,67 @@
         "Title": "Acerca de mí",
         "Text": "Me gusta programar 👨🏻‍💻",
         "More": "y aprender cosas nuevas 📚",
-        "BigText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+        "Content": [
+          {
+            "Type": "Title",
+            "Content": "Programar es una de mayores pasiones"
+          },
+          {
+            "Type": "Text",
+            "Content": "Soy hijo de dos Masters en Ciencia de la Computación, así que la programación se mueve através de mis venas. Comencé a escribir mis primeras líneas de código al entrar en la universidad, estudiando Ciencia de la Computación, durante todo mi proceso de estudio estuve desarrollando aplicaciones de escritorio con Qt. "
+          },
+          {
+            "Type": "Image",
+            "Source": "qt-logo",
+            "Alt": "qt-logo"
+          },
+          {
+            "Type": "Text",
+            "Content": "Al llegar a segundo año de la carrera un profesor me comentó que es posible el desarrollo de páginas web y servidores solo con JavaScript, en ese mismo instante busqué cursos para aprender dicho lenguaje. En la actualidad soy desarrollador de páginas web, usando herramientas como ReactJs, NodeJs, JavaScript, MaterialUi, NextUi, Firebase, MongoDB"
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              { "Source": "react-logo", "Alt": "react-logo" },
+              { "Source": "node-logo", "Alt": "node-logo" },
+              { "Source": "javascript-logo", "Alt": "javascript-logo" },
+              { "Source": "materialui-logo", "Alt": "materialui-logo" },
+              { "Source": "nextui-logo", "Alt": "nextui-logo" },
+              { "Source": "firebase-logo", "Alt": "firebase-logo" },
+              { "Source": "mongodb-logo", "Alt": "mongodb-logo" }
+            ]
+          }
+        ]
       },
       "Optional": {
         "Title": "Lo que me gusta",
         "Text": "Me gusta viajar ✈️,",
         "More": "conocer nuevos lugares 🌲",
-        "BigText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+        "Content": [
+          {
+            "Type": "Title",
+            "Content": "Viajar, explorar y aprender"
+          },
+          {
+            "Type": "Text",
+            "Content": ""
+          }
+        ]
       },
       "FreeTime": {
         "Title": "En mi tiempo libre",
         "Text": "Me gusta escuchar música 🎶",
         "More": "y tocar al piano 🎹",
-        "BigText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+        "Content": [
+          {
+            "Type": "Title",
+            "Content": "La música y el piano"
+          },
+          {
+            "Type": "Text",
+            "Content": "Estudié música en la escuela comunitaria Lauro Fuentes, en Santiago de Cuba. Comencé estudiando piano por cuatro años, con un teclado eléctrico estudiaba en casa y me distraía, después tuve que cambiar para percusión."
+          }
+        ]
       },
       "Meet": "Puedes encontrarme en:",
       "Github": { "Text": "Github", "Link": "https://github.com/SitoNumbis" },

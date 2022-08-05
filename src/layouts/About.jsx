@@ -67,7 +67,7 @@ const About = () => {
         onClose={() => setVisible(false)}
         bindings={bindings}
         title={languageState.texts.About[show].Title}
-        content={languageState.texts.About[show].BigText}
+        content={languageState.texts.About[show].Content}
       />
       <Container
         id="about"
