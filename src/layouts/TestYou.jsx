@@ -10,7 +10,7 @@ import Card from "../components/Card/Card";
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
 
-const Projects = () => {
+const TestYou = () => {
   const { languageState } = useLanguage();
 
   const container = {
@@ -60,20 +60,14 @@ const Projects = () => {
         <motion.div variants={container} initial="hidden" animate="visible">
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.Projects.Title}
+              {languageState.texts.TestYou.Title}
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>
-              {languageState.texts.Projects.Text}
-              <Link
-                href={languageState.texts.About.Github.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {languageState.texts.Projects.SeeMore}
-              </Link>
-            </Text>
+            <Text>{languageState.texts.TestYou.Text}</Text>
+          </motion.div>
+          <motion.div variants={item}>
+            <Text>{languageState.texts.TestYou.CallMe}</Text>
           </motion.div>
           <Container
             justify="center"
@@ -88,7 +82,7 @@ const Projects = () => {
               },
             }}
           >
-            {languageState.texts.Projects.Projects.map((item) => (
+            {languageState.texts.TestYou.Projects.map((item) => (
               <motion.div variants={item} key={item.Title}>
                 <Card
                   image={item.Image}
@@ -106,4 +100,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default TestYou;
