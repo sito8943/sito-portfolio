@@ -84,6 +84,7 @@ const Projects = () => {
             display="flex"
             wrap="wrap"
             css={{
+              marginTop: "10px",
               flexDirection: "row !important",
               div: {
                 display: "flex",

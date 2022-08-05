@@ -37,12 +37,32 @@
       "Projects": [
         {
           "Title": "Dogma Transportation",
-          "Text": "Compañia de brokers y cursos",
+          "Text": "Compañia de brokers y cursos para camioneros",
+          "Link": "https://inmersoft-dev.github.io/broker-company/",
           "See": "Ver"
         },
         {
           "Title": "Digital Menu",
           "Text": "Menú digital para cualquier tipo de catálogos",
+          "Link": "https://inmersoft-dev.github.io/digital-menu/",
+          "See": "Ver"
+        },
+        {
+          "Title": "Santiago Cultural",
+          "Text": "",
+          "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
+          "See": "Ver"
+        },
+        {
+          "Title": "Inmersoft Webpage",
+          "Text": "",
+          "Link": "https://inmersoft-dev.github.io/inmersoft-webpage",
+          "See": "Ver"
+        },
+        {
+          "Title": "Santiago Market",
+          "Text": "",
+          "Link": "https://inmersoft-dev.github.io/santiago-market",
           "See": "Ver"
         }
       ]
