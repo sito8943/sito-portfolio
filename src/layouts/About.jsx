@@ -59,7 +59,7 @@ const About = () => {
       alignItems="center"
       display="flex"
       css={{
-        padding: "100px 40px",
+        padding: "100px 0",
         minHeight: "100vh",
       }}
     >

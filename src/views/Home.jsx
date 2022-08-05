@@ -14,7 +14,7 @@ import Contact from "../layouts/Contact";
 const Home = () => {
   return (
     <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
-      <ToTop />
+      {/* <ToTop /> */}
       {/* <Navbar /> */}
       <Hero />
       <About />
