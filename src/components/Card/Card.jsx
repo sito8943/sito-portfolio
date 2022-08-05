@@ -13,8 +13,7 @@ const Card = (props) => {
       variant="bordered"
       css={{
         width: "250px",
-        marginRight: "10px",
-        marginBottom: "10px",
+        margin: "10px",
         display: "flex",
         flexDirection: "column !important",
       }}

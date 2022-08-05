@@ -38,7 +38,7 @@ const Hero = () => {
       justify="center"
       alignItems="center"
       display="flex"
-      css={{ padding: "100px 40px", minHeight: "100vh" }}
+      css={{ padding: "100px 0", minHeight: "100vh" }}
     >
       <Container
         id="home"
