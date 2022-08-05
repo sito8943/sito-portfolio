@@ -97,7 +97,7 @@ const Projects = () => {
                 <Card
                   image={item.Image}
                   alt="about"
-                  onClick={() => console.log("hola")}
+                  onClick={() => window.open(item.Link)}
                   text={item.Title}
                   more={item.Text}
                 />

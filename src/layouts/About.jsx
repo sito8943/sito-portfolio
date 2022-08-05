@@ -202,6 +202,7 @@ const About = () => {
                 <i className="fa fa-github" aria-hidden="true" />
               </Link>
             </motion.div>
+
             <motion.div variants={item}>
               <Link
                 href={languageState.texts.About.Instagram.Link}

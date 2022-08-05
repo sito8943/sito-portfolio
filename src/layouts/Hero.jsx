@@ -69,7 +69,7 @@ const Hero = () => {
           </motion.div>
           <motion.div variants={item}>
             <ButtonTo
-              target="about"
+              target="projects"
               icon="fa-arrow-down"
               css={{
                 borderRadius: "100%",
