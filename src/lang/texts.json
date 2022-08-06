@@ -78,20 +78,25 @@
         {
           "Title": "ToDo",
           "Text": "Crea, modifica y borra notas para productividad",
-          "Link": "https://inmersoft-dev.github.io/broker-company/",
+          "Image": "https://repository-images.githubusercontent.com/511256492/6cc736af-aed1-4c24-beda-35ea98cbd038",
+          "Alt": "todo",
+          "Link": "https://github.com/SitoNumbis/todopro.git",
           "See": "Ver"
         },
         {
           "Title": "Snake",
           "Text": "Clásico juego de la serpiente que come manzanas",
-          "Link": "https://inmersoft-dev.github.io/digital-menu/",
+          "Link": "https://sitonumbis.github.io/sito-react-snake/",
+          "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
+          "Alt": "sito-react-snake",
           "See": "Ver"
         },
         {
           "Title": "Mirror",
           "Text": "Encuentra las tarjetas iguales en el tablero",
           "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
-          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
+          "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
+          "Alt": "sito-mirror",
           "See": "Ver"
         },
         {
@@ -112,7 +117,7 @@
           "Title": "Pomodoro",
           "Text": "Es hora de enfocarse en 30 minutos",
           "Link": "https://inmersoft-dev.github.io/santiago-market",
-          "Image": "https://inmersoft-dev.github.io/santiago-market/static/media/banner2.4e5d49630f27d8245da4.jpg",
+          "Image": "https://pomofocus.io/images/ogimage.png",
           "See": "Ver"
         }
       ]
