@@ -1,0 +1,20 @@
+.contenedor-modal {
+  display: flex; /* para poder usar justify-content y align-items */
+  justify-content: center; /* tira todos sus hijos al centro horizontalmente */
+  align-items: center; /* tira todos sus hijos al centro verticalmente */
+  width: 100vw; /* para ocupar toda la pantalla */
+  height: 100vh; /* para ocupar toda la pantalla */
+  background-color: #222222ec; /* hex rrbbggAA donde AA es la opacidad del color */
+  backdrop-filter: blur(4px); /* si quieres ponerle un efecto de borroso a los que están detrás */
+  position: fixed; /* para que nunca se salga de la pantalla */
+  top: 0; /* para que nunca se salga de la pantalla */
+  left: 0 /* para que nunca se salga de la pantalla */
+}
+
+.modal {
+  width: 300px; /* define unas dimensiones */
+  height: 300px; /* define unas dimensiones */
+  position: relative; /* por si vas a usar algún hijo con posición absoluta */
+  background-color: #222333; /* background para distinguir del fondo */
+  box-shadow: 1px 1px 2px 1px black; /* sombra */
+}

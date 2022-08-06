@@ -14,6 +14,7 @@ import "./index.css";
 // contexts
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import { RouteProvider } from "./contexts/RouteProvider";
+import Modal from "./Modal";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,7 +30,8 @@ root.render(
           }}
         >
           <NextUIProvider>
-            <App />
+            {/* <App /> */}
+            <Modal />
           </NextUIProvider>
         </NextThemesProvider>
       </RouteProvider>

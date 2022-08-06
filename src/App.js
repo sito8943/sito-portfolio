@@ -15,6 +15,7 @@ const App = () => {
     const home = document.getElementById("home");
     const about = document.getElementById("about");
     const projects = document.getElementById("projects");
+    const testyou = document.getElementById("testyou");
     if (home.offsetTop <= top) {
       console.log("home");
       setTheme("dark");
@@ -26,6 +27,10 @@ const App = () => {
     if (projects.offsetTop - 400 <= top) {
       console.log("projects");
       setTheme("dark");
+    }
+    if (testyou.offsetTop - 400 <= top) {
+      console.log("projects");
+      setTheme("light");
     }
   }, []);
 
