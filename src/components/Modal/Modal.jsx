@@ -14,15 +14,15 @@ import {
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // images
-import js from "../../assets/images/js.webp";
-import qt from "../../assets/images/qt.webp";
-import cpp from "../../assets/images/cpp.webp";
-import mui from "../../assets/images/mui.webp";
-import node from "../../assets/images/node.webp";
-import react from "../../assets/images/react.webp";
-import nextui from "../../assets/images/nextui.webp";
-import mongodb from "../../assets/images/mongodb.webp";
-import firebase from "../../assets/images/firebase.webp";
+import js from "../../assets/images/logos/js.webp";
+import qt from "../../assets/images/logos/qt.webp";
+import cpp from "../../assets/images/logos/cpp.webp";
+import mui from "../../assets/images/logos/mui.webp";
+import node from "../../assets/images/logos/node.webp";
+import react from "../../assets/images/logos/react.webp";
+import nextui from "../../assets/images/logos/nextui.webp";
+import mongodb from "../../assets/images/logos/mongodb.webp";
+import firebase from "../../assets/images/logos/firebase.webp";
 
 const Modal = (props) => {
   const { onClose, bindings, title, content } = props;
@@ -86,6 +86,7 @@ const Modal = (props) => {
                         width: "40px",
                         height: "40px",
                         borderRadius: "100%",
+                        marginRight: "10px",
                       }}
                       key={jtem.Alt}
                       src={images[jtem.Source]}
