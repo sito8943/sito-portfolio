@@ -25,7 +25,7 @@
       ]
     },
     "Hero": {
-      "Title": "Hola soy ",
+      "Title": "Mi Portfolio ",
       "Name": "Sito",
       "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
       "Text": "Vamos a comenzar un viaje..."
@@ -139,12 +139,22 @@
           },
           {
             "Type": "Text",
-            "Content": "Soy hijo de dos Masters en Ciencia de la Computación, así que la programación se mueve através de mis venas. Comencé a escribir mis primeras líneas de código al entrar en la universidad, estudiando Ciencia de la Computación, durante todo mi proceso de estudio estuve desarrollando aplicaciones de escritorio con Qt. "
+            "Content": "Soy hijo de dos Masters en Ciencia de la Computación, así que la programación se mueve através de mis venas. Comencé a escribir mis primeras líneas de código al entrar en la universidad, estudiando Ciencia de la Computación, durante todo mi proceso de estudio estuve desarrollando aplicaciones de escritorio con Qt y C++."
           },
           {
-            "Type": "Image",
-            "Source": "qt-logo",
-            "Alt": "qt-logo"
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "qt-logo",
+                "Alt": "qt-logo",
+                "Link": "https://www.qt.io/"
+              },
+              {
+                "Source": "cpp-logo",
+                "Alt": "cpp-logo",
+                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+              }
+            ]
           },
           {
             "Type": "Text",
@@ -153,13 +163,41 @@
           {
             "Type": "Images",
             "Content": [
-              { "Source": "react-logo", "Alt": "react-logo" },
-              { "Source": "node-logo", "Alt": "node-logo" },
-              { "Source": "javascript-logo", "Alt": "javascript-logo" },
-              { "Source": "materialui-logo", "Alt": "materialui-logo" },
-              { "Source": "nextui-logo", "Alt": "nextui-logo" },
-              { "Source": "firebase-logo", "Alt": "firebase-logo" },
-              { "Source": "mongodb-logo", "Alt": "mongodb-logo" }
+              {
+                "Source": "react-logo",
+                "Alt": "react-logo",
+                "Link": "https://reactjs.org/"
+              },
+              {
+                "Source": "node-logo",
+                "Alt": "node-logo",
+                "Link": "https://nodejs.org/"
+              },
+              {
+                "Source": "js-logo",
+                "Alt": "javascript-logo",
+                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+              },
+              {
+                "Source": "mui-logo",
+                "Alt": "materialui-logo",
+                "Link": "https://mui.com/"
+              },
+              {
+                "Source": "nextui-logo",
+                "Alt": "nextui-logo",
+                "Link": "https://nextui.org/"
+              },
+              {
+                "Source": "firebase-logo",
+                "Alt": "firebase-logo",
+                "Link": "https://firebase.google.com/"
+              },
+              {
+                "Source": "mongodb-logo",
+                "Alt": "mongodb-logo",
+                "Link": "https://www.mongodb.com/"
+              }
             ]
           }
         ]

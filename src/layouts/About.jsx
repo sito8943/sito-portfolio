@@ -48,7 +48,6 @@ const About = () => {
 
   const showModal = (which) => {
     setShow(which);
-    console.log(which);
     if (show === "") setVisible(false);
     else setVisible(true);
   };
@@ -91,7 +90,7 @@ const About = () => {
           </motion.div>
           <motion.div variants={item}>
             <Avatar
-              src="https://scontent-mia3-1.xx.fbcdn.net/v/t1.6435-9/48426782_2289894674624936_7302552186934788096_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=Dy5gxJkQVbwAX9-MgDU&_nc_ht=scontent-mia3-1.xx&oh=00_AT9P4YPHWYTUJf9TvVF_2s54iZVYNecq1O9U62VhT7ODJw&oe=630F48A7"
+              src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
               css={{ size: "$20", margin: "10px 0" }}
             />
           </motion.div>

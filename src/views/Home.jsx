@@ -14,7 +14,7 @@ import TestYou from "../layouts/TestYou";
 const Home = () => {
   return (
     <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
-      {/* <ToTop /> */}
+      <ToTop />
       {/* <Navbar /> */}
       <Hero />
       <About />

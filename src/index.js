@@ -30,8 +30,7 @@ root.render(
           }}
         >
           <NextUIProvider>
-            {/* <App /> */}
-            <Modal />
+            <App />
           </NextUIProvider>
         </NextThemesProvider>
       </RouteProvider>
