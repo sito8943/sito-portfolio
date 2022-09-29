@@ -11,11 +11,62 @@ body {
 
 html,
 body {
-  transition: all 400ms ease;
+  transition: background 400ms ease;
   scroll-behavior: smooth;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.float-y {
+  position: absolute;
+  overflow: hidden;
+  animation: float-y 4s linear infinite;
+}
+
+.scale-animation {
+  position: absolute;
+  animation: scale-up 1 0.3s ease;
+}
+
+.right-10 {
+  right: 10%;
+}
+
+.left-10 {
+  left: 10%;
+}
+
+.top-20 {
+  top: 20%;
+}
+
+.bottom-10 {
+  bottom: 10%;
+}
+
+@keyframes float-y {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

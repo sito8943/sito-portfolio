@@ -84,7 +84,12 @@ const About = () => {
           },
         }}
       >
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          viewport={{ once: true }}
+        >
           <motion.div variants={item}>
             <Text h2>{languageState.texts.About.Title}</Text>
           </motion.div>

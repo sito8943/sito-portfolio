@@ -1,5 +1,9 @@
 {
   "es": {
+    "NotFound": {
+      "GoHome": "Ir al inicio",
+      "Body": "No se encuentra la página"
+    },
     "Navbar": {
       "Links": [
         {

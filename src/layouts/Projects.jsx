@@ -57,7 +57,12 @@ const Projects = () => {
           },
         }}
       >
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          viewport={{ once: true }}
+        >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
               {languageState.texts.Projects.Title}
