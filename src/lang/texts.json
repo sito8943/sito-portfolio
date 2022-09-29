@@ -35,7 +35,7 @@
       "Text": "Vamos a comenzar un viaje..."
     },
     "Projects": {
-      "Title": "Mis proyectos",
+      "Title": "Proyectos Profesionales",
       "Text": "Puedes pasarte por mi ",
       "SeeMore": "GitHub",
       "Projects": [
@@ -75,7 +75,7 @@
       ]
     },
     "TestYou": {
-      "Title": "¿Quires ponerte a prueba?",
+      "Title": "Mis proyectos",
       "Text": "¿Por qué no intentas implementar estos pequeños proyectos?",
       "CallMe": "Puedes usar la herramienta que quieras, apenas termines no dudes en mostrármelo",
       "Projects": [

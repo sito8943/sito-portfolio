@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 // @nextui-org
-import { Container, Link, Text } from "@nextui-org/react";
+import { Container, Text } from "@nextui-org/react";
 
 // own components
 import Card from "../components/Card/Card";
@@ -57,7 +57,12 @@ const TestYou = () => {
           },
         }}
       >
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          viewport={{ once: true }}
+        >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
               {languageState.texts.TestYou.Title}
