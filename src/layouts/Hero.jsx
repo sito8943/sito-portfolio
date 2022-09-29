@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // framer-motion
 import { motion } from "framer-motion";
 
@@ -5,10 +7,7 @@ import { motion } from "framer-motion";
 import { css } from "@emotion/css";
 
 // @nextui-org
-import { Container, Link, Text, Image } from "@nextui-org/react";
-
-// own components
-import ButtonTo from "../components/ButtonTo/ButtonTo";
+import { Container, Button, Text, Image } from "@nextui-org/react";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
@@ -41,7 +40,7 @@ const Hero = () => {
       },
     },
   };
-  
+
   const item = {
     hidden: { scale: 0, opacity: 0 },
     visible: {
@@ -57,6 +56,7 @@ const Hero = () => {
       alignItems="center"
       display="flex"
       css={{ padding: "100px 0", minHeight: "100vh", position: "relative" }}
+      id="hero"
     >
       <motion.div
         variants={containerImage}
@@ -129,19 +129,21 @@ const Hero = () => {
             <Text>{languageState.texts.Hero.Text}</Text>
           </motion.div>
           <motion.div variants={item}>
-            <ButtonTo
-              target="projects"
-              icon="fa-arrow-down"
-              css={{
-                borderRadius: "100%",
-                marginTop: "15px",
-                minWidth: "40px !important",
-                transition: "all 500ms ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                },
-              }}
-            />
+            <Link to="#projects" className={css({ textDecoration: "none" })}>
+              <Button
+                css={{
+                  borderRadius: "100%",
+                  marginTop: "15px",
+                  minWidth: "40px !important",
+                  transition: "all 500ms ease",
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                  },
+                }}
+              >
+                <i className="fa fa-arrow-down" aria-hidden="true" />
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </Container>
