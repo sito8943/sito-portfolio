@@ -2,18 +2,19 @@
 import { motion } from "framer-motion";
 
 // @nextui-org
-import { Container, Text } from "@nextui-org/react";
+import { Container, Link, Text } from "@nextui-org/react";
 
-// sito components
-import SitoContainer from "sito-container";
+// @mui/icons-material
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 // own components
-import Card from "../components/Card/Card";
+import Card from "../../components/Card/Card";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
-const SideProjects = () => {
+const Projects = () => {
   const { languageState } = useLanguage();
 
   const container = {
@@ -37,14 +38,14 @@ const SideProjects = () => {
   };
 
   return (
-    <SitoContainer
+    <Container
       justify="center"
       alignItems="center"
       display="flex"
-      sx={{ padding: "100px 0", minHeight: "100vh", background: "#222" }}
+      css={{ padding: "100px 0", minHeight: "100vh" }}
+      id="projects"
     >
       <Container
-        id="side-projects"
         justify="center"
         alignItems="center"
         display="flex"
@@ -68,14 +69,22 @@ const SideProjects = () => {
         >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.SideProjects.Title}
+              {languageState.texts.Projects.Title}
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.SideProjects.Text}</Text>
-          </motion.div>
-          <motion.div variants={item}>
-            <Text>{languageState.texts.SideProjects.CallMe}</Text>
+            <Text css={{ textAlign: "center" }}>
+              {languageState.texts.Projects.Text}
+              <Link
+                href={languageState.texts.About.Github.Link}
+                rel="noreferrer"
+                target="_blank"
+                css={{ margin: "auto" }}
+              >
+                {languageState.texts.Projects.SeeMore}
+                <OpenInNewIcon sx={{ marginLeft: "5px", fontSize: "18px" }} />
+              </Link>
+            </Text>
           </motion.div>
           <Container
             justify="center"
@@ -90,7 +99,7 @@ const SideProjects = () => {
               },
             }}
           >
-            {languageState.texts.SideProjects.Projects.map((item) => (
+            {languageState.texts.Projects.Projects.map((item) => (
               <motion.div variants={item} key={item.Title}>
                 <Card
                   image={item.Image}
@@ -104,8 +113,8 @@ const SideProjects = () => {
           </Container>
         </motion.div>
       </Container>
-    </SitoContainer>
+    </Container>
   );
 };
 
-export default SideProjects;
+export default Projects;

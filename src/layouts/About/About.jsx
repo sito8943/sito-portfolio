@@ -8,26 +8,26 @@ import { motion } from "framer-motion";
 import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
 
 // @mui/icons-material
-import JavascriptIcon from "@mui/icons-material/Javascript";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-
-// @emotion/css
-import { css } from "@emotion/css";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 // sito components
 import SitoContainer from "sito-container";
 
 // own components
-import Card from "../components/Card/Card";
-import Modal from "../components/Modal/Modal";
+import Card from "../../components/Card/Card";
+import Modal from "../../components/Modal/Modal";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 // images
-import code from "../assets/images/coding.webp";
-import trip from "../assets/images/trips.webp";
-import piano from "../assets/images/piano.webp";
+import code from "../../assets/images/coding.webp";
+import trip from "../../assets/images/trips.webp";
+import piano from "../../assets/images/piano.webp";
+import FloatingIcons from "./components/FloatingIcons";
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -35,17 +35,6 @@ const About = () => {
   const [show, setShow] = useState("Me");
 
   const { setVisible, bindings } = useModal();
-
-  const containerImage = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.3,
-      },
-    },
-  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -75,6 +64,7 @@ const About = () => {
 
   return (
     <SitoContainer
+      id="about"
       justify="center"
       alignItems="center"
       display="flex"
@@ -85,40 +75,7 @@ const About = () => {
         position: "relative",
       }}
     >
-      <motion.div
-        variants={containerImage}
-        initial="hidden"
-        animate="visible"
-        viewport={{ once: true }}
-      >
-        <motion.div
-          variants={item}
-          className={`scale-animation ${css({ left: "5%" })}`}
-        >
-          <SitoContainer sx={{ transform: "rotate(-30deg)" }}>
-            <JavascriptIcon
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
-            />
-          </SitoContainer>
-        </motion.div>
-        <motion.div
-          variants={item}
-          className={`scale-animation ${css({
-            width: "100px",
-            height: "100px",
-            right: "5%",
-            top: "15%",
-          })}`}
-        >
-          <SitoContainer sx={{ transform: "rotate(30deg)" }}>
-            <AddAPhotoIcon
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
-            />
-          </SitoContainer>
-        </motion.div>
-      </motion.div>
+      <FloatingIcons />
       <Modal
         onClose={() => setVisible(false)}
         bindings={bindings}
@@ -126,7 +83,6 @@ const About = () => {
         content={languageState.texts.About[show].Content}
       />
       <Container
-        id="about"
         justify="center"
         alignItems="center"
         display="flex"
@@ -231,7 +187,7 @@ const About = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <i className="fa fa-github" aria-hidden="true" />
+                <GitHubIcon sx={{ fontSize: "30px" }} />
               </Link>
             </motion.div>
 
@@ -241,7 +197,7 @@ const About = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <i className="fa fa-instagram" aria-hidden="true" />
+                <InstagramIcon sx={{ fontSize: "30px" }} />
               </Link>
             </motion.div>
             <motion.div variants={item}>
@@ -250,7 +206,7 @@ const About = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <i className="fa fa-twitter" aria-hidden="true" />
+                <TwitterIcon sx={{ fontSize: "30px" }} />
               </Link>
             </motion.div>
             <motion.div variants={item}>
@@ -259,7 +215,7 @@ const About = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <i className="fa fa-facebook" aria-hidden="true" />
+                <FacebookIcon sx={{ fontSize: "30px" }} />
               </Link>
             </motion.div>
           </Container>

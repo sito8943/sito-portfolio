@@ -16,7 +16,7 @@ import { css } from "@emotion/css";
 import { Container, Button, Text } from "@nextui-org/react";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 const Hero = () => {
   const { languageState } = useLanguage();
@@ -110,7 +110,6 @@ const Hero = () => {
         </motion.div>
       </motion.div>
       <Container
-        id="home"
         justify="center"
         alignItems="center"
         display="flex"

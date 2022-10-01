@@ -11,16 +11,13 @@ import OffCanvas from "../OffCanvas/OffCanvas";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
-import { useRoute } from "../../contexts/RouteProvider";
 
 const SitoNavbar = () => {
   const location = useLocation();
   const { languageState } = useLanguage();
 
-  const { isDark } = useTheme();
-
-  const [variant, setVariant] = useState("default");
-  const [activeColor, setActiveColor] = useState("primary");
+  const [variant] = useState("default");
+  const [activeColor] = useState("primary");
 
   const [activeLink, setActiveLink] = useState("#hero");
 
@@ -30,11 +27,7 @@ const SitoNavbar = () => {
   }, [location]);
 
   return (
-    <Navbar
-      isBordered={isDark}
-      variant="sticky"
-      css={{ div: { maxWidth: "100vw" } }}
-    >
+    <Navbar variant="sticky" css={{ div: { maxWidth: "100vw" } }}>
       <Navbar.Brand>
         MyLogo
         <Text b color="inherit" hideIn="xs">

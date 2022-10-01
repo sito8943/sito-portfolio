@@ -2,18 +2,18 @@
 import { motion } from "framer-motion";
 
 // @nextui-org
-import { Container, Link, Text } from "@nextui-org/react";
+import { Container, Text } from "@nextui-org/react";
 
-// @mui/icons-material
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+// sito components
+import SitoContainer from "sito-container";
 
 // own components
-import Card from "../components/Card/Card";
+import Card from "../../components/Card/Card";
 
 // contexts
-import { useLanguage } from "../contexts/LanguageProvider";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
-const Projects = () => {
+const SideProjects = () => {
   const { languageState } = useLanguage();
 
   const container = {
@@ -37,15 +37,14 @@ const Projects = () => {
   };
 
   return (
-    <Container
+    <SitoContainer
+      id="side-projects"
       justify="center"
       alignItems="center"
       display="flex"
-      css={{ padding: "100px 0", minHeight: "100vh" }}
-      id="projects"
+      sx={{ padding: "100px 0", minHeight: "100vh", background: "#222" }}
     >
       <Container
-        id="projects"
         justify="center"
         alignItems="center"
         display="flex"
@@ -69,20 +68,14 @@ const Projects = () => {
         >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.Projects.Title}
+              {languageState.texts.SideProjects.Title}
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>
-              {languageState.texts.Projects.Text}
-              <Link
-                href={languageState.texts.About.Github.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {languageState.texts.Projects.SeeMore}
-              </Link>
-            </Text>
+            <Text>{languageState.texts.SideProjects.Text}</Text>
+          </motion.div>
+          <motion.div variants={item}>
+            <Text>{languageState.texts.SideProjects.CallMe}</Text>
           </motion.div>
           <Container
             justify="center"
@@ -97,7 +90,7 @@ const Projects = () => {
               },
             }}
           >
-            {languageState.texts.Projects.Projects.map((item) => (
+            {languageState.texts.SideProjects.Projects.map((item) => (
               <motion.div variants={item} key={item.Title}>
                 <Card
                   image={item.Image}
@@ -111,8 +104,8 @@ const Projects = () => {
           </Container>
         </motion.div>
       </Container>
-    </Container>
+    </SitoContainer>
   );
 };
 
-export default Projects;
+export default SideProjects;

@@ -6,10 +6,10 @@ import Navbar from "../components/Navbar/Navbar";
 import ToTop from "../components/ToTop/ToTop";
 
 // layouts
-import Hero from "../layouts/Hero";
-import Projects from "../layouts/Projects";
-import About from "../layouts/About";
-import SideProjects from "../layouts/SideProjects";
+import Hero from "../layouts/Hero/Hero";
+import Projects from "../layouts/Projects/Projects";
+import About from "../layouts/About/About";
+import SideProjects from "../layouts/SideProjects/SideProjects";
 
 const Home = () => {
   return (
