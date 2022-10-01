@@ -2,9 +2,6 @@
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
 
-// @nextui-org
-import { Link } from "@nextui-org/react";
-
 // framer-motion
 import { motion } from "framer-motion";
 
@@ -52,12 +49,10 @@ const FloatingIcons = () => {
         variants={item}
         className={`scale-animation ${css({ left: "15%", bottom: "15%" })}`}
       >
-        <Link>
-          <AddReactionIcon
-            className="float-y"
-            sx={{ fontSize: "4rem", color: "#0fd908", opacity: 0.5 }}
-          />
-        </Link>
+        <AddReactionIcon
+          className="float-y"
+          sx={{ fontSize: "4rem", color: "#0fd908", opacity: 0.5 }}
+        />
       </motion.div>
     </motion.div>
   );
