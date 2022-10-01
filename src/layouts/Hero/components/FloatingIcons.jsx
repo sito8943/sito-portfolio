@@ -55,17 +55,20 @@ const FloatingIcons = () => {
       </motion.div>
       <motion.div
         variants={item}
-        className={`scale-animation top-20 ${css({
+        className={`scale-animation ${css({
           width: "100px",
           height: "100px",
           right: "5%",
+          top: "30%",
         })}`}
       >
         <div className={css({ transform: "rotate(30deg)" })}>
-          <PianoIcon
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
-          />
+          <Link href="#about">
+            <PianoIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+            />
+          </Link>
         </div>
       </motion.div>
       <motion.div
@@ -78,10 +81,12 @@ const FloatingIcons = () => {
         })}`}
       >
         <div className={css({ transform: "rotate(10deg)" })}>
-          <LaptopIcon
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#0fd908", opacity: 0.5 }}
-          />
+          <Link href="#projects">
+            <LaptopIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#0fd908", opacity: 0.5 }}
+            />
+          </Link>
         </div>
       </motion.div>
     </motion.div>

@@ -5,6 +5,9 @@ import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 // sito components
 import SitoContainer from "sito-container";
 
+// @nextui-org
+import { Link } from "@nextui-org/react";
+
 // framer-motion
 import { motion } from "framer-motion";
 
@@ -43,10 +46,16 @@ const FloatingIcons = () => {
         className={`scale-animation ${css({ left: "5%" })}`}
       >
         <SitoContainer sx={{ transform: "rotate(-30deg)" }}>
-          <JavascriptIcon
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
-          />
+          <Link
+            href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+            target="_blank"
+            rel="noopener"
+          >
+            <JavascriptIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
+            />
+          </Link>
         </SitoContainer>
       </motion.div>
       <motion.div
