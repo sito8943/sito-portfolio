@@ -11,7 +11,12 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   type: "dark",
   theme: {
-    colors: { background: "#222333", alterBackground: "#f0f8ff" },
+    colors: {
+      background: "#222333",
+      background2d: "#222222",
+      alterBackground: "#f0f8ff",
+    },
+
     // * colors: {...}, // optional
   },
 });

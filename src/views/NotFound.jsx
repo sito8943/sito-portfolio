@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 // sito components
 import SitoContainer from "sito-container";
 
+// @mui/icons-material
+import ErrorIcon from "@mui/icons-material/Error";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import BlockIcon from "@mui/icons-material/Block";
+
 // @nextui-org
 import { Button, Text } from "@nextui-org/react";
 
@@ -72,13 +77,9 @@ const NotFound = () => {
             className={`scale-animation ${css({ left: "5%" })}`}
           >
             <div className={css({ transform: "rotate(-30deg)" })}>
-              <i
-                className={`fa fa-exclamation-triangle float-y ${css({
-                  fontSize: "6rem",
-                  color: "#f53b3b",
-                  opacity: 0.5,
-                })}`}
-                aria-hidden="true"
+              <ErrorIcon
+                className="float-y"
+                sx={{ fontSize: "6rem", color: "#f53b3b", opacity: 0.5 }}
               />
             </div>
           </motion.div>
@@ -91,13 +92,9 @@ const NotFound = () => {
             })}`}
           >
             <div className={css({ transform: "rotate(30deg)" })}>
-              <i
-                className={`fa fa-thumbs-o-down float-y ${css({
-                  fontSize: "6rem",
-                  color: "#9494f5",
-                  opacity: 0.5,
-                })}`}
-                aria-hidden="true"
+              <ThumbDownIcon
+                className="float-y"
+                sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
               />
             </div>
           </motion.div>
@@ -110,13 +107,9 @@ const NotFound = () => {
               right: "20%",
             })}`}
           >
-            <i
-              className={`fa fa-ban float-y ${css({
-                fontSize: "6rem",
-                color: "#d908d9",
-                opacity: 0.5,
-              })}`}
-              aria-hidden="true"
+            <BlockIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
             />
           </motion.div>
         </motion.div>

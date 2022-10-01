@@ -74,10 +74,10 @@
         }
       ]
     },
-    "TestYou": {
+    "SideProjects": {
       "Title": "Mis proyectos",
-      "Text": "¿Por qué no intentas implementar estos pequeños proyectos?",
-      "CallMe": "Puedes usar la herramienta que quieras, apenas termines no dudes en mostrármelo",
+      "Text": "Todos los domingos decido crear side projects (proyectos paralelos)",
+      "CallMe": "Pequeños proyectos para experimentar nuevas herramientas",
       "Projects": [
         {
           "Title": "ToDo",

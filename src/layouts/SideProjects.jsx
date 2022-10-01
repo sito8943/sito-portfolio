@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 // @nextui-org
 import { Container, Text } from "@nextui-org/react";
 
+// sito components
+import SitoContainer from "sito-container";
+
 // own components
 import Card from "../components/Card/Card";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
 
-const TestYou = () => {
+const SideProjects = () => {
   const { languageState } = useLanguage();
 
   const container = {
@@ -34,14 +37,14 @@ const TestYou = () => {
   };
 
   return (
-    <Container
+    <SitoContainer
       justify="center"
       alignItems="center"
       display="flex"
-      css={{ padding: "100px 0", minHeight: "100vh" }}
+      sx={{ padding: "100px 0", minHeight: "100vh", background: "#222" }}
     >
       <Container
-        id="testyou"
+        id="side-projects"
         justify="center"
         alignItems="center"
         display="flex"
@@ -65,14 +68,14 @@ const TestYou = () => {
         >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.TestYou.Title}
+              {languageState.texts.SideProjects.Title}
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.TestYou.Text}</Text>
+            <Text>{languageState.texts.SideProjects.Text}</Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.TestYou.CallMe}</Text>
+            <Text>{languageState.texts.SideProjects.CallMe}</Text>
           </motion.div>
           <Container
             justify="center"
@@ -87,7 +90,7 @@ const TestYou = () => {
               },
             }}
           >
-            {languageState.texts.TestYou.Projects.map((item) => (
+            {languageState.texts.SideProjects.Projects.map((item) => (
               <motion.div variants={item} key={item.Title}>
                 <Card
                   image={item.Image}
@@ -101,8 +104,8 @@ const TestYou = () => {
           </Container>
         </motion.div>
       </Container>
-    </Container>
+    </SitoContainer>
   );
 };
 
-export default TestYou;
+export default SideProjects;

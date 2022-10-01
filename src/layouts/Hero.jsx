@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 // framer-motion
 import { motion } from "framer-motion";
 
+// @mui/icons-material
+import FlightIcon from "@mui/icons-material/Flight";
+import LaptopIcon from "@mui/icons-material/Laptop";
+import PianoIcon from "@mui/icons-material/Piano";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
 // @nextui-org
-import { Container, Button, Text, Image } from "@nextui-org/react";
+import { Container, Button, Text } from "@nextui-org/react";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
-
-// images
-import fly from "../assets/images/floating/fly.png";
-import laptop from "../assets/images/floating/laptop.png";
 
 const Hero = () => {
   const { languageState } = useLanguage();
@@ -63,37 +64,48 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
         viewport={{ once: true }}
-        className={{ width: "100%", height: "100vh", position: "absolute" }}
       >
         <motion.div
           variants={item}
-          className={`scale-animation left-10 bottom-10 ${css({
-            width: "100px",
-            height: "100px",
-          })}`}
+          className={`scale-animation ${css({ left: "5%" })}`}
         >
-          <Image
-            src={fly}
-            alt="fly"
-            className="float-y"
-            objectFit="contain"
-            css={{ width: "100px", height: "100px" }}
-          />
+          <div className={css({ transform: "rotate(-30deg)" })}>
+            <FlightIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
+            />
+          </div>
         </motion.div>
         <motion.div
           variants={item}
-          className={`scale-animation top-20 right-10 ${css({
+          className={`scale-animation top-20 ${css({
             width: "100px",
             height: "100px",
+            right: "5%",
           })}`}
         >
-          <Image
-            src={laptop}
-            alt="laptop"
-            className="float-y"
-            objectFit="contain"
-            css={{ width: "100px", height: "100px" }}
-          />
+          <div className={css({ transform: "rotate(30deg)" })}>
+            <PianoIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+            />
+          </div>
+        </motion.div>
+        <motion.div
+          variants={item}
+          className={`scale-animation ${css({
+            width: "100px",
+            height: "100px",
+            bottom: "4%",
+            right: "20%",
+          })}`}
+        >
+          <div className={css({ transform: "rotate(10deg)" })}>
+            <LaptopIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#0fd908", opacity: 0.5 }}
+            />
+          </div>
         </motion.div>
       </motion.div>
       <Container

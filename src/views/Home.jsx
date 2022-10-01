@@ -9,7 +9,7 @@ import ToTop from "../components/ToTop/ToTop";
 import Hero from "../layouts/Hero";
 import Projects from "../layouts/Projects";
 import About from "../layouts/About";
-import TestYou from "../layouts/TestYou";
+import SideProjects from "../layouts/SideProjects";
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <Hero />
       <About />
       <Projects />
-      <TestYou />
+      <SideProjects />
     </SitoContainer>
   );
 };

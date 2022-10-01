@@ -7,6 +7,16 @@ import { motion } from "framer-motion";
 // @nextui-org
 import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
 
+// @mui/icons-material
+import JavascriptIcon from "@mui/icons-material/Javascript";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+
+// @emotion/css
+import { css } from "@emotion/css";
+
+// sito components
+import SitoContainer from "sito-container";
+
 // own components
 import Card from "../components/Card/Card";
 import Modal from "../components/Modal/Modal";
@@ -25,6 +35,17 @@ const About = () => {
   const [show, setShow] = useState("Me");
 
   const { setVisible, bindings } = useModal();
+
+  const containerImage = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -53,15 +74,51 @@ const About = () => {
   };
 
   return (
-    <Container
+    <SitoContainer
       justify="center"
       alignItems="center"
       display="flex"
-      css={{
+      sx={{
         padding: "100px 0",
         minHeight: "100vh",
+        background: "#222222",
+        position: "relative",
       }}
     >
+      <motion.div
+        variants={containerImage}
+        initial="hidden"
+        animate="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          variants={item}
+          className={`scale-animation ${css({ left: "5%" })}`}
+        >
+          <SitoContainer sx={{ transform: "rotate(-30deg)" }}>
+            <JavascriptIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
+            />
+          </SitoContainer>
+        </motion.div>
+        <motion.div
+          variants={item}
+          className={`scale-animation ${css({
+            width: "100px",
+            height: "100px",
+            right: "5%",
+            top: "15%",
+          })}`}
+        >
+          <SitoContainer sx={{ transform: "rotate(30deg)" }}>
+            <AddAPhotoIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+            />
+          </SitoContainer>
+        </motion.div>
+      </motion.div>
       <Modal
         onClose={() => setVisible(false)}
         bindings={bindings}
@@ -208,7 +265,7 @@ const About = () => {
           </Container>
         </motion.div>
       </Container>
-    </Container>
+    </SitoContainer>
   );
 };
 
