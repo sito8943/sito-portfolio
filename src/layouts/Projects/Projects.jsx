@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import { Container, Link, Text } from "@nextui-org/react";
 
 // @mui/icons-material
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 // own components
+import Section from "../../components/Section/Section";
+import FloatingIcons from "./components/FloatingIcons";
 import Card from "../../components/Card/Card";
 
 // contexts
@@ -38,13 +39,7 @@ const Projects = () => {
   };
 
   return (
-    <Container
-      justify="center"
-      alignItems="center"
-      display="flex"
-      css={{ padding: "100px 0", minHeight: "100vh" }}
-      id="projects"
-    >
+    <Section id="projects">
       <Container
         justify="center"
         alignItems="center"
@@ -61,6 +56,7 @@ const Projects = () => {
           },
         }}
       >
+        <FloatingIcons />
         <motion.div
           variants={container}
           initial="hidden"
@@ -113,7 +109,7 @@ const Projects = () => {
           </Container>
         </motion.div>
       </Container>
-    </Container>
+    </Section>
   );
 };
 

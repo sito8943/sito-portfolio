@@ -13,12 +13,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-// sito components
-import SitoContainer from "sito-container";
-
 // own components
-import Card from "../../components/Card/Card";
+import FloatingIcons from "./components/FloatingIcons";
+import Section from "../../components/Section/Section";
 import Modal from "../../components/Modal/Modal";
+import Card from "../../components/Card/Card";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -27,7 +26,6 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import code from "../../assets/images/coding.webp";
 import trip from "../../assets/images/trips.webp";
 import piano from "../../assets/images/piano.webp";
-import FloatingIcons from "./components/FloatingIcons";
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -63,18 +61,7 @@ const About = () => {
   };
 
   return (
-    <SitoContainer
-      id="about"
-      justify="center"
-      alignItems="center"
-      display="flex"
-      sx={{
-        padding: "100px 0",
-        minHeight: "100vh",
-        background: "#222222",
-        position: "relative",
-      }}
-    >
+    <Section id="about" background="#222222">
       <FloatingIcons />
       <Modal
         onClose={() => setVisible(false)}
@@ -221,7 +208,7 @@ const About = () => {
           </Container>
         </motion.div>
       </Container>
-    </SitoContainer>
+    </Section>
   );
 };
 

@@ -8,6 +8,7 @@ import { Container, Text } from "@nextui-org/react";
 import SitoContainer from "sito-container";
 
 // own components
+import Section from "../../components/Section/Section";
 import Card from "../../components/Card/Card";
 
 // contexts
@@ -37,13 +38,7 @@ const SideProjects = () => {
   };
 
   return (
-    <SitoContainer
-      id="side-projects"
-      justify="center"
-      alignItems="center"
-      display="flex"
-      sx={{ padding: "100px 0", minHeight: "100vh", background: "#222" }}
-    >
+    <Section id="side-projects" background="#222">
       <Container
         justify="center"
         alignItems="center"
@@ -104,7 +99,7 @@ const SideProjects = () => {
           </Container>
         </motion.div>
       </Container>
-    </SitoContainer>
+    </Section>
   );
 };
 
