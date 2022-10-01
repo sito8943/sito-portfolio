@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 // @emotion/css
 import { css } from "@emotion/css";
 
+// @mui/icons-material
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 // @nextui-org
 import { Button } from "@nextui-org/react";
 
@@ -42,14 +45,15 @@ const ToTop = () => {
           right: "10px",
           borderRadius: "100%",
           marginTop: "15px",
-          minWidth: "40px !important",
+          minWidth: "0px !important",
+          width: "40px",
           transition: "all 500ms ease",
           "&:hover": {
             transform: "translateY(-5px)",
           },
         }}
       >
-        <i className="fa fa-arrow-up" aria-hidden="true" />
+        <ArrowUpwardIcon />
       </Button>
     </Link>
   );

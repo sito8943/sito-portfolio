@@ -9,22 +9,23 @@
         {
           "id": "home",
           "label": "Inico",
-          "to": "#"
+          "to": "#hero"
+        },
+        {
+          "id": "about",
+          "label": "Acerca de Mí",
+          "to": "#about"
         },
         {
           "id": "projects",
           "label": "Proyectos",
           "to": "#projects"
         },
-        {
-          "id": "about",
-          "label": "Acerca de",
-          "to": "#about"
-        },
+
         {
           "id": "contact",
-          "label": "Contacto",
-          "to": "#contact"
+          "label": "Mis proyectos",
+          "to": "#side-projects"
         }
       ]
     },

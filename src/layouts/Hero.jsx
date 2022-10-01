@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // @mui/icons-material
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import FlightIcon from "@mui/icons-material/Flight";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import PianoIcon from "@mui/icons-material/Piano";
@@ -146,14 +147,15 @@ const Hero = () => {
                 css={{
                   borderRadius: "100%",
                   marginTop: "15px",
-                  minWidth: "40px !important",
+                  minWidth: "0px !important",
+                  width: "40px",
                   transition: "all 500ms ease",
                   "&:hover": {
                     transform: "translateY(-5px)",
                   },
                 }}
               >
-                <i className="fa fa-arrow-down" aria-hidden="true" />
+                <ArrowDownwardIcon />
               </Button>
             </Link>
           </motion.div>

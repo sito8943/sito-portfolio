@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 // @nextui-org
 import { Container, Link, Text } from "@nextui-org/react";
 
+// @mui/icons-material
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 // own components
 import Card from "../components/Card/Card";
 

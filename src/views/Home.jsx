@@ -13,9 +13,9 @@ import SideProjects from "../layouts/SideProjects";
 
 const Home = () => {
   return (
-    <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
+    <SitoContainer flexDirection="column" sx={{ width: "100%" }}>
       <ToTop />
-      {/* <Navbar /> */}
+      <Navbar />
       <Hero />
       <About />
       <Projects />
