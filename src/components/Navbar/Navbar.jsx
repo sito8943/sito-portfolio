@@ -26,7 +26,7 @@ const SitoNavbar = () => {
 
   useEffect(() => {
     const { hash } = location;
-    setActiveLink(hash);
+    setActiveLink(hash.length ? hash : activeLink);
   }, [location]);
 
   return (

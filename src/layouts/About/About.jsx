@@ -1,9 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 
-// framer-motion
-import { motion } from "framer-motion";
-
 // @nextui-org
 import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
 
@@ -26,6 +23,7 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import code from "../../assets/images/coding.webp";
 import trip from "../../assets/images/trips.webp";
 import piano from "../../assets/images/piano.webp";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -34,30 +32,25 @@ const About = () => {
 
   const { setVisible, bindings } = useModal();
 
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   const showModal = (which) => {
     setShow(which);
     if (show === "") setVisible(false);
     else setVisible(true);
+  };
+
+  const icons = [
+    <GitHubIcon sx={{ fontSize: "30px" }} />,
+    <InstagramIcon sx={{ fontSize: "30px" }} />,
+    <TwitterIcon sx={{ fontSize: "30px" }} />,
+    <FacebookIcon sx={{ fontSize: "30px" }} />,
+  ];
+
+  const images = [code, trip, piano];
+
+  const parseDelay = (i, delay) => {
+    let newDelay = delay;
+    for (let j = 0; j < i; j += 1) newDelay += 0.1;
+    return newDelay;
   };
 
   return (
@@ -84,129 +77,71 @@ const About = () => {
           },
         }}
       >
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          viewport={{ once: true }}
+        <InViewComponent>
+          <Text h2>{languageState.texts.About.Title}</Text>
+        </InViewComponent>
+        <InViewComponent delay="0.4s">
+          <Avatar
+            src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
+            css={{ size: "$20", margin: "10px 0" }}
+          />
+        </InViewComponent>
+        <Container
+          justify="center"
+          display="flex"
+          wrap="wrap"
+          css={{
+            flexDirection: "row !important",
+            div: {
+              display: "flex",
+              flexDirection: "row",
+            },
+          }}
         >
-          <motion.div variants={item}>
-            <Text h2>{languageState.texts.About.Title}</Text>
-          </motion.div>
-          <motion.div variants={item}>
-            <Avatar
-              src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
-              css={{ size: "$20", margin: "10px 0" }}
-            />
-          </motion.div>
-          <motion.div variants={item}>
-            <Text h4 css={{ textAlign: "center", margin: "10px 0" }}>
-              {languageState.texts.About.Subtitle}
-            </Text>
-          </motion.div>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-          >
-            <motion.div variants={item}>
+          {languageState.texts.About.Cards.map((item, i) => (
+            <InViewComponent delay={`${parseDelay(i, 0.4)}s`}>
               <Card
-                image={code}
-                alt="about"
-                onClick={() => showModal("Me")}
-                text={languageState.texts.About.Me.Text}
-                more={languageState.texts.About.Me.More}
+                image={images[i]}
+                alt={item.Alt}
+                onClick={() => showModal(item.Id)}
+                text={item.Text}
+                more={item.More}
               />
-            </motion.div>
-            <motion.div variants={item}>
-              <Card
-                alt="optional"
-                image={trip}
-                onClick={() => showModal("Optional")}
-                text={languageState.texts.About.Optional.Text}
-                more={languageState.texts.About.Optional.More}
-              />
-            </motion.div>
-            <motion.div variants={item}>
-              <Card
-                image={piano}
-                alt="free-time"
-                onClick={() => showModal("FreeTime")}
-                text={languageState.texts.About.FreeTime.Text}
-                more={languageState.texts.About.FreeTime.More}
-              />
-            </motion.div>
-          </Container>
-          <motion.div variants={item}>
-            <Text css={{ textAlign: "center", marginBottom: "10px" }}>
-              {languageState.texts.About.Meet}
-            </Text>
-          </motion.div>
-          <Container
-            display="flex"
-            justify="center"
-            css={{
-              flexDirection: "row !important",
-              gap: "15px",
-              a: {
-                fontSize: "30px",
-                marginRight: "10px",
-                transition: "all 500ms ease",
-                "&:hover": { transform: "translateY(-5px)" },
-              },
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-            wrap="wrap"
-          >
-            <motion.div variants={item}>
-              <Link
-                href={languageState.texts.About.Github.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <GitHubIcon sx={{ fontSize: "30px" }} />
+            </InViewComponent>
+          ))}
+        </Container>
+        <InViewComponent delay="0.8s">
+          <Text css={{ textAlign: "center", marginBottom: "10px" }}>
+            {languageState.texts.About.Meet}
+          </Text>
+        </InViewComponent>
+        <Container
+          display="flex"
+          justify="center"
+          css={{
+            flexDirection: "row !important",
+            gap: "15px",
+            a: {
+              fontSize: "30px",
+              marginRight: "10px",
+              transition: "all 500ms ease",
+              "&:hover": { transform: "translateY(-5px)" },
+            },
+            div: {
+              display: "flex",
+              flexDirection: "row",
+            },
+          }}
+          wrap="wrap"
+        >
+          {languageState.texts.About.Social.map((item, i) => (
+            <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.8)}s`}>
+              <Link href={item.Link} rel="noreferrer" target="_blank">
+                {icons[i]}
               </Link>
-            </motion.div>
-
-            <motion.div variants={item}>
-              <Link
-                href={languageState.texts.About.Instagram.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <InstagramIcon sx={{ fontSize: "30px" }} />
-              </Link>
-            </motion.div>
-            <motion.div variants={item}>
-              <Link
-                href={languageState.texts.About.Twitter.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <TwitterIcon sx={{ fontSize: "30px" }} />
-              </Link>
-            </motion.div>
-            <motion.div variants={item}>
-              <Link
-                href={languageState.texts.About.Facebook.Link}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <FacebookIcon sx={{ fontSize: "30px" }} />
-              </Link>
-            </motion.div>
-          </Container>
-        </motion.div>
+            </InViewComponent>
+          ))}
+        </Container>
       </Container>
     </Section>
   );
