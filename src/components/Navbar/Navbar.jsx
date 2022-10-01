@@ -3,8 +3,11 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// @mui/icons-material
+import MenuIcon from "@mui/icons-material/Menu";
+
 // @nextui-org
-import { Navbar, Text } from "@nextui-org/react";
+import { Navbar, Button, Text, Link } from "@nextui-org/react";
 
 // own components
 import OffCanvas from "../OffCanvas/OffCanvas";
@@ -28,10 +31,14 @@ const SitoNavbar = () => {
 
   return (
     <Navbar css={{ position: "fixed", div: { maxWidth: "100vw" } }}>
+      {/* <Button light>
+        <MenuIcon />
+  </Button> */}
       <Navbar.Brand>
-        MyLogo
-        <Text b color="inherit" hideIn="xs">
-          ACME
+        <Text h3 b css={{ margin: 0 }}>
+          <Link color="error" href="/#">
+            {"<Sito />"}
+          </Link>
         </Text>
       </Navbar.Brand>
       <Navbar.Content activeColor={activeColor} hideIn="xs" variant={variant}>

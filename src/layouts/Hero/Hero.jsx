@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 // framer-motion
 import { motion } from "framer-motion";
 
@@ -10,7 +8,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { css } from "@emotion/css";
 
 // @nextui-org
-import { Container, Button, Text } from "@nextui-org/react";
+import { Container, Button, Text, Link } from "@nextui-org/react";
 
 // own components
 import FloatingIcons from "./components/FloatingIcons";
@@ -69,15 +67,14 @@ const Hero = () => {
         >
           <motion.div variants={item}>
             <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.Hero.Title}
-              <Link href="#about">{languageState.texts.Hero.Name}</Link>
+              <Link href="#about">{"<Sito />"}</Link>
             </Text>
           </motion.div>
           <motion.div variants={item}>
             <Text>{languageState.texts.Hero.Text}</Text>
           </motion.div>
           <motion.div variants={item}>
-            <Link to="#projects" className={css({ textDecoration: "none" })}>
+            <Link href="#projects" className={css({ textDecoration: "none" })}>
               <Button
                 css={{
                   borderRadius: "100%",
