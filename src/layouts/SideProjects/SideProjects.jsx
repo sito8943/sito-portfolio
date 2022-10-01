@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 // @nextui-org
 import { Container, Text } from "@nextui-org/react";
 
-// sito components
-import SitoContainer from "sito-container";
-
 // own components
+import FloatingIcons from "./FloatingIcons.jsx/FloatingIcons";
 import Section from "../../components/Section/Section";
 import Card from "../../components/Card/Card";
 
@@ -55,6 +53,7 @@ const SideProjects = () => {
           },
         }}
       >
+        <FloatingIcons />
         <motion.div
           variants={container}
           initial="hidden"
@@ -67,10 +66,14 @@ const SideProjects = () => {
             </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.SideProjects.Text}</Text>
+            <Text css={{ textAlign: "center" }}>
+              {languageState.texts.SideProjects.Text}
+            </Text>
           </motion.div>
           <motion.div variants={item}>
-            <Text>{languageState.texts.SideProjects.CallMe}</Text>
+            <Text css={{ textAlign: "center" }}>
+              {languageState.texts.SideProjects.CallMe}
+            </Text>
           </motion.div>
           <Container
             justify="center"

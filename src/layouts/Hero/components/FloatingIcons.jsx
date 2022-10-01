@@ -3,6 +3,9 @@ import FlightIcon from "@mui/icons-material/Flight";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import PianoIcon from "@mui/icons-material/Piano";
 
+// @nextui-org
+import { Link } from "@nextui-org/react";
+
 // framer-motion
 import { motion } from "framer-motion";
 
@@ -42,10 +45,12 @@ const FloatingIcons = () => {
         className={`scale-animation ${css({ left: "5%" })}`}
       >
         <div className={css({ transform: "rotate(-30deg)" })}>
-          <FlightIcon
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
-          />
+          <Link href="#about">
+            <FlightIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
+            />
+          </Link>
         </div>
       </motion.div>
       <motion.div

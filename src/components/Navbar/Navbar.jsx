@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // @nextui-org
-import { Navbar, Button, Link, Text, useTheme } from "@nextui-org/react";
+import { Navbar, Text } from "@nextui-org/react";
 
 // own components
 import OffCanvas from "../OffCanvas/OffCanvas";
@@ -27,7 +27,7 @@ const SitoNavbar = () => {
   }, [location]);
 
   return (
-    <Navbar variant="sticky" css={{ div: { maxWidth: "100vw" } }}>
+    <Navbar css={{ position: "fixed", div: { maxWidth: "100vw" } }}>
       <Navbar.Brand>
         MyLogo
         <Text b color="inherit" hideIn="xs">
