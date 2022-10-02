@@ -25,9 +25,9 @@ import nextui from "../../assets/images/logos/nextui.webp";
 import mongodb from "../../assets/images/logos/mongodb.webp";
 import firebase from "../../assets/images/logos/firebase.webp";
 // skills
-import jsSkills from "../../assets/images/skills/js.webp";
-import reactSkills from "../../assets/images/skills/react.webp";
-import htmlCss from "../../assets/images/skills/react.webp";
+import jsSkills from "../../assets/images/skills/js.png";
+import reactSkills from "../../assets/images/skills/react.jpg";
+import htmlCss from "../../assets/images/skills/htmlCss.jpg";
 
 const Skills = () => {
   const navigate = useNavigate();
@@ -92,13 +92,18 @@ const Skills = () => {
           }}
         >
           {languageState.texts.Skills.List.map((item, i) => (
-            <InViewComponent delay={`${parseDelay(i, 0.5)}s`}>
-              <Card
-                image={images[i]}
-                alt={item.Alt}
-                text={item.Text}
-                more={item.Age}
-              />
+            <InViewComponent
+              className="bottom"
+              delay={`${parseDelay(i, 0.5)}s`}
+            >
+              <Link href={item.Link} target="_blank" rel="noopener">
+                <Card
+                  image={images[i]}
+                  alt={item.Alt}
+                  text={item.Text}
+                  more={item.Age}
+                />
+              </Link>
             </InViewComponent>
           ))}
         </Container>

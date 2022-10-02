@@ -9,6 +9,11 @@ body {
   scroll-behavior: smooth;
 }
 
+.bottom,
+.bottom img {
+  object-position: bottom !important;
+}
+
 html,
 body {
   transition: background 400ms ease;
