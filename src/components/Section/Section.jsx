@@ -1,13 +1,16 @@
+import { forwardRef } from "react";
+
 import PropTypes from "prop-types";
 
 // sito components
 import SitoContainer from "sito-container";
 
-const Section = (props) => {
+const Section = forwardRef((ref, props) => {
   const { id, background, children } = props;
 
   return (
     <SitoContainer
+      ref={ref}
       id={id}
       justifyContent="center"
       alignItems="center"
@@ -21,7 +24,7 @@ const Section = (props) => {
       {children}
     </SitoContainer>
   );
-};
+});
 
 Section.defaultProps = {
   id: "",

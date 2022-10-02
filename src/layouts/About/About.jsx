@@ -1,5 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
+// framer-motion
+import { useInView } from "framer-motion";
 
 // @nextui-org
 import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
@@ -31,6 +34,9 @@ import piano from "../../assets/images/piano.webp";
 const About = () => {
   const { languageState } = useLanguage();
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const [show, setShow] = useState("Me");
 
   const { setVisible, bindings } = useModal();
@@ -50,8 +56,13 @@ const About = () => {
 
   const images = [code, trip, piano];
 
+  useEffect(() => {
+    
+    if ()
+  }, [isInView]);
+
   return (
-    <Section id="about" background="#222222">
+    <Section ref={ref} id="about" background="#222222">
       <FloatingIcons />
       <Modal
         onClose={() => setVisible(false)}
