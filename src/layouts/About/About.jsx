@@ -11,10 +11,14 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 // own components
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 import Modal from "../../components/Modal/Modal";
 import Card from "../../components/Card/Card";
+
+// utils
+import { parseDelay } from "../../utils/functions";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -23,7 +27,6 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import code from "../../assets/images/coding.webp";
 import trip from "../../assets/images/trips.webp";
 import piano from "../../assets/images/piano.webp";
-import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -46,12 +49,6 @@ const About = () => {
   ];
 
   const images = [code, trip, piano];
-
-  const parseDelay = (i, delay) => {
-    let newDelay = delay;
-    for (let j = 0; j < i; j += 1) newDelay += 0.1;
-    return newDelay;
-  };
 
   return (
     <Section id="about" background="#222222">
