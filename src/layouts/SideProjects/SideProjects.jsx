@@ -30,7 +30,6 @@ const SideProjects = () => {
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       const sideProjectsTop = document.getElementById("side-projects");
-      console.log(sideProjectsTop.offsetTop, top);
       if (isInView) {
         if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
         else navigate("#projects");

@@ -53,6 +53,11 @@ const Skills = () => {
     };
   }, [onScroll]);
 
+  const years = (start) => {
+    const year = new Date().getFullYear();
+    return year - start;
+  };
+
   return (
     <Section id="skills">
       <FloatingIcons />
@@ -101,7 +106,7 @@ const Skills = () => {
                   image={images[i]}
                   alt={item.Alt}
                   text={item.Text}
-                  more={item.Age}
+                  more={`${years(item.Start)}${item.Age}`}
                 />
               </Link>
             </InViewComponent>

@@ -290,19 +290,22 @@
           "Alt": "react-logo",
           "Link": "https://reactjs.org/",
           "Text": "ReactJs",
-          "Age": "3 años de experiencia"
+          "Start": 2019,
+          "Age": " años de experiencia"
         },
         {
           "Alt": "html-css-logo",
           "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
           "Text": "Html y Css",
-          "Age": "4 años de experiencia"
+          "Start": 2018,
+          "Age": " años de experiencia"
         },
         {
           "Alt": "javascript-logo",
           "Link": "https://es.wikipedia.org/wiki/JavaScript",
           "Text": "JavaScript",
-          "Age": "4 años de experiencia"
+          "Start": 2018,
+          "Age": " años de experiencia"
         }
       ],
       "Other": "Otras habilidades",

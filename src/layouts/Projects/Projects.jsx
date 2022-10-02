@@ -33,7 +33,6 @@ const Projects = () => {
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       const aboutTop = document.getElementById("projects");
-      console.log(aboutTop.offsetTop, top);
       if (isInView) {
         if (aboutTop.offsetTop - 77 < top) navigate("#projects");
         else navigate("#skills");
