@@ -42,6 +42,7 @@
       "Projects": [
         {
           "Title": "Dogma Transportation",
+          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
           "Text": "Compañia de brokers y cursos para camioneros",
           "Link": "https://inmersoft-dev.github.io/broker-company/",
           "See": "Ver"
@@ -50,6 +51,7 @@
           "Title": "Digital Menu",
           "Text": "Menú digital para cualquier tipo de catálogos",
           "Link": "https://inmersoft-dev.github.io/digital-menu/",
+          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
           "See": "Ver"
         },
         {

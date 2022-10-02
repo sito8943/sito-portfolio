@@ -56,19 +56,22 @@ const About = () => {
 
   const images = [code, trip, piano];
 
-  const [scrollOffset, setScrollOffset] = useState(0);
+  const onScroll = useCallback(
+    (e) => {
+      const top = window.pageYOffset || document.documentElement.scrollTop;
+      const aboutTop = document.getElementById("about");
+      if (aboutTop.offsetTop - 77 < top) navigate("#about");
+      else navigate("#hero");
+    },
+    [navigate]
+  );
 
   useEffect(() => {
-    const top = window.pageYOffset || document.documentElement.scrollTop;
-    const aboutTop = document.getElementById("about");
-    console.log(aboutTop.offsetTop, top);
-    if (aboutTop.offsetTop < top) navigate("#about");
-    else navigate("#hero");
-  }, [scrollOffset]);
-
-  useEffect(() => {
-    
-  }, []);
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [onScroll]);
 
   return (
     <Section id="about" background="#222222">

@@ -1,3 +1,9 @@
+import { useCallback, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
+// framer-motion
+import { useInView } from "framer-motion";
+
 // @nextui-org
 import { Container, Text } from "@nextui-org/react";
 
@@ -14,10 +20,34 @@ import { parseDelay } from "../../utils/functions";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 const SideProjects = () => {
+  const navigate = useNavigate();
   const { languageState } = useLanguage();
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const onScroll = useCallback(
+    (e) => {
+      const top = window.pageYOffset || document.documentElement.scrollTop;
+      const sideProjectsTop = document.getElementById("side-projects");
+      console.log(sideProjectsTop.offsetTop, top);
+      if (isInView) {
+        if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
+        else navigate("#projects");
+      }
+    },
+    [navigate, isInView]
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [onScroll]);
+
   return (
-    <Section id="side-projects" background="#222">
+    <Section ref={ref} id="side-projects" background="#222">
       <Container
         justify="center"
         alignItems="center"
