@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 // framer-motion
-import { useInView } from "framer-motion";
 
 // @nextui-org
 import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
@@ -32,10 +32,8 @@ import trip from "../../assets/images/trips.webp";
 import piano from "../../assets/images/piano.webp";
 
 const About = () => {
+  const navigate = useNavigate();
   const { languageState } = useLanguage();
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const [show, setShow] = useState("Me");
 
@@ -47,22 +45,33 @@ const About = () => {
     else setVisible(true);
   };
 
+  const fontSize = { fontSize: "30px" };
+
   const icons = [
-    <GitHubIcon sx={{ fontSize: "30px" }} />,
-    <InstagramIcon sx={{ fontSize: "30px" }} />,
-    <TwitterIcon sx={{ fontSize: "30px" }} />,
-    <FacebookIcon sx={{ fontSize: "30px" }} />,
+    <GitHubIcon sx={fontSize} />,
+    <InstagramIcon sx={fontSize} />,
+    <TwitterIcon sx={fontSize} />,
+    <FacebookIcon sx={fontSize} />,
   ];
 
   const images = [code, trip, piano];
 
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const aboutTop = document.getElementById("about");
+    console.log(aboutTop.offsetTop, top);
+    if (aboutTop.offsetTop < top) navigate("#about");
+    else navigate("#hero");
+  }, [scrollOffset]);
+
   useEffect(() => {
     
-    if ()
-  }, [isInView]);
+  }, []);
 
   return (
-    <Section ref={ref} id="about" background="#222222">
+    <Section id="about" background="#222222">
       <FloatingIcons />
       <Modal
         onClose={() => setVisible(false)}

@@ -7,6 +7,8 @@ import { css } from "@emotion/css";
 // @nextui-org
 import { Container, Button, Text, Link } from "@nextui-org/react";
 
+// framer-motion
+
 // own components
 import InViewComponent from "../../components/InViewComponent/InViewComponent";
 import FloatingIcons from "./components/FloatingIcons";

@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 // sito components
 import SitoContainer from "sito-container";
 
-const Section = forwardRef((ref, props) => {
+const Section = forwardRef((props, ref) => {
   const { id, background, children } = props;
 
   return (
