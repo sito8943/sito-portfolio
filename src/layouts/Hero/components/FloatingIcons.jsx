@@ -48,7 +48,7 @@ const FloatingIcons = () => {
           <Link href="#about">
             <FlightIcon
               className="float-y"
-              sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
+              sx={{ fontSize: "6rem", color: "#088cd9", opacity: 0.5 }}
             />
           </Link>
         </div>

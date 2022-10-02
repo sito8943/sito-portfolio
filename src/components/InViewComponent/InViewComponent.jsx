@@ -9,7 +9,7 @@ import { useInView } from "framer-motion";
 import SitoContainer from "sito-container";
 
 const InViewComponent = (props) => {
-  const { children, delay } = props;
+  const { children, delay, className } = props;
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -17,6 +17,7 @@ const InViewComponent = (props) => {
   return (
     <SitoContainer
       ref={ref}
+      className={className}
       sx={{
         transform: isInView ? "translateY(0px)" : "translateY(20px)",
         opacity: isInView ? 1 : 0,
@@ -31,11 +32,13 @@ const InViewComponent = (props) => {
 InViewComponent.defaultProps = {
   children: <></>,
   delay: "0.3s",
+  className: undefined,
 };
 
 InViewComponent.propTypes = {
   children: PropTypes.node,
   delay: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default InViewComponent;
