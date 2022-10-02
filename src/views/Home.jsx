@@ -7,8 +7,9 @@ import ToTop from "../components/ToTop/ToTop";
 
 // layouts
 import Hero from "../layouts/Hero/Hero";
-import Projects from "../layouts/Projects/Projects";
 import About from "../layouts/About/About";
+import Skills from "../layouts/Skills/Skills";
+import Projects from "../layouts/Projects/Projects";
 import SideProjects from "../layouts/SideProjects/SideProjects";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Projects />
       <SideProjects />
     </SitoContainer>

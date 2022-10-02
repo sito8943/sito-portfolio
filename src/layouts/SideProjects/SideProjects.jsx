@@ -47,7 +47,7 @@ const SideProjects = () => {
   }, [onScroll]);
 
   return (
-    <Section ref={ref} id="side-projects" background="#222">
+    <Section ref={ref} id="side-projects">
       <Container
         justify="center"
         alignItems="center"

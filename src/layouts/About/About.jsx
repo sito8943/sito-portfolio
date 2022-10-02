@@ -2,16 +2,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-// framer-motion
-
 // @nextui-org
-import { useModal, Container, Avatar, Link, Text } from "@nextui-org/react";
-
-// @mui/icons-material
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { useModal, Container, Avatar, Text } from "@nextui-org/react";
 
 // own components
 import InViewComponent from "../../components/InViewComponent/InViewComponent";
@@ -44,15 +36,6 @@ const About = () => {
     if (show === "") setVisible(false);
     else setVisible(true);
   };
-
-  const fontSize = { fontSize: "30px" };
-
-  const icons = [
-    <GitHubIcon sx={fontSize} />,
-    <InstagramIcon sx={fontSize} />,
-    <TwitterIcon sx={fontSize} />,
-    <FacebookIcon sx={fontSize} />,
-  ];
 
   const images = [code, trip, piano];
 
@@ -127,38 +110,6 @@ const About = () => {
                 text={item.Text}
                 more={item.More}
               />
-            </InViewComponent>
-          ))}
-        </Container>
-        <InViewComponent delay="0.8s">
-          <Text css={{ textAlign: "center", marginBottom: "10px" }}>
-            {languageState.texts.About.Meet}
-          </Text>
-        </InViewComponent>
-        <Container
-          display="flex"
-          justify="center"
-          css={{
-            flexDirection: "row !important",
-            gap: "15px",
-            a: {
-              fontSize: "30px",
-              marginRight: "10px",
-              transition: "all 500ms ease",
-              "&:hover": { transform: "translateY(-5px)" },
-            },
-            div: {
-              display: "flex",
-              flexDirection: "row",
-            },
-          }}
-          wrap="wrap"
-        >
-          {languageState.texts.About.Social.map((item, i) => (
-            <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.8)}s`}>
-              <Link href={item.Link} rel="noreferrer" target="_blank">
-                {icons[i]}
-              </Link>
             </InViewComponent>
           ))}
         </Container>

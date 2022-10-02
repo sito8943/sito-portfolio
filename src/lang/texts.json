@@ -17,6 +17,11 @@
           "to": "#about"
         },
         {
+          "id": "skills",
+          "label": "Habilidades",
+          "to": "#skills"
+        },
+        {
           "id": "projects",
           "label": "Proyectos",
           "to": "#projects"
@@ -32,8 +37,20 @@
     "Hero": {
       "Title": "Mi Portfolio ",
       "Name": "Sito",
-      "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
-      "Text": "Vamos a comenzar un viaje..."
+      "Text": "Vamos a comenzar un viaje...",
+      "Social": [
+        { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
+        {
+          "Text": "Facebook",
+          "Link": "https://www.facebook.com/carlosandres.moragonzalez.7/"
+        },
+        {
+          "Text": "Instagram",
+          "Link": "https://www.instagram.com/sitonumbis/"
+        },
+        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" }
+      ],
+      "Meet": "Puedes encontrarme en:"
     },
     "Projects": {
       "Title": "Proyectos Profesionales",
@@ -239,7 +256,6 @@
           }
         ]
       },
-      "Meet": "Puedes encontrarme en:",
       "Cards": [
         {
           "Id": "Me",
@@ -263,20 +279,60 @@
       "Github": {
         "Link": "https://github.com/SitoNumbis"
       },
-      "Social": [
-        { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
-        {
-          "Text": "Facebook",
-          "Link": "https://www.facebook.com/carlosandres.moragonzalez.7/"
-        },
-        {
-          "Text": "Instagram",
-          "Link": "https://www.instagram.com/sitonumbis/"
-        },
-        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" }
-      ],
       "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
       "Button": "Contactar ahora"
+    },
+    "Skills": {
+      "Title": "Mis Habilidades",
+      "Body": "Como desarrollador de Frontend de aplicaciones web he potenciado las siguientes habilidades:",
+      "List": [
+        {
+          "Alt": "react-logo",
+          "Link": "https://reactjs.org/",
+          "Text": "ReactJs",
+          "Age": "3 años de experiencia"
+        },
+        {
+          "Alt": "html-css-logo",
+          "Link": "https://es.wikipedia.org/wiki/html",
+          "Text": "Html y Css",
+          "Age": "4 años de experiencia"
+        },
+        {
+          "Alt": "javascript-logo",
+          "Link": "https://es.wikipedia.org/wiki/JavaScript",
+          "Text": "JavaScript",
+          "Age": "4 años de experiencia"
+        }
+      ],
+      "Other": "Otras habilidades",
+      "Others": [
+        {
+          "Source": "node-logo",
+          "Alt": "node-logo",
+          "Link": "https://nodejs.org/"
+        },
+        {
+          "Source": "mui-logo",
+          "Alt": "materialui-logo",
+          "Link": "https://mui.com/"
+        },
+        {
+          "Source": "nextui-logo",
+          "Alt": "nextui-logo",
+          "Link": "https://nextui.org/"
+        },
+        {
+          "Source": "mongodb-logo",
+          "Alt": "mongodb-logo",
+          "Link": "https://www.mongodb.com/"
+        },
+        {
+          "Source": "firebase-logo",
+          "Alt": "firebase-logo",
+          "Link": "https://firebase.google.com/"
+        }
+      ]
     },
     "Contact": {
       "Title": "Título del contato",

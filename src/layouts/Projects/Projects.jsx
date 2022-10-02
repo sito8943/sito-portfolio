@@ -36,7 +36,7 @@ const Projects = () => {
       console.log(aboutTop.offsetTop, top);
       if (isInView) {
         if (aboutTop.offsetTop - 77 < top) navigate("#projects");
-        else navigate("#about");
+        else navigate("#skills");
       }
     },
     [navigate, isInView]
@@ -50,7 +50,7 @@ const Projects = () => {
   }, [onScroll]);
 
   return (
-    <Section ref={ref} id="projects">
+    <Section ref={ref} id="projects" background="#222">
       <Container
         justify="center"
         alignItems="center"

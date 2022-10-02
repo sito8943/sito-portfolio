@@ -1,5 +1,5 @@
 // @mui/icons-material
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import JavascriptIcon from "@mui/icons-material/Javascript";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -42,18 +42,19 @@ const FloatingIcons = () => {
     >
       <motion.div
         variants={item}
-        className={`scale-animation ${css({
-          width: "100px",
-          height: "100px",
-          right: "5%",
-          top: "15%",
-        })}`}
+        className={`scale-animation ${css({ left: "5%" })}`}
       >
-        <SitoContainer sx={{ transform: "rotate(30deg)" }}>
-          <AddAPhotoIcon
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
-          />
+        <SitoContainer sx={{ transform: "rotate(-30deg)" }}>
+          <Link
+            href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+            target="_blank"
+            rel="noopener"
+          >
+            <JavascriptIcon
+              className="float-y"
+              sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
+            />
+          </Link>
         </SitoContainer>
       </motion.div>
     </motion.div>
