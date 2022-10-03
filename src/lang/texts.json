@@ -37,6 +37,40 @@
     "Footer": {
       "SitoLib": "Documentación de "
     },
+    "Docs": {
+      "Title": "Components de <Sito />",
+      "Dependencies": "Dependencies:",
+      "Components": [
+        {
+          "id": "sito-container",
+          "title": "SitoContainer",
+          "description": "Contenedor súper flexible, muy parecido al Box de @mui, pero por defecto es flex",
+          "link": "https://www.npmjs.com/package/sito-container",
+          "dependencies": [
+            {
+              "name": "@emotion/css",
+              "version": "^11.9.0",
+              "link": "https://www.npmjs.com/package/@emotion/css"
+            },
+            {
+              "name": "react",
+              "version": "^18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "react-dom",
+              "version": "^18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-dom"
+            },
+            {
+              "name": "react-scripts",
+              "version": "^5.0.1",
+              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            }
+          ]
+        }
+      ]
+    },
     "Hero": {
       "Title": "Mi Portfolio ",
       "Name": "Sito",

@@ -39,6 +39,7 @@ const Footer = forwardRef((props, ref) => {
         padding: "10px 24px",
         height: "50px",
         background: "#222",
+        flexWrap: "wrap",
       }}
     >
       <SitoContainer>

@@ -1,6 +1,6 @@
 {
   "name": "sito-portfolio",
-  "version": "0.6.3",
+  "version": "0.6.5",
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -13,7 +13,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
-    "sito-container": "^0.2.21",
+    "sito-container": "^0.3.4",
     "sito-image": "^0.2.20"
   },
   "scripts": {

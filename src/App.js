@@ -7,6 +7,7 @@ import { useTheme as useNextTheme } from "next-themes";
 
 // views
 import Home from "./views/Home";
+import SitoDocs from "./views/SitoDocs";
 import NotFound from "./views/NotFound";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sito-lib" element={<SitoDocs />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
