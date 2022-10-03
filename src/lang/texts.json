@@ -40,32 +40,70 @@
     "Docs": {
       "Title": "Components de <Sito />",
       "Dependencies": "Dependencies:",
+      "Version": "Versión: ",
       "Components": [
         {
           "id": "sito-container",
           "title": "SitoContainer",
           "description": "Contenedor súper flexible, muy parecido al Box de @mui, pero por defecto es flex",
           "link": "https://www.npmjs.com/package/sito-container",
+          "size": "10.3kb",
+          "version": "0.3.4",
           "dependencies": [
             {
               "name": "@emotion/css",
-              "version": "^11.9.0",
+              "version": "@11.9.0",
               "link": "https://www.npmjs.com/package/@emotion/css"
             },
             {
               "name": "react",
-              "version": "^18.2.0",
+              "version": "@18.2.0",
               "link": "https://www.npmjs.com/package/@emotion/react"
             },
             {
               "name": "react-dom",
-              "version": "^18.2.0",
+              "version": "@18.2.0",
               "link": "https://www.npmjs.com/package/@emotion/react-dom"
             },
             {
               "name": "react-scripts",
-              "version": "^5.0.1",
+              "version": "@5.0.1",
               "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            }
+          ]
+        },
+        {
+          "id": "sito-image",
+          "title": "SitoImage",
+          "description": "Un potente componente de imagen personalizable similar al suspenso que (opcionalmente) simula un efecto de brillo mientras se carga.",
+          "link": "https://www.npmjs.com/package/sito-image",
+          "size": "15.1kb",
+          "version": "0.4.1",
+          "dependencies": [
+            {
+              "name": "@emotion/css",
+              "version": "@11.9.0",
+              "link": "https://www.npmjs.com/package/@emotion/css"
+            },
+            {
+              "name": "react",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "react-dom",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-dom"
+            },
+            {
+              "name": "react-scripts",
+              "version": "@5.0.1",
+              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            },
+            {
+              "name": "react-shimmer",
+              "version": "@3.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-shimmer"
             }
           ]
         }
