@@ -1,9 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, forwardRef } from "react";
+import { forwardRef } from "react";
+
+// @mui/icons-material
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import Launch from "@mui/icons-material/Launch";
 
 // @nextui-org
-import { Navbar, Text, Link } from "@nextui-org/react";
+import { Text, Link } from "@nextui-org/react";
+
+// sito components
+import SitoContainer from "sito-container";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -11,35 +21,48 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 const Footer = forwardRef((props, ref) => {
   const { languageState } = useLanguage();
 
-  const [variant] = useState("default");
-  const [activeColor] = useState("primary");
+  const fontSize = { fontSize: "25px" };
+
+  const icons = [
+    <GitHubIcon sx={fontSize} />,
+    <InstagramIcon sx={fontSize} />,
+    <TwitterIcon sx={fontSize} />,
+    <FacebookIcon sx={fontSize} />,
+  ];
 
   return (
-    <Navbar
+    <SitoContainer
       ref={ref}
-      css={{
-        zIndex: "1 !important",
-        div: {
-          maxWidth: "100vw",
-          height: "50px !important",
-          zIndex: "1 !important",
-          minHeight: "0 !important",
-        },
+      alignItems="center"
+      justifyContent="space-between"
+      sx={{
+        padding: "10px 24px",
+        height: "50px",
+        background: "#222",
       }}
     >
-      <Navbar.Brand>
-        <Text h3 b css={{ margin: 0 }}>
-          <Link color="error" href="/sito-lib" target="_blank" rel="noopener">
+      <SitoContainer>
+        <Text b css={{ margin: 0 }}>
+          <Link color="inherit" href="/sito-lib" target="_blank" rel="noopener">
+            {languageState.texts.Footer.SitoLib}
             {"<Sito />"}
+            <Launch sx={{ fontSize: "20px", marginLeft: "5px" }} />
           </Link>
         </Text>
-      </Navbar.Brand>
-      <Navbar.Content
-        activeColor={activeColor}
-        hideIn="xs"
-        variant={variant}
-      ></Navbar.Content>
-    </Navbar>
+      </SitoContainer>
+      <SitoContainer sx={{ gap: "20px" }}>
+        {languageState.texts.Hero.Social.map((item, i) => (
+          <Link
+            key={item.Link}
+            href={item.Link}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {icons[i]}
+          </Link>
+        ))}
+      </SitoContainer>
+    </SitoContainer>
   );
 });
 

@@ -34,6 +34,9 @@
         }
       ]
     },
+    "Footer": {
+      "SitoLib": "Documentación de "
+    },
     "Hero": {
       "Title": "Mi Portfolio ",
       "Name": "Sito",
