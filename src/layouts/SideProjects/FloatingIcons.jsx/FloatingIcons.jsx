@@ -37,7 +37,7 @@ const FloatingIcons = () => {
     >
       <motion.div
         variants={item}
-        className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
+        className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
       >
         <LightbulbIcon
           className="float-y"

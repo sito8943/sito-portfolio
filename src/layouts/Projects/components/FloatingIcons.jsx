@@ -38,7 +38,7 @@ const FloatingIcons = () => {
     >
       <motion.div
         variants={item}
-        className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
+        className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
       >
         <CheckCircleIcon
           className="float-y"
@@ -47,7 +47,7 @@ const FloatingIcons = () => {
       </motion.div>
       <motion.div
         variants={item}
-        className={`scale-animation ${css({ left: "15%", bottom: "15%" })}`}
+        className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
       >
         <AddReactionIcon
           className="float-y"

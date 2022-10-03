@@ -36,7 +36,7 @@ const SitoNavbar = () => {
   </Button> */}
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>
-          <Link color="error" href="/#">
+          <Link color="error" href="/sito-lib" target="_blank" rel="noopener">
             {"<Sito />"}
           </Link>
         </Text>

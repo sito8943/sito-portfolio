@@ -1,5 +1,10 @@
+import { useRef } from "react";
+
 // sito components
 import SitoContainer from "sito-container";
+
+// framer-motion
+import { useInView } from "framer-motion";
 
 // own components
 import Navbar from "../components/Navbar/Navbar";
@@ -9,19 +14,24 @@ import ToTop from "../components/ToTop/ToTop";
 import Hero from "../layouts/Hero/Hero";
 import About from "../layouts/About/About";
 import Skills from "../layouts/Skills/Skills";
+import Footer from "../components/Footer/Footer";
 import Projects from "../layouts/Projects/Projects";
 import SideProjects from "../layouts/SideProjects/SideProjects";
 
 const Home = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
     <SitoContainer flexDirection="column" sx={{ width: "100%" }}>
-      <ToTop />
+      <ToTop footerVisible={isInView} />
       <Navbar />
       <Hero />
       <About />
       <Skills />
       <Projects />
       <SideProjects />
+      <Footer ref={ref} />
     </SitoContainer>
   );
 };

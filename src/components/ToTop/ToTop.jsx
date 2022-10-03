@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
+import PropTypes from "prop-types";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
@@ -10,8 +12,11 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 // @nextui-org
 import { Button } from "@nextui-org/react";
 
-const ToTop = () => {
+const ToTop = (props) => {
+  const { footerVisible } = props;
+
   const [visible, setVisible] = useState(false);
+  const [bottom, setBottom] = useState("10px");
 
   const onScroll = useCallback(
     (e) => {
@@ -21,6 +26,12 @@ const ToTop = () => {
     },
     [setVisible]
   );
+
+  useEffect(() => {
+    console.log(footerVisible);
+    if (!footerVisible) setBottom("10px");
+    else setBottom("60px");
+  }, [footerVisible]);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -34,14 +45,15 @@ const ToTop = () => {
       to="#hero"
       className={css({
         textDecoration: "none",
+        zIndex: 99,
       })}
     >
       <Button
         css={{
           transform: visible ? "scale(1)" : "scale(0)",
-          zIndex: visible ? 23 : -1,
+          zIndex: visible ? 99 : -1,
           position: "fixed",
-          bottom: "10px",
+          bottom,
           right: "10px",
           borderRadius: "100%",
           marginTop: "15px",
@@ -57,6 +69,14 @@ const ToTop = () => {
       </Button>
     </Link>
   );
+};
+
+ToTop.defaultProps = {
+  footerVisible: false,
+};
+
+ToTop.propTypes = {
+  footerVisible: PropTypes.bool,
 };
 
 export default ToTop;
