@@ -47,8 +47,8 @@
           "title": "SitoContainer",
           "description": "Contenedor súper flexible, muy parecido al Box de @mui, pero por defecto es flex",
           "link": "https://www.npmjs.com/package/sito-container",
-          "size": "10.3kb",
-          "version": "0.3.4",
+          "size": "9.41kB",
+          "version": "0.4.1",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -77,8 +77,8 @@
           "title": "SitoImage",
           "description": "Un potente componente de imagen personalizable similar al suspenso que (opcionalmente) simula un efecto de brillo mientras se carga.",
           "link": "https://www.npmjs.com/package/sito-image",
-          "size": "15.1kb",
-          "version": "0.4.1",
+          "size": "14.2kB",
+          "version": "0.11.5",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -99,21 +99,16 @@
               "name": "react-scripts",
               "version": "@5.0.1",
               "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            },
-            {
-              "name": "react-shimmer",
-              "version": "@3.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-shimmer"
             }
           ]
         },
         {
           "id": "sito-mui-tab-view",
           "title": "SitoMUITabView",
-          "description": "Componente con tabs dinámicas súper flexible",
+          "description": "Las pestañas facilitan la exploración y el cambio entre diferentes vistas.",
           "link": "https://www.npmjs.com/package/sito-mui-tab-view",
-          "size": "11.9kb",
-          "version": "0.3.2",
+          "size": "12.4kB",
+          "version": "0.4.1",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -178,8 +173,8 @@
       "SeeMore": "GitHub",
       "Projects": [
         {
-          "Title": "Dogma Transportation",
-          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
+          "Title": "WMT Logistics",
+          "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
           "Text": "Compañia de brokers y cursos para camioneros",
           "Link": "https://inmersoft-dev.github.io/broker-company/",
           "See": "Ver"
@@ -433,27 +428,32 @@
         {
           "Source": "node-logo",
           "Alt": "node-logo",
-          "Link": "https://nodejs.org/"
+          "Link": "https://nodejs.org/",
+          "Text": "NodeJs"
         },
         {
           "Source": "mui-logo",
           "Alt": "materialui-logo",
-          "Link": "https://mui.com/"
+          "Link": "https://mui.com/",
+          "Text": "Material Ui"
         },
         {
           "Source": "nextui-logo",
           "Alt": "nextui-logo",
-          "Link": "https://nextui.org/"
+          "Link": "https://nextui.org/",
+          "Text": "NextUi"
         },
         {
           "Source": "mongodb-logo",
           "Alt": "mongodb-logo",
-          "Link": "https://www.mongodb.com/"
+          "Link": "https://www.mongodb.com/",
+          "Text": "MongoDB"
         },
         {
           "Source": "firebase-logo",
           "Alt": "firebase-logo",
-          "Link": "https://firebase.google.com/"
+          "Link": "https://firebase.google.com/",
+          "Text": "Firebase"
         }
       ]
     },

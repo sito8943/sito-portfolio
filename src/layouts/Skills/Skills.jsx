@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import Tippy from "@tippyjs/react";
 import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -131,19 +132,21 @@ const Skills = () => {
         >
           {languageState.texts.Skills.Others.map((jtem, j) => (
             <InViewComponent delay={`${parseDelay(j, 0.9)}s`}>
-              <Link href={jtem.Link} target="_blank" rel="noopener">
-                <Image
-                  css={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "100%",
-                    marginRight: "10px",
-                  }}
-                  key={jtem.Alt}
-                  src={logos[j]}
-                  alt={jtem.Alt}
-                />
-              </Link>
+              <Tippy content={jtem.Text}>
+                <Link href={jtem.Link} target="_blank" rel="noopener">
+                  <Image
+                    css={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "100%",
+                      marginRight: "10px",
+                    }}
+                    key={jtem.Alt}
+                    src={logos[j]}
+                    alt={jtem.Alt}
+                  />
+                </Link>
+              </Tippy>
             </InViewComponent>
           ))}
         </Container>

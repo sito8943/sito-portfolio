@@ -9,7 +9,9 @@ import { lightTheme, darkTheme } from "./assets/theme/theme";
 
 import App from "./App";
 
+// styles
 import "./index.css";
+import "tippy.js/dist/tippy.css"; // optional
 
 // contexts
 import { LanguageProvider } from "./contexts/LanguageProvider";

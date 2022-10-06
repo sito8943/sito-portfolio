@@ -1,6 +1,6 @@
 {
   "name": "sito-portfolio",
-  "version": "0.6.8",
+  "version": "0.7.1",
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -8,7 +8,9 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.8",
     "@nextui-org/react": "^1.0.0-beta.10",
+    "@tippyjs/react": "^4.2.6",
     "framer-motion": "^6.5.1",
     "next-themes": "^0.2.0",
     "react": "^18.2.0",
