@@ -38,7 +38,7 @@ const Footer = forwardRef((props, ref) => {
       sx={{
         padding: "10px 24px",
         height: "50px",
-        background: "#222",
+        background: "#222333",
         flexWrap: "wrap",
       }}
     >

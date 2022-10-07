@@ -17,6 +17,7 @@ import Skills from "../layouts/Skills/Skills";
 import Footer from "../components/Footer/Footer";
 import Projects from "../layouts/Projects/Projects";
 import SideProjects from "../layouts/SideProjects/SideProjects";
+import Contact from "../layouts/Contact/Contact";
 
 const Home = () => {
   const ref = useRef(null);
@@ -31,6 +32,7 @@ const Home = () => {
       <Skills />
       <Projects />
       <SideProjects />
+      <Contact />
       <Footer ref={ref} />
     </SitoContainer>
   );

@@ -101,13 +101,15 @@ const Projects = () => {
         >
           {languageState.texts.Projects.Projects.map((item, i) => (
             <InViewComponent key={item.Title} delay={`${parseDelay(i, 0.4)}s`}>
-              <Card
-                image={item.Image}
-                alt="about"
-                onClick={() => window.open(item.Link)}
-                text={item.Title}
-                more={item.Text}
-              />
+              <Link href={item.Link} target="_blank" rel="noopener">
+                <Card
+                  image={item.Image}
+                  alt="about"
+                  onClick={() => window.open(item.Link)}
+                  text={item.Title}
+                  more={item.Text}
+                />
+              </Link>
             </InViewComponent>
           ))}
         </Container>

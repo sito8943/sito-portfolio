@@ -459,6 +459,24 @@
     },
     "Contact": {
       "Title": "¡Envíame tu propuesta!",
+      "Body": "Te interesa trabajar junto conmigo. No dudes en escribirme",
+      "Inputs": {
+        "Name": {
+          "Label": "Tu nombre",
+          "Placeholder": "Escribe aquí tu nombre",
+          "Type": "text"
+        },
+        "Email": {
+          "Label": "Tu email",
+          "Placeholder": "Escribe aquí tu correo",
+          "Type": "email"
+        },
+        "Message": {
+          "Label": "Tu mensaje",
+          "Placeholder": "Escribe aquí tu mensaje",
+          "Type": "textarea"
+        }
+      },
       "Button": "Enviar"
     }
   }
