@@ -102,7 +102,7 @@ const About = () => {
           }}
         >
           {languageState.texts.About.Cards.map((item, i) => (
-            <InViewComponent delay={`${parseDelay(i, 0.4)}s`}>
+            <InViewComponent key={i} delay={`${parseDelay(i, 0.4)}s`}>
               <Card
                 image={images[i]}
                 alt={item.Alt}

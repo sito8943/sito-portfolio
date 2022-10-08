@@ -80,7 +80,12 @@ const Modal = (props) => {
                 wrap="wrap"
               >
                 {item.Content.map((jtem) => (
-                  <Link href={jtem.Link} target="_blank" rel="noopener">
+                  <Link
+                    key={jtem.Alt}
+                    href={jtem.Link}
+                    target="_blank"
+                    rel="noopener"
+                  >
                     <Image
                       css={{
                         width: "40px",

@@ -99,6 +99,7 @@ const Skills = () => {
         >
           {languageState.texts.Skills.List.map((item, i) => (
             <InViewComponent
+              key={i}
               className="bottom"
               delay={`${parseDelay(i, 0.5)}s`}
             >
@@ -131,7 +132,7 @@ const Skills = () => {
           }}
         >
           {languageState.texts.Skills.Others.map((jtem, j) => (
-            <InViewComponent delay={`${parseDelay(j, 0.9)}s`}>
+            <InViewComponent key={j} delay={`${parseDelay(j, 0.9)}s`}>
               <Tippy content={jtem.Text}>
                 <Link href={jtem.Link} target="_blank" rel="noopener">
                   <Image
