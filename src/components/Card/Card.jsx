@@ -33,8 +33,12 @@ const Card = (props) => {
   );
 };
 
+Card.defaultProps = {
+  onClick: undefined,
+};
+
 Card.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
   more: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,

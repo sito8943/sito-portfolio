@@ -15,12 +15,19 @@ import OffCanvas from "../OffCanvas/OffCanvas";
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
+// styles
+import "./style.css";
+
 const SitoNavbar = () => {
   const location = useLocation();
   const { languageState } = useLanguage();
 
   const [variant] = useState("default");
   const [activeColor] = useState("primary");
+
+  const [showOffCanvas, setShowOffCanvas] = useState(false);
+
+  const closeOffCanvas = () => setShowOffCanvas(false);
 
   const [activeLink, setActiveLink] = useState("#hero");
 
@@ -30,10 +37,21 @@ const SitoNavbar = () => {
   }, [location]);
 
   return (
-    <Navbar css={{ position: "fixed", div: { maxWidth: "100vw" } }}>
-      {/* <Button light>
+    <Navbar
+      className="navbar"
+      css={{
+        position: "fixed",
+      }}
+    >
+      <OffCanvas visible={showOffCanvas} handleClose={closeOffCanvas} />
+      <Button
+        light
+        className="menu-button"
+        onClick={() => setShowOffCanvas(!showOffCanvas)}
+        css={{ margin: "10px", width: "40px", minWidth: "0" }}
+      >
         <MenuIcon />
-  </Button> */}
+      </Button>
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>
           <Link color="error" href="/sito-lib" target="_blank" rel="noopener">
