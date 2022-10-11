@@ -12,6 +12,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 // @nextui-org
 import { Button } from "@nextui-org/react";
 
+// utils
+import { scrollTo } from "../../utils/functions";
+
 const ToTop = (props) => {
   const { footerVisible } = props;
 
@@ -28,7 +31,6 @@ const ToTop = (props) => {
   );
 
   useEffect(() => {
-    console.log(footerVisible);
     if (!footerVisible) setBottom("10px");
     else setBottom("60px");
   }, [footerVisible]);
@@ -49,6 +51,7 @@ const ToTop = (props) => {
       })}
     >
       <Button
+        onPress={() => scrollTo(0)}
         css={{
           transform: visible ? "scale(1)" : "scale(0)",
           zIndex: visible ? 99 : -1,

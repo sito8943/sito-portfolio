@@ -33,10 +33,10 @@ const Projects = () => {
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       const aboutTop = document.getElementById("projects");
-      if (isInView) {
-        if (aboutTop.offsetTop - 77 < top) navigate("#projects");
-        else navigate("#skills");
-      }
+      // if (isInView) {
+        // if (aboutTop.offsetTop - 77 < top) navigate("#projects");
+        // else navigate("#skills");
+      // }
     },
     [navigate, isInView]
   );

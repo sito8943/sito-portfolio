@@ -20,6 +20,10 @@ body {
   scroll-behavior: smooth;
 }
 
+textarea {
+  height: 185px !important;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

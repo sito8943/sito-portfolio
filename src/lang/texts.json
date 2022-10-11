@@ -26,11 +26,15 @@
           "label": "Proyectos",
           "to": "#projects"
         },
-
         {
-          "id": "contact",
+          "id": "side-projects",
           "label": "Mis proyectos",
           "to": "#side-projects"
+        },
+        {
+          "id": "contact",
+          "label": "Contacto",
+          "to": "#contact"
         }
       ]
     },

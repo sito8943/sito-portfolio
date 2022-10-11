@@ -1,3 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 // sito components
@@ -13,23 +17,39 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 const OffCanvas = (props) => {
+  const location = useLocation();
   const { visible, handleClose } = props;
 
   const { languageState } = useLanguage();
 
+  const [activeLink, setActiveLink] = useState("#hero");
+
+  useEffect(() => {
+    const { hash } = location;
+    setActiveLink(hash.length ? hash : activeLink);
+  }, [location]);
+
   return (
     <SitoContainer
+      extraProps={{ onClick: handleClose }}
       sx={{
         top: 0,
         left: 0,
         height: "100vh",
-        width: "100%",
         position: "fixed",
-        transition: "all 500ms ease",
-        zIndex: visible ? 99999 : -1,
-        background: "#222222ce",
+        width: visible ? "100vw" : 0,
+        transition: "background zIndex width 500ms ease",
       }}
     >
+      <SitoContainer
+        sx={{
+          width: visible ? "100vw" : 0,
+          height: "100vh",
+          background: "#222222ce",
+          position: "absolute",
+          zIndex: 999999,
+        }}
+      />
       <SitoContainer
         flexDirection="column"
         sx={{
@@ -38,6 +58,7 @@ const OffCanvas = (props) => {
           width: "300px",
           transform: `translateX(${visible ? 0 : "-300px"})`,
           background: "#333444",
+          zIndex: 999999,
         }}
       >
         <SitoContainer
@@ -60,15 +81,28 @@ const OffCanvas = (props) => {
         </SitoContainer>
         <SitoContainer flexDirection="column" sx={{ paddingLeft: "20px" }}>
           <Text h3>Sito</Text>
-          <ul className={`uk-nav uk-nav-primary uk-nav-left`}>
-            {languageState.texts.Navbar.Links.map((item) => (
-              <li key={item.label}>
-                <Button light rounded flat color="primary">
-                  <Link href={item.to}>{item.label}</Link>
-                </Button>
-              </li>
-            ))}
-          </ul>
+          {languageState.texts.Navbar.Links.map((item) => (
+            <Link key={item.to} href={item.to}>
+              <Button
+                flat
+                rounded
+                color="primary"
+                key={item.Label}
+                onPress={handleClose}
+                light={item.to !== activeLink}
+                css={{
+                  margin: "5px 0",
+                  justifyContent: "start",
+                  span: {
+                    justifyContent: "flex-start !important",
+                    width: "100%",
+                  },
+                }}
+              >
+                {item.label}
+              </Button>
+            </Link>
+          ))}
         </SitoContainer>
       </SitoContainer>
     </SitoContainer>

@@ -19,22 +19,20 @@ import { RouteProvider } from "./contexts/RouteProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <LanguageProvider>
-      <RouteProvider>
-        <NextThemesProvider
-          defaultTheme="system"
-          attribute="class"
-          value={{
-            light: lightTheme.className,
-            dark: darkTheme.className,
-          }}
-        >
-          <NextUIProvider>
-            <App />
-          </NextUIProvider>
-        </NextThemesProvider>
-      </RouteProvider>
-    </LanguageProvider>
-  </React.StrictMode>
+  <LanguageProvider>
+    <RouteProvider>
+      <NextThemesProvider
+        defaultTheme="system"
+        attribute="class"
+        value={{
+          light: lightTheme.className,
+          dark: darkTheme.className,
+        }}
+      >
+        <NextUIProvider>
+          <App />
+        </NextUIProvider>
+      </NextThemesProvider>
+    </RouteProvider>
+  </LanguageProvider>
 );

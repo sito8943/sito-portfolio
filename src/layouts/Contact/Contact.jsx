@@ -2,7 +2,7 @@
 import SitoContainer from "sito-container";
 
 // @nextui-org
-import { Input, Textarea, Text } from "@nextui-org/react";
+import { Input, Textarea, Button, Text, Image } from "@nextui-org/react";
 
 // own components
 import InViewComponent from "../../components/InViewComponent/InViewComponent";
@@ -14,8 +14,15 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // utils
 import { parseDelay } from "../../utils/functions";
 
+// images
+import contact from "../../assets/images/contact.jpg";
+
 const Hero = () => {
   const { languageState } = useLanguage();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <Section id="contact" background="#222">
@@ -31,50 +38,66 @@ const Hero = () => {
         <InViewComponent>
           <Text h1>{languageState.texts.Contact.Title}</Text>
         </InViewComponent>
-        <SitoContainer
-          justifyContent="center"
-          sx={{ width: "100%", flexWrap: "wrap", marginTop: "40px" }}
-        >
+        <form onSubmit={onSubmit}>
           <SitoContainer
-            sx={{
-              width: "400px",
-              height: "400px",
-              background: "white",
-              marginRight: "100px",
-            }}
-          ></SitoContainer>
-          <SitoContainer
-            sx={{ width: "350px" }}
-            flexDirection="column"
-            wrap="wrap"
+            justifyContent="center"
+            sx={{ width: "100%", flexWrap: "wrap", marginTop: "40px" }}
           >
-            {Object.values(languageState.texts.Contact.Inputs).map(
-              (item, i) => (
-                <InViewComponent
-                  key={item.Label}
-                  delay={`${parseDelay(i, 0.6)}s`}
-                >
-                  {item.Type !== "textarea" && (
-                    <Input
-                      css={{ width: "100%", marginTop: "20px" }}
-                      clearable
-                      label={item.Label}
-                      placeholder={item.Placeholder}
-                    />
-                  )}
-                  {item.Type === "textarea" && (
-                    <Textarea
-                      css={{ width: "100%", marginTop: "20px" }}
-                      clearable
-                      label={item.Label}
-                      placeholder={item.Placeholder}
-                    />
-                  )}
-                </InViewComponent>
-              )
-            )}
+            <InViewComponent delay="0.5s">
+              <Image
+                src={contact}
+                alt="contact"
+                css={{
+                  width: "400px",
+                  height: "385px",
+                  objectFit: "cover",
+                  background: "white",
+                  marginRight: "100px",
+                  borderRadius: "1rem",
+                }}
+              />
+            </InViewComponent>
+            <SitoContainer
+              sx={{ width: "350px" }}
+              flexDirection="column"
+              wrap="wrap"
+            >
+              {Object.values(languageState.texts.Contact.Inputs).map(
+                (item, i) => (
+                  <InViewComponent
+                    key={item.Label}
+                    delay={`${parseDelay(i, 0.6)}s`}
+                  >
+                    {item.Type !== "textarea" && (
+                      <Input
+                        required
+                        label={item.Label}
+                        placeholder={item.Placeholder}
+                        css={{ width: "100%", marginBottom: "20px" }}
+                      />
+                    )}
+                    {item.Type === "textarea" && (
+                      <Textarea
+                        rows={5}
+                        required
+                        label={item.Label}
+                        placeholder={item.Placeholder}
+                        css={{ width: "100%", marginBottom: "20px" }}
+                      />
+                    )}
+                  </InViewComponent>
+                )
+              )}
+              <InViewComponent delay="0.9s">
+                <SitoContainer justifyContent="flex-end" sx={{ width: "100%" }}>
+                  <Button rounded flat type="submit">
+                    {languageState.texts.Contact.Button}
+                  </Button>
+                </SitoContainer>
+              </InViewComponent>
+            </SitoContainer>
           </SitoContainer>
-        </SitoContainer>
+        </form>
       </SitoContainer>
     </Section>
   );
