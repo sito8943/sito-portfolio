@@ -31,7 +31,6 @@ const ToTop = (props) => {
   );
 
   useEffect(() => {
-    console.log(footerVisible);
     if (!footerVisible) setBottom("10px");
     else setBottom("60px");
   }, [footerVisible]);
@@ -52,7 +51,7 @@ const ToTop = (props) => {
       })}
     >
       <Button
-        onPress={scrollTo}
+        onPress={() => scrollTo(0)}
         css={{
           transform: visible ? "scale(1)" : "scale(0)",
           zIndex: visible ? 99 : -1,

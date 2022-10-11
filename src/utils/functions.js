@@ -10,11 +10,8 @@ export const scrollTo = (target = 0) => {
     const element = document.getElementById(target);
     if (element !== null) localTarget = element.offsetTop - 100;
   }
-  window.scroll({
-    top: localTarget > 100 ? localTarget : target,
-    left: 0,
-    behavior: "smooth",
-  });
+  console.log(target);
+  window.scroll(target, 0);
 };
 
 /**
