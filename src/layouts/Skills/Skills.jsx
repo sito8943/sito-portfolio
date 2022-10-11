@@ -38,8 +38,8 @@ const Skills = () => {
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       const skillTop = document.getElementById("skills");
-      if (skillTop.offsetTop - 77 < top) navigate("#skills");
-      else navigate("#about");
+      // if (skillTop.offsetTop - 77 < top) navigate("#skills");
+      // else navigate("#about");
     },
     [navigate]
   );

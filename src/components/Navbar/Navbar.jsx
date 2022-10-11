@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useLocation } from "react-router-dom";
@@ -36,6 +37,16 @@ const SitoNavbar = () => {
     setActiveLink(hash.length ? hash : activeLink);
   }, [location]);
 
+  const [hideMenuButton, setHideMenuButton] = useState(true);
+
+  useEffect(() => {
+    if (showOffCanvas) setHideMenuButton(false);
+    else
+      setTimeout(() => {
+        setHideMenuButton(true);
+      }, 499);
+  }, [showOffCanvas]);
+
   return (
     <Navbar
       className="navbar"
@@ -48,7 +59,12 @@ const SitoNavbar = () => {
         light
         className="menu-button"
         onClick={() => setShowOffCanvas(!showOffCanvas)}
-        css={{ margin: "10px", width: "40px", minWidth: "0" }}
+        css={{
+          margin: "10px",
+          width: "40px",
+          minWidth: "0",
+          zIndex: !hideMenuButton ? -1 : 0,
+        }}
       >
         <MenuIcon />
       </Button>

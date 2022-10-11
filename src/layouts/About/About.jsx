@@ -43,8 +43,8 @@ const About = () => {
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       const aboutTop = document.getElementById("about");
-      if (aboutTop.offsetTop - 77 < top) navigate("#about");
-      else navigate("#hero");
+      // if (aboutTop.offsetTop - 77 < top) navigate("#about");
+      // else navigate("#hero");
     },
     [navigate]
   );

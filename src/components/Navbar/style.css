@@ -2,13 +2,13 @@
   max-width: 100vw;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 650px) {
   .navbar div {
     justify-content: flex-start !important;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 651px) {
   .navbar div {
     justify-content: space-between !important;
   }
