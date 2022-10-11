@@ -86,7 +86,7 @@ const OffCanvas = (props) => {
               <Button
                 flat
                 rounded
-                color="primary"
+                color="inherit"
                 key={item.Label}
                 onPress={handleClose}
                 light={item.to !== activeLink}

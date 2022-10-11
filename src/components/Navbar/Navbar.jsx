@@ -75,7 +75,11 @@ const SitoNavbar = () => {
           </Link>
         </Text>
       </Navbar.Brand>
-      <Navbar.Content activeColor={activeColor} hideIn="xs" variant={variant}>
+      <Navbar.Content
+        className="navbar-content"
+        activeColor={activeColor}
+        variant={variant}
+      >
         {languageState.texts.Navbar.Links.map((item) => (
           <Navbar.Link
             key={item.id}
