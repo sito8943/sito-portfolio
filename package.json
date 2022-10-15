@@ -5,6 +5,7 @@
   "homepage": "https://sito-numbis.github.io/sito-portfolio",
   "license": "MIT",
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@emotion/css": "^11.9.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -12,6 +13,7 @@
     "@mui/material": "^5.10.8",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@tippyjs/react": "^4.2.6",
+    "env-cmd": "^10.1.0",
     "framer-motion": "^6.5.1",
     "next-themes": "^0.2.0",
     "react": "^18.2.0",
@@ -22,7 +24,7 @@
     "sito-image": "^0.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -f .env react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

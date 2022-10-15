@@ -467,16 +467,19 @@
       "Inputs": {
         "Name": {
           "Label": "Tu nombre",
+          "Name": "user_name",
           "Placeholder": "Escribe aquí tu nombre",
           "Type": "text"
         },
         "Email": {
           "Label": "Tu email",
+          "Name": "user_email",
           "Placeholder": "Escribe aquí tu correo",
           "Type": "email"
         },
         "Message": {
           "Label": "Tu mensaje",
+          "Name": "message",
           "Placeholder": "Escribe aquí tu mensaje",
           "Type": "textarea"
         }

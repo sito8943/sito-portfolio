@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 // sito components
 import SitoContainer from "sito-container";
 
@@ -17,11 +20,30 @@ import { parseDelay } from "../../utils/functions";
 // images
 import contact from "../../assets/images/contact.jpg";
 
+// config
+import config from "../../config";
+
 const Hero = () => {
+  const form = useRef();
   const { languageState } = useLanguage();
 
   const onSubmit = (e) => {
     e.preventDefault();
+    emailjs
+      .sendForm(
+        config.serviceId,
+        config.templateId,
+        form.current,
+        config.publicKey
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -38,7 +60,7 @@ const Hero = () => {
         <InViewComponent>
           <Text h1>{languageState.texts.Contact.Title}</Text>
         </InViewComponent>
-        <form onSubmit={onSubmit}>
+        <form ref={form} onSubmit={onSubmit}>
           <SitoContainer
             justifyContent="center"
             sx={{ width: "100%", flexWrap: "wrap", marginTop: "40px" }}
@@ -71,6 +93,7 @@ const Hero = () => {
                     {item.Type !== "textarea" && (
                       <Input
                         required
+                        name={item.Name}
                         label={item.Label}
                         placeholder={item.Placeholder}
                         css={{ width: "100%", marginBottom: "20px" }}
@@ -80,6 +103,7 @@ const Hero = () => {
                       <Textarea
                         rows={5}
                         required
+                        name={item.Name}
                         label={item.Label}
                         placeholder={item.Placeholder}
                         css={{ width: "100%", marginBottom: "20px" }}

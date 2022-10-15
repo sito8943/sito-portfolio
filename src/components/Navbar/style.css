@@ -8,7 +8,7 @@
   }
 }
 
-@media (max-width: 7600px) {
+@media (max-width: 760px) {
   .navbar div {
     justify-content: flex-start !important;
   }
