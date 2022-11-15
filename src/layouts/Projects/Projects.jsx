@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,8 +32,8 @@ const Projects = () => {
 
   const onScroll = useCallback(
     (e) => {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      const aboutTop = document.getElementById("projects");
+      // const top = window.pageYOffset || document.documentElement.scrollTop;
+      // const aboutTop = document.getElementById("projects");
       // if (isInView) {
         // if (aboutTop.offsetTop - 77 < top) navigate("#projects");
         // else navigate("#skills");

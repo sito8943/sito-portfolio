@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,8 +29,8 @@ const SideProjects = () => {
 
   const onScroll = useCallback(
     (e) => {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      const sideProjectsTop = document.getElementById("side-projects");
+      // const top = window.pageYOffset || document.documentElement.scrollTop;
+      // const sideProjectsTop = document.getElementById("side-projects");
       // if (isInView) {
         // if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
         // else navigate("#projects");

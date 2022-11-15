@@ -41,8 +41,8 @@ const About = () => {
 
   const onScroll = useCallback(
     (e) => {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      const aboutTop = document.getElementById("about");
+      // const top = window.pageYOffset || document.documentElement.scrollTop;
+      // const aboutTop = document.getElementById("about");
       // if (aboutTop.offsetTop - 77 < top) navigate("#about");
       // else navigate("#hero");
     },

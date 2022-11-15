@@ -36,8 +36,8 @@ const Skills = () => {
 
   const onScroll = useCallback(
     (e) => {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      const skillTop = document.getElementById("skills");
+      // const top = window.pageYOffset || document.documentElement.scrollTop;
+      // const skillTop = document.getElementById("skills");
       // if (skillTop.offsetTop - 77 < top) navigate("#skills");
       // else navigate("#about");
     },
