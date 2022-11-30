@@ -184,31 +184,10 @@
           "See": "Ver"
         },
         {
-          "Title": "Digital Menu",
-          "Text": "Menú digital para cualquier tipo de catálogos",
-          "Link": "https://inmersoft-dev.github.io/digital-menu/",
-          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
-          "See": "Ver"
-        },
-        {
-          "Title": "Santiago Cultural",
-          "Text": "¡Ven a Santiago de los Caballeros y explora nuestras maravillas!",
-          "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
-          "Image": "https://inmersoft-dev.github.io/santiago-cultural-webpage/static/media/bg1.1b032e917f31912d9dfc.jpg",
-          "See": "Ver"
-        },
-        {
-          "Title": "Inmersoft Webpage",
-          "Text": "Digitalizamos la historia, el arte y el turismo",
-          "Link": "https://inmersoft-dev.github.io/inmersoft-webpage",
-          "Image": "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/240587957_2176667392485762_7543974056661189756_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=cZplwHHTHJ4AX8xrTlO&_nc_ht=scontent-mia3-2.xx&oh=00_AT-OUBpQZC-KwBUYzkxR6Xovdpo4cAoCfZyIje8nw4yx8g&oe=62F1E716",
-          "See": "Ver"
-        },
-        {
-          "Title": "Santiago Market",
-          "Text": "Explora Santiago de los Caballeros",
-          "Link": "https://inmersoft-dev.github.io/santiago-market",
-          "Image": "https://inmersoft-dev.github.io/santiago-market/static/media/banner2.4e5d49630f27d8245da4.jpg",
+          "Title": "Alta Voz",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
+          "Text": "Sitio web para comprar y escuchar música",
+          "Link": "https://inmersoft-dev.github.io/alta-voz-client/",
           "See": "Ver"
         }
       ]
@@ -240,27 +219,6 @@
           "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
-          "See": "Ver"
-        },
-        {
-          "Title": "Calculator",
-          "Text": "Es hora de calcular en tu dispositivo",
-          "Link": "https://inmersoft-dev.github.io/inmersoft-webpage",
-          "Image": "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/240587957_2176667392485762_7543974056661189756_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=cZplwHHTHJ4AX8xrTlO&_nc_ht=scontent-mia3-2.xx&oh=00_AT-OUBpQZC-KwBUYzkxR6Xovdpo4cAoCfZyIje8nw4yx8g&oe=62F1E716",
-          "See": "Ver"
-        },
-        {
-          "Title": "Music Player",
-          "Text": "Vamos a reproducir música nosotros mismos",
-          "Link": "https://inmersoft-dev.github.io/santiago-market",
-          "Image": "https://inmersoft-dev.github.io/santiago-market/static/media/banner2.4e5d49630f27d8245da4.jpg",
-          "See": "Ver"
-        },
-        {
-          "Title": "Pomodoro",
-          "Text": "Es hora de enfocarse en 30 minutos",
-          "Link": "https://inmersoft-dev.github.io/santiago-market",
-          "Image": "https://pomofocus.io/images/ogimage.png",
           "See": "Ver"
         }
       ]

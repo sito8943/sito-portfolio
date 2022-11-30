@@ -1,6 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
+
+// @emotion/css
+import { css } from "@emotion/css";
 
 // @mui/icons-material
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -10,7 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Launch from "@mui/icons-material/Launch";
 
 // @nextui-org
-import { Text, Link } from "@nextui-org/react";
+import { Text, Link as MUILink } from "@nextui-org/react";
 
 // sito components
 import SitoContainer from "sito-container";
@@ -44,7 +48,11 @@ const Footer = forwardRef((props, ref) => {
     >
       <SitoContainer>
         <Text b css={{ margin: 0 }}>
-          <Link color="inherit" href="/sito-lib" target="_blank" rel="noopener">
+          <Link
+            color="inherit"
+            to="/sito-lib"
+            className={css({ display: "flex", alignItems: "center" })}
+          >
             {languageState.texts.Footer.SitoLib}
             {"<Sito />"}
             <Launch sx={{ fontSize: "20px", marginLeft: "5px" }} />
@@ -53,14 +61,14 @@ const Footer = forwardRef((props, ref) => {
       </SitoContainer>
       <SitoContainer sx={{ gap: "20px" }}>
         {languageState.texts.Hero.Social.map((item, i) => (
-          <Link
+          <MUILink
             key={item.Link}
             href={item.Link}
             rel="noreferrer"
             target="_blank"
           >
             {icons[i]}
-          </Link>
+          </MUILink>
         ))}
       </SitoContainer>
     </SitoContainer>
