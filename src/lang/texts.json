@@ -189,6 +189,13 @@
           "Text": "Sitio web para comprar y escuchar música",
           "Link": "https://inmersoft-dev.github.io/alta-voz-client/",
           "See": "Ver"
+        },
+        {
+          "Title": "Marketplace",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
+          "Text": "Servicio para publicar catálogos digitales",
+          "Link": "https://marketplace.ireasantiago.com",
+          "See": "Ver"
         }
       ]
     },
