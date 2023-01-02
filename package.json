@@ -1,6 +1,6 @@
 {
   "name": "sito-portfolio",
-  "version": "0.10.3",
+  "version": "0.11.3",
   "private": false,
   "homepage": "https://sito-numbis.github.io/sito-portfolio",
   "license": "MIT",
@@ -23,7 +23,8 @@
     "react-scripts": "5.0.1",
     "serve": "^14.1.1",
     "sito-container": "^0.3.4",
-    "sito-image": "^0.4.1"
+    "sito-image": "^0.4.1",
+    "some-javascript-utils": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
