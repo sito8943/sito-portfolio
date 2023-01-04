@@ -310,21 +310,6 @@
           }
         ]
       },
-      "Optional": {
-        "Title": "Lo que me gusta",
-        "Text": "Me gusta viajar ✈️,",
-        "More": "conocer nuevos lugares 🌲",
-        "Content": [
-          {
-            "Type": "Title",
-            "Content": "Viajar, explorar y aprender"
-          },
-          {
-            "Type": "Text",
-            "Content": ""
-          }
-        ]
-      },
       "FreeTime": {
         "Title": "En mi tiempo libre",
         "Text": "Me gusta escuchar música 🎶",
@@ -346,12 +331,6 @@
           "Alt": "about",
           "Text": "Me gusta programar 👨🏻‍💻",
           "More": "y aprender cosas nuevas 📚"
-        },
-        {
-          "Id": "Optional",
-          "Alt": "optional",
-          "Text": "Me gusta viajar ✈️,",
-          "More": "conocer nuevos lugares 🌲"
         },
         {
           "Id": "FreeTime",
@@ -763,21 +742,6 @@
           }
         ]
       },
-      "Optional": {
-        "Title": "What I like",
-        "Text": "I like to travel ✈️,",
-        "More": "to meet new places 🌲",
-        "Content": [
-          {
-            "Type": "Title",
-            "Content": "Travel, explore and learn"
-          },
-          {
-            "Type": "Text",
-            "Content": ""
-          }
-        ]
-      },
       "FreeTime": {
         "Title": "In my free time",
         "Text": "I like listening to music 🎶",
@@ -799,12 +763,6 @@
           "Alt": "about",
           "Text": "I like programming 👨🏻‍💻",
           "More": "and learn new things 📚"
-        },
-        {
-          "Id": "Optional",
-          "Alt": "optional",
-          "Text": "I like to travel ✈️,",
-          "More": "to meet new places 🌲"
         },
         {
           "Id": "FreeTime",
