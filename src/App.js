@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { getUserLanguage } from "some-javascript-utils/browser";
 
@@ -16,6 +16,9 @@ import { useLanguage } from "./contexts/LanguageProvider";
 import Home from "./views/Home";
 import SitoDocs from "./views/SitoDocs";
 import NotFound from "./views/NotFound";
+
+// components
+import Loading from "./components/Loading/Loading";
 
 const App = () => {
   const { setTheme } = useNextTheme();
@@ -35,13 +38,15 @@ const App = () => {
 
   return (
     <LazyMotion features={domAnimation} strict>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sito-lib" element={<SitoDocs />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <Suspense fallback={<Loading />}>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sito-lib" element={<SitoDocs />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </LazyMotion>
   );
 };

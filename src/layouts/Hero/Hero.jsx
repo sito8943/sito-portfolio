@@ -1,13 +1,14 @@
 import React from "react";
 
-// @mui/icons-material
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import {
-  ArrowDownward,
-  Instagram,
-  Facebook,
-  Twitter,
-  GitHub,
-} from "@mui/icons-material/";
+  faInstagram,
+  faFacebook,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -29,14 +30,7 @@ import { parseDelay } from "../../utils/functions";
 const Hero = () => {
   const { languageState } = useLanguage();
 
-  const fontSize = { fontSize: "30px" };
-
-  const icons = [
-    <GitHub sx={fontSize} />,
-    <Instagram sx={fontSize} />,
-    <Twitter sx={fontSize} />,
-    <Facebook sx={fontSize} />,
-  ];
+  const icons = [faGithub, faInstagram, faTwitter, faFacebook];
 
   return (
     <Section id="hero">
@@ -78,7 +72,7 @@ const Hero = () => {
                 },
               }}
             >
-              <ArrowDownward />
+              <FontAwesomeIcon icon={faArrowDown} />
             </Button>
           </Link>
         </InViewComponent>
@@ -114,7 +108,10 @@ const Hero = () => {
           {languageState.texts.Hero.Social.map((item, i) => (
             <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.6)}s`}>
               <Link href={item.Link} rel="noreferrer" target="_blank">
-                {icons[i]}
+                <FontAwesomeIcon
+                  className={css({ fontSize: "30px" })}
+                  icon={icons[i]}
+                />
               </Link>
             </InViewComponent>
           ))}

@@ -6,8 +6,9 @@ import PropTypes from "prop-types";
 // @emotion/css
 import { css } from "@emotion/css";
 
-// @mui/icons-material
-import { ArrowUpward } from "@mui/icons-material/";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 // @nextui-org
 import { Button } from "@nextui-org/react";
@@ -68,7 +69,7 @@ const ToTop = (props) => {
           },
         }}
       >
-        <ArrowUpward />
+        <FontAwesomeIcon icon={faArrowUp} />
       </Button>
     </Link>
   );

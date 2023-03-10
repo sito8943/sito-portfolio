@@ -1,7 +1,8 @@
 import React from "react";
 
-// @mui/icons-material
-import {Flight,Laptop,Piano} from "@mui/icons-material";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlane, faLaptop, faMusic } from "@fortawesome/free-solid-svg-icons";
 
 // @nextui-org
 import { Link } from "@nextui-org/react";
@@ -46,9 +47,13 @@ const FloatingIcons = () => {
       >
         <div className={css({ transform: "rotate(-30deg)" })}>
           <Link href="#about">
-            <Flight
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#088cd9", opacity: 0.5 }}
+            <FontAwesomeIcon
+              icon={faPlane}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#088cd9",
+                opacity: 0.5,
+              })}`}
             />
           </Link>
         </div>
@@ -64,9 +69,13 @@ const FloatingIcons = () => {
       >
         <div className={css({ transform: "rotate(30deg)" })}>
           <Link href="#about">
-            <Piano
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+            <FontAwesomeIcon
+              icon={faMusic}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#9494f5",
+                opacity: 0.5,
+              })}`}
             />
           </Link>
         </div>
@@ -82,9 +91,13 @@ const FloatingIcons = () => {
       >
         <div className={css({ transform: "rotate(10deg)" })}>
           <Link href="#projects">
-            <Laptop
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#0fd908", opacity: 0.5 }}
+            <FontAwesomeIcon
+              icon={faLaptop}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#0fd908",
+                opacity: 0.5,
+              })}`}
             />
           </Link>
         </div>

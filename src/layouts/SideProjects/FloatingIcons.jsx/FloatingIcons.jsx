@@ -1,7 +1,8 @@
 import React from "react";
 
-// @mui/icons-material
-import {Lightbulb} from "@mui/icons-material";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 // framer-motion
 import { m } from "framer-motion";
@@ -41,9 +42,13 @@ const FloatingIcons = () => {
         variants={item}
         className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
       >
-        <Lightbulb
-          className="float-y"
-          sx={{ fontSize: "5rem", color: "#F0D81D", opacity: 0.5 }}
+        <FontAwesomeIcon
+          icon={faLightbulb}
+          className={`float-y ${css({
+            fontSize: "5rem",
+            color: "#F0D81D",
+            opacity: 0.5,
+          })}`}
         />
       </m.div>
     </m.div>

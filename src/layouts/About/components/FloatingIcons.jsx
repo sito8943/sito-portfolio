@@ -1,10 +1,8 @@
 import React from "react";
 
-// @mui/icons-material
-import { AddAPhoto } from "@mui/icons-material/";
-
-// @nextui-org
-// import { Link } from "@nextui-org/react";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 // framer-motion
 import { m } from "framer-motion";
@@ -49,9 +47,13 @@ const FloatingIcons = () => {
         })}`}
       >
         <div sx={{ transform: "rotate(30deg)", display: "flex" }}>
-          <AddAPhoto
-            className="float-y"
-            sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+          <FontAwesomeIcon
+            icon={faCamera}
+            className={`float-y ${css({
+              fontSize: "6rem",
+              color: "#9494f5",
+              opacity: 0.5,
+            })}`}
           />
         </div>
       </m.div>

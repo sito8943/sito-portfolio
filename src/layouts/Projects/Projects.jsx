@@ -2,14 +2,18 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+
 // framer-motion
 import { useInView } from "framer-motion";
 
 // @nextui-org
 import { Container, Link, Text } from "@nextui-org/react";
-
-// @mui/icons-material
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 // own components
 import InViewComponent from "../../components/InViewComponent/InViewComponent";
@@ -83,7 +87,10 @@ const Projects = () => {
               css={{ margin: "auto" }}
             >
               {languageState.texts.Projects.SeeMore}
-              <OpenInNewIcon sx={{ marginLeft: "5px", fontSize: "18px" }} />
+              <FontAwesomeIcon
+                icon={faExternalLink}
+                className={css({ marginLeft: "5px", fontSize: "18px" })}
+              />
             </Link>
           </Text>
         </InViewComponent>

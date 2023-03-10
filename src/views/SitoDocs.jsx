@@ -1,8 +1,11 @@
 import React from "react";
 
-// @mui/icons-material
-import {Launch,ArrowCircleLeft} from "@mui/icons-material/";
-
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExternalLink,
+  faArrowCircleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -47,7 +50,10 @@ const SitoDocs = () => {
               marginLeft: "5px",
             }}
           >
-            <ArrowCircleLeft sx={{ fontSize: "40px" }} />
+            <FontAwesomeIcon
+              className={css({ fontSize: "40px" })}
+              icon={faArrowCircleLeft}
+            />
           </Button>
         </Link>
         <Text h1 css={{ marginBottom: 5 }}>
@@ -74,7 +80,10 @@ const SitoDocs = () => {
                   <Text h4 color="primary" css={{ marginBottom: 3 }}>
                     {item.title}
                   </Text>
-                  <Launch sx={{ marginLeft: "5px", fontSize: "20px" }} />
+                  <FontAwesomeIcon
+                    icon={faExternalLink}
+                    className={css({ marginLeft: "5px", fontSize: "20px" })}
+                  />
                 </Link>
                 <Text span size="$xs">
                   {item.size}

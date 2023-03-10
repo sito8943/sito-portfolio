@@ -1,7 +1,11 @@
 import React from "react";
 
-// @mui/icons-material
-import { CheckCircle, AddReaction } from "@mui/icons-material/";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleCheck,
+  faFaceLaughWink,
+} from "@fortawesome/free-solid-svg-icons";
 
 // framer-motion
 import { m } from "framer-motion";
@@ -41,18 +45,26 @@ const FloatingIcons = () => {
         variants={item}
         className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
       >
-        <CheckCircle
-          className="float-y"
-          sx={{ fontSize: "3rem", color: "#0fd908", opacity: 0.5 }}
+        <FontAwesomeIcon
+          icon={faCircleCheck}
+          className={`float-y ${css({
+            fontSize: "3rem",
+            color: "#0fd908",
+            opacity: 0.5,
+          })}`}
         />
       </m.div>
       <m.div
         variants={item}
         className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
       >
-        <AddReaction
-          className="float-y"
-          sx={{ fontSize: "4rem", color: "#0fd908", opacity: 0.5 }}
+        <FontAwesomeIcon
+          icon={faFaceLaughWink}
+          className={`float-y ${css({
+            fontSize: "4rem",
+            color: "#0fd908",
+            opacity: 0.5,
+          })}`}
         />
       </m.div>
     </m.div>

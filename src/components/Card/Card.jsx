@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import PropTypes from "prop-types";
 
@@ -14,7 +14,7 @@ const Card = (props) => {
       onPress={onClick}
       variant="bordered"
       css={{
-        width: "250px",
+        width: "100%",
         margin: "10px",
         display: "flex",
         flexDirection: "column !important",

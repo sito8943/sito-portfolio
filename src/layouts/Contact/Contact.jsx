@@ -5,7 +5,14 @@ import emailjs from "@emailjs/browser";
 import { css } from "@emotion/css";
 
 // @nextui-org
-import { Input, Textarea, Button, Text, Image } from "@nextui-org/react";
+import {
+  Input,
+  Textarea,
+  Button,
+  Text,
+  Image,
+  Container,
+} from "@nextui-org/react";
 
 // own components
 import InViewComponent from "../../components/InViewComponent/InViewComponent";
@@ -48,14 +55,14 @@ const Hero = () => {
 
   return (
     <Section id="contact" background="#222">
-      <div
-        className={css({
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
+      <Container
+        justify="center"
+        alignItems="center"
+        display="flex"
+        direction="column"
+        css={{
           height: "100%",
-          width: "100%",
-        })}
+        }}
       >
         <InViewComponent>
           <Text h1>{languageState.texts.Contact.Title}</Text>
@@ -63,10 +70,14 @@ const Hero = () => {
         <form ref={form} onSubmit={onSubmit}>
           <div
             className={css({
+              display: "grid",
               width: "100%",
-              flexWrap: "wrap",
+              gap: "20px",
               marginTop: "40px",
-              justifyContent: "center",
+              gridTemplateColumns: "1fr 1fr",
+              "@media (max-width: 549px)": {
+                gridTemplateColumns: "1fr",
+              },
             })}
           >
             <InViewComponent delay="0.5s">
@@ -74,7 +85,7 @@ const Hero = () => {
                 src={contact}
                 alt="contact"
                 css={{
-                  width: "400px",
+                  width: "100%",
                   height: "385px",
                   objectFit: "cover",
                   background: "white",
@@ -85,7 +96,8 @@ const Hero = () => {
             </InViewComponent>
             <div
               className={css({
-                width: "350px",
+                display: "flex",
+                width: "100%",
                 flexDirection: "column",
                 flexWrap: "wrap",
               })}
@@ -134,7 +146,7 @@ const Hero = () => {
             </div>
           </div>
         </form>
-      </div>
+      </Container>
     </Section>
   );
 };

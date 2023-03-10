@@ -1,20 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, lazy, Suspense } from "react";
 
 // framer-motion
 import { useInView } from "framer-motion";
 
 // own components
+import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
 import ToTop from "../components/ToTop/ToTop";
 
 // layouts
-import Hero from "../layouts/Hero/Hero";
-import About from "../layouts/About/About";
-import Skills from "../layouts/Skills/Skills";
-import Footer from "../components/Footer/Footer";
-import Projects from "../layouts/Projects/Projects";
-import SideProjects from "../layouts/SideProjects/SideProjects";
-import Contact from "../layouts/Contact/Contact";
+const Hero = lazy(() => import("../layouts/Hero/Hero"));
+const About = lazy(() => import("../layouts/About/About"));
+const Skills = lazy(() => import("../layouts/Skills/Skills"));
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Projects = lazy(() => import("../layouts/Projects/Projects"));
+const SideProjects = lazy(() => import("../layouts/SideProjects/SideProjects"));
+const Contact = lazy(() => import("../layouts/Contact/Contact"));
 
 const Home = () => {
   const ref = useRef(null);
@@ -22,15 +23,17 @@ const Home = () => {
 
   return (
     <div sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
-      <ToTop footerVisible={isInView} />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <SideProjects />
-      <Contact />
-      <Footer ref={ref} />
+      <Suspense fallback={<Loading />}>
+        <ToTop footerVisible={isInView} />
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <SideProjects />
+        <Contact />
+        <Footer ref={ref} />
+      </Suspense>
     </div>
   );
 };

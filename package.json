@@ -7,32 +7,28 @@
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
     "@emotion/css": "^11.9.0",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.6",
-    "@mui/material": "^5.10.8",
     "@nextui-org/react": "^1.0.0-beta.10",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@tippyjs/react": "^4.2.6",
     "env-cmd": "^10.1.0",
     "framer-motion": "^6.5.1",
-    "gh-pages": "^4.0.0",
     "next-themes": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "serve": "^14.2.0",
-    "sito-container": "^0.3.4",
     "sito-image": "^0.4.1",
     "some-javascript-utils": "^0.2.1"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "env-cmd -f .env react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [

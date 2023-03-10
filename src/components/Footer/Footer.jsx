@@ -3,17 +3,18 @@
 import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
 
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+
 // @emotion/css
 import { css } from "@emotion/css";
-
-// @mui/icons-material
-import {
-  Instagram,
-  Facebook,
-  Twitter,
-  GitHub,
-  Launch,
-} from "@mui/icons-material/";
 
 // @nextui-org
 import { Text, Link as MUILink } from "@nextui-org/react";
@@ -24,14 +25,7 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 const Footer = forwardRef((props, ref) => {
   const { languageState } = useLanguage();
 
-  const fontSize = { fontSize: "25px" };
-
-  const icons = [
-    <GitHub sx={fontSize} />,
-    <Instagram sx={fontSize} />,
-    <Twitter sx={fontSize} />,
-    <Facebook sx={fontSize} />,
-  ];
+  const icons = [faGithub, faInstagram, faTwitter, faFacebook];
 
   return (
     <div
@@ -43,6 +37,7 @@ const Footer = forwardRef((props, ref) => {
         height: "50px",
         background: "#222333",
         flexWrap: "wrap",
+        display: "flex",
       })}
     >
       <div className={css({ display: "flex" })}>
@@ -54,7 +49,10 @@ const Footer = forwardRef((props, ref) => {
           >
             {languageState.texts.Footer.SitoLib}
             {"<Sito />"}
-            <Launch sx={{ fontSize: "20px", marginLeft: "5px" }} />
+            <FontAwesomeIcon
+              icon={faExternalLink}
+              className={css({ fontSize: "15px", marginLeft: "5px" })}
+            />
           </Link>
         </Text>
       </div>
@@ -66,7 +64,10 @@ const Footer = forwardRef((props, ref) => {
             rel="noreferrer"
             target="_blank"
           >
-            {icons[i]}
+            <FontAwesomeIcon
+              className={css({ fontSize: "25px" })}
+              icon={icons[i]}
+            />
           </MUILink>
         ))}
       </div>

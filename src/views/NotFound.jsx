@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// @mui/icons-material
-import {Error,ThumbDown,Block} from "@mui/icons-material";
-
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faThumbsDown,
+  faBan,
+  faCircleExclamation,
+} from "@fortawesome/free-solid-svg-icons";
 
 // @nextui-org
 import { Button, Text } from "@nextui-org/react";
@@ -77,9 +81,13 @@ const NotFound = () => {
             className={`scale-animation ${css({ left: "5%" })}`}
           >
             <div className={css({ transform: "rotate(-30deg)" })}>
-              <Error
-                className="float-y"
-                sx={{ fontSize: "6rem", color: "#f53b3b", opacity: 0.5 }}
+              <FontAwesomeIcon
+                icon={faCircleExclamation}
+                className={`float-y ${css({
+                  fontSize: "6rem",
+                  color: "#f53b3b",
+                  opacity: 0.5,
+                })}`}
               />
             </div>
           </m.div>
@@ -92,9 +100,13 @@ const NotFound = () => {
             })}`}
           >
             <div className={css({ transform: "rotate(30deg)" })}>
-              <ThumbDown
-                className="float-y"
-                sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
+              <FontAwesomeIcon
+                icon={faThumbsDown}
+                className={`float-y ${css({
+                  fontSize: "6rem",
+                  color: "#9494f5",
+                  opacity: 0.5,
+                })}`}
               />
             </div>
           </m.div>
@@ -107,13 +119,23 @@ const NotFound = () => {
               right: "20%",
             })}`}
           >
-            <Block
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
+            <FontAwesomeIcon
+              icon={faBan}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#d908d9",
+                opacity: 0.5,
+              })}`}
             />
           </m.div>
         </m.div>
-        <div className={{ width: "100%", display:"flex" ,justifyContent:"center"}}>
+        <div
+          className={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <m.div variants={item}>
             <Text h1 css={{ fontSize: "10rem" }}>
               4

@@ -4,8 +4,9 @@
 import { useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-// @mui/icons-material
-import { Menu } from "@mui/icons-material/";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 // @nextui-org
 import { Navbar, Button, Text, Link } from "@nextui-org/react";
@@ -66,7 +67,7 @@ const SitoNavbar = () => {
           zIndex: !hideMenuButton ? -1 : 0,
         }}
       >
-        <Menu />
+        <FontAwesomeIcon icon={faBars} />
       </Button>
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>

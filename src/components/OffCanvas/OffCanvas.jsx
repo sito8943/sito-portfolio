@@ -10,8 +10,9 @@ import { css } from "@emotion/css";
 // @nextui-org
 import { Button, Link, Text } from "@nextui-org/react";
 
-// @mui/icons-material
-import { Clear } from "@mui/icons-material/";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -80,7 +81,7 @@ const OffCanvas = (props) => {
             }}
             onPress={handleClose}
           >
-            <Clear />
+            <FontAwesomeIcon icon={faClose} />
           </Button>
         </div>
         <div className={css({ paddingLeft: "20px", flexDirection: "column" })}>

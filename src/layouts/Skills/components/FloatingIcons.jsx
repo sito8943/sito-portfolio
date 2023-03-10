@@ -1,7 +1,8 @@
 import React from "react";
 
-// @mui/icons-material
-import { Javascript } from "@mui/icons-material";
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faJs } from "@fortawesome/free-brands-svg-icons";
 
 // @nextui-org
 import { Link } from "@nextui-org/react";
@@ -49,9 +50,13 @@ const FloatingIcons = () => {
             target="_blank"
             rel="noopener"
           >
-            <Javascript
-              className="float-y"
-              sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
+            <FontAwesomeIcon
+              icon={faJs}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#F0D81D",
+                opacity: 0.5,
+              })}`}
             />
           </Link>
         </div>
