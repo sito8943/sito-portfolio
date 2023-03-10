@@ -1,12 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { getUserLanguage } from "some-javascript-utils/browser";
 
 // next-themes
 import { useTheme as useNextTheme } from "next-themes";
 
 // framer-motion
 import { LazyMotion, domAnimation } from "framer-motion";
+
+// contexts
+import { useLanguage } from "./contexts/LanguageProvider";
 
 // views
 import Home from "./views/Home";
@@ -15,6 +19,15 @@ import NotFound from "./views/NotFound";
 
 const App = () => {
   const { setTheme } = useNextTheme();
+  const { setLanguageState } = useLanguage();
+
+  useEffect(() => {
+    try {
+      setLanguageState({ type: "set", lang: getUserLanguage() });
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
 
   useEffect(() => {
     setTheme("dark");

@@ -180,7 +180,7 @@
           "Title": "WMT Logistics",
           "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
           "Text": "Compañia de brokers y cursos para camioneros",
-          "Link": "https://inmersoft-dev.github.io/broker-company/",
+          "Link": "https://wmtlogistics.org/",
           "See": "Ver"
         },
         {
@@ -310,21 +310,6 @@
           }
         ]
       },
-      "Optional": {
-        "Title": "Lo que me gusta",
-        "Text": "Me gusta viajar ✈️,",
-        "More": "conocer nuevos lugares 🌲",
-        "Content": [
-          {
-            "Type": "Title",
-            "Content": "Viajar, explorar y aprender"
-          },
-          {
-            "Type": "Text",
-            "Content": ""
-          }
-        ]
-      },
       "FreeTime": {
         "Title": "En mi tiempo libre",
         "Text": "Me gusta escuchar música 🎶",
@@ -346,12 +331,6 @@
           "Alt": "about",
           "Text": "Me gusta programar 👨🏻‍💻",
           "More": "y aprender cosas nuevas 📚"
-        },
-        {
-          "Id": "Optional",
-          "Alt": "optional",
-          "Text": "Me gusta viajar ✈️,",
-          "More": "conocer nuevos lugares 🌲"
         },
         {
           "Id": "FreeTime",
@@ -381,14 +360,14 @@
           "Alt": "html-css-logo",
           "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
           "Text": "Html y Css",
-          "Start": 2018,
+          "Start": 2019,
           "Age": " años de experiencia"
         },
         {
           "Alt": "javascript-logo",
           "Link": "https://es.wikipedia.org/wiki/JavaScript",
           "Text": "JavaScript",
-          "Start": 2018,
+          "Start": 2019,
           "Age": " años de experiencia"
         }
       ],
@@ -450,6 +429,438 @@
         }
       },
       "Button": "Enviar"
+    }
+  },
+  "en": {
+    "NotFound": {
+      "GoHome": "Go Home",
+      "Body": "Page not found"
+    },
+    "Navbar": {
+      "Links": [
+        {
+          "id": "home",
+          "label": "Home",
+          "to": "#hero"
+        },
+        {
+          "id": "about",
+          "label": "About me",
+          "to": "#about"
+        },
+        {
+          "id": "skills",
+          "label": "Skills",
+          "to": "#skills"
+        },
+        {
+          "id": "projects",
+          "label": "Pro projects",
+          "to": "#projects"
+        },
+        {
+          "id": "side-projects",
+          "label": "Hobby porjects",
+          "to": "#side-projects"
+        },
+        {
+          "id": "contact",
+          "label": "Contact me",
+          "to": "#contact"
+        }
+      ]
+    },
+    "Footer": {
+      "SitoLib": "Documentation"
+    },
+    "Docs": {
+      "Title": "Components de <Sito />",
+      "Dependencies": "Dependencies:",
+      "Version": "Version: ",
+      "Components": [
+        {
+          "id": "sito-container",
+          "title": "SitoContainer",
+          "description": "Super flexible container, very similar to @mui's Box, but defaults to flex",
+          "link": "https://www.npmjs.com/package/sito-container",
+          "size": "9.41kB",
+          "version": "0.4.1",
+          "dependencies": [
+            {
+              "name": "@emotion/css",
+              "version": "@11.9.0",
+              "link": "https://www.npmjs.com/package/@emotion/css"
+            },
+            {
+              "name": "react",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "react-dom",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-dom"
+            },
+            {
+              "name": "react-scripts",
+              "version": "@5.0.1",
+              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            }
+          ]
+        },
+        {
+          "id": "sito-image",
+          "title": "SitoImage",
+          "description": "A powerful customizable suspense-like image component that (optionally) simulates a glow effect while loading.",
+          "link": "https://www.npmjs.com/package/sito-image",
+          "size": "14.2kB",
+          "version": "0.11.5",
+          "dependencies": [
+            {
+              "name": "@emotion/css",
+              "version": "@11.9.0",
+              "link": "https://www.npmjs.com/package/@emotion/css"
+            },
+            {
+              "name": "react",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "react-dom",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-dom"
+            },
+            {
+              "name": "react-scripts",
+              "version": "@5.0.1",
+              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            }
+          ]
+        },
+        {
+          "id": "sito-mui-tab-view",
+          "title": "SitoMUITabView",
+          "description": "Tabs make it easy to browse and switch between different views.",
+          "link": "https://www.npmjs.com/package/sito-mui-tab-view",
+          "size": "12.4kB",
+          "version": "0.4.1",
+          "dependencies": [
+            {
+              "name": "@emotion/css",
+              "version": "@11.9.0",
+              "link": "https://www.npmjs.com/package/@emotion/css"
+            },
+            {
+              "name": "@emotion/react",
+              "version": "@11.10.4",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "@emotion/styled",
+              "version": "@11.10.4",
+              "link": "https://www.npmjs.com/package/@emotion/styled"
+            },
+            {
+              "name": "@mui/material",
+              "version": "@5.10.8",
+              "link": "https://www.npmjs.com/package/@mui/material"
+            },
+            {
+              "name": "react",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react"
+            },
+            {
+              "name": "react-dom",
+              "version": "@18.2.0",
+              "link": "https://www.npmjs.com/package/@emotion/react-dom"
+            },
+            {
+              "name": "react-scripts",
+              "version": "@5.0.1",
+              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
+            }
+          ]
+        }
+      ]
+    },
+    "Hero": {
+      "Title": "My Portfolio ",
+      "Name": "Sito",
+      "Text": "Let's start a journey...",
+      "Social": [
+        { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
+        {
+          "Text": "Facebook",
+          "Link": "https://www.facebook.com/carlosandres.moragonzalez.7/"
+        },
+        {
+          "Text": "Instagram",
+          "Link": "https://www.instagram.com/sitonumbis/"
+        },
+        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" }
+      ],
+      "Meet": "You can find me at:"
+    },
+    "Projects": {
+      "Title": "Professional Projects",
+      "Text": "You can pass by me ",
+      "SeeMore": "GitHub",
+      "Projects": [
+        {
+          "Title": "WMT Logistics",
+          "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
+          "Text": "Broker company and courses for truckers",
+          "Link": "https://wmtlogistics.org/",
+          "See": "Ver"
+        },
+        {
+          "Title": "Alta Voz",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
+          "Text": "Website to buy and listen to music",
+          "Link": "https://inmersoft-dev.github.io/alta-voz-client/",
+          "See": "Ver"
+        },
+        {
+          "Title": "Marketplace",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
+          "Text": "Service to publish digital catalogs",
+          "Link": "https://marketplace.ireasantiago.com",
+          "See": "Ver"
+        }
+      ]
+    },
+    "SideProjects": {
+      "Title": "My projects",
+      "Text": "Every Sunday I decide to create side projects (parallel projects)",
+      "CallMe": "Small projects to experience new tools",
+      "Projects": [
+        {
+          "Title": "ToDo",
+          "Text": "Create, modify and delete notes for productivity",
+          "Image": "https://repository-images.githubusercontent.com/511256492/6cc736af-aed1-4c24-beda-35ea98cbd038",
+          "Alt": "todo",
+          "Link": "https://github.com/SitoNumbis/todopro.git",
+          "See": "Ver"
+        },
+        {
+          "Title": "Snake",
+          "Text": "Classic game of the snake that eats apples",
+          "Link": "https://sitonumbis.github.io/sito-react-snake/",
+          "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
+          "Alt": "sito-react-snake",
+          "See": "Ver"
+        },
+        {
+          "Title": "Mirror",
+          "Text": "Find the same cards on the board",
+          "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
+          "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
+          "Alt": "sito-mirror",
+          "See": "Ver"
+        }
+      ]
+    },
+    "Modal": {
+      "Close": "Close"
+    },
+    "About": {
+      "Title": "Hi I'm Sito",
+      "Subtitle": "but my real name is Carlos Andrés Mora González",
+      "Me": {
+        "Title": "About me",
+        "Text": "I like programming 👨🏻‍💻",
+        "More": "and learn new things 📚",
+        "Content": [
+          {
+            "Type": "Title",
+            "Content": "Programming is one of my greatest passions"
+          },
+          {
+            "Type": "Text",
+            "Content": "I am the son of two Masters in Computer Science, so programming runs through my veins. I started writing my first lines of code when I entered university, studying Computer Science, during my entire study process I was developing desktop applications with Qt and C++."
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "qt-logo",
+                "Alt": "qt-logo",
+                "Link": "https://www.qt.io/"
+              },
+              {
+                "Source": "cpp-logo",
+                "Alt": "cpp-logo",
+                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+              }
+            ]
+          },
+          {
+            "Type": "Text",
+            "Content": "Upon reaching the second year of my degree, a professor told me that it is possible to develop web pages and servers only with JavaScript, at that very moment I looked for courses to learn that language. I am currently a web page developer, using tools like ReactJs, NodeJs, JavaScript, MaterialUi, NextUi, Firebase, MongoDB"
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "react-logo",
+                "Alt": "react-logo",
+                "Link": "https://reactjs.org/"
+              },
+              {
+                "Source": "node-logo",
+                "Alt": "node-logo",
+                "Link": "https://nodejs.org/"
+              },
+              {
+                "Source": "js-logo",
+                "Alt": "javascript-logo",
+                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+              },
+              {
+                "Source": "mui-logo",
+                "Alt": "materialui-logo",
+                "Link": "https://mui.com/"
+              },
+              {
+                "Source": "nextui-logo",
+                "Alt": "nextui-logo",
+                "Link": "https://nextui.org/"
+              },
+              {
+                "Source": "firebase-logo",
+                "Alt": "firebase-logo",
+                "Link": "https://firebase.google.com/"
+              },
+              {
+                "Source": "mongodb-logo",
+                "Alt": "mongodb-logo",
+                "Link": "https://www.mongodb.com/"
+              }
+            ]
+          }
+        ]
+      },
+      "FreeTime": {
+        "Title": "In my free time",
+        "Text": "I like listening to music 🎶",
+        "More": "and play the piano 🎹",
+        "Content": [
+          {
+            "Type": "Title",
+            "Content": "Music and piano"
+          },
+          {
+            "Type": "Text",
+            "Content": "I studied music at the Lauro Fuentes community school in Santiago de Cuba. I started studying piano for four years, with an electric keyboard I studied at home and it distracted me, then I had to change to percussion."
+          }
+        ]
+      },
+      "Cards": [
+        {
+          "Id": "Me",
+          "Alt": "about",
+          "Text": "I like programming 👨🏻‍💻",
+          "More": "and learn new things 📚"
+        },
+        {
+          "Id": "FreeTime",
+          "Alt": "free-time",
+          "Text": "I like listening to music 🎶",
+          "More": "and play the piano 🎹"
+        }
+      ],
+      "Github": {
+        "Link": "https://github.com/SitoNumbis"
+      },
+      "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
+      "Button": "Contact now"
+    },
+    "Skills": {
+      "Title": "My skills",
+      "Body": "As a Frontend developer of web applications I have enhanced the following skills:",
+      "List": [
+        {
+          "Alt": "react-logo",
+          "Link": "https://reactjs.org/",
+          "Text": "ReactJs",
+          "Start": 2019,
+          "Age": " years of experience"
+        },
+        {
+          "Alt": "html-css-logo",
+          "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
+          "Text": "Html y Css",
+          "Start": 2019,
+          "Age": " years of experience"
+        },
+        {
+          "Alt": "javascript-logo",
+          "Link": "https://es.wikipedia.org/wiki/JavaScript",
+          "Text": "JavaScript",
+          "Start": 2019,
+          "Age": " years of experience"
+        }
+      ],
+      "Other": "Other skills",
+      "Others": [
+        {
+          "Source": "node-logo",
+          "Alt": "node-logo",
+          "Link": "https://nodejs.org/",
+          "Text": "NodeJs"
+        },
+        {
+          "Source": "mui-logo",
+          "Alt": "materialui-logo",
+          "Link": "https://mui.com/",
+          "Text": "Material Ui"
+        },
+        {
+          "Source": "nextui-logo",
+          "Alt": "nextui-logo",
+          "Link": "https://nextui.org/",
+          "Text": "NextUi"
+        },
+        {
+          "Source": "mongodb-logo",
+          "Alt": "mongodb-logo",
+          "Link": "https://www.mongodb.com/",
+          "Text": "MongoDB"
+        },
+        {
+          "Source": "firebase-logo",
+          "Alt": "firebase-logo",
+          "Link": "https://firebase.google.com/",
+          "Text": "Firebase"
+        }
+      ]
+    },
+    "Contact": {
+      "Title": "Send me your proposal!",
+      "Body": "Are you interested in working with me? Do not hesitate to write me",
+      "Inputs": {
+        "Name": {
+          "Label": "Your name",
+          "Name": "user_name",
+          "Placeholder": "Write your name here",
+          "Type": "text"
+        },
+        "Email": {
+          "Label": "Your email",
+          "Name": "user_email",
+          "Placeholder": "Write your email here",
+          "Type": "email"
+        },
+        "Message": {
+          "Label": "Your message",
+          "Name": "message",
+          "Placeholder": "Write your message here",
+          "Type": "textarea"
+        }
+      },
+      "Button": "Send"
     }
   }
 }
