@@ -1,12 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-// sito components
-import SitoContainer from "sito-container";
-
 // @mui/icons-material
-import ErrorIcon from "@mui/icons-material/Error";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import BlockIcon from "@mui/icons-material/Block";
+import {Error,ThumbDown,Block} from "@mui/icons-material";
+
 
 // @nextui-org
 import { Button, Text } from "@nextui-org/react";
@@ -15,7 +12,7 @@ import { Button, Text } from "@nextui-org/react";
 import { css } from "@emotion/css";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // contexts
 import { useLanguage } from "../contexts/LanguageProvider";
@@ -54,36 +51,39 @@ const NotFound = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={container}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <SitoContainer
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        sx={{ width: "100%", height: "100vh" }}
+      <div
+        className={css({
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          width: "100%",
+          height: "100vh",
+        })}
       >
-        <motion.div
+        <m.div
           variants={containerImage}
           initial="hidden"
           animate="visible"
           viewport={{ once: true }}
         >
-          <motion.div
+          <m.div
             variants={item}
             className={`scale-animation ${css({ left: "5%" })}`}
           >
             <div className={css({ transform: "rotate(-30deg)" })}>
-              <ErrorIcon
+              <Error
                 className="float-y"
                 sx={{ fontSize: "6rem", color: "#f53b3b", opacity: 0.5 }}
               />
             </div>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             variants={item}
             className={`scale-animation top-20 ${css({
               width: "100px",
@@ -92,13 +92,13 @@ const NotFound = () => {
             })}`}
           >
             <div className={css({ transform: "rotate(30deg)" })}>
-              <ThumbDownIcon
+              <ThumbDown
                 className="float-y"
                 sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
               />
             </div>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             variants={item}
             className={`scale-animation ${css({
               width: "100px",
@@ -107,35 +107,35 @@ const NotFound = () => {
               right: "20%",
             })}`}
           >
-            <BlockIcon
+            <Block
               className="float-y"
               sx={{ fontSize: "6rem", color: "#d908d9", opacity: 0.5 }}
             />
-          </motion.div>
-        </motion.div>
-        <SitoContainer justifyContent="center" sx={{ width: "100%" }}>
-          <motion.div variants={item}>
+          </m.div>
+        </m.div>
+        <div className={{ width: "100%", display:"flex" ,justifyContent:"center"}}>
+          <m.div variants={item}>
             <Text h1 css={{ fontSize: "10rem" }}>
               4
             </Text>
-          </motion.div>
-          <motion.div variants={item}>
+          </m.div>
+          <m.div variants={item}>
             <Text h1 css={{ fontSize: "10rem" }}>
               0
             </Text>
-          </motion.div>
-          <motion.div variants={item}>
+          </m.div>
+          <m.div variants={item}>
             <Text h1 css={{ fontSize: "10rem" }}>
               4
             </Text>
-          </motion.div>
-        </SitoContainer>
-        <motion.div variants={item}>
+          </m.div>
+        </div>
+        <m.div variants={item}>
           <Text css={{ marginBottom: "40px" }}>
             {languageState.texts.NotFound.Body}
           </Text>
-        </motion.div>
-        <motion.div variants={item}>
+        </m.div>
+        <m.div variants={item}>
           <Link to="/" className={css({ textDecoration: "none" })}>
             <Button flat ghost>
               <i
@@ -145,9 +145,9 @@ const NotFound = () => {
               {languageState.texts.NotFound.GoHome}
             </Button>
           </Link>
-        </motion.div>
-      </SitoContainer>
-    </motion.div>
+        </m.div>
+      </div>
+    </m.div>
   );
 };
 

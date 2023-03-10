@@ -1,14 +1,13 @@
-// @mui/icons-material
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import React from "react";
 
-// sito components
-import SitoContainer from "sito-container";
+// @mui/icons-material
+import { AddAPhoto } from "@mui/icons-material/";
 
 // @nextui-org
 // import { Link } from "@nextui-org/react";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -34,13 +33,13 @@ const FloatingIcons = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerImage}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <motion.div
+      <m.div
         variants={item}
         className={`scale-animation ${css({
           width: "100px",
@@ -49,14 +48,14 @@ const FloatingIcons = () => {
           top: "15%",
         })}`}
       >
-        <SitoContainer sx={{ transform: "rotate(30deg)" }}>
-          <AddAPhotoIcon
+        <div sx={{ transform: "rotate(30deg)", display: "flex" }}>
+          <AddAPhoto
             className="float-y"
             sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
           />
-        </SitoContainer>
-      </motion.div>
-    </motion.div>
+        </div>
+      </m.div>
+    </m.div>
   );
 };
 

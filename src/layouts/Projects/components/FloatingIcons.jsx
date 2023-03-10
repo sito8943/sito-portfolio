@@ -1,9 +1,10 @@
+import React from "react";
+
 // @mui/icons-material
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import AddReactionIcon from "@mui/icons-material/AddReaction";
+import { CheckCircle, AddReaction } from "@mui/icons-material/";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -30,31 +31,31 @@ const FloatingIcons = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerImage}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <motion.div
+      <m.div
         variants={item}
         className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
       >
-        <CheckCircleIcon
+        <CheckCircle
           className="float-y"
           sx={{ fontSize: "3rem", color: "#0fd908", opacity: 0.5 }}
         />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         variants={item}
         className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
       >
-        <AddReactionIcon
+        <AddReaction
           className="float-y"
           sx={{ fontSize: "4rem", color: "#0fd908", opacity: 0.5 }}
         />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };
 

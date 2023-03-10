@@ -2,27 +2,28 @@ import { forwardRef } from "react";
 
 import PropTypes from "prop-types";
 
-// sito components
-import SitoContainer from "sito-container";
+// @emotion/css
+import { css } from "@emotion/css";
 
 const Section = forwardRef((props, ref) => {
   const { id, background, children } = props;
 
   return (
-    <SitoContainer
+    <div
       ref={ref}
       id={id}
-      justifyContent="center"
-      alignItems="center"
-      sx={{
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         padding: "100px 0",
         minHeight: "100vh",
         background,
         position: "relative",
-      }}
+      })}
     >
       {children}
-    </SitoContainer>
+    </div>
   );
 });
 

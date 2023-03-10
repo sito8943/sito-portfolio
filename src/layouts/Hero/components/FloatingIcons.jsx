@@ -1,13 +1,13 @@
+import React from "react";
+
 // @mui/icons-material
-import FlightIcon from "@mui/icons-material/Flight";
-import LaptopIcon from "@mui/icons-material/Laptop";
-import PianoIcon from "@mui/icons-material/Piano";
+import {Flight,Laptop,Piano} from "@mui/icons-material";
 
 // @nextui-org
 import { Link } from "@nextui-org/react";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -34,26 +34,26 @@ const FloatingIcons = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerImage}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <motion.div
+      <m.div
         variants={item}
         className={`scale-animation ${css({ left: "5%" })}`}
       >
         <div className={css({ transform: "rotate(-30deg)" })}>
           <Link href="#about">
-            <FlightIcon
+            <Flight
               className="float-y"
               sx={{ fontSize: "6rem", color: "#088cd9", opacity: 0.5 }}
             />
           </Link>
         </div>
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         variants={item}
         className={`scale-animation ${css({
           width: "100px",
@@ -64,14 +64,14 @@ const FloatingIcons = () => {
       >
         <div className={css({ transform: "rotate(30deg)" })}>
           <Link href="#about">
-            <PianoIcon
+            <Piano
               className="float-y"
               sx={{ fontSize: "6rem", color: "#9494f5", opacity: 0.5 }}
             />
           </Link>
         </div>
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         variants={item}
         className={`scale-animation ${css({
           width: "100px",
@@ -82,14 +82,14 @@ const FloatingIcons = () => {
       >
         <div className={css({ transform: "rotate(10deg)" })}>
           <Link href="#projects">
-            <LaptopIcon
+            <Laptop
               className="float-y"
               sx={{ fontSize: "6rem", color: "#0fd908", opacity: 0.5 }}
             />
           </Link>
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };
 

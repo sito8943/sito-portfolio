@@ -1,8 +1,10 @@
+import React from "react";
+
 // @mui/icons-material
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import {Lightbulb} from "@mui/icons-material";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -29,22 +31,22 @@ const FloatingIcons = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerImage}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <motion.div
+      <m.div
         variants={item}
         className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
       >
-        <LightbulbIcon
+        <Lightbulb
           className="float-y"
           sx={{ fontSize: "5rem", color: "#F0D81D", opacity: 0.5 }}
         />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };
 

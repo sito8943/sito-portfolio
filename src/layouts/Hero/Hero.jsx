@@ -1,15 +1,16 @@
+import React from "react";
+
 // @mui/icons-material
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import {
+  ArrowDownward,
+  Instagram,
+  Facebook,
+  Twitter,
+  GitHub,
+} from "@mui/icons-material/";
 
 // @emotion/css
 import { css } from "@emotion/css";
-
-// sito components
-import SitoContainer from "sito-container";
 
 // @nextui-org
 import { Button, Text, Link } from "@nextui-org/react";
@@ -31,20 +32,20 @@ const Hero = () => {
   const fontSize = { fontSize: "30px" };
 
   const icons = [
-    <GitHubIcon sx={fontSize} />,
-    <InstagramIcon sx={fontSize} />,
-    <TwitterIcon sx={fontSize} />,
-    <FacebookIcon sx={fontSize} />,
+    <GitHub sx={fontSize} />,
+    <Instagram sx={fontSize} />,
+    <Twitter sx={fontSize} />,
+    <Facebook sx={fontSize} />,
   ];
 
   return (
     <Section id="hero">
       <FloatingIcons />
-      <SitoContainer
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        sx={{
+      <div
+        className={css({
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
           height: "100%",
           width: "100%",
           div: {
@@ -53,7 +54,7 @@ const Hero = () => {
             display: "flex",
             flexDirection: "column",
           },
-        }}
+        })}
       >
         <InViewComponent>
           <Text h1 css={{ textAlign: "center" }}>
@@ -77,7 +78,7 @@ const Hero = () => {
                 },
               }}
             >
-              <ArrowDownwardIcon />
+              <ArrowDownward />
             </Button>
           </Link>
         </InViewComponent>
@@ -92,9 +93,9 @@ const Hero = () => {
             {languageState.texts.Hero.Meet}
           </Text>
         </InViewComponent>
-        <SitoContainer
-          justifyContent="center"
-          sx={{
+        <div
+          className={css({
+            justifyContent: "center",
             flexDirection: "row !important",
             gap: "15px",
             a: {
@@ -107,8 +108,8 @@ const Hero = () => {
               display: "flex",
               flexDirection: "row",
             },
-          }}
-          wrap="wrap"
+            flexWrap: "wrap",
+          })}
         >
           {languageState.texts.Hero.Social.map((item, i) => (
             <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.6)}s`}>
@@ -117,8 +118,8 @@ const Hero = () => {
               </Link>
             </InViewComponent>
           ))}
-        </SitoContainer>
-      </SitoContainer>
+        </div>
+      </div>
     </Section>
   );
 };

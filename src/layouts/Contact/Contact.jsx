@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-// sito components
-import SitoContainer from "sito-container";
+// @emotion/css
+import { css } from "@emotion/css";
 
 // @nextui-org
 import { Input, Textarea, Button, Text, Image } from "@nextui-org/react";
@@ -48,22 +48,26 @@ const Hero = () => {
 
   return (
     <Section id="contact" background="#222">
-      <SitoContainer
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        sx={{
+      <div
+        className={css({
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
           height: "100%",
           width: "100%",
-        }}
+        })}
       >
         <InViewComponent>
           <Text h1>{languageState.texts.Contact.Title}</Text>
         </InViewComponent>
         <form ref={form} onSubmit={onSubmit}>
-          <SitoContainer
-            justifyContent="center"
-            sx={{ width: "100%", flexWrap: "wrap", marginTop: "40px" }}
+          <div
+            className={css({
+              width: "100%",
+              flexWrap: "wrap",
+              marginTop: "40px",
+              justifyContent: "center",
+            })}
           >
             <InViewComponent delay="0.5s">
               <Image
@@ -79,10 +83,12 @@ const Hero = () => {
                 }}
               />
             </InViewComponent>
-            <SitoContainer
-              sx={{ width: "350px" }}
-              flexDirection="column"
-              wrap="wrap"
+            <div
+              className={css({
+                width: "350px",
+                flexDirection: "column",
+                flexWrap: "wrap",
+              })}
             >
               {Object.values(languageState.texts.Contact.Inputs).map(
                 (item, i) => (
@@ -113,16 +119,22 @@ const Hero = () => {
                 )
               )}
               <InViewComponent delay="0.9s">
-                <SitoContainer justifyContent="flex-end" sx={{ width: "100%" }}>
+                <div
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
+                >
                   <Button rounded flat type="submit">
                     {languageState.texts.Contact.Button}
                   </Button>
-                </SitoContainer>
+                </div>
               </InViewComponent>
-            </SitoContainer>
-          </SitoContainer>
+            </div>
+          </div>
         </form>
-      </SitoContainer>
+      </div>
     </Section>
   );
 };

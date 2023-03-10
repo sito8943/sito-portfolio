@@ -1,9 +1,8 @@
-// sito components
-import SitoContainer from "sito-container";
+import React from "react";
 
 // @mui/icons-material
-import Launch from "@mui/icons-material/Launch";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import {Launch,ArrowCircleLeft} from "@mui/icons-material/";
+
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -25,8 +24,14 @@ const SitoDocs = () => {
   const { languageState } = useLanguage();
 
   return (
-    <SitoContainer flexDirection="column" sx={{ padding: "24px" }}>
-      <SitoContainer alignItems="center">
+    <div
+      className={css({
+        padding: "24px",
+        flexDirection: "column",
+        display: "flex",
+      })}
+    >
+      <div className={css({ display: "flex", alignItems: "center" })}>
         <Link href="/">
           <Button
             color="primary"
@@ -42,21 +47,23 @@ const SitoDocs = () => {
               marginLeft: "5px",
             }}
           >
-            <ArrowCircleLeftIcon sx={{ fontSize: "40px" }} />
+            <ArrowCircleLeft sx={{ fontSize: "40px" }} />
           </Button>
         </Link>
         <Text h1 css={{ marginBottom: 5 }}>
           {languageState.texts.Docs.Title}
         </Text>
-      </SitoContainer>
-      <SitoContainer>
+      </div>
+      <div className={css({ display: "flex" })}>
         {languageState.texts.Docs.Components.map((item, i) => (
           <InViewComponent key={item.id} delay={`${parseDelay(i, 0.3)}s`}>
             <DocCard>
-              <SitoContainer
-                alignItems="center"
-                justifyContent="space-between"
-                sx={{ marginBottom: "10px" }}
+              <div
+                className={css({
+                  marginBottom: "10px",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                })}
               >
                 <Link
                   color="primary"
@@ -72,7 +79,7 @@ const SitoDocs = () => {
                 <Text span size="$xs">
                   {item.size}
                 </Text>
-              </SitoContainer>
+              </div>
               <Text span size="$xs">
                 @{item.version}
               </Text>
@@ -82,7 +89,7 @@ const SitoDocs = () => {
               <Text h5 css={{ margin: 0 }}>
                 {languageState.texts.Docs.Dependencies}
               </Text>
-              <SitoContainer sx={{ flexWrap: "wrap" }}>
+              <div sx={{ flexWrap: "wrap", display: "flex" }}>
                 {item.dependencies.map((jtem) => (
                   <Link
                     css={{ marginRight: "10px" }}
@@ -93,12 +100,12 @@ const SitoDocs = () => {
                     {jtem.version}
                   </Link>
                 ))}
-              </SitoContainer>
+              </div>
             </DocCard>
           </InViewComponent>
         ))}
-      </SitoContainer>
-    </SitoContainer>
+      </div>
+    </div>
   );
 };
 

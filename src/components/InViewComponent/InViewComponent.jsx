@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 import PropTypes from "prop-types";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // framer-motion
 import { useInView } from "framer-motion";
-
-// sito components
-import SitoContainer from "sito-container";
 
 const InViewComponent = (props) => {
   const { children, delay, className } = props;
@@ -15,17 +15,16 @@ const InViewComponent = (props) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <SitoContainer
+    <div
       ref={ref}
-      className={className}
-      sx={{
+      className={`${css({
         transform: isInView ? "translateY(0px)" : "translateY(20px)",
         opacity: isInView ? 1 : 0,
         transition: `all 0.1s linear ${delay}`,
-      }}
+      })} ${className}`}
     >
       {children}
-    </SitoContainer>
+    </div>
   );
 };
 

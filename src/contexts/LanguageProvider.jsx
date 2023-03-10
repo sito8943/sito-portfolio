@@ -1,6 +1,6 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/jsx-no-constructed-context-values */
-import * as React from "react";
+import React, { createContext, useReducer, useContext } from "react";
 
 // texts
 import texts from "../lang/texts.json";
@@ -8,7 +8,7 @@ import texts from "../lang/texts.json";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-const LanguageContext = React.createContext();
+const LanguageContext = createContext();
 
 const languageReducer = (languageState, action) => {
   switch (action.type) {
@@ -23,7 +23,7 @@ const languageReducer = (languageState, action) => {
 };
 
 const LanguageProvider = ({ children }) => {
-  const [languageState, setLanguageState] = React.useReducer(languageReducer, {
+  const [languageState, setLanguageState] = useReducer(languageReducer, {
     language: "es",
     texts: texts.es,
   });
@@ -42,7 +42,7 @@ LanguageProvider.propTypes = {
 
 // hooks
 const useLanguage = () => {
-  const context = React.useContext(LanguageContext);
+  const context = useContext(LanguageContext);
   if (context === undefined)
     throw new Error("languageContext must be used within a Provider");
   return context;

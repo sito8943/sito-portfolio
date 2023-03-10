@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 // framer-motion
@@ -32,8 +32,8 @@ const SideProjects = () => {
       // const top = window.pageYOffset || document.documentElement.scrollTop;
       // const sideProjectsTop = document.getElementById("side-projects");
       // if (isInView) {
-        // if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
-        // else navigate("#projects");
+      // if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
+      // else navigate("#projects");
       // }
     },
     [navigate, isInView]

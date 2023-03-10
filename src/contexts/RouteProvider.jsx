@@ -1,18 +1,18 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/jsx-no-constructed-context-values */
-import * as React from "react";
+import React, { createContext, useReducer, useContext } from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-const RouteContext = React.createContext();
+const RouteContext = createContext();
 
 const routeReducer = (routeState, action) => {
   return { active: action };
 };
 
 const RouteProvider = ({ children }) => {
-  const [routeState, setRouteState] = React.useReducer(routeReducer, {
+  const [routeState, setRouteState] = useReducer(routeReducer, {
     active: "home",
   });
 
@@ -28,7 +28,7 @@ RouteProvider.propTypes = {
 
 // hooks
 const useRoute = () => {
-  const context = React.useContext(RouteContext);
+  const context = useContext(RouteContext);
   if (context === undefined)
     throw new Error("routeContext must be used within a Provider");
   return context;

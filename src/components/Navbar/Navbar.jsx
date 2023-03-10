@@ -2,10 +2,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // @mui/icons-material
-import MenuIcon from "@mui/icons-material/Menu";
+import { Menu } from "@mui/icons-material/";
 
 // @nextui-org
 import { Navbar, Button, Text, Link } from "@nextui-org/react";
@@ -66,7 +66,7 @@ const SitoNavbar = () => {
           zIndex: !hideMenuButton ? -1 : 0,
         }}
       >
-        <MenuIcon />
+        <Menu />
       </Button>
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>

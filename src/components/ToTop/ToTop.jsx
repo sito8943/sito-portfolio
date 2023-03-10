@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { css } from "@emotion/css";
 
 // @mui/icons-material
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { ArrowUpward } from "@mui/icons-material/";
 
 // @nextui-org
 import { Button } from "@nextui-org/react";
@@ -68,7 +68,7 @@ const ToTop = (props) => {
           },
         }}
       >
-        <ArrowUpwardIcon />
+        <ArrowUpward />
       </Button>
     </Link>
   );

@@ -1,14 +1,13 @@
-// @mui/icons-material
-import JavascriptIcon from "@mui/icons-material/Javascript";
+import React from "react";
 
-// sito components
-import SitoContainer from "sito-container";
+// @mui/icons-material
+import { Javascript } from "@mui/icons-material";
 
 // @nextui-org
 import { Link } from "@nextui-org/react";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -34,30 +33,30 @@ const FloatingIcons = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerImage}
       initial="hidden"
       animate="visible"
       viewport={{ once: true }}
     >
-      <motion.div
+      <m.div
         variants={item}
         className={`scale-animation ${css({ left: "5%" })}`}
       >
-        <SitoContainer sx={{ transform: "rotate(-30deg)" }}>
+        <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
           <Link
             href="https://developer.mozilla.org/es/docs/Web/JavaScript"
             target="_blank"
             rel="noopener"
           >
-            <JavascriptIcon
+            <Javascript
               className="float-y"
               sx={{ fontSize: "6rem", color: "#F0D81D", opacity: 0.5 }}
             />
           </Link>
-        </SitoContainer>
-      </motion.div>
-    </motion.div>
+        </div>
+      </m.div>
+    </m.div>
   );
 };
 

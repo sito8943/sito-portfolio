@@ -1,7 +1,4 @@
-import { useRef } from "react";
-
-// sito components
-import SitoContainer from "sito-container";
+import React, { useRef } from "react";
 
 // framer-motion
 import { useInView } from "framer-motion";
@@ -24,7 +21,7 @@ const Home = () => {
   const isInView = useInView(ref);
 
   return (
-    <SitoContainer flexDirection="column" sx={{ width: "100%" }}>
+    <div sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
       <ToTop footerVisible={isInView} />
       <Navbar />
       <Hero />
@@ -34,7 +31,7 @@ const Home = () => {
       <SideProjects />
       <Contact />
       <Footer ref={ref} />
-    </SitoContainer>
+    </div>
   );
 };
 

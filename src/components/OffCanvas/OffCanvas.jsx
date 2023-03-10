@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
-// sito components
-import SitoContainer from "sito-container";
+// @emotion/css
+import { css } from "@emotion/css";
 
 // @nextui-org
 import { Button, Link, Text } from "@nextui-org/react";
 
 // @mui/icons-material
-import ClearIcon from "@mui/icons-material/Clear";
+import { Clear } from "@mui/icons-material/";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -30,39 +30,43 @@ const OffCanvas = (props) => {
   }, [location]);
 
   return (
-    <SitoContainer
-      extraProps={{ onClick: handleClose }}
-      sx={{
+    <div
+      onClick={handleClose}
+      className={css({
         top: 0,
         left: 0,
         height: "100vh",
         position: "fixed",
         width: visible ? "100vw" : 0,
         transition: "background zIndex width 500ms ease",
-      }}
+      })}
     >
-      <SitoContainer
-        sx={{
+      <div
+        className={css({
           width: visible ? "100vw" : 0,
           height: "100vh",
           background: "#222222ce",
           position: "absolute",
           zIndex: 999999,
-        }}
+        })}
       />
-      <SitoContainer
-        flexDirection="column"
-        sx={{
+      <div
+        className={css({
+          flexDirection: "column",
           transition: "all 500ms ease",
           height: "100%",
           width: "300px",
           transform: `translateX(${visible ? 0 : "-300px"})`,
           background: "#333444",
           zIndex: 999999,
-        }}
+        })}
       >
-        <SitoContainer
-          sx={{ width: "100%", position: "relative", height: "40px" }}
+        <div
+          className={css({
+            width: "100%",
+            position: "relative",
+            height: "40px",
+          })}
         >
           <Button
             flat
@@ -76,10 +80,10 @@ const OffCanvas = (props) => {
             }}
             onPress={handleClose}
           >
-            <ClearIcon />
+            <Clear />
           </Button>
-        </SitoContainer>
-        <SitoContainer flexDirection="column" sx={{ paddingLeft: "20px" }}>
+        </div>
+        <div className={css({ paddingLeft: "20px", flexDirection: "column" })}>
           <Text h3>Sito</Text>
           {languageState.texts.Navbar.Links.map((item) => (
             <Link key={item.to} href={item.to}>
@@ -103,9 +107,9 @@ const OffCanvas = (props) => {
               </Button>
             </Link>
           ))}
-        </SitoContainer>
-      </SitoContainer>
-    </SitoContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 
