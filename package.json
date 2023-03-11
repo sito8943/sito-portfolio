@@ -1,17 +1,17 @@
 {
   "name": "sito-portfolio",
-  "version": "0.11.3",
+  "version": "0.12.3",
   "private": false,
   "homepage": "https://sito-numbis.github.io/sito-portfolio",
   "license": "MIT",
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
     "@emotion/css": "^11.9.0",
-    "@nextui-org/react": "^1.0.0-beta.10",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@nextui-org/react": "^1.0.0-beta.10",
     "@tippyjs/react": "^4.2.6",
     "env-cmd": "^10.1.0",
     "framer-motion": "^6.5.1",
@@ -28,7 +28,9 @@
     "start": "env-cmd -f .env react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.13.6",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^5.0.0",
     "react-app-rewired": "^2.2.1"
   }
 }

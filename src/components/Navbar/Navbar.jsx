@@ -19,6 +19,7 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 
 // styles
 import "./style.css";
+import { css } from "@emotion/css";
 
 const SitoNavbar = () => {
   const location = useLocation();
@@ -71,7 +72,13 @@ const SitoNavbar = () => {
       </Button>
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>
-          <Link color="error" href="/sito-lib" target="_blank" rel="noopener">
+          <Link
+            color="error"
+            href="/sito-lib"
+            target="_blank"
+            rel="noopener"
+            className={css({ fontWeight: "bold" })}
+          >
             {"<Sito />"}
           </Link>
         </Text>

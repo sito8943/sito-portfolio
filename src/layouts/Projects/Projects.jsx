@@ -112,7 +112,7 @@ const Projects = () => {
               <Link href={item.Link} target="_blank" rel="noopener">
                 <Card
                   image={item.Image}
-                  alt="about"
+                  alt={`${item.Title}-logo`}
                   onClick={() => window.open(item.Link)}
                   text={item.Title}
                   more={item.Text}

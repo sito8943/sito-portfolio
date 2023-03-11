@@ -51,8 +51,8 @@
           "title": "SitoContainer",
           "description": "Contenedor súper flexible, muy parecido al Box de @mui, pero por defecto es flex",
           "link": "https://www.npmjs.com/package/sito-container",
-          "size": "9.41kB",
-          "version": "0.4.1",
+          "size": "9.41 kB",
+          "version": "0.4.2",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -81,8 +81,8 @@
           "title": "SitoImage",
           "description": "Un potente componente de imagen personalizable similar al suspenso que (opcionalmente) simula un efecto de brillo mientras se carga.",
           "link": "https://www.npmjs.com/package/sito-image",
-          "size": "14.2kB",
-          "version": "0.11.5",
+          "size": "13.3 kB",
+          "version": "0.13.2",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -187,7 +187,7 @@
           "Title": "Alta Voz",
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
           "Text": "Sitio web para comprar y escuchar música",
-          "Link": "https://inmersoft-dev.github.io/alta-voz-client/",
+          "Link": "https://alta-voz-d4a05.web.app/",
           "See": "Ver"
         },
         {
@@ -195,6 +195,13 @@
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
           "Text": "Servicio para publicar catálogos digitales",
           "Link": "https://marketplace.ireasantiago.com",
+          "See": "Ver"
+        },
+        {
+          "Title": "Findylin",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
+          "Link": "https://findylin-369a7.web.app/",
+          "Text": "Plataforma fácil e intuitiva para conectar a propietarios y compradores",
           "See": "Ver"
         }
       ]
@@ -460,7 +467,7 @@
         },
         {
           "id": "side-projects",
-          "label": "Hobby porjects",
+          "label": "Hobby projects",
           "to": "#side-projects"
         },
         {
@@ -484,7 +491,7 @@
           "description": "Super flexible container, very similar to @mui's Box, but defaults to flex",
           "link": "https://www.npmjs.com/package/sito-container",
           "size": "9.41kB",
-          "version": "0.4.1",
+          "version": "0.4.2",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -513,8 +520,8 @@
           "title": "SitoImage",
           "description": "A powerful customizable suspense-like image component that (optionally) simulates a glow effect while loading.",
           "link": "https://www.npmjs.com/package/sito-image",
-          "size": "14.2kB",
-          "version": "0.11.5",
+          "size": "13.3kB",
+          "version": "0.13.2",
           "dependencies": [
             {
               "name": "@emotion/css",
@@ -613,21 +620,28 @@
           "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
           "Text": "Broker company and courses for truckers",
           "Link": "https://wmtlogistics.org/",
-          "See": "Ver"
+          "See": "See"
         },
         {
           "Title": "Alta Voz",
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
           "Text": "Website to buy and listen to music",
           "Link": "https://inmersoft-dev.github.io/alta-voz-client/",
-          "See": "Ver"
+          "See": "See"
         },
         {
           "Title": "Marketplace",
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
           "Text": "Service to publish digital catalogs",
           "Link": "https://marketplace.ireasantiago.com",
-          "See": "Ver"
+          "See": "See"
+        },
+        {
+          "Title": "Findylin",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
+          "Link": "https://findylin-369a7.web.app/",
+          "Text": "Easy and intuitive platform to connect owners and buyers",
+          "See": "See"
         }
       ]
     },
@@ -642,7 +656,7 @@
           "Image": "https://repository-images.githubusercontent.com/511256492/6cc736af-aed1-4c24-beda-35ea98cbd038",
           "Alt": "todo",
           "Link": "https://github.com/SitoNumbis/todopro.git",
-          "See": "Ver"
+          "See": "See"
         },
         {
           "Title": "Snake",
@@ -650,7 +664,7 @@
           "Link": "https://sitonumbis.github.io/sito-react-snake/",
           "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
           "Alt": "sito-react-snake",
-          "See": "Ver"
+          "See": "See"
         },
         {
           "Title": "Mirror",
@@ -658,7 +672,7 @@
           "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
-          "See": "Ver"
+          "See": "See"
         }
       ]
     },

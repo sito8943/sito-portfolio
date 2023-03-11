@@ -14,6 +14,8 @@ const Card = (props) => {
       onPress={onClick}
       variant="bordered"
       css={{
+        maxWidth: "320px",
+        height: "306px",
         width: "100%",
         margin: "10px",
         display: "flex",

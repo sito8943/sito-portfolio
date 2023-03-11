@@ -44,8 +44,7 @@ const ToTop = (props) => {
   }, [onScroll]);
 
   return (
-    <Link
-      to="#hero"
+    <div
       className={css({
         textDecoration: "none",
         zIndex: 99,
@@ -71,7 +70,7 @@ const ToTop = (props) => {
       >
         <FontAwesomeIcon icon={faArrowUp} />
       </Button>
-    </Link>
+    </div>
   );
 };
 
