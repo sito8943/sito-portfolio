@@ -234,6 +234,13 @@
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
           "See": "Ver"
+        },
+        {
+          "Title": "Santa Ifigenia",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Logo_ebyZhBR61m.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678490958482",
+          "Link": "https://santa-ifigenia.web.app/",
+          "Text": "Sitio web guía digital interactiva del cementerio Santa Ifigenia",
+          "See": "Ver"
         }
       ]
     },
@@ -641,6 +648,13 @@
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
           "Link": "https://findylin-369a7.web.app/",
           "Text": "Easy and intuitive platform to connect owners and buyers",
+          "See": "See"
+        },
+        {
+          "Title": "Santa Ifigenia",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Logo_ebyZhBR61m.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678490958482",
+          "Link": "https://santa-ifigenia.web.app/",
+          "Text": "Interactive digital guide website of the Santa Ifigenia cemetery",
           "See": "See"
         }
       ]
