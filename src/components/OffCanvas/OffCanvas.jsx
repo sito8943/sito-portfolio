@@ -44,15 +44,18 @@ const OffCanvas = (props) => {
     >
       <div
         className={css({
+          pointerEvents: "none",
           width: visible ? "100vw" : 0,
           height: "100vh",
           background: "#222222ce",
           position: "absolute",
-          zIndex: 999999,
+          zIndex: 99999,
         })}
       />
       <div
         className={css({
+          position: "absolute",
+          pointerEvents: "auto",
           flexDirection: "column",
           transition: "all 500ms ease",
           height: "100%",
@@ -77,7 +80,7 @@ const OffCanvas = (props) => {
               width: "40px",
               minWidth: "0",
               position: "absolute",
-              right: "15px",
+              right: "0px",
             }}
             onPress={handleClose}
           >

@@ -30,7 +30,7 @@ import { parseDelay } from "../../utils/functions";
 const Hero = () => {
   const { languageState } = useLanguage();
 
-  const icons = [faGithub, faInstagram, faTwitter, faFacebook];
+  const icons = [faGithub, faFacebook, faInstagram, faTwitter,];
 
   return (
     <Section id="hero">
