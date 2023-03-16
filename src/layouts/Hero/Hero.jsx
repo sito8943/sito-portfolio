@@ -52,7 +52,7 @@ const Hero = () => {
       >
         <InViewComponent>
           <Text h1 css={{ textAlign: "center" }}>
-            <Link href="#about">{"<Sito />"}</Link>
+            <Link href="#about">{languageState.texts.Hero.Title}</Link>
           </Text>
         </InViewComponent>
         <InViewComponent delay="0.4s">

@@ -2,19 +2,19 @@
   max-width: 100vw;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .navbar-content {
     display: none !important;
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .navbar div {
     justify-content: flex-start !important;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 900px) {
   .navbar div {
     justify-content: space-between !important;
   }

@@ -12,6 +12,11 @@
           "to": "#hero"
         },
         {
+          "id": "what-do-i",
+          "label": "¿Qué hago?",
+          "to": "what-do-i"
+        },
+        {
           "id": "about",
           "label": "Acerca de Mí",
           "to": "#about"
@@ -34,6 +39,7 @@
         {
           "id": "contact",
           "label": "Contacto",
+          "primary": true,
           "to": "#contact"
         }
       ]
@@ -154,9 +160,8 @@
       ]
     },
     "Hero": {
-      "Title": "Mi Portfolio ",
-      "Name": "Sito",
-      "Text": "Vamos a comenzar un viaje...",
+      "Title": "Hola soy Sito",
+      "Text": "Soy desarrollador web para frontend y backend",
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
         {
@@ -458,6 +463,11 @@
           "to": "#hero"
         },
         {
+          "id": "what-do-i",
+          "label": "¿Qué hago?",
+          "to": "#what-do-i"
+        },
+        {
           "id": "about",
           "label": "About me",
           "to": "#about"
@@ -480,6 +490,7 @@
         {
           "id": "contact",
           "label": "Contact me",
+          "primary": true,
           "to": "#contact"
         }
       ]
@@ -600,9 +611,8 @@
       ]
     },
     "Hero": {
-      "Title": "My Portfolio ",
-      "Name": "Sito",
-      "Text": "Let's start a journey...",
+      "Title": "Hey I'm Sito",
+      "Text": "I'm a frontend and backend web developer",
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
         {

@@ -62,13 +62,13 @@ const SitoNavbar = () => {
         className="menu-button"
         onClick={() => setShowOffCanvas(!showOffCanvas)}
         css={{
-          margin: "10px",
+          marginTop: "3",
           width: "40px",
           minWidth: "0",
           zIndex: !hideMenuButton ? -1 : 0,
         }}
       >
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} className={css({ fontSize: "20px" })} />
       </Button>
       <Navbar.Brand>
         <Text h3 b css={{ margin: 0 }}>
@@ -94,7 +94,13 @@ const SitoNavbar = () => {
             isActive={item.to === activeLink}
             href={item.to}
           >
-            {item.label}
+            {item.primary ? (
+              <Button rounded flat css={{ minWidth: "120px" }}>
+                {item.label}
+              </Button>
+            ) : (
+              item.label
+            )}
           </Navbar.Link>
         ))}
       </Navbar.Content>
