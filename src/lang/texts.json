@@ -176,6 +176,23 @@
       ],
       "Meet": "Puedes encontrarme en:"
     },
+    "WhatIDo": {
+      "Title": "Hago desde páginas de aterrizaje hasta blogs",
+      "Cards": [
+        {
+          "title": "Landing Page",
+          "body": "La landing page recae en que no puede ser una simple página de inicio sino que tiene el propósito de mostrarle a las personas tu producto y darte a conocer"
+        },
+        {
+          "title": "Panel administrativo",
+          "body": "A través de un panel de administración, los responsables de un sitio pueden modificar sus contenidos."
+        },
+        {
+          "title": "Blog",
+          "body": "Un blog es un sitio web que incluye, a modo de diario personal de su autor(es), contenidos de su interés, que suelen estar actualizados con frecuencia y a menudo son comentados por los lectores."
+        }
+      ]
+    },
     "Projects": {
       "Title": "Proyectos Profesionales",
       "Text": "Puedes pasarte por mi ",
@@ -253,7 +270,7 @@
       "Close": "Cerrar"
     },
     "About": {
-      "Title": "Hola soy Sito",
+      "Title": "Acerca de mí",
       "Subtitle": "pero mi nombre real es Carlos Andrés Mora González",
       "Me": {
         "Title": "Acerca de mí",
@@ -627,6 +644,23 @@
       ],
       "Meet": "You can find me at:"
     },
+    "WhatIDo": {
+      "Title": "I build from landing pages to blogs",
+      "Cards": [
+        {
+          "title": "Landing Page",
+          "body": "The landing page relies on the fact that it cannot be a simple home page but has the purpose of showing people your product and making you known"
+        },
+        {
+          "title": "Panel administrativo",
+          "body": "Through an administration panel, those responsible for a site can modify its contents."
+        },
+        {
+          "title": "Blog",
+          "body": "A blog is a website that includes, as a personal diary of its author(s), content of interest, which is usually updated frequently and is often commented on by readers."
+        }
+      ]
+    },
     "Projects": {
       "Title": "Professional Projects",
       "Text": "You can pass by me ",
@@ -704,7 +738,7 @@
       "Close": "Close"
     },
     "About": {
-      "Title": "Hi I'm Sito",
+      "Title": "Acerca de mí",
       "Subtitle": "but my real name is Carlos Andrés Mora González",
       "Me": {
         "Title": "About me",

@@ -65,7 +65,7 @@ const Hero = () => {
         }}
       >
         <InViewComponent>
-          <Text h1>{languageState.texts.Contact.Title}</Text>
+          <Text h2>{languageState.texts.Contact.Title}</Text>
         </InViewComponent>
         <form ref={form} onSubmit={onSubmit}>
           <div

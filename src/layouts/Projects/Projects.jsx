@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useCallback, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -8,9 +7,6 @@ import { css } from "@emotion/css";
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-
-// framer-motion
-import { useInView } from "framer-motion";
 
 // @nextui-org
 import { Container, Link, Text } from "@nextui-org/react";
@@ -28,33 +24,10 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import { parseDelay } from "../../utils/functions";
 
 const Projects = () => {
-  const navigate = useNavigate();
   const { languageState } = useLanguage();
 
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const onScroll = useCallback(
-    (e) => {
-      // const top = window.pageYOffset || document.documentElement.scrollTop;
-      // const aboutTop = document.getElementById("projects");
-      // if (isInView) {
-      // if (aboutTop.offsetTop - 77 < top) navigate("#projects");
-      // else navigate("#skills");
-      // }
-    },
-    [navigate, isInView]
-  );
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [onScroll]);
-
   return (
-    <Section ref={ref} id="projects" background="#222">
+    <Section id="projects" background="#222">
       <Container
         justify="center"
         alignItems="center"
@@ -73,7 +46,7 @@ const Projects = () => {
       >
         <FloatingIcons />
         <InViewComponent>
-          <Text h1 css={{ textAlign: "center" }}>
+          <Text h2 className={css({ textAlign: "center" })}>
             {languageState.texts.Projects.Title}
           </Text>
         </InViewComponent>

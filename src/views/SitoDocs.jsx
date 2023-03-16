@@ -56,7 +56,7 @@ const SitoDocs = () => {
             />
           </Button>
         </Link>
-        <Text h1 css={{ marginBottom: 5 }}>
+        <Text h2 className={css({ marginBottom: 5 })}>
           {languageState.texts.Docs.Title}
         </Text>
       </div>

@@ -137,17 +137,17 @@ const NotFound = () => {
           }}
         >
           <m.div variants={item}>
-            <Text h1 css={{ fontSize: "10rem" }}>
+            <Text h2 className={css({ fontSize: "10rem" })}>
               4
             </Text>
           </m.div>
           <m.div variants={item}>
-            <Text h1 css={{ fontSize: "10rem" }}>
+            <Text h2 className={css({ fontSize: "10rem" })}>
               0
             </Text>
           </m.div>
           <m.div variants={item}>
-            <Text h1 css={{ fontSize: "10rem" }}>
+            <Text h2 className={css({ fontSize: "10rem" })}>
               4
             </Text>
           </m.div>

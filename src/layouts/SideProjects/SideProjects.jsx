@@ -2,6 +2,9 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
 // framer-motion
 import { useInView } from "framer-motion";
 
@@ -66,7 +69,7 @@ const SideProjects = () => {
       >
         <FloatingIcons />
         <InViewComponent>
-          <Text h1 css={{ textAlign: "center" }}>
+          <Text h2 className={css({ textAlign: "center" })}>
             {languageState.texts.SideProjects.Title}
           </Text>
         </InViewComponent>

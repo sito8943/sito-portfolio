@@ -10,6 +10,7 @@ import ToTop from "../components/ToTop/ToTop";
 
 // layouts
 const Hero = lazy(() => import("../layouts/Hero/Hero"));
+const WhatIDo = lazy(()=> import("../layouts/WhatIDo/WhatIDo"));
 const About = lazy(() => import("../layouts/About/About"));
 const Skills = lazy(() => import("../layouts/Skills/Skills"));
 const Footer = lazy(() => import("../components/Footer/Footer"));
@@ -27,6 +28,7 @@ const Home = () => {
         <ToTop footerVisible={isInView} />
         <Navbar />
         <Hero />
+        <WhatIDo />
         <About />
         <Skills />
         <Projects />
