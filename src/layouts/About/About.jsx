@@ -13,9 +13,9 @@ import { parseDelay } from "../../utils/functions";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // images
-import code from "../../assets/images/coding.webp";
-import trip from "../../assets/images/trips.webp";
-import piano from "../../assets/images/piano.webp";
+import code from "../../assets/images/coding.jpg";
+import trip from "../../assets/images/trips.jpg";
+import piano from "../../assets/images/piano.jpg";
 
 // own components
 const InViewComponent = loadable(() =>

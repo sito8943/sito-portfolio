@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import config from "../../config";
+
 function CookieBox(props) {
   const [accept, setAccept] = useState(false);
 
@@ -12,7 +14,7 @@ function CookieBox(props) {
       }
       gtag("js", new Date());
 
-      gtag("config", "G-D9HLQQ818J");
+      gtag("config", config.ga);
     }
   }, [accept]);
 
