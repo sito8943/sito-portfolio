@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import React, { useState, useEffect, useCallback, Suspense } from "react";
 import loadable from "@loadable/component";
 
+import { scrollTo } from "some-javascript-utils";
+
 // @emotion/css
 import { css } from "@emotion/css";
 
@@ -88,10 +90,9 @@ const SitoNavbar = () => {
         <NavbarBrand>
           <Text h3 b css={{ margin: 0 }}>
             <Link
+              onClick={() => scrollTo(0)}
               color="error"
-              href="/sito-lib"
-              target="_blank"
-              rel="noopener"
+              href="#"
               className={css({ fontWeight: "bold" })}
             >
               {"<Sito />"}

@@ -18,7 +18,6 @@ import Loading from "./components/Loading/Loading";
 
 // views
 const Home = loadable(() => import("./views/Home"));
-const SitoDocs = loadable(() => import("./views/SitoDocs"));
 const NotFound = loadable(() => import("./views/NotFound"));
 
 const App = () => {
@@ -43,7 +42,6 @@ const App = () => {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sito-lib" element={<SitoDocs />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
