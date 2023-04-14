@@ -1,16 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Tippy from "@tippyjs/react";
-import React, { useEffect, useCallback } from "react";
+
+import React, { useEffect, useCallback, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-
-// @nextui-org
-import { Container, Image, Link, Text } from "@nextui-org/react";
-
-// own components
-import InViewComponent from "../../components/InViewComponent/InViewComponent";
-import FloatingIcons from "./components/FloatingIcons";
-import Section from "../../components/Section/Section";
-import Card from "../../components/Card/Card";
+import loadable from "@loadable/component";
+import Tippy from "@tippyjs/react";
 
 // utils
 import { parseDelay } from "../../utils/functions";
@@ -29,6 +22,20 @@ import firebase from "../../assets/images/logos/firebase.webp";
 import jsSkills from "../../assets/images/skills/js.png";
 import reactSkills from "../../assets/images/skills/react.jpg";
 import htmlCss from "../../assets/images/skills/htmlCss.jpg";
+
+// @nextui-org
+const Text = loadable(() => import("../../components/NextUI/Text"));
+const Link = loadable(() => import("../../components/NextUI/Link"));
+const Image = loadable(() => import("../../components/NextUI/Image"));
+const Container = loadable(() => import("../../components/NextUI/Container"));
+
+// own components
+const InViewComponent = loadable(() =>
+  import("../../components/InViewComponent/InViewComponent")
+);
+const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
+const Section = loadable(() => import("../../components/Section/Section"));
+const Card = loadable(() => import("../../components/Card/Card"));
 
 const Skills = () => {
   const navigate = useNavigate();
@@ -60,99 +67,101 @@ const Skills = () => {
   };
 
   return (
-    <Section id="skills">
-      <FloatingIcons />
-      <Container
-        justify="center"
-        alignItems="center"
-        display="flex"
-        direction="column"
-        css={{
-          height: "100%",
-          div: {
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          },
-        }}
-      >
-        <InViewComponent>
-          <Text h2>{languageState.texts.Skills.Title}</Text>
-        </InViewComponent>
-        <InViewComponent delay="0.4s">
-          <Text css={{ textAlign: "center", marginBottom: "20px" }}>
-            {languageState.texts.Skills.Body}
-          </Text>
-        </InViewComponent>
+    <Suspense>
+      <Section id="skills">
+        <FloatingIcons />
         <Container
           justify="center"
+          alignItems="center"
           display="flex"
-          wrap="wrap"
+          direction="column"
           css={{
-            flexDirection: "row !important",
+            height: "100%",
             div: {
+              justifyContent: "center",
+              alignItems: "center",
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
             },
           }}
         >
-          {languageState.texts.Skills.List.map((item, i) => (
-            <InViewComponent
-              key={i}
-              className="bottom"
-              delay={`${parseDelay(i, 0.5)}s`}
-            >
-              <Link href={item.Link} target="_blank" rel="noopener">
-                <Card
-                  image={images[i]}
-                  alt={item.Alt}
-                  text={item.Text}
-                  more={`${years(item.Start)}${item.Age}`}
-                />
-              </Link>
-            </InViewComponent>
-          ))}
-        </Container>
-        <InViewComponent delay="0.8s">
-          <Text h4 css={{ margin: "20px 0" }}>
-            {languageState.texts.Skills.Other}
-          </Text>
-        </InViewComponent>
-        <Container
-          justify="center"
-          display="flex"
-          wrap="wrap"
-          css={{
-            flexDirection: "row !important",
-            div: {
-              display: "flex",
-              flexDirection: "row",
-            },
-          }}
-        >
-          {languageState.texts.Skills.Others.map((jtem, j) => (
-            <InViewComponent key={j} delay={`${parseDelay(j, 0.9)}s`}>
-              <Tippy content={jtem.Text}>
-                <Link href={jtem.Link} target="_blank" rel="noopener">
-                  <Image
-                    css={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "100%",
-                      marginRight: "10px",
-                    }}
-                    key={jtem.Alt}
-                    src={logos[j]}
-                    alt={jtem.Alt}
+          <InViewComponent>
+            <Text h2>{languageState.texts.Skills.Title}</Text>
+          </InViewComponent>
+          <InViewComponent delay="0.4s">
+            <Text css={{ textAlign: "center", marginBottom: "20px" }}>
+              {languageState.texts.Skills.Body}
+            </Text>
+          </InViewComponent>
+          <Container
+            justify="center"
+            display="flex"
+            wrap="wrap"
+            css={{
+              flexDirection: "row !important",
+              div: {
+                display: "flex",
+                flexDirection: "row",
+              },
+            }}
+          >
+            {languageState.texts.Skills.List.map((item, i) => (
+              <InViewComponent
+                key={i}
+                className="bottom"
+                delay={`${parseDelay(i, 0.5)}s`}
+              >
+                <Link href={item.Link} target="_blank" rel="noopener">
+                  <Card
+                    image={images[i]}
+                    alt={item.Alt}
+                    text={item.Text}
+                    more={`${years(item.Start)}${item.Age}`}
                   />
                 </Link>
-              </Tippy>
-            </InViewComponent>
-          ))}
+              </InViewComponent>
+            ))}
+          </Container>
+          <InViewComponent delay="0.8s">
+            <Text h4 css={{ margin: "20px 0" }}>
+              {languageState.texts.Skills.Other}
+            </Text>
+          </InViewComponent>
+          <Container
+            justify="center"
+            display="flex"
+            wrap="wrap"
+            css={{
+              flexDirection: "row !important",
+              div: {
+                display: "flex",
+                flexDirection: "row",
+              },
+            }}
+          >
+            {languageState.texts.Skills.Others.map((jtem, j) => (
+              <InViewComponent key={j} delay={`${parseDelay(j, 0.9)}s`}>
+                <Tippy content={jtem.Text}>
+                  <Link href={jtem.Link} target="_blank" rel="noopener">
+                    <Image
+                      css={{
+                        width: "40px",
+                        height: "40px",
+                        borderRadius: "100%",
+                        marginRight: "10px",
+                      }}
+                      key={jtem.Alt}
+                      src={logos[j]}
+                      alt={jtem.Alt}
+                    />
+                  </Link>
+                </Tippy>
+              </InViewComponent>
+            ))}
+          </Container>
         </Container>
-      </Container>
-    </Section>
+      </Section>
+    </Suspense>
   );
 };
 

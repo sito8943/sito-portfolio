@@ -11,6 +11,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@loadable/component": "^5.15.3",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@tippyjs/react": "^4.2.6",
     "env-cmd": "^10.1.0",
@@ -22,7 +23,7 @@
     "react-scripts": "5.0.1",
     "serve": "^14.2.0",
     "sito-image": "^0.4.1",
-    "some-javascript-utils": "^0.2.1"
+    "some-javascript-utils": "^0.7.1"
   },
   "scripts": {
     "start": "env-cmd -f .env react-app-rewired start",

@@ -2,6 +2,7 @@
 import React, { useEffect, Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { getUserLanguage } from "some-javascript-utils/browser";
+import loadable from "@loadable/component";
 
 // next-themes
 import { useTheme as useNextTheme } from "next-themes";
@@ -12,13 +13,13 @@ import { LazyMotion, domAnimation } from "framer-motion";
 // contexts
 import { useLanguage } from "./contexts/LanguageProvider";
 
-// views
-import Home from "./views/Home";
-import SitoDocs from "./views/SitoDocs";
-import NotFound from "./views/NotFound";
-
 // components
 import Loading from "./components/Loading/Loading";
+
+// views
+const Home = loadable(() => import("./views/Home"));
+const SitoDocs = loadable(() => import("./views/SitoDocs"));
+const NotFound = loadable(() => import("./views/NotFound"));
 
 const App = () => {
   const { setTheme } = useNextTheme();

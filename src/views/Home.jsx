@@ -1,22 +1,24 @@
-import React, { useRef, lazy, Suspense } from "react";
-
+import React, { useRef, Suspense } from "react";
+import loadable from "@loadable/component";
 // framer-motion
 import { useInView } from "framer-motion";
 
 // own components
 import Loading from "../components/Loading/Loading";
-import Navbar from "../components/Navbar/Navbar";
-import ToTop from "../components/ToTop/ToTop";
+const Navbar = loadable(() => import("../components/Navbar/Navbar"));
+const ToTop = loadable(() => import("../components/ToTop/ToTop"));
 
 // layouts
-const Hero = lazy(() => import("../layouts/Hero/Hero"));
-const WhatIDo = lazy(()=> import("../layouts/WhatIDo/WhatIDo"));
-const About = lazy(() => import("../layouts/About/About"));
-const Skills = lazy(() => import("../layouts/Skills/Skills"));
-const Footer = lazy(() => import("../components/Footer/Footer"));
-const Projects = lazy(() => import("../layouts/Projects/Projects"));
-const SideProjects = lazy(() => import("../layouts/SideProjects/SideProjects"));
-const Contact = lazy(() => import("../layouts/Contact/Contact"));
+const Hero = loadable(() => import("../layouts/Hero/Hero"));
+const WhatIDo = loadable(() => import("../layouts/WhatIDo/WhatIDo"));
+const About = loadable(() => import("../layouts/About/About"));
+const Skills = loadable(() => import("../layouts/Skills/Skills"));
+const Footer = loadable(() => import("../components/Footer/Footer"));
+const Projects = loadable(() => import("../layouts/Projects/Projects"));
+const SideProjects = loadable(() =>
+  import("../layouts/SideProjects/SideProjects")
+);
+const Contact = loadable(() => import("../layouts/Contact/Contact"));
 
 const Home = () => {
   const ref = useRef(null);
