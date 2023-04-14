@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { forwardRef, Suspense } from "react";
-import { Link } from "react-router-dom";
 import loadable from "@loadable/component";
+
+import { scrollTo } from "some-javascript-utils";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faInstagram,
   faFacebook,
@@ -32,7 +33,7 @@ const Footer = forwardRef((props, ref) => {
   return (
     <Suspense>
       <div
-        ref={ref}
+        id="footer"
         className={css({
           alignItems: "center",
           justifyContent: "space-between",
@@ -45,18 +46,14 @@ const Footer = forwardRef((props, ref) => {
       >
         <div className={css({ display: "flex" })}>
           <Text b css={{ margin: 0 }}>
-            <Link
+            <MUILink
+              onClick={() => scrollTo(0)}
               color="inherit"
-              to="/sito-lib"
+              href="#"
               className={css({ display: "flex", alignItems: "center" })}
             >
-              {languageState.texts.Footer.SitoLib}
-              {"<Sito />"}
-              <FontAwesomeIcon
-                icon={faExternalLink}
-                className={css({ fontSize: "15px", marginLeft: "5px" })}
-              />
-            </Link>
+              {`<Sito /> © ${new Date().getFullYear()}`}
+            </MUILink>
           </Text>
         </div>
         <div className={css({ gap: "20px", display: "flex" })}>

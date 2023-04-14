@@ -13,6 +13,9 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 // utils
 import { scrollTo } from "../../utils/functions";
 
+// styles
+import "./styles.css";
+
 // @nextui-org
 const Button = loadable(() => import("../../components/NextUI/Button"));
 
@@ -21,20 +24,31 @@ const ToTop = (props) => {
 
   const [visible, setVisible] = useState(false);
   const [bottom, setBottom] = useState("10px");
+  const [push, setPush] = useState(false);
 
   const onScroll = useCallback(
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       if (top > 100) setVisible(true);
       else setVisible(false);
+      const fullHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight
+      );
+      if (fullHeight - top === window.innerHeight) setPush(true);
+      else setPush(false)
     },
     [setVisible]
   );
 
   useEffect(() => {
-    if (!footerVisible) setBottom("10px");
+    if (!push) setBottom("10px");
     else setBottom("60px");
-  }, [footerVisible]);
+  }, [push]);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -46,10 +60,10 @@ const ToTop = (props) => {
   return (
     <Suspense>
       <div
-        className={css({
+        className={`${footerVisible ? "responsive-push" : ""} ${css({
           textDecoration: "none",
           zIndex: 99,
-        })}
+        })}`}
       >
         <Button
           onPress={() => scrollTo(0)}
