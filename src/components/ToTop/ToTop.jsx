@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useCallback, Suspense } from "react";
+import loadable from "@loadable/component";
 
 import PropTypes from "prop-types";
 
@@ -10,11 +10,11 @@ import { css } from "@emotion/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
-// @nextui-org
-import { Button } from "@nextui-org/react";
-
 // utils
 import { scrollTo } from "../../utils/functions";
+
+// @nextui-org
+const Button = loadable(() => import("../../components/NextUI/Button"));
 
 const ToTop = (props) => {
   const { footerVisible } = props;
@@ -44,33 +44,35 @@ const ToTop = (props) => {
   }, [onScroll]);
 
   return (
-    <div
-      className={css({
-        textDecoration: "none",
-        zIndex: 99,
-      })}
-    >
-      <Button
-        onPress={() => scrollTo(0)}
-        css={{
-          transform: visible ? "scale(1)" : "scale(0)",
-          zIndex: visible ? 99 : -1,
-          position: "fixed",
-          bottom,
-          right: "10px",
-          borderRadius: "100%",
-          marginTop: "15px",
-          minWidth: "0px !important",
-          width: "40px",
-          transition: "all 500ms ease",
-          "&:hover": {
-            transform: "translateY(-5px)",
-          },
-        }}
+    <Suspense>
+      <div
+        className={css({
+          textDecoration: "none",
+          zIndex: 99,
+        })}
       >
-        <FontAwesomeIcon icon={faArrowUp} />
-      </Button>
-    </div>
+        <Button
+          onPress={() => scrollTo(0)}
+          css={{
+            transform: visible ? "scale(1)" : "scale(0)",
+            zIndex: visible ? 99 : -1,
+            position: "fixed",
+            bottom,
+            right: "10px",
+            borderRadius: "100%",
+            marginTop: "15px",
+            minWidth: "0px !important",
+            width: "40px",
+            transition: "all 500ms ease",
+            "&:hover": {
+              transform: "translateY(-5px)",
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </Button>
+      </div>
+    </Suspense>
   );
 };
 

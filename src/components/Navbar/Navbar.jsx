@@ -2,24 +2,33 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useLocation } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
+import loadable from "@loadable/component";
+
+// @emotion/css
+import { css } from "@emotion/css";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-// @nextui-org
-import { Navbar, Button, Text, Link } from "@nextui-org/react";
-
-// own components
-import OffCanvas from "../OffCanvas/OffCanvas";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // styles
 import "./style.css";
-import { css } from "@emotion/css";
+
+// @nextui-org
+const NavbarLink = loadable(() => import("../NextUI/NavbarLink"));
+const NavbarBrand = loadable(() => import("../NextUI/NavbarBrand"));
+const NavbarContent = loadable(() => import("../NextUI/NavbarContent"));
+const Navbar = loadable(() => import("../../components/NextUI/Navbar"));
+const Button = loadable(() => import("../../components/NextUI/Button"));
+const Text = loadable(() => import("../../components/NextUI/Text"));
+const Link = loadable(() => import("../../components/NextUI/Link"));
+
+// own components
+const OffCanvas = loadable(() => import("../OffCanvas/OffCanvas"));
 
 const SitoNavbar = () => {
   const location = useLocation();
@@ -30,7 +39,9 @@ const SitoNavbar = () => {
 
   const [showOffCanvas, setShowOffCanvas] = useState(false);
 
-  const closeOffCanvas = () => setShowOffCanvas(false);
+  const closeOffCanvas = useCallback(() => {
+    setShowOffCanvas(false);
+  }, []);
 
   const [activeLink, setActiveLink] = useState("#hero");
 
@@ -50,61 +61,66 @@ const SitoNavbar = () => {
   }, [showOffCanvas]);
 
   return (
-    <Navbar
-      className="navbar"
-      css={{
-        position: "fixed",
-      }}
-    >
-      <OffCanvas visible={showOffCanvas} handleClose={closeOffCanvas} />
-      <Button
-        light
-        className="menu-button"
-        onClick={() => setShowOffCanvas(!showOffCanvas)}
+    <Suspense>
+      <Navbar
+        className="navbar"
         css={{
-          marginTop: "3",
-          width: "40px",
-          minWidth: "0",
-          zIndex: !hideMenuButton ? -1 : 0,
+          position: "fixed",
         }}
       >
-        <FontAwesomeIcon icon={faBars} className={css({ fontSize: "20px" })} />
-      </Button>
-      <Navbar.Brand>
-        <Text h3 b css={{ margin: 0 }}>
-          <Link
-            color="error"
-            href="/sito-lib"
-            target="_blank"
-            rel="noopener"
-            className={css({ fontWeight: "bold" })}
-          >
-            {"<Sito />"}
-          </Link>
-        </Text>
-      </Navbar.Brand>
-      <Navbar.Content
-        className="navbar-content"
-        activeColor={activeColor}
-        variant={variant}
-      >
-        {languageState.texts.Navbar.Links.map((item) => (
-          <Navbar.Link
-            key={item.id}
-            isActive={item.to === activeLink}
-            href={item.to}
-          >
-            {item.primary ? (
-              <Button rounded flat css={{ minWidth: "120px" }}>
-                {item.label}
-              </Button>
-            ) : (
-              item.label
-            )}
-          </Navbar.Link>
-        ))}
-      </Navbar.Content>
-    </Navbar>
+        <OffCanvas visible={showOffCanvas} handleClose={closeOffCanvas} />
+        <Button
+          light
+          className="menu-button"
+          onClick={() => setShowOffCanvas(!showOffCanvas)}
+          css={{
+            marginTop: "3",
+            width: "40px",
+            minWidth: "0",
+            zIndex: !hideMenuButton ? -1 : 0,
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faBars}
+            className={css({ fontSize: "20px" })}
+          />
+        </Button>
+        <NavbarBrand>
+          <Text h3 b css={{ margin: 0 }}>
+            <Link
+              color="error"
+              href="/sito-lib"
+              target="_blank"
+              rel="noopener"
+              className={css({ fontWeight: "bold" })}
+            >
+              {"<Sito />"}
+            </Link>
+          </Text>
+        </NavbarBrand>
+        <NavbarContent
+          className="navbar-content"
+          activeColor={activeColor}
+          variant={variant}
+        >
+          {languageState.texts.Navbar.Links.map((item) => (
+            <NavbarLink
+              key={item.id}
+              isActive={item.to === activeLink}
+              href={item.to}
+            >
+              {item.primary ? (
+                <Button rounded flat css={{ minWidth: "120px" }}>
+                  {item.label}
+                </Button>
+              ) : (
+                item.label
+              )}
+            </NavbarLink>
+          ))}
+        </NavbarContent>
+      </Navbar>
+    </Suspense>
   );
 };
 

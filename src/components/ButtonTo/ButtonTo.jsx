@@ -1,20 +1,23 @@
-import React from "react"
+import React, { Suspense } from "react";
+import loadable from "@loadable/component";
 
 import PropTypes from "prop-types";
-
-// @nextui-org
-import { Button } from "@nextui-org/react";
 
 // utils
 import { scrollTo } from "../../utils/functions";
 
+// @nextui-org
+const Button = loadable(() => import("../../components/NextUI/Button"));
+
 const ButtonTo = (props) => {
   const { target, icon, css, text } = props;
   return (
-    <Button onPress={() => scrollTo(target)} css={css}>
-      {icon && <i className={`fa ${icon}`} aria-hidden="true" />}
-      {text}
-    </Button>
+    <Suspense>
+      <Button onPress={() => scrollTo(target)} css={css}>
+        {icon && <i className={`fa ${icon}`} aria-hidden="true" />}
+        {text}
+      </Button>
+    </Suspense>
   );
 };
 

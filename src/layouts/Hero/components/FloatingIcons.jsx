@@ -50,7 +50,7 @@ const FloatingIcons = () => {
             <FontAwesomeIcon
               icon={faPlane}
               className={`float-y ${css({
-                fontSize: "6rem",
+                fontSize: "3rem",
                 color: "#088cd9",
                 opacity: 0.5,
               })}`}
@@ -72,7 +72,7 @@ const FloatingIcons = () => {
             <FontAwesomeIcon
               icon={faMusic}
               className={`float-y ${css({
-                fontSize: "6rem",
+                fontSize: "3rem",
                 color: "#9494f5",
                 opacity: 0.5,
               })}`}
@@ -94,7 +94,7 @@ const FloatingIcons = () => {
             <FontAwesomeIcon
               icon={faLaptop}
               className={`float-y ${css({
-                fontSize: "6rem",
+                fontSize: "3rem",
                 color: "#0fd908",
                 opacity: 0.5,
               })}`}

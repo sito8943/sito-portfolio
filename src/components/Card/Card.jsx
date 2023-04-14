@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
+import loadable from "@loadable/component";
 
 import PropTypes from "prop-types";
 
@@ -6,46 +7,50 @@ import PropTypes from "prop-types";
 import { css } from "@emotion/css";
 
 // @nextui-org
-import { Card as NextCard, Image } from "@nextui-org/react";
+const NextCardBody = loadable(() => import("../../components/NextUI/CardBody"));
+const NextCard = loadable(() => import("../../components/NextUI/Card"));
+const Image = loadable(() => import("../../components/NextUI/Image"));
 
 const Card = (props) => {
   const { onClick, text, more, image, alt, title, align, height } = props;
   return (
-    <NextCard
-      isPressable
-      isHoverable
-      onPress={onClick}
-      variant="bordered"
-      css={{
-        maxWidth: "320px",
-        height,
-        width: "100%",
-        margin: "10px",
-        display: "flex",
-        flexDirection: "column !important",
-      }}
-    >
-      {image ? (
-        <Image
-          width={320}
-          height={180}
-          src={image}
-          alt={alt}
-          objectFit="cover"
-        />
-      ) : null}
-      <NextCard.Body
+    <Suspense>
+      <NextCard
+        isPressable
+        isHoverable
+        onPress={onClick}
+        variant="bordered"
         css={{
+          maxWidth: "320px",
+          height,
+          width: "100%",
+          margin: "10px",
           display: "flex",
           flexDirection: "column !important",
-          alignItems: align,
         }}
       >
-        {title ? <h4>{title}</h4> : null}
-        <p className={css({ textAlign: align })}>{text}</p>
-        <p className={css({ textAlign: align })}>{more}</p>
-      </NextCard.Body>
-    </NextCard>
+        {image ? (
+          <Image
+            width={320}
+            height={180}
+            src={image}
+            alt={alt}
+            objectFit="cover"
+          />
+        ) : null}
+        <NextCardBody
+          css={{
+            display: "flex",
+            flexDirection: "column !important",
+            alignItems: align,
+          }}
+        >
+          {title ? <h4>{title}</h4> : null}
+          <p className={css({ textAlign: align })}>{text}</p>
+          <p className={css({ textAlign: align })}>{more}</p>
+        </NextCardBody>
+      </NextCard>
+    </Suspense>
   );
 };
 
