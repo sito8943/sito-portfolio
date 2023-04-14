@@ -162,7 +162,12 @@ const NotFound = () => {
           </m.div>
           <m.div variants={item}>
             <Link to="/" className={css({ textDecoration: "none" })}>
-              <Button flat ghost>
+              <Button
+                id="to-home"
+                aria-label={languageState.texts.AriaLabels.toHome}
+                flat
+                ghost
+              >
                 <i
                   className={`fa fa-home ${css({ marginRight: "10px" })}`}
                   aria-hidden="true"

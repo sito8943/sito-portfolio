@@ -117,7 +117,14 @@ const Modal = (props) => {
           ))}
         </NextModalBody>
         <NextModalFooter>
-          <Button auto flat color="error" onClick={onClose}>
+          <Button
+            id="close-modal"
+            aria-label={languageState.texts.AriaLabels.closeModal}
+            auto
+            flat
+            color="error"
+            onClick={onClose}
+          >
             {languageState.texts.Modal.Close}
           </Button>
         </NextModalFooter>

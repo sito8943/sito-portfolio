@@ -4,6 +4,16 @@
       "GoHome": "Ir al inicio",
       "Body": "No se encuentra la página"
     },
+    "AriaLabels": {
+      "send": "Enviar mensaje",
+      "toProjects": "Ir a los proyectos",
+      "toHome": "Ir al inicio",
+      "toTop": "Ir al tope de la página",
+      "toContact": "Ir a contactar",
+      "closeDrawer": "Cerrar menú desplegable",
+      "closeModal": "Cerrar dialogo emergente",
+      "openDrawer": "Abrir menú desplegable"
+    },
     "Navbar": {
       "Links": [
         {
@@ -200,7 +210,6 @@
       "Projects": [
         {
           "Title": "WMT Logistics",
-          "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
           "Text": "Compañia de brokers y cursos para camioneros",
           "Link": "https://wmtlogistics.org/",
           "See": "Ver"
@@ -472,6 +481,16 @@
       "GoHome": "Go Home",
       "Body": "Page not found"
     },
+    "AriaLabels": {
+      "send": "Send message",
+      "toHome": "Go to home",
+      "toProjects": "Go to projects",
+      "toContact": "Go to contact us",
+      "toTop": "Go to the top of the page",
+      "closeDrawer": "Close navigation drawer",
+      "closeModal": "Close popup dialog",
+      "openDrawer": "Open navigation drawer"
+    },
     "Navbar": {
       "Links": [
         {
@@ -481,7 +500,7 @@
         },
         {
           "id": "what-do-i",
-          "label": "¿Qué hago?",
+          "label": "What I do?",
           "to": "#what-do-i"
         },
         {
@@ -668,7 +687,6 @@
       "Projects": [
         {
           "Title": "WMT Logistics",
-          "Image": "https://wmtlogistics.org/static/media/headers.cd706af3c6381438bf0a.webp",
           "Text": "Broker company and courses for truckers",
           "Link": "https://wmtlogistics.org/",
           "See": "See"

@@ -13,6 +13,9 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 // utils
 import { scrollTo } from "../../utils/functions";
 
+// contexts
+import { useLanguage } from "../../contexts/LanguageProvider";
+
 // styles
 import "./styles.css";
 
@@ -21,6 +24,8 @@ const Button = loadable(() => import("../../components/NextUI/Button"));
 
 const ToTop = (props) => {
   const { footerVisible } = props;
+
+  const { languageState } = useLanguage();
 
   const [visible, setVisible] = useState(false);
   const [bottom, setBottom] = useState("10px");
@@ -40,7 +45,7 @@ const ToTop = (props) => {
         document.documentElement.clientHeight
       );
       if (fullHeight - top === window.innerHeight) setPush(true);
-      else setPush(false)
+      else setPush(false);
     },
     [setVisible]
   );
@@ -66,6 +71,8 @@ const ToTop = (props) => {
         })}`}
       >
         <Button
+          id="to-top"
+          aria-label={languageState.texts.AriaLabels.toTop}
           onPress={() => scrollTo(0)}
           css={{
             transform: visible ? "scale(1)" : "scale(0)",

@@ -138,7 +138,13 @@ const Hero = () => {
                     justifyContent: "flex-end",
                   }}
                 >
-                  <Button rounded flat type="submit">
+                  <Button
+                    id="send"
+                    aria-label={languageState.texts.AriaLabels.send}
+                    rounded
+                    flat
+                    type="submit"
+                  >
                     {languageState.texts.Contact.Button}
                   </Button>
                 </div>

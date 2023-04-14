@@ -72,6 +72,8 @@ const SitoNavbar = () => {
       >
         <OffCanvas visible={showOffCanvas} handleClose={closeOffCanvas} />
         <Button
+          id="menu-button"
+          aria-label={languageState.texts.AriaLabels.openDrawer}
           light
           className="menu-button"
           onClick={() => setShowOffCanvas(!showOffCanvas)}
@@ -111,7 +113,13 @@ const SitoNavbar = () => {
               href={item.to}
             >
               {item.primary ? (
-                <Button rounded flat css={{ minWidth: "120px" }}>
+                <Button
+                  id="to-contact"
+                  aria-label={languageState.texts.AriaLabels.toContact}
+                  rounded
+                  flat
+                  css={{ minWidth: "120px" }}
+                >
                   {item.label}
                 </Button>
               ) : (

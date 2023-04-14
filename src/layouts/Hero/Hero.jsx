@@ -72,6 +72,8 @@ const Hero = () => {
           <InViewComponent delay="0.5s">
             <Link href="#projects" className={css({ textDecoration: "none" })}>
               <Button
+                id="to-projects"
+                aria-label={languageState.texts.AriaLabels.toProjects}
                 onClick={scrollToProjects}
                 css={{
                   borderRadius: "100%",

@@ -15,6 +15,9 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // utils
 import { parseDelay } from "../../utils/functions";
 
+// image
+import logistics from "../../assets/images/projects/wmt.jpg"
+
 // @nextui-org
 const Container = loadable(() => import("../../components/NextUI/Container"));
 const Text = loadable(() => import("../../components/NextUI/Text"));
@@ -93,7 +96,7 @@ const Projects = () => {
               >
                 <Link href={item.Link} target="_blank" rel="noopener">
                   <Card
-                    image={item.Image}
+                    image={item.Image || logistics}
                     alt={`${item.Title}-logo`}
                     onClick={() => window.open(item.Link)}
                     text={item.Title}

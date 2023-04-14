@@ -5,6 +5,7 @@
   "homepage": "https://sito-numbis.github.io/sito-portfolio",
   "license": "MIT",
   "dependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@emailjs/browser": "^3.7.0",
     "@emotion/css": "^11.9.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -26,6 +27,7 @@
     "some-javascript-utils": "^0.7.1"
   },
   "scripts": {
+    "partytown": "partytown copylib public/~partytown",
     "start": "env-cmd -f .env react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",

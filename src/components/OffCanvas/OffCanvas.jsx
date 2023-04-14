@@ -63,6 +63,8 @@ const OffCanvas = (props) => {
           })}
         >
           <Button
+            id="close-drawer"
+            aria-label={languageState.texts.AriaLabels.closeDrawer}
             flat
             rounded
             css={{
@@ -87,6 +89,8 @@ const OffCanvas = (props) => {
             {languageState.texts.Navbar.Links.map((item) => (
               <Link key={item.to} href={item.to}>
                 <Button
+                  id={item.to}
+                  aria-label={item.to}
                   flat
                   rounded
                   color="inherit"
