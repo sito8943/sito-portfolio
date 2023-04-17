@@ -3,6 +3,7 @@ const {
   REACT_APP_EMAILJS_TEMPLATE_ID,
   REACT_APP_EMAILJS_PUBLIC_KEY,
   REACT_APP_GA,
+  REACT_APP_GA2,
 } = process.env;
 
 const config = {

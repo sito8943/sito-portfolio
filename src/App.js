@@ -15,6 +15,7 @@ import { useLanguage } from "./contexts/LanguageProvider";
 
 // components
 import Loading from "./components/Loading/Loading";
+import CookieBox from "./components/CookieBox/CookieBox";
 
 // views
 const Home = loadable(() => import("./views/Home"));
@@ -39,6 +40,7 @@ const App = () => {
   return (
     <LazyMotion features={domAnimation} strict>
       <Suspense fallback={<Loading />}>
+        <CookieBox />
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<Home />} />
