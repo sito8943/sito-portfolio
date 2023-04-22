@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 import { Modal } from "@nextui-org/react";
 
-const NextModal = (props) => <Modal.Header {...props} />;
+const NextModal = memo((props) => <Modal.Header {...props} />);
 
 export default NextModal;

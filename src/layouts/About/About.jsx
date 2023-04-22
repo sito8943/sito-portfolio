@@ -12,11 +12,6 @@ import { parseDelay } from "../../utils/functions";
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
-// images
-import code from "../../assets/images/coding.jpg";
-import trip from "../../assets/images/trips.jpg";
-import piano from "../../assets/images/piano.jpg";
-
 // own components
 const InViewComponent = loadable(() =>
   import("../../components/InViewComponent/InViewComponent")
@@ -40,7 +35,11 @@ const About = () => {
     else setVisible(true);
   };
 
-  const images = [code, trip, piano];
+  const images = [
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/coding_iRj5Jxz68.jpg?updatedAt=1682181967379",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/trips_YpLictApn.jpg?updatedAt=1682181967377",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg?updatedAt=1682181966422",
+  ];
 
   const onScroll = useCallback(
     (e) => {

@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import loadable from "@loadable/component";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -14,44 +15,57 @@ import {
   Container,
 } from "@nextui-org/react";
 
-// own components
-import InViewComponent from "../../components/InViewComponent/InViewComponent";
-import Section from "../../components/Section/Section";
-
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
-// utils
-import { parseDelay } from "../../utils/functions";
-
-// images
-import contact from "../../assets/images/contact.jpg";
-
 // config
 import config from "../../config";
+
+// own components
+const Loading = loadable(() => import("../../components/NextUI/Loading"));
+const InViewComponent = loadable(() =>
+  import("../../components/InViewComponent/InViewComponent")
+);
+const Section = loadable(() => import("../../components/Section/Section"));
 
 const Hero = () => {
   const form = useRef();
   const { languageState } = useLanguage();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        config.serviceId,
-        config.templateId,
-        form.current,
-        config.publicKey
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+  const [ok, setOk] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = useCallback(
+    (e) => {
+      setLoading(true);
+      e.preventDefault();
+      emailjs
+        .send(
+          config.serviceId,
+          config.templateId,
+          { name, email, message: content },
+          config.publicKey
+        )
+        .then(
+          (result) => {
+            setName("");
+            setEmail("");
+            setContent("");
+            setOk(1);
+            console.info(result.text);
+            setLoading(false);
+          },
+          (error) => {
+            setOk(-1);
+            console.error(error.text);
+          }
+        );
+    },
+    [name, email, content]
+  );
 
   return (
     <Section id="contact" background="#222">
@@ -67,7 +81,7 @@ const Hero = () => {
         <InViewComponent>
           <Text h2>{languageState.texts.Contact.Title}</Text>
         </InViewComponent>
-        <form ref={form} onSubmit={onSubmit}>
+        <form id="formId" ref={form} onSubmit={onSubmit}>
           <div
             className={css({
               display: "grid",
@@ -82,7 +96,7 @@ const Hero = () => {
           >
             <InViewComponent delay="0.5s">
               <Image
-                src={contact}
+                src="https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/contact_CcvqxZuUs.jpg?updatedAt=1682181967086"
                 alt="contact"
                 css={{
                   width: "100%",
@@ -102,53 +116,84 @@ const Hero = () => {
                 flexWrap: "wrap",
               })}
             >
-              {Object.values(languageState.texts.Contact.Inputs).map(
-                (item, i) => (
-                  <InViewComponent
-                    key={item.Label}
-                    delay={`${parseDelay(i, 0.6)}s`}
+              <InViewComponent delay={`0.6s`}>
+                <Input
+                  required
+                  name={languageState.texts.Contact.Inputs.Name.Name}
+                  label={languageState.texts.Contact.Inputs.Name.Label}
+                  placeholder={
+                    languageState.texts.Contact.Inputs.Name.Placeholder
+                  }
+                  css={{ width: "100%", marginBottom: "20px" }}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </InViewComponent>
+              <InViewComponent delay={`0.7s`}>
+                <Input
+                  required
+                  name={languageState.texts.Contact.Inputs.Email.Name}
+                  label={languageState.texts.Contact.Inputs.Email.Label}
+                  placeholder={
+                    languageState.texts.Contact.Inputs.Email.Placeholder
+                  }
+                  css={{ width: "100%", marginBottom: "20px" }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </InViewComponent>
+              <InViewComponent delay={`0.8s`}>
+                <Textarea
+                  rows={5}
+                  required
+                  name={languageState.texts.Contact.Inputs.Message.Name}
+                  label={languageState.texts.Contact.Inputs.Message.Label}
+                  placeholder={
+                    languageState.texts.Contact.Inputs.Message.Placeholder
+                  }
+                  css={{ width: "100%", marginBottom: "20px" }}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                />
+              </InViewComponent>
+              {!ok ? (
+                <InViewComponent delay="0.9s">
+                  <div
+                    sx={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "flex-end",
+                    }}
                   >
-                    {item.Type !== "textarea" && (
-                      <Input
-                        required
-                        name={item.Name}
-                        label={item.Label}
-                        placeholder={item.Placeholder}
-                        css={{ width: "100%", marginBottom: "20px" }}
-                      />
-                    )}
-                    {item.Type === "textarea" && (
-                      <Textarea
-                        rows={5}
-                        required
-                        name={item.Name}
-                        label={item.Label}
-                        placeholder={item.Placeholder}
-                        css={{ width: "100%", marginBottom: "20px" }}
-                      />
-                    )}
-                  </InViewComponent>
-                )
-              )}
-              <InViewComponent delay="0.9s">
-                <div
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "flex-end",
+                    <Button
+                      disabled={loading}
+                      id="send"
+                      aria-label={languageState.texts.AriaLabels.send}
+                      rounded
+                      flat
+                      type="submit"
+                    >
+                      {loading ? (
+                        <Loading />
+                      ) : (
+                        languageState.texts.Contact.Button
+                      )}
+                    </Button>
+                  </div>
+                </InViewComponent>
+              ) : (
+                <Text
+                  css={{
+                    background: ok === 1 ? "#009900" : "#990000",
+                    padding: "5px 20px",
+                    borderRadius: "30px",
                   }}
                 >
-                  <Button
-                    id="send"
-                    aria-label={languageState.texts.AriaLabels.send}
-                    rounded
-                    flat
-                    type="submit"
-                  >
-                    {languageState.texts.Contact.Button}
-                  </Button>
-                </div>
-              </InViewComponent>
+                  {ok === 1
+                    ? languageState.texts.Contact.SendOk
+                    : languageState.texts.Contact.SendError}
+                </Text>
+              )}
             </div>
           </div>
         </form>

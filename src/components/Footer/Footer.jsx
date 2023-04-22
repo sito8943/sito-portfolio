@@ -3,7 +3,7 @@
 import React, { forwardRef, Suspense } from "react";
 import loadable from "@loadable/component";
 
-import { scrollTo } from "some-javascript-utils";
+import { scrollTo } from "some-javascript-utils/browser";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { Button } from "@nextui-org/react";
 
-const ButtonNext = (props) => <Button {...props} />;
+const ButtonNext = memo((props) => <Button {...props} />);
 
 export default ButtonNext;

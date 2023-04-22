@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "@nextui-org/react";
 
-const LinkNext = (props) => <Link {...props} />;
+const LinkNext = memo((props) => <Link {...props} />);
 
 export default LinkNext;

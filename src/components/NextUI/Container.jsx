@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 import { Container } from "@nextui-org/react";
 
-const ContainerNext = (props) => <Container {...props} />;
+const ContainerNext = memo((props) => <Container {...props} />);
 
 export default ContainerNext;

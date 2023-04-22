@@ -453,6 +453,8 @@
     "Contact": {
       "Title": "¡Envíame tu propuesta!",
       "Body": "Te interesa trabajar junto conmigo. No dudes en escribirme",
+      "SendOk": "Enviado correctamente! Muchas gracias",
+      "SendError": "Ups! Algo ha salido mal",
       "Inputs": {
         "Name": {
           "Label": "Tu nombre",
@@ -930,6 +932,8 @@
     "Contact": {
       "Title": "Send me your proposal!",
       "Body": "Are you interested in working with me? Do not hesitate to write me",
+      "SendOk": "Submitted successfully! Thank you so much.",
+      "SendError": "Oops! something went wrong",
       "Inputs": {
         "Name": {
           "Label": "Your name",

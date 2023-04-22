@@ -57,6 +57,9 @@
   "devDependencies": {
     "babel-plugin-import": "^1.13.6",
     "customize-cra": "^1.0.0",
+    "eslint": "^8.39.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.32.2",
     "gh-pages": "^5.0.0",
     "react-app-rewired": "^2.2.1"
   }

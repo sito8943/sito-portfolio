@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 import { Navbar } from "@nextui-org/react";
 
-const NavbarLink = (props) => <Navbar.Link {...props} />;
+const NavbarLink = memo((props) => <Navbar.Link {...props} />);
 
 export default NavbarLink;
