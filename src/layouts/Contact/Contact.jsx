@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState, Suspense } from "react";
+import React, { useCallback, useRef, useState, Suspense, memo } from "react";
 import emailjs from "@emailjs/browser";
 import loadable from "@loadable/component";
 
@@ -27,7 +27,7 @@ const Image = loadable(() => import("../../components/NextUI/Image"));
 const Input = loadable(() => import("../../components/NextUI/Input"));
 const Textarea = loadable(() => import("../../components/NextUI/Textarea"));
 
-const Hero = () => {
+const Contact = () => {
   const form = useRef();
   const { languageState } = useLanguage();
 
@@ -203,4 +203,6 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+const ContactMemo = memo((props) => <Contact {...props} />);
+
+export default ContactMemo;

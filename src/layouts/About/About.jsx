@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { memo, useState, useEffect, useCallback, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import loadable from "@loadable/component";
 
@@ -122,4 +122,6 @@ const About = () => {
   );
 };
 
-export default About;
+const AboutMemo = memo((props) => <About {...props} />);
+
+export default AboutMemo;

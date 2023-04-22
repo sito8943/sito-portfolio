@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,4 +61,6 @@ const FloatingIcons = () => {
   );
 };
 
-export default FloatingIcons;
+const FloatingIconsMemo = memo((props) => <FloatingIcons {...props} />);
+
+export default FloatingIconsMemo;
