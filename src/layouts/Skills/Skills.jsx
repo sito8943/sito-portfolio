@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useCallback, Suspense } from "react";
+import React, { memo, useEffect, useCallback, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import loadable from "@loadable/component";
 import Tippy from "@tippyjs/react";
@@ -18,10 +18,6 @@ import node from "../../assets/images/logos/node.webp";
 import nextui from "../../assets/images/logos/nextui.webp";
 import mongodb from "../../assets/images/logos/mongodb.webp";
 import firebase from "../../assets/images/logos/firebase.webp";
-// skills
-import jsSkills from "../../assets/images/skills/js.png";
-import reactSkills from "../../assets/images/skills/react.jpg";
-import htmlCss from "../../assets/images/skills/htmlCss.jpg";
 
 // @nextui-org
 const Text = loadable(() => import("../../components/NextUI/Text"));
@@ -51,7 +47,11 @@ const Skills = () => {
     [navigate]
   );
 
-  const images = [reactSkills, htmlCss, jsSkills];
+  const images = [
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-50/SitoPortafolio/skills/react_E6SabUYXk.jpg?updatedAt=1682182309542",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-100/SitoPortafolio/skills/htmlCss_R5P0fuwyV.jpg?updatedAt=1682182309500",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-50/SitoPortafolio/skills/js_xQmEH10Am.png?updatedAt=1682182308628",
+  ];
   const logos = [node, mui, nextui, mongodb, firebase];
 
   useEffect(() => {
@@ -165,4 +165,6 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+const SkillsMemo = memo((props) => <Skills {...props} />);
+
+export default SkillsMemo;

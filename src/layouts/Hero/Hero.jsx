@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback } from "react";
+import React, { Suspense, useCallback, memo } from "react";
 import loadable from "@loadable/component";
 
 // @fortawesome
@@ -136,4 +136,6 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+const HeroMemo = memo((props) => <Hero {...props} />);
+
+export default HeroMemo;

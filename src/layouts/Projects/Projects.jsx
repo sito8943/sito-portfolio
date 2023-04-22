@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Suspense } from "react";
+import React, { Suspense, memo } from "react";
 import loadable from "@loadable/component";
 
 // @emotion/css
@@ -16,7 +16,7 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import { parseDelay } from "../../utils/functions";
 
 // image
-import logistics from "../../assets/images/projects/wmt.jpg"
+import logistics from "../../assets/images/projects/wmt.jpg";
 
 // @nextui-org
 const Container = loadable(() => import("../../components/NextUI/Container"));
@@ -112,4 +112,6 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+const ProjectsMemo = memo((props) => <Projects {...props} />);
+
+export default ProjectsMemo;

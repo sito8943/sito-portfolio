@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, Suspense } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,27 +32,31 @@ const FloatingIcons = () => {
   };
 
   return (
-    <m.div
-      variants={containerImage}
-      initial="hidden"
-      animate="visible"
-      viewport={{ once: true }}
-    >
+    <Suspense>
       <m.div
-        variants={item}
-        className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
+        variants={containerImage}
+        initial="hidden"
+        animate="visible"
+        viewport={{ once: true }}
       >
-        <FontAwesomeIcon
-          icon={faLightbulb}
-          className={`float-y ${css({
-            fontSize: "5rem",
-            color: "#F0D81D",
-            opacity: 0.5,
-          })}`}
-        />
+        <m.div
+          variants={item}
+          className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}
+        >
+          <FontAwesomeIcon
+            icon={faLightbulb}
+            className={`float-y ${css({
+              fontSize: "5rem",
+              color: "#F0D81D",
+              opacity: 0.5,
+            })}`}
+          />
+        </m.div>
       </m.div>
-    </m.div>
+    </Suspense>
   );
 };
 
-export default FloatingIcons;
+const FloatingIconsMemo = memo((props) => <FloatingIcons {...props} />);
+
+export default FloatingIconsMemo;

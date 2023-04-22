@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, Suspense } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,40 +35,44 @@ const FloatingIcons = () => {
   };
 
   return (
-    <m.div
-      variants={containerImage}
-      initial="hidden"
-      animate="visible"
-      viewport={{ once: true }}
-    >
+    <Suspense>
       <m.div
-        variants={item}
-        className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
+        variants={containerImage}
+        initial="hidden"
+        animate="visible"
+        viewport={{ once: true }}
       >
-        <FontAwesomeIcon
-          icon={faCircleCheck}
-          className={`float-y ${css({
-            fontSize: "3rem",
-            color: "#0fd908",
-            opacity: 0.5,
-          })}`}
-        />
+        <m.div
+          variants={item}
+          className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
+        >
+          <FontAwesomeIcon
+            icon={faCircleCheck}
+            className={`float-y ${css({
+              fontSize: "3rem",
+              color: "#0fd908",
+              opacity: 0.5,
+            })}`}
+          />
+        </m.div>
+        <m.div
+          variants={item}
+          className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
+        >
+          <FontAwesomeIcon
+            icon={faFaceLaughWink}
+            className={`float-y ${css({
+              fontSize: "4rem",
+              color: "#0fd908",
+              opacity: 0.5,
+            })}`}
+          />
+        </m.div>
       </m.div>
-      <m.div
-        variants={item}
-        className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
-      >
-        <FontAwesomeIcon
-          icon={faFaceLaughWink}
-          className={`float-y ${css({
-            fontSize: "4rem",
-            color: "#0fd908",
-            opacity: 0.5,
-          })}`}
-        />
-      </m.div>
-    </m.div>
+    </Suspense>
   );
 };
 
-export default FloatingIcons;
+const FloatingIconsMemo = memo((props) => <FloatingIcons {...props} />);
+
+export default FloatingIconsMemo;

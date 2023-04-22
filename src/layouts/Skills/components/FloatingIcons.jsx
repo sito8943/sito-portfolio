@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, Suspense } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,35 +34,39 @@ const FloatingIcons = () => {
   };
 
   return (
-    <m.div
-      variants={containerImage}
-      initial="hidden"
-      animate="visible"
-      viewport={{ once: true }}
-    >
+    <Suspense>
       <m.div
-        variants={item}
-        className={`scale-animation ${css({ left: "5%" })}`}
+        variants={containerImage}
+        initial="hidden"
+        animate="visible"
+        viewport={{ once: true }}
       >
-        <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
-          <Link
-            href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-            target="_blank"
-            rel="noopener"
-          >
-            <FontAwesomeIcon
-              icon={faJs}
-              className={`float-y ${css({
-                fontSize: "6rem",
-                color: "#F0D81D",
-                opacity: 0.5,
-              })}`}
-            />
-          </Link>
-        </div>
+        <m.div
+          variants={item}
+          className={`scale-animation ${css({ left: "5%" })}`}
+        >
+          <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
+            <Link
+              href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+              target="_blank"
+              rel="noopener"
+            >
+              <FontAwesomeIcon
+                icon={faJs}
+                className={`float-y ${css({
+                  fontSize: "6rem",
+                  color: "#F0D81D",
+                  opacity: 0.5,
+                })}`}
+              />
+            </Link>
+          </div>
+        </m.div>
       </m.div>
-    </m.div>
+    </Suspense>
   );
 };
 
-export default FloatingIcons;
+const FloatingIconsMemo = memo((props) => <FloatingIcons {...props} />);
+
+export default FloatingIconsMemo;

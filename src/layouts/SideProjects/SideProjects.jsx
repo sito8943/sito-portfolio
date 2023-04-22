@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useCallback, useEffect, useRef, Suspense } from "react";
+import React, { memo, useCallback, useEffect, useRef, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import loadable from "@loadable/component";
 
@@ -124,4 +124,6 @@ const SideProjects = () => {
   );
 };
 
-export default SideProjects;
+const SideProjectsMemo = memo((props) => <SideProjects {...props} />);
+
+export default SideProjectsMemo;

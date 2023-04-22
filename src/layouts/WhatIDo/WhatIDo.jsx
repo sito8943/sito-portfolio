@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { memo, Suspense } from "react";
 import loadable from "@loadable/component";
 
 // @emotion/css
@@ -14,7 +14,7 @@ const InViewComponent = loadable(() =>
   import("../../components/InViewComponent/InViewComponent")
 );
 
-export default function WhatIDo() {
+function WhatIDo() {
   const { languageState } = useLanguage();
 
   return (
@@ -58,3 +58,7 @@ export default function WhatIDo() {
     </Suspense>
   );
 }
+
+const WhatIDoMemo = memo((props) => <WhatIDo {...props} />);
+
+export default WhatIDoMemo;
