@@ -111,9 +111,10 @@ const SideProjects = () => {
                 <Card
                   image={item.Image}
                   alt="about"
-                  onClick={() => window.open(item.Link)}
+                  link={item.Link}
                   text={item.Title}
                   more={item.Text}
+                  external
                 />
               </InViewComponent>
             ))}
