@@ -247,7 +247,7 @@
           "Text": "Crea, modifica y borra notas para productividad",
           "Image": "https://repository-images.githubusercontent.com/511256492/6cc736af-aed1-4c24-beda-35ea98cbd038",
           "Alt": "todo",
-          "Link": "https://github.com/SitoNumbis/todopro.git",
+          "Link": "https://github.com/SitoNumbis/todopro/",
           "See": "Ver"
         },
         {
@@ -264,13 +264,6 @@
           "Link": "https://sitonumbis.github.io/sito-memory/",
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
-          "See": "Ver"
-        },
-        {
-          "Title": "Santa Ifigenia",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Logo_ebyZhBR61m.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678490958482",
-          "Link": "https://santa-ifigenia.web.app/",
-          "Text": "Sitio web guía digital interactiva del cementerio Santa Ifigenia",
           "See": "Ver"
         }
       ]
