@@ -243,20 +243,28 @@
       "CallMe": "Pequeños proyectos para experimentar nuevas herramientas",
       "Projects": [
         {
+          "Title": "Beyond the World Chat",
+          "Text": "Chatea con tus amistades en el multiverso de Beyond the World",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/Beyon_the_world/Chat/Flat1_hj_ELVvYh.jpg",
+          "Alt": "btw-chat",
+          "Link": "https://beyond-the-world-c40f4.web.app/",
+          "See": "Probar"
+        },
+        {
           "Title": "To-Do Pro",
           "Text": "Crea, modifica y borra notas como un pro",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
           "Alt": "todo",
           "Link": "https://sitonumbis.github.io/todopro/",
-          "See": "Ver"
+          "See": "Probar"
         },
         {
           "Title": "Snake",
           "Text": "Clásico juego de la serpiente que come manzanas",
-          "Link": "https://sitonumbis.github.io/sito-react-snake/",
+          "Link": "https://sitonumbis.github.io/tr:w-318,h-180/sito-react-snake/",
           "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
           "Alt": "sito-react-snake",
-          "See": "Ver"
+          "See": "Probar"
         },
         {
           "Title": "Mirror",
@@ -264,7 +272,7 @@
           "Link": "https://sitonumbis.github.io/sito-memory/",
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
-          "See": "Ver"
+          "See": "Probar"
         }
       ]
     },
@@ -722,12 +730,20 @@
       "CallMe": "Small projects to experience new tools",
       "Projects": [
         {
+          "Title": "Beyond the World Chat",
+          "Text": "Chat with your friends of the multiverse of Beyond the World",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/Beyon_the_world/Chat/Flat1_hj_ELVvYh.jpg",
+          "Alt": "btw-chat",
+          "Link": "https://beyond-the-world-c40f4.web.app/",
+          "See": "Try"
+        },
+        {
           "Title": "To-Do Pro",
           "Text": "Create, edit and delete your notes like a pro",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
           "Alt": "todo",
           "Link": "https://sitonumbis.github.io/todopro/",
-          "See": "See"
+          "See": "Try"
         },
         {
           "Title": "Snake",
@@ -735,7 +751,7 @@
           "Link": "https://sitonumbis.github.io/sito-react-snake/",
           "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
           "Alt": "sito-react-snake",
-          "See": "See"
+          "See": "Try"
         },
         {
           "Title": "Mirror",
@@ -743,7 +759,7 @@
           "Link": "https://inmersoft-dev.github.io/santiago-cultural-webpage/",
           "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
           "Alt": "sito-mirror",
-          "See": "See"
+          "See": "Try"
         }
       ]
     },
