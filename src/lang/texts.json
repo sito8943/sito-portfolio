@@ -209,9 +209,10 @@
       "SeeMore": "GitHub",
       "Projects": [
         {
-          "Title": "WMT Logistics",
-          "Text": "Compañia de brokers y cursos para camioneros",
-          "Link": "https://wmtlogistics.org/",
+          "Title": "M2G Fotos",
+          "Text": "Sitio web oficial M2G Fotos. Estudio de Fotografía en Santiago de Cuba",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/Untitled_xhFWRyelS.jpg",
+          "Link": "https://m2g-fotos.web.app/",
           "See": "Ver"
         },
         {
@@ -222,10 +223,24 @@
           "See": "Ver"
         },
         {
-          "Title": "Marketplace",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
-          "Text": "Servicio para publicar catálogos digitales",
-          "Link": "https://marketplace.ireasantiago.com",
+          "Title": "Descubre Trinidad Marketplace",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180//900x600_final_300x_2-5yQY7Ek8.png",
+          "Text": "Únete al marketplace de la ciudad de Trinidad.",
+          "Link": "https://marketplace.descubretrinidad.com",
+          "See": "Ver"
+        },
+        {
+          "Title": "Descubre Trinidad Carnaval",
+          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+          "Text": "Únete al sitio web de eventos Carnaval de la ciudad de Trinidad.",
+          "Link": "https://carnaval.descubretrinidad.com",
+          "See": "Ver"
+        },
+        {
+          "Title": "Descubre Trinidad",
+          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+          "Text": "Déjate llevar por el encanto de la Ciudad de Encuentros.",
+          "Link": "https://descubretrinidad.com",
           "See": "Ver"
         },
         {
@@ -689,9 +704,10 @@
       "SeeMore": "GitHub",
       "Projects": [
         {
-          "Title": "WMT Logistics",
-          "Text": "Broker company and courses for truckers",
-          "Link": "https://wmtlogistics.org/",
+          "Title": "M2G Fotos",
+          "Text": "Official website M2G Photos. Photography Studio in Santiago de Cuba",
+          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/Untitled_xhFWRyelS.jpg",
+          "Link": "https://m2g-fotos.web.app/",
           "See": "See"
         },
         {
@@ -702,24 +718,31 @@
           "See": "See"
         },
         {
-          "Title": "Marketplace",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Untitled_HlNR__mOf.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670270790950",
-          "Text": "Service to publish digital catalogs",
-          "Link": "https://marketplace.ireasantiago.com",
+          "Title": "Descubre Trinidad Marketplace",
+          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+          "Text": "Join the Trinidad city marketplace.",
+          "Link": "https://marketplace.descubretrinidad.com",
           "See": "See"
+        },
+        {
+          "Title": "Descubre Trinidad Carnaval",
+          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+          "Text": "Join the Trinidad city Carnaval events page",
+          "Link": "https://carnaval.descubretrinidad.com",
+          "See": "See"
+        },
+        {
+          "Title": "Descubre Trinidad",
+          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+          "Text": "Let yourself be carried away by the charm of the City of Encounters.",
+          "Link": "https://descubretrinidad.com",
+          "See": "see"
         },
         {
           "Title": "Findylin",
           "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
           "Link": "https://findylin-369a7.web.app/",
           "Text": "Easy and intuitive platform to connect owners and buyers",
-          "See": "See"
-        },
-        {
-          "Title": "Santa Ifigenia",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/Logo_ebyZhBR61m.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678490958482",
-          "Link": "https://santa-ifigenia.web.app/",
-          "Text": "Interactive digital guide website of the Santa Ifigenia cemetery",
           "See": "See"
         }
       ]

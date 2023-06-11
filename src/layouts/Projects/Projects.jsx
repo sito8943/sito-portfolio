@@ -98,7 +98,6 @@ const Projects = () => {
                   <Card
                     image={item.Image || logistics}
                     alt={`${item.Title}-logo`}
-                    onClick={() => window.open(item.Link)}
                     text={item.Title}
                     more={item.Text}
                   />
