@@ -9,7 +9,7 @@ const Section = forwardRef((props, ref) => {
   const { id, background, children } = props;
 
   return (
-    <div
+    <section
       ref={ref}
       id={id}
       className={css({
@@ -23,7 +23,7 @@ const Section = forwardRef((props, ref) => {
       })}
     >
       {children}
-    </div>
+    </section>
   );
 });
 

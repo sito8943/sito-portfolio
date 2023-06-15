@@ -19,7 +19,7 @@ function WhatIDo() {
 
   return (
     <Suspense>
-      <Section id="what-do-i" background="#1b1b1b">
+      <Section id="what-i-do" background="#1b1b1b">
         <div
           className={css({
             justifyContent: "center",

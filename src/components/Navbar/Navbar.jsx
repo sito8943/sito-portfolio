@@ -62,6 +62,27 @@ const SitoNavbar = () => {
       }, 499);
   }, [showOffCanvas]);
 
+  const onScroll = useCallback(() => {
+    let sec = document.querySelectorAll("section");
+    sec.forEach((section) => {
+      let top = window.scrollY;
+      let offset = section.offsetTop;
+      let height = section.offsetHeight;
+      let id = section.getAttribute("id");
+
+      if (top >= offset && top < offset + height) {
+        setActiveLink(`#${id}`);
+      }
+    });
+  }, [setActiveLink, languageState]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [onScroll]);
+
   return (
     <Suspense>
       <Navbar
