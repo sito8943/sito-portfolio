@@ -682,6 +682,11 @@
       "Meet": "You can find me at:"
     },
     "WhatIDo": {
+      "navigation": [
+        { "to": "#landing-pages", "label": "Landing Pages" },
+        { "to": "#dashboards", "label": "Dashboards" },
+        { "to": "#blogs", "label": "Blogs" }
+      ],
       "Title": "I build from landing pages to blogs",
       "Cards": [
         {
@@ -689,7 +694,7 @@
           "body": "The landing page relies on the fact that it cannot be a simple home page but has the purpose of showing people your product and making you known"
         },
         {
-          "title": "Panel administrativo",
+          "title": "Dashboard",
           "body": "Through an administration panel, those responsible for a site can modify its contents."
         },
         {
@@ -790,7 +795,7 @@
       "Close": "Close"
     },
     "About": {
-      "Title": "Acerca de mí",
+      "Title": "About me",
       "Subtitle": "but my real name is Carlos Andrés Mora González",
       "Me": {
         "Title": "About me",
