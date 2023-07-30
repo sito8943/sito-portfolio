@@ -1,13 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { memo, useCallback, useEffect, useRef, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { memo, useRef, Suspense } from "react";
+
 import loadable from "@loadable/component";
 
 // @emotion/css
 import { css } from "@emotion/css";
-
-// framer-motion
-import { useInView } from "framer-motion";
 
 // utils
 import { parseDelay } from "../../utils/functions";
@@ -30,30 +27,9 @@ const Section = loadable(() => import("../../components/Section/Section"));
 const Card = loadable(() => import("../../components/Card/Card"));
 
 const SideProjects = () => {
-  const navigate = useNavigate();
   const { languageState } = useLanguage();
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const onScroll = useCallback(
-    (e) => {
-      // const top = window.pageYOffset || document.documentElement.scrollTop;
-      // const sideProjectsTop = document.getElementById("side-projects");
-      // if (isInView) {
-      // if (sideProjectsTop.offsetTop - 100 < top) navigate("#side-projects");
-      // else navigate("#projects");
-      // }
-    },
-    [navigate, isInView]
-  );
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [onScroll]);
 
   return (
     <Suspense>
@@ -114,7 +90,6 @@ const SideProjects = () => {
                   link={item.Link}
                   text={item.Title}
                   more={item.Text}
-                  external
                 />
               </InViewComponent>
             ))}

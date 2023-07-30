@@ -111,14 +111,13 @@ const Skills = () => {
                 className="bottom"
                 delay={`${parseDelay(i, 0.5)}s`}
               >
-                <Link href={item.Link} target="_blank" rel="noopener">
-                  <Card
-                    image={images[i]}
-                    alt={item.Alt}
-                    text={item.Text}
-                    more={`${years(item.Start)}${item.Age}`}
-                  />
-                </Link>
+                <Card
+                  link={item.Link}
+                  image={images[i]}
+                  alt={item.Alt}
+                  text={item.Text}
+                  more={`${years(item.Start)}${item.Age}`}
+                />
               </InViewComponent>
             ))}
           </Container>

@@ -43,7 +43,7 @@ function WhatIDo() {
             })}
           >
             {languageState.texts.WhatIDo.Cards.map((item, i) => (
-              <InViewComponent key={item.title}>
+              <InViewComponent key={item.title} delay={`${i * 200}ms`}>
                 <Card
                   title={item.title}
                   text={item.body}

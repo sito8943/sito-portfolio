@@ -94,14 +94,13 @@ const Projects = () => {
                 key={item.Title}
                 delay={`${parseDelay(i, 0.4)}s`}
               >
-                <Link href={item.Link} target="_blank" rel="noopener">
-                  <Card
-                    image={item.Image || logistics}
-                    alt={`${item.Title}-logo`}
-                    text={item.Title}
-                    more={item.Text}
-                  />
-                </Link>
+                <Card
+                  link={item.Link}
+                  image={item.Image || logistics}
+                  alt={`${item.Title}-logo`}
+                  text={item.Title}
+                  more={item.Text}
+                />
               </InViewComponent>
             ))}
           </Container>

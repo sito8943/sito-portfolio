@@ -9,6 +9,7 @@ import {
   faFacebook,
   faTwitter,
   faGithub,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 // @emotion/css
@@ -36,7 +37,7 @@ const Section = loadable(() => import("../../components/Section/Section"));
 const Hero = () => {
   const { languageState } = useLanguage();
 
-  const icons = [faGithub, faFacebook, faInstagram, faTwitter];
+  const icons = [faGithub, faFacebook, faInstagram, faTwitter, faLinkedin];
 
   const scrollToProjects = useCallback(() => {
     scrollTo(document.getElementById("#projects")?.offsetTop);
@@ -63,14 +64,23 @@ const Hero = () => {
         >
           <InViewComponent>
             <Text h1 css={{ textAlign: "center" }}>
-              <Link href="#about">{languageState.texts.Hero.Title}</Link>
+              {languageState.texts.Hero.Title}
             </Text>
           </InViewComponent>
           <InViewComponent delay="0.4s">
             <Text>{languageState.texts.Hero.Text}</Text>
           </InViewComponent>
           <InViewComponent delay="0.5s">
-            <Link href="#projects" className={css({ textDecoration: "none" })}>
+            <Link
+              href="#projects"
+              className={css({
+                textDecoration: "none",
+                transition: "all 500ms ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              })}
+            >
               <Button
                 id="to-projects"
                 aria-label={languageState.texts.AriaLabels.toProjects}
@@ -80,10 +90,6 @@ const Hero = () => {
                   marginTop: "15px",
                   minWidth: "0px !important",
                   width: "40px",
-                  transition: "all 500ms ease",
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                  },
                 }}
               >
                 <FontAwesomeIcon icon={faArrowDown} />
@@ -121,7 +127,13 @@ const Hero = () => {
           >
             {languageState.texts.Hero.Social.map((item, i) => (
               <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.6)}s`}>
-                <Link href={item.Link} rel="noreferrer" target="_blank">
+                <Link
+                  href={item.Link}
+                  rel="noreferrer"
+                  target="_blank"
+                  ariaLabels={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
+                  name={item.Text.toLowerCase()}
+                >
                   <FontAwesomeIcon
                     className={css({ fontSize: "30px" })}
                     icon={icons[i]}

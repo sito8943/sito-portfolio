@@ -30,24 +30,30 @@ const Card = (props) => {
   return (
     <Suspense>
       <a
-        className={css({ color: "inherit", textDecoration: "none" })}
+        className={css({
+          color: "inherit",
+          textDecoration: "none",
+          cursor: link ? "pointer" : "default",
+        })}
         href={link}
         target="blank"
         rel="noreferrer"
       >
         <NextCard
-          isPressable
-          isHoverable
+          isPressable={onClick !== undefined || link !== undefined}
+          isHoverable={onClick !== undefined || link !== undefined}
           onPress={onClick}
           variant="bordered"
           css={{
             maxWidth: "320px",
+            minHeight: "250px",
             height,
             width: "100%",
             margin: "10px",
             display: "flex",
             flexDirection: "column !important",
             position: "relative",
+            cursor: link ? "pointer" : "default",
           }}
         >
           {external ? (

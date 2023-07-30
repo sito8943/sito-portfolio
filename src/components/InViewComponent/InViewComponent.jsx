@@ -21,7 +21,7 @@ const InViewComponent = (props) => {
         transform: isInView ? "translateY(0px)" : "translateY(20px)",
         opacity: isInView ? 1 : 0,
         transition: `all 0.1s linear ${delay}`,
-      })} ${className}`}
+      })} ${className || ""}`}
     >
       {children}
     </div>

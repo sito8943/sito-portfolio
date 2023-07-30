@@ -5,6 +5,7 @@
       "Body": "No se encuentra la página"
     },
     "AriaLabels": {
+      "linkTo": "Ir a enlace externo",
       "send": "Enviar mensaje",
       "toProjects": "Ir a los proyectos",
       "toHome": "Ir al inicio",
@@ -182,7 +183,8 @@
           "Text": "Instagram",
           "Link": "https://www.instagram.com/sitonumbis/"
         },
-        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" }
+        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" },
+        { "Text": "Linkedin", "Link": "https://www.linkedin.com/in/sito8943" }
       ],
       "Meet": "Puedes encontrarme en:"
     },
@@ -500,6 +502,7 @@
       "Body": "Page not found"
     },
     "AriaLabels": {
+      "linkTo": "Go to external link",
       "send": "Send message",
       "toHome": "Go to home",
       "toProjects": "Go to projects",
@@ -677,7 +680,8 @@
           "Text": "Instagram",
           "Link": "https://www.instagram.com/sitonumbis/"
         },
-        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" }
+        { "Text": "Twitter", "Link": "https://twitter.com/sito8943" },
+        { "Text": "Linkedin", "Link": "https://www.linkedin.com/in/sito8943" }
       ],
       "Meet": "You can find me at:"
     },
