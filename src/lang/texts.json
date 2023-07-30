@@ -225,17 +225,10 @@
           "See": "Ver"
         },
         {
-          "Title": "Descubre Trinidad Marketplace",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180//900x600_final_300x_2-5yQY7Ek8.png",
-          "Text": "Únete al marketplace de la ciudad de Trinidad.",
-          "Link": "https://marketplace.descubretrinidad.com",
-          "See": "Ver"
-        },
-        {
-          "Title": "Descubre Trinidad Carnaval",
-          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
-          "Text": "Únete al sitio web de eventos Carnaval de la ciudad de Trinidad.",
-          "Link": "https://carnaval.descubretrinidad.com",
+          "Title": "Sito's Library",
+          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
+          "Text": "Sito's Library, app web stock de libros para una prueba técnica. ",
+          "Link": "https://sitos-library.web.app/",
           "See": "Ver"
         },
         {
@@ -727,17 +720,10 @@
           "See": "See"
         },
         {
-          "Title": "Descubre Trinidad Marketplace",
-          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
-          "Text": "Join the Trinidad city marketplace.",
-          "Link": "https://marketplace.descubretrinidad.com",
-          "See": "See"
-        },
-        {
-          "Title": "Descubre Trinidad Carnaval",
-          "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
-          "Text": "Join the Trinidad city Carnaval events page",
-          "Link": "https://carnaval.descubretrinidad.com",
+          "Title": "Sito's Library",
+          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
+          "Text": "Sito's Library, web app stock of books for a technical test.",
+          "Link": "https://sitos-library.web.app/",
           "See": "See"
         },
         {

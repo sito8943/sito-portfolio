@@ -13,6 +13,7 @@ import {
   faFacebook,
   faTwitter,
   faGithub,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 // @emotion/css
@@ -28,7 +29,7 @@ const MUILink = loadable(() => import("../../components/NextUI/Link"));
 const Footer = forwardRef((props, ref) => {
   const { languageState } = useLanguage();
 
-  const icons = [faGithub, faInstagram, faTwitter, faFacebook];
+  const icons = [faGithub, faInstagram, faTwitter, faFacebook, faLinkedin];
 
   return (
     <Suspense>
