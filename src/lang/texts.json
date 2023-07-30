@@ -176,10 +176,6 @@
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
         {
-          "Text": "Facebook",
-          "Link": "https://www.facebook.com/carlosandres.moragonzalez.7/"
-        },
-        {
           "Text": "Instagram",
           "Link": "https://www.instagram.com/sitonumbis/"
         },
@@ -665,10 +661,6 @@
       "Text": "I'm a frontend and backend web developer",
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
-        {
-          "Text": "Facebook",
-          "Link": "https://www.facebook.com/carlosandres.moragonzalez.7/"
-        },
         {
           "Text": "Instagram",
           "Link": "https://www.instagram.com/sitonumbis/"
