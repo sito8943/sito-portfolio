@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
-  faFacebook,
   faTwitter,
   faGithub,
   faLinkedin,
@@ -37,7 +36,7 @@ const Section = loadable(() => import("../../components/Section/Section"));
 const Hero = () => {
   const { languageState } = useLanguage();
 
-  const icons = [faGithub, faFacebook, faInstagram, faTwitter, faLinkedin];
+  const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
 
   const scrollToProjects = useCallback(() => {
     scrollTo(document.getElementById("#projects")?.offsetTop);

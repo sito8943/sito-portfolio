@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   faInstagram,
-  faFacebook,
   faTwitter,
   faGithub,
   faLinkedin,
@@ -29,7 +28,7 @@ const MUILink = loadable(() => import("../../components/NextUI/Link"));
 const Footer = forwardRef((props, ref) => {
   const { languageState } = useLanguage();
 
-  const icons = [faGithub, faInstagram, faTwitter, faFacebook, faLinkedin];
+  const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
 
   return (
     <Suspense>
