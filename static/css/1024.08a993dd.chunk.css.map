@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/1024.08a993dd.chunk.css","mappings":"AAAA,OACE,kBAAmB,CACnB,gBACF","sources":["layouts/Skills/styles.css"],"sourcesContent":[".skill {\r\n  border-radius: 100%;\r\n  object-fit: cover;\r\n}\r\n"],"names":[],"sourceRoot":""}
