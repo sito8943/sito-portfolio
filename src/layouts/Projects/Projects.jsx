@@ -76,26 +76,13 @@ const Projects = () => {
               </Link>
             </Text>
           </InViewComponent>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              marginTop: "10px",
-              flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-          >
+          <div className="secondary-container">
             {languageState.texts.Projects.Projects.map((item, i) => (
               <InViewComponent
                 key={item.Title}
                 delay={`${parseDelay(i, 0.4)}s`}
               >
                 <Card
-                 
                   link={item.Link}
                   image={item.Image || logistics}
                   alt={`${item.Title}-logo`}
@@ -104,7 +91,7 @@ const Projects = () => {
                 />
               </InViewComponent>
             ))}
-          </Container>
+          </div>
         </Container>
       </Section>
     </Suspense>

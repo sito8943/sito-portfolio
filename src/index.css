@@ -94,3 +94,16 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.secondary-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  flex-direction: row !important;
+  justify-content: center;
+}
+
+.secondary-container div {
+  display: flex;
+  flex-direction: row;
+}

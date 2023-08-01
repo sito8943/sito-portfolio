@@ -98,18 +98,7 @@ const Skills = () => {
               {languageState.texts.Skills.Other}
             </Text>
           </InViewComponent>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-          >
+          <div className="secondary-container">
             {languageState.texts.Skills.Others.map((jtem, j) => (
               <InViewComponent key={j} delay={`${parseDelay(j, 0.9)}s`}>
                 <Tippy content={jtem.Text}>
@@ -129,7 +118,7 @@ const Skills = () => {
                 </Tippy>
               </InViewComponent>
             ))}
-          </Container>
+          </div>
         </div>
       </Section>
     </Suspense>

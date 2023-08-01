@@ -14,7 +14,6 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 
 // @nextui-org
 const Text = loadable(() => import("../../components/NextUI/Text"));
-const Container = loadable(() => import("../../components/NextUI/Container"));
 
 // own components
 const InViewComponent = loadable(() =>
@@ -34,22 +33,7 @@ const SideProjects = () => {
   return (
     <Suspense>
       <Section ref={ref} id="side-projects">
-        <Container
-          justify="center"
-          alignItems="center"
-          display="flex"
-          direction="column"
-          css={{
-            height: "100%",
-            width: "100%",
-            div: {
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
-        >
+        <div className="main-container">
           <FloatingIcons />
           <InViewComponent>
             <Text h2 className={css({ textAlign: "center" })}>
@@ -66,19 +50,7 @@ const SideProjects = () => {
               {languageState.texts.SideProjects.CallMe}
             </Text>
           </InViewComponent>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              marginTop: "10px",
-              flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-          >
+          <div className="secondary-container">
             {languageState.texts.SideProjects.Projects.map((item, i) => (
               <InViewComponent
                 delay={`${parseDelay(i, 0.4)}s`}
@@ -93,8 +65,8 @@ const SideProjects = () => {
                 />
               </InViewComponent>
             ))}
-          </Container>
-        </Container>
+          </div>
+        </div>
       </Section>
     </Suspense>
   );
