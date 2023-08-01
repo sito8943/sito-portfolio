@@ -86,8 +86,8 @@ const Skills = () => {
                     src={images[i]}
                     alt={item.Alt}
                     className="skill"
-                    height={200}
-                    width={200}
+                    height={120}
+                    width={120}
                   />
                 </Link>
               </InViewComponent>
