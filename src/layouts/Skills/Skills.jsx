@@ -40,8 +40,8 @@ const Skills = () => {
 
   const images = [
     "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-100/SitoPortafolio/skills/htmlCss_R5P0fuwyV.jpg?updatedAt=1682182309500",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_i2rCcXKsm.jpg?updatedAt=1690681565275",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/HTMLCSS_63L4ZaQCk.jpg?updatedAt=1690853306821",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_5UTJufCe3.jpg?updatedAt=1690852899191",
   ];
   const logos = [node, mui, nextui, mongodb, firebase];
 
