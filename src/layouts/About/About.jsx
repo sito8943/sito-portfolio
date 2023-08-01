@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { memo, useState, useEffect, useCallback, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { memo, useState, Suspense } from "react";
+
 import loadable from "@loadable/component";
 
 // @nextui-org
@@ -22,7 +22,6 @@ const Modal = loadable(() => import("../../components/Modal/Modal"));
 const Card = loadable(() => import("../../components/Card/Card"));
 
 const About = () => {
-  const navigate = useNavigate();
   const { languageState } = useLanguage();
 
   const [show, setShow] = useState("Me");
@@ -40,23 +39,6 @@ const About = () => {
     "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/trips_YpLictApn.jpg?updatedAt=1682181967377",
     "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg?updatedAt=1682181966422",
   ];
-
-  const onScroll = useCallback(
-    (e) => {
-      // const top = window.pageYOffset || document.documentElement.scrollTop;
-      // const aboutTop = document.getElementById("about");
-      // if (aboutTop.offsetTop - 77 < top) navigate("#about");
-      // else navigate("#hero");
-    },
-    [navigate]
-  );
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [onScroll]);
 
   return (
     <Suspense>

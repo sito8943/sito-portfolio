@@ -399,7 +399,7 @@
     },
     "Skills": {
       "Title": "Mis Habilidades",
-      "Body": "Como desarrollador de Frontend de aplicaciones web he potenciado las siguientes habilidades:",
+      "Body": "Como desarrollador de Frontend desarollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
       "List": [
         {
           "Alt": "react-logo",
@@ -890,7 +890,7 @@
     },
     "Skills": {
       "Title": "My skills",
-      "Body": "As a Frontend developer of web applications I have enhanced the following skills:",
+      "Body": "As a Frontend developer building of web applications for [year] years I have enhanced the following skills:",
       "List": [
         {
           "Alt": "react-logo",

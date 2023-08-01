@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { memo, useEffect, useCallback, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { memo, Suspense } from "react";
+
 import loadable from "@loadable/component";
 import Tippy from "@tippyjs/react";
 
@@ -10,6 +10,9 @@ import { parseDelay } from "../../utils/functions";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
+
+// styles
+import "./styles.css";
 
 // images
 // other skills
@@ -31,35 +34,16 @@ const InViewComponent = loadable(() =>
 );
 const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
 const Section = loadable(() => import("../../components/Section/Section"));
-const Card = loadable(() => import("../../components/Card/Card"));
 
 const Skills = () => {
-  const navigate = useNavigate();
   const { languageState } = useLanguage();
 
-  const onScroll = useCallback(
-    (e) => {
-      // const top = window.pageYOffset || document.documentElement.scrollTop;
-      // const skillTop = document.getElementById("skills");
-      // if (skillTop.offsetTop - 77 < top) navigate("#skills");
-      // else navigate("#about");
-    },
-    [navigate]
-  );
-
   const images = [
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-50/SitoPortafolio/skills/react_E6SabUYXk.jpg?updatedAt=1682182309542",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
     "https://ik.imagekit.io/lgqp0wffgtp/tr:q-100/SitoPortafolio/skills/htmlCss_R5P0fuwyV.jpg?updatedAt=1682182309500",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-50/SitoPortafolio/skills/js_xQmEH10Am.png?updatedAt=1682182308628",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_i2rCcXKsm.jpg?updatedAt=1690681565275",
   ];
   const logos = [node, mui, nextui, mongodb, firebase];
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [onScroll]);
 
   const years = (start) => {
     const year = new Date().getFullYear();
@@ -70,27 +54,16 @@ const Skills = () => {
     <Suspense>
       <Section id="skills">
         <FloatingIcons />
-        <Container
-          justify="center"
-          alignItems="center"
-          display="flex"
-          direction="column"
-          css={{
-            height: "100%",
-            div: {
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
-        >
+        <div className="main-container">
           <InViewComponent>
             <Text h2>{languageState.texts.Skills.Title}</Text>
           </InViewComponent>
           <InViewComponent delay="0.4s">
             <Text css={{ textAlign: "center", marginBottom: "20px" }}>
-              {languageState.texts.Skills.Body}
+              {languageState.texts.Skills.Body.replace(
+                "[year]",
+                String(`${years(2019)}`)
+              )}
             </Text>
           </InViewComponent>
           <Container
@@ -99,10 +72,7 @@ const Skills = () => {
             wrap="wrap"
             css={{
               flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
+              gap: "20px",
             }}
           >
             {languageState.texts.Skills.List.map((item, i) => (
@@ -111,13 +81,15 @@ const Skills = () => {
                 className="bottom"
                 delay={`${parseDelay(i, 0.5)}s`}
               >
-                <Card
-                  link={item.Link}
-                  image={images[i]}
-                  alt={item.Alt}
-                  text={item.Text}
-                  more={`${years(item.Start)}${item.Age}`}
-                />
+                <Link href={item.Link} target="blank" rel="noreferrer">
+                  <Image
+                    src={images[i]}
+                    alt={item.Alt}
+                    className="skill"
+                    height={200}
+                    width={200}
+                  />
+                </Link>
               </InViewComponent>
             ))}
           </Container>
@@ -158,7 +130,7 @@ const Skills = () => {
               </InViewComponent>
             ))}
           </Container>
-        </Container>
+        </div>
       </Section>
     </Suspense>
   );

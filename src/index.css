@@ -79,3 +79,18 @@ code {
     transform: scale(1);
   }
 }
+
+.main-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

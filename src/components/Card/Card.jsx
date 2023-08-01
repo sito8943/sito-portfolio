@@ -26,6 +26,7 @@ const Card = (props) => {
     height,
     external,
     link,
+    maxWidth,
   } = props;
   return (
     <Suspense>
@@ -40,12 +41,13 @@ const Card = (props) => {
         rel="noreferrer"
       >
         <NextCard
+          className="hola"
           isPressable={onClick !== undefined || link !== undefined}
           isHoverable={onClick !== undefined || link !== undefined}
           onPress={onClick}
           variant="bordered"
           css={{
-            maxWidth: "320px",
+            maxWidth,
             minHeight: "250px",
             height,
             width: "100%",
@@ -99,6 +101,7 @@ Card.defaultProps = {
   onClick: undefined,
   align: "center",
   height: "306px",
+  maxWidth: "320px",
   external: false,
 };
 

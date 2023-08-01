@@ -11,15 +11,16 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-// @emotion/css
-import { css } from "@emotion/css";
+import { scrollTo } from "some-javascript-utils/browser";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // utils
 import { parseDelay } from "../../utils/functions";
-import { scrollTo } from "some-javascript-utils/browser";
+
+// styles
+import "./styles.css";
 
 // @nextui-org
 const Link = loadable(() => import("../../components/NextUI/Link"));
@@ -46,21 +47,7 @@ const Hero = () => {
     <Suspense>
       <Section id="hero">
         <FloatingIcons />
-        <div
-          className={css({
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            height: "100%",
-            width: "100%",
-            div: {
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            },
-          })}
-        >
+        <div className="main-container">
           <InViewComponent>
             <Text h1 css={{ textAlign: "center" }}>
               {languageState.texts.Hero.Title}
@@ -70,16 +57,7 @@ const Hero = () => {
             <Text>{languageState.texts.Hero.Text}</Text>
           </InViewComponent>
           <InViewComponent delay="0.5s">
-            <Link
-              href="#projects"
-              className={css({
-                textDecoration: "none",
-                transition: "all 500ms ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                },
-              })}
-            >
+            <Link href="#projects" className="cta">
               <Button
                 id="to-projects"
                 aria-label={languageState.texts.AriaLabels.toProjects}
@@ -106,37 +84,17 @@ const Hero = () => {
               {languageState.texts.Hero.Meet}
             </Text>
           </InViewComponent>
-          <div
-            className={css({
-              justifyContent: "center",
-              flexDirection: "row !important",
-              gap: "15px",
-              a: {
-                fontSize: "30px",
-                marginRight: "10px",
-                transition: "all 500ms ease",
-                "&:hover": { transform: "translateY(-5px)" },
-              },
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-              flexWrap: "wrap",
-            })}
-          >
+          <div className="hero-social">
             {languageState.texts.Hero.Social.map((item, i) => (
               <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.6)}s`}>
                 <Link
                   href={item.Link}
                   rel="noreferrer"
                   target="_blank"
-                  ariaLabels={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
+                  aria-label={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
                   name={item.Text.toLowerCase()}
                 >
-                  <FontAwesomeIcon
-                    className={css({ fontSize: "30px" })}
-                    icon={icons[i]}
-                  />
+                  <FontAwesomeIcon icon={icons[i]} />
                 </Link>
               </InViewComponent>
             ))}

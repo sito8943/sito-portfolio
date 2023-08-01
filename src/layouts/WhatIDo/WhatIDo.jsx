@@ -1,11 +1,11 @@
 import React, { memo, Suspense } from "react";
 import loadable from "@loadable/component";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
+
+// styles
+import "./styles.css";
 
 // components
 const Card = loadable(() => import("../../components/Card/Card"));
@@ -20,28 +20,11 @@ function WhatIDo() {
   return (
     <Suspense>
       <Section id="what-i-do" background="#1b1b1b">
-        <div
-          className={css({
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            width: "100%",
-          })}
-        >
+        <div className="what-i-do">
           <InViewComponent>
-            <h2 className={css({ textAlign: "center" })}>
-              {languageState.texts.WhatIDo.Title}
-            </h2>
+            <h2 className="wid-title">{languageState.texts.WhatIDo.Title}</h2>
           </InViewComponent>
-          <div
-            className={css({
-              flexWrap: "wrap",
-              display: "flex",
-              justifyContent: "center",
-            })}
-          >
+          <div className="wid-cards">
             {languageState.texts.WhatIDo.Cards.map((item, i) => (
               <InViewComponent key={item.title} delay={`${i * 200}ms`}>
                 <Card

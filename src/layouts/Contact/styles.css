@@ -1,0 +1,29 @@
+.contact-us {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  margin-top: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 549px) {
+  .contact-us {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-us img {
+  width: 100%;
+  height: 385px;
+  object-fit: cover;
+  background: white;
+  margin-right: 100px;
+  border-radius: 1rem;
+}
+
+.cu-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

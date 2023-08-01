@@ -2,14 +2,14 @@ import React, { useCallback, useRef, useState, Suspense, memo } from "react";
 import emailjs from "@emailjs/browser";
 import loadable from "@loadable/component";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // config
 import config from "../../config";
+
+// styles
+import "./styles.css";
 
 // own components
 const Loading = loadable(() => import("../../components/NextUI/Loading"));
@@ -82,40 +82,15 @@ const Contact = () => {
             <Text h2>{languageState.texts.Contact.Title}</Text>
           </InViewComponent>
           <form id="formId" ref={form} onSubmit={onSubmit}>
-            <div
-              className={css({
-                display: "grid",
-                width: "100%",
-                gap: "20px",
-                marginTop: "40px",
-                gridTemplateColumns: "1fr 1fr",
-                "@media (max-width: 549px)": {
-                  gridTemplateColumns: "1fr",
-                },
-              })}
-            >
+            <div className="contact-us">
               <InViewComponent delay="0.5s">
                 <Image
                   src="https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/contact_CcvqxZuUs.jpg?updatedAt=1682181967086"
                   alt="contact"
-                  css={{
-                    width: "100%",
-                    height: "385px",
-                    objectFit: "cover",
-                    background: "white",
-                    marginRight: "100px",
-                    borderRadius: "1rem",
-                  }}
+                  className="cu-image"
                 />
               </InViewComponent>
-              <div
-                className={css({
-                  display: "flex",
-                  width: "100%",
-                  flexDirection: "column",
-                  flexWrap: "wrap",
-                })}
-              >
+              <div className="cu-form">
                 <InViewComponent delay={`0.6s`}>
                   <Input
                     required
@@ -158,13 +133,7 @@ const Contact = () => {
                 </InViewComponent>
                 {!ok ? (
                   <InViewComponent delay="0.9s">
-                    <div
-                      sx={{
-                        width: "100%",
-                        display: "flex",
-                        justifyContent: "flex-end",
-                      }}
-                    >
+                    <div>
                       <Button
                         disabled={loading}
                         id="send"

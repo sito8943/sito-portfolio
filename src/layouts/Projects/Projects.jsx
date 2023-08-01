@@ -95,6 +95,7 @@ const Projects = () => {
                 delay={`${parseDelay(i, 0.4)}s`}
               >
                 <Card
+                 
                   link={item.Link}
                   image={item.Image || logistics}
                   alt={`${item.Title}-logo`}
