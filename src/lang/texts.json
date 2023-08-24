@@ -58,118 +58,6 @@
     "Footer": {
       "SitoLib": "Documentación de "
     },
-    "Docs": {
-      "Title": "Components de <Sito />",
-      "Dependencies": "Dependencies:",
-      "Version": "Versión: ",
-      "Components": [
-        {
-          "id": "sito-container",
-          "title": "SitoContainer",
-          "description": "Contenedor súper flexible, muy parecido al Box de @mui, pero por defecto es flex",
-          "link": "https://www.npmjs.com/package/sito-container",
-          "size": "9.41 kB",
-          "version": "0.4.2",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        },
-        {
-          "id": "sito-image",
-          "title": "SitoImage",
-          "description": "Un potente componente de imagen personalizable similar al suspenso que (opcionalmente) simula un efecto de brillo mientras se carga.",
-          "link": "https://www.npmjs.com/package/sito-image",
-          "size": "13.3 kB",
-          "version": "0.13.2",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        },
-        {
-          "id": "sito-mui-tab-view",
-          "title": "SitoMUITabView",
-          "description": "Las pestañas facilitan la exploración y el cambio entre diferentes vistas.",
-          "link": "https://www.npmjs.com/package/sito-mui-tab-view",
-          "size": "12.4kB",
-          "version": "0.4.1",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "@emotion/react",
-              "version": "@11.10.4",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "@emotion/styled",
-              "version": "@11.10.4",
-              "link": "https://www.npmjs.com/package/@emotion/styled"
-            },
-            {
-              "name": "@mui/material",
-              "version": "@5.10.8",
-              "link": "https://www.npmjs.com/package/@mui/material"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        }
-      ]
-    },
     "Hero": {
       "Title": "Hola soy Sito",
       "Text": "Soy desarrollador web para frontend y backend",
@@ -221,13 +109,6 @@
           "See": "Ver"
         },
         {
-          "Title": "Sito's Library",
-          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
-          "Text": "Sito's Library, app web stock de libros para una prueba técnica. ",
-          "Link": "https://sitos-library.web.app/",
-          "See": "Ver"
-        },
-        {
           "Title": "Descubre Trinidad",
           "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
           "Text": "Déjate llevar por el encanto de la Ciudad de Encuentros.",
@@ -249,12 +130,11 @@
       "CallMe": "Pequeños proyectos para experimentar nuevas herramientas",
       "Projects": [
         {
-          "Title": "Beyond the World Chat",
-          "Text": "Chatea con tus amistades en el multiverso de Beyond the World",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/Beyon_the_world/Chat/Flat1_hj_ELVvYh.jpg",
-          "Alt": "btw-chat",
-          "Link": "https://beyond-the-world-c40f4.web.app/",
-          "See": "Probar"
+          "Title": "Sito's Library",
+          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
+          "Text": "Sito's Library, app web stock de libros para una prueba técnica. ",
+          "Link": "https://sitos-library.web.app/",
+          "See": "Ver"
         },
         {
           "Title": "To-Do Pro",
@@ -544,118 +424,6 @@
     "Footer": {
       "SitoLib": "Documentation"
     },
-    "Docs": {
-      "Title": "Components de <Sito />",
-      "Dependencies": "Dependencies:",
-      "Version": "Version: ",
-      "Components": [
-        {
-          "id": "sito-container",
-          "title": "SitoContainer",
-          "description": "Super flexible container, very similar to @mui's Box, but defaults to flex",
-          "link": "https://www.npmjs.com/package/sito-container",
-          "size": "9.41kB",
-          "version": "0.4.2",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        },
-        {
-          "id": "sito-image",
-          "title": "SitoImage",
-          "description": "A powerful customizable suspense-like image component that (optionally) simulates a glow effect while loading.",
-          "link": "https://www.npmjs.com/package/sito-image",
-          "size": "13.3kB",
-          "version": "0.13.2",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        },
-        {
-          "id": "sito-mui-tab-view",
-          "title": "SitoMUITabView",
-          "description": "Tabs make it easy to browse and switch between different views.",
-          "link": "https://www.npmjs.com/package/sito-mui-tab-view",
-          "size": "12.4kB",
-          "version": "0.4.1",
-          "dependencies": [
-            {
-              "name": "@emotion/css",
-              "version": "@11.9.0",
-              "link": "https://www.npmjs.com/package/@emotion/css"
-            },
-            {
-              "name": "@emotion/react",
-              "version": "@11.10.4",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "@emotion/styled",
-              "version": "@11.10.4",
-              "link": "https://www.npmjs.com/package/@emotion/styled"
-            },
-            {
-              "name": "@mui/material",
-              "version": "@5.10.8",
-              "link": "https://www.npmjs.com/package/@mui/material"
-            },
-            {
-              "name": "react",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react"
-            },
-            {
-              "name": "react-dom",
-              "version": "@18.2.0",
-              "link": "https://www.npmjs.com/package/@emotion/react-dom"
-            },
-            {
-              "name": "react-scripts",
-              "version": "@5.0.1",
-              "link": "https://www.npmjs.com/package/@emotion/react-scripts"
-            }
-          ]
-        }
-      ]
-    },
     "Hero": {
       "Title": "Hey I'm Sito",
       "Text": "I'm a frontend and backend web developer",
@@ -712,13 +480,6 @@
           "See": "See"
         },
         {
-          "Title": "Sito's Library",
-          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
-          "Text": "Sito's Library, web app stock of books for a technical test.",
-          "Link": "https://sitos-library.web.app/",
-          "See": "See"
-        },
-        {
           "Title": "Descubre Trinidad",
           "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
           "Text": "Let yourself be carried away by the charm of the City of Encounters.",
@@ -740,12 +501,11 @@
       "CallMe": "Small projects to experience new tools",
       "Projects": [
         {
-          "Title": "Beyond the World Chat",
-          "Text": "Chat with your friends of the multiverse of Beyond the World",
-          "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/Beyon_the_world/Chat/Flat1_hj_ELVvYh.jpg",
-          "Alt": "btw-chat",
-          "Link": "https://beyond-the-world-c40f4.web.app/",
-          "See": "Try"
+          "Title": "Sito's Library",
+          "Image": "https://media.licdn.com/dms/image/D4E22AQFvFJTZrgOLjw/feedshare-shrink_2048_1536/0/1690457909449?e=1693440000&v=beta&t=9U9iBf_GUigY5FVb5Zljlx0ryOTXLtVKldSliLbxK6o",
+          "Text": "Sito's Library, web app stock of books for a technical test.",
+          "Link": "https://sitos-library.web.app/",
+          "See": "See"
         },
         {
           "Title": "To-Do Pro",
