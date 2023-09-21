@@ -1,10 +1,8 @@
-import React, { useEffect, useState, useCallback, Suspense } from "react";
-import loadable from "@loadable/component";
+import React, { useEffect, useState, useCallback } from "react";
+
+import { css } from "@emotion/css";
 
 import PropTypes from "prop-types";
-
-// @emotion/css
-import { css } from "@emotion/css";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,16 +17,13 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // styles
 import "./styles.css";
 
-// @nextui-org
-const Button = loadable(() => import("../../components/NextUI/Button"));
-
 const ToTop = (props) => {
   const { footerVisible } = props;
 
   const { languageState } = useLanguage();
 
   const [visible, setVisible] = useState(false);
-  const [bottom, setBottom] = useState("10px");
+  const [bottom, setBottom] = useState("15px");
   const [push, setPush] = useState(false);
 
   const onScroll = useCallback(
@@ -51,7 +46,7 @@ const ToTop = (props) => {
   );
 
   useEffect(() => {
-    if (!push) setBottom("10px");
+    if (!push) setBottom("15px");
     else setBottom("60px");
   }, [push]);
 
@@ -63,37 +58,18 @@ const ToTop = (props) => {
   }, [onScroll]);
 
   return (
-    <Suspense>
-      <div
-        className={`${footerVisible ? "responsive-push" : ""} ${css({
-          textDecoration: "none",
-          zIndex: 99,
-        })}`}
-      >
-        <Button
-          id="to-top"
-          aria-label={languageState.texts.AriaLabels.toTop}
-          onPress={() => scrollTo(0)}
-          css={{
-            transform: visible ? "scale(1)" : "scale(0)",
-            zIndex: visible ? 99 : -1,
-            position: "fixed",
-            bottom,
-            right: "10px",
-            borderRadius: "100%",
-            marginTop: "15px",
-            minWidth: "0px !important",
-            width: "40px",
-            transition: "all 500ms ease",
-            "&:hover": {
-              transform: "translateY(-5px)",
-            },
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowUp} />
-        </Button>
-      </div>
-    </Suspense>
+    <button
+      name="to-top"
+      aria-label={languageState.texts.AriaLabels.toTop}
+      onClick={() => scrollTo(0)}
+      className={`${
+        visible ? "scale-[1]" : "scale-0 pointer-events-none"
+      } primary submit cta icon-button ${css({
+        bottom,
+      })} z-50 rounded-full fixed right-3 mt-4 min-w-0 w-10 !transition-all hover:-translate-y-1`}
+    >
+      <FontAwesomeIcon icon={faArrowUp} />
+    </button>
   );
 };
 

@@ -1,16 +1,15 @@
-import React, { forwardRef } from "react";
+import React, { Fragment } from "react";
 
 import PropTypes from "prop-types";
 
 // @emotion/css
 import { css } from "@emotion/css";
 
-const Section = forwardRef((props, ref) => {
+function Section(props) {
   const { id, background, children } = props;
 
   return (
     <section
-      ref={ref}
       id={id}
       className={css({
         display: "flex",
@@ -25,11 +24,11 @@ const Section = forwardRef((props, ref) => {
       {children}
     </section>
   );
-});
+}
 
 Section.defaultProps = {
   id: "",
-  children: <></>,
+  children: <Fragment></Fragment>,
   background: "",
 };
 

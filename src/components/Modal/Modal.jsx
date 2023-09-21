@@ -28,10 +28,8 @@ const NextModalBody = loadable(() =>
 const NextModalFooter = loadable(() =>
   import("../../components/NextUI/ModalFooter")
 );
-const Container = loadable(() => import("../../components/NextUI/Container"));
 const Image = loadable(() => import("../../components/NextUI/Image"));
 const Button = loadable(() => import("../../components/NextUI/Button"));
-const Text = loadable(() => import("../../components/NextUI/Text"));
 const Link = loadable(() => import("../../components/NextUI/Link"));
 
 const Modal = (props) => {
@@ -54,7 +52,6 @@ const Modal = (props) => {
   return (
     <Suspense>
       <NextModal
-        closeButton
         blur
         scroll
         width="600px"
@@ -64,14 +61,14 @@ const Modal = (props) => {
         {...bindings}
       >
         <NextModalHeader>
-          <Text id="modal-title" size={18}>
+          <p className="text-lg" id="modal-title">
             {title}
-          </Text>
+          </p>
         </NextModalHeader>
         <NextModalBody>
           {content.map((item, i) => (
-            <Container id="modal-description" key={i}>
-              {item.Type === "Text" && <Text>{item.Content}</Text>}
+            <div id="modal-description" key={i}>
+              {item.Type === "Text" && <p>{item.Content}</p>}
               {item.Type === "Image" && (
                 <Image
                   css={{
@@ -84,12 +81,7 @@ const Modal = (props) => {
                 />
               )}
               {item.Type === "Images" && (
-                <Container
-                  display="flex"
-                  alignItems="center"
-                  justify="center"
-                  wrap="wrap"
-                >
+                <div className="flex items-center justify-center flex-wrap">
                   {item.Content.map((jtem) => (
                     <Link
                       key={jtem.Alt}
@@ -110,10 +102,10 @@ const Modal = (props) => {
                       />
                     </Link>
                   ))}
-                </Container>
+                </div>
               )}
-              {item.Type === "Title" && <Text h4>{item.Content}</Text>}
-            </Container>
+              {item.Type === "Title" && <h4>{item.Content}</h4>}
+            </div>
           ))}
         </NextModalBody>
         <NextModalFooter>

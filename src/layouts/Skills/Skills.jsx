@@ -23,10 +23,8 @@ import mongodb from "../../assets/images/logos/mongodb.webp";
 import firebase from "../../assets/images/logos/firebase.webp";
 
 // @nextui-org
-const Text = loadable(() => import("../../components/NextUI/Text"));
 const Link = loadable(() => import("../../components/NextUI/Link"));
 const Image = loadable(() => import("../../components/NextUI/Image"));
-const Container = loadable(() => import("../../components/NextUI/Container"));
 
 // own components
 const InViewComponent = loadable(() =>
@@ -56,25 +54,17 @@ const Skills = () => {
         <FloatingIcons />
         <div className="main-container">
           <InViewComponent>
-            <Text h2>{languageState.texts.Skills.Title}</Text>
+            <h2>{languageState.texts.Skills.Title}</h2>
           </InViewComponent>
           <InViewComponent delay="0.4s">
-            <Text css={{ textAlign: "center", marginBottom: "20px" }}>
+            <p className="text-center mb-5">
               {languageState.texts.Skills.Body.replace(
                 "[year]",
                 String(`${years(2019)}`)
               )}
-            </Text>
+            </p>
           </InViewComponent>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              flexDirection: "row !important",
-              gap: "20px",
-            }}
-          >
+          <div className="flex items-center flex-wrap gap-5">
             {languageState.texts.Skills.List.map((item, i) => (
               <InViewComponent
                 key={i}
@@ -92,11 +82,11 @@ const Skills = () => {
                 </Link>
               </InViewComponent>
             ))}
-          </Container>
+          </div>
           <InViewComponent delay="0.8s">
-            <Text h4 css={{ margin: "20px 0" }}>
+            <h4 className="my-5">
               {languageState.texts.Skills.Other}
-            </Text>
+            </h4>
           </InViewComponent>
           <div className="secondary-container">
             {languageState.texts.Skills.Others.map((jtem, j) => (

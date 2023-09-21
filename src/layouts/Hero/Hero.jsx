@@ -24,7 +24,6 @@ import "./styles.css";
 
 // @nextui-org
 const Link = loadable(() => import("../../components/NextUI/Link"));
-const Text = loadable(() => import("../../components/NextUI/Text"));
 const Button = loadable(() => import("../../components/NextUI/Button"));
 
 // own components
@@ -49,40 +48,29 @@ const Hero = () => {
         <FloatingIcons />
         <div className="main-container">
           <InViewComponent>
-            <Text h1 css={{ textAlign: "center" }}>
-              {languageState.texts.Hero.Title}
-            </Text>
+            <h1 className="text-center text-large">{languageState.texts.Hero.Title}</h1>
           </InViewComponent>
           <InViewComponent delay="0.4s">
-            <Text>{languageState.texts.Hero.Text}</Text>
+            <p>{languageState.texts.Hero.Text}</p>
           </InViewComponent>
           <InViewComponent delay="0.5s">
             <Link href="#projects" className="cta">
               <Button
                 id="to-projects"
                 aria-label={languageState.texts.AriaLabels.toProjects}
-                onClick={scrollToProjects}
-                css={{
-                  borderRadius: "100%",
-                  marginTop: "15px",
-                  minWidth: "0px !important",
-                  width: "40px",
-                }}
+                onPress={scrollToProjects}
+                radius="full"
+                isIconOnly
+                className="mt-4 min-w-0 w-10"
               >
                 <FontAwesomeIcon icon={faArrowDown} />
               </Button>
             </Link>
           </InViewComponent>
           <InViewComponent delay="0.6s">
-            <Text
-              css={{
-                textAlign: "center",
-                marginBottom: "10px",
-                marginTop: "50px",
-              }}
-            >
+            <p className="text-center mb-3 mt-[50px]">
               {languageState.texts.Hero.Meet}
-            </Text>
+            </p>
           </InViewComponent>
           <div className="hero-social">
             {languageState.texts.Hero.Social.map((item, i) => (

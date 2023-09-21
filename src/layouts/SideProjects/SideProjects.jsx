@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { memo, useRef, Suspense } from "react";
+import React, { memo, Suspense } from "react";
 
 import loadable from "@loadable/component";
 
@@ -11,9 +11,6 @@ import { parseDelay } from "../../utils/functions";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
-
-// @nextui-org
-const Text = loadable(() => import("../../components/NextUI/Text"));
 
 // own components
 const InViewComponent = loadable(() =>
@@ -28,27 +25,25 @@ const Card = loadable(() => import("../../components/Card/Card"));
 const SideProjects = () => {
   const { languageState } = useLanguage();
 
-  const ref = useRef(null);
-
   return (
     <Suspense>
-      <Section ref={ref} id="side-projects">
+      <Section id="side-projects">
         <div className="main-container">
           <FloatingIcons />
           <InViewComponent>
-            <Text h2 className={css({ textAlign: "center" })}>
+            <h2 className={css({ textAlign: "center" })}>
               {languageState.texts.SideProjects.Title}
-            </Text>
+            </h2>
           </InViewComponent>
           <InViewComponent delay="0.4s">
-            <Text css={{ textAlign: "center" }}>
+            <p className="text-center">
               {languageState.texts.SideProjects.Text}
-            </Text>
+            </p>
           </InViewComponent>
           <InViewComponent delay="0.5s">
-            <Text css={{ textAlign: "center" }}>
+            <p className="text-center">
               {languageState.texts.SideProjects.CallMe}
-            </Text>
+            </p>
           </InViewComponent>
           <div className="secondary-container">
             {languageState.texts.SideProjects.Projects.map((item, i) => (

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -9,19 +13,10 @@ body {
   scroll-behavior: smooth;
 }
 
-.bottom,
-.bottom img {
-  object-position: bottom !important;
-}
-
 html,
 body {
-  transition: background 400ms ease;
   scroll-behavior: smooth;
-}
-
-textarea {
-  height: 185px !important;
+  @apply bg-dark-background;
 }
 
 code {
@@ -38,22 +33,6 @@ code {
 .scale-animation {
   position: absolute;
   animation: scale-up 1 0.3s ease;
-}
-
-.right-10 {
-  right: 10%;
-}
-
-.left-10 {
-  left: 10%;
-}
-
-.top-20 {
-  top: 20%;
-}
-
-.bottom-10 {
-  bottom: 10%;
 }
 
 @keyframes float-y {
@@ -80,30 +59,120 @@ code {
   }
 }
 
-.main-container {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.red {
+  @apply text-[red];
 }
 
-.main-container div {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+.green {
+  @apply text-[green];
 }
 
-.secondary-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  flex-direction: row !important;
-  justify-content: center;
+textarea {
+  resize: none;
 }
 
-.secondary-container div {
-  display: flex;
-  flex-direction: row;
+input[type="file"] {
+  visibility: hidden;
+}
+
+input:focus-visible,
+input {
+  outline: none !important;
+}
+
+.main {
+  min-height: calc(100vh - 56px);
+  @apply flex items-start justify-start;
+}
+
+a,
+th,
+td,
+p,
+h2,
+h3,
+label {
+  @apply dark:text-white text-dark-background2;
+}
+
+h2 {
+  @apply text-4xl font-extrabold;
+}
+
+h3 {
+  @apply text-2xl font-extrabold;
+}
+
+.icon-button {
+  @apply w-10 h-10 min-w-[40px] min-h-[40px] text-primary dark:text-primary rounded-full flex items-center justify-center text-xl transition hover:bg-pdark-hover;
+}
+
+.secondary.submit {
+  @apply border-secondary bg-secondary hover:bg-sdark hover:border-sdark text-white;
+}
+
+.primary.submit {
+  @apply border-primary bg-primary hover:bg-pdark hover:border-pdark text-white;
+}
+
+.submit {
+  @apply border-2;
+}
+
+.primary.outlined {
+  @apply border-primary hover:bg-primary text-white;
+}
+.secondary.outlined {
+  @apply border-secondary hover:bg-primary text-white;
+}
+.primary.link {
+  @apply hover:bg-primary text-white;
+}
+.secondary.link {
+  @apply hover:bg-secondary text-white;
+
+}
+.outlined {
+  @apply border-2;
+}
+
+button {
+  @apply transition duration-300 font-semibold;
+}
+
+.link {
+  @apply transition;
+}
+
+.input-control {
+  @apply relative w-full flex flex-col items-start justify-start gap-2;
+}
+
+.input,
+.button {
+  @apply px-5 py-2 rounded-3xl transition duration-300;
+}
+
+.input:disabled {
+  @apply cursor-auto;
+}
+
+.small-button {
+  @apply px-5 py-1 rounded-3xl;
+}
+
+th {
+  @apply text-left px-2 py-1;
+}
+
+td {
+  @apply text-left px-2 py-3;
+}
+
+.fixed-loading {
+  @apply fixed top-0 left-0 w-full h-screen flex items-center justify-center dark:bg-dark-background2 bg-light-background2 z-30;
 }

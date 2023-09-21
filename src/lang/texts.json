@@ -25,7 +25,7 @@
         {
           "id": "link-what-i-do",
           "label": "¿Qué hago?",
-          "to": "what-i-do"
+          "to": "#what-i-do"
         },
         {
           "id": "link-about",
@@ -373,7 +373,7 @@
     "AriaLabels": {
       "linkTo": "Go to external link",
       "send": "Send message",
-      "toHome": "Go to home",
+      "toHome": "Click to go to home",
       "toProjects": "Go to projects",
       "toContact": "Go to contact us",
       "toTop": "Go to the top of the page",
@@ -386,38 +386,45 @@
         {
           "id": "link-home",
           "label": "Home",
-          "to": "#hero"
+          "to": "#hero",
+          "ariaLabel": "Click to go home"
         },
         {
-          "id": "link-what-i-do",
-          "label": "What I do?",
-          "to": "#what-i-do"
+          "id": "link-features",
+          "label": "Features?",
+          "to": "#features",
+          "ariaLabel": "Click to go to features"
         },
         {
           "id": "link-about",
           "label": "About me",
-          "to": "#about"
+          "to": "#about",
+          "ariaLabel": "Click to go to about me"
         },
         {
           "id": "link-skills",
           "label": "Skills",
-          "to": "#skills"
+          "to": "#skills",
+          "ariaLabel": "Click to go to skills"
         },
         {
           "id": "link-projects",
           "label": "Pro projects",
-          "to": "#projects"
+          "to": "#projects",
+          "ariaLabel": "Click to go to pro projects"
         },
         {
           "id": "link-side-projects",
-          "label": "Hobby projects",
-          "to": "#side-projects"
+          "label": "Side projects",
+          "to": "#side-projects",
+          "ariaLabel": "Click to go to side projects"
         },
         {
           "id": "link-contact",
           "label": "Contact me",
           "primary": true,
-          "to": "#contact"
+          "to": "#contact",
+          "ariaLabel": "Click to go to contact me"
         }
       ]
     },

@@ -4,7 +4,7 @@ import React, { memo, useState, Suspense } from "react";
 import loadable from "@loadable/component";
 
 // @nextui-org
-import { useModal, Container, Avatar, Text } from "@nextui-org/react";
+import { useDisclosure, Avatar } from "@nextui-org/react";
 
 // utils
 import { parseDelay } from "../../utils/functions";
@@ -26,12 +26,12 @@ const About = () => {
 
   const [show, setShow] = useState("Me");
 
-  const { setVisible, bindings } = useModal();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const showModal = (which) => {
     setShow(which);
-    if (show === "") setVisible(false);
-    else setVisible(true);
+    if (show === "") onClose(false);
+    else onOpen(true);
   };
 
   const images = [
@@ -45,18 +45,14 @@ const About = () => {
       <Section id="about" background="#222222">
         <FloatingIcons />
         <Modal
-          onClose={() => setVisible(false)}
-          bindings={bindings}
+          onClose={() => onClose()}
+          bindings={(isOpen, onOpen, onClose)}
           title={languageState.texts.About[show].Title}
           content={languageState.texts.About[show].Content}
         />
-        <Container
-          justify="center"
-          alignItems="center"
-          display="flex"
-          direction="column"
+        <div
+          className="flex items-center justify-center flex-col h-full"
           css={{
-            height: "100%",
             div: {
               justifyContent: "center",
               alignItems: "center",
@@ -65,29 +61,25 @@ const About = () => {
             },
           }}
         >
-          <InViewComponent>
-            <Text h2>{languageState.texts.About.Title}</Text>
+          <InViewComponent className="flex items-center justify-center flex-col">
+            <h2>{languageState.texts.About.Title}</h2>
           </InViewComponent>
-          <InViewComponent delay="0.4s">
+          <InViewComponent
+            delay="0.4s"
+            className="flex items-center justify-center flex-col"
+          >
             <Avatar
               src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
               css={{ size: "$20", margin: "10px 0" }}
             />
           </InViewComponent>
-          <Container
-            justify="center"
-            display="flex"
-            wrap="wrap"
-            css={{
-              flexDirection: "row !important",
-              div: {
-                display: "flex",
-                flexDirection: "row",
-              },
-            }}
-          >
+          <div className="flex items-center justify-center flex-col flex-wrap">
             {languageState.texts.About.Cards.map((item, i) => (
-              <InViewComponent key={i} delay={`${parseDelay(i, 0.4)}s`}>
+              <InViewComponent
+                className="flex"
+                key={i}
+                delay={`${parseDelay(i, 0.4)}s`}
+              >
                 <Card
                   image={images[i]}
                   alt={item.Alt}
@@ -97,8 +89,8 @@ const About = () => {
                 />
               </InViewComponent>
             ))}
-          </Container>
-        </Container>
+          </div>
+        </div>
       </Section>
     </Suspense>
   );

@@ -21,8 +21,6 @@ const Section = loadable(() => import("../../components/Section/Section"));
 // NextUI
 // local memo
 const Button = loadable(() => import("../../components/NextUI/Button"));
-const Text = loadable(() => import("../../components/NextUI/Text"));
-const Container = loadable(() => import("../../components/NextUI/Container"));
 const Image = loadable(() => import("../../components/NextUI/Image"));
 const Input = loadable(() => import("../../components/NextUI/Input"));
 const Textarea = loadable(() => import("../../components/NextUI/Textarea"));
@@ -37,49 +35,12 @@ const Contact = () => {
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = useCallback(
-    (e) => {
-      setLoading(true);
-      e.preventDefault();
-      emailjs
-        .send(
-          config.serviceId,
-          config.templateId,
-          { name, email, message: content },
-          config.publicKey
-        )
-        .then(
-          (result) => {
-            setName("");
-            setEmail("");
-            setContent("");
-            setOk(1);
-            console.info(result.text);
-            setLoading(false);
-          },
-          (error) => {
-            setOk(-1);
-            console.error(error.text);
-          }
-        );
-    },
-    [name, email, content]
-  );
-
   return (
     <Suspense>
       <Section id="contact" background="#222">
-        <Container
-          justify="center"
-          alignItems="center"
-          display="flex"
-          direction="column"
-          css={{
-            height: "100%",
-          }}
-        >
+        <div className="flex items-center justify-center flex-col h-full">
           <InViewComponent>
-            <Text h2>{languageState.texts.Contact.Title}</Text>
+            <h2>{languageState.texts.Contact.Title}</h2>
           </InViewComponent>
           <form id="formId" ref={form} onSubmit={onSubmit}>
             <div className="contact-us">
@@ -151,22 +112,20 @@ const Contact = () => {
                     </div>
                   </InViewComponent>
                 ) : (
-                  <Text
-                    css={{
-                      background: ok === 1 ? "#009900" : "#990000",
-                      padding: "5px 20px",
-                      borderRadius: "30px",
-                    }}
+                  <p
+                    className={`${
+                      ok === 1 ? "bg-#009900" : "bg-#990000"
+                    } px-5 py-1`}
                   >
                     {ok === 1
                       ? languageState.texts.Contact.SendOk
                       : languageState.texts.Contact.SendError}
-                  </Text>
+                  </p>
                 )}
               </div>
             </div>
           </form>
-        </Container>
+        </div>
       </Section>
     </Suspense>
   );

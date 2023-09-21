@@ -19,8 +19,6 @@ import { parseDelay } from "../../utils/functions";
 import logistics from "../../assets/images/projects/wmt.jpg";
 
 // @nextui-org
-const Container = loadable(() => import("../../components/NextUI/Container"));
-const Text = loadable(() => import("../../components/NextUI/Text"));
 const Link = loadable(() => import("../../components/NextUI/Link"));
 
 // own components
@@ -37,36 +35,24 @@ const Projects = () => {
   return (
     <Suspense>
       <Section id="projects" background="#222">
-        <Container
-          justify="center"
-          alignItems="center"
-          display="flex"
-          direction="column"
-          css={{
-            height: "100%",
-            width: "100%",
-            div: {
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
-        >
+        <div className="flex items-center justify-center flex-col w-full h-full">
           <FloatingIcons />
-          <InViewComponent>
-            <Text h2 className={css({ textAlign: "center" })}>
+          <InViewComponent className="flex items-center justify-center flex-col">
+            <h2 className={css({ textAlign: "center" })}>
               {languageState.texts.Projects.Title}
-            </Text>
+            </h2>
           </InViewComponent>
-          <InViewComponent delay="0.4s">
-            <Text css={{ textAlign: "center" }}>
+          <InViewComponent
+            delay="0.4s"
+            className="flex items-center justify-center flex-col"
+          >
+            <p className="text-center">
               {languageState.texts.Projects.Text}
               <Link
                 href={languageState.texts.About.Github.Link}
                 rel="noreferrer"
                 target="_blank"
-                css={{ margin: "auto" }}
+                className="m-auto"
               >
                 {languageState.texts.Projects.SeeMore}
                 <FontAwesomeIcon
@@ -74,7 +60,7 @@ const Projects = () => {
                   className={css({ marginLeft: "5px", fontSize: "18px" })}
                 />
               </Link>
-            </Text>
+            </p>
           </InViewComponent>
           <div className="secondary-container">
             {languageState.texts.Projects.Projects.map((item, i) => (
@@ -92,7 +78,7 @@ const Projects = () => {
               </InViewComponent>
             ))}
           </div>
-        </Container>
+        </div>
       </Section>
     </Suspense>
   );

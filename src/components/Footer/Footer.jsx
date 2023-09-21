@@ -22,7 +22,6 @@ import { css } from "@emotion/css";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // @nextui-org
-const Text = loadable(() => import("../../components/NextUI/Text"));
 const MUILink = loadable(() => import("../../components/NextUI/Link"));
 
 const Footer = forwardRef((props, ref) => {
@@ -45,7 +44,7 @@ const Footer = forwardRef((props, ref) => {
         })}
       >
         <div className={css({ display: "flex" })}>
-          <Text b css={{ margin: 0 }}>
+          <p className="font-bold">
             <MUILink
               onClick={() => scrollTo(0)}
               color="inherit"
@@ -54,7 +53,7 @@ const Footer = forwardRef((props, ref) => {
             >
               {`<Sito /> © ${new Date().getFullYear()}`}
             </MUILink>
-          </Text>
+          </p>
         </div>
         <div className={css({ gap: "20px", display: "flex" })}>
           {languageState.texts.Hero.Social.map((item, i) => (
