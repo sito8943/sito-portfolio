@@ -1,12 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+import React, { Fragment, useState, useEffect } from "react";
+import useIsInViewport from "use-is-in-viewport";
 
-import React, { memo, Suspense } from "react";
-
-import loadable from "@loadable/component";
 import Tippy from "@tippyjs/react";
-
-// utils
-import { parseDelay } from "../../utils/functions";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
@@ -22,19 +17,22 @@ import nextui from "../../assets/images/logos/nextui.webp";
 import mongodb from "../../assets/images/logos/mongodb.webp";
 import firebase from "../../assets/images/logos/firebase.webp";
 
-// @nextui-org
-const Link = loadable(() => import("../../components/NextUI/Link"));
-const Image = loadable(() => import("../../components/NextUI/Image"));
+// components
+import Section from "../../components/Section/Section";
+import LazyImage from "../../components/LazyImage/LazyImage";
+import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
-// own components
-const InViewComponent = loadable(() =>
-  import("../../components/InViewComponent/InViewComponent")
-);
-const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
-const Section = loadable(() => import("../../components/Section/Section"));
+/* const FloatingIcons = loadable(() => import("./components/FloatingIcons")); */
 
 const Skills = () => {
   const { languageState } = useLanguage();
+
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isInViewport) setVisible(true);
+  }, [isInViewport]);
 
   const images = [
     "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
@@ -49,72 +47,83 @@ const Skills = () => {
   };
 
   return (
-    <Suspense>
-      <Section id="skills">
-        <FloatingIcons />
-        <div className="main-container">
-          <InViewComponent>
-            <h2>{languageState.texts.Skills.Title}</h2>
-          </InViewComponent>
-          <InViewComponent delay="0.4s">
-            <p className="text-center mb-5">
-              {languageState.texts.Skills.Body.replace(
-                "[year]",
-                String(`${years(2019)}`)
-              )}
-            </p>
-          </InViewComponent>
-          <div className="flex items-center flex-wrap gap-5">
-            {languageState.texts.Skills.List.map((item, i) => (
-              <InViewComponent
-                key={i}
-                className="bottom"
-                delay={`${parseDelay(i, 0.5)}s`}
-              >
-                <Link href={item.Link} target="blank" rel="noreferrer">
-                  <Image
-                    src={images[i]}
-                    alt={item.Alt}
-                    className="skill"
-                    height={120}
-                    width={120}
-                  />
-                </Link>
-              </InViewComponent>
-            ))}
-          </div>
-          <InViewComponent delay="0.8s">
-            <h4 className="my-5">
-              {languageState.texts.Skills.Other}
-            </h4>
-          </InViewComponent>
-          <div className="secondary-container">
-            {languageState.texts.Skills.Others.map((jtem, j) => (
-              <InViewComponent key={j} delay={`${parseDelay(j, 0.9)}s`}>
-                <Tippy content={jtem.Text}>
-                  <Link href={jtem.Link} target="_blank" rel="noopener">
-                    <Image
-                      css={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "100%",
-                        marginRight: "10px",
-                      }}
-                      key={jtem.Alt}
-                      src={logos[j]}
-                      alt={jtem.Alt}
-                    />
-                  </Link>
-                </Tippy>
-              </InViewComponent>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </Suspense>
+    <Section id="skills" background="bg-sdark">
+      {/* <FloatingIcons /> */}
+      <div
+        className="flex items-center justify-center flex-col h-full gap-4"
+        ref={targetRef}
+      >
+        {visible ? (
+          <Fragment>
+            <PrintAfter delay={100} animation="appear">
+              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+                {languageState.texts.Skills.Title}
+              </h2>
+            </PrintAfter>
+            <PrintAfter delay={200} animation="appear">
+              <p className="text-center mb-5">
+                {languageState.texts.Skills.Body.replace(
+                  "[year]",
+                  String(`${years(2019)}`)
+                )}
+              </p>
+            </PrintAfter>
+            <ul className="flex items-center justify-center flex-wrap gap-5">
+              {languageState.texts.Skills.List.map((item, i) => (
+                <li key={i}>
+                  <PrintAfter delay={(i + 1) * 300} animation="appear">
+                    <a
+                      name={item.text}
+                      aria-label={item.ariaLabel}
+                      href={item.Link}
+                      target="blank"
+                      rel="noreferrer"
+                    >
+                      <LazyImage
+                        src={images[i]}
+                        alt={item.Alt}
+                        className="skill"
+                        height={120}
+                        width={120}
+                      />
+                    </a>
+                  </PrintAfter>
+                </li>
+              ))}
+            </ul>
+            <PrintAfter delay={1000} animation="appear">
+              <h3 className="text-3xl font-bold text-center">
+                {languageState.texts.Skills.Other}
+              </h3>
+            </PrintAfter>
+            <ul className="flex items-center justify-center flex-wrap gap-5">
+              {languageState.texts.Skills.Others.map((jtem, j) => (
+                <li key={j}>
+                  <PrintAfter delay={(j + 1) * 200 + 1000} animation="appear">
+                    <Tippy content={jtem.Text}>
+                      <a
+                        name={jtem.text}
+                        aria-label={jtem.ariaLabel}
+                        href={jtem.Link}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <LazyImage
+                          className="w-10 h-10 rounded-full"
+                          src={logos[j]}
+                          alt={jtem.Alt}
+                        />
+                      </a>
+                    </Tippy>
+                  </PrintAfter>
+                </li>
+              ))}
+            </ul>
+          </Fragment>
+        ) : null}
+      </div>
+    </Section>
   );
 };
 
-const SkillsMemo = memo((props) => <Skills {...props} />);
-
-export default SkillsMemo;
+export default Skills;

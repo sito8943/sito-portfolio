@@ -290,6 +290,7 @@
       "Body": "Como desarrollador de Frontend desarollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
       "List": [
         {
+          "ariaLabel": "Cliquea para visitar el sitio oficial de react js",
           "Alt": "react-logo",
           "Link": "https://reactjs.org/",
           "Text": "ReactJs",
@@ -298,6 +299,7 @@
         },
         {
           "Alt": "html-css-logo",
+          "ariaLabel": "Cliquea para saber más de html y css",
           "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
           "Text": "Html y Css",
           "Start": 2019,
@@ -305,6 +307,7 @@
         },
         {
           "Alt": "javascript-logo",
+          "ariaLabel": "Cliquea para saber más de JavaScript",
           "Link": "https://es.wikipedia.org/wiki/JavaScript",
           "Text": "JavaScript",
           "Start": 2019,
@@ -314,24 +317,28 @@
       "Other": "Otras habilidades",
       "Others": [
         {
+          "ariaLabel": "Cliquea para visitar el sitio oficial de node js",
           "Source": "node-logo",
           "Alt": "node-logo",
           "Link": "https://nodejs.org/",
           "Text": "NodeJs"
         },
         {
+          "ariaLabel": "Cliquea para visitar el sitio oficial de MUI",
           "Source": "mui-logo",
           "Alt": "materialui-logo",
           "Link": "https://mui.com/",
           "Text": "Material Ui"
         },
         {
+          "ariaLabel": "Cliquea para visitar el sitio oficial de Next ui",
           "Source": "nextui-logo",
           "Alt": "nextui-logo",
           "Link": "https://nextui.org/",
           "Text": "NextUi"
         },
         {
+          "ariaLabel": "Cliquea para visitar el sitio oficial de Mongo DB",
           "Source": "mongodb-logo",
           "Alt": "mongodb-logo",
           "Link": "https://www.mongodb.com/",
@@ -339,6 +346,7 @@
         },
         {
           "Source": "firebase-logo",
+          "ariaLabel": "Cliquea para visitar el sitio oficial de Firebase",
           "Alt": "firebase-logo",
           "Link": "https://firebase.google.com/",
           "Text": "Firebase"
@@ -670,6 +678,7 @@
       "List": [
         {
           "Alt": "react-logo",
+          "ariaLabel": "Click to visit ReactJs official site",
           "Link": "https://reactjs.org/",
           "Text": "ReactJs",
           "Start": 2019,
@@ -677,6 +686,7 @@
         },
         {
           "Alt": "html-css-logo",
+          "ariaLabel": "Click to know more about Html y CSS",
           "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
           "Text": "Html y Css",
           "Start": 2019,
@@ -684,6 +694,7 @@
         },
         {
           "Alt": "javascript-logo",
+          "ariaLabel": "Click to know more about JavaScript",
           "Link": "https://es.wikipedia.org/wiki/JavaScript",
           "Text": "JavaScript",
           "Start": 2019,
@@ -693,6 +704,7 @@
       "Other": "Other skills",
       "Others": [
         {
+          "ariaLabel": "Click to visit NodeJs official site",
           "Source": "node-logo",
           "Alt": "node-logo",
           "Link": "https://nodejs.org/",
@@ -700,18 +712,21 @@
         },
         {
           "Source": "mui-logo",
+          "ariaLabel": "Click to visit MUI official site",
           "Alt": "materialui-logo",
           "Link": "https://mui.com/",
           "Text": "Material Ui"
         },
         {
           "Source": "nextui-logo",
+          "ariaLabel": "Click to visit NextUi official site",
           "Alt": "nextui-logo",
           "Link": "https://nextui.org/",
           "Text": "NextUi"
         },
         {
           "Source": "mongodb-logo",
+          "ariaLabel": "Click to visit Mongo DB official site",
           "Alt": "mongodb-logo",
           "Link": "https://www.mongodb.com/",
           "Text": "MongoDB"
@@ -719,6 +734,7 @@
         {
           "Source": "firebase-logo",
           "Alt": "firebase-logo",
+          "ariaLabel": "Click to visit Firebase official site",
           "Link": "https://firebase.google.com/",
           "Text": "Firebase"
         }
