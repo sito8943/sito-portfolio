@@ -74,6 +74,7 @@ const Projects = () => {
                       alt={`${item.Title}-logo`}
                       text={item.Title}
                       more={item.Text}
+                      ariaLabel={item.ariaLabel}
                     />
                   </PrintAfter>
                 </li>
