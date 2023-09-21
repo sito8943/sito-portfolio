@@ -5,6 +5,7 @@
       "Body": "No se encuentra la página"
     },
     "AriaLabels": {
+      "clickToGithub":"Cliquea para visitar el perfil de github",
       "clickToDialog": "Cliquea para expandir",
       "linkTo": "Ir a enlace externo",
       "send": "Enviar mensaje",
@@ -387,7 +388,8 @@
       "Body": "Page not found"
     },
     "AriaLabels": {
-      "clickToDialog": "Ckick to expand",
+      "clickToGithub":"Click to visit github profile",
+      "clickToDialog": "Click to expand",
       "linkTo": "Go to external link",
       "send": "Send message",
       "toHome": "Click to go to home",

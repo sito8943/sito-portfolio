@@ -10,9 +10,8 @@ import Hero from "../layouts/Hero/Hero";
 import Features from "../layouts/Features/Features";
 import About from "../layouts/About/About";
 import Skills from "../layouts/Skills/Skills";
+import Projects from "../layouts/Projects/Projects";
 /* 
-const About = loadable(() => import("../layouts/About/About"));
-const Skills = loadable(() => import("../layouts/Skills/Skills"));
 const Footer = loadable(() => import("../components/Footer/Footer"));
 const Projects = loadable(() => import("../layouts/Projects/Projects"));
 const SideProjects = loadable(() =>
@@ -30,10 +29,11 @@ const Home = () => {
         <Features />
         <About />
         <Skills />
+        <Projects />
       </main>
       {/* 
         
-        <Projects />
+        
         <SideProjects />
         <Contact />
         
