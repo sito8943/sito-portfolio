@@ -20,38 +20,45 @@
         {
           "id": "link-home",
           "label": "Inico",
-          "to": "#hero"
+          "to": "#hero",
+          "ariaLabel": "Cliquea para ir al inicio"
         },
         {
-          "id": "link-what-i-do",
+          "id": "link-features",
           "label": "¿Qué hago?",
-          "to": "#what-i-do"
+          "to": "#features",
+          "ariaLabel": "Cliquea para ir a los features"
         },
         {
           "id": "link-about",
           "label": "Acerca de Mí",
-          "to": "#about"
+          "to": "#about",
+          "ariaLabel": "Cliquea para ir al acerca de mi"
         },
         {
           "id": "link-skills",
           "label": "Habilidades",
-          "to": "#skills"
+          "to": "#skills",
+          "ariaLabel": "Cliquea para ir a habilidades"
         },
         {
           "id": "link-projects",
           "label": "Proyectos",
-          "to": "#projects"
+          "to": "#projects",
+          "ariaLabel": "Cliquea para ir a proyectos"
         },
         {
           "id": "link-side-projects",
           "label": "Mis proyectos",
-          "to": "#side-projects"
+          "to": "#side-projects",
+          "ariaLabel": "Cliquea para ir a proyectos hobby"
         },
         {
           "id": "link-contact",
           "label": "Contacto",
           "primary": true,
-          "to": "#contact"
+          "to": "#contact",
+          "ariaLabel": "Cliquea para ir a contactar"
         }
       ]
     },
@@ -391,7 +398,7 @@
         },
         {
           "id": "link-features",
-          "label": "Features?",
+          "label": "Features",
           "to": "#features",
           "ariaLabel": "Click to go to features"
         },
