@@ -55,7 +55,7 @@ const NotFound = () => {
         href="/"
         name="to-home"
         aria-label={languageState.texts.AriaLabels.toHome}
-        className="button submit primary"
+        className="button submit primary flex gap-2 items-center"
       >
         <FontAwesomeIcon icon={faHome} />
         {languageState.texts.NotFound.GoHome}
