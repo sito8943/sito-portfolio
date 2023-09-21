@@ -13,9 +13,7 @@ import Skills from "../layouts/Skills/Skills";
 import Projects from "../layouts/Projects/Projects";
 import SideProjects from "../layouts/SideProjects/SideProjects";
 import Contact from "../layouts/Contact/Contact";
-/* 
-const Footer = loadable(() => import("../components/Footer/Footer"));
-*/
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -31,9 +29,7 @@ const Home = () => {
         <SideProjects />
         <Contact />
       </main>
-      {/* 
-
-        <Footer ref={ref} /> */}
+      <Footer />
     </Suspense>
   );
 };

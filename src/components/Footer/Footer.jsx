@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { forwardRef, Suspense } from "react";
-import loadable from "@loadable/component";
+import React from "react";
 
 import { scrollTo } from "some-javascript-utils/browser";
 
@@ -21,58 +18,41 @@ import { css } from "@emotion/css";
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
-// @nextui-org
-const MUILink = loadable(() => import("../../components/NextUI/Link"));
-
-const Footer = forwardRef((props, ref) => {
+const Footer = (props) => {
   const { languageState } = useLanguage();
 
   const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
 
   return (
-    <Suspense>
-      <div
-        id="footer"
-        className={css({
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "10px 24px",
-          height: "50px",
-          background: "#222333",
-          flexWrap: "wrap",
-          display: "flex",
-        })}
-      >
-        <div className={css({ display: "flex" })}>
-          <p className="font-bold">
-            <MUILink
-              onClick={() => scrollTo(0)}
-              color="inherit"
-              href="#"
-              className={css({ display: "flex", alignItems: "center" })}
-            >
-              {`<Sito /> © ${new Date().getFullYear()}`}
-            </MUILink>
-          </p>
+    <footer
+      id="footer"
+      className="items-center justify-center flex px-3 h-[50px] bg-dark-background flex-wrap"
+    >
+      <div className="w-[90%] flex items-center justify-between">
+        <div className="flex">
+          <p className="font-bold">{`<Sito /> © ${new Date().getFullYear()}`}</p>
         </div>
         <div className={css({ gap: "20px", display: "flex" })}>
           {languageState.texts.Hero.Social.map((item, i) => (
-            <MUILink
+            <a
               key={item.Link}
               href={item.Link}
               rel="noreferrer"
               target="_blank"
+              name={item.name}
+              aria-label={item.ariaLabel}
+              className="primary icon-button !text-white"
             >
               <FontAwesomeIcon
                 className={css({ fontSize: "25px" })}
                 icon={icons[i]}
               />
-            </MUILink>
+            </a>
           ))}
         </div>
       </div>
-    </Suspense>
+    </footer>
   );
-});
+};
 
 export default Footer;
