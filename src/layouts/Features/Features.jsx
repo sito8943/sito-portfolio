@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import useIsInViewport from "use-is-in-viewport";
 
 // contexts
@@ -16,11 +16,16 @@ function Features() {
   const { languageState } = useLanguage();
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isInViewport) setVisible(true);
+  }, [isInViewport]);
 
   return (
     <Section id="features" background="bg-dark-background2">
       <div className="features" ref={targetRef}>
-        {isInViewport ? (
+        {visible ? (
           <Fragment>
             <PrintAfter delay={100} animation="appear">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">

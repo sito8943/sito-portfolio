@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
 
 // contexts
@@ -20,6 +20,11 @@ const About = () => {
   const { languageState } = useLanguage();
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isInViewport) setVisible(true);
+  }, [isInViewport]);
 
   const [show, setShow] = useState("Me");
 
@@ -30,8 +35,8 @@ const About = () => {
   }; */
 
   const images = [
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/coding_iRj5Jxz68.jpg",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/trips_YpLictApn.jpg",
+    "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/programmin_VdgdvG0xn.jpg",
+    "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/fixed_7D2YpO3dK.jpg",
     "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg",
   ];
 
@@ -48,7 +53,7 @@ const About = () => {
         className="flex items-center justify-center flex-col h-full gap-4"
         ref={targetRef}
       >
-        {isInViewport ? (
+        {visible ? (
           <Fragment>
             <PrintAfter delay={100} animation="appear">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
