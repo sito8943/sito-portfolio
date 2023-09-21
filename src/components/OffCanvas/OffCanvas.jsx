@@ -98,8 +98,10 @@ const OffCanvas = (props) => {
                         name={item.id}
                         aria-label={item.ariaLabel}
                         className={`link w-full p-5 inline-block ${
-                          item.primary ? "secondary" : "primary"
-                        }`}
+                          item.primary && activeLink !== item.to
+                            ? "secondary"
+                            : "primary"
+                        } ${activeLink === item.to ? "!bg-primary" : ""}`}
                       >
                         {item.label}
                       </a>
