@@ -1,38 +1,37 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { memo, useState, Suspense } from "react";
-
-import loadable from "@loadable/component";
-
-// @nextui-org
-import { useDisclosure, Avatar } from "@nextui-org/react";
-
-// utils
-import { parseDelay } from "../../utils/functions";
+import React, { Fragment, useState } from "react";
+import useIsInViewport from "use-is-in-viewport";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
+// components
+import Card from "./components/Card";
+import Section from "../../components/Section/Section";
+import LazyImage from "../../components/LazyImage/LazyImage";
+import PrintAfter from "../../components/PrintAfter/PrintAfter";
+
 // own components
-const InViewComponent = loadable(() =>
+/* const InViewComponent = loadable(() =>
   import("../../components/InViewComponent/InViewComponent")
 );
 const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
 const Section = loadable(() => import("../../components/Section/Section"));
 const Modal = loadable(() => import("../../components/Modal/Modal"));
-const Card = loadable(() => import("../../components/Card/Card"));
+const Card = loadable(() => import("../../components/Card/Card")); */
 
 const About = () => {
   const { languageState } = useLanguage();
 
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+
   const [show, setShow] = useState("Me");
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const showModal = (which) => {
+  /* const showModal = (which) => {
     setShow(which);
     if (show === "") onClose(false);
     else onOpen(true);
-  };
+  }; */
 
   const images = [
     "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/coding_iRj5Jxz68.jpg?updatedAt=1682181967379",
@@ -41,61 +40,51 @@ const About = () => {
   ];
 
   return (
-    <Suspense>
-      <Section id="about" background="#222222">
-        <FloatingIcons />
-        <Modal
+    <Section id="about">
+      {/* <FloatingIcons /> */}
+      {/* <Modal
           onClose={() => onClose()}
           bindings={(isOpen, onOpen, onClose)}
           title={languageState.texts.About[show].Title}
           content={languageState.texts.About[show].Content}
-        />
-        <div
-          className="flex items-center justify-center flex-col h-full"
-          css={{
-            div: {
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
-        >
-          <InViewComponent className="flex items-center justify-center flex-col">
-            <h2>{languageState.texts.About.Title}</h2>
-          </InViewComponent>
-          <InViewComponent
-            delay="0.4s"
-            className="flex items-center justify-center flex-col"
-          >
-            <Avatar
-              src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
-              css={{ size: "$20", margin: "10px 0" }}
-            />
-          </InViewComponent>
-          <div className="flex items-center justify-center flex-col flex-wrap">
-            {languageState.texts.About.Cards.map((item, i) => (
-              <InViewComponent
-                className="flex"
-                key={i}
-                delay={`${parseDelay(i, 0.4)}s`}
-              >
-                <Card
-                  image={images[i]}
-                  alt={item.Alt}
-                  onClick={() => showModal(item.Id)}
-                  text={item.Text}
-                  more={item.More}
-                />
-              </InViewComponent>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </Suspense>
+        /> */}
+      <div
+        className="flex items-center justify-center flex-col h-full gap-4"
+        ref={targetRef}
+      >
+        {isInViewport ? (
+          <Fragment>
+            <PrintAfter delay={100} animation="appear">
+              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+                {languageState.texts.About.Title}
+              </h2>
+            </PrintAfter>
+            <PrintAfter delay={200} animation="appear">
+              <LazyImage
+                src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
+                className="w-20 h-20 rounded-full"
+              />
+            </PrintAfter>
+            <ul className="flex flex-wrap items-center justify-center gap-3 mt-5">
+              {languageState.texts.About.Cards.map((item, i) => (
+                <li key={i}>
+                  <PrintAfter delay={(i + 1) * 300} animation="appear">
+                    <Card
+                      image={images[i]}
+                      alt={item.Alt}
+                      onClick={() => showModal(item.Id)}
+                      text={item.Text}
+                      more={item.More}
+                    />
+                  </PrintAfter>
+                </li>
+              ))}
+            </ul>
+          </Fragment>
+        ) : null}
+      </div>
+    </Section>
   );
 };
 
-const AboutMemo = memo((props) => <About {...props} />);
-
-export default AboutMemo;
+export default About;

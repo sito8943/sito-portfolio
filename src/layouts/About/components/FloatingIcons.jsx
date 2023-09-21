@@ -4,9 +4,6 @@ import React, { memo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-// framer-motion
-import { m } from "framer-motion";
-
 // @emotion/css
 import { css } from "@emotion/css";
 

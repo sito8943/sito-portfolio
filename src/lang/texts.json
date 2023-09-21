@@ -5,6 +5,7 @@
       "Body": "No se encuentra la página"
     },
     "AriaLabels": {
+      "clickToDialog": "Cliquea para expandir",
       "linkTo": "Ir a enlace externo",
       "send": "Enviar mensaje",
       "toProjects": "Ir a los proyectos",
@@ -378,6 +379,7 @@
       "Body": "Page not found"
     },
     "AriaLabels": {
+      "clickToDialog": "Ckick to expand",
       "linkTo": "Go to external link",
       "send": "Send message",
       "toHome": "Click to go to home",

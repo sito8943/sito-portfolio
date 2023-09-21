@@ -8,6 +8,7 @@ import ToTop from "../components/ToTop/ToTop";
 // layouts
 import Hero from "../layouts/Hero/Hero";
 import Features from "../layouts/Features/Features";
+import About from "../layouts/About/About";
 /* 
 const About = loadable(() => import("../layouts/About/About"));
 const Skills = loadable(() => import("../layouts/Skills/Skills"));
@@ -26,10 +27,10 @@ const Home = () => {
       <main>
         <Hero />
         <Features />
+        <About />
       </main>
       {/* 
         
-        <About />
         <Skills />
         <Projects />
         <SideProjects />
