@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     try {
       setLanguageState({ type: "set", lang: getUserLanguage() });
-      if ("serviceWorker" in navigator) {
+      /* if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
           navigator.serviceWorker.register("/service-worker.js").then(
             function (registration) {
@@ -30,14 +30,14 @@ const App = () => {
             }
           );
         });
-      }
+      } */
     } catch (err) {
       console.error(err);
     }
   }, []);
 
   return (
-    <BrowserRouter /* basename={process.env.PUBLIC_URL} */>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<NotFound />} />

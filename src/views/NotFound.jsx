@@ -17,7 +17,7 @@ const NotFound = () => {
   const { languageState } = useLanguage();
 
   return (
-    <div className="justify-center items-center flex-col w-full h-screen">
+    <div className="flex justify-center items-center flex-col w-full h-screen">
       <div className={`scale-animation left-[5%]`}>
         <div className="-rotate-[30deg]">
           <FontAwesomeIcon
@@ -44,9 +44,9 @@ const NotFound = () => {
       </div>
 
       <div className="flex justify-center w-full">
-        <h2 className="">4</h2>
-        <h2 className="">0</h2>
-        <h2 className="">4</h2>
+        <h2 className="text-8xl font-">4</h2>
+        <h2 className="text-8xl">0</h2>
+        <h2 className="text-8xl">4</h2>
       </div>
 
       <p className="mb-10">{languageState.texts.NotFound.Body}</p>
@@ -55,7 +55,7 @@ const NotFound = () => {
         href="/"
         name="to-home"
         aria-label={languageState.texts.AriaLabels.toHome}
-        className="submit primary"
+        className="button submit primary"
       >
         <FontAwesomeIcon icon={faHome} />
         {languageState.texts.NotFound.GoHome}
