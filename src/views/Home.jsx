@@ -3,12 +3,12 @@ import loadable from "@loadable/component";
 
 // own components
 import Loading from "../components/Loading/Loading";
-const Navbar = loadable(() => import("../components/Navbar/Navbar"));
-const ToTop = loadable(() => import("../components/ToTop/ToTop"));
+import Navbar from "../components/Navbar/Navbar"
+import ToTop from "../components/ToTop/ToTop"
 
 // layouts
-/* const Hero = loadable(() => import("../layouts/Hero/Hero"));
-const WhatIDo = loadable(() => import("../layouts/WhatIDo/WhatIDo"));
+import Hero from "../layouts/Hero/Hero"
+/* const WhatIDo = loadable(() => import("../layouts/WhatIDo/WhatIDo"));
 const About = loadable(() => import("../layouts/About/About"));
 const Skills = loadable(() => import("../layouts/Skills/Skills"));
 const Footer = loadable(() => import("../components/Footer/Footer"));
@@ -27,10 +27,10 @@ const Home = () => {
       <ToTop /* footerVisible={isInView} */ />
       <Navbar />
       <main sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
-        <section className="h-screen"></section>
+        <Hero />
         <section className="h-screen"></section>
       </main>
-      {/* <Hero />
+      {/* 
         <WhatIDo />
         <About />
         <Skills />

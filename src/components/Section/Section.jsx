@@ -11,15 +11,7 @@ function Section(props) {
   return (
     <section
       id={id}
-      className={css({
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "100px 0",
-        minHeight: "100vh",
-        background,
-        position: "relative",
-      })}
+      className={`flex justify-center items-center py-[100px] min-h-[100vh] relative ${background}`}
     >
       {children}
     </section>

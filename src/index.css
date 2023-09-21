@@ -89,14 +89,14 @@ input {
   @apply flex items-start justify-start;
 }
 
-a,
 th,
 td,
 p,
+h1,
 h2,
 h3,
 label {
-  @apply dark:text-white text-dark-background2;
+  @apply text-white;
 }
 
 h2 {
@@ -134,7 +134,6 @@ h3 {
 }
 .secondary.link {
   @apply hover:bg-secondary text-white;
-
 }
 .outlined {
   @apply border-2;

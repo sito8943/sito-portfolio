@@ -68,7 +68,7 @@ const SitoNavbar = () => {
 
   return (
     <header
-      className={`flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 ${
+      className={`flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 z-[50] ${
         transparency ? "" : "bg-dark-drawer-background backdrop-blur-lg"
       }`}
     >

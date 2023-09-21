@@ -1,5 +1,4 @@
-import React, { Suspense, useCallback, memo } from "react";
-import loadable from "@loadable/component";
+import React from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,83 +15,72 @@ import { scrollTo } from "some-javascript-utils/browser";
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
-// utils
-import { parseDelay } from "../../utils/functions";
-
 // styles
 import "./styles.css";
 
-// @nextui-org
-const Link = loadable(() => import("../../components/NextUI/Link"));
-const Button = loadable(() => import("../../components/NextUI/Button"));
+// components
+import Section from "../../components/Section/Section";
+import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 // own components
-const InViewComponent = loadable(() =>
-  import("../../components/InViewComponent/InViewComponent")
-);
-const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
-const Section = loadable(() => import("../../components/Section/Section"));
+// const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
 
 const Hero = () => {
   const { languageState } = useLanguage();
 
   const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
 
-  const scrollToProjects = useCallback(() => {
-    scrollTo(document.getElementById("#projects")?.offsetTop);
-  }, []);
-
   return (
-    <Suspense>
-      <Section id="hero">
-        <FloatingIcons />
-        <div className="main-container">
-          <InViewComponent>
-            <h1 className="text-center text-large">{languageState.texts.Hero.Title}</h1>
-          </InViewComponent>
-          <InViewComponent delay="0.4s">
-            <p>{languageState.texts.Hero.Text}</p>
-          </InViewComponent>
-          <InViewComponent delay="0.5s">
-            <Link href="#projects" className="cta">
-              <Button
-                id="to-projects"
-                aria-label={languageState.texts.AriaLabels.toProjects}
-                onPress={scrollToProjects}
-                radius="full"
-                isIconOnly
-                className="mt-4 min-w-0 w-10"
-              >
-                <FontAwesomeIcon icon={faArrowDown} />
-              </Button>
-            </Link>
-          </InViewComponent>
-          <InViewComponent delay="0.6s">
-            <p className="text-center mb-3 mt-[50px]">
-              {languageState.texts.Hero.Meet}
-            </p>
-          </InViewComponent>
-          <div className="hero-social">
-            {languageState.texts.Hero.Social.map((item, i) => (
-              <InViewComponent key={item.Text} delay={`${parseDelay(i, 0.6)}s`}>
-                <Link
-                  href={item.Link}
-                  rel="noreferrer"
-                  target="_blank"
-                  aria-label={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
-                  name={item.Text.toLowerCase()}
-                >
-                  <FontAwesomeIcon icon={icons[i]} />
-                </Link>
-              </InViewComponent>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </Suspense>
+    <Section id="hero">
+      {/* <FloatingIcons /> */}
+      <div className="flex items-center justify-start flex-col gap-4">
+        <PrintAfter delay={100} animation="appear">
+          <h1 className="text-center sm:text-3xl text-5xl font-bold">
+            {languageState.texts.Hero.Title}
+          </h1>
+        </PrintAfter>
+        <PrintAfter delay={200} animation="appear">
+          <p className="text-center sm:px-4">{languageState.texts.Hero.Text}</p>
+        </PrintAfter>
+        <PrintAfter delay={300} animation="appear">
+          <a
+            href="#projects"
+            name="to-projects"
+            className="icon-button primary submit hover:-translate-y-1"
+            aria-label={languageState.texts.AriaLabels.toProjects}
+            onClick={() =>
+              scrollTo(document.getElementById("#projects")?.offsetTop)
+            }
+          >
+            <FontAwesomeIcon icon={faArrowDown} />
+          </a>
+        </PrintAfter>
+        <PrintAfter delay={400} animation="appear">
+          <p className="text-center sm:px-4">{languageState.texts.Hero.Meet}</p>
+        </PrintAfter>
+        <PrintAfter delay={500} animation="appear">
+          <nav className="hero-social">
+            <ul className="flex justify-center gap-3 items-center">
+              {languageState.texts.Hero.Social.map((item, i) => (
+                <li key={item.Link}>
+                  <a
+                    href={item.Link}
+                    rel="noreferrer"
+                    target="_blank"
+                    name={item.Text.toLowerCase()}
+                    className="primary icon-button !text-white"
+                    aria-label={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
+                  >
+                    <FontAwesomeIcon icon={icons[i]} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </PrintAfter>
+      </div>
+    </Section>
   );
 };
 
-const HeroMemo = memo((props) => <Hero {...props} />);
-
-export default HeroMemo;
+export default Hero;
