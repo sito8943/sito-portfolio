@@ -99,8 +99,10 @@ const SitoNavbar = () => {
                   name={item.id}
                   aria-label={item.ariaLabel}
                   className={`button ${
-                    item.primary ? "secondary submit" : "primary link"
-                  }`}
+                    item.primary && activeLink !== item.to
+                      ? "secondary submit"
+                      : "primary link"
+                  } ${activeLink === item.to ? "!bg-primary" : ""}`}
                 >
                   {item.label}
                 </a>
