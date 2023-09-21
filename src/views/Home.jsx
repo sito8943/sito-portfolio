@@ -11,9 +11,9 @@ import Features from "../layouts/Features/Features";
 import About from "../layouts/About/About";
 import Skills from "../layouts/Skills/Skills";
 import Projects from "../layouts/Projects/Projects";
+import SideProjects from "../layouts/SideProjects/SideProjects";
 /* 
 const Footer = loadable(() => import("../components/Footer/Footer"));
-const Projects = loadable(() => import("../layouts/Projects/Projects"));
 const SideProjects = loadable(() =>
   import("../layouts/SideProjects/SideProjects")
 );
@@ -30,11 +30,12 @@ const Home = () => {
         <About />
         <Skills />
         <Projects />
+        <SideProjects />
       </main>
       {/* 
         
         
-        <SideProjects />
+        
         <Contact />
         
         <Footer ref={ref} /> */}

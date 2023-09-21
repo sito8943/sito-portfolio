@@ -1,72 +1,69 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { memo, Suspense } from "react";
-
-import loadable from "@loadable/component";
-
-// @emotion/css
-import { css } from "@emotion/css";
-
-// utils
-import { parseDelay } from "../../utils/functions";
+import React, { Fragment, useState, useEffect } from "react";
+import useIsInViewport from "use-is-in-viewport";
 
 // contexts
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // own components
-const InViewComponent = loadable(() =>
-  import("../../components/InViewComponent/InViewComponent")
-);
-const FloatingIcons = loadable(() =>
-  import("./FloatingIcons.jsx/FloatingIcons")
-);
-const Section = loadable(() => import("../../components/Section/Section"));
-const Card = loadable(() => import("../../components/Card/Card"));
+import Card from "./components/Card";
+import Section from "../../components/Section/Section";
+import FloatingIcons from "./components/FloatingIcons";
+import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const SideProjects = () => {
   const { languageState } = useLanguage();
 
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isInViewport) setVisible(true);
+  }, [isInViewport]);
+
   return (
-    <Suspense>
-      <Section id="side-projects">
-        <div className="main-container">
-          <FloatingIcons />
-          <InViewComponent>
-            <h2 className={css({ textAlign: "center" })}>
-              {languageState.texts.SideProjects.Title}
-            </h2>
-          </InViewComponent>
-          <InViewComponent delay="0.4s">
-            <p className="text-center">
-              {languageState.texts.SideProjects.Text}
-            </p>
-          </InViewComponent>
-          <InViewComponent delay="0.5s">
-            <p className="text-center">
-              {languageState.texts.SideProjects.CallMe}
-            </p>
-          </InViewComponent>
-          <div className="secondary-container">
-            {languageState.texts.SideProjects.Projects.map((item, i) => (
-              <InViewComponent
-                delay={`${parseDelay(i, 0.4)}s`}
-                key={item.Title}
-              >
-                <Card
-                  image={item.Image}
-                  alt="about"
-                  link={item.Link}
-                  text={item.Title}
-                  more={item.Text}
-                />
-              </InViewComponent>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </Suspense>
+    <Section id="side-projects" background="bg-pdark">
+      <FloatingIcons />
+      <div
+        className=" flex items-center justify-center flex-col h-full gap-4"
+        ref={targetRef}
+      >
+        {visible ? (
+          <Fragment>
+            <PrintAfter delay={100} animation="appear">
+              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+                {languageState.texts.SideProjects.Title}
+              </h2>
+            </PrintAfter>
+            <PrintAfter delay={200} animation="appear">
+              <p className="text-center">
+                {languageState.texts.SideProjects.Text}
+              </p>
+            </PrintAfter>
+            <PrintAfter delay={300} animation="appear">
+              <p className="text-center">
+                {languageState.texts.SideProjects.CallMe}
+              </p>
+            </PrintAfter>
+            <ul className="flex items-center justify-center flex-wrap gap-5">
+              {languageState.texts.SideProjects.Projects.map((item, i) => (
+                <li key={item.Title} className="md:w-full">
+                  <PrintAfter delay={(i + 1) * 400} animation="appear">
+                    <Card
+                      image={item.Image}
+                      alt="about"
+                      link={item.Link}
+                      text={item.Title}
+                      more={item.Text}
+                    />
+                  </PrintAfter>
+                </li>
+              ))}
+            </ul>
+          </Fragment>
+        ) : null}
+      </div>
+    </Section>
   );
 };
 
-const SideProjectsMemo = memo((props) => <SideProjects {...props} />);
-
-export default SideProjectsMemo;
+export default SideProjects;

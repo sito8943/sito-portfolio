@@ -34,7 +34,7 @@ function Features() {
             </PrintAfter>
             <ul className="flex flex-wrap items-center justify-center gap-3 mt-5">
               {languageState.texts.Features.Cards.map((item, i) => (
-                <li key={item.title}>
+                <li key={item.title} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 200} animation="appear">
                     <Card title={item.title} body={item.body} />
                   </PrintAfter>

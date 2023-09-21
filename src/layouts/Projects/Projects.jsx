@@ -14,7 +14,7 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 // image
 import logistics from "../../assets/images/projects/wmt.jpg";
 
-// own components
+// components
 import Card from "./components/Card";
 import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
@@ -66,7 +66,7 @@ const Projects = () => {
             </PrintAfter>
             <ul className="flex items-center justify-center flex-wrap gap-5">
               {languageState.texts.Projects.Projects.map((item, i) => (
-                <li key={item.Title}>
+                <li key={item.Title} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <Card
                       link={item.Link}
