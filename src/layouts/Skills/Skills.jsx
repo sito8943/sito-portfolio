@@ -19,10 +19,9 @@ import firebase from "../../assets/images/logos/firebase.webp";
 
 // components
 import Section from "../../components/Section/Section";
+import FloatingIcons from "./components/FloatingIcons";
 import LazyImage from "../../components/LazyImage/LazyImage";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
-
-/* const FloatingIcons = loadable(() => import("./components/FloatingIcons")); */
 
 const Skills = () => {
   const { languageState } = useLanguage();
@@ -48,7 +47,7 @@ const Skills = () => {
 
   return (
     <Section id="skills" background="bg-sdark">
-      {/* <FloatingIcons /> */}
+      <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
         ref={targetRef}

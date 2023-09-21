@@ -29,8 +29,8 @@ const ToTop = (props) => {
   const onScroll = useCallback(
     (e) => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
-      if (top > 100) setVisible(true);
-      else setVisible(false);
+      setVisible(top > 100);
+
       const fullHeight = Math.max(
         document.body.scrollHeight,
         document.documentElement.scrollHeight,
@@ -51,6 +51,7 @@ const ToTop = (props) => {
   }, [push]);
 
   useEffect(() => {
+    setVisible(top > 100);
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);

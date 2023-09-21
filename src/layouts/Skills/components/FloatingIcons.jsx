@@ -1,72 +1,42 @@
-import React, { memo, Suspense } from "react";
+import React, { Fragment } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs } from "@fortawesome/free-brands-svg-icons";
 
-// @nextui-org
-import { Link } from "@nextui-org/react";
-
-// framer-motion
-import { m } from "framer-motion";
-
 // @emotion/css
 import { css } from "@emotion/css";
 
-const FloatingIcons = () => {
-  const containerImage = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.3,
-      },
-    },
-  };
+// contexts
+import { useLanguage } from "../../../contexts/LanguageProvider";
 
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+const FloatingIcons = () => {
+  const { languageState } = useLanguage();
 
   return (
-    <Suspense>
-      <m.div
-        variants={containerImage}
-        initial="hidden"
-        animate="visible"
-        viewport={{ once: true }}
-      >
-        <m.div
-          variants={item}
-          className={`scale-animation ${css({ left: "5%" })}`}
-        >
-          <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
-            <Link
-              href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-              target="_blank"
-              rel="noopener"
-            >
-              <FontAwesomeIcon
-                icon={faJs}
-                className={`float-y ${css({
-                  fontSize: "6rem",
-                  color: "#F0D81D",
-                  opacity: 0.5,
-                })}`}
-              />
-            </Link>
-          </div>
-        </m.div>
-      </m.div>
-    </Suspense>
+    <Fragment>
+      <div className={`scale-animation ${css({ left: "5%" })}`}>
+        <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
+          <a
+            name="javascript"
+            aria-label={languageState.texts.Skills.List[2].ariaLabel}
+            href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+            target="_blank"
+            rel="noopener"
+          >
+            <FontAwesomeIcon
+              icon={faJs}
+              className={`float-y ${css({
+                fontSize: "6rem",
+                color: "#F0D81D",
+                opacity: 0.5,
+              })}`}
+            />
+          </a>
+        </div>
+      </div>
+    </Fragment>
   );
 };
 
-const FloatingIconsMemo = memo((props) => <FloatingIcons {...props} />);
-
-export default FloatingIconsMemo;
+export default FloatingIcons;
