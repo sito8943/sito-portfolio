@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
 

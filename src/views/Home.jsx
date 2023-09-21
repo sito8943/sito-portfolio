@@ -12,12 +12,10 @@ import About from "../layouts/About/About";
 import Skills from "../layouts/Skills/Skills";
 import Projects from "../layouts/Projects/Projects";
 import SideProjects from "../layouts/SideProjects/SideProjects";
+import Contact from "../layouts/Contact/Contact";
 /* 
 const Footer = loadable(() => import("../components/Footer/Footer"));
-const SideProjects = loadable(() =>
-  import("../layouts/SideProjects/SideProjects")
-);
-const Contact = loadable(() => import("../layouts/Contact/Contact")); */
+*/
 
 const Home = () => {
   return (
@@ -31,13 +29,10 @@ const Home = () => {
         <Skills />
         <Projects />
         <SideProjects />
+        <Contact />
       </main>
       {/* 
-        
-        
-        
-        <Contact />
-        
+
         <Footer ref={ref} /> */}
     </Suspense>
   );

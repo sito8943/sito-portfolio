@@ -363,31 +363,9 @@
       ]
     },
     "Contact": {
-      "Title": "¡Envíame tu propuesta!",
-      "Body": "Te interesa trabajar junto conmigo. No dudes en escribirme",
-      "SendOk": "Enviado correctamente! Muchas gracias",
-      "SendError": "Ups! Algo ha salido mal",
-      "Inputs": {
-        "Name": {
-          "Label": "Tu nombre",
-          "Name": "user_name",
-          "Placeholder": "Escribe aquí tu nombre",
-          "Type": "text"
-        },
-        "Email": {
-          "Label": "Tu email",
-          "Name": "user_email",
-          "Placeholder": "Escribe aquí tu correo",
-          "Type": "email"
-        },
-        "Message": {
-          "Label": "Tu mensaje",
-          "Name": "message",
-          "Placeholder": "Escribe aquí tu mensaje",
-          "Type": "textarea"
-        }
-      },
-      "Button": "Enviar"
+      "Title": "Ponerse en contacto",
+      "Body": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!",
+      "Button": "Di hola 👋"
     }
   },
   "en": {
@@ -759,31 +737,9 @@
       ]
     },
     "Contact": {
-      "Title": "Send me your proposal!",
-      "Body": "Are you interested in working with me? Do not hesitate to write me",
-      "SendOk": "Submitted successfully! Thank you so much.",
-      "SendError": "Oops! something went wrong",
-      "Inputs": {
-        "Name": {
-          "Label": "Your name",
-          "Name": "user_name",
-          "Placeholder": "Write your name here",
-          "Type": "text"
-        },
-        "Email": {
-          "Label": "Your email",
-          "Name": "user_email",
-          "Placeholder": "Write your email here",
-          "Type": "email"
-        },
-        "Message": {
-          "Label": "Your message",
-          "Name": "message",
-          "Placeholder": "Write your message here",
-          "Type": "textarea"
-        }
-      },
-      "Button": "Send"
+      "Title": "Get In Touch",
+      "Body": "Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "Button": "Say Hello 👋"
     }
   }
 }
