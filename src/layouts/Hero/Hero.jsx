@@ -21,9 +21,7 @@ import "./styles.css";
 // components
 import Section from "../../components/Section/Section";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
-
-// own components
-// const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
+import FloatingIcons from "./components/FloatingIcons";
 
 const Hero = () => {
   const { languageState } = useLanguage();
@@ -32,7 +30,7 @@ const Hero = () => {
 
   return (
     <Section id="hero">
-      {/* <FloatingIcons /> */}
+      <FloatingIcons />
       <div className="flex items-center justify-start flex-col gap-4">
         <PrintAfter delay={100} animation="appear">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
