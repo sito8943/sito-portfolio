@@ -1,14 +1,14 @@
-import React, { useRef, Suspense } from "react";
-import loadable from "@loadable/component";
+import React, { Suspense } from "react";
 
 // own components
 import Loading from "../components/Loading/Loading";
-import Navbar from "../components/Navbar/Navbar"
-import ToTop from "../components/ToTop/ToTop"
+import Navbar from "../components/Navbar/Navbar";
+import ToTop from "../components/ToTop/ToTop";
 
 // layouts
-import Hero from "../layouts/Hero/Hero"
-/* const WhatIDo = loadable(() => import("../layouts/WhatIDo/WhatIDo"));
+import Hero from "../layouts/Hero/Hero";
+import Features from "../layouts/Features/Features";
+/* 
 const About = loadable(() => import("../layouts/About/About"));
 const Skills = loadable(() => import("../layouts/Skills/Skills"));
 const Footer = loadable(() => import("../components/Footer/Footer"));
@@ -19,19 +19,16 @@ const SideProjects = loadable(() =>
 const Contact = loadable(() => import("../layouts/Contact/Contact")); */
 
 const Home = () => {
-  /* const ref = useRef(null); */
-  /* const isInView = useInView(ref); */
-
   return (
     <Suspense fallback={<Loading />}>
-      <ToTop /* footerVisible={isInView} */ />
+      <ToTop />
       <Navbar />
-      <main sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
+      <main>
         <Hero />
-        <section className="h-screen"></section>
+        <Features />
       </main>
       {/* 
-        <WhatIDo />
+        
         <About />
         <Skills />
         <Projects />

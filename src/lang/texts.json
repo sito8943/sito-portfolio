@@ -79,7 +79,7 @@
       ],
       "Meet": "Puedes encontrarme en:"
     },
-    "WhatIDo": {
+    "Features": {
       "Title": "Hago desde páginas de aterrizaje hasta blogs",
       "Cards": [
         {
@@ -452,7 +452,7 @@
       ],
       "Meet": "You can find me at:"
     },
-    "WhatIDo": {
+    "Features": {
       "navigation": [
         { "to": "#landing-pages", "label": "Landing Pages" },
         { "to": "#dashboards", "label": "Dashboards" },

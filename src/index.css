@@ -99,14 +99,6 @@ label {
   @apply text-white;
 }
 
-h2 {
-  @apply text-4xl font-extrabold;
-}
-
-h3 {
-  @apply text-2xl font-extrabold;
-}
-
 .icon-button {
   @apply w-10 h-10 min-w-[40px] min-h-[40px] text-primary dark:text-primary rounded-full flex items-center justify-center text-xl transition hover:bg-pdark-hover;
 }

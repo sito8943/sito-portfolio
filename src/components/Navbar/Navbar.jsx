@@ -43,7 +43,6 @@ const SitoNavbar = () => {
     let sec = document.querySelectorAll("section");
     sec.forEach((section) => {
       let top = window.scrollY;
-      console.log(top);
       setTransparency(top < 60);
       let offset = section.offsetTop;
       let height = section.offsetHeight;
@@ -56,6 +55,7 @@ const SitoNavbar = () => {
   }, [setActiveLink, languageState]);
 
   useEffect(() => {
+    setTransparency(top < 60);
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);

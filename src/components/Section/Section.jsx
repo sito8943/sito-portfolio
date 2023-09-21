@@ -13,7 +13,7 @@ function Section(props) {
       id={id}
       className={`flex justify-center items-center py-[100px] min-h-[100vh] relative ${background}`}
     >
-      {children}
+      <div className="w-[90%]">{children}</div>
     </section>
   );
 }

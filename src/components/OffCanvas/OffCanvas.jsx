@@ -33,8 +33,6 @@ const OffCanvas = (props) => {
     let sec = document.querySelectorAll("section");
     sec.forEach((section) => {
       let top = window.scrollY;
-      console.log(top);
-      setTransparency(top < 60);
       let offset = section.offsetTop;
       let height = section.offsetHeight;
       let id = section.getAttribute("id");
