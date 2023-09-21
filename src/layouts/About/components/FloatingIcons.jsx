@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { Fragment, memo } from "react";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,34 +8,9 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { css } from "@emotion/css";
 
 const FloatingIcons = () => {
-  const containerImage = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <m.div
-      variants={containerImage}
-      initial="hidden"
-      animate="visible"
-      viewport={{ once: true }}
-    >
-      <m.div
-        variants={item}
+    <Fragment>
+      <div
         className={`scale-animation ${css({
           width: "100px",
           height: "100px",
@@ -53,8 +28,8 @@ const FloatingIcons = () => {
             })}`}
           />
         </div>
-      </m.div>
-    </m.div>
+      </div>
+    </Fragment>
   );
 };
 

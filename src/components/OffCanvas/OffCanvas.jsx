@@ -52,6 +52,8 @@ const OffCanvas = (props) => {
 
   return (
     <div
+      name="hide-drawer"
+      aria-label={languageState.texts.AriaLabels.closeDrawer}
       onClick={handleClose}
       className={`top-0 left-0 h-screen fixed w-full bg-dark-drawer-background transition duration-300 ${
         visible ? "opacity-1" : "opacity-0 pointer-events-none"
@@ -60,7 +62,7 @@ const OffCanvas = (props) => {
       <aside
         className={`${
           !visible ? "-translate-x-4 opacity-0" : ""
-        } relative pointer-events-auto flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500`}
+        } relative flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500`}
       >
         <button
           type="button"

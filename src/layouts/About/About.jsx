@@ -7,18 +7,14 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 
 // components
 import Card from "./components/Card";
+import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 import LazyImage from "../../components/LazyImage/LazyImage";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 // own components
-/* const InViewComponent = loadable(() =>
-  import("../../components/InViewComponent/InViewComponent")
-);
-const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
-const Section = loadable(() => import("../../components/Section/Section"));
-const Modal = loadable(() => import("../../components/Modal/Modal"));
-const Card = loadable(() => import("../../components/Card/Card")); */
+/* const FloatingIcons = loadable(() => import("./components/FloatingIcons"));
+const Modal = loadable(() => import("../../components/Modal/Modal")); */
 
 const About = () => {
   const { languageState } = useLanguage();
@@ -34,14 +30,14 @@ const About = () => {
   }; */
 
   const images = [
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/coding_iRj5Jxz68.jpg?updatedAt=1682181967379",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/trips_YpLictApn.jpg?updatedAt=1682181967377",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg?updatedAt=1682181966422",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/coding_iRj5Jxz68.jpg",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/trips_YpLictApn.jpg",
+    "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg",
   ];
 
   return (
     <Section id="about">
-      {/* <FloatingIcons /> */}
+      <FloatingIcons />
       {/* <Modal
           onClose={() => onClose()}
           bindings={(isOpen, onOpen, onClose)}
@@ -65,9 +61,9 @@ const About = () => {
                 className="w-20 h-20 rounded-full"
               />
             </PrintAfter>
-            <ul className="flex flex-wrap items-center justify-center gap-3 mt-5">
+            <ul className="md:w-full flex flex-wrap items-center justify-center gap-3 mt-5">
               {languageState.texts.About.Cards.map((item, i) => (
-                <li key={i}>
+                <li key={i} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <Card
                       image={images[i]}

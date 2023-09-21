@@ -19,7 +19,7 @@ function Card({ image, alt, onClick, text, more }) {
       <LazyImage
         src={image}
         alt={alt}
-        className="w-full h-[150px] rounded-t-xl object-cover"
+        className="w-full md:h-[300px] h-[150px] rounded-t-xl object-cover"
       />
       <div className="p-5">
         <p className="text-lg font-bold">{text}</p>
