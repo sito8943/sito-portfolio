@@ -37,7 +37,7 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="sito-portfolio">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<NotFound />} />

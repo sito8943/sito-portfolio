@@ -3,7 +3,7 @@
   "version": "1.2.7",
   "type": "module",
   "private": false,
-  "homepage": "https://sito-numbis.github.io/sito-portfolio",
+  "homepage": "https://sitonumbis.github.io/sito-portfolio/",
   "license": "MIT",
   "dependencies": {
     "@builder.io/partytown": "^0.8.0",
