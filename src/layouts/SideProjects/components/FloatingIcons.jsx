@@ -9,7 +9,7 @@ import { css } from "@emotion/css";
 
 const FloatingIcons = () => {
   return (
-    <div className={`scale-animation ${css({ left: "10%", bottom: "10%" })}`}>
+    <div className={`md:hidden scale-animation ${css({ left: "10%", bottom: "10%" })}`}>
       <FontAwesomeIcon
         icon={faLightbulb}
         className={`float-y ${css({
