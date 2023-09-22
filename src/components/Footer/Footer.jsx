@@ -26,13 +26,13 @@ const Footer = (props) => {
   return (
     <footer
       id="footer"
-      className="items-center justify-center flex px-3 h-[50px] bg-dark-background flex-wrap"
+      className="items-center justify-center flex px-3 min-h-[50px] py-2 bg-dark-background flex-wrap"
     >
-      <div className="w-[90%] flex items-center justify-between">
+      <div className="w-[90%] flex items-center justify-between flex-wrap">
         <div className="flex">
           <p className="font-bold">{`<Sito /> © ${new Date().getFullYear()}`}</p>
         </div>
-        <div className={css({ gap: "20px", display: "flex" })}>
+        <div className="flex sm:gap-1 gap-3">
           {languageState.texts.Hero.Social.map((item, i) => (
             <a
               key={item.Link}
