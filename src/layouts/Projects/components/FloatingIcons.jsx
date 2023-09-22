@@ -14,7 +14,7 @@ const FloatingIcons = () => {
   return (
     <Fragment>
       <div
-        className={`scale-animation ${css({ right: "10%", bottom: "10%" })}`}
+        className={`lg:hidden scale-animation ${css({ right: "10%", bottom: "10%" })}`}
       >
         <FontAwesomeIcon
           icon={faCircleCheck}
@@ -26,7 +26,7 @@ const FloatingIcons = () => {
         />
       </div>
       <div
-        className={`scale-animation ${css({ right: "15%", bottom: "15%" })}`}
+        className={`lg:hidden scale-animation ${css({ right: "15%", bottom: "15%" })}`}
       >
         <FontAwesomeIcon
           icon={faFaceLaughWink}
