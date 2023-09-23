@@ -19,14 +19,16 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import "./styles.css";
 
 // components
+import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
-import FloatingIcons from "./components/FloatingIcons";
 
 const Hero = () => {
   const { languageState } = useLanguage();
 
   const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
+
+  console.log(languageState.texts.Hero.Title);
 
   return (
     <Section id="hero">

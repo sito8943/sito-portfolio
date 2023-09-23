@@ -33,7 +33,8 @@ PrintAfterMemo.displayName = "PrintAfter";
 function arePropsEqual(oldProps, newProps) {
   return (
     oldProps.delay === newProps.delay &&
-    oldProps.animation === newProps.animation
+    oldProps.animation === newProps.animation &&
+    oldProps.children === newProps.children
   );
 }
 
