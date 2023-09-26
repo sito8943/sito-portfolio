@@ -82,7 +82,7 @@
       "Meet": "Puedes encontrarme en:"
     },
     "Features": {
-      "Title": "Hago desde páginas de aterrizaje hasta blogs",
+      "Title": "Lo que hago",
       "Cards": [
         {
           "title": "Landing Page",
@@ -95,6 +95,14 @@
         {
           "title": "Blog",
           "body": "Un blog es un sitio web que incluye, a modo de diario personal de su autor(es), contenidos de su interés, que suelen estar actualizados con frecuencia y a menudo son comentados por los lectores."
+        },
+        {
+          "title": "Ecommerce",
+          "body": "El comercio electrónico o ecommerce es el comercio de bienes y servicios en Internet. Así como tiendas onlines de zapatos, componentes electrónicos, etc."
+        },
+        {
+          "title": "REST API",
+          "body": "Una API REST es una API que se ajusta a los principios de diseño de REST, o estilo arquitectónico de transferencia de estado representacional."
         }
       ]
     },
@@ -469,6 +477,14 @@
         {
           "title": "Blog",
           "body": "A blog is a website that includes, as a personal diary of its author(s), content of interest, which is usually updated frequently and is often commented on by readers."
+        },
+        {
+          "title": "Ecommerce",
+          "body": "Electronic commerce or ecommerce is the trade of goods and services on the Internet. As well as online stores for shoes, electronic components, etc."
+        },
+        {
+          "title": "REST API",
+          "body": "A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style."
         }
       ]
     },
