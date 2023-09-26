@@ -464,7 +464,7 @@
         { "to": "#dashboards", "label": "Dashboards" },
         { "to": "#blogs", "label": "Blogs" }
       ],
-      "Title": "I build from landing pages to blogs",
+      "Title": "My features",
       "Cards": [
         {
           "title": "Landing Page",
