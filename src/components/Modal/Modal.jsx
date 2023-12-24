@@ -3,9 +3,6 @@ import loadable from "@loadable/component";
 
 import PropTypes from "prop-types";
 
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-
 // images
 import js from "../../assets/images/logos/js.webp";
 import qt from "../../assets/images/logos/qt.webp";
@@ -34,8 +31,6 @@ const Link = loadable(() => import("../../components/NextUI/Link"));
 
 const Modal = (props) => {
   const { onClose, bindings, title, content } = props;
-
-  const { languageState } = useLanguage();
 
   const images = {
     "cpp-logo": cpp,

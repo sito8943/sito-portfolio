@@ -1,8 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
+import { useTranslation } from "react-i18next";
 
 // components
 import FloatingIcons from "./components/FloatingIcons";
@@ -10,10 +8,10 @@ import Section from "../../components/Section/Section";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Contact = () => {
-  const { languageState } = useLanguage();
-
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
   const [visible, setVisible] = useState(false);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isInViewport) setVisible(true);
@@ -30,12 +28,12 @@ const Contact = () => {
           <Fragment>
             <PrintAfter delay={100} animation="appear">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
-                {languageState.texts.Contact.Title}
+                {t("_pages:home.contact.title")}
               </h2>
             </PrintAfter>
             <PrintAfter delay={200} animation="appear">
               <p className="text-center md:w-[90%] w-[50%] m-auto mb-4">
-                {languageState.texts.Contact.Body}
+                {t("_pages:home.contact.body")}
               </p>
             </PrintAfter>
             <PrintAfter delay={300} animation="appear">
@@ -47,7 +45,7 @@ const Contact = () => {
                 rel="noreferrer"
                 className="primary button submit"
               >
-                {languageState.texts.Contact.Button}
+                {t("_pages:home.contact.button")}
               </a>
             </PrintAfter>
           </Fragment>

@@ -51,7 +51,7 @@ const Projects = () => {
                 <a
                   name="github"
                   aria-label={languageState.texts.AriaLabels.Github}
-                  href={languageState.texts.About.Github.Link}
+                  href="https://github.com/SitoNumbis"
                   rel="noreferrer"
                   target="_blank"
                   className="m-auto hover:text-primary underline"

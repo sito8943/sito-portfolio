@@ -4,15 +4,13 @@
 import { useLocation } from "react-router-dom";
 import React, { useState, useEffect, useCallback } from "react";
 import { useScreenWidth } from "use-screen-width";
+import { useTranslation } from "react-i18next";
 
 import { scrollTo } from "some-javascript-utils";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
 
 // styles
 import "./style.css";
@@ -22,7 +20,8 @@ import OffCanvas from "../OffCanvas/OffCanvas";
 
 const SitoNavbar = () => {
   const location = useLocation();
-  const { languageState } = useLanguage();
+
+  const { t } = useTranslation();
 
   const { screenWidth } = useScreenWidth();
 
@@ -52,7 +51,7 @@ const SitoNavbar = () => {
         setActiveLink(`#${id}`);
       }
     });
-  }, [setActiveLink, languageState]);
+  }, [setActiveLink]);
 
   useEffect(() => {
     setTransparency(top < 60);
@@ -66,13 +65,27 @@ const SitoNavbar = () => {
     if (screenWidth > 1279) closeOffCanvas();
   }, [screenWidth]);
 
+  const links = [
+    "home",
+    "features",
+    "about",
+    "skills",
+    "projects",
+    "sideProjects",
+    "contact",
+  ];
+
   return (
     <header
       className={`flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 z-[50] ${
         transparency ? "" : "bg-dark-drawer-background backdrop-blur-lg"
       }`}
     >
-      <OffCanvas visible={showOffCanvas} handleClose={closeOffCanvas} />
+      <OffCanvas
+        links={links}
+        visible={showOffCanvas}
+        handleClose={closeOffCanvas}
+      />
       <div
         className={`transition-all duration-500 flex items-center justify-between ${
           transparency ? "w-[85%] h-[100px]" : "w-[90%] h-[60px]"
@@ -83,7 +96,7 @@ const SitoNavbar = () => {
             href="#"
             name="logo"
             className="text-plight"
-            aria-label={languageState.texts.AriaLabels.toHome}
+            aria-label={t("_common:ariaLabels.toHome")}
             onClick={() => scrollTo(0)}
           >
             {"<Sito />"}
@@ -91,20 +104,23 @@ const SitoNavbar = () => {
         </h1>
         <nav className="h-full flex items-center">
           <ul className="xl:hidden flex items-center h-full justify-around gap-3">
-            {languageState.texts.Navbar.Links.map((item) => (
+            {links.map((item) => (
               <li key={item.id}>
                 <a
-                  href={item.to}
+                  href={`link-${item.id}`}
                   id={item.id}
                   name={item.id}
-                  aria-label={item.ariaLabel}
+                  aria-label={t("_common:ariaLabels.clickToSection").replace(
+                    "[target]",
+                    t(`_pages:routes.${item.id}`)
+                  )}
                   className={`button ${
-                    item.primary && activeLink !== item.to
+                    item.id === "contact" && activeLink !== `#${item.id}`
                       ? "secondary submit"
                       : "primary link"
-                  } ${activeLink === item.to ? "!bg-primary" : ""}`}
+                  } ${activeLink === `#${item.id}` ? "!bg-primary" : ""}`}
                 >
-                  {item.label}
+                  {t(`_pages:routes.${item.id}`)}
                 </a>
               </li>
             ))}
@@ -113,7 +129,7 @@ const SitoNavbar = () => {
             type="button"
             name="menu-button"
             className="xl:opacity-[1] xl:pointer-events-auto opacity-0 pointer-events-none icon-button primary submit"
-            aria-label={languageState.texts.AriaLabels.openDrawer}
+            aria-label={t("_common:ariaLabels.openDrawer")}
             onClick={() => setShowOffCanvas(!showOffCanvas)}
           >
             <FontAwesomeIcon icon={faBars} />

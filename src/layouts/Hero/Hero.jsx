@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,9 +13,6 @@ import {
 
 import { scrollTo } from "some-javascript-utils/browser";
 
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-
 // styles
 import "./styles.css";
 
@@ -24,11 +22,30 @@ import Section from "../../components/Section/Section";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Hero = () => {
-  const { languageState } = useLanguage();
+  const socials = [
+    {
+      text: "github",
+      link: "https://github.com/SitoNumbis",
+      icon: faGithub,
+    },
+    {
+      text: "instagram",
+      link: "https://www.instagram.com/sitonumbis/",
+      icon: faInstagram,
+    },
+    {
+      text: "twitter",
+      link: "https://twitter.com/sito8943",
+      icon: faTwitter,
+    },
+    {
+      text: "linkedin",
+      link: "https://www.linkedin.com/in/sito8943",
+      icon: faLinkedin,
+    },
+  ];
 
-  const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
-
-  console.log(languageState.texts.Hero.Title);
+  const { t } = useTranslation();
 
   return (
     <Section id="hero">
@@ -36,18 +53,18 @@ const Hero = () => {
       <div className="flex items-center justify-start flex-col gap-4">
         <PrintAfter delay={100} animation="appear">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
-            {languageState.texts.Hero.Title}
+            {t("_pages:home.hero.title")}
           </h1>
         </PrintAfter>
         <PrintAfter delay={200} animation="appear">
-          <p className="text-center sm:px-4">{languageState.texts.Hero.Text}</p>
+          <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
         </PrintAfter>
         <PrintAfter delay={300} animation="appear">
           <a
             href="#projects"
             name="to-projects"
             className="icon-button primary submit hover:-translate-y-1"
-            aria-label={languageState.texts.AriaLabels.toProjects}
+            aria-label={t("_common:ariaLabels.toProjects")}
             onClick={() =>
               scrollTo(document.getElementById("#projects")?.offsetTop)
             }
