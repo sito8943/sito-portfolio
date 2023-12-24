@@ -25,13 +25,19 @@ const About = () => {
       alt: "camera-and-trips",
       id: "me",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/fixed_7D2YpO3dK.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/fixed_7D2YpO3dK.jpg",
     },
     {
       alt: "playing-piano",
       id: "freeTime",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-298,h-150/SitoPortafolio/pianista-caucasico-tocando-acorde-enfoque-generado-ia_vmpjgpvnb.jpg",
+    },
+    {
+      alt: "design",
+      id: "design",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-298,h-150/SitoPortafolio/logotipo-ser-concepto-diseno-inspiracion-creativa_G2gdINzZi.jpg",
     },
   ];
 
