@@ -73,22 +73,24 @@ const Hero = () => {
           </a>
         </PrintAfter>
         <PrintAfter delay={400} animation="appear">
-          <p className="text-center sm:px-4">{languageState.texts.Hero.Meet}</p>
+          <p className="text-center sm:px-4">{t("_pages:home.hero.meet")}</p>
         </PrintAfter>
         <PrintAfter delay={500} animation="appear">
           <nav className="hero-social">
             <ul className="flex justify-center gap-3 items-center">
-              {languageState.texts.Hero.Social.map((item, i) => (
-                <li key={item.Link}>
+              {socials.map((item, i) => (
+                <li key={item.link}>
                   <a
-                    href={item.Link}
+                    href={item.link}
                     rel="noreferrer"
                     target="_blank"
-                    name={item.Text.toLowerCase()}
+                    name={item.text}
                     className="primary icon-button !text-white"
-                    aria-label={`${languageState.texts.AriaLabels.linkTo} ${item.Text}`}
+                    aria-label={`${t("_common:ariaLabels.linkTo")} ${
+                      item.text
+                    }`}
                   >
-                    <FontAwesomeIcon icon={icons[i]} />
+                    <FontAwesomeIcon icon={item.icon} />
                   </a>
                 </li>
               ))}

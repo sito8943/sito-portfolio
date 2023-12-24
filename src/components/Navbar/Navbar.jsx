@@ -65,15 +65,7 @@ const SitoNavbar = () => {
     if (screenWidth > 1279) closeOffCanvas();
   }, [screenWidth]);
 
-  const links = [
-    "home",
-    "features",
-    "about",
-    "skills",
-    "projects",
-    "sideProjects",
-    "contact",
-  ];
+  const links = ["home", "features", "about", "skills", "projects", "contact"];
 
   return (
     <header
@@ -105,22 +97,22 @@ const SitoNavbar = () => {
         <nav className="h-full flex items-center">
           <ul className="xl:hidden flex items-center h-full justify-around gap-3">
             {links.map((item) => (
-              <li key={item.id}>
+              <li key={item}>
                 <a
-                  href={`link-${item.id}`}
-                  id={item.id}
-                  name={item.id}
+                  href={`link-${item}`}
+                  id={item}
+                  name={item}
                   aria-label={t("_common:ariaLabels.clickToSection").replace(
                     "[target]",
-                    t(`_pages:routes.${item.id}`)
+                    t(`_pages:routes.${item}`)
                   )}
                   className={`button ${
-                    item.id === "contact" && activeLink !== `#${item.id}`
+                    item === "contact" && activeLink !== `#${item}`
                       ? "secondary submit"
                       : "primary link"
-                  } ${activeLink === `#${item.id}` ? "!bg-primary" : ""}`}
+                  } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
                 >
-                  {t(`_pages:routes.${item.id}`)}
+                  {t(`_pages:routes.${item}`)}
                 </a>
               </li>
             ))}

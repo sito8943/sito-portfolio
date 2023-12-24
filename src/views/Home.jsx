@@ -11,7 +11,6 @@ import Features from "../layouts/Features/Features";
 import About from "../layouts/About/About";
 import Skills from "../layouts/Skills/Skills";
 import Projects from "../layouts/Projects/Projects";
-import SideProjects from "../layouts/SideProjects/SideProjects";
 import Contact from "../layouts/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 
@@ -26,7 +25,6 @@ const Home = () => {
         <About />
         <Skills />
         <Projects />
-        <SideProjects />
         <Contact />
       </main>
       <Footer />

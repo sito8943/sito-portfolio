@@ -22,11 +22,13 @@ const About = () => {
   const showModal = (string) => {};
   const cards = [
     {
+      alt: "camera-and-trips",
       id: "me",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/fixed_7D2YpO3dK.jpg",
     },
     {
+      alt: "playing-piano",
       id: "freeTime",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:q-80/SitoPortafolio/piano_AR7MZhbNU.jpg",
@@ -60,9 +62,9 @@ const About = () => {
                     <Card
                       image={item.image}
                       onClick={() => showModal(item.id)}
-                      alt={t(`_pages:home.about.cards.${item.id}.alt`)}
-                      text={t(`_pages:home.about.cards.${item.id}.text`)}
-                      more={t(`_pages:home.about.cards.${item.id}.more`)}
+                      alt={item.alt}
+                      text={t(`_pages:home.about.${item.id}.text`)}
+                      more={t(`_pages:home.about.${item.id}.more`)}
                     />
                   </PrintAfter>
                 </li>

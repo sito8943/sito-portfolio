@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import loadable from "@loadable/component";
+import { useTranslation } from "react-i18next";
 
 import PropTypes from "prop-types";
 
@@ -30,6 +31,8 @@ const Button = loadable(() => import("../../components/NextUI/Button"));
 const Link = loadable(() => import("../../components/NextUI/Link"));
 
 const Modal = (props) => {
+  const { t } = useTranslation();
+
   const { onClose, bindings, title, content } = props;
 
   const images = {
@@ -106,13 +109,13 @@ const Modal = (props) => {
         <NextModalFooter>
           <Button
             id="close-modal"
-            aria-label={languageState.texts.AriaLabels.closeModal}
+            aria-label={t("_common:ariaLabels.closeModal")}
             auto
             flat
             color="error"
             onClick={onClose}
           >
-            {languageState.texts.Modal.Close}
+            {t("_common:buttons.close")}
           </Button>
         </NextModalFooter>
       </NextModal>

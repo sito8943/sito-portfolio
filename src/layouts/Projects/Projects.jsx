@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
+import { useTranslation } from "react-i18next";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -7,9 +8,6 @@ import { css } from "@emotion/css";
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
 
 // image
 import logistics from "../../assets/images/projects/wmt.jpg";
@@ -21,14 +19,35 @@ import FloatingIcons from "./components/FloatingIcons";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Projects = () => {
-  const { languageState } = useLanguage();
-
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
   const [visible, setVisible] = useState(false);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isInViewport) setVisible(true);
   }, [isInViewport]);
+
+  const projects = [
+    {
+      id: "m2g-fotos",
+      link: "https://m2g-fotos.web.app/",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/Untitled_xhFWRyelS.jpg",
+    },
+    {
+      id: "descubre-trinidad",
+      image:
+        "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+      link: "https://descubretrinidad.com",
+    },
+    {
+      id: "findylin",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
+      link: "https://findylin-369a7.web.app/",
+    },
+  ];
 
   return (
     <Section id="projects">
@@ -41,22 +60,22 @@ const Projects = () => {
           <Fragment>
             <PrintAfter delay={100} animation="appear">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
-                {languageState.texts.Projects.Title}
+                {t("_pages:home.projects.title")}
               </h2>
             </PrintAfter>
 
             <PrintAfter delay={200} animation="appear">
               <p className="text-center">
-                {languageState.texts.Projects.Text}
+                {t("_pages:home.projects.text")}
                 <a
                   name="github"
-                  aria-label={languageState.texts.AriaLabels.Github}
+                  aria-label={t("_pages:home.hero.social.github")}
                   href="https://github.com/SitoNumbis"
                   rel="noreferrer"
                   target="_blank"
                   className="m-auto hover:text-primary underline"
                 >
-                  {languageState.texts.Projects.SeeMore}
+                  {t("_common:buttons.see")}
                   <FontAwesomeIcon
                     icon={faExternalLink}
                     className={css({ marginLeft: "5px", fontSize: "15px" })}
@@ -65,16 +84,18 @@ const Projects = () => {
               </p>
             </PrintAfter>
             <ul className="flex items-center justify-center flex-wrap gap-5">
-              {languageState.texts.Projects.Projects.map((item, i) => (
+              {projects.map((item, i) => (
                 <li key={item.Title} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <Card
-                      link={item.Link}
-                      image={item.Image || logistics}
-                      alt={`${item.Title}-logo`}
-                      text={item.Title}
-                      more={item.Text}
-                      ariaLabel={item.ariaLabel}
+                      link={item.link}
+                      image={item.image || logistics}
+                      alt={`${item.title}-logo`}
+                      text={t(`_pages:home.projects.projects.${item.id}.title`)}
+                      more={t(`_pages:home.projects.projects.${item.id}.text`)}
+                      ariaLabel={`${t("_common:ariaLabels.linkTo")} ${
+                        item.link
+                      }`}
                     />
                   </PrintAfter>
                 </li>

@@ -16,7 +16,7 @@ import { scrollTo } from "../../utils/functions";
 import "./styles.css";
 
 const ToTop = () => {
-  const { t } = useTranslation;
+  const { t } = useTranslation();
 
   const [visible, setVisible] = useState(false);
   const [bottom, setBottom] = useState("15px");

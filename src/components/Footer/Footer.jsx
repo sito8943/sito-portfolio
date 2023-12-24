@@ -1,7 +1,5 @@
 import React from "react";
 
-import { scrollTo } from "some-javascript-utils/browser";
-
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

@@ -1,5 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,11 +11,8 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
-// contexts
-import { useLanguage } from "../contexts/LanguageProvider";
-
 const NotFound = () => {
-  const { languageState } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <div className="flex justify-center items-center flex-col w-full h-screen">
@@ -49,17 +47,17 @@ const NotFound = () => {
         <h2 className="text-8xl">4</h2>
       </div>
 
-      <p className="mb-10">{languageState.texts.NotFound.Body}</p>
+      <p className="mb-10">{t("_pages:notFound.body")}</p>
 
-      <a
-        href="/"
+      <Link
+        to="/"
         name="to-home"
-        aria-label={languageState.texts.AriaLabels.toHome}
+        aria-label={t("_common:ariaLabels.toHome")}
         className="button submit primary flex gap-2 items-center"
       >
         <FontAwesomeIcon icon={faHome} />
-        {languageState.texts.NotFound.GoHome}
-      </a>
+        {t("_pages:notFound.goHome")}
+      </Link>
     </div>
   );
 };
