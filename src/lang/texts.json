@@ -69,7 +69,7 @@
     },
     "Hero": {
       "Title": "Hola soy Sito",
-      "Text": "Soy desarrollador web para frontend y backend",
+      "Text": "Soy desarrollador web fullstack",
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
         {
@@ -446,7 +446,7 @@
     },
     "Hero": {
       "Title": "Hey I'm Sito",
-      "Text": "I'm a frontend and backend web developer",
+      "Text": "I'm a fullstack web developer",
       "Social": [
         { "Text": "Github", "Link": "https://github.com/SitoNumbis" },
         {
