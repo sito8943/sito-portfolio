@@ -20,8 +20,7 @@ function LazyImage(props) {
       className={`${!loaded ? "box" : null} ${props.className} `}
     >
       <img
-        onError={(err) => {
-          console.error(err);
+        onError={() => {
           setError(true);
         }}
         onLoad={() => setLoaded(true)}
