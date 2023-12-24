@@ -1,0 +1,182 @@
+{
+  "routes": {
+    "home": "Inico",
+    "features": "¿Qué hago?",
+    "about": "Acerca de Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "notFound": {
+    "goHome": "Ir al inicio",
+    "body": "No se encuentra la página"
+  },
+  "home": {
+    "hero": {
+      "title": "Hola soy Sito",
+      "text": "Soy desarrollador web fullstack",
+      "social": {
+        "github": "Github",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "meet": "Puedes encontrarme en:"
+    },
+    "about": {
+      "title": "Acerca de mí",
+      "subtitle": "pero mi nombre real es Carlos Andrés Mora González",
+      "me": {
+        "title": "Acerca de mí",
+        "text": "Me gusta programar 👨🏻‍💻",
+        "more": "y aprender cosas nuevas 📚",
+        "content": [
+          {
+            "Type": "Title",
+            "Content": "Programar es una de mayores pasiones"
+          },
+          {
+            "Type": "Text",
+            "Content": "Soy hijo de dos Masters en Ciencia de la Computación, así que la programación se mueve através de mis venas. Comencé a escribir mis primeras líneas de código al entrar en la universidad, estudiando Ciencia de la Computación, durante todo mi proceso de estudio estuve desarrollando aplicaciones de escritorio con Qt y C++."
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "qt-logo",
+                "Alt": "qt-logo",
+                "Link": "https://www.qt.io/"
+              },
+              {
+                "Source": "cpp-logo",
+                "Alt": "cpp-logo",
+                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+              }
+            ]
+          },
+          {
+            "Type": "Text",
+            "Content": "Al llegar a segundo año de la carrera un profesor me comentó que es posible el desarrollo de páginas web y servidores solo con JavaScript, en ese mismo instante busqué cursos para aprender dicho lenguaje. En la actualidad soy desarrollador de páginas web, usando herramientas como ReactJs, NodeJs, JavaScript, MaterialUi, NextUi, Firebase, MongoDB"
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "react-logo",
+                "Alt": "react-logo",
+                "Link": "https://reactjs.org/"
+              },
+              {
+                "Source": "node-logo",
+                "Alt": "node-logo",
+                "Link": "https://nodejs.org/"
+              },
+              {
+                "Source": "js-logo",
+                "Alt": "javascript-logo",
+                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+              },
+              {
+                "Source": "mui-logo",
+                "Alt": "materialui-logo",
+                "Link": "https://mui.com/"
+              },
+              {
+                "Source": "nextui-logo",
+                "Alt": "nextui-logo",
+                "Link": "https://nextui.org/"
+              },
+              {
+                "Source": "firebase-logo",
+                "Alt": "firebase-logo",
+                "Link": "https://firebase.google.com/"
+              },
+              {
+                "Source": "mongodb-logo",
+                "Alt": "mongodb-logo",
+                "Link": "https://www.mongodb.com/"
+              }
+            ]
+          }
+        ]
+      },
+      "freeTime": {
+        "title": "En mi tiempo libre",
+        "text": "Me gusta escuchar música 🎶",
+        "more": "y tocar al piano 🎹",
+        "content": [
+          {
+            "Type": "Title",
+            "Content": "La música y el piano"
+          },
+          {
+            "Type": "Text",
+            "Content": "Estudié música en la escuela comunitaria Lauro Fuentes, en Santiago de Cuba. Comencé estudiando piano por cuatro años, con un teclado eléctrico estudiaba en casa y me distraía, después tuve que cambiar para percusión."
+          }
+        ]
+      },
+      "design": {
+        "text": "Actualmente estudiando 📝",
+        "more": "diseño gráfico 🎨"
+      }
+    },
+    "features": {
+      "title": "Lo que hago",
+      "cards": {
+        "landingPage": {
+          "title": "Landing Page",
+          "body": "La landing page recae en que no puede ser una simple página de inicio sino que tiene el propósito de mostrarle a las personas tu producto y darte a conocer"
+        },
+        "dashboard": {
+          "title": "Panel administrativo",
+          "body": "A través de un panel de administración, los responsables de un sitio pueden modificar sus contenidos."
+        },
+        "blog": {
+          "title": "Blog",
+          "body": "Un blog es un sitio web que incluye, a modo de diario personal de su autor(es), contenidos de su interés, que suelen estar actualizados con frecuencia y a menudo son comentados por los lectores."
+        },
+        "ecommerce": {
+          "title": "Ecommerce",
+          "body": "El comercio electrónico o ecommerce es el comercio de bienes y servicios en Internet. Así como tiendas onlines de zapatos, componentes electrónicos, etc."
+        },
+        "restApi": {
+          "title": "REST API",
+          "body": "Una API REST es una API que se ajusta a los principios de diseño de REST, o estilo arquitectónico de transferencia de estado representacional."
+        }
+      }
+    },
+    "projects": {
+      "title": "Proyectos Profesionales",
+      "text": "Puedes pasarte por mi ",
+      "seeMore": "GitHub",
+      "projects": {
+        "m2g-fotos": {
+          "title": "M2G Fotos",
+          "text": "Sitio web oficial M2G Fotos. Estudio de Fotografía en Santiago de Cuba"
+        },
+        "descubre-trinidad": {
+          "title": "Descubre Trinidad",
+          "text": "Déjate llevar por el encanto de la Ciudad de Encuentros."
+        },
+        "findylin": {
+          "title": "Findylin",
+          "text": "Plataforma fácil e intuitiva para conectar a propietarios y compradores"
+        }
+      }
+    },
+    "skills": {
+      "title": "Mis Habilidades",
+      "body": "Como desarrollador de Frontend desarollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
+      "other": "Otras habilidades"
+    },
+    "contact": {
+      "title": "Ponerse en contacto",
+      "body": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!",
+      "button": "Di hola 👋"
+    }
+  },
+
+  "Footer": {
+    "SitoLib": "Documentación de "
+  }
+}
