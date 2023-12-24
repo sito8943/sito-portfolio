@@ -85,7 +85,7 @@ const Projects = () => {
             </PrintAfter>
             <ul className="flex items-center justify-center flex-wrap gap-5">
               {projects.map((item, i) => (
-                <li key={item.Title} className="md:w-full">
+                <li key={item.id} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <Card
                       link={item.link}
