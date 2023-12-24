@@ -31,13 +31,13 @@ const About = () => {
       alt: "playing-piano",
       id: "freeTime",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-298,h-150/SitoPortafolio/pianista-caucasico-tocando-acorde-enfoque-generado-ia_vmpjgpvnb.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-333,h-300/SitoPortafolio/pianista-caucasico-tocando-acorde-enfoque-generado-ia_vmpjgpvnb.jpg",
     },
     {
       alt: "design",
       id: "design",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-298,h-150/SitoPortafolio/logotipo-ser-concepto-diseno-inspiracion-creativa_G2gdINzZi.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-333,h-300/SitoPortafolio/logotipo-ser-concepto-diseno-inspiracion-creativa_G2gdINzZi.jpg",
     },
   ];
 
