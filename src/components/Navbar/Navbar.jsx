@@ -100,7 +100,7 @@ const SitoNavbar = () => {
               <li key={item}>
                 <a
                   href={`link-${item}`}
-                  id={item}
+                  id={`link-${item}`}
                   name={item}
                   aria-label={t("_common:ariaLabels.clickToSection").replace(
                     "[target]",
