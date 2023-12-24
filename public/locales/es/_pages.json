@@ -1,0 +1,321 @@
+{
+  "routes": {
+    "home": "Inico",
+    "features": "¿Qué hago?",
+    "about": "Acerca de Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "sideProjects": "Mis proyectos",
+    "contact": "Contacto"
+  },
+  "notFound": {
+    "GoHome": "Ir al inicio",
+    "Body": "No se encuentra la página"
+  },
+  "home": {
+    "hero": {
+      "title": "Hola soy Sito",
+      "text": "Soy desarrollador web fullstack",
+      "social": {
+        "github": "Github",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "meet": "Puedes encontrarme en:"
+    },
+    "about": {
+      "title": "Acerca de mí",
+      "subtitle": "pero mi nombre real es Carlos Andrés Mora González",
+      "me": {
+        "title": "Acerca de mí",
+        "text": "Me gusta programar 👨🏻‍💻",
+        "more": "y aprender cosas nuevas 📚",
+        "content": [
+          {
+            "Type": "Title",
+            "Content": "Programar es una de mayores pasiones"
+          },
+          {
+            "Type": "Text",
+            "Content": "Soy hijo de dos Masters en Ciencia de la Computación, así que la programación se mueve através de mis venas. Comencé a escribir mis primeras líneas de código al entrar en la universidad, estudiando Ciencia de la Computación, durante todo mi proceso de estudio estuve desarrollando aplicaciones de escritorio con Qt y C++."
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "qt-logo",
+                "Alt": "qt-logo",
+                "Link": "https://www.qt.io/"
+              },
+              {
+                "Source": "cpp-logo",
+                "Alt": "cpp-logo",
+                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+              }
+            ]
+          },
+          {
+            "Type": "Text",
+            "Content": "Al llegar a segundo año de la carrera un profesor me comentó que es posible el desarrollo de páginas web y servidores solo con JavaScript, en ese mismo instante busqué cursos para aprender dicho lenguaje. En la actualidad soy desarrollador de páginas web, usando herramientas como ReactJs, NodeJs, JavaScript, MaterialUi, NextUi, Firebase, MongoDB"
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "react-logo",
+                "Alt": "react-logo",
+                "Link": "https://reactjs.org/"
+              },
+              {
+                "Source": "node-logo",
+                "Alt": "node-logo",
+                "Link": "https://nodejs.org/"
+              },
+              {
+                "Source": "js-logo",
+                "Alt": "javascript-logo",
+                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+              },
+              {
+                "Source": "mui-logo",
+                "Alt": "materialui-logo",
+                "Link": "https://mui.com/"
+              },
+              {
+                "Source": "nextui-logo",
+                "Alt": "nextui-logo",
+                "Link": "https://nextui.org/"
+              },
+              {
+                "Source": "firebase-logo",
+                "Alt": "firebase-logo",
+                "Link": "https://firebase.google.com/"
+              },
+              {
+                "Source": "mongodb-logo",
+                "Alt": "mongodb-logo",
+                "Link": "https://www.mongodb.com/"
+              }
+            ]
+          }
+        ]
+      },
+      "freeTime": {
+        "title": "En mi tiempo libre",
+        "text": "Me gusta escuchar música 🎶",
+        "more": "y tocar al piano 🎹",
+        "content": [
+          {
+            "Type": "Title",
+            "Content": "La música y el piano"
+          },
+          {
+            "Type": "Text",
+            "Content": "Estudié música en la escuela comunitaria Lauro Fuentes, en Santiago de Cuba. Comencé estudiando piano por cuatro años, con un teclado eléctrico estudiaba en casa y me distraía, después tuve que cambiar para percusión."
+          }
+        ]
+      },
+      "cards": {
+        "me": {
+          "alt": "about",
+          "text": "Me gusta programar 👨🏻‍💻",
+          "more": "y aprender cosas nuevas 📚"
+        },
+        "freeTime": {
+          "alt": "free-time",
+          "text": "Me gusta escuchar música 🎶",
+          "more": "y tocar al piano 🎹"
+        }
+      }
+    },
+    "features": {
+      "title": "Lo que hago",
+      "cards": {
+        "landingPage": {
+          "title": "Landing Page",
+          "body": "La landing page recae en que no puede ser una simple página de inicio sino que tiene el propósito de mostrarle a las personas tu producto y darte a conocer"
+        },
+        "dashboard": {
+          "title": "Panel administrativo",
+          "body": "A través de un panel de administración, los responsables de un sitio pueden modificar sus contenidos."
+        },
+        "blog": {
+          "title": "Blog",
+          "body": "Un blog es un sitio web que incluye, a modo de diario personal de su autor(es), contenidos de su interés, que suelen estar actualizados con frecuencia y a menudo son comentados por los lectores."
+        },
+        "ecommerce": {
+          "title": "Ecommerce",
+          "body": "El comercio electrónico o ecommerce es el comercio de bienes y servicios en Internet. Así como tiendas onlines de zapatos, componentes electrónicos, etc."
+        },
+        "restApi": {
+          "title": "REST API",
+          "body": "Una API REST es una API que se ajusta a los principios de diseño de REST, o estilo arquitectónico de transferencia de estado representacional."
+        }
+      }
+    },
+    "contact": {
+      "title": "Ponerse en contacto",
+      "body": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!",
+      "button": "Di hola 👋"
+    }
+  },
+
+  "Footer": {
+    "SitoLib": "Documentación de "
+  },
+
+  "Projects": {
+    "Title": "Proyectos Profesionales",
+    "Text": "Puedes pasarte por mi ",
+    "SeeMore": "GitHub",
+    "Projects": [
+      {
+        "ariaLabel": "Cliquea para visitar el sitio web de M2G Fotos",
+        "Title": "M2G Fotos",
+        "Text": "Sitio web oficial M2G Fotos. Estudio de Fotografía en Santiago de Cuba",
+        "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/Untitled_xhFWRyelS.jpg",
+        "Link": "https://m2g-fotos.web.app/",
+        "See": "Ver"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio web de Alta Voz",
+        "Title": "Alta Voz",
+        "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
+        "Text": "Sitio web para comprar y escuchar música",
+        "Link": "https://alta-voz-d4a05.web.app/",
+        "See": "Ver"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio web de Descubre Trinidad",
+        "Title": "Descubre Trinidad",
+        "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
+        "Text": "Déjate llevar por el encanto de la Ciudad de Encuentros.",
+        "Link": "https://descubretrinidad.com",
+        "See": "Ver"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio web de Findylin",
+        "Title": "Findylin",
+        "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
+        "Link": "https://findylin-369a7.web.app/",
+        "Text": "Plataforma fácil e intuitiva para conectar a propietarios y compradores",
+        "See": "Ver"
+      }
+    ]
+  },
+  "SideProjects": {
+    "Title": "Mis proyectos",
+    "Text": "Todos los domingos decido crear side projects (proyectos paralelos)",
+    "CallMe": "Pequeños proyectos para experimentar nuevas herramientas",
+    "Projects": [
+      {
+        "ariaLabel": "Cliquea para visitar To-do Sito's Library",
+        "Title": "Sito's Library",
+        "Image": "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/2023-09-05%2019%2018%2041_i9Bnl1TvO.png?updatedAt=1693966839142",
+        "Text": "Sito's Library, app web stock de libros para una prueba técnica. ",
+        "Link": "https://sitos-library.web.app/",
+        "See": "Ver"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar To-do Pro",
+        "Title": "To-Do Pro",
+        "Text": "Crea, modifica y borra notas como un pro",
+        "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
+        "Alt": "todo",
+        "Link": "https://sitonumbis.github.io/todopro/",
+        "See": "Probar"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar Snake",
+        "Title": "Snake",
+        "Text": "Clásico juego de la serpiente que come manzanas",
+        "Link": "https://sitonumbis.github.io/tr:w-318,h-180/sito-react-snake/",
+        "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
+        "Alt": "sito-react-snake",
+        "See": "Probar"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar Mirror",
+        "Title": "Mirror",
+        "Text": "Encuentra las tarjetas iguales en el tablero",
+        "Link": "https://sitonumbis.github.io/sito-memory/",
+        "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
+        "Alt": "sito-mirror",
+        "See": "Probar"
+      }
+    ]
+  },
+  "Modal": {
+    "Close": "Cerrar"
+  },
+
+  "Skills": {
+    "Title": "Mis Habilidades",
+    "Body": "Como desarrollador de Frontend desarollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
+    "List": [
+      {
+        "ariaLabel": "Cliquea para visitar el sitio oficial de react js",
+        "Alt": "react-logo",
+        "Link": "https://reactjs.org/",
+        "Text": "ReactJs",
+        "Start": 2019,
+        "Age": " años de experiencia"
+      },
+      {
+        "Alt": "html-css-logo",
+        "ariaLabel": "Cliquea para saber más de html y css",
+        "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
+        "Text": "Html y Css",
+        "Start": 2019,
+        "Age": " años de experiencia"
+      },
+      {
+        "Alt": "javascript-logo",
+        "ariaLabel": "Cliquea para saber más de JavaScript",
+        "Link": "https://es.wikipedia.org/wiki/JavaScript",
+        "Text": "JavaScript",
+        "Start": 2019,
+        "Age": " años de experiencia"
+      }
+    ],
+    "Other": "Otras habilidades",
+    "Others": [
+      {
+        "ariaLabel": "Cliquea para visitar el sitio oficial de node js",
+        "Source": "node-logo",
+        "Alt": "node-logo",
+        "Link": "https://nodejs.org/",
+        "Text": "NodeJs"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio oficial de MUI",
+        "Source": "mui-logo",
+        "Alt": "materialui-logo",
+        "Link": "https://mui.com/",
+        "Text": "Material Ui"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio oficial de Next ui",
+        "Source": "nextui-logo",
+        "Alt": "nextui-logo",
+        "Link": "https://nextui.org/",
+        "Text": "NextUi"
+      },
+      {
+        "ariaLabel": "Cliquea para visitar el sitio oficial de Mongo DB",
+        "Source": "mongodb-logo",
+        "Alt": "mongodb-logo",
+        "Link": "https://www.mongodb.com/",
+        "Text": "MongoDB"
+      },
+      {
+        "Source": "firebase-logo",
+        "ariaLabel": "Cliquea para visitar el sitio oficial de Firebase",
+        "Alt": "firebase-logo",
+        "Link": "https://firebase.google.com/",
+        "Text": "Firebase"
+      }
+    ]
+  }
+}
