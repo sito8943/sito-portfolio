@@ -12,5 +12,11 @@
     "closeDrawer": "Close navigation drawer",
     "closeModal": "Close popup dialog",
     "openDrawer": "Open navigation drawer"
+  },
+  "buttons": {
+    "see": "See",
+    "close": "Close",
+    "seeMore": "See more",
+    "try": "Try"
   }
 }

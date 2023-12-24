@@ -12,5 +12,11 @@
     "closeDrawer": "Cerrar menú desplegable",
     "closeModal": "Cerrar dialogo emergente",
     "openDrawer": "Abrir menú desplegable"
+  },
+  "buttons": {
+    "see": "Ver",
+    "close": "Close",
+    "seeMore": "Ver más",
+    "try": "Probar"
   }
 }

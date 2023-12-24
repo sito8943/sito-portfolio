@@ -5,7 +5,6 @@
     "about": "About me",
     "skills": "Skills",
     "projects": "Projects",
-    "sideProjects": "Side projects",
     "contact": "Contact me"
   },
   "notFound": {
@@ -13,6 +12,17 @@
     "body": "Page not found"
   },
   "home": {
+    "hero": {
+      "title": "Hey I'm Sito",
+      "text": "I'm a fullstack web developer",
+      "social": {
+        "github": "Github",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "meet": "You can find me at:"
+    },
     "about": {
       "title": "About me",
       "subtitle": "but my real name is Carlos Andrés Mora González",
@@ -96,29 +106,15 @@
         "more": "and play the piano 🎹",
         "content": [
           {
-            "Type": "Title",
-            "Content": "Music and piano"
+            "type": "title",
+            "content": "Music and piano"
           },
           {
-            "Type": "Text",
-            "Content": "I studied music at the Lauro Fuentes community school in Santiago de Cuba. I started studying piano for four years, with an electric keyboard I studied at home and it distracted me, then I had to change to percussion."
+            "type": "text",
+            "content": "I studied music at the Lauro Fuentes community school in Santiago de Cuba. I started studying piano for four years, with an electric keyboard I studied at home and it distracted me, then I had to change to percussion."
           }
         ]
-      },
-      "cards": [
-        {
-          "Id": "Me",
-          "Alt": "about",
-          "Text": "I like programming 👨🏻‍💻",
-          "More": "and learn new things 📚"
-        },
-        {
-          "Id": "FreeTime",
-          "Alt": "free-time",
-          "Text": "I like listening to music 🎶",
-          "More": "and play the piano 🎹"
-        }
-      ]
+      }
     },
     "features": {
       "title": "Features",
@@ -145,6 +141,31 @@
         }
       }
     },
+    "projects": {
+      "title": "Professional Projects",
+      "text": "You can pass by me ",
+      "seeMore": "GitHub",
+      "projects": {
+        "m2g-fotos": {
+          "title": "M2G Fotos",
+          "text": "Official website M2G Photos. Photography Studio in Santiago de Cuba"
+        },
+        "descubre-trinidad": {
+          "title": "Descubre Trinidad",
+          "text": "Let yourself be carried away by the charm of the City of Encounters."
+        },
+        "findylin": {
+          "title": "Findylin",
+          "text": "Easy and intuitive platform to connect owners and buyers"
+        }
+      }
+    },
+    "skills": {
+      "title": "My skills",
+      "body": "As a Frontend developer building of web applications for [year] years I have enhanced the following skills:",
+      "age": " years of experience",
+      "other": "Other skills"
+    },
     "contact": {
       "title": "Get In Touch",
       "body": "Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
@@ -153,170 +174,5 @@
   },
   "footer": {
     "SitoLib": "Documentation"
-  },
-  "hero": {
-    "title": "Hey I'm Sito",
-    "text": "I'm a fullstack web developer",
-    "social": {
-      "github": "Github",
-      "instagram": "Instagram",
-      "twitter": "Twitter",
-      "linkedin": "LinkedIn"
-    },
-    "meet": "You can find me at:"
-  },
-
-  "Projects": {
-    "Title": "Professional Projects",
-    "Text": "You can pass by me ",
-    "SeeMore": "GitHub",
-    "Projects": [
-      {
-        "ariaLabel": "Click to visit the website of M2G Fotos",
-        "Title": "M2G Fotos",
-        "Text": "Official website M2G Photos. Photography Studio in Santiago de Cuba",
-        "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/Untitled_xhFWRyelS.jpg",
-        "Link": "https://m2g-fotos.web.app/",
-        "See": "See"
-      },
-      {
-        "ariaLabel": "Click to visit the website of Alta Voz",
-        "Title": "Alta Voz",
-        "Image": "https://ik.imagekit.io/lgqp0wffgtp/branding_rDoPlFfFC.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1669779412527",
-        "Text": "Website to buy and listen to music",
-        "Link": "https://alta-voz-d4a05.web.app/",
-        "See": "See"
-      },
-      {
-        "ariaLabel": "Click to visit the website of Descubre Trinidad",
-        "Title": "Descubre Trinidad",
-        "Image": "https://ik.imagekit.io/tx6beroitnm/tr:w-318,h-180/logo512_CvJ7zDrrn.png",
-        "Text": "Let yourself be carried away by the charm of the City of Encounters.",
-        "Link": "https://descubretrinidad.com",
-        "See": "see"
-      },
-      {
-        "ariaLabel": "Click to visit the website of Findylin",
-        "Title": "Findylin",
-        "Image": "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
-        "Link": "https://findylin-369a7.web.app/",
-        "Text": "Easy and intuitive platform to connect owners and buyers",
-        "See": "See"
-      }
-    ]
-  },
-  "SideProjects": {
-    "Title": "My projects",
-    "Text": "Every Sunday I decide to create side projects (parallel projects)",
-    "CallMe": "Small projects to experience new tools",
-    "Projects": [
-      {
-        "ariaLabel": "Click to visit the website of Sito's Library",
-        "Title": "Sito's Library",
-        "Image": "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/2023-09-05%2019%2018%2041_i9Bnl1TvO.png?updatedAt=1693966839142",
-        "Text": "Sito's Library, web app stock of books for a technical test.",
-        "Link": "https://sitos-library.web.app/",
-        "See": "See"
-      },
-      {
-        "ariaLabel": "Click to visit the website of To-do Pro",
-        "Title": "To-Do Pro",
-        "Text": "Create, edit and delete your notes like a pro",
-        "Image": "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/logo_brnJOjqhv.jpg?updatedAt=1685622025623",
-        "Alt": "todo",
-        "Link": "https://sitonumbis.github.io/todopro/",
-        "See": "Try"
-      },
-      {
-        "ariaLabel": "Click to visit the website of Snake",
-        "Title": "Snake",
-        "Text": "Classic game of the snake that eats apples",
-        "Link": "https://sitonumbis.github.io/sito-react-snake/",
-        "Image": "https://repository-images.githubusercontent.com/519785821/099ce8ae-3f47-4c4e-945a-f265c087efe7",
-        "Alt": "sito-react-snake",
-        "See": "Try"
-      },
-      {
-        "ariaLabel": "Click to visit the website of Mirror",
-        "Title": "Mirror",
-        "Text": "Find the same cards on the board",
-        "Link": "https://sitonumbis.github.io/sito-memory/",
-        "Image": "https://repository-images.githubusercontent.com/487353653/b5b8e2e8-8bbb-4f8b-ab03-7f729abb96b5",
-        "Alt": "sito-mirror",
-        "See": "Try"
-      }
-    ]
-  },
-  "Modal": {
-    "Close": "Close"
-  },
-
-  "Skills": {
-    "Title": "My skills",
-    "Body": "As a Frontend developer building of web applications for [year] years I have enhanced the following skills:",
-    "List": [
-      {
-        "Alt": "react-logo",
-        "ariaLabel": "Click to visit ReactJs official site",
-        "Link": "https://reactjs.org/",
-        "Text": "ReactJs",
-        "Start": 2019,
-        "Age": " years of experience"
-      },
-      {
-        "Alt": "html-css-logo",
-        "ariaLabel": "Click to know more about Html y CSS",
-        "Link": "https://www.w3.org/Style/Examples/011/firstcss.es.html",
-        "Text": "Html y Css",
-        "Start": 2019,
-        "Age": " years of experience"
-      },
-      {
-        "Alt": "javascript-logo",
-        "ariaLabel": "Click to know more about JavaScript",
-        "Link": "https://es.wikipedia.org/wiki/JavaScript",
-        "Text": "JavaScript",
-        "Start": 2019,
-        "Age": " years of experience"
-      }
-    ],
-    "Other": "Other skills",
-    "Others": [
-      {
-        "ariaLabel": "Click to visit NodeJs official site",
-        "Source": "node-logo",
-        "Alt": "node-logo",
-        "Link": "https://nodejs.org/",
-        "Text": "NodeJs"
-      },
-      {
-        "Source": "mui-logo",
-        "ariaLabel": "Click to visit MUI official site",
-        "Alt": "materialui-logo",
-        "Link": "https://mui.com/",
-        "Text": "Material Ui"
-      },
-      {
-        "Source": "nextui-logo",
-        "ariaLabel": "Click to visit NextUi official site",
-        "Alt": "nextui-logo",
-        "Link": "https://nextui.org/",
-        "Text": "NextUi"
-      },
-      {
-        "Source": "mongodb-logo",
-        "ariaLabel": "Click to visit Mongo DB official site",
-        "Alt": "mongodb-logo",
-        "Link": "https://www.mongodb.com/",
-        "Text": "MongoDB"
-      },
-      {
-        "Source": "firebase-logo",
-        "Alt": "firebase-logo",
-        "ariaLabel": "Click to visit Firebase official site",
-        "Link": "https://firebase.google.com/",
-        "Text": "Firebase"
-      }
-    ]
   }
 }
