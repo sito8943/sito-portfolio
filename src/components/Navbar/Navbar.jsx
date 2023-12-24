@@ -6,7 +6,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useScreenWidth } from "use-screen-width";
 import { useTranslation } from "react-i18next";
 
-import { scrollTo } from "some-javascript-utils";
+import { scrollTo } from "some-javascript-utils/browser";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,7 +46,6 @@ const SitoNavbar = () => {
       let offset = section.offsetTop;
       let height = section.offsetHeight;
       let id = section.getAttribute("id");
-
       if (top >= offset && top < offset + height) {
         setActiveLink(`#${id}`);
       }
@@ -99,7 +98,7 @@ const SitoNavbar = () => {
             {links.map((item) => (
               <li key={item}>
                 <a
-                  href={`link-${item}`}
+                  href={`#${item}`}
                   id={`link-${item}`}
                   name={item}
                   aria-label={t("_common:ariaLabels.clickToSection").replace(
@@ -111,6 +110,9 @@ const SitoNavbar = () => {
                       ? "secondary submit"
                       : "primary link"
                   } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
+                  onClick={() =>
+                    scrollTo(document.getElementById(item)?.offsetTop)
+                  }
                 >
                   {t(`_pages:routes.${item}`)}
                 </a>

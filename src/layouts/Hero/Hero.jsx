@@ -48,7 +48,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <Section id="hero">
+    <Section id="home">
       <FloatingIcons />
       <div className="flex items-center justify-start flex-col gap-4">
         <PrintAfter delay={100} animation="appear">
