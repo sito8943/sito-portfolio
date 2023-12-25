@@ -5,9 +5,6 @@ import { scrollTo } from "some-javascript-utils/browser";
 // @emotion/css
 import { css } from "@emotion/css";
 
-// @sito/ui
-import { ToTop } from "@sito/ui";
-
 // own components
 import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
@@ -20,6 +17,7 @@ import Skills from "../layouts/Skills/Skills";
 import Projects from "../layouts/Projects/Projects";
 import Contact from "../layouts/Contact/Contact";
 import Footer from "../components/Footer/Footer";
+import ToTop from "../components/ToTop/ToTop";
 
 const Home = () => {
   const location = useLocation();
