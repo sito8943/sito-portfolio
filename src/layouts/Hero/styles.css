@@ -17,15 +17,6 @@
 .hero-social a {
   font-size: 30px;
   margin-right: 10px;
-  transition: all 500ms ease;
-}
-
-.hero-social a svg {
-  font-size: 30px;
-}
-
-.hero-social a:hover {
-  transform: translateY(-5px);
 }
 
 .hero-social div {

@@ -1,6 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
+// @sito/ui
+import { useStyle } from "@sito/ui";
+
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +28,8 @@ import Section from "../../components/Section/Section";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Hero = () => {
+  const { colors } = useStyle();
+
   const socials = [
     {
       text: "github",
@@ -63,13 +71,13 @@ const Hero = () => {
           <a
             href="#projects"
             name="to-projects"
-            className="icon-button primary submit hover:-translate-y-1"
+            className="icon-button button primary filled scale-100 hover:scale-110"
             aria-label={t("_common:ariaLabels.toProjects")}
             onClick={() =>
               scrollTo(document.getElementById("#projects")?.offsetTop)
             }
           >
-            <FontAwesomeIcon icon={faArrowDown} />
+            <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
           </a>
         </PrintAfter>
         <PrintAfter delay={400} animation="appear">
@@ -85,7 +93,11 @@ const Hero = () => {
                     rel="noreferrer"
                     target="_blank"
                     name={item.text}
-                    className="primary icon-button !text-white"
+                    className={`transition ${css({
+                      "&:hover": {
+                        color: colors.primary.light,
+                      },
+                    })}`}
                     aria-label={`${t("_common:ariaLabels.linkTo")} ${
                       item.text
                     }`}
