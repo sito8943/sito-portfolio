@@ -1,7 +1,7 @@
 import React from "react";
 
-// components
-import LazyImage from "../../../components/LazyImage/LazyImage";
+// @sito/ui
+import { Image as LazyImage } from "@sito/ui";
 
 function Card({ link, image, alt, text, more, ariaLabel }) {
   return (

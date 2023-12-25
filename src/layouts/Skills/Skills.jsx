@@ -2,8 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
-// @emotion/css
-import { PrintAfter } from "@sito/ui";
+// @sito/ui
+import { PrintAfter, Image as LazyImage } from "@sito/ui";
 
 import Tippy from "@tippyjs/react";
 
@@ -21,7 +21,6 @@ import firebase from "../../assets/images/logos/firebase.webp";
 // components
 import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
-import LazyImage from "../../components/LazyImage/LazyImage";
 
 const Skills = () => {
   const { t } = useTranslation();

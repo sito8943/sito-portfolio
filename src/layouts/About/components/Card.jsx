@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// components
-import LazyImage from "../../../components/LazyImage/LazyImage";
+// @sito/ui
+import { Image as LazyImage } from "@sito/ui";
 
 function Card({ image, alt, onClick, text, more }) {
   const { t } = useTranslation();

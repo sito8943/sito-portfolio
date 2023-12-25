@@ -3,13 +3,12 @@ import { useTranslation } from "react-i18next";
 import useIsInViewport from "use-is-in-viewport";
 
 // @sito/ui
-import { PrintAfter } from "@sito/ui";
+import { PrintAfter, Image as LazyImage } from "@sito/ui";
 
 // components
 import Card from "./components/Card";
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
-import LazyImage from "../../components/LazyImage/LazyImage";
 
 const About = () => {
   const { t } = useTranslation();
