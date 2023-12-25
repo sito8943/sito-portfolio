@@ -75,7 +75,7 @@ const OffCanvas = (props) => {
         <nav className="pt-10 flex flex-col">
           {visible ? (
             <PrintAfter delay={150} animation="appear">
-              <h1 className="font-bold text-4xl text-primary">
+              <h1 className="font-bold text-4xl text-primary ml-5">
                 <a
                   href="#"
                   name="logo"
@@ -91,22 +91,22 @@ const OffCanvas = (props) => {
           <ul className="flex flex-col mt-5">
             {visible
               ? links.map((item, i) => (
-                  <li key={item.id} className="w-full">
+                  <li key={item} className="w-full">
                     <PrintAfter delay={(i + 2) * 150} animation="appear">
                       <a
-                        href={`link-${item.id}`}
-                        id={item.id}
-                        name={item.id}
+                        href={item}
+                        id={`link-${item}`}
+                        name={item}
                         aria-label={t(
                           "_common:ariaLabels.clickToSection"
-                        ).replace("[target]", t(`_pages:routes.${item.id}`))}
+                        ).replace("[target]", t(`_pages:routes.${item}`))}
                         className={`link w-full p-5 inline-block ${
-                          item.id === "contact" && activeLink !== `#${item.id}`
+                          item === "contact" && activeLink !== `#${item}`
                             ? "secondary"
                             : "primary"
-                        } ${activeLink === `#${item.id}` ? "!bg-primary" : ""}`}
+                        } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
                       >
-                        {item.label}
+                        {t(`_pages:routes.${item}`)}
                       </a>
                     </PrintAfter>
                   </li>
