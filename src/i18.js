@@ -1,13 +1,17 @@
 import i18n from "i18next";
-import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import { namespaces } from "./lang/nameSpaces";
 
+// resources
+// es
+import esCommon from "./lang/es/_common.json";
+import esPages from "./lang/es/_pages.json";
+// en
+import enCommon from "./lang/en/_common.json";
+import enPages from "./lang/en/_pages.json";
+
 i18n
-  // load translation using http -> see /public/locales
-  // learn more: https://github.com/i18next/i18next-http-backend
-  .use(Backend)
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
   .use(LanguageDetector)
@@ -18,12 +22,17 @@ i18n
   .init({
     fallbackLng: "en",
     supportedLngs: ["en", "es"],
-    debug: true,
     ns: namespaces,
     defaultNS: "_pages",
-    backend: {
-      // for all available options read the backend's repository readme file
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    resources: {
+      en: {
+        _common: enCommon,
+        _pages: enPages,
+      },
+      es: {
+        _common: esCommon,
+        _pages: esPages,
+      },
     },
   });
 
