@@ -79,7 +79,7 @@ const OffCanvas = (props) => {
                 <a
                   href="#"
                   name="logo"
-                  className="text-plight"
+                  className="text-plight logo"
                   aria-label={t("_common:ariaLabels.toHome")}
                   onClick={() => scrollTo(0)}
                 >
@@ -94,17 +94,17 @@ const OffCanvas = (props) => {
                   <li key={item} className="w-full">
                     <PrintAfter delay={(i + 2) * 150} animation="appear">
                       <a
-                        href={item}
+                        href={`#${item}`}
                         id={`link-${item}`}
                         name={item}
                         aria-label={t(
                           "_common:ariaLabels.clickToSection"
                         ).replace("[target]", t(`_pages:routes.${item}`))}
-                        className={`link w-full p-5 inline-block ${
+                        className={`button w-full !rounded-[0] p-5 inline-block ${
                           item === "contact" && activeLink !== `#${item}`
                             ? "secondary"
-                            : "primary"
-                        } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
+                            : "primary link"
+                        } ${activeLink === `#${item}` ? "filled" : ""}`}
                       >
                         {t(`_pages:routes.${item}`)}
                       </a>

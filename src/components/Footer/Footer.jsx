@@ -44,7 +44,7 @@ const Footer = () => {
     >
       <div className="w-[90%] flex items-center justify-between flex-wrap">
         <div className="flex">
-          <p className="font-bold">{`<Sito /> © ${new Date().getFullYear()}`}</p>
+          <p className="logo">{`<Sito /> © ${new Date().getFullYear()}`}</p>
         </div>
         <div className="flex sm:gap-1 gap-3">
           {socials.map((item, i) => (

@@ -86,7 +86,7 @@ const SitoNavbar = () => {
           <a
             href="#"
             name="logo"
-            className="text-plight"
+            className="text-plight logo"
             aria-label={t("_common:ariaLabels.toHome")}
             onClick={() => scrollTo(0)}
           >
@@ -107,9 +107,9 @@ const SitoNavbar = () => {
                   )}
                   className={`button ${
                     item === "contact" && activeLink !== `#${item}`
-                      ? "secondary submit"
+                      ? "secondary filled"
                       : "primary link"
-                  } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
+                  } ${activeLink === `#${item}` ? "filled" : ""}`}
                   onClick={() =>
                     scrollTo(document.getElementById(item)?.offsetTop)
                   }
