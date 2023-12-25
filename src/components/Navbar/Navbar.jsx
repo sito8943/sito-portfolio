@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import React, { useState, useEffect, useCallback } from "react";
 import { useScreenWidth } from "use-screen-width";
 import { useTranslation } from "react-i18next";
+import loadable from "@loadable/component";
 
 import { scrollTo } from "some-javascript-utils/browser";
 
@@ -16,9 +17,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
 // own components
-import OffCanvas from "../OffCanvas/OffCanvas";
+const OffCanvas = loadable(() => import("../OffCanvas/OffCanvas"));
 
-const SitoNavbar = () => {
+const Navbar = () => {
   const location = useLocation();
 
   const { t } = useTranslation();
@@ -134,4 +135,4 @@ const SitoNavbar = () => {
   );
 };
 
-export default SitoNavbar;
+export default Navbar;

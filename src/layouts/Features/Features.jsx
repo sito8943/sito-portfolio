@@ -2,13 +2,15 @@ import React, { Fragment, useEffect, useState } from "react";
 import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
+// @sito/ui
+import { PrintAfter } from "@sito/ui";
+
 // styles
 import "./styles.css";
 
 // components
 import Card from "./components/Card";
 import Section from "../../components/Section/Section";
-import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 function Features() {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });

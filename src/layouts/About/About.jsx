@@ -2,12 +2,14 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useIsInViewport from "use-is-in-viewport";
 
+// @sito/ui
+import { PrintAfter } from "@sito/ui";
+
 // components
 import Card from "./components/Card";
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 import LazyImage from "../../components/LazyImage/LazyImage";
-import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const About = () => {
   const { t } = useTranslation();

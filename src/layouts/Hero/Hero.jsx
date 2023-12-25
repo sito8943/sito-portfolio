@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { css } from "@emotion/css";
 
 // @sito/ui
-import { useStyle } from "@sito/ui";
+import { useStyle, PrintAfter } from "@sito/ui";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,6 @@ import "./styles.css";
 // components
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
-import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Hero = () => {
   const { colors } = useStyle();

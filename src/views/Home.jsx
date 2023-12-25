@@ -2,10 +2,15 @@ import React, { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scrollTo } from "some-javascript-utils/browser";
 
+// @emotion/css
+import { css } from "@emotion/css";
+
+// @sito/ui
+import { ToTop } from "@sito/ui";
+
 // own components
 import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
-import ToTop from "../components/ToTop/ToTop";
 
 // layouts
 import Hero from "../layouts/Hero/Hero";
@@ -28,7 +33,14 @@ const Home = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <ToTop />
+      <ToTop
+        shape="filled"
+        className={css({
+          svg: {
+            marginLeft: "-1px",
+          },
+        })}
+      />
       <Navbar />
       <main>
         <Hero />

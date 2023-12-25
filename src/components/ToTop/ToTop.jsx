@@ -12,9 +12,6 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 // utils
 import { scrollTo } from "../../utils/functions";
 
-// styles
-import "./styles.css";
-
 const ToTop = () => {
   const { t } = useTranslation();
 

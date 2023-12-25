@@ -2,9 +2,6 @@ import React, { Fragment } from "react";
 
 import PropTypes from "prop-types";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 function Section(props) {
   const { id, background, children } = props;
 

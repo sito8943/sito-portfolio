@@ -1,5 +1,8 @@
 import React from "react";
 
+// @sito/ui
+import { useStyle } from "@sito/ui";
+
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,6 +17,8 @@ import {
 import { css } from "@emotion/css";
 
 const Footer = () => {
+  const { colors } = useStyle();
+
   const socials = [
     {
       text: "github",
@@ -42,11 +47,11 @@ const Footer = () => {
       id="footer"
       className="items-center justify-center flex px-3 min-h-[50px] py-2 bg-dark-background flex-wrap"
     >
-      <div className="w-[90%] flex items-center justify-between flex-wrap">
+      <div className="w-[90%] flex items-center justify-between flex-wrap gap-y-5 sm:my-5">
         <div className="flex">
           <p className="logo">{`<Sito /> © ${new Date().getFullYear()}`}</p>
         </div>
-        <div className="flex sm:gap-1 gap-3">
+        <div className="flex items-center sm:gap-3 gap-5">
           {socials.map((item, i) => (
             <a
               key={item.link}
@@ -55,7 +60,11 @@ const Footer = () => {
               target="_blank"
               name={item.text}
               aria-label={item.text}
-              className="primary icon-button !text-white"
+              className={`transition ${css({
+                "&:hover": {
+                  color: colors.primary.light,
+                },
+              })}`}
             >
               <FontAwesomeIcon
                 className={css({ fontSize: "25px" })}

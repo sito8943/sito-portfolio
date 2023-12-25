@@ -3,6 +3,9 @@ import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
 // @emotion/css
+import { PrintAfter } from "@sito/ui";
+
+// @emotion/css
 import { css } from "@emotion/css";
 
 // @fortawesome
@@ -16,7 +19,6 @@ import logistics from "../../assets/images/projects/wmt.jpg";
 import Card from "./components/Card";
 import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
-import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Projects = () => {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });

@@ -3,6 +3,9 @@ import React, { useCallback, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+// @sito/ui
+import { PrintAfter } from "@sito/ui";
+
 import PropTypes from "prop-types";
 
 // @emotion/css
@@ -10,9 +13,6 @@ import PropTypes from "prop-types";
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-
-// components
-import PrintAfter from "../PrintAfter/PrintAfter";
 
 const OffCanvas = (props) => {
   const location = useLocation();

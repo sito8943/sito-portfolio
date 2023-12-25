@@ -2,10 +2,12 @@ import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
+// @sito/ui
+import { PrintAfter } from "@sito/ui";
+
 // components
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
-import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Contact = () => {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
@@ -43,7 +45,7 @@ const Contact = () => {
                 href="mailto:sito8943@gmail.com"
                 target="blank"
                 rel="noreferrer"
-                className="primary button submit"
+                className="primary button filled"
               >
                 {t("_pages:home.contact.button")}
               </a>
