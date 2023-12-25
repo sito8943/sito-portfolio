@@ -1,19 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // components
 import LazyImage from "../../../components/LazyImage/LazyImage";
 
-// contexts
-import { useLanguage } from "../../../contexts/LanguageProvider";
-
 function Card({ image, alt, onClick, text, more }) {
-  const { languageState } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <article
       name="clickable-card"
       onClick={onClick}
-      aria-label={languageState.texts.AriaLabels.clickToDialog}
+      aria-label={t("_common:ariaLabels.clickToDialog")}
       className="hover:-translate-y-2 hover:shadow-lg hover:shadow-sdark transition duration-300 bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px] border-placeholder-dark"
     >
       <LazyImage

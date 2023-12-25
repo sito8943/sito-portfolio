@@ -1,10 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import useIsInViewport from "use-is-in-viewport";
+import { useTranslation } from "react-i18next";
 
 import Tippy from "@tippyjs/react";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
 
 // styles
 import "./styles.css";
@@ -24,7 +22,7 @@ import LazyImage from "../../components/LazyImage/LazyImage";
 import PrintAfter from "../../components/PrintAfter/PrintAfter";
 
 const Skills = () => {
-  const { languageState } = useLanguage();
+  const { t } = useTranslation();
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
   const [visible, setVisible] = useState(false);
@@ -33,12 +31,41 @@ const Skills = () => {
     if (isInViewport) setVisible(true);
   }, [isInViewport]);
 
-  const images = [
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/HTMLCSS_63L4ZaQCk.jpg?updatedAt=1690853306821",
-    "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_5UTJufCe3.jpg?updatedAt=1690852899191",
+  const skills = [
+    {
+      id: "React",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
+      link: "https://reactjs.org/",
+      start: 2019,
+    },
+    {
+      id: "Html-Css",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/HTMLCSS_63L4ZaQCk.jpg?updatedAt=1690853306821",
+      link: "https://www.w3.org/Style/Examples/011/firstcss.es.html",
+      start: 2019,
+    },
+    {
+      id: "JavaScript",
+      start: 2019,
+      link: "https://es.wikipedia.org/wiki/JavaScript",
+      image:
+        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_5UTJufCe3.jpg?updatedAt=1690852899191",
+    },
   ];
-  const logos = [node, mui, nextui, mongodb, firebase];
+
+  const secondaries = [
+    {
+      id: "NodeJs",
+      image: node,
+      link: "https://nodejs.org/",
+    },
+    { id: "Material UI", image: mui, link: "https://mui.com/" },
+    { id: "Next UI", image: nextui, link: "https://nextui.org/" },
+    { id: "Mongo DB", image: mongodb, link: "https://www.mongodb.com/" },
+    { id: "Firebase", image: firebase, link: "https://firebase.google.com/" },
+  ];
 
   const years = (start) => {
     const year = new Date().getFullYear();
@@ -56,31 +83,31 @@ const Skills = () => {
           <Fragment>
             <PrintAfter delay={100} animation="appear">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
-                {languageState.texts.Skills.Title}
+                {t("_pages:home.skills.title")}
               </h2>
             </PrintAfter>
             <PrintAfter delay={200} animation="appear">
-              <p className="text-center mb-5">
-                {languageState.texts.Skills.Body.replace(
+              <p className="text-center mb-5 mx-auto w-[80%]">
+                {t("_pages:home.skills.body").replace(
                   "[year]",
                   String(`${years(2019)}`)
                 )}
               </p>
             </PrintAfter>
             <ul className="flex items-center justify-center flex-wrap gap-5">
-              {languageState.texts.Skills.List.map((item, i) => (
+              {skills.map((item, i) => (
                 <li key={i}>
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <a
-                      name={item.text}
+                      name={item.id}
                       aria-label={item.ariaLabel}
-                      href={item.Link}
+                      href={item.link}
                       target="blank"
                       rel="noreferrer"
                     >
                       <LazyImage
-                        src={images[i]}
-                        alt={item.Alt}
+                        src={item.image}
+                        alt={item.id}
                         className="skill"
                         height={120}
                         width={120}
@@ -92,25 +119,27 @@ const Skills = () => {
             </ul>
             <PrintAfter delay={1000} animation="appear">
               <h3 className="text-3xl font-bold text-center">
-                {languageState.texts.Skills.Other}
+                {t("_pages:home.skills.other")}
               </h3>
             </PrintAfter>
             <ul className="flex items-center justify-center flex-wrap gap-5">
-              {languageState.texts.Skills.Others.map((jtem, j) => (
+              {secondaries.map((jtem, j) => (
                 <li key={j}>
                   <PrintAfter delay={(j + 1) * 200 + 1000} animation="appear">
-                    <Tippy content={jtem.Text}>
+                    <Tippy content={jtem.id}>
                       <a
-                        name={jtem.text}
-                        aria-label={jtem.ariaLabel}
-                        href={jtem.Link}
+                        name={jtem.id}
+                        aria-label={`${t("_common:ariaLabels.linkTo")} ${
+                          jtem.link
+                        }`}
+                        href={jtem.link}
                         target="_blank"
                         rel="noopener"
                       >
                         <LazyImage
                           className="w-10 h-10 rounded-full"
-                          src={logos[j]}
-                          alt={jtem.Alt}
+                          src={jtem.image}
+                          alt={jtem.id}
                         />
                       </a>
                     </Tippy>

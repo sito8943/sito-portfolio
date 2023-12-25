@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import PropTypes from "prop-types";
 
@@ -10,17 +11,15 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-
 // components
 import PrintAfter from "../PrintAfter/PrintAfter";
 
 const OffCanvas = (props) => {
   const location = useLocation();
-  const { visible, handleClose } = props;
 
-  const { languageState } = useLanguage();
+  const { t } = useTranslation();
+
+  const { visible, links, handleClose } = props;
 
   const [activeLink, setActiveLink] = useState("#hero");
 
@@ -41,7 +40,7 @@ const OffCanvas = (props) => {
         setActiveLink(`#${id}`);
       }
     });
-  }, [setActiveLink, languageState]);
+  }, [setActiveLink]);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -53,7 +52,7 @@ const OffCanvas = (props) => {
   return (
     <div
       name="hide-drawer"
-      aria-label={languageState.texts.AriaLabels.closeDrawer}
+      aria-label={t("_common:ariaLabels.closeDrawer")}
       onClick={handleClose}
       className={`top-0 left-0 h-screen fixed w-full bg-dark-drawer-background transition duration-300 ${
         visible ? "opacity-1" : "opacity-0 pointer-events-none"
@@ -67,7 +66,7 @@ const OffCanvas = (props) => {
         <button
           type="button"
           name="close-drawer"
-          aria-label={languageState.texts.AriaLabels.closeDrawer}
+          aria-label={t("_common:ariaLabels.closeDrawer")}
           className="icon-button top-1 right-1 absolute hover:text-error"
           onClick={handleClose}
         >
@@ -76,12 +75,12 @@ const OffCanvas = (props) => {
         <nav className="pt-10 flex flex-col">
           {visible ? (
             <PrintAfter delay={150} animation="appear">
-              <h1 className="font-bold text-4xl text-primary">
+              <h1 className="font-bold text-4xl text-primary ml-5">
                 <a
                   href="#"
                   name="logo"
                   className="text-plight"
-                  aria-label={languageState.texts.AriaLabels.toHome}
+                  aria-label={t("_common:ariaLabels.toHome")}
                   onClick={() => scrollTo(0)}
                 >
                   {"<Sito />"}
@@ -91,21 +90,23 @@ const OffCanvas = (props) => {
           ) : null}
           <ul className="flex flex-col mt-5">
             {visible
-              ? languageState.texts.Navbar.Links.map((item, i) => (
-                  <li key={item.id} className="w-full">
+              ? links.map((item, i) => (
+                  <li key={item} className="w-full">
                     <PrintAfter delay={(i + 2) * 150} animation="appear">
                       <a
-                        href={item.to}
-                        id={item.id}
-                        name={item.id}
-                        aria-label={item.ariaLabel}
+                        href={item}
+                        id={`link-${item}`}
+                        name={item}
+                        aria-label={t(
+                          "_common:ariaLabels.clickToSection"
+                        ).replace("[target]", t(`_pages:routes.${item}`))}
                         className={`link w-full p-5 inline-block ${
-                          item.primary && activeLink !== item.to
+                          item === "contact" && activeLink !== `#${item}`
                             ? "secondary"
                             : "primary"
-                        } ${activeLink === item.to ? "!bg-primary" : ""}`}
+                        } ${activeLink === `#${item}` ? "!bg-primary" : ""}`}
                       >
-                        {item.label}
+                        {t(`_pages:routes.${item}`)}
                       </a>
                     </PrintAfter>
                   </li>

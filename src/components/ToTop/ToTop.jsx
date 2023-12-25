@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 import { css } from "@emotion/css";
 
@@ -11,16 +12,11 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 // utils
 import { scrollTo } from "../../utils/functions";
 
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-
 // styles
 import "./styles.css";
 
-const ToTop = (props) => {
-  const { footerVisible } = props;
-
-  const { languageState } = useLanguage();
+const ToTop = () => {
+  const { t } = useTranslation();
 
   const [visible, setVisible] = useState(false);
   const [bottom, setBottom] = useState("15px");
@@ -61,7 +57,7 @@ const ToTop = (props) => {
   return (
     <button
       name="to-top"
-      aria-label={languageState.texts.AriaLabels.toTop}
+      aria-label={t("_common:ariaLabels.toTop")}
       onClick={() => scrollTo(0)}
       className={`${
         visible ? "scale-[1]" : "scale-0 pointer-events-none"

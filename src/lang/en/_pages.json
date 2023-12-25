@@ -1,0 +1,182 @@
+{
+  "routes": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact me"
+  },
+  "notFound": {
+    "goHome": "Go Home",
+    "body": "Page not found"
+  },
+  "home": {
+    "hero": {
+      "title": "Hey I'm Sito",
+      "text": "I'm a fullstack web developer",
+      "social": {
+        "github": "Github",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "meet": "You can find me at:"
+    },
+    "about": {
+      "title": "About me",
+      "subtitle": "but my real name is Carlos Andrés Mora González",
+      "me": {
+        "title": "About me",
+        "text": "I like programming 👨🏻‍💻",
+        "more": "and learn new things 📚",
+        "content": [
+          {
+            "Type": "Title",
+            "Content": "Programming is one of my greatest passions"
+          },
+          {
+            "Type": "Text",
+            "Content": "I am the son of two Masters in Computer Science, so programming runs through my veins. I started writing my first lines of code when I entered university, studying Computer Science, during my entire study process I was developing desktop applications with Qt and C++."
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "qt-logo",
+                "Alt": "qt-logo",
+                "Link": "https://www.qt.io/"
+              },
+              {
+                "Source": "cpp-logo",
+                "Alt": "cpp-logo",
+                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+              }
+            ]
+          },
+          {
+            "Type": "Text",
+            "Content": "Upon reaching the second year of my degree, a professor told me that it is possible to develop web pages and servers only with JavaScript, at that very moment I looked for courses to learn that language. I am currently a web page developer, using tools like ReactJs, NodeJs, JavaScript, MaterialUi, NextUi, Firebase, MongoDB"
+          },
+          {
+            "Type": "Images",
+            "Content": [
+              {
+                "Source": "react-logo",
+                "Alt": "react-logo",
+                "Link": "https://reactjs.org/"
+              },
+              {
+                "Source": "node-logo",
+                "Alt": "node-logo",
+                "Link": "https://nodejs.org/"
+              },
+              {
+                "Source": "js-logo",
+                "Alt": "javascript-logo",
+                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+              },
+              {
+                "Source": "mui-logo",
+                "Alt": "materialui-logo",
+                "Link": "https://mui.com/"
+              },
+              {
+                "Source": "nextui-logo",
+                "Alt": "nextui-logo",
+                "Link": "https://nextui.org/"
+              },
+              {
+                "Source": "firebase-logo",
+                "Alt": "firebase-logo",
+                "Link": "https://firebase.google.com/"
+              },
+              {
+                "Source": "mongodb-logo",
+                "Alt": "mongodb-logo",
+                "Link": "https://www.mongodb.com/"
+              }
+            ]
+          }
+        ]
+      },
+      "freeTime": {
+        "title": "In my free time",
+        "text": "I like listening to music 🎶",
+        "more": "and play the piano 🎹",
+        "content": [
+          {
+            "type": "title",
+            "content": "Music and piano"
+          },
+          {
+            "type": "text",
+            "content": "I studied music at the Lauro Fuentes community school in Santiago de Cuba. I started studying piano for four years, with an electric keyboard I studied at home and it distracted me, then I had to change to percussion."
+          }
+        ]
+      },
+      "design": {
+        "text": "Currently studying 📝",
+        "more": "graphic design 🎨"
+      }
+    },
+    "features": {
+      "title": "Features",
+      "cards": {
+        "landingPage": {
+          "title": "Landing Page",
+          "body": "The landing page relies on the fact that it cannot be a simple home page but has the purpose of showing people your product and making you known"
+        },
+        "dashboard": {
+          "title": "Dashboard",
+          "body": "Through an administration panel, those responsible for a site can modify its contents."
+        },
+        "blog": {
+          "title": "Blog",
+          "body": "A blog is a website that includes, as a personal diary of its author(s), content of interest, which is usually updated frequently and is often commented on by readers."
+        },
+        "ecommerce": {
+          "title": "Ecommerce",
+          "body": "Electronic commerce or ecommerce is the trade of goods and services on the Internet. As well as online stores for shoes, electronic components, etc."
+        },
+        "restApi": {
+          "title": "REST API",
+          "body": "A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style."
+        }
+      }
+    },
+    "projects": {
+      "title": "Professional Projects",
+      "text": "You can pass by me ",
+      "seeMore": "GitHub",
+      "projects": {
+        "m2g-fotos": {
+          "title": "M2G Fotos",
+          "text": "Official website M2G Photos. Photography Studio in Santiago de Cuba"
+        },
+        "descubre-trinidad": {
+          "title": "Descubre Trinidad",
+          "text": "Let yourself be carried away by the charm of the City of Encounters."
+        },
+        "findylin": {
+          "title": "Findylin",
+          "text": "Easy and intuitive platform to connect owners and buyers"
+        }
+      }
+    },
+    "skills": {
+      "title": "My skills",
+      "body": "As a Frontend developer building of web applications for [year] years I have enhanced the following skills:",
+      "age": " years of experience",
+      "other": "Other skills"
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "body": "Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "button": "Say Hello 👋"
+    }
+  },
+  "footer": {
+    "SitoLib": "Documentation"
+  }
+}

@@ -1,7 +1,5 @@
 import React from "react";
 
-import { scrollTo } from "some-javascript-utils/browser";
-
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,13 +13,29 @@ import {
 // @emotion/css
 import { css } from "@emotion/css";
 
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-
-const Footer = (props) => {
-  const { languageState } = useLanguage();
-
-  const icons = [faGithub, faInstagram, faTwitter, faLinkedin];
+const Footer = () => {
+  const socials = [
+    {
+      text: "github",
+      link: "https://github.com/SitoNumbis",
+      icon: faGithub,
+    },
+    {
+      text: "instagram",
+      link: "https://www.instagram.com/sitonumbis/",
+      icon: faInstagram,
+    },
+    {
+      text: "twitter",
+      link: "https://twitter.com/sito8943",
+      icon: faTwitter,
+    },
+    {
+      text: "linkedin",
+      link: "https://www.linkedin.com/in/sito8943",
+      icon: faLinkedin,
+    },
+  ];
 
   return (
     <footer
@@ -33,19 +47,19 @@ const Footer = (props) => {
           <p className="font-bold">{`<Sito /> © ${new Date().getFullYear()}`}</p>
         </div>
         <div className="flex sm:gap-1 gap-3">
-          {languageState.texts.Hero.Social.map((item, i) => (
+          {socials.map((item, i) => (
             <a
-              key={item.Link}
-              href={item.Link}
+              key={item.link}
+              href={item.link}
               rel="noreferrer"
               target="_blank"
-              name={item.name}
-              aria-label={item.ariaLabel}
+              name={item.text}
+              aria-label={item.text}
               className="primary icon-button !text-white"
             >
               <FontAwesomeIcon
                 className={css({ fontSize: "25px" })}
-                icon={icons[i]}
+                icon={item.icon}
               />
             </a>
           ))}

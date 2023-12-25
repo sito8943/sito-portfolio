@@ -3,12 +3,7 @@ import React from "react";
 // components
 import LazyImage from "../../../components/LazyImage/LazyImage";
 
-// contexts
-import { useLanguage } from "../../../contexts/LanguageProvider";
-
 function Card({ link, image, alt, text, more, ariaLabel }) {
-  const { languageState } = useLanguage();
-
   return (
     <a
       href={link}

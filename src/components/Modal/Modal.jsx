@@ -1,10 +1,8 @@
 import React, { Suspense } from "react";
 import loadable from "@loadable/component";
+import { useTranslation } from "react-i18next";
 
 import PropTypes from "prop-types";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
 
 // images
 import js from "../../assets/images/logos/js.webp";
@@ -33,9 +31,9 @@ const Button = loadable(() => import("../../components/NextUI/Button"));
 const Link = loadable(() => import("../../components/NextUI/Link"));
 
 const Modal = (props) => {
-  const { onClose, bindings, title, content } = props;
+  const { t } = useTranslation();
 
-  const { languageState } = useLanguage();
+  const { onClose, bindings, title, content } = props;
 
   const images = {
     "cpp-logo": cpp,
@@ -111,13 +109,13 @@ const Modal = (props) => {
         <NextModalFooter>
           <Button
             id="close-modal"
-            aria-label={languageState.texts.AriaLabels.closeModal}
+            aria-label={t("_common:ariaLabels.closeModal")}
             auto
             flat
             color="error"
             onClick={onClose}
           >
-            {languageState.texts.Modal.Close}
+            {t("_common:buttons.close")}
           </Button>
         </NextModalFooter>
       </NextModal>
