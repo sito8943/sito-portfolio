@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import loadable from "@loadable/component";
 

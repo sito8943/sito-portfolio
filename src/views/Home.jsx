@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scrollTo } from "some-javascript-utils/browser";
+import loadable from "@loadable/component";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -11,13 +12,13 @@ import Navbar from "../components/Navbar/Navbar";
 
 // layouts
 import Hero from "../layouts/Hero/Hero";
-import Features from "../layouts/Features/Features";
-import About from "../layouts/About/About";
-import Skills from "../layouts/Skills/Skills";
-import Projects from "../layouts/Projects/Projects";
-import Contact from "../layouts/Contact/Contact";
-import Footer from "../components/Footer/Footer";
-import ToTop from "../components/ToTop/ToTop";
+const Features = loadable(() => import("../layouts/Features/Features"));
+const About = loadable(() => import("../layouts/About/About"));
+const Skills = loadable(() => import("../layouts/Skills/Skills"));
+const Projects = loadable(() => import("../layouts/Projects/Projects"));
+const Contact = loadable(() => import("../layouts/Contact/Contact"));
+const Footer = loadable(() => import("../components/Footer/Footer"));
+const ToTop = loadable(() => import("../components/ToTop/ToTop"));
 
 const Home = () => {
   const location = useLocation();
