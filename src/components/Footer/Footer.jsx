@@ -27,7 +27,7 @@ const Footer = () => {
     },
     {
       text: "instagram",
-      link: "https://www.instagram.com/sitonumbis/",
+      link: "https://www.instagram.com/sito.8943/",
       icon: faInstagram,
     },
     {
