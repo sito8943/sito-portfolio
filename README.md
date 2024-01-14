@@ -8,7 +8,7 @@ Este es mi porfolio pro
 
 En esta sección muestro una pequeña introducción con las redes sociales y un Call to Action para los proyectos.
 
-### Qué hago/What I do
+### Qué hago/Features
 
 En esta sección muestro los tipos de páginas web que puedo implementar.
 
@@ -23,10 +23,6 @@ En esta sección muestro mis habilidades principales, algunas secundarias.
 ### Pro Projects/Proyectos Profesionales
 
 En esta sección muestro algunos de mis mejores proyectos profesionales.
-
-### Hobby Projects/Proyectos Hobby
-
-En esta sección muestro los proyectos que hago para divertirme, para aprender.
 
 ### Contact me/Contacto
 
