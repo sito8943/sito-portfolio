@@ -22,7 +22,7 @@ function Features() {
     if (isInViewport) setVisible(true);
   }, [isInViewport]);
 
-  const cards = ["landingPage", "dashboard", "blog", "ecommerce", "restApi"];
+  const cards = ["marketing", "dashboard", "content", "ecommerce", "restApi"];
 
   return (
     <Section id="features" background="bg-dark-background2">

@@ -123,17 +123,17 @@
     "features": {
       "title": "Features",
       "cards": {
-        "landingPage": {
-          "title": "Landing Page",
-          "body": "The landing page relies on the fact that it cannot be a simple home page but has the purpose of showing people your product and making you known"
+        "marketing": {
+          "title": "Marketing/Business Page",
+          "body": "The marketing or business page, also referred to as a portfolios, effectively showcases the company's history and disseminates essential information to visitors."
         },
         "dashboard": {
           "title": "Dashboard",
           "body": "Through an administration panel, those responsible for a site can modify its contents."
         },
-        "blog": {
-          "title": "Blog",
-          "body": "A blog is a website that includes, as a personal diary of its author(s), content of interest, which is usually updated frequently and is often commented on by readers."
+        "content": {
+          "title": "Content page",
+          "body": "A content page or media website is for consume information, like blogs, magazines or curation for inspirations, having text, image or videos"
         },
         "ecommerce": {
           "title": "Ecommerce",
