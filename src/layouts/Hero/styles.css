@@ -10,13 +10,11 @@
 .hero-social {
   justify-content: center;
   flex-direction: row !important;
-  gap: 15px;
   flex-wrap: wrap;
 }
 
 .hero-social a {
   font-size: 30px;
-  margin-right: 10px;
 }
 
 .hero-social div {

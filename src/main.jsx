@@ -13,9 +13,6 @@ import { ModeProvider, StyleProvider } from "@sito/ui";
 import "./index.css";
 import "tippy.js/dist/tippy.css"; // optional
 
-// animations
-import "./assets/animations/appear.css";
-
 // font
 import "@fontsource/roboto";
 import "@fontsource/poppins";

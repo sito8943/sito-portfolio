@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <Section id="home">
       <FloatingIcons />
-      <div className="flex items-center justify-start flex-col gap-4 mt-5">
+      <div className="relative flex items-center justify-start flex-col gap-4 mt-5">
         <PrintAfter delay={100} animation="appear">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
             {t("_pages:home.hero.title")}
@@ -73,37 +73,33 @@ const Hero = () => {
         <PrintAfter delay={300} animation="appear">
           <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
         </PrintAfter>
-        <PrintAfter delay={400} animation="appear">
-          <nav className="hero-social">
-            <ul className="flex justify-center gap-3 items-center">
-              {socials.map((item, i) => (
-                <li key={item.link}>
-                  <a
-                    href={item.link}
-                    rel="noreferrer"
-                    target="_blank"
-                    name={item.text}
-                    className={`transition ${css({
-                      "&:hover": {
-                        color: colors.primary.light,
-                      },
-                    })}`}
-                    aria-label={`${t("_common:ariaLabels.linkTo")} ${
-                      item.text
-                    }`}
-                  >
-                    <FontAwesomeIcon icon={item.icon} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </PrintAfter>
-        <PrintAfter delay={500} animation="appear">
+        <nav className="hero-social appear">
+          <ul className="flex justify-center gap-6 items-center">
+            {socials.map((item, i) => (
+              <li key={item.link}>
+                <a
+                  href={item.link}
+                  rel="noreferrer"
+                  target="_blank"
+                  name={item.text}
+                  className={`transition ${css({
+                    "&:hover": {
+                      color: colors.primary.light,
+                    },
+                  })}`}
+                  aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
+                >
+                  <FontAwesomeIcon icon={item.icon} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="float-y !absolute -bottom-[70px]">
           <a
             href="#projects"
             name="to-projects"
-            className="icon-button button primary filled scale-100 hover:scale-110"
+            className="appear icon-button button primary filled scale-100 hover:scale-110"
             aria-label={t("_common:ariaLabels.toProjects")}
             onClick={() =>
               scrollTo(document.getElementById("#projects")?.offsetTop)
@@ -111,7 +107,7 @@ const Hero = () => {
           >
             <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
           </a>
-        </PrintAfter>
+        </div>
       </div>
     </Section>
   );
