@@ -1,42 +1,26 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-
-// @emotion/css
-import { css } from "@emotion/css";
+import React, { useState, useCallback, useEffect } from "react";
 
 // @sito/ui
-import { ToTop as ScrollToTop } from "@sito/ui";
+import { IconButton } from "@sito/ui";
 
-import PropTypes from "prop-types";
+// fortawesome
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 // utils
-import { scrollTo } from "../../utils/functions";
+import { scrollTo } from "some-javascript-utils/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ToTop = () => {
-  const { t } = useTranslation();
+  const [visible, setVisible] = useState(false);
 
-  const [bottom, setBottom] = useState("15px");
-  const [push, setPush] = useState(false);
-
-  const onScroll = useCallback((e) => {
-    const top = window.pageYOffset || document.documentElement.scrollTop;
-
-    const fullHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    );
-    if (fullHeight - top === window.innerHeight) setPush(true);
-    else setPush(false);
-  }, []);
-
-  useEffect(() => {
-    if (!push) setBottom("15px");
-    else setBottom("60px");
-  }, [push]);
+  const onScroll = useCallback(
+    (e) => {
+      const top = window.pageYOffset || document.documentElement.scrollTop;
+      if (top > 100) setVisible(true);
+      else setVisible(false);
+    },
+    [setVisible]
+  );
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -46,28 +30,17 @@ const ToTop = () => {
   }, [onScroll]);
 
   return (
-    <ScrollToTop
-      name="to-top"
-      aria-label={t("_common:ariaLabels.toTop")}
+    <IconButton
       onClick={() => scrollTo(0)}
-      color="primary"
+      icon={<FontAwesomeIcon icon={faArrowUp} />}
+      style={{
+        zIndex: visible ? 10 : -1,
+        transform: visible ? "scale(1)" : "scale(0)",
+      }}
       shape="filled"
-      className={`${css({
-        bottom,
-        svg: {
-          marginLeft: "-1px",
-        },
-      })} right-3`}
+      className="icon-button transition-all to-top fixed bottom-5 right-5 rounded-full primary !text-white"
     />
   );
-};
-
-ToTop.defaultProps = {
-  footerVisible: false,
-};
-
-ToTop.propTypes = {
-  footerVisible: PropTypes.bool,
 };
 
 export default ToTop;
