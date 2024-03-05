@@ -600,10 +600,10 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.9.0.tgz#9033238b41c4cbe1e961eccb3f79e2c588328cf6"
   integrity sha512-bV63itrKBC0zdT27qYm6SDZHlkXwFL1xMBuhkn+X7l0+IIhNaH5wuuvZKp6eKhCD4KFhujhfhCT1YxXW6esUIA==
 
-"@sito/ui@^0.0.184":
-  version "0.0.184"
-  resolved "https://registry.yarnpkg.com/@sito/ui/-/ui-0.0.184.tgz#9185161e999302f05e36f3d8b48465d787b561ba"
-  integrity sha512-TLlmaLV56OVdfNeSkqtwds5ZmsIKfLYrii2fEdnbWDyad3kkCvUNngROY6X2vo6iQ4q2fbftpZiu8BgyCqtO2w==
+"@sito/ui@^0.0.197":
+  version "0.0.197"
+  resolved "https://registry.yarnpkg.com/@sito/ui/-/ui-0.0.197.tgz#d4cce3d0dec5444f7919440bbeaf358ba5a744f8"
+  integrity sha512-TwXkzhqxbXp7KUe4iRRK0YNCAJ/vLj1hJa3JEK2GyJVgQg0opL+9SI57UQ1PucIHMTf1qmY+AK2Avq7iF2bAtQ==
   dependencies:
     "@emotion/css" "11.11.2"
     react "18.2.0"
