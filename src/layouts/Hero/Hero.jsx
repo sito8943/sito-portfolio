@@ -19,10 +19,14 @@ import {
 
 import { scrollTo } from "some-javascript-utils/browser";
 
+// images
+import me from "../../assets/images/me.jpg";
+
 // styles
 import "./styles.css";
 
 // components
+import LazyImage from "../../components/LazyImage/LazyImage";
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 
@@ -57,32 +61,19 @@ const Hero = () => {
   return (
     <Section id="home">
       <FloatingIcons />
-      <div className="flex items-center justify-start flex-col gap-4">
+      <div className="flex items-center justify-start flex-col gap-4 mt-5">
         <PrintAfter delay={100} animation="appear">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
             {t("_pages:home.hero.title")}
           </h1>
         </PrintAfter>
         <PrintAfter delay={200} animation="appear">
-          <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
+          <LazyImage src={me} className="w-60 h-60 rounded-full" />
         </PrintAfter>
         <PrintAfter delay={300} animation="appear">
-          <a
-            href="#projects"
-            name="to-projects"
-            className="icon-button button primary filled scale-100 hover:scale-110"
-            aria-label={t("_common:ariaLabels.toProjects")}
-            onClick={() =>
-              scrollTo(document.getElementById("#projects")?.offsetTop)
-            }
-          >
-            <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
-          </a>
+          <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
         </PrintAfter>
         <PrintAfter delay={400} animation="appear">
-          <p className="text-center sm:px-4">{t("_pages:home.hero.meet")}</p>
-        </PrintAfter>
-        <PrintAfter delay={500} animation="appear">
           <nav className="hero-social">
             <ul className="flex justify-center gap-3 items-center">
               {socials.map((item, i) => (
@@ -107,6 +98,19 @@ const Hero = () => {
               ))}
             </ul>
           </nav>
+        </PrintAfter>
+        <PrintAfter delay={500} animation="appear">
+          <a
+            href="#projects"
+            name="to-projects"
+            className="icon-button button primary filled scale-100 hover:scale-110"
+            aria-label={t("_common:ariaLabels.toProjects")}
+            onClick={() =>
+              scrollTo(document.getElementById("#projects")?.offsetTop)
+            }
+          >
+            <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
+          </a>
         </PrintAfter>
       </div>
     </Section>
