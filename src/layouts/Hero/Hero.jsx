@@ -73,40 +73,46 @@ const Hero = () => {
         <PrintAfter delay={300} animation="appear">
           <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
         </PrintAfter>
-        <nav className="hero-social appear">
-          <ul className="flex justify-center gap-6 items-center">
-            {socials.map((item, i) => (
-              <li key={item.link}>
-                <a
-                  href={item.link}
-                  rel="noreferrer"
-                  target="_blank"
-                  name={item.text}
-                  className={`transition ${css({
-                    "&:hover": {
-                      color: colors.primary.light,
-                    },
-                  })}`}
-                  aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
-                >
-                  <FontAwesomeIcon icon={item.icon} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <PrintAfter delay={400} animation="appear">
+          <nav className="hero-social appear">
+            <ul className="flex justify-center gap-6 items-center">
+              {socials.map((item, i) => (
+                <li key={item.link}>
+                  <a
+                    href={item.link}
+                    rel="noreferrer"
+                    target="_blank"
+                    name={item.text}
+                    className={`transition ${css({
+                      "&:hover": {
+                        color: colors.primary.light,
+                      },
+                    })}`}
+                    aria-label={`${t("_common:ariaLabels.linkTo")} ${
+                      item.text
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={item.icon} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </PrintAfter>
         <div className="float-y !absolute -bottom-[70px]">
-          <a
-            href="#projects"
-            name="to-projects"
-            className="appear icon-button button primary filled scale-100 hover:scale-110"
-            aria-label={t("_common:ariaLabels.toProjects")}
-            onClick={() =>
-              scrollTo(document.getElementById("#projects")?.offsetTop)
-            }
-          >
-            <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
-          </a>
+          <PrintAfter delay={500} animation="appear">
+            <a
+              href="#projects"
+              name="to-projects"
+              className="icon-button button primary filled scale-100 hover:scale-110"
+              aria-label={t("_common:ariaLabels.toProjects")}
+              onClick={() =>
+                scrollTo(document.getElementById("#projects")?.offsetTop)
+              }
+            >
+              <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
+            </a>
+          </PrintAfter>
         </div>
       </div>
     </Section>
