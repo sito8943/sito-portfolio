@@ -35,19 +35,19 @@ const Projects = () => {
       id: "m2g-fotos",
       link: "https://m2g-fotos.web.app/",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/M2g/sito-portfolio_OfGGxvLKE.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png155",
 
     },
     {
       id: "descubre-trinidad",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/tr:w-318,h-180/SitoPortafolio/sito-portfolio_OhYw223Ki.jpg",
+        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/sito-portfolio_OhYw223Ki.jpg",
       link: "https://descubretrinidad.com",
     },
     {
       id: "findylin",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/findylin_kKPu-nu5FS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678490535881",
+        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/findy_iWwwvksny.png",
       link: "https://findylin-369a7.web.app/",
     },
   ];
