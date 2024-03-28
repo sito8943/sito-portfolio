@@ -36,7 +36,7 @@ const Hero = () => {
   const socials = [
     {
       text: "github",
-      link: "https://github.com/SitoNumbis",
+      link: "https://github.com/sito8943",
       icon: faGithub,
     },
     {

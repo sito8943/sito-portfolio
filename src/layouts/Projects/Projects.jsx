@@ -73,7 +73,7 @@ const Projects = () => {
                 <a
                   name="github"
                   aria-label={t("_pages:home.hero.social.github")}
-                  href="https://github.com/SitoNumbis"
+                  href="https://github.com/sito8943"
                   rel="noreferrer"
                   target="_blank"
                   className="m-auto hover:text-primary underline"
