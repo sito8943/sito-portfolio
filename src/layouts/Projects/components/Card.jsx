@@ -16,7 +16,7 @@ function Card({ link, image, alt, text, more, ariaLabel }) {
         <LazyImage
           src={image}
           alt={alt}
-          className="w-full md:h-[300px] h-[150px] rounded-t-xl object-cover object-bottom"
+          className="w-full md:h-[300px] h-[150px] rounded-t-xl object-cover object-center"
         />
         <div className="p-5">
           <p className="text-lg font-bold text-center">{text}</p>

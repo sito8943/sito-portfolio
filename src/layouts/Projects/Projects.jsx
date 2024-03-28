@@ -35,7 +35,7 @@ const Projects = () => {
       id: "m2g-fotos",
       link: "https://m2g-fotos.web.app/",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png155",
+        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png",
 
     },
     {
