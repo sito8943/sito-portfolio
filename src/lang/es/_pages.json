@@ -172,7 +172,8 @@
     "contact": {
       "title": "Ponerse en contacto",
       "body": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!",
-      "button": "Di hola 👋"
+      "button": "Di hola 👋",
+      "downloadCV": "Descargar CV"
     }
   },
 

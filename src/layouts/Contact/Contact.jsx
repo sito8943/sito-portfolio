@@ -38,18 +38,32 @@ const Contact = () => {
                 {t("_pages:home.contact.body")}
               </p>
             </PrintAfter>
-            <PrintAfter delay={300} animation="appear">
-              <a
-                name="email to"
-                aria-label="email sito8943@gmail.com"
-                href="mailto:sito8943@gmail.com"
-                target="blank"
-                rel="noreferrer"
-                className="primary button filled"
-              >
-                {t("_pages:home.contact.button")}
-              </a>
-            </PrintAfter>
+            <div className="flex flex-wrap gap-2 items-center justify-center">
+              <PrintAfter delay={300} animation="appear">
+                <a
+                  name="email to"
+                  aria-label="email sito8943@gmail.com"
+                  href="mailto:sito8943@gmail.com"
+                  target="blank"
+                  rel="noreferrer"
+                  className="primary button filled"
+                >
+                  {t("_pages:home.contact.button")}
+                </a>
+              </PrintAfter>
+              <PrintAfter delay={400} animation="appear">
+                <a
+                  name="download cv"
+                  aria-label="download cv"
+                  href="https://drive.google.com/file/d/1am_TLr_rRsPiQ9Jt-R45YuYk4rVQzSzv/view?usp=drive_link"
+                  target="blank"
+                  rel="noreferrer"
+                  className="primary button filled"
+                >
+                  {t("_pages:home.contact.downloadCV")}
+                </a>
+              </PrintAfter>
+            </div>
           </Fragment>
         ) : (
           ""
