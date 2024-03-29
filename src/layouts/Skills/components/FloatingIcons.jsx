@@ -13,7 +13,7 @@ const FloatingIcons = () => {
 
   return (
     <Fragment>
-      <div className={`scale-animation ${css({ left: "5%" })}`}>
+      <div className={`sm:hidden scale-animation ${css({ left: "5%" })}`}>
         <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
           <FontAwesomeIcon
             icon={faJs}

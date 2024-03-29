@@ -10,7 +10,7 @@ import { css } from "@emotion/css";
 const FloatingIcons = () => {
   return (
     <Fragment>
-      <div className={`scale-animation ${css({ left: "5%" })}`}>
+      <div className={`sm:hidden scale-animation ${css({ left: "5%" })}`}>
         <div className={css({ transform: "rotate(-30deg)" })}>
           <a href="#about">
             <FontAwesomeIcon
@@ -25,7 +25,7 @@ const FloatingIcons = () => {
         </div>
       </div>
       <div
-        className={`scale-animation ${css({
+        className={`sm:hidden scale-animation ${css({
           width: "100px",
           height: "100px",
           right: "5%",
@@ -46,7 +46,7 @@ const FloatingIcons = () => {
         </div>
       </div>
       <div
-        className={`scale-animation ${css({
+        className={`sm:hidden scale-animation ${css({
           width: "100px",
           height: "100px",
           bottom: "4%",

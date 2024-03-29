@@ -104,7 +104,7 @@ const Hero = () => {
             <a
               href="#projects"
               name="to-projects"
-              className="m-2 icon-button button primary filled scale-100 hover:scale-110"
+              className="m-2 icon-button button !cursor-pointer primary filled scale-100 hover:scale-110"
               aria-label={t("_common:ariaLabels.toProjects")}
               onClick={() =>
                 scrollTo(document.getElementById("#projects")?.offsetTop)

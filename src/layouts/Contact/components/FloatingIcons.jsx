@@ -11,7 +11,7 @@ const FloatingIcons = () => {
   return (
     <Fragment>
       <div
-        className={`scale-animation ${css({
+        className={`sm:hidden scale-animation ${css({
           width: "100px",
           height: "100px",
           right: "5%",
