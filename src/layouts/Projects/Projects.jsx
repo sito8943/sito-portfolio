@@ -78,7 +78,7 @@ const Projects = () => {
                   target="_blank"
                   className="m-auto hover:text-primary underline"
                 >
-                  {t("_common:buttons.see")}
+                  {t("_pages:home.projects.seeMore")}
                   <FontAwesomeIcon
                     icon={faExternalLink}
                     className={css({ marginLeft: "5px", fontSize: "15px" })}
