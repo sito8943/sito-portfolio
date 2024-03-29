@@ -14,7 +14,11 @@ import "./styles.css";
 // other skills
 import mui from "../../assets/images/logos/mui.webp";
 import tailwindscss from "../../assets/images/skills/tailwind.svg";
+import typescript from "../../assets/images/skills/Typescript_logo_2020.svg.png";
 import firebase from "../../assets/images/logos/firebase.webp";
+import git from "../../assets/images/skills/Git-Icon-1788C.png";
+import photoshop from "../../assets/images/skills/ps.png";
+import figma from "../../assets/images/skills/figma.jpg";
 
 // components
 import Section from "../../components/Section/Section";
@@ -55,6 +59,16 @@ const Skills = () => {
   ];
 
   const secondaries = [
+    {
+      id: "Git",
+      image: git,
+      link: "https://git-scm.com/",
+    },
+    {
+      id: "Typescript",
+      image: typescript,
+      link: "https://www.typescriptlang.org/",
+    },
     { id: "Material UI", image: mui, link: "https://mui.com/" },
     {
       id: "Tailwind CSS",
@@ -62,6 +76,12 @@ const Skills = () => {
       link: "https://tailwindcss.com",
     },
     { id: "Firebase", image: firebase, link: "https://firebase.google.com/" },
+    {
+      id: "Photoshop",
+      image: photoshop,
+      link: "https://www.adobe.com/es/products/photoshop.html",
+    },
+    { id: "Figma", image: figma, link: "https://www.figma.com/" },
   ];
 
   const years = (start) => {
@@ -134,7 +154,7 @@ const Skills = () => {
                         rel="noopener"
                       >
                         <LazyImage
-                          className="w-10 h-10 rounded-full bg-white border-2 border-white"
+                          className="object-cover w-10 h-10 rounded-full bg-white border-2 border-white"
                           src={jtem.image}
                           alt={jtem.id}
                         />
