@@ -13,9 +13,7 @@ import "./styles.css";
 // images
 // other skills
 import mui from "../../assets/images/logos/mui.webp";
-import node from "../../assets/images/logos/node.webp";
-import nextui from "../../assets/images/logos/nextui.webp";
-import mongodb from "../../assets/images/logos/mongodb.webp";
+import tailwindscss from "../../assets/images/skills/tailwind.svg";
 import firebase from "../../assets/images/logos/firebase.webp";
 
 // components
@@ -57,14 +55,12 @@ const Skills = () => {
   ];
 
   const secondaries = [
-    {
-      id: "NodeJs",
-      image: node,
-      link: "https://nodejs.org/",
-    },
     { id: "Material UI", image: mui, link: "https://mui.com/" },
-    { id: "Next UI", image: nextui, link: "https://nextui.org/" },
-    { id: "Mongo DB", image: mongodb, link: "https://www.mongodb.com/" },
+    {
+      id: "Tailwind CSS",
+      image: tailwindscss,
+      link: "https://tailwindcss.com",
+    },
     { id: "Firebase", image: firebase, link: "https://firebase.google.com/" },
   ];
 
@@ -138,7 +134,7 @@ const Skills = () => {
                         rel="noopener"
                       >
                         <LazyImage
-                          className="w-10 h-10 rounded-full"
+                          className="w-10 h-10 rounded-full bg-white border-2 border-white"
                           src={jtem.image}
                           alt={jtem.id}
                         />
