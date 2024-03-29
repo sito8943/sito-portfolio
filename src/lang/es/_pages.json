@@ -14,7 +14,7 @@
   "home": {
     "hero": {
       "title": "Hola soy Sito",
-      "text": "Soy desarrollador web fullstack",
+      "text": "Soy desarrollador y diseñador web fullstack",
       "social": {
         "github": "Github",
         "instagram": "Instagram",
@@ -103,7 +103,7 @@
       "freeTime": {
         "title": "En mi tiempo libre",
         "text": "Me gusta escuchar música 🎶",
-        "more": "y tocar al piano 🎹",
+        "more": "tocar al piano 🎹 y haces fotos 📷",
         "content": [
           {
             "Type": "Title",
@@ -117,7 +117,7 @@
       },
       "design": {
         "text": "Actualmente estudiando 📝",
-        "more": "diseño gráfico 🎨"
+        "more": "diseño gráfico 🎨, UI/UX"
       }
     },
     "features": {
