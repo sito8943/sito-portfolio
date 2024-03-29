@@ -106,7 +106,7 @@ const Navbar = () => {
                     "[target]",
                     t(`_pages:routes.${item}`)
                   )}
-                  className={`button ${
+                  className={`button !cursor-pointer ${
                     item === "contact" && activeLink !== `#${item}`
                       ? "secondary filled"
                       : "primary link"
