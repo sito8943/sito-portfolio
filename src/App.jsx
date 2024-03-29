@@ -26,7 +26,7 @@ const App = () => {
         />
       }
     >
-      <BrowserRouter basename="sito-portfolio">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/*" element={<NotFound />} />
