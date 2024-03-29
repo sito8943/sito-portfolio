@@ -49,7 +49,7 @@ const Footer = () => {
     >
       <div className="w-[90%] flex items-center justify-between flex-wrap gap-y-5 sm:my-5">
         <div className="flex">
-          <p className="logo">{`<Sito /> © ${new Date().getFullYear()}`}</p>
+          <p className="logo">{`Sito © ${new Date().getFullYear()}`}</p>
         </div>
         <div className="flex items-center sm:gap-3 gap-5">
           {socials.map((item, i) => (

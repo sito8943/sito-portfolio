@@ -18,9 +18,7 @@ const App = () => {
           visible
           logo={
             <div>
-              <h1 className="font-bold text-4xl text-plight logo">
-                {"<Sito />"}
-              </h1>
+              <h1 className="font-bold text-4xl text-plight logo">Sito</h1>
             </div>
           }
         />

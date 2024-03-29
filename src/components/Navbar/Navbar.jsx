@@ -91,7 +91,7 @@ const Navbar = () => {
             aria-label={t("_common:ariaLabels.toHome")}
             onClick={() => scrollTo(0)}
           >
-            {"<Sito />"}
+            Sito
           </a>
         </h1>
         <nav className="h-full flex items-center">
