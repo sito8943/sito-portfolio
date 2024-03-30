@@ -100,7 +100,7 @@ const OffCanvas = (props) => {
                         aria-label={t(
                           "_common:ariaLabels.clickToSection"
                         ).replace("[target]", t(`_pages:routes.${item}`))}
-                        className={`button w-full !rounded-[0] p-5 inline-block ${
+                        className={`button !cursor-pointer w-full !rounded-[0] p-5 inline-block ${
                           item === "contact" && activeLink !== `#${item}`
                             ? "secondary"
                             : "primary link"
