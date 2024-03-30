@@ -20,7 +20,7 @@ const Contact = () => {
   }, [isElementInViewport]);
 
   return (
-    <Section id="contact" background="bg-dark-background2">
+    <Section id="contact" background="inner-section bg-dark-background2">
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
