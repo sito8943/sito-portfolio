@@ -38,7 +38,8 @@ const ToTop = () => {
         transform: visible ? "scale(1)" : "scale(0)",
       }}
       shape="filled"
-      className="icon-button transition-all to-top fixed bottom-5 right-5 rounded-full primary !text-white"
+      name="to-top"
+      className="transition-all to-top fixed bottom-5 right-5 rounded-full primary !text-white"
     />
   );
 };

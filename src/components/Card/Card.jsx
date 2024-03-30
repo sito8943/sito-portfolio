@@ -24,6 +24,7 @@ const Card = (props) => {
   } = props;
   return (
     <a
+      name={title}
       className={css({
         color: "inherit",
         textDecoration: "none",

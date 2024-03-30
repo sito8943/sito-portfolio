@@ -68,7 +68,7 @@ const Hero = () => {
           </h1>
         </PrintAfter>
         <PrintAfter delay={200} animation="appear">
-          <LazyImage src={me} className="w-60 h-60 rounded-full" />
+          <LazyImage alt="sito" src={me} className="w-60 h-60 rounded-full" />
         </PrintAfter>
         <PrintAfter delay={300} animation="appear">
           <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
