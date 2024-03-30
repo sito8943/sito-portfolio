@@ -3,14 +3,14 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 function Section(props) {
-  const { id, background, children } = props;
+  const { id, background, children, containerClass, className } = props;
 
   return (
     <section
       id={id}
-      className={`flex justify-center items-center py-[100px] min-h-[100vh] relative ${background}`}
+      className={`flex justify-center items-center py-[100px] relative ${background} ${className}`}
     >
-      <div className="w-[90%]">{children}</div>
+      <div className={`w-[90%] ${containerClass}`}>{children}</div>
     </section>
   );
 }

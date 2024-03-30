@@ -1,9 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
-import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import { PrintAfter } from "@sito/ui";
+import { PrintAfter, useIsElementInViewport } from "@sito/ui";
 
 // styles
 import "./styles.css";
@@ -14,20 +13,24 @@ import Marquee from "./components/Marquee";
 import Section from "../../components/Section/Section";
 
 function Features() {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const { elementRef, isElementInViewport } = useIsElementInViewport();
   const [visible, setVisible] = useState(false);
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (isInViewport) setVisible(true);
-  }, [isInViewport]);
+    if (isElementInViewport) setVisible(true);
+  }, [isElementInViewport]);
 
   const cards = ["marketing", "dashboard", "content", "ecommerce", "restApi"];
 
   return (
-    <Section id="features" background="bg-dark-background2" containerClass="!w-full">
-      <div className="features" ref={targetRef}>
+    <Section
+      id="features"
+      background="bg-dark-background2"
+      containerClass="!w-full"
+    >
+      <div className="features" ref={elementRef}>
         {visible ? (
           <Fragment>
             <PrintAfter delay={100} animation="appear">

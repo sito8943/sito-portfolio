@@ -1,9 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
-import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import { PrintAfter, Image as LazyImage } from "@sito/ui";
+import {
+  PrintAfter,
+  Image as LazyImage,
+  useIsElementInViewport,
+} from "@sito/ui";
 
 import Tippy from "@tippyjs/react";
 
@@ -27,12 +30,12 @@ import FloatingIcons from "./components/FloatingIcons";
 const Skills = () => {
   const { t } = useTranslation();
 
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const { elementRef, isElementInViewport } = useIsElementInViewport();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (isInViewport) setVisible(true);
-  }, [isInViewport]);
+    if (isElementInViewport) setVisible(true);
+  }, [isElementInViewport]);
 
   const skills = [
     {
@@ -94,7 +97,7 @@ const Skills = () => {
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
-        ref={targetRef}
+        ref={elementRef}
       >
         {visible ? (
           <Fragment>

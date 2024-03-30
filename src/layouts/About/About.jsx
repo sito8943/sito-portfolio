@@ -1,9 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import useIsInViewport from "use-is-in-viewport";
 
 // @sito/ui
-import { PrintAfter, Image as LazyImage } from "@sito/ui";
+import {
+  PrintAfter,
+  Image as LazyImage,
+  useIsElementInViewport,
+} from "@sito/ui";
 
 // components
 import Card from "./components/Card";
@@ -13,12 +16,12 @@ import Section from "../../components/Section/Section";
 const About = () => {
   const { t } = useTranslation();
 
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const { elementRef, isElementInViewport } = useIsElementInViewport();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (isInViewport) setVisible(true);
-  }, [isInViewport]);
+    if (isElementInViewport) setVisible(true);
+  }, [isElementInViewport]);
 
   const showModal = (string) => {};
   const cards = [
@@ -47,7 +50,7 @@ const About = () => {
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
-        ref={targetRef}
+        ref={elementRef}
       >
         {visible ? (
           <Fragment>

@@ -1,9 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
-import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
 // @emotion/css
-import { PrintAfter } from "@sito/ui";
+import { PrintAfter, useIsElementInViewport } from "@sito/ui";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -21,14 +20,14 @@ import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
 
 const Projects = () => {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const { elementRef, isElementInViewport } = useIsElementInViewport();
   const [visible, setVisible] = useState(false);
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (isInViewport) setVisible(true);
-  }, [isInViewport]);
+    if (isElementInViewport) setVisible(true);
+  }, [isElementInViewport]);
 
   const projects = [
     {
@@ -36,7 +35,6 @@ const Projects = () => {
       link: "https://m2g-fotos.web.app/",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png",
-
     },
     {
       id: "descubre-trinidad",
@@ -57,7 +55,7 @@ const Projects = () => {
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
-        ref={targetRef}
+        ref={elementRef}
       >
         {visible ? (
           <Fragment>

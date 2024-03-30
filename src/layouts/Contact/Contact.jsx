@@ -1,30 +1,30 @@
 import React, { Fragment, useState, useEffect } from "react";
-import useIsInViewport from "use-is-in-viewport";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import { PrintAfter } from "@sito/ui";
+import { PrintAfter, useIsElementInViewport } from "@sito/ui";
 
 // components
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
 
 const Contact = () => {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 });
+  const { elementRef, isElementInViewport } = useIsElementInViewport();
+
   const [visible, setVisible] = useState(false);
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (isInViewport) setVisible(true);
-  }, [isInViewport]);
+    if (isElementInViewport) setVisible(true);
+  }, [isElementInViewport]);
 
   return (
     <Section id="contact" background="bg-dark-background2">
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"
-        ref={targetRef}
+        ref={elementRef}
       >
         {visible ? (
           <Fragment>
