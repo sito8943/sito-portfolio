@@ -10,6 +10,7 @@ import "./styles.css";
 
 // components
 import Card from "./components/Card";
+import Marquee from "./components/Marquee";
 import Section from "../../components/Section/Section";
 
 function Features() {
@@ -25,27 +26,27 @@ function Features() {
   const cards = ["marketing", "dashboard", "content", "ecommerce", "restApi"];
 
   return (
-    <Section id="features" background="bg-dark-background2">
+    <Section id="features" background="bg-dark-background2" containerClass="!w-full">
       <div className="features" ref={targetRef}>
         {visible ? (
           <Fragment>
             <PrintAfter delay={100} animation="appear">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+              <h2 className="sm:text-3xl text-4xl font-bold text-center mb-10">
                 {t("_pages:home.features.title")}
               </h2>
             </PrintAfter>
-            <ul className="flex flex-wrap items-center justify-center gap-3 mt-5">
-              {cards.map((item, i) => (
-                <li key={item} className="md:w-full">
-                  <PrintAfter delay={(i + 1) * 200} animation="appear">
-                    <Card
-                      title={t(`_pages:home.features.cards.${item}.title`)}
-                      body={t(`_pages:home.features.cards.${item}.body`)}
-                    />
-                  </PrintAfter>
-                </li>
-              ))}
-            </ul>
+            <Marquee
+              component="array"
+              elements={cards}
+              renderFunction={(el, i) => (
+                <PrintAfter delay={(i + 1) * 200} animation="appear">
+                  <Card
+                    title={t(`_pages:home.features.cards.${el}.title`)}
+                    body={t(`_pages:home.features.cards.${el}.body`)}
+                  />
+                </PrintAfter>
+              )}
+            />
           </Fragment>
         ) : null}
       </div>
