@@ -12,16 +12,14 @@ const FloatingIcons = () => {
     <Fragment>
       <div className={`sm:hidden scale-animation ${css({ left: "5%" })}`}>
         <div className={css({ transform: "rotate(-30deg)" })}>
-          <a href="#about">
-            <FontAwesomeIcon
-              icon={faPlane}
-              className={`float-y ${css({
-                fontSize: "3rem",
-                color: "#088cd9",
-                opacity: 0.5,
-              })}`}
-            />
-          </a>
+          <FontAwesomeIcon
+            icon={faPlane}
+            className={`float-y ${css({
+              fontSize: "3rem",
+              color: "#088cd9",
+              opacity: 0.5,
+            })}`}
+          />
         </div>
       </div>
       <div
@@ -33,16 +31,14 @@ const FloatingIcons = () => {
         })}`}
       >
         <div className={css({ transform: "rotate(30deg)" })}>
-          <a href="#about">
-            <FontAwesomeIcon
-              icon={faMusic}
-              className={`float-y ${css({
-                fontSize: "3rem",
-                color: "#9494f5",
-                opacity: 0.5,
-              })}`}
-            />
-          </a>
+          <FontAwesomeIcon
+            icon={faMusic}
+            className={`float-y ${css({
+              fontSize: "3rem",
+              color: "#9494f5",
+              opacity: 0.5,
+            })}`}
+          />
         </div>
       </div>
       <div
@@ -54,16 +50,14 @@ const FloatingIcons = () => {
         })}`}
       >
         <div className={css({ transform: "rotate(10deg)" })}>
-          <a href="#projects">
-            <FontAwesomeIcon
-              icon={faLaptop}
-              className={`float-y ${css({
-                fontSize: "3rem",
-                color: "#0fd908",
-                opacity: 0.5,
-              })}`}
-            />
-          </a>
+          <FontAwesomeIcon
+            icon={faLaptop}
+            className={`float-y ${css({
+              fontSize: "3rem",
+              color: "#0fd908",
+              opacity: 0.5,
+            })}`}
+          />
         </div>
       </div>
     </Fragment>
