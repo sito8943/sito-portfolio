@@ -46,7 +46,7 @@ const Contact = () => {
                   href="mailto:sito8943@gmail.com"
                   target="blank"
                   rel="noreferrer"
-                  className="primary button filled"
+                  className="primary button filled !cursor-pointer"
                 >
                   {t("_pages:home.contact.button")}
                 </a>
@@ -58,7 +58,7 @@ const Contact = () => {
                   href="https://drive.google.com/file/d/1am_TLr_rRsPiQ9Jt-R45YuYk4rVQzSzv/view?usp=drive_link"
                   target="blank"
                   rel="noreferrer"
-                  className="primary button filled"
+                  className="primary button filled !cursor-pointer"
                 >
                   {t("_pages:home.contact.downloadCV")}
                 </a>
