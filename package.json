@@ -15,7 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@loadable/component": "^5.15.3",
-    "@sito/ui": "^0.0.197",
+    "@sito/ui": "^0.0.199",
     "@tippyjs/react": "^4.2.6",
     "i18next": "^23.7.11",
     "i18next-browser-languagedetector": "^7.2.0",
