@@ -93,7 +93,7 @@ const Skills = () => {
   };
 
   return (
-    <Section id="skills" background="bg-sdark">
+    <Section id="skills" background="bg-pdark">
       <FloatingIcons />
       <div
         className="flex items-center justify-center flex-col h-full gap-4"

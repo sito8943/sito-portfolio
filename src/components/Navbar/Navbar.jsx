@@ -83,11 +83,11 @@ const Navbar = () => {
           transparency ? "w-[85%] h-[100px]" : "w-[90%] h-[60px]"
         }`}
       >
-        <h1 className="font-bold text-4xl text-primary">
+        <h1 className="font-bold text-4xl text-secondary">
           <a
             href="#"
             name="logo"
-            className="text-plight logo"
+            className="text-secondary logo"
             aria-label={t("_common:ariaLabels.toHome")}
             onClick={() => scrollTo(0)}
           >
