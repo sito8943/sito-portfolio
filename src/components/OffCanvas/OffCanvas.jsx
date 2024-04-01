@@ -61,7 +61,7 @@ const OffCanvas = (props) => {
       <aside
         className={`${
           !visible ? "-translate-x-4 opacity-0" : ""
-        } relative flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500`}
+        } relative flex-col flex w-[300px] h-full bg-pdark z-50 delay-150 transition duration-500`}
       >
         <button
           type="button"
@@ -75,7 +75,7 @@ const OffCanvas = (props) => {
         <nav className="pt-10 flex flex-col">
           {visible ? (
             <PrintAfter delay={150} animation="appear">
-              <h1 className="font-bold text-4xl text-primary ml-5">
+              <h1 className="font-bold text-4xl ml-5">
                 <a
                   href="#"
                   name="logo"
@@ -100,11 +100,9 @@ const OffCanvas = (props) => {
                         aria-label={t(
                           "_common:ariaLabels.clickToSection"
                         ).replace("[target]", t(`_pages:routes.${item}`))}
-                        className={`button !cursor-pointer w-full !rounded-[0] p-5 inline-block ${
-                          item === "contact" && activeLink !== `#${item}`
-                            ? "secondary"
-                            : "primary link"
-                        } ${activeLink === `#${item}` ? "filled" : ""}`}
+                        className={`button !cursor-pointer w-full !rounded-[0] p-5 inline-block link primary !text-white hover:!text-secondary ${
+                          activeLink === `#${item}` ? "filled" : ""
+                        }`}
                       >
                         {t(`_pages:routes.${item}`)}
                       </a>
