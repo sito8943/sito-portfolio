@@ -14,8 +14,8 @@ import "./index.css";
 import "tippy.js/dist/tippy.css"; // optional
 
 // font
-import "@fontsource/roboto";
-import "@fontsource/poppins";
+import '@fontsource/roboto/300.css'
+import '@fontsource/poppins/900.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
