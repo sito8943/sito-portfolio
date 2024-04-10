@@ -2,22 +2,24 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-// @sito/ui
-import { PrintAfter } from "@sito/ui";
-
 import PropTypes from "prop-types";
 
-// @emotion/css
+// @sito/ui
+import { PrintAfter, useStyle } from "@sito/ui";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
+// components
+import SitoLogo from "../Logo/SitoLogo";
+
 const OffCanvas = (props) => {
   const location = useLocation();
 
   const { t } = useTranslation();
+
+  const { colors } = useStyle();
 
   const { visible, links, handleClose } = props;
 
@@ -55,13 +57,13 @@ const OffCanvas = (props) => {
       aria-label={t("_common:ariaLabels.closeDrawer")}
       onClick={handleClose}
       className={`top-0 left-0 h-screen fixed w-full bg-dark-drawer-background transition duration-300 ${
-        visible ? "opacity-1" : "opacity-0 pointer-events-none"
+        visible ? "opacity-1 backdrop-blur-sm" : "opacity-0 pointer-events-none"
       }`}
     >
       <aside
         className={`${
           !visible ? "-translate-x-4 opacity-0" : ""
-        } relative flex-col flex w-[300px] h-full bg-pdark z-50 delay-150 transition duration-500`}
+        } relative flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500`}
       >
         <button
           type="button"
@@ -75,17 +77,18 @@ const OffCanvas = (props) => {
         <nav className="pt-10 flex flex-col">
           {visible ? (
             <PrintAfter delay={150} animation="appear">
-              <h1 className="font-bold text-4xl ml-5">
-                <a
-                  href="#"
-                  name="logo"
-                  className="text-plight logo"
-                  aria-label={t("_common:ariaLabels.toHome")}
-                  onClick={() => scrollTo(0)}
-                >
-                  Sito
-                </a>
-              </h1>
+              <a
+                href="#"
+                name="logo"
+                className="text-plight logo"
+                aria-label={t("_common:ariaLabels.toHome")}
+                onClick={() => scrollTo(0)}
+              >
+                <SitoLogo
+                  className="w-20 h-[42px] ml-5"
+                  color={colors.primary.default}
+                />
+              </a>
             </PrintAfter>
           ) : null}
           <ul className="flex flex-col mt-5">
@@ -100,7 +103,7 @@ const OffCanvas = (props) => {
                         aria-label={t(
                           "_common:ariaLabels.clickToSection"
                         ).replace("[target]", t(`_pages:routes.${item}`))}
-                        className={`button !cursor-pointer w-full !rounded-[0] p-5 inline-block link primary !text-white hover:!text-secondary ${
+                        className={`button !cursor-pointer w-full !rounded-[0] p-5 inline-block link primary !text-white hover:!text-white ${
                           activeLink === `#${item}` ? "filled" : ""
                         }`}
                       >

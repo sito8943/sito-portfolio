@@ -9,9 +9,15 @@ import loadable from "@loadable/component";
 
 import { scrollTo } from "some-javascript-utils/browser";
 
+// @sito/ui
+import { useStyle } from "@sito/ui";
+
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+// components
+import SitoLogo from "../Logo/SitoLogo";
 
 // styles
 import "./style.css";
@@ -23,6 +29,8 @@ const Navbar = () => {
   const location = useLocation();
 
   const { t } = useTranslation();
+
+  const { colors } = useStyle();
 
   const { screenWidth } = useScreenWidth();
 
@@ -83,17 +91,15 @@ const Navbar = () => {
           transparency ? "w-[85%] h-[100px]" : "w-[90%] h-[60px]"
         }`}
       >
-        <h1 className="font-bold text-4xl text-secondary">
-          <a
-            href="#"
-            name="logo"
-            className="text-secondary logo"
-            aria-label={t("_common:ariaLabels.toHome")}
-            onClick={() => scrollTo(0)}
-          >
-            Sito
-          </a>
-        </h1>
+        <a
+          href="#"
+          name="logo"
+          className="text-secondary logo"
+          aria-label={t("_common:ariaLabels.toHome")}
+          onClick={() => scrollTo(0)}
+        >
+          <SitoLogo className="w-20 h-[42px]" color={colors.primary.default} />
+        </a>
         <nav className="h-full flex items-center">
           <ul className="xl:hidden flex items-center h-full justify-around gap-3">
             {links.map((item) => (

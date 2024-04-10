@@ -96,17 +96,17 @@ h2,
 h3,
 h4 {
   font-family: "Poppins", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .poppins {
   font-family: "Poppins", sans-serif !important;
-  font-weight: 900 !important;
+  font-weight: 700 !important;
 }
 
 .logo {
   font-family: "Poppins", sans-serif !important;
-  font-weight: 900 !important;
+  font-weight: 700 !important;
 }
 
 h5,
@@ -124,4 +124,34 @@ button {
 .roboto {
   font-family: "Roboto", sans-serif !important;
   font-weight: 300 !important;
+}
+
+.roboto-300 {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300;
+}
+
+.roboto-400 {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400;
+}
+
+.roboto-500 {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 500;
+}
+
+.poppins-600 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600;
+}
+
+.poppins-700 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700;
+}
+
+.poppins-900 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 900;
 }
