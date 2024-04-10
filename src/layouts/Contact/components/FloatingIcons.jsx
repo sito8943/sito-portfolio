@@ -18,16 +18,10 @@ const FloatingIcons = () => {
           top: "15%",
         })}`}
       >
-        <div sx={{ transform: "rotate(30deg)", display: "flex" }}>
-          <FontAwesomeIcon
-            icon={faPhone}
-            className={`float-y ${css({
-              fontSize: "6rem",
-              color: "#9494f5",
-              opacity: 0.5,
-            })}`}
-          />
-        </div>
+        <FontAwesomeIcon
+          icon={faPhone}
+          className="float-y text-green opacity-50 text-[6rem]"
+        />
       </div>
     </Fragment>
   );

@@ -39,6 +39,8 @@ export default {
       secondary: "#CD212A",
       slight: "#d74d54",
       sdark: "#8f171d",
+      yellow: "#D7942E",
+      green: "#00997B",
       "pdark-hover": "#364b6739",
       "p2dark-hover": "#364b6770",
       "dark-drawer-background": "#222222ce",
