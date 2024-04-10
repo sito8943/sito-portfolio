@@ -14,27 +14,25 @@ const FloatingIcons = () => {
   return (
     <Fragment>
       <div
-        className={`sm:hidden scale-animation ${css({ right: "10%", bottom: "10%" })}`}
+        className={`sm:hidden scale-animation ${css({
+          right: "10%",
+          bottom: "10%",
+        })}`}
       >
         <FontAwesomeIcon
           icon={faCircleCheck}
-          className={`float-y ${css({
-            fontSize: "3rem",
-            color: "#0fd908",
-            opacity: 0.5,
-          })}`}
+          className="float-y text-[3rem] opacity-50 text-yellow"
         />
       </div>
       <div
-        className={`sm:hidden scale-animation ${css({ right: "15%", bottom: "15%" })}`}
+        className={`sm:hidden scale-animation ${css({
+          right: "15%",
+          bottom: "15%",
+        })}`}
       >
         <FontAwesomeIcon
           icon={faFaceLaughWink}
-          className={`float-y ${css({
-            fontSize: "4rem",
-            color: "#0fd908",
-            opacity: 0.5,
-          })}`}
+          className="float-y text-[3rem] opacity-50 text-yellow"
         />
       </div>
     </Fragment>
