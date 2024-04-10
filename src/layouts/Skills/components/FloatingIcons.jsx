@@ -17,11 +17,7 @@ const FloatingIcons = () => {
         <div sx={{ transform: "rotate(-30deg)", display: "flex" }}>
           <FontAwesomeIcon
             icon={faJs}
-            className={`float-y sm:!text-5xl ${css({
-              fontSize: "6rem",
-              color: "#F0D81D",
-              opacity: 0.5,
-            })}`}
+            className="float-y sm:!text-5xl text-[6rem] text-yellow opacity-50"
           />
         </div>
       </div>
