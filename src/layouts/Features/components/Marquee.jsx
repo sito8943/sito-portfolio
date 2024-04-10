@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 
 // styles
@@ -26,6 +26,8 @@ function Marquee({
     }
   }, [height, elements, component]);
 
+  const [paused, setPaused] = useState(false);
+
   return (
     <ul className={`${styles.wrapper}`}>
       <div
@@ -35,12 +37,30 @@ function Marquee({
             : styles.marquee
         }
       >
-        <div className={`${styles.marquee__group} ${className}`}>
+        <div
+          onMouseDown={() => setPaused(true)}
+          onMouseUp={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          className={`${styles.marquee__group} ${
+            paused && styles.marquee__paused
+          } ${className}`}
+        >
           {marqueeContent}
         </div>
         <div
           aria-hidden="true"
-          className={`${styles.marquee__group} ${className}`}
+          onMouseDown={() => setPaused(true)}
+          onMouseUp={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          className={`${styles.marquee__group} ${
+            paused && styles.marquee__paused
+          } ${className}`}
         >
           {marqueeContent}
         </div>
