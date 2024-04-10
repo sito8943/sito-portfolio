@@ -12,7 +12,7 @@ function Card({ image, alt, onClick, text, more }) {
       name="clickable-card"
       onClick={onClick}
       aria-label={t("_common:ariaLabels.clickToDialog")}
-      className="hover:-translate-y-2 hover:shadow-lg hover:shadow-sdark transition duration-300 bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px] border-placeholder-dark"
+      className="hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow/40 transition duration-300 bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px] border-placeholder-dark"
     >
       <LazyImage
         src={image}

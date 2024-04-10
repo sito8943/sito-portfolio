@@ -74,7 +74,7 @@ const Projects = () => {
                   href="https://github.com/sito8943"
                   rel="noreferrer"
                   target="_blank"
-                  className="m-auto hover:text-primary underline"
+                  className="m-auto hover:text-green underline"
                 >
                   {t("_pages:home.projects.seeMore")}
                   <FontAwesomeIcon
