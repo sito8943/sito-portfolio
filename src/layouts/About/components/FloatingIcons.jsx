@@ -6,6 +6,7 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 // @emotion/css
 import { css } from "@emotion/css";
+import MiniLogo from "../../../components/Logo/MiniLogo";
 
 const FloatingIcons = () => {
   return (
@@ -19,14 +20,7 @@ const FloatingIcons = () => {
         })}`}
       >
         <div sx={{ transform: "rotate(30deg)", display: "flex" }}>
-          <FontAwesomeIcon
-            icon={faCamera}
-            className={`float-y ${css({
-              fontSize: "6rem",
-              color: "#9494f5",
-              opacity: 0.5,
-            })}`}
-          />
+          <MiniLogo className={`float-y opacity-50 h-[6rem]`} />
         </div>
       </div>
     </Fragment>
