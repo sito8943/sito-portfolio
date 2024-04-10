@@ -65,7 +65,7 @@ const About = () => {
                 className="w-20 h-20 rounded-full"
               />
             </PrintAfter>
-            <ul className="md:w-full flex flex-wrap items-center justify-center gap-3 mt-5">
+            <ul className="md:w-full flex flex-wrap items-center justify-center gap-5 mt-5">
               {cards.map((item, i) => (
                 <li key={i} className="md:w-full">
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
