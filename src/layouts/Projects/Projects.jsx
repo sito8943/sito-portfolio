@@ -43,10 +43,10 @@ const Projects = () => {
       link: "https://descubretrinidad.com",
     },
     {
-      id: "findylin",
+      id: "sito-library",
       image:
-        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/findy_iWwwvksny.png",
-      link: "https://findylin-369a7.web.app/",
+        "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Imagekit_yqb3gsC7a.png",
+      link: "https://recursos.sito8943.com/",
     },
   ];
 
