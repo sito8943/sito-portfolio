@@ -10,34 +10,19 @@ import { css } from "@emotion/css";
 const FloatingIcons = () => {
   return (
     <Fragment>
-      <div className={`sm:hidden scale-animation ${css({ left: "5%" })}`}>
+      <div className="sm:hidden scale-animation left-[5%]">
         <div className={css({ transform: "rotate(-30deg)" })}>
           <FontAwesomeIcon
             icon={faPlane}
-            className={`float-y ${css({
-              fontSize: "3rem",
-              color: "#088cd9",
-              opacity: 0.5,
-            })}`}
+            className="float-y text-[3rem] opacity-50 text-yellow"
           />
         </div>
       </div>
-      <div
-        className={`sm:hidden scale-animation ${css({
-          width: "100px",
-          height: "100px",
-          right: "5%",
-          top: "30%",
-        })}`}
-      >
+      <div className={`sm:hidden scale-animation big-floating !top-[30%]`}>
         <div className={css({ transform: "rotate(30deg)" })}>
           <FontAwesomeIcon
             icon={faMusic}
-            className={`float-y ${css({
-              fontSize: "3rem",
-              color: "#9494f5",
-              opacity: 0.5,
-            })}`}
+            className="float-y opacity-50 color-green text-[3rem]"
           />
         </div>
       </div>
@@ -52,11 +37,7 @@ const FloatingIcons = () => {
         <div className={css({ transform: "rotate(10deg)" })}>
           <FontAwesomeIcon
             icon={faLaptop}
-            className={`float-y ${css({
-              fontSize: "3rem",
-              color: "#0fd908",
-              opacity: 0.5,
-            })}`}
+            className="float-y text-[3rem] opacity-50 text-yellow"
           />
         </div>
       </div>
