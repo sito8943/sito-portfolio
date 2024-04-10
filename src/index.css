@@ -118,40 +118,10 @@ label,
 input,
 button {
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .roboto {
   font-family: "Roboto", sans-serif !important;
-  font-weight: 300 !important;
-}
-
-.roboto-300 {
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 300;
-}
-
-.roboto-400 {
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 400;
-}
-
-.roboto-500 {
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 500;
-}
-
-.poppins-600 {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 600;
-}
-
-.poppins-700 {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 700;
-}
-
-.poppins-900 {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 900;
+  font-weight: 400 !important;
 }
