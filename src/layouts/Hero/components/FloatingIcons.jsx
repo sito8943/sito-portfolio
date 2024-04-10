@@ -22,7 +22,7 @@ const FloatingIcons = () => {
         <div className={css({ transform: "rotate(30deg)" })}>
           <FontAwesomeIcon
             icon={faMusic}
-            className="float-y opacity-50 color-green text-[3rem]"
+            className="float-y opacity-50 text-green text-[3rem]"
           />
         </div>
       </div>
@@ -37,7 +37,7 @@ const FloatingIcons = () => {
         <div className={css({ transform: "rotate(10deg)" })}>
           <FontAwesomeIcon
             icon={faLaptop}
-            className="float-y text-[3rem] opacity-50 text-yellow"
+            className="float-y text-[3rem] opacity-50 text-white"
           />
         </div>
       </div>
