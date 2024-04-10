@@ -109,7 +109,7 @@ const Navbar = () => {
                   className={`button !cursor-pointer ${
                     item === "contact" && activeLink !== `#${item}`
                       ? "secondary filled"
-                      : "primary link"
+                      : "primary link !text-white"
                   } ${activeLink === `#${item}` ? "filled" : ""}`}
                   onClick={() =>
                     scrollTo(document.getElementById(item)?.offsetTop)
