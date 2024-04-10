@@ -103,7 +103,7 @@
       "freeTime": {
         "title": "En mi tiempo libre",
         "text": "Me gusta escuchar música 🎶",
-        "more": "tocar al piano 🎹 y haces fotos 📷",
+        "more": "tocar al piano 🎹 y hacer fotos 📷",
         "content": [
           {
             "Type": "Title",
@@ -166,7 +166,7 @@
     },
     "skills": {
       "title": "Mis Habilidades",
-      "body": "Como desarrollador de Frontend desarollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
+      "body": "Como desarrollador de Frontend desarrollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
       "other": "Otras habilidades"
     },
     "contact": {
