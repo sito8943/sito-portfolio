@@ -1,12 +1,10 @@
 import React, { Fragment, memo } from "react";
 
-// @fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
+// components
+import MiniLogo from "../../../components/Logo/MiniLogo";
 
 // @emotion/css
 import { css } from "@emotion/css";
-import MiniLogo from "../../../components/Logo/MiniLogo";
 
 const FloatingIcons = () => {
   return (
@@ -19,9 +17,7 @@ const FloatingIcons = () => {
           top: "15%",
         })}`}
       >
-        <div sx={{ transform: "rotate(30deg)", display: "flex" }}>
-          <MiniLogo className={`float-y opacity-50 h-[6rem]`} />
-        </div>
+        <MiniLogo className={`float-y opacity-50 h-[6rem]`} />
       </div>
     </Fragment>
   );
