@@ -19,7 +19,7 @@ import "@fontsource/poppins/700.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ModeProvider>
+  <ModeProvider defaultMode="dark">
     <StyleProvider>
       <App />
     </StyleProvider>
