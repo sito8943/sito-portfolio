@@ -71,6 +71,7 @@ const About = () => {
                   <PrintAfter delay={(i + 1) * 300} animation="appear">
                     <Card
                       image={item.image}
+                      noHover
                       onClick={() => showModal(item.id)}
                       alt={item.alt}
                       text={t(`_pages:home.about.${item.id}.text`)}

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 // @sito/ui
 import { Image as LazyImage } from "@sito/ui";
 
-function Card({ image, alt, onClick, text, more }) {
+function Card({ image, alt, onClick, text, more, noHover }) {
   const { t } = useTranslation();
 
   return (
@@ -12,7 +12,11 @@ function Card({ image, alt, onClick, text, more }) {
       name="clickable-card"
       onClick={onClick}
       aria-label={t("_common:ariaLabels.clickToDialog")}
-      className="hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow/40 transition duration-300 bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px] border-placeholder-dark"
+      className={`${
+        noHover
+          ? "border-0"
+          : "hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow/40 transition duration-300 border-placeholder-dark"
+      } bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px] `}
     >
       <LazyImage
         src={image}
