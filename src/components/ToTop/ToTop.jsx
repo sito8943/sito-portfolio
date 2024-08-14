@@ -39,7 +39,7 @@ const ToTop = () => {
       }}
       shape="filled"
       name="to-top"
-      className="transition-all to-top fixed bottom-5 right-5 rounded-full primary !text-white"
+      className="transition-all to-top fixed bottom-5 right-5 rounded-full primary !text-white pr-[1px]"
     />
   );
 };
