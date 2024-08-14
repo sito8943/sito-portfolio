@@ -34,7 +34,7 @@ const Contact = () => {
               </h2>
             </PrintAfter>
             <PrintAfter delay={200} animation="appear">
-              <p className="text-center md:w-[90%] w-[50%] m-auto mb-4">
+              <p className="text-center md:w-[90%] w-[50%] m-auto mb-4 body">
                 {t("_pages:home.contact.body")}
               </p>
             </PrintAfter>

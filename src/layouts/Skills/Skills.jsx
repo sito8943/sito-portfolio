@@ -107,7 +107,7 @@ const Skills = () => {
               </h2>
             </PrintAfter>
             <PrintAfter delay={200} animation="appear">
-              <p className="text-center mb-5 mx-auto w-[80%]">
+              <p className="text-center mb-5 mx-auto w-[80%] body">
                 {t("_pages:home.skills.body").replace(
                   "[year]",
                   String(`${years(2019)}`)
