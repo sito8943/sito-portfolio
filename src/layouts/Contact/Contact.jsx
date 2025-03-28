@@ -55,7 +55,7 @@ const Contact = () => {
                 <a
                   name="download cv"
                   aria-label="download cv"
-                  href="https://drive.google.com/file/d/1am_TLr_rRsPiQ9Jt-R45YuYk4rVQzSzv/view?usp=sharing"
+                  href="https://docs.google.com/document/d/1-nuRGvU2MK743DavOTjIdJx9Td91gC2cxXDBcrCJiRk/edit?usp=sharing"
                   target="blank"
                   rel="noreferrer"
                   className="primary button filled !cursor-pointer"
