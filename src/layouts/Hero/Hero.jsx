@@ -61,6 +61,8 @@ const Hero = () => {
   return (
     <Section id="home" className="inner-section">
       <FloatingIcons />
+      <div className="hero-gradient absolute w-screen h-screen top-0 left-0 opacity-25"></div>
+      <div className="hero-grainy absolute w-screen h-screen top-0 left-0"></div>
       <div className="relative flex items-center justify-start flex-col gap-4 mt-5">
         <PrintAfter delay={100} animation="appear">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
