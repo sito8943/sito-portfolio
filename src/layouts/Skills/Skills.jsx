@@ -43,18 +43,18 @@ const Skills = () => {
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
       link: "https://reactjs.org/",
-      start: 2019,
+      start: 2021,
     },
     {
       id: "Html-Css",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/HTMLCSS_63L4ZaQCk.jpg?updatedAt=1690853306821",
       link: "https://www.w3.org/Style/Examples/011/firstcss.es.html",
-      start: 2019,
+      start: 2020,
     },
     {
       id: "JavaScript",
-      start: 2019,
+      start: 2020,
       link: "https://es.wikipedia.org/wiki/JavaScript",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_5UTJufCe3.jpg?updatedAt=1690852899191",
@@ -110,7 +110,7 @@ const Skills = () => {
               <p className="text-center mb-5 mx-auto w-[80%] body">
                 {t("_pages:home.skills.body").replace(
                   "[year]",
-                  String(`${years(2019)}`)
+                  String(`${years(2020)}`)
                 )}
               </p>
             </PrintAfter>
