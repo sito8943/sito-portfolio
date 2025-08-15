@@ -1,22 +1,56 @@
-// sito components
-import SitoContainer from "sito-container";
+import React, { Suspense, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { scrollTo } from "some-javascript-utils/browser";
+import loadable from "@loadable/component";
+
+// @emotion/css
+import { css } from "@emotion/css";
 
 // own components
+import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
-import Hero from "../layouts/Hero";
-import Projects from "../layouts/Projects";
-import About from "../layouts/About";
-import Contact from "../layouts/Contact";
+
+// layouts
+import Hero from "../layouts/Hero/Hero";
+const Features = loadable(() => import("../layouts/Features/Features"));
+const About = loadable(() => import("../layouts/About/About"));
+const Skills = loadable(() => import("../layouts/Skills/Skills"));
+const Projects = loadable(() => import("../layouts/Projects/Projects"));
+const Contact = loadable(() => import("../layouts/Contact/Contact"));
+const Footer = loadable(() => import("../components/Footer/Footer"));
+const ToTop = loadable(() => import("../components/ToTop/ToTop"));
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const { hash } = location;
+    setTimeout(() => {
+      scrollTo(document.getElementById(hash?.substring(1))?.offsetTop);
+    }, 500);
+  }, [location]);
+
   return (
-    <SitoContainer flexDirection="column" sx={{ width: "100vw" }}>
+    <Suspense fallback={<Loading />}>
+      <ToTop
+        shape="filled"
+        className={css({
+          svg: {
+            marginLeft: "-1px",
+          },
+        })}
+      />
       <Navbar />
-      <Hero />
-      <Projects />
-      <About />
-      <Contact />
-    </SitoContainer>
+      <main>
+        <Hero />
+        <Features />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </Suspense>
   );
 };
 

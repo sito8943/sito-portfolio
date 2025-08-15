@@ -31,3 +31,9 @@ En esta sección muestro los proyectos que hago para divertirme, para aprender.
 ### Contact me/Contacto
 
 En esta sección muestro un formulario para contactarme.
+
+# Attribute
+
+<a href='https://www.freepik.com/photos/library-books'>Library books photo created by jcomp - www.freepik.com</a>
+<a href='https://www.freepik.com/photos/programmer'>Programmer photo created by pressfoto - www.freepik.com</a>
+<a href='https://www.freepik.com/photos/synthesizer'>Synthesizer photo created by pvproductions - www.freepik.com</a>

@@ -1,0 +1,22 @@
+{
+  "ariaLabels": {
+    "clickToSection": "Click to go to the [target] section",
+    "clickToGithub": "Click to visit github profile",
+    "clickToDialog": "Click to expand",
+    "linkTo": "Go to external link",
+    "send": "Send message",
+    "toHome": "Click to go to home",
+    "toProjects": "Go to projects",
+    "toContact": "Go to contact us",
+    "toTop": "Go to the top of the page",
+    "closeDrawer": "Close navigation drawer",
+    "closeModal": "Close popup dialog",
+    "openDrawer": "Open navigation drawer"
+  },
+  "buttons": {
+    "see": "See",
+    "close": "Close",
+    "seeMore": "See more",
+    "try": "Try"
+  }
+}

@@ -1,111 +1,143 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { useScreenWidth } from "use-screen-width";
+import { useTranslation } from "react-i18next";
+import loadable from "@loadable/component";
 
-// sito components
-import SitoContainer from "sito-container";
+import { scrollTo } from "some-javascript-utils/browser";
 
-// @emotion/css
-import { css } from "@emotion/css";
+// @sito/ui
+import { useStyle } from "@sito/ui";
+
+// @fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+// components
+import SitoLogo from "../Logo/SitoLogo";
+
+// styles
+import "./style.css";
 
 // own components
-import OffCanvas from "../OffCanvas/OffCanvas";
-
-// contexts
-import { useLanguage } from "../../contexts/LanguageProvider";
-import { useRoute } from "../../contexts/RouteProvider";
-
-// utils
-import { scrollTo } from "../../utils/functions";
+const OffCanvas = loadable(() => import("../OffCanvas/OffCanvas"));
 
 const Navbar = () => {
-  const { languageState } = useLanguage();
-  const { routeState, setRouteState } = useRoute();
-  const { active } = routeState;
+  const location = useLocation();
+
+  const { t } = useTranslation();
+
+  const { colors } = useStyle();
+
+  const { screenWidth } = useScreenWidth();
 
   const [transparency, setTransparency] = useState(true);
 
-  const extraCSS = css({
-    paddingTop: 0,
-    paddingBottom: 0,
-    top: 0,
-    position: "fixed",
-    display: "flex",
-    width: "-webkit-fill-available",
-  });
+  const [showOffCanvas, setShowOffCanvas] = useState(false);
 
-  const logoCSS = css({
-    marginLeft: "10px",
-    marginBottom: "4px",
-  });
+  const closeOffCanvas = () => setShowOffCanvas(false);
 
-  const linksCSS = css({
-    textTransform: "none",
-  });
-
-  const linkTo = (e) => {
-    const { id } = e.target;
-    setRouteState(id);
-    console.log(id);
-    scrollTo(`section-${id}`);
-  };
-
-  const onScroll = useCallback(
-    (e) => {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      if (top < 100) setTransparency(true);
-      else setTransparency(false);
-    },
-    [setTransparency]
-  );
+  const [activeLink, setActiveLink] = useState("#hero");
 
   useEffect(() => {
+    const { hash } = location;
+    setActiveLink(hash.length ? hash : activeLink);
+  }, [location]);
+
+  const onScroll = useCallback(() => {
+    let sec = document.querySelectorAll("section");
+    sec.forEach((section) => {
+      let top = window.scrollY;
+      setTransparency(top < 60);
+      let offset = section.offsetTop;
+      let height = section.offsetHeight;
+      let id = section.getAttribute("id");
+      if (top >= offset && top < offset + height) {
+        setActiveLink(`#${id}`);
+      }
+    });
+  }, [setActiveLink]);
+
+  useEffect(() => {
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, [onScroll]);
 
+  useEffect(() => {
+    if (screenWidth > 1279) closeOffCanvas();
+  }, [screenWidth]);
+
+  const links = ["home", "features", "about", "skills", "projects", "contact"];
+
   return (
-    <>
-      <OffCanvas />
-      <nav
-        className={`uk-navbar-container uk-padding-large ${extraCSS} ${
-          transparency ? "uk-navbar-transparent uk-light" : ""
+    <header
+      className={`flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 z-[50] ${
+        transparency ? "" : "bg-dark-drawer-background backdrop-blur-lg"
+      }`}
+    >
+      <OffCanvas
+        links={links}
+        visible={showOffCanvas}
+        handleClose={closeOffCanvas}
+      />
+      <div
+        className={`transition-all duration-500 flex items-center justify-between ${
+          transparency ? "w-[85%] h-[100px]" : "w-[90%] h-[60px]"
         }`}
-        data-uk-navbar
       >
         <a
-          className="uk-navbar-toggle uk-hidden@s"
-          data-uk-navbar-toggle-icon
           href="#"
-          data-uk-toggle="target: #offcanvas-push"
-        />
-        <a href="#" className={`uk-navbar-item uk-logo ${logoCSS}`}>
-          Sito
+          name="logo"
+          className="text-secondary logo"
+          aria-label={t("_common:ariaLabels.toHome")}
+          onClick={() => scrollTo(0)}
+        >
+          <SitoLogo className="w-20 h-[42px]" color={colors.primary.default} />
         </a>
-
-        <SitoContainer ignoreDefault className="uk-navbar-right uk-visible@s">
-          <ul className="uk-navbar-nav">
-            {languageState.texts.Navbar.Links.map((item) => (
-              <li
-                key={item.label}
-                className={item.id === active ? "uk-active" : ""}
-              >
-                <button
-                  className={`uk-button uk-button-link ${linksCSS}`}
-                  id={item.id}
-                  onClick={linkTo}
-                  href={item.to}
+        <nav className="h-full flex items-center">
+          <ul className="xl:hidden flex items-center h-full justify-around gap-3">
+            {links.map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item}`}
+                  id={`link-${item}`}
+                  name={item}
+                  aria-label={t("_common:ariaLabels.clickToSection").replace(
+                    "[target]",
+                    t(`_pages:routes.${item}`)
+                  )}
+                  className={`button !cursor-pointer ${
+                    item === "contact" && activeLink !== `#${item}`
+                      ? "secondary filled"
+                      : "primary link !text-white"
+                  } ${activeLink === `#${item}` ? "filled" : ""}`}
+                  onClick={() =>
+                    scrollTo(document.getElementById(item)?.offsetTop)
+                  }
                 >
-                  {item.label}
-                </button>
+                  {t(`_pages:routes.${item}`)}
+                </a>
               </li>
             ))}
           </ul>
-        </SitoContainer>
-      </nav>
-    </>
+          <button
+            type="button"
+            name="menu-button"
+            className="xl:opacity-[1] xl:pointer-events-auto opacity-0 pointer-events-none icon-button primary submit"
+            aria-label={t("_common:ariaLabels.openDrawer")}
+            onClick={() => setShowOffCanvas(!showOffCanvas)}
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        </nav>
+      </div>
+    </header>
   );
 };
 

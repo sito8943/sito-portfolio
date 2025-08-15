@@ -1,15 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #041e42;
+  --color-secondary: #cd212a;
+  --color-background: #222222;
+}
+
+.hero-grainy {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGlkPSJubm5vaXNlIj48ZGVmcz48ZmlsdGVyIGlkPSJubm5vaXNlLWZpbHRlciIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiBwcmltaXRpdmVVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ibGluZWFyUkdCIj4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjE3MSIgbnVtT2N0YXZlcz0iNCIgc2VlZD0iMTUiIHN0aXRjaFRpbGVzPSJzdGl0Y2giIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgcmVzdWx0PSJ0dXJidWxlbmNlIj48L2ZlVHVyYnVsZW5jZT4KCTxmZVNwZWN1bGFyTGlnaHRpbmcgc3VyZmFjZVNjYWxlPSIxMCIgc3BlY3VsYXJDb25zdGFudD0iMS4xIiBzcGVjdWxhckV4cG9uZW50PSIyMCIgbGlnaHRpbmctY29sb3I9IiMwNDFFNDIiIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgaW49InR1cmJ1bGVuY2UiIHJlc3VsdD0ic3BlY3VsYXJMaWdodGluZyI+CiAgICAJCTxmZURpc3RhbnRMaWdodCBhemltdXRoPSIzIiBlbGV2YXRpb249IjEwNCI+PC9mZURpc3RhbnRMaWdodD4KICAJPC9mZVNwZWN1bGFyTGlnaHRpbmc+CiAgCjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iIzA0MWU0MiIgZmlsdGVyPSJ1cmwoI25ubm9pc2UtZmlsdGVyKSI+PC9yZWN0Pjwvc3ZnPg==");
+}
+.hero-gradient {
+  background: radial-gradient(
+    circle,
+    var(--color-secondary) 30%,
+    var(--color-primary) 50%
+  );
+}
+.contact-gradient {
+  background: linear-gradient(
+    circle,
+    var(--color-primary) 30%,
+    var(--color-background) 50%
+  );
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.body {
+  text-wrap: balance;
+}
+
+.inner-section {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+  @apply bg-dark-background;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.float-y {
+  position: absolute;
+  overflow: hidden;
+  animation: float-y 4s linear infinite;
+}
+
+.scale-animation {
+  animation: scale-up 1 0.3s ease;
+  @apply absolute;
+}
+
+@keyframes float-y {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.red {
+  @apply text-[red];
+}
+
+.green {
+  @apply text-[green];
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+input:focus-visible,
+input {
+  outline: none !important;
+}
+
+.main {
+  min-height: calc(100vh - 56px);
+  @apply flex items-start justify-start;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+h5,
+h6,
+p,
+a,
+button,
+label,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.big-floating {
+  width: 100px;
+  height: 100px;
+  right: 5%;
+  top: 15%;
 }

@@ -1,0 +1,23 @@
+.cta {
+  text-decoration: none;
+  transition: all 500ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-5px);
+}
+
+.hero-social {
+  justify-content: center;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+}
+
+.hero-social a {
+  font-size: 30px;
+}
+
+.hero-social div {
+  display: flex;
+  flex-direction: row;
+}
