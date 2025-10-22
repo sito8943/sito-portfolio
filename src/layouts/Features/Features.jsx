@@ -2,7 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import { PrintAfter, useIsElementInViewport } from "@sito/ui";
+import { useIsElementInViewport } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 // styles
 import "./styles.css";
@@ -33,21 +34,21 @@ function Features() {
       <div className="features" ref={elementRef}>
         {visible ? (
           <Fragment>
-            <PrintAfter delay={100} animation="appear">
+            <InViewComponent delay="100ms">
               <h2 className="sm:text-3xl text-4xl font-bold text-center mb-10">
                 {t("_pages:home.features.title")}
               </h2>
-            </PrintAfter>
+            </InViewComponent>
             <Marquee
               component="array"
               elements={cards}
               renderFunction={(el, i) => (
-                <PrintAfter delay={(i + 1) * 200} animation="appear">
+                <InViewComponent delay={`${(i + 1) * 200}ms`}>
                   <Card
                     title={t(`_pages:home.features.cards.${el}.title`)}
                     body={t(`_pages:home.features.cards.${el}.body`)}
                   />
-                </PrintAfter>
+                </InViewComponent>
               )}
             />
           </Fragment>

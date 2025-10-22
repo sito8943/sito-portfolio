@@ -2,11 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import {
-  PrintAfter,
-  Image as LazyImage,
-  useIsElementInViewport,
-} from "@sito/ui";
+import { Image as LazyImage, useIsElementInViewport } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 // components
 import Card from "./components/Card";
@@ -54,21 +51,21 @@ const About = () => {
       >
         {visible ? (
           <Fragment>
-            <PrintAfter delay={100} animation="appear">
+            <InViewComponent delay="100ms">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
                 {t("_pages:home.about.title")}
               </h2>
-            </PrintAfter>
-            <PrintAfter delay={200} animation="appear">
+            </InViewComponent>
+            <InViewComponent delay="200ms">
               <LazyImage
                 src="https://ik.imagekit.io/tx6beroitnm/admin-photo_mrLiDrvvO"
                 className="w-20 h-20 rounded-full"
               />
-            </PrintAfter>
+            </InViewComponent>
             <ul className="md:w-full flex flex-wrap items-center justify-center gap-5 mt-5">
               {cards.map((item, i) => (
                 <li key={i} className="md:w-full">
-                  <PrintAfter delay={(i + 1) * 300} animation="appear">
+                  <InViewComponent delay={`${(i + 1) * 300}ms`}>
                     <Card
                       image={item.image}
                       noHover
@@ -77,7 +74,7 @@ const About = () => {
                       text={t(`_pages:home.about.${item.id}.text`)}
                       more={t(`_pages:home.about.${item.id}.more`)}
                     />
-                  </PrintAfter>
+                  </InViewComponent>
                 </li>
               ))}
             </ul>

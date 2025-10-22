@@ -2,11 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import {
-  PrintAfter,
-  Image as LazyImage,
-  useIsElementInViewport,
-} from "@sito/ui";
+import { Image as LazyImage, useIsElementInViewport } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 import Tippy from "@tippyjs/react";
 
@@ -101,23 +98,23 @@ const Skills = () => {
       >
         {visible ? (
           <Fragment>
-            <PrintAfter delay={100} animation="appear">
+            <InViewComponent delay="100ms">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
                 {t("_pages:home.skills.title")}
               </h2>
-            </PrintAfter>
-            <PrintAfter delay={200} animation="appear">
+            </InViewComponent>
+            <InViewComponent delay="200ms">
               <p className="text-center mb-5 mx-auto w-[80%] body">
                 {t("_pages:home.skills.body").replace(
                   "[year]",
                   String(`${years(2020)}`)
                 )}
               </p>
-            </PrintAfter>
+            </InViewComponent>
             <ul className="flex items-center justify-center flex-wrap gap-5">
               {skills.map((item, i) => (
                 <li key={i}>
-                  <PrintAfter delay={(i + 1) * 300} animation="appear">
+                  <InViewComponent delay={`${(i + 1) * 300}ms`}>
                     <a
                       name={item.id}
                       aria-label={item.ariaLabel}
@@ -133,19 +130,19 @@ const Skills = () => {
                         width={120}
                       />
                     </a>
-                  </PrintAfter>
+                  </InViewComponent>
                 </li>
               ))}
             </ul>
-            <PrintAfter delay={1000} animation="appear">
+            <InViewComponent delay="1000ms">
               <h3 className="text-3xl font-bold text-center">
                 {t("_pages:home.skills.other")}
               </h3>
-            </PrintAfter>
-            <ul className="flex items-center justify-center flex-wrap gap-5">
-              {secondaries.map((jtem, j) => (
-                <li key={j}>
-                  <PrintAfter delay={(j + 1) * 200 + 1000} animation="appear">
+            </InViewComponent>
+            <InViewComponent delay="1200ms">
+              <ul className="flex items-center justify-center flex-wrap gap-5">
+                {secondaries.map((jtem, j) => (
+                  <li key={j}>
                     <Tippy content={jtem.id}>
                       <a
                         name={jtem.id}
@@ -163,10 +160,10 @@ const Skills = () => {
                         />
                       </a>
                     </Tippy>
-                  </PrintAfter>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </InViewComponent>
           </Fragment>
         ) : null}
       </div>

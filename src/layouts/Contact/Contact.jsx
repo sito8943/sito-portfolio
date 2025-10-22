@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // @sito/ui
-import { PrintAfter, useIsElementInViewport } from "@sito/ui";
+import { useIsElementInViewport } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 // components
 import FloatingIcons from "./components/FloatingIcons";
@@ -28,18 +29,18 @@ const Contact = () => {
       >
         {visible ? (
           <Fragment>
-            <PrintAfter delay={100} animation="appear">
+            <InViewComponent delay="100ms">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
                 {t("_pages:home.contact.title")}
               </h2>
-            </PrintAfter>
-            <PrintAfter delay={200} animation="appear">
+            </InViewComponent>
+            <InViewComponent delay="200ms">
               <p className="text-center md:w-[90%] w-[50%] m-auto mb-4 body">
                 {t("_pages:home.contact.body")}
               </p>
-            </PrintAfter>
+            </InViewComponent>
             <div className="flex flex-wrap gap-2 items-center justify-center">
-              <PrintAfter delay={300} animation="appear">
+              <InViewComponent delay="300ms">
                 <a
                   name="email to"
                   aria-label="email sito8943@gmail.com"
@@ -50,8 +51,8 @@ const Contact = () => {
                 >
                   {t("_pages:home.contact.button")}
                 </a>
-              </PrintAfter>
-              <PrintAfter delay={400} animation="appear">
+              </InViewComponent>
+              <InViewComponent delay="400ms">
                 <a
                   name="download cv"
                   aria-label="download cv"
@@ -62,7 +63,7 @@ const Contact = () => {
                 >
                   {t("_pages:home.contact.downloadCV")}
                 </a>
-              </PrintAfter>
+              </InViewComponent>
             </div>
           </Fragment>
         ) : (

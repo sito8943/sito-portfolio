@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { css } from "@emotion/css";
 
 // @sito/ui
-import { useStyle, PrintAfter } from "@sito/ui";
+import { useStyle } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,23 +60,21 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <Section id="home" className="inner-section">
+    <Section id="home" className="inner-section hero-gradient">
       <FloatingIcons />
-      <div className="hero-gradient absolute w-screen h-screen top-0 left-0 opacity-25"></div>
-      <div className="hero-grainy absolute w-screen h-screen top-0 left-0 opacity-50"></div>
       <div className="relative flex items-center justify-start flex-col gap-4 mt-5">
-        <PrintAfter delay={100} animation="appear">
+        <InViewComponent delay="100ms">
           <h1 className="text-center sm:text-3xl text-5xl font-bold">
             {t("_pages:home.hero.title")}
           </h1>
-        </PrintAfter>
-        <PrintAfter delay={200} animation="appear">
+        </InViewComponent>
+        <InViewComponent delay="200ms">
           <LazyImage alt="sito" src={me} className="w-60 h-60 rounded-full" />
-        </PrintAfter>
-        <PrintAfter delay={300} animation="appear">
+        </InViewComponent>
+        <InViewComponent delay="300ms">
           <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
-        </PrintAfter>
-        <PrintAfter delay={400} animation="appear">
+        </InViewComponent>
+        <InViewComponent delay="400ms">
           <nav className="hero-social appear">
             <ul className="flex justify-center gap-6 items-center">
               {socials.map((item, i) => (
@@ -100,9 +99,9 @@ const Hero = () => {
               ))}
             </ul>
           </nav>
-        </PrintAfter>
+        </InViewComponent>
         <div className="float-y !absolute -bottom-[70px]">
-          <PrintAfter delay={500} animation="appear">
+          <InViewComponent delay="500ms">
             <a
               href="#projects"
               name="to-projects"
@@ -114,7 +113,7 @@ const Hero = () => {
             >
               <FontAwesomeIcon className="-ml-[1px]" icon={faArrowDown} />
             </a>
-          </PrintAfter>
+          </InViewComponent>
         </div>
       </div>
     </Section>

@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 // @sito/ui
-import { PrintAfter, useStyle } from "@sito/ui";
+import { useStyle } from "@sito/ui";
+import InViewComponent from "../InViewComponent/InViewComponent";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -76,7 +77,7 @@ const OffCanvas = (props) => {
         </button>
         <nav className="pt-10 flex flex-col">
           {visible ? (
-            <PrintAfter delay={150} animation="appear">
+            <InViewComponent delay="150ms">
               <a
                 href="#"
                 name="logo"
@@ -89,13 +90,13 @@ const OffCanvas = (props) => {
                   color={colors.primary.default}
                 />
               </a>
-            </PrintAfter>
+            </InViewComponent>
           ) : null}
           <ul className="flex flex-col mt-5">
             {visible
               ? links.map((item, i) => (
                   <li key={item} className="w-full">
-                    <PrintAfter delay={(i + 2) * 150} animation="appear">
+                    <InViewComponent delay={`${(i + 2) * 150}ms`}>
                       <a
                         href={`#${item}`}
                         id={`link-${item}`}
@@ -109,7 +110,7 @@ const OffCanvas = (props) => {
                       >
                         {t(`_pages:routes.${item}`)}
                       </a>
-                    </PrintAfter>
+                    </InViewComponent>
                   </li>
                 ))
               : null}

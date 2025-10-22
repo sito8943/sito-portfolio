@@ -6,24 +6,61 @@
   --color-primary: #041e42;
   --color-secondary: #cd212a;
   --color-background: #222222;
+
+  /* Soft background gradient stops */
+  --bg1: #1b1b1b;
+  --bg2: #cd212a30;
+  --bg3: #222222;
+  --bg4: #041e4230;
 }
 
-.hero-grainy {
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGlkPSJubm5vaXNlIj48ZGVmcz48ZmlsdGVyIGlkPSJubm5vaXNlLWZpbHRlciIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiBwcmltaXRpdmVVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ibGluZWFyUkdCIj4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjE3MSIgbnVtT2N0YXZlcz0iNCIgc2VlZD0iMTUiIHN0aXRjaFRpbGVzPSJzdGl0Y2giIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgcmVzdWx0PSJ0dXJidWxlbmNlIj48L2ZlVHVyYnVsZW5jZT4KCTxmZVNwZWN1bGFyTGlnaHRpbmcgc3VyZmFjZVNjYWxlPSIxMCIgc3BlY3VsYXJDb25zdGFudD0iMS4xIiBzcGVjdWxhckV4cG9uZW50PSIyMCIgbGlnaHRpbmctY29sb3I9IiMwNDFFNDIiIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgaW49InR1cmJ1bGVuY2UiIHJlc3VsdD0ic3BlY3VsYXJMaWdodGluZyI+CiAgICAJCTxmZURpc3RhbnRMaWdodCBhemltdXRoPSIzIiBlbGV2YXRpb249IjEwNCI+PC9mZURpc3RhbnRMaWdodD4KICAJPC9mZVNwZWN1bGFyTGlnaHRpbmc+CiAgCjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iIzA0MWU0MiIgZmlsdGVyPSJ1cmwoI25ubm9pc2UtZmlsdGVyKSI+PC9yZWN0Pjwvc3ZnPg==");
-}
 .hero-gradient {
-  background: radial-gradient(
-    circle,
-    var(--color-secondary) 30%,
-    var(--color-primary) 50%
+  /* Fallback color */
+  background-color: var(--color-black);
+  /* Soft animated gradient */
+  background-image: linear-gradient(
+    120deg,
+    var(--bg1) 0%,
+    var(--bg2) 30%,
+    var(--bg3) 60%,
+    var(--bg4) 100%
   );
+  background-size: 200% 200%;
+  animation: bg-pan 3s ease-in-out infinite alternate;
 }
-.contact-gradient {
-  background: linear-gradient(
-    circle,
-    var(--color-primary) 30%,
-    var(--color-background) 50%
-  );
+
+/* Subtle background gradient pan */
+@keyframes bg-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.fancy-appear {
+  animation: fancy-appear 0.6s cubic-bezier(0.25, 1.5, 0.5, 1) 1;
+}
+
+@keyframes fancy-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+
+  80% {
+    transform: translateY(0) scale(0.97);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .invisible {
@@ -159,4 +196,14 @@ button {
   height: 100px;
   right: 5%;
   top: 15%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-// @emotion/css
-import { PrintAfter, useIsElementInViewport } from "@sito/ui";
+// @sito/ui
+import { useIsElementInViewport } from "@sito/ui";
+import InViewComponent from "../../components/InViewComponent/InViewComponent";
 
 // @emotion/css
 import { css } from "@emotion/css";
@@ -59,13 +60,13 @@ const Projects = () => {
       >
         {visible ? (
           <Fragment>
-            <PrintAfter delay={100} animation="appear">
+            <InViewComponent delay="100ms">
               <h2 className="sm:text-3xl text-4xl font-bold text-center">
                 {t("_pages:home.projects.title")}
               </h2>
-            </PrintAfter>
+            </InViewComponent>
 
-            <PrintAfter delay={200} animation="appear">
+            <InViewComponent delay="200ms">
               <p className="text-center">
                 {t("_pages:home.projects.text")}
                 <a
@@ -83,11 +84,11 @@ const Projects = () => {
                   />
                 </a>
               </p>
-            </PrintAfter>
+            </InViewComponent>
             <ul className="flex items-center justify-center flex-wrap gap-5">
               {projects.map((item, i) => (
                 <li key={item.id} className="md:w-full">
-                  <PrintAfter delay={(i + 1) * 300} animation="appear">
+                  <InViewComponent delay={`${(i + 1) * 300}ms`}>
                     <Card
                       link={item.link}
                       image={item.image || logistics}
@@ -98,7 +99,7 @@ const Projects = () => {
                         item.link
                       }`}
                     />
-                  </PrintAfter>
+                  </InViewComponent>
                 </li>
               ))}
             </ul>
