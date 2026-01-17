@@ -15,6 +15,7 @@ import {
 
 // @emotion/css
 import { css } from "@emotion/css";
+import { LINKS } from "../../config/links";
 
 const Footer = () => {
   const { colors } = useStyle();
@@ -22,22 +23,22 @@ const Footer = () => {
   const socials = [
     {
       text: "github",
-      link: "https://github.com/sito8943",
+      link: LINKS.GITHUB,
       icon: faGithub,
     },
     {
       text: "instagram",
-      link: "https://www.instagram.com/sito.8943/",
+      link: LINKS.INSTAGRAM,
       icon: faInstagram,
     },
     {
       text: "twitter",
-      link: "https://twitter.com/sito8943",
+      link: LINKS.TWITTER,
       icon: faTwitter,
     },
     {
       text: "linkedin",
-      link: "https://www.linkedin.com/in/sito8943",
+      link: LINKS.LINKEDIN,
       icon: faLinkedin,
     },
   ];

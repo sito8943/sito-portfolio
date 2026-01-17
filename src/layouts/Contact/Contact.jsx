@@ -8,6 +8,7 @@ import InViewComponent from "../../components/InViewComponent/InViewComponent";
 // components
 import FloatingIcons from "./components/FloatingIcons";
 import Section from "../../components/Section/Section";
+import { LINKS } from "../../config/links";
 
 const Contact = () => {
   const { elementRef, isElementInViewport } = useIsElementInViewport();
@@ -43,8 +44,8 @@ const Contact = () => {
               <InViewComponent delay="300ms">
                 <a
                   name="email to"
-                  aria-label="email sito8943@gmail.com"
-                  href="mailto:sito8943@gmail.com"
+                  aria-label={`email ${LINKS.CONTACT_EMAIL}`}
+                  href={`mailto:${LINKS.CONTACT_EMAIL}`}
                   target="blank"
                   rel="noreferrer"
                   className="primary button filled !cursor-pointer"
@@ -56,7 +57,7 @@ const Contact = () => {
                 <a
                   name="download cv"
                   aria-label="download cv"
-                  href="https://drive.google.com/file/d/1s495FvKAtHrPlfItnx1oVCEDs1HJiZNp/view?usp=sharing"
+                  href={LINKS.CONTACT_CV_URL}
                   target="blank"
                   rel="noreferrer"
                   className="primary button filled !cursor-pointer"

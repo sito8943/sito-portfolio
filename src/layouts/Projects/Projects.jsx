@@ -19,6 +19,7 @@ import logistics from "../../assets/images/projects/wmt.jpg";
 import Card from "./components/Card";
 import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
+import { LINKS } from "../../config/links";
 
 const Projects = () => {
   const { elementRef, isElementInViewport } = useIsElementInViewport();
@@ -33,7 +34,7 @@ const Projects = () => {
   const projects = [
     {
       id: "m2g-fotos",
-      link: "https://m2g-fotos.web.app/",
+      link: LINKS.PROJECT_M2G_FOTOS,
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png",
     },
@@ -41,13 +42,13 @@ const Projects = () => {
       id: "descubre-trinidad",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/sito-portfolio_OhYw223Ki.jpg",
-      link: "https://descubretrinidad.com",
+      link: LINKS.PROJECT_DESCUBRE_TRINIDAD,
     },
     {
       id: "sito-library",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Imagekit_yqb3gsC7a.png",
-      link: "https://recursos.sito8943.com/",
+      link: LINKS.PROJECT_SITO_LIBRARY,
     },
   ];
 
@@ -72,7 +73,7 @@ const Projects = () => {
                 <a
                   name="github"
                   aria-label={t("_pages:home.hero.social.github")}
-                  href="https://github.com/sito8943"
+                  href={LINKS.GITHUB}
                   rel="noreferrer"
                   target="_blank"
                   className="m-auto hover:text-green underline"

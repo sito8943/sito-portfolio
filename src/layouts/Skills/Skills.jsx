@@ -23,6 +23,7 @@ import figma from "../../assets/images/skills/figma.jpg";
 // components
 import Section from "../../components/Section/Section";
 import FloatingIcons from "./components/FloatingIcons";
+import { LINKS } from "../../config/links";
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -39,20 +40,20 @@ const Skills = () => {
       id: "React",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/React_Native_Logo_Yn2-u9mCt.png?updatedAt=1690681265746",
-      link: "https://reactjs.org/",
+      link: LINKS.REACT,
       start: 2021,
     },
     {
       id: "Html-Css",
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/HTMLCSS_63L4ZaQCk.jpg?updatedAt=1690853306821",
-      link: "https://www.w3.org/Style/Examples/011/firstcss.es.html",
+      link: LINKS.HTML_CSS_TUTORIAL,
       start: 2020,
     },
     {
       id: "JavaScript",
       start: 2020,
-      link: "https://es.wikipedia.org/wiki/JavaScript",
+      link: LINKS.JAVASCRIPT,
       image:
         "https://ik.imagekit.io/lgqp0wffgtp/tr:w-250,h-250/SitoPortafolio/skills/js_5UTJufCe3.jpg?updatedAt=1690852899191",
     },
@@ -62,26 +63,26 @@ const Skills = () => {
     {
       id: "Git",
       image: git,
-      link: "https://git-scm.com/",
+      link: LINKS.GIT,
     },
     {
       id: "Typescript",
       image: typescript,
-      link: "https://www.typescriptlang.org/",
+      link: LINKS.TYPESCRIPT,
     },
-    { id: "Material UI", image: mui, link: "https://mui.com/" },
+    { id: "Material UI", image: mui, link: LINKS.MUI },
     {
       id: "Tailwind CSS",
       image: tailwindscss,
-      link: "https://tailwindcss.com",
+      link: LINKS.TAILWINDCSS,
     },
-    { id: "Firebase", image: firebase, link: "https://firebase.google.com/" },
+    { id: "Firebase", image: firebase, link: LINKS.FIREBASE },
     {
       id: "Photoshop",
       image: photoshop,
-      link: "https://www.adobe.com/es/products/photoshop.html",
+      link: LINKS.PHOTOSHOP,
     },
-    { id: "Figma", image: figma, link: "https://www.figma.com/" },
+    { id: "Figma", image: figma, link: LINKS.FIGMA },
   ];
 
   const years = (start) => {

@@ -44,13 +44,11 @@
             "Content": [
               {
                 "Source": "qt-logo",
-                "Alt": "qt-logo",
-                "Link": "https://www.qt.io/"
+                "Alt": "qt-logo"
               },
               {
                 "Source": "cpp-logo",
-                "Alt": "cpp-logo",
-                "Link": "https://es.wikipedia.org/wiki/C%2B%2B"
+                "Alt": "cpp-logo"
               }
             ]
           },
@@ -63,38 +61,31 @@
             "Content": [
               {
                 "Source": "react-logo",
-                "Alt": "react-logo",
-                "Link": "https://reactjs.org/"
+                "Alt": "react-logo"
               },
               {
                 "Source": "node-logo",
-                "Alt": "node-logo",
-                "Link": "https://nodejs.org/"
+                "Alt": "node-logo"
               },
               {
                 "Source": "js-logo",
-                "Alt": "javascript-logo",
-                "Link": "https://es.wikipedia.org/wiki/JavaScript"
+                "Alt": "javascript-logo"
               },
               {
                 "Source": "mui-logo",
-                "Alt": "materialui-logo",
-                "Link": "https://mui.com/"
+                "Alt": "materialui-logo"
               },
               {
                 "Source": "nextui-logo",
-                "Alt": "nextui-logo",
-                "Link": "https://nextui.org/"
+                "Alt": "nextui-logo"
               },
               {
                 "Source": "firebase-logo",
-                "Alt": "firebase-logo",
-                "Link": "https://firebase.google.com/"
+                "Alt": "firebase-logo"
               },
               {
                 "Source": "mongodb-logo",
-                "Alt": "mongodb-logo",
-                "Link": "https://www.mongodb.com/"
+                "Alt": "mongodb-logo"
               }
             ]
           }
