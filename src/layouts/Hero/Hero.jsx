@@ -70,7 +70,13 @@ const Hero = () => {
           </h1>
         </InViewComponent>
         <InViewComponent delay="200ms">
-          <LazyImage alt="sito" src={me} className="w-60 h-60 rounded-full" />
+          <LazyImage
+            alt="sito"
+            src={
+              "https://ik.imagekit.io/lgqp0wffgtp/sito_recursos/yo2_S891JXKyO.webp"
+            }
+            className="w-60 h-60 rounded-full object-cover object-bottom"
+          />
         </InViewComponent>
         <InViewComponent delay="300ms">
           <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
