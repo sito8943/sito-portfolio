@@ -28,4 +28,14 @@
     background-color: color-mix(in srgb, var(--feature-accent) 9%, transparent);
     @apply rounded-full px-3 py-1 text-xs font-bold;
   }
+
+  @media (width < 640px) {
+    .feature-card {
+      @apply min-h-0 p-6;
+    }
+
+    .feature-card-title {
+      @apply text-xl;
+    }
+  }
 }
