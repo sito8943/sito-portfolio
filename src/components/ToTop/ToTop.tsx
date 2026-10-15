@@ -31,7 +31,8 @@ const ToTop = () => {
       variant="submit"
       name="to-top"
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-5 right-5 ${visible ? "z-10 scale-100" : "-z-10 scale-0"}`}
+      // `scale` (appear/leave) is separate from `transform` (@sito/ui :active press)
+      className={`fixed bottom-5 right-5 transition-[scale,transform,background-color,color] duration-300 ${visible ? "z-10 scale-100" : "-z-10 scale-0"}`}
     />
   );
 };
