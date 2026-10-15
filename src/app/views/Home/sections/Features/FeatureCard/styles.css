@@ -1,0 +1,13 @@
+@layer components {
+  .feature-card {
+    @apply bg-dark-background w-[300px] h-[250px] p-5 rounded-xl border-[1px] border-placeholder-dark;
+  }
+
+  .feature-card-title {
+    @apply text-lg font-bold;
+  }
+
+  .feature-card-body {
+    @apply text-balance;
+  }
+}

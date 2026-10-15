@@ -1,0 +1,14 @@
+@layer components {
+  .skills-float {
+    @apply sm:hidden;
+    left: 5%;
+  }
+
+  .skills-float-tilt {
+    @apply flex -rotate-30;
+  }
+
+  .skills-float-icon {
+    @apply sm:text-5xl! text-[6rem] text-yellow opacity-50;
+  }
+}

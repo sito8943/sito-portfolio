@@ -1,0 +1,13 @@
+@layer components {
+  .splash {
+    @apply fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-dark-background;
+  }
+
+  .splash-title {
+    @apply font-bold text-4xl text-plight;
+  }
+
+  .splash-spinner {
+    @apply text-secondary;
+  }
+}

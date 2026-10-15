@@ -1,0 +1,13 @@
+@layer components {
+  .projects-lead {
+    @apply text-center;
+  }
+
+  .projects-github {
+    @apply m-auto hover:text-green underline;
+  }
+
+  .projects-github-icon {
+    @apply ml-[5px] text-[15px];
+  }
+}

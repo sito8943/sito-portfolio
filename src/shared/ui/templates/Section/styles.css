@@ -1,0 +1,9 @@
+@layer components {
+  .section {
+    @apply flex justify-center items-center py-[100px] relative;
+  }
+
+  .section-container {
+    @apply w-[90%];
+  }
+}

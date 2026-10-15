@@ -1,0 +1,13 @@
+@layer components {
+  /* Pulsing placeholder until the image loads. */
+  .lazy-image[data-loaded="false"] {
+    background-color: #2e2e2e;
+    animation: lazy-image-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes lazy-image-pulse {
+    50% {
+      background-color: #3a3a3a;
+    }
+  }
+}

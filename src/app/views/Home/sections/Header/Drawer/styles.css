@@ -1,0 +1,49 @@
+@layer components {
+  .drawer {
+    @apply top-0 left-0 h-screen fixed w-full bg-dark-drawer-background transition duration-300;
+  }
+
+  .drawer[data-open="true"] {
+    @apply opacity-100 backdrop-blur-sm;
+  }
+
+  .drawer[data-open="false"] {
+    @apply opacity-0 pointer-events-none;
+  }
+
+  .drawer-panel {
+    @apply relative flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500;
+  }
+
+  .drawer[data-open="false"] .drawer-panel {
+    @apply -translate-x-4 opacity-0;
+  }
+
+  .drawer-close {
+    @apply absolute! top-1 right-1 text-white! hover:text-error!;
+  }
+
+  .drawer-nav {
+    @apply pt-10 flex flex-col;
+  }
+
+  .drawer-logo {
+    @apply text-secondary;
+  }
+
+  .drawer-logo-mark {
+    @apply w-20 h-[42px] ml-5;
+  }
+
+  .drawer-links {
+    @apply flex flex-col mt-5;
+  }
+
+  .drawer-item {
+    @apply w-full;
+  }
+
+  .drawer-link {
+    @apply w-full justify-start! rounded-none! text-white!;
+  }
+}

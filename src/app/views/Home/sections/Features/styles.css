@@ -1,0 +1,22 @@
+@layer components {
+  .features-section {
+    @apply bg-dark-background2;
+  }
+
+  .features-container {
+    @apply w-full;
+  }
+
+  .features {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .features-title {
+    @apply mb-10;
+  }
+}

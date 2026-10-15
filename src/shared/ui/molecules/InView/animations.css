@@ -1,0 +1,14 @@
+/* Rise + fade in once in view. Unlayered (hand-written motion, see STYLE_GUIDE.md). */
+.in-view {
+  transition: all 400ms ease-in-out var(--in-view-delay, 0.3s);
+}
+
+.in-view[data-shown="false"] {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.in-view[data-shown="true"] {
+  transform: translateY(0px);
+  opacity: 1;
+}

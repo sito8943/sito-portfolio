@@ -1,0 +1,17 @@
+@layer components {
+  .projects-check {
+    @apply sm:hidden;
+    right: 10%;
+    bottom: 10%;
+  }
+
+  .projects-wink {
+    @apply sm:hidden;
+    right: 15%;
+    bottom: 15%;
+  }
+
+  .projects-float-icon {
+    @apply text-[3rem] opacity-50 text-yellow;
+  }
+}

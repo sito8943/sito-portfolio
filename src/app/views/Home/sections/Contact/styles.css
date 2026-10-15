@@ -1,0 +1,13 @@
+@layer components {
+  .contact-section {
+    @apply bg-dark-background2;
+  }
+
+  .contact-lead {
+    @apply text-center md:w-[90%] w-[50%] m-auto mb-4;
+  }
+
+  .contact-actions {
+    @apply flex flex-wrap gap-2 items-center justify-center;
+  }
+}

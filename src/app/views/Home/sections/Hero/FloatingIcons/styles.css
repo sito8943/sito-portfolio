@@ -1,0 +1,41 @@
+@layer components {
+  .hero-plane {
+    @apply sm:hidden left-[5%];
+  }
+
+  .hero-plane-tilt {
+    transform: rotate(-30deg);
+  }
+
+  .hero-plane-icon {
+    @apply text-[3rem] opacity-50 text-yellow;
+  }
+
+  .hero-music {
+    @apply sm:hidden top-[30%]!;
+  }
+
+  .hero-music-tilt {
+    transform: rotate(30deg);
+  }
+
+  .hero-music-icon {
+    @apply opacity-50 text-green text-[3rem];
+  }
+
+  .hero-laptop {
+    @apply sm:hidden;
+    width: 100px;
+    height: 100px;
+    bottom: 4%;
+    right: 20%;
+  }
+
+  .hero-laptop-tilt {
+    transform: rotate(10deg);
+  }
+
+  .hero-laptop-icon {
+    @apply text-[3rem] opacity-50 text-white;
+  }
+}

@@ -1,0 +1,49 @@
+@layer components {
+  .not-found {
+    @apply flex justify-center items-center flex-col w-full h-screen;
+  }
+
+  .not-found-alert {
+    @apply left-[5%];
+  }
+
+  .not-found-alert-tilt {
+    @apply -rotate-[30deg];
+  }
+
+  .not-found-alert-icon {
+    @apply text-7xl text-[#f53b3b] opacity-50;
+  }
+
+  .not-found-thumb {
+    @apply w-[100px] h-[100px] right-[5%] top-20;
+  }
+
+  .not-found-thumb-tilt {
+    @apply rotate-[30deg];
+  }
+
+  .not-found-thumb-icon {
+    @apply text-7xl text-[#9494f5] opacity-50;
+  }
+
+  .not-found-ban {
+    @apply w-[100px] h-[100px] bottom-[4%] right-[20px];
+  }
+
+  .not-found-ban-icon {
+    @apply text-7xl text-[#d908d9] opacity-50;
+  }
+
+  .not-found-code {
+    @apply flex justify-center w-full;
+  }
+
+  .not-found-code h2 {
+    @apply text-8xl;
+  }
+
+  .not-found-text {
+    @apply mb-10;
+  }
+}

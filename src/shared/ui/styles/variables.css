@@ -1,0 +1,70 @@
+@import "tailwindcss";
+/* Sub-layer: our component classes (direct in `components`) always win over @sito/ui. */
+@import "@sito/ui/styles.css" layer(components.sito-ui);
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/poppins/700.css";
+
+/* Desktop-first breakpoints (max-width): `md:` means "768px and below" */
+@custom-variant 2xl (@media (width < 1536px));
+@custom-variant xl (@media (width < 1280px));
+@custom-variant lg (@media (width < 1024px));
+@custom-variant md (@media (width < 768px));
+@custom-variant sm (@media (width < 640px));
+
+/*
+ * Design tokens. Every color here becomes a utility (bg-*, text-*, border-*).
+ * To add one: register it below as --color-<name>, then use it in @apply.
+ */
+@theme {
+  --breakpoint-*: initial;
+
+  --color-*: initial;
+  --color-white: #fbfbfb;
+  --color-white-hover: #c2c7cc;
+  --color-placeholder-dark: #636362;
+  --color-dark-background2: #1b1b1b;
+  --color-dark-background: #222222;
+  --color-light-background2: #fbfbfb;
+  --color-light-background: #e3e3e3;
+  --color-primary: #041e42;
+  --color-plight: #364b67;
+  --color-pdark: #02152e;
+  --color-secondary: #cd212a;
+  --color-slight: #d74d54;
+  --color-sdark: #8f171d;
+  --color-yellow: #d7942e;
+  --color-green: #00997b;
+  --color-pdark-hover: #364b6739;
+  --color-p2dark-hover: #364b6770;
+  --color-dark-drawer-background: #222222ce;
+  --color-light-drawer-background: #e3e3e3ce;
+  --color-error: #ff3b3b;
+  --color-warning: #ff8800;
+  --color-success: #007733;
+  --color-info: #0099cc;
+}
+
+/* @sito/ui theme: the portfolio is dark-only */
+:root {
+  --sito-ui-color-text: #fbfbfb;
+  --sito-ui-color-text-muted: #c2c7cc;
+  --sito-ui-color-surface: #1b1b1b;
+  --sito-ui-color-border: #636362;
+  --sito-ui-color-scheme: dark;
+  --sito-ui-color-default-text: #fbfbfb;
+  --sito-ui-color-default-light: #ffffff14;
+  --sito-ui-color-default-default: #303030;
+  --sito-ui-color-default-hover: #3a3a3a;
+}
+
+@layer base {
+  :root {
+    --color-background: #222222;
+
+    /* Hero gradient stops */
+    --bg1: #1b1b1b;
+    --bg2: #cd212a30;
+    --bg3: #222222;
+    --bg4: #041e4230;
+  }
+}

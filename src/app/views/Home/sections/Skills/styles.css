@@ -1,0 +1,24 @@
+@layer components {
+  .skills-section {
+    @apply bg-pdark;
+  }
+
+  .skills-lead {
+    @apply text-center mb-5 mx-auto w-[80%];
+  }
+
+  .skills-subtitle {
+    @apply text-3xl font-bold text-center;
+  }
+
+  /* Main skill logo (120px circle). */
+  .skill {
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  /* Small "other skill" logo. */
+  .skill-badge {
+    @apply object-cover w-10 h-10 rounded-full bg-white border-2 border-white;
+  }
+}

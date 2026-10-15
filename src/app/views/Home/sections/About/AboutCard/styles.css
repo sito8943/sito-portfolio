@@ -1,0 +1,25 @@
+@layer components {
+  .about-card {
+    @apply bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px];
+  }
+
+  .about-card[data-hover="true"] {
+    @apply hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow/40 transition duration-300 border-placeholder-dark;
+  }
+
+  .about-card[data-hover="false"] {
+    @apply border-0!;
+  }
+
+  .about-card-media {
+    @apply object-bottom;
+  }
+
+  .about-card-body {
+    @apply p-1 px-5;
+  }
+
+  .about-card-text {
+    @apply text-center mb-5;
+  }
+}

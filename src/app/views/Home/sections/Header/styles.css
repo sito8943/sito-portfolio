@@ -1,0 +1,43 @@
+@layer components {
+  .header {
+    @apply flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 z-[50];
+  }
+
+  .header[data-at-top="false"] {
+    @apply bg-dark-drawer-background backdrop-blur-lg;
+  }
+
+  .header-bar {
+    @apply transition-all duration-500 flex items-center justify-between w-[85%] h-[100px];
+  }
+
+  .header[data-at-top="false"] .header-bar {
+    @apply w-[90%] h-[60px];
+  }
+
+  .header-logo {
+    @apply text-secondary;
+  }
+
+  .header-logo-mark {
+    @apply w-20 h-[42px];
+  }
+
+  .header-nav {
+    @apply h-full flex items-center;
+  }
+
+  .header-links {
+    @apply xl:hidden flex items-center h-full justify-around gap-3;
+  }
+
+  /* Plain (text) links stay white; filled ones use the @sito/ui text color. */
+  .header-link[data-filled="false"] {
+    @apply text-white!;
+  }
+
+  /* Mobile menu toggle: only shown below the xl breakpoint. */
+  .header-menu {
+    @apply xl:opacity-100 xl:pointer-events-auto opacity-0 pointer-events-none;
+  }
+}

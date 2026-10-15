@@ -1,0 +1,51 @@
+/* Element defaults. Layered so Tailwind utilities can override them. */
+@layer base {
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    @apply bg-dark-background text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+  }
+
+  h5,
+  h6,
+  p,
+  a,
+  button,
+  label,
+  input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+
+  .logo {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  /* Reduced motion: no transitions, animations or smooth scrolling anywhere. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

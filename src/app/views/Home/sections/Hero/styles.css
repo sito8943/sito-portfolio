@@ -1,0 +1,67 @@
+@layer components {
+  .hero-stack {
+    @apply relative flex items-center justify-start flex-col gap-4 mt-5;
+  }
+
+  .hero-title {
+    @apply text-center sm:text-3xl text-5xl font-bold;
+  }
+
+  .hero-avatar {
+    @apply w-60 h-60 rounded-full object-cover object-bottom;
+  }
+
+  .hero-text {
+    @apply text-center sm:px-4;
+  }
+
+  .hero-social {
+    justify-content: center;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+
+  .hero-social-list {
+    @apply flex justify-center gap-6 items-center;
+  }
+
+  .hero-social-link {
+    @apply transition hover:text-slight;
+    font-size: 30px;
+  }
+
+  /* Floating "go to projects" arrow under the hero. */
+  .hero-cue {
+    @apply absolute! -bottom-[70px];
+  }
+
+  .hero-cue-button {
+    @apply m-2 scale-100 hover:scale-110;
+  }
+
+  /* Soft animated gradient behind the hero */
+  .hero-gradient {
+    /* Fallback color */
+    background-color: var(--color-background);
+    /* Soft animated gradient */
+    background-image: linear-gradient(
+      120deg,
+      var(--bg1) 0%,
+      var(--bg2) 30%,
+      var(--bg3) 60%,
+      var(--bg4) 100%
+    );
+    background-size: 200% 200%;
+    animation: bg-pan 3s ease-in-out infinite alternate;
+  }
+
+  /* Subtle background gradient pan */
+  @keyframes bg-pan {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
