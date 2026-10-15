@@ -39,3 +39,41 @@ jobs:
 
       - name: Build
         run: pnpm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    # Deploy only on push to master, after lint and build pass
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: lint-and-build
+    concurrency:
+      group: firebase-deploy
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.34.4
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SITONOTAS }}
+          channelId: live
+          projectId: sitonotas
