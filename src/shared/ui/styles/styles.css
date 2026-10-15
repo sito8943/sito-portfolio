@@ -1,0 +1,12 @@
+/* Global stylesheet entry: tokens first, then base rules, shared motion and components. */
+@import "./variables.css";
+@import "./base.css";
+@import "./animations.css";
+@import "./components.css";
+
+/* Component stylesheets (co-located styles.css, imported here as one stylesheet). */
+@import "../atoms/LazyImage/styles.css";
+@import "../molecules/Marquee/styles.css";
+@import "../../../app/views/Home/sections/Hero/styles.css";
+@import "../../../app/views/Home/sections/Features/styles.css";
+@import "../../../app/views/Home/sections/Skills/styles.css";

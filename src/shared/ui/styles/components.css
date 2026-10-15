@@ -1,0 +1,30 @@
+/* Classes shared by several components. */
+@layer components {
+  /* Section at least one screen tall. */
+  .inner-section {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  /* Balanced line breaks for body copy. */
+  .body {
+    text-wrap: balance;
+  }
+
+  /* @sito/ui button look on anchors: its hover/active rules only target :enabled buttons. */
+  a.sito-ui-button {
+    cursor: pointer;
+  }
+
+  a.sito-ui-button--submit:hover {
+    background-color: var(--sito-ui-button-hover);
+  }
+
+  a.sito-ui-button--text:hover {
+    background-color: var(--sito-ui-button-light);
+  }
+
+  a.sito-ui-button:active {
+    transform: scale(var(--sito-ui-button-active-scale));
+  }
+}

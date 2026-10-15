@@ -1,17 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import App from "./App";
+import { App } from "@/app";
 
 // translations
-import "./i18";
+import "@/features/i18n";
 
-// styles
-import "./index.css";
-
-// font
-import "@fontsource/roboto/400.css";
-import "@fontsource/poppins/700.css";
+// styles (single global entry, see STYLE_GUIDE.md)
+import "@/shared/ui/styles/styles.css";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Root element #root not found");

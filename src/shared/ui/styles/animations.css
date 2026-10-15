@@ -1,0 +1,49 @@
+/* Shared motion: decorative floating icons and the hidden state of the InView reveal. */
+@layer base {
+  .invisible {
+    opacity: 0;
+  }
+
+  .float-y {
+    position: absolute;
+    overflow: hidden;
+    animation: float-y 4s linear infinite;
+  }
+
+  .scale-animation {
+    animation: scale-up 1 0.3s ease;
+    @apply absolute;
+  }
+
+  /* Default slot for a section's floating icon (top right). */
+  .big-floating {
+    width: 100px;
+    height: 100px;
+    right: 5%;
+    top: 15%;
+  }
+
+  @keyframes float-y {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes scale-up {
+    0% {
+      transform: scale(0);
+    }
+    80% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

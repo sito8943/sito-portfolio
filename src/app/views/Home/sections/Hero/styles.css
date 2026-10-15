@@ -1,0 +1,51 @@
+@layer components {
+  .cta {
+    text-decoration: none;
+    transition: all 500ms ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-5px);
+  }
+
+  .hero-social {
+    justify-content: center;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+
+  .hero-social a {
+    font-size: 30px;
+  }
+
+  .hero-social div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Soft animated gradient behind the hero */
+  .hero-gradient {
+    /* Fallback color */
+    background-color: var(--color-background);
+    /* Soft animated gradient */
+    background-image: linear-gradient(
+      120deg,
+      var(--bg1) 0%,
+      var(--bg2) 30%,
+      var(--bg3) 60%,
+      var(--bg4) 100%
+    );
+    background-size: 200% 200%;
+    animation: bg-pan 3s ease-in-out infinite alternate;
+  }
+
+  /* Subtle background gradient pan */
+  @keyframes bg-pan {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
