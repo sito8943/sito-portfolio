@@ -50,8 +50,8 @@ function Home() {
         footer={<Footer />}
       >
         <Hero />
-        <Features />
         <About />
+        <Features />
         <Skills />
         <Projects />
         <Contact />
