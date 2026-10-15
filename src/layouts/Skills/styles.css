@@ -1,4 +1,6 @@
-.skill {
-  border-radius: 100%;
-  object-fit: cover;
+@layer components {
+  .skill {
+    border-radius: 100%;
+    object-fit: cover;
+  }
 }
