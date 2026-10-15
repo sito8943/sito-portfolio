@@ -1,6 +1,6 @@
 @layer components {
   .contact-section {
-    @apply bg-dark-background2;
+    background-color: transparent;
   }
 
   .contact-lead {

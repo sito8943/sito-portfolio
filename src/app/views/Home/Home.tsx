@@ -49,12 +49,14 @@ function Home() {
         header={<Header />}
         footer={<Footer />}
       >
-        <Hero />
-        <About />
-        <Features />
-        <Skills />
-        <Projects />
-        <Contact />
+        <div className="home-background">
+          <Hero />
+          <About />
+          <Features />
+          <Skills />
+          <Projects />
+          <Contact />
+        </div>
       </PageLayout>
     </Suspense>
   );

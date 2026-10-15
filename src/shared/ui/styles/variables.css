@@ -60,11 +60,5 @@
 @layer base {
   :root {
     --color-background: #222222;
-
-    /* Hero gradient stops */
-    --bg1: #1b1b1b;
-    --bg2: #cd212a30;
-    --bg3: #222222;
-    --bg4: #041e4230;
   }
 }

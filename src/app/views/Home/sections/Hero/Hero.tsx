@@ -17,7 +17,7 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <Section id={SECTIONS.home} className="inner-section hero-gradient">
+    <Section id={SECTIONS.home} className="inner-section">
       <FloatingIcons />
       <div className="hero-stack">
         <InView delay="100ms">

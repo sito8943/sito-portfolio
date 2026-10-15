@@ -1,6 +1,6 @@
 @layer components {
   .features-section {
-    @apply bg-dark-background2 min-h-screen;
+    @apply min-h-screen;
   }
 
   .features-container {
