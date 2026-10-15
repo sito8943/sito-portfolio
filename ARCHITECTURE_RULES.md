@@ -87,7 +87,7 @@ src/
       constants.ts | utils.ts | types.ts
       index.ts            # Public API of the feature
 
-  lang/                   # i18n dictionaries: <lng>/<namespace>.json
+  lang/                   # i18n dictionaries: <lng>/<namespace>.ts (+ meta.ts)
   assets/                 # Images and static files imported by code
 ```
 
@@ -159,8 +159,15 @@ Rules:
 ## 8) i18n Rules
 
 - `i18next` + `react-i18next`, initialised in `features/i18n` (imported once from `main.tsx`).
-- All user-facing copy lives in `src/lang/<lng>/` JSON namespaces (`_common`, `_pages`).
-- Every language must have the same keys.
+- All user-facing copy lives in `src/lang/<lng>/` TypeScript namespaces (`_common`, `_pages`).
+- English is the source of truth: other languages are typed against it (`Resources`, `Meta`), so a
+  missing or extra key fails `tsc`.
+- Keys are typed (`CustomTypeOptions` in `features/i18n/i18next.d.ts`): use `useTranslation` from
+  `@/features/i18n`, not from `react-i18next`, so `t("_pages:…")` is checked.
+- Each language is its own page (`/en/`, `/es/`): `plugins/langPages.ts` writes the translated
+  `<title>`, description, social meta and hreflang (from `src/lang/<lng>/meta.ts`) into
+  `dist/<lng>/index.html` at build time. `/` redirects to the saved or browser language.
+  Adding a language: add it to `LANGS`, create its folder and add a rewrite in `firebase.json`.
 - Avoid hardcoded user-facing strings in components; read them with `useTranslation()`.
 - Shared UI never calls `useTranslation()`: it receives text through props.
 

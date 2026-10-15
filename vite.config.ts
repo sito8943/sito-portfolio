@@ -2,9 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
+import { langPages } from "./plugins/langPages";
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    langPages({ siteUrl: "https://sito8943.com" }),
+  ],
   resolve: {
     tsconfigPaths: true,
   },

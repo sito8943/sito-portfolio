@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/features/i18n";
 import { Tooltip } from "react-tooltip";
 
 import { SECTIONS } from "@/shared/config";

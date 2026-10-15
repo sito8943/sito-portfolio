@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/features/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { SECTIONS } from "@/shared/config";
@@ -36,11 +36,9 @@ export function Features() {
                       icon={<FontAwesomeIcon icon={icon} aria-hidden="true" />}
                       title={t(`_pages:home.features.cards.${id}.title`)}
                       body={t(`_pages:home.features.cards.${id}.body`)}
-                      tags={
-                        t(`_pages:home.features.cards.${id}.tags`, {
-                          returnObjects: true,
-                        }) as string[]
-                      }
+                      tags={t(`_pages:home.features.cards.${id}.tags`, {
+                        returnObjects: true,
+                      })}
                     />
                   </InView>
                 </li>

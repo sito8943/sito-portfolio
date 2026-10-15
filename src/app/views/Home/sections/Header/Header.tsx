@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/features/i18n";
 import loadable from "@loadable/component";
 
 import { scrollTo } from "some-javascript-utils/browser";

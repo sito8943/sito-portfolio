@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/features/i18n";
 import { scrollTo } from "some-javascript-utils/browser";
 import loadable from "@loadable/component";
 
