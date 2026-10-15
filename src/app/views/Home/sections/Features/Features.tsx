@@ -36,9 +36,11 @@ export function Features() {
                       icon={<FontAwesomeIcon icon={icon} aria-hidden="true" />}
                       title={t(`_pages:home.features.cards.${id}.title`)}
                       body={t(`_pages:home.features.cards.${id}.body`)}
-                      tags={t(`_pages:home.features.cards.${id}.tags`, {
-                        returnObjects: true,
-                      }) as string[]}
+                      tags={
+                        t(`_pages:home.features.cards.${id}.tags`, {
+                          returnObjects: true,
+                        }) as string[]
+                      }
                     />
                   </InView>
                 </li>
