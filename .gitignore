@@ -48,3 +48,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.gstack/

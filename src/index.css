@@ -1,209 +1,279 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@sito/ui/styles.css" layer(components);
 
-:root {
+/* Desktop-first breakpoints (max-width), kept from the Tailwind 3 config */
+@custom-variant 2xl (@media (width < 1536px));
+@custom-variant xl (@media (width < 1280px));
+@custom-variant lg (@media (width < 1024px));
+@custom-variant md (@media (width < 768px));
+@custom-variant sm (@media (width < 640px));
+
+@theme {
+  --breakpoint-*: initial;
+
+  --color-*: initial;
+  --color-white: #fbfbfb;
+  --color-white-hover: #c2c7cc;
+  --color-placeholder-dark: #636362;
+  --color-dark-background2: #1b1b1b;
+  --color-dark-background: #222222;
+  --color-light-background2: #fbfbfb;
+  --color-light-background: #e3e3e3;
   --color-primary: #041e42;
+  --color-plight: #364b67;
+  --color-pdark: #02152e;
   --color-secondary: #cd212a;
-  --color-background: #222222;
-
-  /* Soft background gradient stops */
-  --bg1: #1b1b1b;
-  --bg2: #cd212a30;
-  --bg3: #222222;
-  --bg4: #041e4230;
+  --color-slight: #d74d54;
+  --color-sdark: #8f171d;
+  --color-yellow: #d7942e;
+  --color-green: #00997b;
+  --color-pdark-hover: #364b6739;
+  --color-p2dark-hover: #364b6770;
+  --color-dark-drawer-background: #222222ce;
+  --color-light-drawer-background: #e3e3e3ce;
+  --color-error: #ff3b3b;
+  --color-warning: #ff8800;
+  --color-success: #007733;
+  --color-info: #0099cc;
 }
 
-.hero-gradient {
-  /* Fallback color */
-  background-color: var(--color-black);
-  /* Soft animated gradient */
-  background-image: linear-gradient(
-    120deg,
-    var(--bg1) 0%,
-    var(--bg2) 30%,
-    var(--bg3) 60%,
-    var(--bg4) 100%
-  );
-  background-size: 200% 200%;
-  animation: bg-pan 3s ease-in-out infinite alternate;
+/* @sito/ui: the portfolio is dark-only */
+:root {
+  --sito-ui-color-text: #fbfbfb;
+  --sito-ui-color-text-muted: #c2c7cc;
+  --sito-ui-color-surface: #1b1b1b;
+  --sito-ui-color-border: #636362;
+  --sito-ui-color-scheme: dark;
+  --sito-ui-color-default-text: #fbfbfb;
+  --sito-ui-color-default-light: #ffffff14;
+  --sito-ui-color-default-default: #303030;
+  --sito-ui-color-default-hover: #3a3a3a;
 }
 
-/* Subtle background gradient pan */
-@keyframes bg-pan {
-  0% {
-    background-position: 0% 50%;
+/* @sito/ui hover rules target :enabled, which anchors never match */
+@layer components {
+  a.sito-ui-button {
+    cursor: pointer;
   }
-  100% {
-    background-position: 100% 50%;
+
+  a.sito-ui-button--submit:hover {
+    background-color: var(--sito-ui-button-hover);
+  }
+
+  a.sito-ui-button--text:hover {
+    background-color: var(--sito-ui-button-light);
+  }
+
+  a.sito-ui-button:active {
+    transform: scale(var(--sito-ui-button-active-scale));
   }
 }
 
-.fancy-appear {
-  animation: fancy-appear 0.6s cubic-bezier(0.25, 1.5, 0.5, 1) 1;
-}
+/* Legacy global styles live in the base layer so utilities can override them */
+@layer base {
+  :root {
+    --color-primary: #041e42;
+    --color-secondary: #cd212a;
+    --color-background: #222222;
 
-@keyframes fancy-appear {
-  0% {
+    /* Soft background gradient stops */
+    --bg1: #1b1b1b;
+    --bg2: #cd212a30;
+    --bg3: #222222;
+    --bg4: #041e4230;
+  }
+
+  .hero-gradient {
+    /* Fallback color */
+    background-color: var(--color-background);
+    /* Soft animated gradient */
+    background-image: linear-gradient(
+      120deg,
+      var(--bg1) 0%,
+      var(--bg2) 30%,
+      var(--bg3) 60%,
+      var(--bg4) 100%
+    );
+    background-size: 200% 200%;
+    animation: bg-pan 3s ease-in-out infinite alternate;
+  }
+
+  /* Subtle background gradient pan */
+  @keyframes bg-pan {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .fancy-appear {
+    animation: fancy-appear 0.6s cubic-bezier(0.25, 1.5, 0.5, 1) 1;
+  }
+
+  @keyframes fancy-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(15px) scale(0.9);
+    }
+
+    60% {
+      opacity: 1;
+      transform: translateY(0) scale(1.05);
+    }
+
+    80% {
+      transform: translateY(0) scale(0.97);
+    }
+
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .invisible {
     opacity: 0;
-    transform: translateY(15px) scale(0.9);
   }
 
-  60% {
-    opacity: 1;
-    transform: translateY(0) scale(1.05);
+  .body {
+    text-wrap: balance;
   }
 
-  80% {
-    transform: translateY(0) scale(0.97);
+  .inner-section {
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
-  100% {
-    transform: translateY(0) scale(1);
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
-}
 
-.invisible {
-  opacity: 0;
-}
-
-.body {
-  text-wrap: balance;
-}
-
-.inner-section {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
-html,
-body {
-  scroll-behavior: smooth;
-  @apply bg-dark-background;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.float-y {
-  position: absolute;
-  overflow: hidden;
-  animation: float-y 4s linear infinite;
-}
-
-.scale-animation {
-  animation: scale-up 1 0.3s ease;
-  @apply absolute;
-}
-
-@keyframes float-y {
-  0% {
-    transform: translateY(0px);
+  html,
+  body {
+    scroll-behavior: smooth;
+    @apply bg-dark-background text-white;
   }
-  50% {
-    transform: translateY(-20px);
+
+  code {
+    font-family:
+      source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   }
-  100% {
-    transform: translateY(0px);
+
+  .float-y {
+    position: absolute;
+    overflow: hidden;
+    animation: float-y 4s linear infinite;
   }
-}
 
-@keyframes scale-up {
-  0% {
-    transform: scale(0);
+  .scale-animation {
+    animation: scale-up 1 0.3s ease;
+    @apply absolute;
   }
-  80% {
-    transform: scale(1.2);
+
+  @keyframes float-y {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
-  100% {
-    transform: scale(1);
+
+  @keyframes scale-up {
+    0% {
+      transform: scale(0);
+    }
+    80% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-}
 
-.red {
-  @apply text-[red];
-}
+  .red {
+    @apply text-[red];
+  }
 
-.green {
-  @apply text-[green];
-}
+  .green {
+    @apply text-[green];
+  }
 
-textarea {
-  resize: none;
-}
+  textarea {
+    resize: none;
+  }
 
-input[type="file"] {
-  visibility: hidden;
-}
+  input[type="file"] {
+    visibility: hidden;
+  }
 
-input:focus-visible,
-input {
-  outline: none !important;
-}
+  input:focus-visible,
+  input {
+    outline: none !important;
+  }
 
-.main {
-  min-height: calc(100vh - 56px);
-  @apply flex items-start justify-start;
-}
+  .main {
+    min-height: calc(100vh - 56px);
+    @apply flex items-start justify-start;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+  }
 
-.poppins {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 700 !important;
-}
+  .poppins {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+  }
 
-.logo {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 700 !important;
-}
+  .logo {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+  }
 
-h5,
-h6,
-p,
-a,
-button,
-label,
-input,
-button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
+  h5,
+  h6,
+  p,
+  a,
+  button,
+  label,
+  input,
+  button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
 
-.roboto {
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 400 !important;
-}
+  .roboto {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+  }
 
-.big-floating {
-  width: 100px;
-  height: 100px;
-  right: 5%;
-  top: 15%;
-}
+  .big-floating {
+    width: 100px;
+    height: 100px;
+    right: 5%;
+    top: 15%;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

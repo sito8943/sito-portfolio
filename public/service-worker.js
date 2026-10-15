@@ -9,13 +9,13 @@ window.addEventListener("install", function (event) {
         "/static/css/main.css",
         "/favicon.ico",
       ]);
-    })
+    }),
   );
 });
 window.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
       return response || fetch(event.request);
-    })
+    }),
   );
 });

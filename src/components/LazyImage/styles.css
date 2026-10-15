@@ -1,29 +1,12 @@
-.box {
-  background-image: linear-gradient(
-    to right,
-    #cbcbcb calc(50% - 100px),
-    #a5a5a5 50%,
-    #cbcbcb calc(50% + 100px)
-  );
-  background-size: 0;
-  opacity: 0.9;
-  position: relative;
-  overflow: hidden;
-}
+@layer components {
+  .box {
+    background-color: #2e2e2e;
+    animation: box-pulse 1.5s ease-in-out infinite;
+  }
 
-.box::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  width: calc(200% + 200px);
-  bottom: 0;
-  background-image: inherit;
-  animation: move 2s linear infinite;
-}
-@keyframes move {
-  to {
-    transform: translateX(calc(50% + 100px));
+  @keyframes box-pulse {
+    50% {
+      background-color: #3a3a3a;
+    }
   }
 }
