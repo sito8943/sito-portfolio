@@ -38,5 +38,4 @@
   .hero-cue-button {
     @apply m-2 scale-100 hover:scale-110;
   }
-
 }
