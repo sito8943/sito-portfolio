@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { SECTIONS } from "@/shared/config";
 import { useInViewOnce } from "@/shared/hooks";
-import { InView, Marquee } from "@/shared/ui/molecules";
+import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 
 import { FEATURE_CARDS } from "./constants";
@@ -27,18 +28,22 @@ export function Features() {
                 {t("_pages:home.features.title")}
               </h2>
             </InView>
-            <Marquee
-              elements={FEATURE_CARDS}
-              getKey={(el) => el}
-              renderFunction={(el, i) => (
-                <InView delay={`${(i + 1) * 200}ms`}>
-                  <FeatureCard
-                    title={t(`_pages:home.features.cards.${el}.title`)}
-                    body={t(`_pages:home.features.cards.${el}.body`)}
-                  />
-                </InView>
-              )}
-            />
+            <ul className="features-grid">
+              {FEATURE_CARDS.map(({ id, icon, tone }, i) => (
+                <li key={id} className="features-grid-item" data-tone={tone}>
+                  <InView delay={`${(i + 1) * 200}ms`}>
+                    <FeatureCard
+                      icon={<FontAwesomeIcon icon={icon} aria-hidden="true" />}
+                      title={t(`_pages:home.features.cards.${id}.title`)}
+                      body={t(`_pages:home.features.cards.${id}.body`)}
+                      tags={t(`_pages:home.features.cards.${id}.tags`, {
+                        returnObjects: true,
+                      }) as string[]}
+                    />
+                  </InView>
+                </li>
+              ))}
+            </ul>
           </>
         ) : null}
       </div>

@@ -112,27 +112,22 @@
       }
     },
     "features": {
-      "title": "Features",
+      "title": "Core Competencies",
       "cards": {
-        "marketing": {
-          "title": "Marketing/Business Page",
-          "body": "The marketing or business page, also referred to as a portfolios, effectively showcases the company's history and disseminates essential information to visitors."
+        "uiUx": {
+          "title": "UI/UX Design",
+          "body": "Designing clear, intuitive interfaces around real user needs and smooth journeys.",
+          "tags": ["Figma", "Prototyping"]
         },
-        "dashboard": {
-          "title": "Dashboard",
-          "body": "Through an administration panel, those responsible for a site can modify its contents."
+        "web": {
+          "title": "Web Development",
+          "body": "Building responsive, high-performance web experiences with modern frontend tools.",
+          "tags": ["React", "TypeScript", "Tailwind"]
         },
-        "content": {
-          "title": "Content page",
-          "body": "A content page or media website is for consume information, like blogs, magazines or curation for inspirations, having text, image or videos"
-        },
-        "ecommerce": {
-          "title": "Ecommerce",
-          "body": "Electronic commerce or ecommerce is the trade of goods and services on the Internet. As well as online stores for shoes, electronic components, etc."
-        },
-        "restApi": {
-          "title": "REST API",
-          "body": "A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style."
+        "mobile": {
+          "title": "Mobile Development",
+          "body": "Building mobile apps for Android and iOS with modern development tools.",
+          "tags": ["React Native", "Kotlin"]
         }
       }
     },
