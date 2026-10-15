@@ -26,43 +26,36 @@ export function Drawer({ visible, links, handleClose }: DrawerProps) {
     <div
       aria-hidden={!visible}
       onClick={handleClose}
-      className={`top-0 left-0 h-screen fixed w-full bg-dark-drawer-background transition duration-300 ${
-        visible
-          ? "opacity-100 backdrop-blur-sm"
-          : "opacity-0 pointer-events-none"
-      }`}
+      data-open={visible}
+      className="drawer"
     >
-      <aside
-        className={`${
-          !visible ? "-translate-x-4 opacity-0" : ""
-        } relative flex-col flex w-[300px] h-full bg-dark-background2 z-50 delay-150 transition duration-500`}
-      >
+      <aside className="drawer-panel">
         <IconButton
           name="close-drawer"
           aria-label={t("_common:ariaLabels.closeDrawer")}
-          className="!absolute top-1 right-1 !text-white hover:!text-error"
+          className="drawer-close"
           onClick={handleClose}
           icon={<FontAwesomeIcon icon={faClose} />}
         />
-        <nav className="pt-10 flex flex-col">
+        <nav className="drawer-nav">
           {visible ? (
             <InView delay="150ms">
               <a
                 href="#home"
-                className="text-secondary logo"
+                className="drawer-logo logo"
                 aria-label={t("_common:ariaLabels.toHome")}
                 onClick={() => scrollTo(0)}
               >
-                <SitoLogo className="w-20 h-[42px] ml-5" />
+                <SitoLogo className="drawer-logo-mark" />
               </a>
             </InView>
           ) : null}
-          <ul className="flex flex-col mt-5">
+          <ul className="drawer-links">
             {visible
               ? links.map((item, i) => {
                   const active = activeLink === `#${item}`;
                   return (
-                    <li key={item} className="w-full">
+                    <li key={item} className="drawer-item">
                       <InView delay={`${(i + 2) * 150}ms`}>
                         <a
                           href={`#${item}`}
@@ -75,8 +68,7 @@ export function Drawer({ visible, links, handleClose }: DrawerProps) {
                             color: "primary",
                             variant: active ? "submit" : "text",
                             size: "lg",
-                            className:
-                              "w-full !justify-start !rounded-none !text-white",
+                            className: "drawer-link",
                           })}
                         >
                           {t(`_pages:routes.${item}`)}

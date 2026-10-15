@@ -7,33 +7,20 @@ import {
   faFaceLaughWink,
 } from "@fortawesome/free-solid-svg-icons";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 /** Decorative floating icons (hidden on small screens). */
 export function FloatingIcons() {
   return (
     <Fragment>
-      <div
-        className={`sm:hidden scale-animation ${css({
-          right: "10%",
-          bottom: "10%",
-        })}`}
-      >
+      <div className="projects-check scale-animation">
         <FontAwesomeIcon
           icon={faCircleCheck}
-          className="float-y text-[3rem] opacity-50 text-yellow"
+          className="projects-float-icon float-y"
         />
       </div>
-      <div
-        className={`sm:hidden scale-animation ${css({
-          right: "15%",
-          bottom: "15%",
-        })}`}
-      >
+      <div className="projects-wink scale-animation">
         <FontAwesomeIcon
           icon={faFaceLaughWink}
-          className="float-y text-[3rem] opacity-50 text-yellow"
+          className="projects-float-icon float-y"
         />
       </div>
     </Fragment>

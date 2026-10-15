@@ -4,41 +4,25 @@ import { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlane, faLaptop, faMusic } from "@fortawesome/free-solid-svg-icons";
 
-// @emotion/css
-import { css } from "@emotion/css";
-
 /** Decorative floating icons (hidden on small screens). */
 export function FloatingIcons() {
   return (
     <Fragment>
-      <div className="sm:hidden scale-animation left-[5%]">
-        <div className={css({ transform: "rotate(-30deg)" })}>
-          <FontAwesomeIcon
-            icon={faPlane}
-            className="float-y text-[3rem] opacity-50 text-yellow"
-          />
+      <div className="hero-plane scale-animation">
+        <div className="hero-plane-tilt">
+          <FontAwesomeIcon icon={faPlane} className="hero-plane-icon float-y" />
         </div>
       </div>
-      <div className={`sm:hidden scale-animation big-floating !top-[30%]`}>
-        <div className={css({ transform: "rotate(30deg)" })}>
-          <FontAwesomeIcon
-            icon={faMusic}
-            className="float-y opacity-50 text-green text-[3rem]"
-          />
+      <div className="hero-music scale-animation big-floating">
+        <div className="hero-music-tilt">
+          <FontAwesomeIcon icon={faMusic} className="hero-music-icon float-y" />
         </div>
       </div>
-      <div
-        className={`sm:hidden scale-animation ${css({
-          width: "100px",
-          height: "100px",
-          bottom: "4%",
-          right: "20%",
-        })}`}
-      >
-        <div className={css({ transform: "rotate(10deg)" })}>
+      <div className="hero-laptop scale-animation">
+        <div className="hero-laptop-tilt">
           <FontAwesomeIcon
             icon={faLaptop}
-            className="float-y text-[3rem] opacity-50 text-white"
+            className="hero-laptop-icon float-y"
           />
         </div>
       </div>

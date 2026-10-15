@@ -39,7 +39,7 @@ function Home() {
   return (
     <Suspense
       fallback={
-        <div className="flex w-full h-full items-center justify-center">
+        <div className="home-loading">
           <Spinner />
         </div>
       }

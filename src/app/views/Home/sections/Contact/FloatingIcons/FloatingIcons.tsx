@@ -7,10 +7,10 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 function FloatingIconsBase() {
   return (
     <Fragment>
-      <div className="sm:hidden scale-animation big-floating">
+      <div className="contact-float scale-animation big-floating">
         <FontAwesomeIcon
           icon={faPhone}
-          className="float-y text-green opacity-50 text-[6rem]"
+          className="contact-float-icon float-y"
         />
       </div>
     </Fragment>

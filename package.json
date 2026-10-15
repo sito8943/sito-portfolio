@@ -16,7 +16,6 @@
     "deploy": "firebase deploy --only hosting:sito-portfolio"
   },
   "dependencies": {
-    "@emotion/css": "^11.13.5",
     "@fontsource/poppins": "5.2.6",
     "@fontsource/roboto": "5.2.6",
     "@fortawesome/fontawesome-svg-core": "7.0.0",

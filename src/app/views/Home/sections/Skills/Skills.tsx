@@ -22,28 +22,23 @@ export function Skills() {
   const { ref, inView } = useInViewOnce();
 
   return (
-    <Section id={SECTIONS.skills} background="bg-pdark">
+    <Section id={SECTIONS.skills} className="skills-section">
       <FloatingIcons />
-      <div
-        className="flex items-center justify-center flex-col h-full gap-4"
-        ref={ref}
-      >
+      <div className="section-stack" ref={ref}>
         {inView ? (
           <>
             <InView delay="100ms">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center">
-                {t("_pages:home.skills.title")}
-              </h2>
+              <h2 className="section-title">{t("_pages:home.skills.title")}</h2>
             </InView>
             <InView delay="200ms">
-              <p className="text-center mb-5 mx-auto w-[80%] body">
+              <p className="skills-lead body">
                 {t("_pages:home.skills.body").replace(
                   "[year]",
                   String(yearsSince(CAREER_START_YEAR)),
                 )}
               </p>
             </InView>
-            <ul className="flex items-center justify-center flex-wrap gap-5">
+            <ul className="card-row">
               {MAIN_SKILLS.map((item, i) => (
                 <li key={item.id}>
                   <InView delay={`${(i + 1) * 300}ms`}>
@@ -66,12 +61,12 @@ export function Skills() {
               ))}
             </ul>
             <InView delay="1000ms">
-              <h3 className="text-3xl font-bold text-center">
+              <h3 className="skills-subtitle">
                 {t("_pages:home.skills.other")}
               </h3>
             </InView>
             <InView delay="1200ms">
-              <ul className="flex items-center justify-center flex-wrap gap-5">
+              <ul className="card-row">
                 {OTHER_SKILLS.map((item) => (
                   <li key={item.id}>
                     <a
@@ -83,7 +78,7 @@ export function Skills() {
                       rel="noreferrer"
                     >
                       <LazyImage
-                        className="object-cover w-10 h-10 rounded-full bg-white border-2 border-white"
+                        className="skill-badge"
                         src={item.image}
                         alt={item.id}
                       />

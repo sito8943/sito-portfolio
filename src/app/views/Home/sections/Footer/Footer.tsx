@@ -5,15 +5,12 @@ import { SOCIALS } from "@/shared/config";
 
 export function Footer() {
   return (
-    <footer
-      id="footer"
-      className="items-center justify-center flex px-3 min-h-[50px] py-2 bg-dark-background flex-wrap"
-    >
-      <div className="w-[90%] flex items-center justify-between flex-wrap gap-y-5 sm:my-5">
-        <div className="flex">
+    <footer id="footer" className="footer">
+      <div className="footer-bar">
+        <div className="footer-copy">
           <p>{`Sito © ${new Date().getFullYear()}`}</p>
         </div>
-        <div className="flex items-center sm:gap-3 gap-5">
+        <div className="footer-socials">
           {SOCIALS.map((item) => (
             <a
               key={item.link}
@@ -21,7 +18,7 @@ export function Footer() {
               rel="noreferrer"
               target="_blank"
               aria-label={item.text}
-              className="transition hover:text-slight text-[25px]"
+              className="footer-social"
             >
               <FontAwesomeIcon icon={item.icon} />
             </a>

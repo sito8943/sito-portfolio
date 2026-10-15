@@ -1,0 +1,9 @@
+@layer components {
+  .about-float {
+    @apply sm:hidden;
+  }
+
+  .about-float-logo {
+    @apply opacity-50 h-[6rem];
+  }
+}

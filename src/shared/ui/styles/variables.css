@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "@sito/ui/styles.css" layer(components);
+/* Sub-layer: our component classes (direct in `components`) always win over @sito/ui. */
+@import "@sito/ui/styles.css" layer(components.sito-ui);
 @import "@fontsource/roboto/400.css";
 @import "@fontsource/poppins/700.css";
 

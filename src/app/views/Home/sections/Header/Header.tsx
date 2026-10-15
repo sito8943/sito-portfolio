@@ -40,31 +40,23 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      className={`flex items-center justify-center w-full fixed top-0 left-0 min-h-[60px] transition duration-500 z-[50] ${
-        atTop ? "" : "bg-dark-drawer-background backdrop-blur-lg"
-      }`}
-    >
+    <header data-at-top={atTop} className="header">
       <Drawer
         links={NAV_LINKS}
         visible={showDrawer}
         handleClose={closeDrawer}
       />
-      <div
-        className={`transition-all duration-500 flex items-center justify-between ${
-          atTop ? "w-[85%] h-[100px]" : "w-[90%] h-[60px]"
-        }`}
-      >
+      <div className="header-bar">
         <a
           href="#home"
-          className="text-secondary logo"
+          className="header-logo logo"
           aria-label={t("_common:ariaLabels.toHome")}
           onClick={() => scrollTo(0)}
         >
-          <SitoLogo className="w-20 h-[42px]" />
+          <SitoLogo className="header-logo-mark" />
         </a>
-        <nav className="h-full flex items-center">
-          <ul className="xl:hidden flex items-center h-full justify-around gap-3">
+        <nav className="header-nav">
+          <ul className="header-links">
             {NAV_LINKS.map((item) => {
               const active = activeLink === `#${item}`;
               const isContact = item === "contact";
@@ -74,6 +66,7 @@ export function Header() {
                     href={`#${item}`}
                     id={`link-${item}`}
                     aria-current={active ? "location" : undefined}
+                    data-filled={active || isContact}
                     aria-label={t("_common:ariaLabels.clickToSection").replace(
                       "[target]",
                       t(`_pages:routes.${item}`),
@@ -81,7 +74,7 @@ export function Header() {
                     className={buttonClassName({
                       color: isContact && !active ? "secondary" : "primary",
                       variant: active || isContact ? "submit" : "text",
-                      className: active || isContact ? "" : "!text-white",
+                      className: "header-link",
                     })}
                     onClick={() => scrollToSection(item)}
                   >
@@ -95,7 +88,7 @@ export function Header() {
             name="menu-button"
             color="primary"
             variant="submit"
-            className="xl:opacity-100 xl:pointer-events-auto opacity-0 pointer-events-none"
+            className="header-menu"
             aria-label={t("_common:ariaLabels.openDrawer")}
             aria-expanded={showDrawer}
             onClick={() => setShowDrawer(!showDrawer)}

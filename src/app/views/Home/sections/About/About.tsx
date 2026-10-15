@@ -18,27 +18,22 @@ export function About() {
   return (
     <Section id={SECTIONS.about}>
       <FloatingIcons />
-      <div
-        className="flex items-center justify-center flex-col h-full gap-4"
-        ref={ref}
-      >
+      <div className="section-stack" ref={ref}>
         {inView ? (
           <>
             <InView delay="100ms">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center">
-                {t("_pages:home.about.title")}
-              </h2>
+              <h2 className="section-title">{t("_pages:home.about.title")}</h2>
             </InView>
             <InView delay="200ms">
               <LazyImage
                 src={PROFILE_PHOTO}
                 alt="Sito"
-                className="w-20 h-20 rounded-full"
+                className="about-photo"
               />
             </InView>
-            <ul className="md:w-full flex flex-wrap items-center justify-center gap-5 mt-5">
+            <ul className="card-row about-cards">
               {ABOUT_CARDS.map((item, i) => (
-                <li key={item.id} className="md:w-full">
+                <li key={item.id} className="card-row-item">
                   <InView delay={`${(i + 1) * 300}ms`}>
                     <AboutCard
                       image={item.image}

@@ -19,11 +19,9 @@ export function Hero() {
   return (
     <Section id={SECTIONS.home} className="inner-section hero-gradient">
       <FloatingIcons />
-      <div className="relative flex items-center justify-start flex-col gap-4 mt-5">
+      <div className="hero-stack">
         <InView delay="100ms">
-          <h1 className="text-center sm:text-3xl text-5xl font-bold">
-            {t("_pages:home.hero.title")}
-          </h1>
+          <h1 className="hero-title">{t("_pages:home.hero.title")}</h1>
         </InView>
         <InView delay="200ms">
           <LazyImage
@@ -31,22 +29,22 @@ export function Hero() {
             src={AVATAR_SRC}
             loading="eager"
             fetchPriority="high"
-            className="w-60 h-60 rounded-full object-cover object-bottom"
+            className="hero-avatar"
           />
         </InView>
         <InView delay="300ms">
-          <p className="text-center sm:px-4">{t("_pages:home.hero.text")}</p>
+          <p className="hero-text">{t("_pages:home.hero.text")}</p>
         </InView>
         <InView delay="400ms">
-          <nav className="hero-social appear">
-            <ul className="flex justify-center gap-6 items-center">
+          <nav className="hero-social">
+            <ul className="hero-social-list">
               {SOCIALS.map((item) => (
                 <li key={item.link}>
                   <a
                     href={item.link}
                     rel="noreferrer"
                     target="_blank"
-                    className="transition hover:text-slight"
+                    className="hero-social-link"
                     aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
                   >
                     <FontAwesomeIcon icon={item.icon} />
@@ -56,7 +54,7 @@ export function Hero() {
             </ul>
           </nav>
         </InView>
-        <div className="float-y !absolute -bottom-[70px]">
+        <div className="hero-cue float-y">
           <InView delay="500ms">
             <a
               href={`#${SECTIONS.projects}`}
@@ -64,7 +62,7 @@ export function Hero() {
                 color: "primary",
                 variant: "submit",
                 icon: true,
-                className: "m-2 scale-100 hover:scale-110",
+                className: "hero-cue-button",
               })}
               aria-label={t("_common:ariaLabels.toProjects")}
               onClick={() => scrollToSection(SECTIONS.projects)}

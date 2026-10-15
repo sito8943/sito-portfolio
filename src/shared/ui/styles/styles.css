@@ -4,9 +4,30 @@
 @import "./animations.css";
 @import "./components.css";
 
-/* Component stylesheets (co-located styles.css, imported here as one stylesheet). */
+/* Component stylesheets (co-located styles.css / animations.css, imported here as one stylesheet).
+   Order: shared → app, so view styles can refine shared ones. */
 @import "../atoms/LazyImage/styles.css";
+@import "../molecules/InView/animations.css";
 @import "../molecules/Marquee/styles.css";
+@import "../molecules/ToTop/styles.css";
+@import "../templates/Section/styles.css";
+@import "../templates/SplashScreen/styles.css";
+@import "../../../app/views/Home/styles.css";
+@import "../../../app/views/Home/sections/Header/styles.css";
+@import "../../../app/views/Home/sections/Header/Drawer/styles.css";
 @import "../../../app/views/Home/sections/Hero/styles.css";
+@import "../../../app/views/Home/sections/Hero/FloatingIcons/styles.css";
 @import "../../../app/views/Home/sections/Features/styles.css";
+@import "../../../app/views/Home/sections/Features/FeatureCard/styles.css";
+@import "../../../app/views/Home/sections/About/styles.css";
+@import "../../../app/views/Home/sections/About/AboutCard/styles.css";
+@import "../../../app/views/Home/sections/About/FloatingIcons/styles.css";
 @import "../../../app/views/Home/sections/Skills/styles.css";
+@import "../../../app/views/Home/sections/Skills/FloatingIcons/styles.css";
+@import "../../../app/views/Home/sections/Projects/styles.css";
+@import "../../../app/views/Home/sections/Projects/ProjectCard/styles.css";
+@import "../../../app/views/Home/sections/Projects/FloatingIcons/styles.css";
+@import "../../../app/views/Home/sections/Contact/styles.css";
+@import "../../../app/views/Home/sections/Contact/FloatingIcons/styles.css";
+@import "../../../app/views/Home/sections/Footer/styles.css";
+@import "../../../app/views/NotFound/styles.css";

@@ -45,6 +45,7 @@
 .marquee .marquee-item {
   display: flex;
   flex-direction: row;
+  gap: 0.25rem;
 }
 
 @keyframes marquee-scroll-x {

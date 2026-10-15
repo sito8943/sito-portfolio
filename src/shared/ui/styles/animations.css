@@ -1,9 +1,5 @@
-/* Shared motion: decorative floating icons and the hidden state of the InView reveal. */
+/* Shared motion for decorative floating icons. */
 @layer base {
-  .invisible {
-    opacity: 0;
-  }
-
   .float-y {
     position: absolute;
     overflow: hidden;

@@ -1,0 +1,21 @@
+@layer components {
+  .footer {
+    @apply items-center justify-center flex px-3 min-h-[50px] py-2 bg-dark-background flex-wrap;
+  }
+
+  .footer-bar {
+    @apply w-[90%] flex items-center justify-between flex-wrap gap-y-5 sm:my-5;
+  }
+
+  .footer-copy {
+    @apply flex;
+  }
+
+  .footer-socials {
+    @apply flex items-center sm:gap-3 gap-5;
+  }
+
+  .footer-social {
+    @apply transition hover:text-slight text-[25px];
+  }
+}

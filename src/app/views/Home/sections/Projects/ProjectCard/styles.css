@@ -1,0 +1,17 @@
+@layer components {
+  .project-card {
+    @apply hover:-translate-y-2 hover:shadow-lg hover:shadow-sdark transition duration-300 bg-dark-background2 md:w-full md:h-auto w-[300px] h-[300px] rounded-xl border-[1px] border-placeholder-dark;
+  }
+
+  .project-card-media {
+    @apply object-center;
+  }
+
+  .project-card-body {
+    @apply p-5;
+  }
+
+  .project-card-text {
+    @apply text-center;
+  }
+}

@@ -14,28 +14,22 @@ export function Contact() {
   const { t } = useTranslation();
 
   return (
-    <Section
-      id={SECTIONS.contact}
-      background="inner-section bg-dark-background2"
-    >
+    <Section id={SECTIONS.contact} className="inner-section contact-section">
       <FloatingIcons />
-      <div
-        className="flex items-center justify-center flex-col h-full gap-4"
-        ref={ref}
-      >
+      <div className="section-stack" ref={ref}>
         {inView ? (
           <>
             <InView delay="100ms">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+              <h2 className="section-title">
                 {t("_pages:home.contact.title")}
               </h2>
             </InView>
             <InView delay="200ms">
-              <p className="text-center md:w-[90%] w-[50%] m-auto mb-4 body">
+              <p className="contact-lead body">
                 {t("_pages:home.contact.body")}
               </p>
             </InView>
-            <div className="flex flex-wrap gap-2 items-center justify-center">
+            <div className="contact-actions">
               <InView delay="300ms">
                 <a
                   aria-label={`email ${LINKS.CONTACT_EMAIL}`}

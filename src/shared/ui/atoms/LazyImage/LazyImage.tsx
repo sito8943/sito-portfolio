@@ -22,7 +22,8 @@ export function LazyImage({
       {...rest}
       src={failedSrc === src ? crash : src}
       alt={alt}
-      className={`${loaded ? "" : "box"} ${className ?? ""}`}
+      data-loaded={loaded}
+      className={`lazy-image ${className ?? ""}`}
       onLoad={() => setLoaded(true)}
       onError={() => setFailedSrc(src)}
     />

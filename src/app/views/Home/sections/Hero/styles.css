@@ -1,11 +1,18 @@
 @layer components {
-  .cta {
-    text-decoration: none;
-    transition: all 500ms ease;
+  .hero-stack {
+    @apply relative flex items-center justify-start flex-col gap-4 mt-5;
   }
 
-  .cta:hover {
-    transform: translateY(-5px);
+  .hero-title {
+    @apply text-center sm:text-3xl text-5xl font-bold;
+  }
+
+  .hero-avatar {
+    @apply w-60 h-60 rounded-full object-cover object-bottom;
+  }
+
+  .hero-text {
+    @apply text-center sm:px-4;
   }
 
   .hero-social {
@@ -14,13 +21,22 @@
     flex-wrap: wrap;
   }
 
-  .hero-social a {
+  .hero-social-list {
+    @apply flex justify-center gap-6 items-center;
+  }
+
+  .hero-social-link {
+    @apply transition hover:text-slight;
     font-size: 30px;
   }
 
-  .hero-social div {
-    display: flex;
-    flex-direction: row;
+  /* Floating "go to projects" arrow under the hero. */
+  .hero-cue {
+    @apply absolute! -bottom-[70px];
+  }
+
+  .hero-cue-button {
+    @apply m-2 scale-100 hover:scale-110;
   }
 
   /* Soft animated gradient behind the hero */

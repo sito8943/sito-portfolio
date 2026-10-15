@@ -11,6 +11,35 @@
     text-wrap: balance;
   }
 
+  /* Section heading. */
+  .section-title {
+    @apply sm:text-3xl text-4xl font-bold text-center;
+  }
+
+  /* Column that stacks a section's content in the middle. */
+  .section-stack {
+    @apply flex items-center justify-center flex-col h-full gap-4;
+  }
+
+  /* Centered, wrapping row of cards or icons. */
+  .card-row {
+    @apply flex items-center justify-center flex-wrap gap-5;
+  }
+
+  /* Card list item: full width on small screens. */
+  .card-row-item {
+    @apply md:w-full;
+  }
+
+  /* Card image on top of a card (About, Projects). */
+  .card-media {
+    @apply w-full md:h-[300px] h-[150px] rounded-t-xl object-cover;
+  }
+
+  .card-title {
+    @apply text-lg font-bold text-center;
+  }
+
   /* @sito/ui button look on anchors: its hover/active rules only target :enabled buttons. */
   a.sito-ui-button {
     cursor: pointer;

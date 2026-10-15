@@ -1,0 +1,6 @@
+@layer components {
+  /* Suspense fallback while lazy sections load. */
+  .home-loading {
+    @apply flex w-full h-full items-center justify-center;
+  }
+}

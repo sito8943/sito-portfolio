@@ -2,6 +2,18 @@
 
 Este es mi porfolio pro
 
+## Desarrollo
+
+```sh
+pnpm install
+pnpm dev      # http://localhost:3001
+pnpm lint
+pnpm build
+```
+
+Antes de tocar código lee [ARCHITECTURE_RULES.md](ARCHITECTURE_RULES.md) y [STYLE_GUIDE.md](STYLE_GUIDE.md).
+Cada push a `master` se despliega solo a Firebase Hosting.
+
 ## Secciones
 
 ### Home/Inicio

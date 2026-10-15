@@ -1,7 +1,10 @@
 @layer components {
-  .wid-title {
-    margin: 0 auto 15px auto;
-    text-align: center;
+  .features-section {
+    @apply bg-dark-background2;
+  }
+
+  .features-container {
+    @apply w-full;
   }
 
   .features {
@@ -13,14 +16,7 @@
     width: 100%;
   }
 
-  .wid-cards {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-  }
-  @media (max-width: 565px) {
-    .wid-title {
-      width: 70%;
-    }
+  .features-title {
+    @apply mb-10;
   }
 }

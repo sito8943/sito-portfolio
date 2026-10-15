@@ -3,17 +3,15 @@ import type { SectionProps } from "./types";
 /** Full-width page section with a centered content column. */
 export function Section({
   id = "",
-  background = "",
-  containerClass = "",
   className = "",
+  containerClassName = "",
   children,
 }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={`flex justify-center items-center py-[100px] relative ${background} ${className}`}
-    >
-      <div className={`w-[90%] ${containerClass}`}>{children}</div>
+    <section id={id} className={`section ${className}`}>
+      <div className={`section-container ${containerClassName}`}>
+        {children}
+      </div>
     </section>
   );
 }

@@ -1,0 +1,9 @@
+@layer components {
+  .about-photo {
+    @apply w-20 h-20 rounded-full;
+  }
+
+  .about-cards {
+    @apply md:w-full mt-5;
+  }
+}

@@ -16,14 +16,14 @@ export function Features() {
   return (
     <Section
       id={SECTIONS.features}
-      background="bg-dark-background2"
-      containerClass="!w-full"
+      className="features-section"
+      containerClassName="features-container"
     >
       <div className="features" ref={ref}>
         {inView ? (
           <>
             <InView delay="100ms">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center mb-10">
+              <h2 className="section-title features-title">
                 {t("_pages:home.features.title")}
               </h2>
             </InView>

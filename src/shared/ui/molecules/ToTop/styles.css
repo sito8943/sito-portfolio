@@ -1,0 +1,14 @@
+@layer components {
+  /* `scale` (appear/leave) is separate from `transform` (@sito/ui :active press). */
+  .to-top {
+    @apply fixed bottom-5 right-5 transition-[scale,transform,background-color,color] duration-300;
+  }
+
+  .to-top[data-shown="true"] {
+    @apply z-10 scale-100;
+  }
+
+  .to-top[data-shown="false"] {
+    @apply -z-10 scale-0;
+  }
+}

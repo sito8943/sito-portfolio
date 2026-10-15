@@ -29,7 +29,7 @@ export function Marquee<T>({
       {...pauseHandlers}
     >
       {elements.map((item, i) => (
-        <li key={getKey(item, i)} className="marquee-item gap-1">
+        <li key={getKey(item, i)} className="marquee-item">
           {renderFunction(item, i)}
         </li>
       ))}

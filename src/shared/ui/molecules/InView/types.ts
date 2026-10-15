@@ -5,6 +5,4 @@ export type InViewProps = {
   /** CSS time, e.g. "200ms". */
   delay?: string;
   className?: string;
-  /** Optional CSS animation class applied once in view (instead of the default rise). */
-  animation?: string;
 };

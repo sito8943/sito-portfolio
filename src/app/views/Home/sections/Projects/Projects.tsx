@@ -21,39 +21,36 @@ export function Projects() {
   return (
     <Section id={SECTIONS.projects}>
       <FloatingIcons />
-      <div
-        className="flex items-center justify-center flex-col h-full gap-4"
-        ref={ref}
-      >
+      <div className="section-stack" ref={ref}>
         {inView ? (
           <>
             <InView delay="100ms">
-              <h2 className="sm:text-3xl text-4xl font-bold text-center">
+              <h2 className="section-title">
                 {t("_pages:home.projects.title")}
               </h2>
             </InView>
 
             <InView delay="200ms">
-              <p className="text-center">
+              <p className="projects-lead">
                 {t("_pages:home.projects.text")}
                 <a
                   aria-label={t("_pages:home.hero.social.github")}
                   href={LINKS.GITHUB}
                   rel="noreferrer"
                   target="_blank"
-                  className="m-auto hover:text-green underline"
+                  className="projects-github"
                 >
                   {t("_pages:home.projects.seeMore")}
                   <FontAwesomeIcon
                     icon={faExternalLink}
-                    className="ml-[5px] text-[15px]"
+                    className="projects-github-icon"
                   />
                 </a>
               </p>
             </InView>
-            <ul className="flex items-center justify-center flex-wrap gap-5">
+            <ul className="card-row">
               {PROJECTS.map((item, i) => (
-                <li key={item.id} className="md:w-full">
+                <li key={item.id} className="card-row-item">
                   <InView delay={`${(i + 1) * 300}ms`}>
                     <ProjectCard
                       link={item.link}
