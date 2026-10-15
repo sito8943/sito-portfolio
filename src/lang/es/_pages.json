@@ -13,8 +13,11 @@
   },
   "home": {
     "hero": {
-      "title": "Hola soy Sito",
-      "text": "Soy desarrollador y diseñador web fullstack",
+      "name": "Sito",
+      "role": "Desarrollador web fullstack",
+      "text": "Combino desarrollo fullstack y diseño para crear experiencias web y móviles.",
+      "viewWork": "Ver mis proyectos",
+      "viewCv": "Ver mi CV",
       "social": {
         "github": "Github",
         "instagram": "Instagram",

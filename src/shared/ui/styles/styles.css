@@ -16,6 +16,7 @@
 @import "../../../app/views/Home/sections/Header/styles.css";
 @import "../../../app/views/Home/sections/Header/Drawer/styles.css";
 @import "../../../app/views/Home/sections/Hero/styles.css";
+@import "../../../app/views/Home/sections/Hero/animations.css";
 @import "../../../app/views/Home/sections/Hero/FloatingIcons/styles.css";
 @import "../../../app/views/Home/sections/Features/styles.css";
 @import "../../../app/views/Home/sections/Features/FeatureCard/styles.css";

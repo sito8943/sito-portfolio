@@ -13,8 +13,11 @@
   },
   "home": {
     "hero": {
-      "title": "Hey I'm Sito",
-      "text": "I'm a web fullstack developer and graphic designer",
+      "name": "Sito",
+      "role": "Fullstack web developer",
+      "text": "I combine fullstack development and design to build thoughtful web and mobile experiences.",
+      "viewWork": "View my work",
+      "viewCv": "View my CV",
       "social": {
         "github": "Github",
         "instagram": "Instagram",
