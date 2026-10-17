@@ -2,7 +2,8 @@ import { Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import loadable from "@loadable/component";
 
-import { ROUTES } from "@/shared/config";
+import { LANGS } from "@/lang";
+import { ROUTES, langHome } from "@/shared/config";
 import { SplashScreen } from "@/shared/ui/templates";
 
 // views
@@ -15,6 +16,9 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.home} element={<Home />} />
+          {LANGS.map((lang) => (
+            <Route key={lang} path={langHome(lang)} element={<Home />} />
+          ))}
           <Route path={ROUTES.notFound} element={<NotFound />} />
         </Routes>
       </BrowserRouter>

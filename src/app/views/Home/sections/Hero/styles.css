@@ -1,67 +1,171 @@
 @layer components {
-  .hero-stack {
-    @apply relative flex items-center justify-start flex-col gap-4 mt-5;
+  /* Less padding on top than below lifts the content to the optical centre, above the true middle. */
+  .hero-section {
+    @apply w-full pt-[60px] pb-[140px] md:py-[100px];
+  }
+
+  /* Same column as the navbar (.header-bar): 90% wide, capped at max-w-7xl, no side padding. */
+  .hero-panel {
+    @apply relative mx-auto flex w-full max-w-7xl items-center overflow-hidden;
+    padding-block: clamp(2rem, 6vw, 5rem);
+    min-height: calc(100svh - 200px);
+  }
+
+  .hero-layout {
+    @apply relative z-10 grid w-full grid-cols-2 items-center gap-10;
+  }
+
+  .hero-copy {
+    @apply flex flex-col items-start;
   }
 
   .hero-title {
-    @apply text-center sm:text-3xl text-5xl font-bold;
+    @apply mb-5 flex flex-col text-left text-6xl font-bold leading-[1.05];
   }
 
-  .hero-avatar {
-    @apply w-60 h-60 rounded-full object-cover object-bottom;
+  .hero-name {
+    @apply text-white;
+  }
+
+  .hero-role {
+    @apply text-slight;
   }
 
   .hero-text {
-    @apply text-center sm:px-4;
+    @apply mb-7 max-w-xl text-left text-base text-white-hover;
   }
 
-  .hero-social {
-    justify-content: center;
-    flex-direction: row !important;
-    flex-wrap: wrap;
+  .hero-actions {
+    @apply mb-7 flex flex-wrap items-center gap-6;
+  }
+
+  .hero-action {
+    @apply px-6 py-3 text-base;
+  }
+
+  .hero-action-cv {
+    @apply text-white;
   }
 
   .hero-social-list {
-    @apply flex justify-center gap-6 items-center;
+    @apply flex items-center gap-5;
+    list-style: none;
+    padding: 0;
   }
 
   .hero-social-link {
-    @apply transition hover:text-slight;
-    font-size: 30px;
+    @apply text-xl text-white-hover transition;
   }
 
-  /* Floating "go to projects" arrow under the hero. */
-  .hero-cue {
-    @apply absolute! -bottom-[70px];
+  .hero-social-link:hover {
+    @apply text-slight;
   }
 
-  .hero-cue-button {
-    @apply m-2 scale-100 hover:scale-110;
+  .hero-visual {
+    @apply relative mx-auto flex w-full max-w-[560px] items-center justify-center;
+    aspect-ratio: 1;
+    perspective: 1000px;
+    transform-style: preserve-3d;
   }
 
-  /* Soft animated gradient behind the hero */
-  .hero-gradient {
-    /* Fallback color */
-    background-color: var(--color-background);
-    /* Soft animated gradient */
-    background-image: linear-gradient(
-      120deg,
-      var(--bg1) 0%,
-      var(--bg2) 30%,
-      var(--bg3) 60%,
-      var(--bg4) 100%
-    );
-    background-size: 200% 200%;
-    animation: bg-pan 3s ease-in-out infinite alternate;
+  .hero-logo {
+    @apply absolute inset-0;
+    pointer-events: none;
   }
 
-  /* Subtle background gradient pan */
-  @keyframes bg-pan {
-    0% {
-      background-position: 0% 50%;
+  .hero-logo svg {
+    @apply absolute inset-0 h-full w-full overflow-visible;
+  }
+
+  .hero-logo path {
+    stroke-linecap: round;
+  }
+
+  .hero-logo-outline {
+    @apply text-secondary/35;
+  }
+
+  .hero-logo-outline path {
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.5px;
+  }
+
+  .hero-logo-trace {
+    @apply text-secondary;
+    filter: drop-shadow(0 0 8px --alpha(var(--color-secondary) / 80%));
+  }
+
+  /* Viewbox units: dashes follow pathLength only while the stroke scales with the SVG. */
+  .hero-logo-trace path {
+    stroke-width: 0.6;
+    stroke-dasharray: 12 88;
+  }
+
+  .hero-image-in-view {
+    @apply relative z-10 h-[78%] w-[78%];
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+
+  .hero-avatar {
+    @apply h-full w-full object-cover object-center;
+  }
+
+  @media (width < 1024px) {
+    .hero-panel {
+      @apply py-8;
     }
-    100% {
-      background-position: 100% 50%;
+
+    .hero-layout {
+      @apply gap-6;
+    }
+
+    .hero-title {
+      @apply text-5xl;
+    }
+  }
+
+  @media (width < 768px) {
+    .hero-panel {
+      @apply min-h-0 py-8;
+    }
+
+    .hero-layout {
+      @apply grid-cols-1 gap-4;
+    }
+
+    .hero-copy {
+      @apply items-center text-center;
+    }
+
+    .hero-text {
+      @apply text-center;
+    }
+
+    .hero-title {
+      @apply items-center text-5xl;
+    }
+
+    .hero-actions,
+    .hero-social-list {
+      @apply justify-center;
+    }
+
+    .hero-visual {
+      @apply max-w-[440px];
+    }
+  }
+
+  @media (width < 640px) {
+    .hero-panel {
+      @apply rounded-2xl py-6;
+    }
+
+    .hero-title {
+      @apply text-4xl;
+    }
+
+    .hero-actions {
+      @apply gap-4;
     }
   }
 }

@@ -1,8 +1,12 @@
-/** Feature card ids, matching `_pages:home.features.cards.<id>` keys. */
+import {
+  faCode,
+  faMobileScreenButton,
+  faPenRuler,
+} from "@fortawesome/free-solid-svg-icons";
+
+/** Competency card ids, matching `_pages:home.features.cards.<id>` keys. */
 export const FEATURE_CARDS = [
-  "marketing",
-  "dashboard",
-  "content",
-  "ecommerce",
-  "restApi",
-];
+  { id: "uiUx", icon: faPenRuler, tone: "violet" },
+  { id: "web", icon: faCode, tone: "green" },
+  { id: "mobile", icon: faMobileScreenButton, tone: "blue" },
+] as const;

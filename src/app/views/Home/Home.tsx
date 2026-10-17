@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/features/i18n";
 import { scrollTo } from "some-javascript-utils/browser";
 import loadable from "@loadable/component";
 
@@ -49,12 +49,14 @@ function Home() {
         header={<Header />}
         footer={<Footer />}
       >
-        <Hero />
-        <Features />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <div className="home-background">
+          <Hero />
+          <About />
+          <Features />
+          <Skills />
+          <Projects />
+          <Contact />
+        </div>
       </PageLayout>
     </Suspense>
   );

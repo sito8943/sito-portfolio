@@ -1,13 +1,41 @@
 @layer components {
   .feature-card {
-    @apply bg-dark-background w-[300px] h-[250px] p-5 rounded-xl border-[1px] border-placeholder-dark;
+    @apply bg-dark-background w-full min-h-[250px] p-7 rounded-xl border-[1px] border-placeholder-dark;
+  }
+
+  .feature-card-icon {
+    color: var(--feature-accent);
+    @apply mb-5 inline-flex text-2xl;
   }
 
   .feature-card-title {
-    @apply text-lg font-bold;
+    @apply mb-2 text-2xl font-bold;
   }
 
   .feature-card-body {
-    @apply text-balance;
+    @apply mb-5 text-balance text-white-hover;
+  }
+
+  .feature-card-tags {
+    @apply flex flex-wrap gap-2;
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-card-tag {
+    color: var(--feature-accent);
+    border: 1px solid color-mix(in srgb, var(--feature-accent) 25%, transparent);
+    background-color: color-mix(in srgb, var(--feature-accent) 9%, transparent);
+    @apply rounded-full px-3 py-1 text-xs font-bold;
+  }
+
+  @media (width < 640px) {
+    .feature-card {
+      @apply min-h-0 p-6;
+    }
+
+    .feature-card-title {
+      @apply text-xl;
+    }
   }
 }

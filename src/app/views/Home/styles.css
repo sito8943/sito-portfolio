@@ -1,4 +1,16 @@
 @layer components {
+  .home-background {
+    background-image: linear-gradient(
+      180deg,
+      var(--color-dark-background2) 0%,
+      var(--color-dark-background) 24%,
+      var(--color-pdark) 48%,
+      var(--color-pdark) 56%,
+      var(--color-dark-background) 78%,
+      var(--color-dark-background2) 100%
+    );
+  }
+
   /* Suspense fallback while lazy sections load. */
   .home-loading {
     @apply flex w-full h-full items-center justify-center;

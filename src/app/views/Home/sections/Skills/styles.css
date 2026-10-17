@@ -1,6 +1,6 @@
 @layer components {
   .skills-section {
-    @apply bg-pdark;
+    background-color: transparent;
   }
 
   .skills-lead {

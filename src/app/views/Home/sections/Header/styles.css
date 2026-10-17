@@ -8,11 +8,11 @@
   }
 
   .header-bar {
-    @apply transition-all duration-500 flex items-center justify-between w-[85%] h-[100px];
+    @apply transition-all duration-500 flex items-center justify-between w-[90%] max-w-7xl h-[100px];
   }
 
   .header[data-at-top="false"] .header-bar {
-    @apply w-[90%] h-[60px];
+    @apply h-[60px];
   }
 
   .header-logo {
