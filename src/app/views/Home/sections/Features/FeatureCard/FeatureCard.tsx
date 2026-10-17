@@ -13,6 +13,10 @@ export function FeatureCard({ icon, title, body, tags }: FeatureCardProps) {
           </li>
         ))}
       </ul>
+      <svg className="feature-card-trace" aria-hidden="true">
+        <rect pathLength={100} className="feature-card-trace-rest" />
+        <rect pathLength={100} className="feature-card-trace-head" />
+      </svg>
     </article>
   );
 }

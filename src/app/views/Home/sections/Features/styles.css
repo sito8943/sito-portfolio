@@ -7,7 +7,9 @@
     @apply w-[90%] max-w-7xl;
   }
 
+  /* Above LogoTrail, which dissolves behind the cards. */
   .features {
+    @apply relative z-10;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -19,6 +21,13 @@
 
   .features-title {
     @apply mb-28;
+  }
+
+  /* Where LogoTrail lands: a square behind the cards. */
+  .features-logo-anchor {
+    @apply pointer-events-none absolute left-1/2 top-[66%] -z-10 h-[70%];
+    aspect-ratio: 1;
+    translate: -50% -50%;
   }
 
   .features-grid {

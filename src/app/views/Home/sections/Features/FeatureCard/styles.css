@@ -1,6 +1,39 @@
 @layer components {
   .feature-card {
-    @apply bg-dark-background w-full min-h-[250px] p-7 rounded-xl border-[1px] border-placeholder-dark;
+    @apply relative bg-dark-background w-full min-h-[250px] p-7 rounded-xl border-[1px] border-placeholder-dark;
+  }
+
+  /* Border light: hidden until the logo lands on Features (see animations.css). */
+  .feature-card-trace {
+    @apply pointer-events-none absolute -inset-1.5 h-[calc(100%+12px)] w-[calc(100%+12px)] overflow-visible text-secondary opacity-0;
+    filter: drop-shadow(0 0 6px --alpha(var(--color-secondary) / 80%));
+  }
+
+  .features:has([data-logo-landed="true"]) .feature-card-trace {
+    @apply opacity-100;
+  }
+
+  .feature-card-trace rect {
+    x: 1px;
+    y: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    rx: calc(var(--radius-xl) + 6px);
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+  }
+
+  /* Resting state: a faint, static outline (also what reduced motion shows). */
+  .feature-card-trace-rest {
+    stroke-width: 1;
+    opacity: 0.3;
+  }
+
+  .feature-card-trace-head {
+    stroke-width: 1.5;
+    stroke-dasharray: 8 92;
+    opacity: 0;
   }
 
   .feature-card-icon {

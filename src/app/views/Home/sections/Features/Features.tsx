@@ -6,6 +6,8 @@ import { useInViewOnce } from "@/shared/hooks";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 
+import { LOGO_ANCHORS } from "../../constants";
+
 import { FEATURE_CARDS } from "./constants";
 import { FeatureCard } from "./FeatureCard";
 
@@ -21,6 +23,11 @@ export function Features() {
       containerClassName="features-container"
     >
       <div className="features" ref={ref}>
+        <span
+          className="features-logo-anchor"
+          data-logo-anchor={LOGO_ANCHORS.features}
+          aria-hidden="true"
+        />
         {inView ? (
           <>
             <InView delay="100ms">

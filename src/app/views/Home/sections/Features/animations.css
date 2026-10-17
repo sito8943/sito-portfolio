@@ -1,0 +1,57 @@
+/* When the logo lands on Features, a light runs once around each card in turn,
+   drawing its outline, which then dims to the resting glow. */
+.features:has([data-logo-landed="true"]) .feature-card-trace-head {
+  animation: feature-card-trace-head 1600ms var(--feature-trace-delay, 0ms)
+    cubic-bezier(0.45, 0, 0.55, 1) backwards;
+}
+
+.features:has([data-logo-landed="true"]) .feature-card-trace-rest {
+  animation:
+    feature-card-trace-draw 1600ms var(--feature-trace-delay, 0ms)
+      cubic-bezier(0.45, 0, 0.55, 1) backwards,
+    feature-card-trace-dim 900ms calc(var(--feature-trace-delay, 0ms) + 1600ms)
+      ease-out backwards;
+}
+
+.features-grid-item:nth-child(2) {
+  --feature-trace-delay: 250ms;
+}
+
+.features-grid-item:nth-child(3) {
+  --feature-trace-delay: 500ms;
+}
+
+@keyframes feature-card-trace-head {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+
+  10%,
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes feature-card-trace-draw {
+  from {
+    stroke-dasharray: 0 100;
+    opacity: 0.9;
+  }
+
+  to {
+    stroke-dasharray: 100 0;
+    opacity: 0.9;
+  }
+}
+
+@keyframes feature-card-trace-dim {
+  from {
+    opacity: 0.9;
+  }
+}
