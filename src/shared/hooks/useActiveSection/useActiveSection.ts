@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { AT_TOP_OFFSET } from "./constants";
+import { ACTIVE_PROBE, AT_TOP_OFFSET, BOTTOM_OFFSET } from "./constants";
 
 /**
- * Tracks which <section> the page is scrolled into, as a `#id` hash.
- * Also reports whether the page is still near the top.
+ * Tracks which <section> the page is scrolled into, as a `#id` hash, and keeps
+ * the URL hash in sync (without adding history entries). The first section
+ * clears the hash. Also reports whether the page is still near the top.
  */
 export function useActiveSection(initial = "#home") {
   const location = useLocation();
@@ -17,14 +18,36 @@ export function useActiveSection(initial = "#home") {
   }, [location]);
 
   const onScroll = useCallback(() => {
-    const top = window.scrollY;
-    setAtTop(top < AT_TOP_OFFSET);
-    document.querySelectorAll("section").forEach((section) => {
-      const offset = section.offsetTop;
-      if (top >= offset && top < offset + section.offsetHeight) {
-        setActiveLink(`#${section.id}`);
-      }
-    });
+    setAtTop(window.scrollY < AT_TOP_OFFSET);
+
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("section[id]"),
+    );
+    if (!sections.length) return;
+
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - BOTTOM_OFFSET;
+    const current = atBottom
+      ? sections[sections.length - 1]
+      : sections.find((section) => {
+          const { top, bottom } = section.getBoundingClientRect();
+          return top <= ACTIVE_PROBE && bottom > ACTIVE_PROBE;
+        });
+    if (!current) return;
+
+    const hash = `#${current.id}`;
+    setActiveLink(hash);
+
+    const urlHash = current === sections[0] ? "" : hash;
+    if (window.location.hash !== urlHash) {
+      const { pathname, search } = window.location;
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${pathname}${search}${urlHash}`,
+      );
+    }
   }, []);
 
   useEffect(() => {
