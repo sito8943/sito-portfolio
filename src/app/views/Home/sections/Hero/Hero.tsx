@@ -44,10 +44,13 @@ export function Hero() {
                   href={LINKS.CONTACT_CV_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="hero-action hero-action-link"
+                  className={buttonClassName({
+                    color: "primary",
+                    variant: "outlined",
+                    className: "hero-action hero-action-cv",
+                  })}
                 >
                   {t("_pages:home.hero.viewCv")}
-                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </InView>

@@ -49,6 +49,10 @@
     background-color: var(--sito-ui-button-hover);
   }
 
+  a.sito-ui-button--outlined:hover {
+    background-color: var(--sito-ui-button-light);
+  }
+
   a.sito-ui-button--text:hover {
     background-color: var(--sito-ui-button-light);
   }

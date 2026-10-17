@@ -41,12 +41,8 @@
     @apply px-6 py-3 text-base;
   }
 
-  .hero-action-link {
-    @apply flex items-center gap-2 text-white underline decoration-secondary underline-offset-4 transition;
-  }
-
-  .hero-action-link:hover {
-    @apply text-slight;
+  .hero-action-cv {
+    @apply text-white;
   }
 
   .hero-social-list {
