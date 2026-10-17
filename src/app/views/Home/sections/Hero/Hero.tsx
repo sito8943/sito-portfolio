@@ -3,7 +3,7 @@ import { useTranslation } from "@/features/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LINKS, SECTIONS, SOCIALS } from "@/shared/config";
-import { LazyImage } from "@/shared/ui/atoms";
+import { LazyImage, MiniLogo } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 import { buttonClassName, scrollToSection } from "@/shared/utils";
@@ -78,8 +78,10 @@ export function Hero() {
             </InView>
           </div>
           <div className="hero-visual">
-            <span className="hero-frame hero-frame-outer" aria-hidden="true" />
-            <span className="hero-frame hero-frame-inner" aria-hidden="true" />
+            <div className="hero-logo" aria-hidden="true">
+              <MiniLogo className="hero-logo-outline" />
+              <MiniLogo className="hero-logo-trace" pathLength={100} />
+            </div>
             <InView delay="200ms" className="hero-image-in-view">
               <LazyImage
                 alt={t("_pages:home.hero.name")}
@@ -89,14 +91,6 @@ export function Hero() {
                 className="hero-avatar"
               />
             </InView>
-            <span
-              className="hero-frame-accent hero-frame-accent-top"
-              aria-hidden="true"
-            />
-            <span
-              className="hero-frame-accent hero-frame-accent-bottom"
-              aria-hidden="true"
-            />
           </div>
         </div>
       </div>

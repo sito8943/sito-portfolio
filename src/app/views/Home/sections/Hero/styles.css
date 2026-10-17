@@ -1,11 +1,13 @@
 @layer components {
+  /* Less padding on top than below lifts the content to the optical centre, above the true middle. */
   .hero-section {
-    @apply w-full;
+    @apply w-full pt-[60px] pb-[140px] md:py-[100px];
   }
 
+  /* Same column as the navbar (.header-bar): 90% wide, capped at max-w-7xl, no side padding. */
   .hero-panel {
-    @apply relative flex w-full max-w-7xl items-center overflow-hidden;
-    padding: clamp(2rem, 6vw, 5rem);
+    @apply relative mx-auto flex w-full max-w-7xl items-center overflow-hidden;
+    padding-block: clamp(2rem, 6vw, 5rem);
     min-height: calc(100svh - 200px);
   }
 
@@ -66,22 +68,37 @@
     transform-style: preserve-3d;
   }
 
-  .hero-frame {
-    @apply absolute left-1/2 top-1/2;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 1rem;
+  .hero-logo {
+    @apply absolute inset-0;
     pointer-events: none;
   }
 
-  .hero-frame-outer {
-    @apply h-[76%] w-[76%];
-    @apply border border-secondary/20;
+  .hero-logo svg {
+    @apply absolute inset-0 h-full w-full overflow-visible;
   }
 
-  .hero-frame-inner {
-    @apply h-[68%] w-[68%];
-    @apply border border-secondary/45;
+  .hero-logo path {
+    stroke-linecap: round;
+  }
+
+  .hero-logo-outline {
+    @apply text-secondary/35;
+  }
+
+  .hero-logo-outline path {
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.5px;
+  }
+
+  .hero-logo-trace {
+    @apply text-secondary;
+    filter: drop-shadow(0 0 8px --alpha(var(--color-secondary) / 80%));
+  }
+
+  /* Viewbox units: dashes follow pathLength only while the stroke scales with the SVG. */
+  .hero-logo-trace path {
+    stroke-width: 0.6;
+    stroke-dasharray: 12 88;
   }
 
   .hero-image-in-view {
@@ -93,25 +110,9 @@
     @apply h-full w-full object-cover object-center;
   }
 
-  .hero-frame-accent {
-    @apply absolute z-20 h-3 w-8 rounded-full;
-    @apply bg-secondary;
-    box-shadow: 0 0 20px --alpha(var(--color-secondary) / 50%);
-  }
-
-  .hero-frame-accent-top {
-    @apply right-[20%] top-[13%];
-    transform: rotate(45deg);
-  }
-
-  .hero-frame-accent-bottom {
-    @apply bottom-[13%] left-[20%];
-    transform: rotate(135deg);
-  }
-
   @media (width < 1024px) {
     .hero-panel {
-      @apply p-8;
+      @apply py-8;
     }
 
     .hero-layout {
@@ -125,7 +126,7 @@
 
   @media (width < 768px) {
     .hero-panel {
-      @apply min-h-0 p-8;
+      @apply min-h-0 py-8;
     }
 
     .hero-layout {
@@ -156,7 +157,7 @@
 
   @media (width < 640px) {
     .hero-panel {
-      @apply rounded-2xl p-6;
+      @apply rounded-2xl py-6;
     }
 
     .hero-title {
