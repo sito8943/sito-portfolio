@@ -34,7 +34,7 @@ export function Hero() {
                   className={buttonClassName({
                     color: "primary",
                     variant: "submit",
-                    className: "hero-action hero-action-primary",
+                    className: "hero-action",
                   })}
                   onClick={() => scrollToSection(SECTIONS.projects)}
                 >

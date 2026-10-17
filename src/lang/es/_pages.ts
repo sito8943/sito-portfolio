@@ -15,9 +15,9 @@ export const _pages: Resources["_pages"] = {
   },
   home: {
     hero: {
-      name: "Sito",
-      role: "Desarrollador web fullstack",
-      text: "Combino desarrollo fullstack y diseño para crear experiencias web y móviles.",
+      name: "Hola, soy Sito",
+      role: "Desarrollador fullstack",
+      text: "Diseño y construyo productos web y móviles, desde el primer boceto hasta producción.",
       viewWork: "Ver mis proyectos",
       viewCv: "Ver mi CV",
       social: {

@@ -26,7 +26,7 @@
   }
 
   .hero-role {
-    color: #2dd4bf;
+    @apply text-slight;
   }
 
   .hero-text {
@@ -41,13 +41,12 @@
     @apply px-6 py-3 text-base;
   }
 
-  .hero-action-primary {
-    border: 1px solid #2dd4bf;
+  .hero-action-link {
+    @apply flex items-center gap-2 text-white underline decoration-secondary underline-offset-4 transition;
   }
 
-  .hero-action-link {
-    @apply flex items-center gap-2 underline underline-offset-4;
-    color: #2dd4bf;
+  .hero-action-link:hover {
+    @apply text-slight;
   }
 
   .hero-social-list {
@@ -61,7 +60,7 @@
   }
 
   .hero-social-link:hover {
-    color: #2dd4bf;
+    @apply text-slight;
   }
 
   .hero-visual {
@@ -81,12 +80,12 @@
 
   .hero-frame-outer {
     @apply h-[76%] w-[76%];
-    border: 1px solid #2dd4bf38;
+    @apply border border-secondary/20;
   }
 
   .hero-frame-inner {
     @apply h-[68%] w-[68%];
-    border: 1px solid #2dd4bf70;
+    @apply border border-secondary/45;
   }
 
   .hero-image-in-view {
@@ -100,8 +99,8 @@
 
   .hero-frame-accent {
     @apply absolute z-20 h-3 w-8 rounded-full;
-    background: #2dd4bf;
-    box-shadow: 0 0 20px #2dd4bf80;
+    @apply bg-secondary;
+    box-shadow: 0 0 20px --alpha(var(--color-secondary) / 50%);
   }
 
   .hero-frame-accent-top {

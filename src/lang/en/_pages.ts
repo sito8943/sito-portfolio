@@ -14,9 +14,9 @@ export const _pages = {
   },
   home: {
     hero: {
-      name: "Sito",
-      role: "Fullstack web developer",
-      text: "I combine fullstack development and design to build thoughtful web and mobile experiences.",
+      name: "Hi, I'm Sito",
+      role: "Fullstack developer",
+      text: "I design and build web and mobile products, from the first sketch to production.",
       viewWork: "View my work",
       viewCv: "View my CV",
       social: {
