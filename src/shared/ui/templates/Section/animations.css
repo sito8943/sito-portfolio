@@ -1,0 +1,28 @@
+/* Depth on scroll: each section's content grows to full size as it reaches the
+   middle of the screen and shrinks back as it leaves. Browsers without
+   scroll-driven animations keep the static layout. */
+@supports (animation-timeline: view()) {
+  .section-container {
+    animation: section-depth linear both;
+    animation-timeline: view();
+    animation-range: cover;
+  }
+
+  @keyframes section-depth {
+    0% {
+      scale: 0.92;
+      opacity: 0.6;
+    }
+
+    25%,
+    75% {
+      scale: 1;
+      opacity: 1;
+    }
+
+    100% {
+      scale: 0.95;
+      opacity: 0.6;
+    }
+  }
+}

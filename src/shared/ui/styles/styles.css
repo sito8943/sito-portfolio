@@ -11,6 +11,7 @@
 @import "../molecules/Marquee/styles.css";
 @import "../molecules/ToTop/styles.css";
 @import "../templates/Section/styles.css";
+@import "../templates/Section/animations.css";
 @import "../templates/SplashScreen/styles.css";
 @import "../../../app/views/Home/styles.css";
 @import "../../../app/views/Home/sections/Header/styles.css";

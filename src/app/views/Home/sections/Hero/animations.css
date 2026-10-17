@@ -23,3 +23,8 @@
     transform: translateZ(0) rotateX(0) rotateY(0) scale(1);
   }
 }
+
+/* The Hero keeps its size: LogoTrail measures its starting point from here. */
+.hero-section .section-container {
+  animation: none;
+}
