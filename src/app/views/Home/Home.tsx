@@ -12,6 +12,7 @@ import { PageLayout } from "@/shared/ui/templates";
 // sections
 import { Header } from "./sections/Header";
 import { Hero } from "./sections/Hero";
+import { LogoTrail } from "./sections/LogoTrail";
 const Features = loadable(() => import("./sections/Features"));
 const About = loadable(() => import("./sections/About"));
 const Skills = loadable(() => import("./sections/Skills"));
@@ -50,6 +51,7 @@ function Home() {
         footer={<Footer />}
       >
         <div className="home-background">
+          <LogoTrail />
           <Hero />
           <About />
           <Features />

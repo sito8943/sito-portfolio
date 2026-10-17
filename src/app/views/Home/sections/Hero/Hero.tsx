@@ -3,10 +3,12 @@ import { useTranslation } from "@/features/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LINKS, SECTIONS, SOCIALS } from "@/shared/config";
-import { LazyImage, MiniLogo } from "@/shared/ui/atoms";
+import { LazyImage } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 import { buttonClassName, scrollToSection } from "@/shared/utils";
+
+import { LOGO_ANCHORS } from "../../constants";
 
 import { AVATAR_SRC } from "./constants";
 
@@ -78,10 +80,11 @@ export function Hero() {
             </InView>
           </div>
           <div className="hero-visual">
-            <div className="hero-logo" aria-hidden="true">
-              <MiniLogo className="hero-logo-outline" />
-              <MiniLogo className="hero-logo-trace" pathLength={100} />
-            </div>
+            <span
+              className="hero-logo-anchor"
+              data-logo-anchor={LOGO_ANCHORS.hero}
+              aria-hidden="true"
+            />
             <InView delay="200ms" className="hero-image-in-view">
               <LazyImage
                 alt={t("_pages:home.hero.name")}

@@ -1,0 +1,30 @@
+/* Cards deal out from a stack the first time the fan scrolls into view. */
+.about-fan[data-shown="false"] .about-card {
+  opacity: 0;
+}
+
+.about-fan[data-shown="true"] .about-card {
+  animation: about-card-deal 800ms var(--about-card-delay, 0ms)
+    cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Each new active card swaps its text in. */
+.about-detail-body {
+  animation: about-detail-in 400ms ease-out both;
+}
+
+@keyframes about-card-deal {
+  from {
+    opacity: 0;
+    translate: 0 12%;
+    rotate: 0deg;
+    scale: 0.9;
+  }
+}
+
+@keyframes about-detail-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}

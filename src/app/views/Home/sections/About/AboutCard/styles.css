@@ -1,25 +1,52 @@
 @layer components {
+  /* Slot offsets come from the parent .about-fan-item[data-slot]. */
   .about-card {
-    @apply bg-dark-background2 md:w-full md:h-auto w-[300px] h-[250px] rounded-xl border-[1px];
+    @apply pointer-events-auto block h-full w-full cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-dark-background2 p-0;
+    translate: var(--about-card-x, 0) var(--about-card-y, 0);
+    rotate: var(--about-card-rotate, 0deg);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 45%);
+    transition:
+      translate 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      rotate 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      scale 300ms ease-out,
+      box-shadow 300ms ease-out,
+      filter 300ms ease-out;
   }
 
-  .about-card[data-hover="true"] {
-    @apply hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow/40 transition duration-300 border-placeholder-dark;
+  .about-fan-item[data-slot="left"] .about-card {
+    --about-card-x: -64%;
+    --about-card-y: 6%;
+    --about-card-rotate: -10deg;
+    --about-card-delay: 150ms;
   }
 
-  .about-card[data-hover="false"] {
-    @apply border-0!;
+  .about-fan-item[data-slot="center"] .about-card {
+    --about-card-y: -3%;
+  }
+
+  .about-fan-item[data-slot="right"] .about-card {
+    --about-card-x: 64%;
+    --about-card-y: 6%;
+    --about-card-rotate: 10deg;
+    --about-card-delay: 300ms;
+  }
+
+  .about-card[data-active="false"] {
+    filter: brightness(0.55) saturate(0.8);
+  }
+
+  .about-card[data-active="true"] {
+    @apply scale-105 border-secondary/60;
+    box-shadow:
+      0 24px 48px rgb(0 0 0 / 50%),
+      0 0 32px --alpha(var(--color-secondary) / 35%);
+  }
+
+  .about-card:focus-visible {
+    @apply outline-2 outline-offset-4 outline-secondary;
   }
 
   .about-card-media {
-    @apply object-bottom;
-  }
-
-  .about-card-body {
-    @apply p-1 px-5;
-  }
-
-  .about-card-text {
-    @apply text-center mb-5;
+    @apply h-full w-full object-cover;
   }
 }

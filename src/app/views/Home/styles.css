@@ -1,5 +1,8 @@
 @layer components {
+  /* Positioning context for LogoTrail, which travels across sections. */
   .home-background {
+    @apply relative;
+    overflow-x: clip;
     background-image: linear-gradient(
       180deg,
       var(--color-dark-background2) 0%,

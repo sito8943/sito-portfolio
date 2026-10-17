@@ -28,7 +28,7 @@
   }
 
   .hero-role {
-    @apply text-slight;
+    @apply text-slight text-center;
   }
 
   .hero-text {
@@ -68,37 +68,9 @@
     transform-style: preserve-3d;
   }
 
-  .hero-logo {
-    @apply absolute inset-0;
-    pointer-events: none;
-  }
-
-  .hero-logo svg {
-    @apply absolute inset-0 h-full w-full overflow-visible;
-  }
-
-  .hero-logo path {
-    stroke-linecap: round;
-  }
-
-  .hero-logo-outline {
-    @apply text-secondary/35;
-  }
-
-  .hero-logo-outline path {
-    vector-effect: non-scaling-stroke;
-    stroke-width: 1.5px;
-  }
-
-  .hero-logo-trace {
-    @apply text-secondary;
-    filter: drop-shadow(0 0 8px --alpha(var(--color-secondary) / 80%));
-  }
-
-  /* Viewbox units: dashes follow pathLength only while the stroke scales with the SVG. */
-  .hero-logo-trace path {
-    stroke-width: 0.6;
-    stroke-dasharray: 12 88;
+  /* Where LogoTrail draws the logo outline around the portrait. */
+  .hero-logo-anchor {
+    @apply pointer-events-none absolute inset-0;
   }
 
   .hero-image-in-view {

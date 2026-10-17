@@ -1,9 +1,83 @@
 @layer components {
-  .about-photo {
-    @apply w-20 h-20 rounded-full;
+  /* Same column as the navbar; cards left, active card's text right. */
+  .about-layout {
+    @apply relative z-10 mx-auto grid w-full max-w-7xl grid-cols-2 items-center gap-x-16 gap-y-10;
   }
 
-  .about-cards {
-    @apply md:w-full mt-5;
+  .about-heading {
+    @apply col-span-2;
+  }
+
+  .about-fan {
+    @apply relative mx-auto w-full max-w-[520px];
+    aspect-ratio: 5 / 4;
+  }
+
+  /* Where LogoTrail lands: a square behind the cards. */
+  .about-logo-anchor {
+    @apply pointer-events-none absolute left-1/2 top-1/2 h-[150%];
+    aspect-ratio: 1;
+    translate: -50% -50%;
+  }
+
+  .about-fan-list {
+    @apply absolute inset-0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Every item sits on the centre slot; only the (offset) card itself takes the pointer,
+     or the raised active item would swallow hovers meant for the middle card. */
+  .about-fan-item {
+    @apply pointer-events-none absolute left-1/2 top-1/2 w-[44%] z-[1];
+    aspect-ratio: 3 / 4;
+    translate: -50% -50%;
+  }
+
+  .about-fan-item[data-slot="center"] {
+    @apply z-[2];
+  }
+
+  .about-fan-item[data-active="true"] {
+    @apply z-[3];
+  }
+
+  .about-detail-body {
+    @apply flex flex-col gap-3;
+  }
+
+  .about-detail-title {
+    @apply text-4xl font-bold text-white;
+  }
+
+  .about-detail-text {
+    @apply text-xl text-white;
+  }
+
+  .about-detail-more {
+    @apply text-lg text-white-hover;
+  }
+
+  @media (width < 768px) {
+    .about-layout {
+      @apply grid-cols-1 gap-y-6;
+    }
+
+    .about-heading {
+      @apply col-span-1;
+    }
+
+    .about-fan {
+      @apply max-w-[360px];
+    }
+
+    .about-detail-body {
+      @apply items-center text-center;
+    }
+
+    .about-detail-title {
+      @apply text-3xl;
+    }
   }
 }

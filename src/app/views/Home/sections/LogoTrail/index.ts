@@ -1,0 +1,1 @@
+export { LogoTrail } from "./LogoTrail";

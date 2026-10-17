@@ -2,24 +2,26 @@ import { LazyImage } from "@/shared/ui/atoms";
 
 import type { AboutCardProps } from "./types";
 
+/** Image-only card of the About fan; hovering, focusing or tapping it makes it active. */
 export function AboutCard({
   image,
   alt,
-  text,
-  more,
-  noHover = false,
+  label,
+  active,
+  onActivate,
 }: AboutCardProps) {
   return (
-    <article data-hover={!noHover} className="about-card">
-      <LazyImage
-        src={image}
-        alt={alt}
-        className="card-media about-card-media"
-      />
-      <div className="about-card-body">
-        <p className="card-title">{text}</p>
-        <p className="about-card-text">{more}</p>
-      </div>
-    </article>
+    <button
+      type="button"
+      data-active={active}
+      aria-pressed={active}
+      aria-label={label}
+      className="about-card"
+      onMouseEnter={onActivate}
+      onFocus={onActivate}
+      onClick={onActivate}
+    >
+      <LazyImage src={image} alt={alt} className="about-card-media" />
+    </button>
   );
 }

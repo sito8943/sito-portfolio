@@ -1,7 +1,8 @@
 export type AboutCardProps = {
   image: string;
   alt: string;
-  text: string;
-  more: string;
-  noHover?: boolean;
+  /** Accessible name: the card's title. */
+  label: string;
+  active: boolean;
+  onActivate: () => void;
 };

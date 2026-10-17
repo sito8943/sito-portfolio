@@ -33,8 +33,8 @@ export const _pages: Resources["_pages"] = {
       subtitle: "pero mi nombre real es Carlos Andrés Mora González",
       me: {
         title: "Acerca de mí",
-        text: "Me gusta programar 👨🏻‍💻",
-        more: "y aprender cosas nuevas 📚",
+        text: "Me encanta convertir ideas en código 👨🏻‍💻",
+        more: "y aprender algo nuevo cada día 📚",
         content: [
           {
             Type: "Title",
@@ -99,9 +99,9 @@ export const _pages: Resources["_pages"] = {
         ],
       },
       freeTime: {
-        title: "En mi tiempo libre",
-        text: "Me gusta escuchar música 🎶",
-        more: "tocar al piano 🎹 y hacer fotos 📷",
+        title: "Más allá del código",
+        text: "Me encontrarás disfrutando de la música 🎶",
+        more: "tocando el piano 🎹 o capturando momentos 📸",
         content: [
           {
             type: "title",
@@ -115,8 +115,9 @@ export const _pages: Resources["_pages"] = {
         ],
       },
       design: {
-        text: "Actualmente estudiando 📝",
-        more: "diseño gráfico 🎨, UI/UX",
+        title: "Siempre evolucionando",
+        text: "Combino código y creatividad 🎨",
+        more: "a través del diseño gráfico y UI/UX.",
       },
     },
     features: {
