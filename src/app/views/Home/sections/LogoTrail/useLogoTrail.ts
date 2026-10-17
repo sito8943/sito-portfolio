@@ -2,14 +2,14 @@ import { useEffect, useRef } from "react";
 
 import { LOGO_ANCHORS } from "../../constants";
 
-import { REDUCED_MOTION_QUERY } from "./constants";
+import { DISSOLVE_START, REDUCED_MOTION_QUERY } from "./constants";
 import { clamp, lerp, measureAnchor, smoothstep } from "./utils";
 
 /**
  * Moves the referenced element from the Hero anchor to the About anchor as the
  * page scrolls. While travelling it holds still vertically on screen, so it
  * reads as following the reader down; it lands on the About anchor exactly.
- * `--logo-trail-burst` (0 → 1 → 0) drives the logo coming apart and back together.
+ * `--logo-trail-dissolve` (0 → 1) fades it out over the last stretch.
  */
 export function useLogoTrail<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -36,6 +36,9 @@ export function useLogoTrail<T extends HTMLElement>() {
       let progress = distance > 0 ? clamp(window.scrollY / distance) : 1;
       if (reducedMotion.matches) progress = Math.round(progress);
       const eased = smoothstep(progress);
+      const dissolve = smoothstep(
+        clamp((progress - DISSOLVE_START) / (1 - DISSOLVE_START)),
+      );
 
       node.style.setProperty("--logo-trail-size", `${from.size}px`);
       node.style.setProperty(
@@ -50,10 +53,7 @@ export function useLogoTrail<T extends HTMLElement>() {
         "--logo-trail-scale",
         `${lerp(1, to.size / from.size, eased)}`,
       );
-      node.style.setProperty(
-        "--logo-trail-burst",
-        `${Math.sin(Math.PI * progress)}`,
-      );
+      node.style.setProperty("--logo-trail-dissolve", `${dissolve}`);
       node.setAttribute("data-ready", "true");
     };
 

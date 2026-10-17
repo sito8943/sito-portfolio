@@ -22,6 +22,10 @@ export function AboutCard({
       onClick={onActivate}
     >
       <LazyImage src={image} alt={alt} className="about-card-media" />
+      <svg className="about-card-trace" aria-hidden="true">
+        <rect pathLength={100} className="about-card-trace-tail" />
+        <rect pathLength={100} className="about-card-trace-head" />
+      </svg>
     </button>
   );
 }

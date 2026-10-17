@@ -1,10 +1,4 @@
-import {
-  LOGO_CENTER,
-  PIECE_SPIN,
-  PIECE_SPREAD,
-  PIECE_SPREAD_STEP,
-} from "./constants";
-import type { AnchorBox, LogoPiece, PieceScatter } from "./types";
+import type { AnchorBox } from "./types";
 
 export const clamp = (value: number, min = 0, max = 1) =>
   Math.min(max, Math.max(min, value));
@@ -25,25 +19,5 @@ export function measureAnchor(name: string, parent: DOMRect): AnchorBox | null {
     left: rect.left - parent.left,
     top: rect.top - parent.top,
     size: rect.width,
-  };
-}
-
-/**
- * Scatter for the piece at `index`: away from the logo centre, at a distance and
- * spin that vary per piece so the lines don't move in lockstep.
- */
-export function pieceScatter(
-  { x1, y1, x2, y2 }: LogoPiece,
-  index: number,
-): PieceScatter {
-  const midX = (x1 + x2) / 2 - LOGO_CENTER.x;
-  const midY = (y1 + y2) / 2 - LOGO_CENTER.y;
-  const length = Math.hypot(midX, midY) || 1;
-  const distance = PIECE_SPREAD + (index % 3) * PIECE_SPREAD_STEP;
-  const spin = (index % 2 ? 1 : -1) * PIECE_SPIN * (0.5 + (index % 4) / 6);
-  return {
-    x: (midX / length) * distance,
-    y: (midY / length) * distance,
-    rotate: spin,
   };
 }

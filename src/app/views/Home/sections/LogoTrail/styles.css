@@ -14,27 +14,12 @@
     visibility: hidden;
   }
 
-  /* The whole logo while at rest; it hands over to the pieces as soon as it starts moving. */
+  /* Travels whole; on landing it fades, blurs and swells slightly behind the cards. */
   .logo-trail-art {
     @apply absolute inset-0;
-    opacity: calc(1 - min(1, var(--logo-trail-burst, 0) * 6));
-  }
-
-  .logo-trail-pieces {
-    opacity: min(1, var(--logo-trail-burst, 0) * 6);
-  }
-
-  /* Each stroke drifts and spins away, peaking halfway between Hero and About. */
-  .logo-trail-piece {
-    @apply text-secondary;
-    stroke: currentColor;
-    stroke-width: 0.6;
-    stroke-linecap: round;
-    transform-box: fill-box;
-    transform-origin: center;
-    translate: calc(var(--piece-x) * var(--logo-trail-burst, 0) * 1px)
-      calc(var(--piece-y) * var(--logo-trail-burst, 0) * 1px);
-    rotate: calc(var(--piece-rotate) * var(--logo-trail-burst, 0) * 1deg);
+    opacity: calc(1 - var(--logo-trail-dissolve, 0));
+    scale: calc(1 + var(--logo-trail-dissolve, 0) * 0.12);
+    filter: blur(calc(var(--logo-trail-dissolve, 0) * 6px));
   }
 
   .logo-trail svg {
@@ -54,8 +39,7 @@
     stroke-width: 1.5px;
   }
 
-  .logo-trail-trace,
-  .logo-trail-pieces {
+  .logo-trail-trace {
     @apply text-secondary;
     filter: drop-shadow(0 0 8px --alpha(var(--color-secondary) / 80%));
   }

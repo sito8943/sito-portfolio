@@ -28,3 +28,32 @@
     translate: 0 8px;
   }
 }
+
+/* The card trace loops forever; the tail starts behind the head so it trails it. */
+.about-card-trace-head {
+  animation: about-card-trace 5s linear infinite;
+}
+
+.about-card-trace-tail {
+  animation: about-card-trace-tail 5s linear infinite;
+}
+
+@keyframes about-card-trace {
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes about-card-trace-tail {
+  from {
+    stroke-dashoffset: 114;
+  }
+
+  to {
+    stroke-dashoffset: 14;
+  }
+}
