@@ -114,7 +114,7 @@
     }
 
     .hero-title {
-      @apply items-center text-5xl;
+      @apply items-center text-center text-5xl;
     }
 
     .hero-actions,
