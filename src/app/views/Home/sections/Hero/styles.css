@@ -28,7 +28,7 @@
   }
 
   .hero-role {
-    @apply text-slight text-center;
+    @apply text-slight text-left;
   }
 
   .hero-text {
@@ -115,6 +115,10 @@
 
     .hero-title {
       @apply items-center text-center text-5xl;
+    }
+
+    .hero-role {
+      @apply text-center;
     }
 
     .hero-actions,
