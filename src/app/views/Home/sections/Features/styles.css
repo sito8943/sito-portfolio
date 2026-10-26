@@ -77,6 +77,11 @@
       @apply grid-cols-1 gap-5;
     }
 
+    /* Stacked cards make 70% of the height wider than the screen; size by width instead. */
+    .features-logo-anchor {
+      @apply h-auto w-full;
+    }
+
     .features-grid-item:last-child {
       grid-column: auto;
       justify-self: stretch;

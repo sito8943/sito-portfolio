@@ -72,6 +72,11 @@
       @apply max-w-[360px];
     }
 
+    /* 150% of the fan's height is wider than the screen; keep it to the fan's width. */
+    .about-logo-anchor {
+      @apply h-auto w-full;
+    }
+
     .about-detail-body {
       @apply items-center text-center;
     }
