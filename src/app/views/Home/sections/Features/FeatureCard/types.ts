@@ -4,5 +4,4 @@ export type FeatureCardProps = {
   icon: ReactNode;
   title: string;
   body: string;
-  tags: string[];
 };

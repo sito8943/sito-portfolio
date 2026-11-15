@@ -50,6 +50,19 @@ export const LINKS = {
   NEXTUI: import.meta.env.VITE_LINK_NEXTUI || "https://nextui.org/",
   MONGODB: import.meta.env.VITE_LINK_MONGODB || "https://www.mongodb.com/",
 
+  // Skills stacks
+  VITE: "https://vite.dev/",
+  EXPRESS: "https://expressjs.com/",
+  LARAVEL: "https://laravel.com/",
+  SPRING_BOOT: "https://spring.io/projects/spring-boot",
+  MYSQL: "https://www.mysql.com/",
+  POSTGRESQL: "https://www.postgresql.org/",
+  DOCKER: "https://www.docker.com/",
+  GITHUB_ACTIONS: "https://github.com/features/actions",
+  REACT_NATIVE: "https://reactnative.dev/",
+  EXPO: "https://expo.dev/",
+  KOTLIN: "https://kotlinlang.org/",
+
   // Contact
   CONTACT_EMAIL: import.meta.env.VITE_CONTACT_EMAIL || "sito8943@gmail.com",
   CONTACT_CV_URL:

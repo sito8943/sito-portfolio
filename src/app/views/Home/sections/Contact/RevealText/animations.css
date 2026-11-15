@@ -1,0 +1,9 @@
+/* Dim until the reading reaches it, then full (300 ms, so a fast scroll glides). */
+.reveal-word {
+  color: rgb(251 251 251 / 25%);
+  transition: color 300ms;
+}
+
+.reveal-word[data-lit] {
+  color: var(--color-white);
+}

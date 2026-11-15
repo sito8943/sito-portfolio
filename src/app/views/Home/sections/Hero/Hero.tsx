@@ -1,8 +1,9 @@
 import { useTranslation } from "@/features/i18n";
 
+import { Tooltip } from "@sito/ui";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { LINKS, SECTIONS, SOCIALS } from "@/shared/config";
+import { LINKS, PROFESSIONAL_SOCIALS, SECTIONS } from "@/shared/config";
 import { LazyImage } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
@@ -62,17 +63,19 @@ export function Hero() {
                 aria-label={t("_pages:home.hero.meet")}
               >
                 <ul className="hero-social-list">
-                  {SOCIALS.map((item) => (
+                  {PROFESSIONAL_SOCIALS.map((item) => (
                     <li key={item.link}>
-                      <a
-                        href={item.link}
-                        rel="noreferrer"
-                        target="_blank"
-                        className="hero-social-link"
-                        aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
-                      >
-                        <FontAwesomeIcon icon={item.icon} />
-                      </a>
+                      <Tooltip label={item.text} align="start">
+                        <a
+                          href={item.link}
+                          rel="noreferrer"
+                          target="_blank"
+                          className="hero-social-link"
+                          aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
+                        >
+                          <FontAwesomeIcon icon={item.icon} />
+                        </a>
+                      </Tooltip>
                     </li>
                   ))}
                 </ul>

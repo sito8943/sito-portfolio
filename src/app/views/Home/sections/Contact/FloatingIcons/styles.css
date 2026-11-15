@@ -1,9 +1,0 @@
-@layer components {
-  .contact-float {
-    @apply sm:hidden;
-  }
-
-  .contact-float-icon {
-    @apply text-green opacity-50 text-[6rem];
-  }
-}

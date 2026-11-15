@@ -1,24 +1,131 @@
 @layer components {
   .skills-section {
-    background-color: transparent;
+    @apply bg-transparent pb-10;
   }
 
-  .skills-lead {
-    @apply text-center mb-5 mx-auto w-[80%];
+  .skills-stack {
+    @apply flex flex-col items-center gap-8 mx-auto max-w-4xl;
   }
 
-  .skills-subtitle {
-    @apply text-3xl font-bold text-center;
+  .skills-highlights {
+    @apply flex flex-wrap justify-center gap-3;
   }
 
-  /* Main skill logo (120px circle). */
-  .skill {
-    border-radius: 100%;
-    object-fit: cover;
+  .skills-highlight {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full text-sm text-white-hover bg-white/5 border border-white/10;
   }
 
-  /* Small "other skill" logo. */
-  .skill-badge {
-    @apply object-cover w-10 h-10 rounded-full bg-white border-2 border-white;
+  .skills-highlight-number {
+    @apply text-base font-bold text-white;
+  }
+
+  /* Wraps instead of shrinking: one row of 5 on desktop, 3 + 2 below 1024px. */
+  .skills-tabs {
+    @apply flex flex-wrap justify-center gap-y-4 w-full mt-4;
+  }
+
+  .skills-tab-cell {
+    @apply flex justify-center w-40 lg:w-1/3;
+  }
+
+  .skills-tab {
+    @apply flex flex-col items-center gap-6 py-4 bg-transparent cursor-pointer text-white;
+  }
+
+  .skills-tab:focus-visible {
+    @apply outline-none;
+  }
+
+  /* Rotated square, like the Hero portrait frame. */
+  .skills-diamond {
+    @apply relative grid place-items-center size-20 md:size-16;
+  }
+
+  /* Opaque fill so the travelling logo stays hidden behind the diamond. */
+  .skills-diamond::after {
+    @apply absolute inset-0 rotate-45 rounded-lg border border-white/40;
+    content: "";
+    background-color: color-mix(
+      in srgb,
+      var(--color-pdark) 55%,
+      var(--color-dark-background2)
+    );
+    transition:
+      border-color 0.3s,
+      background-color 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .skills-tab:hover .skills-diamond::after {
+    @apply border-white/70;
+    background-color: color-mix(
+      in srgb,
+      var(--color-plight) 35%,
+      var(--color-pdark)
+    );
+  }
+
+  .skills-tab[aria-selected="true"] .skills-diamond::after {
+    @apply border-secondary;
+    background-color: color-mix(
+      in srgb,
+      var(--color-secondary) 14%,
+      var(--color-dark-background2)
+    );
+    box-shadow: 0 0 18px
+      color-mix(in srgb, var(--color-secondary) 45%, transparent);
+  }
+
+  .skills-tab:focus-visible .skills-diamond::after {
+    @apply outline-2 outline-offset-4 outline-white;
+  }
+
+  /* Box the travelling logo (LogoTrail) frames; only the target diamond has the data attribute. */
+  .skills-logo-anchor {
+    @apply pointer-events-none absolute left-1/2 top-1/2 size-[240%];
+    translate: -50% -50%;
+  }
+
+  /* Clicked: the logo closes in on its diamond (LogoTrail glides the scale). */
+  .skills-logo-anchor[data-locked="true"] {
+    @apply size-[200%];
+  }
+
+  .skills-diamond-icon {
+    @apply relative z-10 text-2xl md:text-xl;
+  }
+
+  .skills-tab-name {
+    @apply text-sm tracking-wide text-white-hover;
+    transition: color 0.3s;
+  }
+
+  .skills-tab[aria-selected="true"] .skills-tab-name {
+    @apply text-slight;
+  }
+
+  .skills-hint {
+    @apply -mt-4 text-xs tracking-wide text-placeholder-dark;
+  }
+
+  .skills-panel-wrap {
+    @apply w-full;
+  }
+
+  .skills-chips {
+    @apply flex flex-wrap justify-center gap-3 min-h-12;
+  }
+
+  .skills-chip {
+    @apply flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium bg-white/5 border border-white/15;
+    transition:
+      border-color 0.3s,
+      background-color 0.3s;
+  }
+
+  .skills-chip:hover,
+  .skills-chip:focus-visible {
+    border-color: color-mix(in srgb, var(--skill-brand) 70%, transparent);
+    background-color: color-mix(in srgb, var(--skill-brand) 12%, transparent);
   }
 }

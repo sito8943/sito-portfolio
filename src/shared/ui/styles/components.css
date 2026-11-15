@@ -11,6 +11,13 @@
     text-wrap: balance;
   }
 
+  /* Larger body variant for leads (use with .body): Poppins, regular weight. */
+  .body-lg {
+    @apply text-xl leading-relaxed md:text-lg;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+
   /* Section heading. */
   .section-title {
     @apply sm:text-3xl text-4xl font-bold text-center;

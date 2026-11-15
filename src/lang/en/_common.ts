@@ -1,5 +1,8 @@
 /** English is the source of truth: every other language must match this shape. */
 export const _common = {
+  tooltips: {
+    toTop: "Back to top",
+  },
   ariaLabels: {
     clickToSection: "Click to go to the [target] section",
     clickToGithub: "Click to visit github profile",
@@ -10,6 +13,7 @@ export const _common = {
     toProjects: "Go to projects",
     toContact: "Go to contact us",
     toTop: "Go to the top of the page",
+    footerNav: "Footer navigation",
     closeDrawer: "Close navigation drawer",
     closeModal: "Close popup dialog",
     openDrawer: "Open navigation drawer",

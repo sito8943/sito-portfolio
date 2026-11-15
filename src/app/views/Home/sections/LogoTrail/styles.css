@@ -10,6 +10,18 @@
     will-change: translate, scale;
   }
 
+  /* The last stop's anchor moved (hover/tab): slide there, never jump. */
+  .logo-trail[data-gliding="true"] {
+    transition:
+      translate 600ms cubic-bezier(0.22, 1, 0.36, 1),
+      scale 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Over the sections (still under the fixed header) while it heads for the last stop. */
+  .logo-trail[data-front="true"] {
+    @apply z-40;
+  }
+
   .logo-trail:not([data-ready="true"]) {
     visibility: hidden;
   }

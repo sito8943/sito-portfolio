@@ -7,3 +7,11 @@ export const ASSEMBLE_START = 0.1;
 export const ASSEMBLE_END = 0.35;
 /** Leg progress past which the next stop counts as landed on. */
 export const LANDED_AT = 0.85;
+/** How long the logo glides when the final anchor moves (keep in sync with styles.css). */
+export const GLIDE_MS = 600;
+/** Viewport fraction where a dock stop's centre sits when the logo docks on it. */
+export const DOCK_LAND_VIEWPORT = 0.85;
+/** Viewport fraction a dock stop's centre reaches (scrolling down) when the logo leaves it. */
+export const DOCK_LEAVE_VIEWPORT = 0.2;
+/** Last-leg progress past which the logo flies over the sections (clear of the dock it left). */
+export const FRONT_FROM = 0.3;

@@ -46,7 +46,12 @@ function Home() {
       }
     >
       <PageLayout
-        overlay={<ToTop label={t("_common:ariaLabels.toTop")} />}
+        overlay={
+          <ToTop
+            label={t("_common:ariaLabels.toTop")}
+            tooltip={t("_common:tooltips.toTop")}
+          />
+        }
         header={<Header />}
         footer={<Footer />}
       >

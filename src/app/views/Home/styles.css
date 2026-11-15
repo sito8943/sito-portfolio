@@ -6,11 +6,9 @@
     background-image: linear-gradient(
       180deg,
       var(--color-dark-background2) 0%,
-      var(--color-dark-background) 24%,
-      var(--color-pdark) 48%,
-      var(--color-pdark) 56%,
-      var(--color-dark-background) 78%,
-      var(--color-dark-background2) 100%
+      var(--color-dark-background) 20%,
+      var(--color-pdark) 45%,
+      var(--color-pdark) 100%
     );
   }
 

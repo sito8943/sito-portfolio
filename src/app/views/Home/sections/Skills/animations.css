@@ -1,0 +1,66 @@
+/* Red light that travels around the active (or hovered) stack diamond. */
+@property --skills-trace-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.skills-diamond::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  rotate: 45deg;
+  padding: 2px;
+  border-radius: 0.5rem;
+  background: conic-gradient(
+    from var(--skills-trace-angle),
+    transparent 0 65%,
+    var(--color-slight) 85%,
+    transparent 100%
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.4s;
+  animation: skills-trace 3.5s linear infinite;
+  pointer-events: none;
+}
+
+.skills-tab[aria-selected="true"] .skills-diamond::before,
+.skills-tab:hover .skills-diamond::before {
+  opacity: 1;
+}
+
+@keyframes skills-trace {
+  to {
+    --skills-trace-angle: 360deg;
+  }
+}
+
+/* Chips of the selected stack rise in one after another. */
+.skills-chip-item {
+  animation: skills-chip-in 0.4s ease-out both;
+  animation-delay: var(--skills-chip-delay);
+}
+
+@keyframes skills-chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Invite: each diamond flashes once, in sequence, as the row scrolls in. */
+.skills-tab-cell[data-shown="true"] .skills-diamond::after {
+  animation: skills-invite 900ms ease-out both;
+  animation-delay: calc(var(--in-view-delay) + 500ms);
+}
+
+@keyframes skills-invite {
+  40% {
+    border-color: var(--color-white);
+    box-shadow: 0 0 14px rgb(255 255 255 / 35%);
+  }
+}
