@@ -3,64 +3,86 @@
     background-color: transparent;
   }
 
-  /* Brand panel: navy card, content left, logo chevrons fading in on the right. */
+  /* Brand card, as in the presentation deck: navy, content left, chevrons cut by the right edge. */
   .contact-panel {
-    @apply relative overflow-hidden mx-auto w-full max-w-6xl min-h-[420px] rounded-3xl border border-white/10 px-24 py-20 md:px-6 md:py-12 md:rounded-2xl;
-    background-color: color-mix(
-      in srgb,
-      var(--color-primary) 70%,
-      var(--color-pdark)
-    );
+    @apply relative isolate mx-auto flex w-full max-w-6xl flex-col gap-12 overflow-hidden rounded-2xl px-16 py-16 md:gap-8 ring-1 ring-white/5 lg:min-h-[28rem] lg:justify-between md:px-6 md:py-10;
+    background-color: var(--color-primary);
   }
 
+  /* Comes in once in view: rising, unblurring and scaling up a touch (700 ms). */
+  .contact-panel {
+    @apply translate-y-6 scale-95 opacity-0 blur-sm;
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      translate 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      scale 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .contact-panel[data-shown="true"] {
+    @apply translate-y-0 scale-100 opacity-100 blur-none;
+  }
+
+  /* The cover's chevrons, cut by the card's right edge, barely there behind the words. */
   .contact-chevrons {
-    @apply pointer-events-none absolute right-0 top-0 h-full w-auto text-white/[0.06] md:opacity-60;
-  }
-
-  .contact-chevrons path {
-    stroke: currentColor;
-    stroke-width: 34;
-    stroke-linejoin: miter;
+    @apply absolute top-1/2 right-0 -z-10 h-[130%] w-auto -translate-y-1/2 text-white/[0.06] md:-right-8;
+    transition: translate 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .contact-content {
-    @apply relative flex flex-col items-start gap-6 max-w-2xl;
+    @apply flex flex-col items-start gap-6;
   }
 
   .contact-title {
     @apply text-5xl leading-tight md:text-4xl;
   }
 
-  /* Deck-style statement: large, regular weight. */
   .contact-lead {
-    @apply -mt-2 text-3xl leading-snug text-white md:text-xl;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-  }
-
-  .contact-actions {
-    @apply flex flex-wrap items-center gap-4;
+    @apply -mt-2 max-w-xl;
   }
 
   .contact-action {
     @apply px-6 py-3 text-base;
   }
 
-  /* Brand lockup: mark on the left, wordmark over the email link. */
-  /* Mark as tall as the text block beside it, like the brand card. */
+  /* Signature: isotype in red beside the logotype, over the email link. */
   .contact-lockup {
-    @apply flex items-center gap-7 mt-8 md:gap-5;
+    @apply flex items-center gap-4 self-start;
   }
 
+  /* Also the travelling logo's last stop: it appears as the logo dissolves into it. */
   .contact-lockup-mark {
-    @apply h-[4.75rem] w-auto shrink-0 text-secondary md:h-14;
+    @apply block size-16 shrink-0 text-secondary opacity-0 md:size-14;
+    transition:
+      rotate 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 600ms ease-out;
   }
 
+  .contact-lockup-mark[data-logo-landed="true"] {
+    @apply opacity-100;
+  }
+
+  .contact-lockup-mark-svg {
+    @apply block size-full;
+  }
+
+  /* As tall as the isotype: logotype (40) + gap (6) + email line (18) = 64px. */
   .contact-lockup-text {
-    @apply flex flex-col items-start gap-1;
+    @apply flex flex-col gap-1.5;
   }
 
   .contact-lockup-word {
-    @apply h-11 w-auto text-white md:h-8;
+    @apply aspect-[170/77] h-10 w-auto self-start text-white md:h-8;
+  }
+
+  /* Hovering the email: the isotype turns like a compass finding north and the chevrons drift. */
+  .contact-panel:has(.copy-email-address:is(:hover, :focus-visible))
+    .contact-lockup-mark {
+    @apply rotate-90;
+  }
+
+  .contact-panel:has(.copy-email-address:is(:hover, :focus-visible))
+    .contact-chevrons {
+    @apply translate-x-4;
   }
 }

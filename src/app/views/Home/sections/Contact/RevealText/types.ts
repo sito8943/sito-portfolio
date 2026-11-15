@@ -1,7 +1,6 @@
 export type RevealTextProps = {
   text: string;
-  as?: "h2" | "p";
+  /** How much has been read, 0 to 1: that share of the words is lit. */
+  progress: number;
   className?: string;
-  /** Delay before the first word lights up, in ms. */
-  startMs?: number;
 };

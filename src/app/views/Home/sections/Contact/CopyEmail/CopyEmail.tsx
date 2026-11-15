@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Tooltip } from "@sito/ui";
 import {
   faArrowRight,
   faCheck,
@@ -34,14 +35,16 @@ export function CopyEmail({ email, copyLabel, copiedLabel }: CopyEmailProps) {
         {email}
         <FontAwesomeIcon icon={faArrowRight} className="copy-email-arrow" />
       </a>
-      <button
-        type="button"
-        className="copy-email-button"
-        aria-label={copyLabel}
-        onClick={copy}
-      >
-        <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
-      </button>
+      <Tooltip label={copied ? copiedLabel : copyLabel}>
+        <button
+          type="button"
+          className="copy-email-button"
+          aria-label={copyLabel}
+          onClick={copy}
+        >
+          <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
+        </button>
+      </Tooltip>
       <span className="copy-email-status" role="status">
         {copied ? copiedLabel : ""}
       </span>
