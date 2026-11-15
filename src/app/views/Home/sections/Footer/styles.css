@@ -1,21 +1,52 @@
 @layer components {
   .footer {
-    @apply items-center justify-center flex px-3 min-h-[50px] py-2 bg-dark-background flex-wrap;
+    @apply flex justify-center px-3 py-8 bg-pdark border-t border-white/10;
   }
 
   .footer-bar {
-    @apply w-[90%] flex items-center justify-between flex-wrap gap-y-5 sm:my-5;
+    @apply w-[90%] grid grid-cols-[1fr_auto_1fr] items-center gap-8;
+  }
+
+  .footer-brand {
+    @apply flex items-center gap-3;
+  }
+
+  .footer-logo {
+    @apply h-6 w-auto text-secondary;
   }
 
   .footer-copy {
-    @apply flex;
+    @apply text-sm text-white-hover;
+  }
+
+  .footer-links {
+    @apply flex flex-wrap justify-center gap-x-6 gap-y-2;
+  }
+
+  .footer-link {
+    @apply text-sm text-white-hover transition-colors hover:text-white;
   }
 
   .footer-socials {
-    @apply flex items-center sm:gap-3 gap-5;
+    @apply flex items-center justify-end gap-5;
   }
 
   .footer-social {
-    @apply transition hover:text-slight text-[25px];
+    @apply text-xl text-white-hover transition-colors hover:text-slight;
+  }
+
+  /* Stacked; copyright goes last so the fixed "to top" button never covers a link. */
+  @variant lg {
+    .footer-bar {
+      @apply flex flex-col gap-6;
+    }
+
+    .footer-brand {
+      @apply order-last flex-col gap-2;
+    }
+
+    .footer-socials {
+      @apply justify-center;
+    }
   }
 }

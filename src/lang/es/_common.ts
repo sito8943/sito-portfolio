@@ -10,6 +10,7 @@ export const _common: Resources["_common"] = {
     toProjects: "Ir a los proyectos",
     toHome: "Ir al inicio",
     toTop: "Ir al tope de la página",
+    footerNav: "Navegación del pie de página",
     toContact: "Ir a contactar",
     closeDrawer: "Cerrar menú desplegable",
     closeModal: "Cerrar dialogo emergente",

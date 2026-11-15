@@ -10,6 +10,7 @@ export const _common = {
     toProjects: "Go to projects",
     toContact: "Go to contact us",
     toTop: "Go to the top of the page",
+    footerNav: "Footer navigation",
     closeDrawer: "Close navigation drawer",
     closeModal: "Close popup dialog",
     openDrawer: "Open navigation drawer",
