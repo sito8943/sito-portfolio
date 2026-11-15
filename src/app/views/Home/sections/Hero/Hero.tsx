@@ -1,5 +1,6 @@
 import { useTranslation } from "@/features/i18n";
 
+import { Tooltip } from "@sito/ui";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LINKS, PROFESSIONAL_SOCIALS, SECTIONS } from "@/shared/config";
@@ -64,15 +65,17 @@ export function Hero() {
                 <ul className="hero-social-list">
                   {PROFESSIONAL_SOCIALS.map((item) => (
                     <li key={item.link}>
-                      <a
-                        href={item.link}
-                        rel="noreferrer"
-                        target="_blank"
-                        className="hero-social-link"
-                        aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
-                      >
-                        <FontAwesomeIcon icon={item.icon} />
-                      </a>
+                      <Tooltip label={item.text} align="start">
+                        <a
+                          href={item.link}
+                          rel="noreferrer"
+                          target="_blank"
+                          className="hero-social-link"
+                          aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
+                        >
+                          <FontAwesomeIcon icon={item.icon} />
+                        </a>
+                      </Tooltip>
                     </li>
                   ))}
                 </ul>

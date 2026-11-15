@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // @sito/ui
-import { IconButton } from "@sito/ui";
+import { IconButton, Tooltip } from "@sito/ui";
 
 // fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import { SHOW_AFTER } from "./constants";
 import type { ToTopProps } from "./types";
 
 /** Floating button that scrolls back to the top once the page is scrolled. */
-export function ToTop({ label }: ToTopProps) {
+export function ToTop({ label, tooltip }: ToTopProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -24,16 +24,18 @@ export function ToTop({ label }: ToTopProps) {
   }, []);
 
   return (
-    <IconButton
-      onClick={() => scrollTo(0)}
-      icon={<FontAwesomeIcon icon={faArrowUp} />}
-      aria-label={label}
-      color="primary"
-      variant="submit"
-      name="to-top"
-      tabIndex={visible ? 0 : -1}
-      data-shown={visible}
-      className="to-top"
-    />
+    <Tooltip label={tooltip} align="end" className="to-top-anchor">
+      <IconButton
+        onClick={() => scrollTo(0)}
+        icon={<FontAwesomeIcon icon={faArrowUp} />}
+        aria-label={label}
+        color="primary"
+        variant="submit"
+        name="to-top"
+        tabIndex={visible ? 0 : -1}
+        data-shown={visible}
+        className="to-top"
+      />
+    </Tooltip>
   );
 }

@@ -1,6 +1,9 @@
 import type { Resources } from "../types";
 
 export const _common: Resources["_common"] = {
+  tooltips: {
+    toTop: "Subir",
+  },
   ariaLabels: {
     clickToSection: "Cliquea para ir a la sección [target]",
     clickToGithub: "Cliquea para visitar el perfil de github",

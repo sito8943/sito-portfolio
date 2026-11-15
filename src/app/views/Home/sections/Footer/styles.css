@@ -15,8 +15,10 @@
     @apply h-6 w-auto text-secondary;
   }
 
+  /* Same box as the footer links (font's own line height), centred on the logo. */
   .footer-copy {
     @apply text-sm text-white-hover;
+    line-height: normal;
   }
 
   .footer-links {
@@ -24,7 +26,8 @@
   }
 
   .footer-link {
-    @apply text-sm text-white-hover transition-colors hover:text-white;
+    @apply block text-sm text-white-hover transition-colors hover:text-white;
+    line-height: normal;
   }
 
   .footer-socials {

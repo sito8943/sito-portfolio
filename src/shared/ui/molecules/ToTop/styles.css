@@ -1,7 +1,12 @@
 @layer components {
   /* `scale` (appear/leave) is separate from `transform` (@sito/ui :active press). */
+  /* The tooltip's root carries the fixed position, so its bubble anchors to the button. */
+  .to-top-anchor {
+    @apply fixed bottom-5 right-5 z-10;
+  }
+
   .to-top {
-    @apply fixed bottom-5 right-5 transition-[scale,transform,background-color,color] duration-300;
+    @apply transition-[scale,transform,background-color,color] duration-300;
   }
 
   .to-top[data-shown="true"] {

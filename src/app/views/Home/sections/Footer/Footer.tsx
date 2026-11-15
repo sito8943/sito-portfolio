@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Tooltip } from "@sito/ui";
 
 import { useTranslation } from "@/features/i18n";
 
@@ -37,16 +38,17 @@ export function Footer() {
         </nav>
         <div className="footer-socials">
           {SOCIALS.map((item) => (
-            <a
-              key={item.link}
-              href={item.link}
-              rel="noreferrer"
-              target="_blank"
-              aria-label={item.text}
-              className="footer-social"
-            >
-              <FontAwesomeIcon icon={item.icon} />
-            </a>
+            <Tooltip key={item.link} label={item.text}>
+              <a
+                href={item.link}
+                rel="noreferrer"
+                target="_blank"
+                aria-label={item.text}
+                className="footer-social"
+              >
+                <FontAwesomeIcon icon={item.icon} />
+              </a>
+            </Tooltip>
           ))}
         </div>
       </div>
