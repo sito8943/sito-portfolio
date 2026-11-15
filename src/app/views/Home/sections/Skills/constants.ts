@@ -17,13 +17,13 @@ export const TABS_ID = "skills-stacks";
 
 /**
  * Brand logos (simple-icons 13.21.0, single-colour SVGs) hosted on ImageKit; painted through a
- * CSS mask, so the host must send CORS headers. Vite is not uploaded yet and loads from jsDelivr.
+ * CSS mask, so the host must send CORS headers.
  */
 export const STACK_ICONS = {
   react: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/react_Ykdi4sT8rH.svg",
   typescript:
     "https://ik.imagekit.io/lgqp0wffgtp/portfolio/typescript__Ec0SoSNxj.svg",
-  vite: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/vite.svg",
+  vite: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/vite_wiv6q4eSeD.svg",
   tailwindcss:
     "https://ik.imagekit.io/lgqp0wffgtp/portfolio/tailwindcss_Q8QNl5Ppxm.svg",
   mui: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/mui_XnSlvo3aWT.svg",
