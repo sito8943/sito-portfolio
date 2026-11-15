@@ -1,2 +1,2 @@
 export { ProductPanel } from "./ProductPanel";
-export type { ProductMedia } from "./types";
+export type { ProductMedia, ProductVideo } from "./types";

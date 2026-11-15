@@ -1,6 +1,10 @@
+import type { CSSProperties } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+import { useInViewOnce } from "@/shared/hooks";
+
+import { useReducedMotion } from "./useReducedMotion";
 import type { ProductPanelProps } from "./types";
 
 /**
@@ -13,16 +17,50 @@ export function ProductPanel({
   title,
   text,
   image,
+  video,
   alt,
   media,
   link,
   visitLabel,
   facts,
+  hideTitle = false,
 }: ProductPanelProps) {
+  const reducedMotion = useReducedMotion();
+  // The clip loads only once the panel nears the screen, so it never weighs on the first load.
+  const { ref, inView } = useInViewOnce<HTMLElement>(0);
+  const playClip = Boolean(video) && inView && !reducedMotion;
+
   return (
-    <article className="product-panel" data-media={media}>
-      <div className="product-panel-media">
-        {media === "bleed" ? (
+    <article
+      ref={ref}
+      className="product-panel"
+      data-media={media}
+      data-clip={Boolean(video)}
+    >
+      <div
+        className="product-panel-media"
+        style={
+          video
+            ? ({ "--panel-backdrop": video.backdrop } as CSSProperties)
+            : undefined
+        }
+      >
+        {media === "bleed" && video && playClip ? (
+          <video
+            className="product-panel-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={image}
+            aria-label={alt}
+          >
+            <source src={video.webm} type="video/webm" />
+            <source src={video.mp4} type="video/mp4" />
+          </video>
+        ) : null}
+        {media === "bleed" && !playClip ? (
           <img src={image} alt={alt} loading="lazy" decoding="async" />
         ) : null}
       </div>
@@ -31,7 +69,9 @@ export function ProductPanel({
           <span className="product-panel-index">{index}</span>
           <div className="product-panel-heading">
             <span className="product-panel-eyebrow">{eyebrow}</span>
-            <h3 className="product-panel-title">{title}</h3>
+            <h3 className="product-panel-title" data-hidden={hideTitle}>
+              {title}
+            </h3>
           </div>
         </div>
         {media === "frame" ? (

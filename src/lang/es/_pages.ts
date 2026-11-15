@@ -153,9 +153,16 @@ export const _pages: Resources["_pages"] = {
           name: "Inmersoft",
           tagline: "Transformación e Innovación",
           about:
-            "Startup de Santiago de Cuba que impulsa un turismo creativo y sostenible con tecnología.",
+            "Turismo creativo y sostenible con tecnología, desde Santiago de Cuba.",
           period: "Jun 2021 — Oct 2023",
           place: "Santiago de Cuba · Híbrido",
+        },
+        harbourSpace: {
+          name: "Harbour.Space",
+          tagline: "The State-of-the-Art Institute",
+          about: "Tecnología, emprendimiento y diseño en Barcelona y Bangkok.",
+          period: "Sep 2025 — Actualidad",
+          place: "Barcelona · Prácticas",
         },
       },
       products: {
@@ -168,6 +175,11 @@ export const _pages: Resources["_pages"] = {
           title: "Inmersoft",
           kind: "Landing page",
           text: "La web de la propia Inmersoft: soluciones digitales para ciudades, museos y hoteles.",
+        },
+        harbourSpaceWeb: {
+          title: "Harbour.Space",
+          kind: "Web institucional",
+          text: "La web pública de Harbour.Space: programas, admisiones y cursos para estudiantes de todo el mundo.",
         },
       },
     },

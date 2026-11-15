@@ -13,6 +13,27 @@
     @apply size-full object-cover;
   }
 
+  /* A clip shows whole (never zoomed), centred on its own background colour. */
+  .product-panel[data-clip="true"] .product-panel-media {
+    background-color: var(--panel-backdrop);
+  }
+
+  /* Edges fade into the backdrop, so the clip never shows as a rectangle. */
+  .product-panel-video {
+    @apply size-full object-contain;
+    mask-image: radial-gradient(closest-side, #000 75%, transparent 100%);
+  }
+
+  /* While the clip is not loaded, its poster sits uncropped the same way. */
+  .product-panel[data-clip="true"] .product-panel-media img {
+    @apply object-contain;
+    mask-image: radial-gradient(closest-side, #000 75%, transparent 100%);
+  }
+
+  .product-panel-title[data-hidden="true"] {
+    @apply sr-only;
+  }
+
   /* Shade so the type reads on any screenshot: darker at the top and bottom edges. */
   .product-panel[data-media="bleed"] .product-panel-media::after {
     @apply absolute inset-0;

@@ -2,9 +2,7 @@ import { useTranslation } from "@/features/i18n";
 
 import { SECTIONS } from "@/shared/config";
 
-import { ROLE, STAGES } from "./constants";
-import { InmersoftDecor } from "./InmersoftDecor";
-import { InmersoftLogo } from "./InmersoftLogo";
+import { ROLE, STAGE_BRANDS, STAGES } from "./constants";
 import { ProductPanel } from "./ProductPanel";
 import { StageIntro } from "./StageIntro";
 
@@ -34,6 +32,7 @@ export function Projects() {
       {STAGES.map((stage, s) => {
         const period = t(`_pages:home.projects.stages.${stage.id}.period`);
         const name = t(`_pages:home.projects.stages.${stage.id}.name`);
+        const { Logo, Decor } = STAGE_BRANDS[stage.id];
         return (
           <div key={stage.id} className="projects-stage">
             <StageIntro
@@ -41,8 +40,8 @@ export function Projects() {
               label={t("_pages:home.projects.stageLabel", {
                 number: String(s + 1).padStart(2, "0"),
               })}
-              logo={<InmersoftLogo className="stage-intro-logo" label={name} />}
-              decor={<InmersoftDecor />}
+              logo={<Logo className="stage-intro-logo" label={name} />}
+              decor={<Decor />}
               tagline={t(`_pages:home.projects.stages.${stage.id}.tagline`)}
               about={t(`_pages:home.projects.stages.${stage.id}.about`)}
               facts={[
@@ -70,6 +69,8 @@ export function Projects() {
                     title={title}
                     text={t(`_pages:home.projects.products.${product.id}.text`)}
                     image={product.image}
+                    video={product.video}
+                    hideTitle={product.hideTitle}
                     alt={title}
                     media={product.media}
                     link={product.link}
