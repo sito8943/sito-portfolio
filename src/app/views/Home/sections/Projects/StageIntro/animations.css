@@ -1,0 +1,25 @@
+/* Stage intro reveal: each block rises and fades in, in sequence (--stage-i), once in view.
+   Unlayered hand-written motion (STYLE_GUIDE.md); reduced motion shows it at once (base.css). */
+.stage-reveal {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(200ms + var(--stage-i, 0) * 120ms);
+}
+
+.stage-intro[data-shown="true"] .stage-reveal {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* The rule over the tagline draws out from the centre once the tagline is in. */
+.stage-intro-tagline::before {
+  scale: 0 1;
+  transition: scale 800ms cubic-bezier(0.22, 1, 0.36, 1) 650ms;
+}
+
+.stage-intro[data-shown="true"] .stage-intro-tagline::before {
+  scale: 1 1;
+}

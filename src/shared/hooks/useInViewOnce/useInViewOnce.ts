@@ -8,6 +8,8 @@ import { DEFAULT_THRESHOLD } from "./constants";
  */
 export function useInViewOnce<T extends Element = HTMLDivElement>(
   threshold = DEFAULT_THRESHOLD,
+  /** Grows the viewport for the check, e.g. "100% 0px" fires one screen early. */
+  rootMargin = "0px",
 ) {
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
@@ -23,12 +25,12 @@ export function useInViewOnce<T extends Element = HTMLDivElement>(
           observer.disconnect();
         }
       },
-      { threshold },
+      { threshold, rootMargin },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [inView, threshold]);
+  }, [inView, threshold, rootMargin]);
 
   return { ref, inView };
 }

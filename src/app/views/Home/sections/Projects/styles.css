@@ -1,13 +1,13 @@
 @layer components {
+  .projects {
+    @apply relative;
+  }
+
+  .projects-head {
+    @apply mx-auto flex max-w-2xl flex-col items-center gap-4 px-6 pb-24 pt-[100px] text-center;
+  }
+
   .projects-lead {
-    @apply text-center;
-  }
-
-  .projects-github {
-    @apply m-auto hover:text-green underline;
-  }
-
-  .projects-github-icon {
-    @apply ml-[5px] text-[15px];
+    @apply text-white-hover;
   }
 }

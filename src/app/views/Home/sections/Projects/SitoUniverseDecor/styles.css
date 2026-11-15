@@ -1,0 +1,27 @@
+@layer components {
+  .sito-universe-decor {
+    @apply pointer-events-none absolute inset-0 overflow-hidden text-white/[0.035];
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 22%,
+      #000 78%,
+      transparent 100%
+    );
+  }
+
+  .sito-universe-decor-right,
+  .sito-universe-decor-left {
+    @apply absolute top-1/2 h-[90%] w-auto -translate-y-1/2 md:h-[60%];
+  }
+
+  /* On phones only the right one stays, cut by the edge, so they never cross behind the logo. */
+  .sito-universe-decor-right {
+    @apply right-0 md:-right-16;
+  }
+
+  /* Mirrored on the left, so the signs point inwards from both edges. */
+  .sito-universe-decor-left {
+    @apply left-0 -scale-x-100 md:hidden;
+  }
+}

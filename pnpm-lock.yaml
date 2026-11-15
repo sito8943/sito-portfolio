@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/dm-sans':
+        specifier: 5.3.0
+        version: 5.3.0
       '@fontsource/poppins':
         specifier: 5.2.6
         version: 5.2.6
@@ -108,6 +111,9 @@ packages:
 
   '@emnapi/wasi-threads@1.2.2':
     resolution: {integrity: sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA==}
+
+  '@fontsource/dm-sans@5.3.0':
+    resolution: {integrity: sha512-lYJtMXXO28q1z+yz+z8XKd0s4hXaa9QdkETzkyD760sidCv5heI86weYA0sx0Nc4pAMAQTUuyf4gO44cYKKS9g==}
 
   '@fontsource/poppins@5.2.6':
     resolution: {integrity: sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==}
@@ -1069,6 +1075,8 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
+
+  '@fontsource/dm-sans@5.3.0': {}
 
   '@fontsource/poppins@5.2.6': {}
 

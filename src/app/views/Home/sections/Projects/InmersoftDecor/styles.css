@@ -1,0 +1,43 @@
+@layer components {
+  /* Inmersoft's own blue (#246AB4), on the dark intro. */
+  .inmersoft-decor {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+    color: #246ab4;
+    /* Same fade as the intro's background, so motifs never end in a hard line at its edges. */
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 22%,
+      #000 78%,
+      transparent 100%
+    );
+  }
+
+  .inmersoft-decor-stripes {
+    @apply absolute -left-24 -top-24 size-72 rounded-full md:size-48;
+    background: repeating-linear-gradient(
+      135deg,
+      currentColor 0 6px,
+      transparent 6px 14px
+    );
+  }
+
+  .inmersoft-decor-crosses {
+    @apply absolute right-10 top-24 w-32 md:right-4 md:w-20;
+  }
+
+  .inmersoft-decor-crosses path,
+  .inmersoft-decor-zigzag path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 7;
+  }
+
+  .inmersoft-decor-zigzag {
+    @apply absolute bottom-16 right-[12%] w-40 md:bottom-8 md:w-28;
+  }
+
+  .inmersoft-decor-zigzag path {
+    stroke-width: 4;
+  }
+}

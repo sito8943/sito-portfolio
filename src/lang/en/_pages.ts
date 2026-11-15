@@ -137,28 +137,82 @@ export const _pages = {
       },
     },
     projects: {
-      title: "Professional Projects",
-      text: "Come and check out my ",
-      seeMore: "GitHub",
-      projects: {
-        "m2g-fotos": {
-          title: "M2G Fotos",
-          text: "Official website M2G Photos. Photography Studio in Santiago de Cuba",
+      title: "Journey",
+      lead: "Three stages: from building for others to building my own products.",
+      stageLabel: "Stage {{number}}",
+      visit: "Visit site",
+      labels: {
+        role: "Role",
+        period: "Period",
+        place: "Place",
+        kind: "Project",
+        status: "Status",
+      },
+      universe: {
+        name: "Sito Universe",
+        tagline: "My products",
+        about:
+          "From idea to deploy: my own products, designed and built by me.",
+        kind: "Personal projects",
+        status: "In production",
+        products: {
+          sitoWallet: {
+            title: "Sito Wallet",
+            kind: "Personal finance",
+            text: "Organise your money, save more and decide better, on web and mobile.",
+          },
+          sitoNotas: {
+            title: "Sito Notas",
+            kind: "Notes",
+            text: "Quick, private notes that also work offline.",
+          },
+          sitoDeck: {
+            title: "Sito Presentation Deck",
+            kind: "Presentations",
+            text: "Presentations your AI agent writes straight into your team's library.",
+          },
         },
-        "descubre-trinidad": {
+      },
+      stages: {
+        inmersoft: {
+          name: "Inmersoft",
+          tagline: "Transformación e Innovación",
+          about:
+            "Creative, sustainable tourism through technology, from Santiago de Cuba.",
+          period: "Jun 2021 — Oct 2023",
+          place: "Santiago de Cuba · Hybrid",
+        },
+        harbourSpace: {
+          name: "Harbour.Space",
+          tagline: "The State-of-the-Art Institute",
+          about:
+            "Technology, entrepreneurship and design in Barcelona and Bangkok.",
+          period: "Sep 2025 — Present",
+          place: "Barcelona · Internship",
+        },
+      },
+      products: {
+        descubreTrinidad: {
           title: "Descubre Trinidad",
-          text: "Let yourself be carried away by the charm of the City of Encounters.",
+          kind: "Tourism website",
+          text: "The guide to Trinidad de Cuba: experiences, routes, local flavour and its own app, in several languages.",
         },
-        "sito-library": {
-          title: "Sito library",
-          text: "Web with all my resources, brand identity, libraries and projects",
+        inmersoftWeb: {
+          title: "Inmersoft",
+          kind: "Landing page",
+          text: "Inmersoft's own website: digital solutions for cities, museums and hotels.",
+        },
+        harbourSpaceWeb: {
+          title: "Harbour.Space",
+          kind: "University website",
+          text: "Harbour.Space's public website: programmes, admissions and courses for students from all over the world.",
         },
       },
     },
     skills: {
       title: "What I build with",
       experience: "years of experience",
-      production: "Products in production",
+      production: "products in production",
       hint: "Pick a stack to see its tools",
       stacks: {
         frontend: "Frontend",

@@ -1,72 +1,94 @@
 import { useTranslation } from "@/features/i18n";
 
-// @fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { SECTIONS } from "@/shared/config";
 
-import { LINKS, SECTIONS } from "@/shared/config";
-import { useInViewOnce } from "@/shared/hooks";
-import { InView } from "@/shared/ui/molecules";
-import { Section } from "@/shared/ui/templates";
+import { ROLE, STAGE_BRANDS, STAGES } from "./constants";
+import { ProductPanel } from "./ProductPanel";
+import { StageIntro } from "./StageIntro";
+import { UniverseStage } from "./UniverseStage";
 
-import { PROJECTS } from "./constants";
-import { FloatingIcons } from "./FloatingIcons";
-import { ProjectCard } from "./ProjectCard";
-
+/**
+ * Career in stages: each opens with the company's intro in its own identity, then its
+ * products as full-screen panels that stack while scrolling.
+ */
 export function Projects() {
-  const { ref, inView } = useInViewOnce();
-
   const { t } = useTranslation();
 
-  return (
-    <Section id={SECTIONS.projects}>
-      <FloatingIcons />
-      <div className="section-stack" ref={ref}>
-        {inView ? (
-          <>
-            <InView delay="100ms">
-              <h2 className="section-title">
-                {t("_pages:home.projects.title")}
-              </h2>
-            </InView>
+  const labels = {
+    role: t("_pages:home.projects.labels.role"),
+    period: t("_pages:home.projects.labels.period"),
+    place: t("_pages:home.projects.labels.place"),
+    kind: t("_pages:home.projects.labels.kind"),
+  };
 
-            <InView delay="200ms">
-              <p className="projects-lead">
-                {t("_pages:home.projects.text")}
-                <a
-                  aria-label={t("_pages:home.hero.social.github")}
-                  href={LINKS.GITHUB}
-                  rel="noreferrer"
-                  target="_blank"
-                  className="projects-github"
-                >
-                  {t("_pages:home.projects.seeMore")}
-                  <FontAwesomeIcon
-                    icon={faExternalLink}
-                    className="projects-github-icon"
-                  />
-                </a>
-              </p>
-            </InView>
-            <ul className="card-row">
-              {PROJECTS.map((item, i) => (
-                <li key={item.id} className="card-row-item">
-                  <InView delay={`${(i + 1) * 300}ms`}>
-                    <ProjectCard
-                      link={item.link}
-                      image={item.image}
-                      alt={`${item.id}-logo`}
-                      text={t(`_pages:home.projects.projects.${item.id}.title`)}
-                      more={t(`_pages:home.projects.projects.${item.id}.text`)}
-                      ariaLabel={`${t("_common:ariaLabels.linkTo")} ${item.link}`}
-                    />
-                  </InView>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
+  return (
+    <section id={SECTIONS.projects} className="projects">
+      <div className="projects-head">
+        <h2 className="section-title">{t("_pages:home.projects.title")}</h2>
+        <p className="body body-lg projects-lead">
+          {t("_pages:home.projects.lead")}
+        </p>
       </div>
-    </Section>
+
+      {STAGES.map((stage, s) => {
+        const period = t(`_pages:home.projects.stages.${stage.id}.period`);
+        const name = t(`_pages:home.projects.stages.${stage.id}.name`);
+        const { Logo, Decor } = STAGE_BRANDS[stage.id];
+        return (
+          <div key={stage.id} className="projects-stage">
+            <StageIntro
+              brand={stage.id}
+              label={t("_pages:home.projects.stageLabel", {
+                number: String(s + 1).padStart(2, "0"),
+              })}
+              logo={<Logo className="stage-intro-logo" label={name} />}
+              decor={<Decor />}
+              tagline={t(`_pages:home.projects.stages.${stage.id}.tagline`)}
+              about={t(`_pages:home.projects.stages.${stage.id}.about`)}
+              facts={[
+                { label: labels.role, value: ROLE },
+                { label: labels.period, value: period },
+                {
+                  label: labels.place,
+                  value: t(`_pages:home.projects.stages.${stage.id}.place`),
+                },
+              ]}
+            />
+            <div className="projects-panels">
+              {stage.products.map((product, p) => {
+                const title = t(
+                  `_pages:home.projects.products.${product.id}.title`,
+                );
+                const kind = t(
+                  `_pages:home.projects.products.${product.id}.kind`,
+                );
+                return (
+                  <ProductPanel
+                    key={product.id}
+                    index={String(p + 1).padStart(2, "0")}
+                    eyebrow={`${name} · ${kind}`}
+                    title={title}
+                    text={t(`_pages:home.projects.products.${product.id}.text`)}
+                    image={product.image}
+                    video={product.video}
+                    hideTitle={product.hideTitle}
+                    alt={title}
+                    media={product.media}
+                    link={product.link}
+                    visitLabel={t("_pages:home.projects.visit")}
+                    facts={[
+                      { label: labels.role, value: ROLE },
+                      { label: labels.kind, value: kind },
+                      { label: labels.period, value: period },
+                    ]}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+      <UniverseStage number={STAGES.length + 1} />
+    </section>
   );
 }

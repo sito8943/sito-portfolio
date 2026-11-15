@@ -138,28 +138,81 @@ export const _pages: Resources["_pages"] = {
       },
     },
     projects: {
-      title: "Proyectos Profesionales",
-      text: "Ven y échale un ojo a mi ",
-      seeMore: "GitHub",
-      projects: {
-        "m2g-fotos": {
-          title: "M2G Fotos",
-          text: "Sitio web oficial M2G Fotos. Estudio de Fotografía en Santiago de Cuba",
+      title: "Trayectoria",
+      lead: "Tres etapas: de construir para otros a construir mis propios productos.",
+      stageLabel: "Etapa {{number}}",
+      visit: "Visitar sitio",
+      labels: {
+        role: "Rol",
+        period: "Periodo",
+        place: "Lugar",
+        kind: "Proyecto",
+        status: "Estado",
+      },
+      universe: {
+        name: "Sito Universe",
+        tagline: "Mis productos",
+        about:
+          "De la idea al despliegue: productos propios, diseñados y construidos por mí.",
+        kind: "Proyectos personales",
+        status: "En producción",
+        products: {
+          sitoWallet: {
+            title: "Sito Wallet",
+            kind: "Finanzas personales",
+            text: "Organiza tu dinero, ahorra más y decide mejor, en web y en móvil.",
+          },
+          sitoNotas: {
+            title: "Sito Notas",
+            kind: "Notas",
+            text: "Notas rápidas y privadas, también sin conexión.",
+          },
+          sitoDeck: {
+            title: "Sito Presentation Deck",
+            kind: "Presentaciones",
+            text: "Presentaciones que tu agente de IA escribe directamente en la biblioteca de tu equipo.",
+          },
         },
-        "descubre-trinidad": {
+      },
+      stages: {
+        inmersoft: {
+          name: "Inmersoft",
+          tagline: "Transformación e Innovación",
+          about:
+            "Turismo creativo y sostenible con tecnología, desde Santiago de Cuba.",
+          period: "Jun 2021 — Oct 2023",
+          place: "Santiago de Cuba · Híbrido",
+        },
+        harbourSpace: {
+          name: "Harbour.Space",
+          tagline: "The State-of-the-Art Institute",
+          about: "Tecnología, emprendimiento y diseño en Barcelona y Bangkok.",
+          period: "Sep 2025 — Actualidad",
+          place: "Barcelona · Prácticas",
+        },
+      },
+      products: {
+        descubreTrinidad: {
           title: "Descubre Trinidad",
-          text: "Déjate llevar por el encanto de la Ciudad de Encuentros.",
+          kind: "Web turística",
+          text: "La guía de Trinidad de Cuba: experiencias, rutas, sabor local y su propia app, en varios idiomas.",
         },
-        "sito-library": {
-          title: "Sito library",
-          text: "Web con todos mis recursos, identidad de marca, bibliotecas y proyectos",
+        inmersoftWeb: {
+          title: "Inmersoft",
+          kind: "Landing page",
+          text: "La web de la propia Inmersoft: soluciones digitales para ciudades, museos y hoteles.",
+        },
+        harbourSpaceWeb: {
+          title: "Harbour.Space",
+          kind: "Web institucional",
+          text: "La web pública de Harbour.Space: programas, admisiones y cursos para estudiantes de todo el mundo.",
         },
       },
     },
     skills: {
       title: "Con qué construyo",
       experience: "años de experiencia",
-      production: "Productos en producción",
+      production: "productos en producción",
       hint: "Elige un stack para ver sus herramientas",
       stacks: {
         frontend: "Frontend",

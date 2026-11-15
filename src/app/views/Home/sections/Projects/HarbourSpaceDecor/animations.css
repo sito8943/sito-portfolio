@@ -1,0 +1,30 @@
+/* Harbour.Space motifs drawing in with the stage intro (.stage-intro[data-shown]).
+   Unlayered hand-written motion; reduced motion shows them at once (base.css). */
+
+/* The circle grows out from the centre. */
+.hs-decor-circle {
+  opacity: 0;
+  scale: 0.85;
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Circuits: each line draws along its path (pathLength = 1), nodes last. */
+.hs-decor-circuit path,
+.hs-decor-circuit circle {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 900ms cubic-bezier(0.65, 0, 0.35, 1);
+  transition-delay: calc(400ms + var(--decor-i, 0) * 180ms);
+}
+
+.stage-intro[data-shown="true"] .hs-decor-circle {
+  opacity: 1;
+  scale: 1;
+}
+
+.stage-intro[data-shown="true"] .hs-decor-circuit path,
+.stage-intro[data-shown="true"] .hs-decor-circuit circle {
+  stroke-dashoffset: 0;
+}

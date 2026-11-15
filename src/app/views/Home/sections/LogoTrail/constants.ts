@@ -14,4 +14,4 @@ export const DOCK_LAND_VIEWPORT = 0.85;
 /** Viewport fraction a dock stop's centre reaches (scrolling down) when the logo leaves it. */
 export const DOCK_LEAVE_VIEWPORT = 0.2;
 /** Last-leg progress past which the logo flies over the sections (clear of the dock it left). */
-export const FRONT_FROM = 0.3;
+export const FRONT_FROM = 0.85;

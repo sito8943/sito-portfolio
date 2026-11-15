@@ -1,0 +1,138 @@
+@layer components {
+  .stage-intro {
+    @apply relative isolate flex min-h-svh items-center justify-center overflow-hidden px-6 py-28;
+  }
+
+  .stage-intro-content {
+    @apply relative flex max-w-2xl flex-col items-center gap-5 text-center;
+  }
+
+  .stage-intro-label {
+    @apply text-xs font-medium uppercase tracking-[0.3em];
+  }
+
+  .stage-intro-logo {
+    @apply h-20 w-auto md:h-14;
+  }
+
+  /* The rule over the tagline is a pseudo-element so it can draw out from the centre. */
+  .stage-intro-tagline {
+    @apply relative -mt-2 pt-2 text-lg;
+  }
+
+  .stage-intro-tagline::before {
+    @apply absolute inset-x-0 top-0 h-0.5;
+    content: "";
+    background-color: currentColor;
+  }
+
+  /* One light line: the logo and tagline already carry the brand. */
+  .stage-intro-about {
+    @apply mt-2 text-xl font-normal leading-snug text-balance opacity-90 md:text-lg;
+  }
+
+  /* Equal columns so the middle fact sits on the page's centre line, whatever the widths. */
+  .stage-intro-facts {
+    @apply mt-6 grid w-full grid-cols-3 gap-x-6 gap-y-4 md:grid-cols-2;
+  }
+
+  .stage-intro-fact:last-child:nth-child(odd) {
+    @apply md:col-span-2;
+  }
+
+  .stage-intro-fact dt {
+    @apply text-[0.7rem] uppercase tracking-[0.2em] opacity-60;
+  }
+
+  .stage-intro-fact dd {
+    @apply mt-1 text-sm font-medium;
+  }
+
+  /* Inmersoft (inmersoft.net) in dark mode: its #202020 as the page, white text, Poppins,
+     its blues (#246AB4 motifs, the lighter #4AA1EB where it must read on dark). */
+  .stage-intro[data-brand="inmersoft"] {
+    color: #ffffff;
+    /* Fades in from the landing's background and back out into the panels: no hard edge. */
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #202020 22%,
+      #202020 78%,
+      transparent 100%
+    );
+  }
+
+  .stage-intro[data-brand="inmersoft"] * {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .stage-intro[data-brand="inmersoft"] .stage-intro-label,
+  .stage-intro[data-brand="inmersoft"] .stage-intro-logo {
+    color: #4aa1eb;
+  }
+
+  /* Harbour.Space (harbour.space) in dark mode: its footer's deep violet (#2A1751) as the
+     page, white text, DM Sans (free stand-in for Apercu Pro), heavy uppercase like its titles. */
+  .stage-intro[data-brand="harbourSpace"] {
+    color: #ffffff;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #2a1751 22%,
+      #2a1751 78%,
+      transparent 100%
+    );
+  }
+
+  .stage-intro[data-brand="harbourSpace"] * {
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .stage-intro[data-brand="harbourSpace"] .stage-intro-label {
+    color: oklch(0.795 0.114 293.3);
+  }
+
+  .stage-intro[data-brand="harbourSpace"] .stage-intro-logo {
+    @apply h-11 md:h-7;
+  }
+
+  .stage-intro[data-brand="harbourSpace"] .stage-intro-tagline::before {
+    @apply hidden;
+  }
+
+  .stage-intro[data-brand="harbourSpace"] .stage-intro-tagline {
+    @apply mt-1 text-base opacity-80;
+  }
+
+  /* Sito Universe: my own identity. Navy page, red label, Poppins (the landing's own type). */
+  .stage-intro[data-brand="sitoUniverse"] {
+    color: #ffffff;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--color-primary) 22%,
+      var(--color-primary) 78%,
+      transparent 100%
+    );
+  }
+
+  .stage-intro[data-brand="sitoUniverse"] .stage-intro-label {
+    @apply text-slight;
+  }
+
+  .stage-intro[data-brand="sitoUniverse"] .stage-intro-tagline::before {
+    @apply hidden;
+  }
+
+  .sito-universe-logo {
+    @apply flex items-center gap-5;
+  }
+
+  .sito-universe-logo-mark {
+    @apply h-20 w-auto text-secondary md:h-14;
+  }
+
+  .sito-universe-logo-word {
+    @apply h-16 w-auto text-white md:h-11;
+  }
+}

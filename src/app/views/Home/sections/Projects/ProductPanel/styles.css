@@ -1,0 +1,181 @@
+@layer components {
+  /* Sticks to the top while the next panel slides over it (the deck-of-cards scroll). */
+  .product-panel {
+    @apply sticky top-0 isolate h-svh overflow-hidden text-white;
+    background-color: var(--color-pdark);
+  }
+
+  .product-panel-media {
+    @apply absolute inset-0 -z-10;
+  }
+
+  .product-panel[data-media="bleed"] .product-panel-media img {
+    @apply size-full object-cover;
+  }
+
+  /* A clip shows whole (never zoomed), centred on its own background colour. */
+  .product-panel[data-clip="true"] .product-panel-media {
+    background-color: var(--panel-backdrop);
+  }
+
+  /* Edges fade into the backdrop, so the clip never shows as a rectangle. */
+  .product-panel-video {
+    @apply size-full object-contain;
+    mask-image: radial-gradient(closest-side, #000 75%, transparent 100%);
+  }
+
+  /* While the clip is not loaded, its poster sits uncropped the same way. */
+  .product-panel[data-clip="true"] .product-panel-media img {
+    @apply object-contain;
+    mask-image: radial-gradient(closest-side, #000 75%, transparent 100%);
+  }
+
+  .product-panel-title[data-hidden="true"] {
+    @apply sr-only;
+  }
+
+  /* Shade so the type reads on any screenshot: darker at the top and bottom edges. */
+  .product-panel[data-media="bleed"] .product-panel-media::after {
+    @apply absolute inset-0;
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgb(2 21 46 / 75%) 0%,
+      rgb(2 21 46 / 15%) 40%,
+      rgb(2 21 46 / 25%) 60%,
+      rgb(2 21 46 / 90%) 100%
+    );
+  }
+
+  .product-panel[data-media="frame"] .product-panel-media {
+    background: radial-gradient(
+      80% 60% at 50% 50%,
+      var(--color-plight) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Light sites sit in a browser frame, in the room between the heading and the facts. */
+  .product-panel-stage {
+    @apply flex min-h-0 flex-1 items-center justify-center py-6;
+  }
+
+  .product-panel-frame {
+    @apply flex h-full max-h-[34rem] max-w-full flex-col overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-white/10;
+    aspect-ratio: 16 / 10.3;
+  }
+
+  .product-panel-frame-bar {
+    @apply block h-7 shrink-0 bg-light-background;
+    background-image:
+      radial-gradient(circle, #ff5f57 4px, transparent 5px),
+      radial-gradient(circle, #febc2e 4px, transparent 5px),
+      radial-gradient(circle, #28c840 4px, transparent 5px);
+    background-size: 14px 14px;
+    background-position:
+      12px center,
+      30px center,
+      48px center;
+    background-repeat: no-repeat;
+  }
+
+  .product-panel-frame img {
+    @apply block min-h-0 w-full flex-1 object-cover object-top;
+  }
+
+  .product-panel-content {
+    @apply relative flex h-full flex-col justify-between px-16 pb-12 pt-24 md:px-6 md:pb-8 md:pt-20;
+  }
+
+  .product-panel-top {
+    @apply flex items-start justify-between gap-6;
+  }
+
+  .product-panel-index {
+    @apply text-6xl font-normal leading-none md:text-4xl;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .product-panel-heading {
+    @apply flex flex-col items-end text-right;
+  }
+
+  .product-panel-eyebrow {
+    @apply mb-2 text-xs uppercase tracking-[0.25em] text-white/70;
+  }
+
+  .product-panel-title {
+    @apply text-7xl leading-none md:text-4xl;
+  }
+
+  .product-panel-bottom {
+    @apply flex items-end justify-between gap-10 md:flex-col md:items-stretch md:gap-6;
+  }
+
+  .product-panel-facts {
+    @apply grid min-w-64 grid-cols-[auto_1fr] gap-x-8 gap-y-1.5 text-sm;
+  }
+
+  .product-panel-fact {
+    @apply contents;
+  }
+
+  .product-panel-fact dt {
+    @apply text-white/60;
+  }
+
+  .product-panel-fact dd {
+    @apply text-white;
+  }
+
+  .product-panel-copy {
+    @apply flex max-w-md flex-col items-start gap-4;
+  }
+
+  .product-panel-copy p {
+    @apply text-base leading-relaxed text-white/90;
+  }
+
+  .product-panel-cta {
+    @apply flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm transition-colors hover:border-white hover:bg-white hover:text-pdark;
+  }
+
+  /* Points on (turns up) on hover, like the email arrow in Contact. */
+  .product-panel-cta-arrow {
+    transition: rotate 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .product-panel-cta:is(:hover, :focus-visible) .product-panel-cta-arrow {
+    @apply -rotate-45;
+  }
+
+  /* Brand chapter: the product's colour as the page, its mark large in the centre. */
+  .product-panel[data-media="brand"] .product-panel-media {
+    @apply grid place-items-center;
+    background-color: var(--panel-backdrop);
+  }
+
+  /* Shade the bottom so the facts and copy read on any brand colour. */
+  .product-panel[data-media="brand"] .product-panel-media::after {
+    @apply absolute inset-0;
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgb(2 21 46 / 0%) 45%,
+      rgb(2 21 46 / 75%) 100%
+    );
+  }
+
+  .product-panel-brand-mark {
+    @apply h-auto max-h-[30%] w-auto max-w-[40%] md:max-h-[22%];
+    color: var(--panel-brand);
+  }
+
+  /* Phones: the clip is very wide; scale it so its circle nearly fills the width
+     (its sides are plain backdrop), centred between the heading and the facts. */
+  @variant md {
+    .product-panel[data-clip="true"] .product-panel-media :is(video, img) {
+      @apply absolute left-1/2 top-[44%] h-auto w-[200%] max-w-none -translate-x-1/2 -translate-y-1/2;
+    }
+  }
+}

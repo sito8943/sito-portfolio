@@ -9,6 +9,7 @@ import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 
 import { LOGO_ANCHOR_MOVE_EVENT, LOGO_ANCHORS } from "../../constants";
+import { PRODUCTS_IN_PRODUCTION } from "../Projects/constants";
 
 import { CAREER_START_YEAR, STACKS, TABS_ID } from "./constants";
 import { SkillLogo } from "./SkillLogo";
@@ -60,6 +61,9 @@ export function Skills() {
               {t("_pages:home.skills.experience")}
             </li>
             <li className="skills-highlight">
+              <strong className="skills-highlight-number">
+                {PRODUCTS_IN_PRODUCTION}
+              </strong>
               {t("_pages:home.skills.production")}
             </li>
           </ul>

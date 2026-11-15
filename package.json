@@ -16,6 +16,7 @@
     "deploy": "firebase deploy --only hosting:sito-portfolio"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "5.3.0",
     "@fontsource/poppins": "5.2.6",
     "@fontsource/roboto": "5.2.6",
     "@fortawesome/fontawesome-svg-core": "7.0.0",
