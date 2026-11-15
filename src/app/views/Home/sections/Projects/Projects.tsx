@@ -5,6 +5,7 @@ import { SECTIONS } from "@/shared/config";
 import { ROLE, STAGE_BRANDS, STAGES } from "./constants";
 import { ProductPanel } from "./ProductPanel";
 import { StageIntro } from "./StageIntro";
+import { UniverseStage } from "./UniverseStage";
 
 /**
  * Career in stages: each opens with the company's intro in its own identity, then its
@@ -87,6 +88,7 @@ export function Projects() {
           </div>
         );
       })}
+      <UniverseStage number={STAGES.length + 1} />
     </section>
   );
 }

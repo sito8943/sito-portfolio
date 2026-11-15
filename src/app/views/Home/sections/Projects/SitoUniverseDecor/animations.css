@@ -1,0 +1,22 @@
+/* Universe chevrons slide in from their edges with the stage intro. Reduced motion: at once. */
+.sito-universe-decor-right,
+.sito-universe-decor-left {
+  opacity: 0;
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sito-universe-decor-right {
+  translate: 40px -50%;
+}
+
+.sito-universe-decor-left {
+  translate: -40px -50%;
+}
+
+.stage-intro[data-shown="true"] .sito-universe-decor-right,
+.stage-intro[data-shown="true"] .sito-universe-decor-left {
+  opacity: 1;
+  translate: 0 -50%;
+}

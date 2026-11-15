@@ -1,0 +1,1 @@
+export { WalletMark } from "./WalletMark";

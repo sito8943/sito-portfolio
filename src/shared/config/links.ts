@@ -20,6 +20,9 @@ export const LINKS = {
     "https://descubretrinidad.com",
   INMERSOFT: "https://inmersoft.net/",
   HARBOUR_SPACE: "https://harbour.space/",
+  SITO_WALLET: "https://wallet.sito8943.com/",
+  SITO_NOTAS: "https://notas.sito8943.com/",
+  SITO_DECK: "https://deck.sito8943.com/",
   PROJECT_SITO_LIBRARY:
     import.meta.env.VITE_LINK_PROJECT_SITO_LIBRARY ||
     "https://recursos.sito8943.com/",

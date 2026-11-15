@@ -1,0 +1,12 @@
+@layer components {
+  /* Colours of the deck's showcase piece, read by the canvas through getComputedStyle. */
+  .deck-globe {
+    --globe-body: #0c1f44;
+    --globe-dot: #8ab4f8;
+    --globe-rim: #4d8dff;
+    --globe-arc-1: #ff6b72;
+    --globe-arc-2: #2dd4bf;
+    --globe-arc-3: #f5a524;
+    @apply block aspect-square h-full max-h-full w-auto max-w-full;
+  }
+}

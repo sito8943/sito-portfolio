@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 
 import type { Resources } from "@/lang";
 
-import type { ProductMedia, ProductVideo } from "./ProductPanel";
+import type { ProductBrand, ProductMedia, ProductVideo } from "./ProductPanel";
 
 type ProjectsCopy = Resources["_pages"]["home"]["projects"];
 
@@ -26,10 +26,25 @@ export type Product = {
 export type Stage = {
   id: StageId;
   products: Product[];
+  /** Live products not shown as chapters (internal tools): they only count. */
+  unlisted?: number;
 };
 
 /** A stage's identity pieces, drawn in its intro. */
 export type StageBrand = {
   Logo: ComponentType<{ className?: string; label: string }>;
   Decor: ComponentType;
+};
+
+/** Key under `_pages:home.projects.universe.products`. */
+export type UniverseProductId = keyof ProjectsCopy["universe"]["products"];
+
+export type UniverseProduct = {
+  id: UniverseProductId;
+  link: string;
+  media: ProductMedia;
+  image: string;
+  brand?: ProductBrand;
+  /** A live showcase piece drawn large in its chapter. */
+  feature?: "globe";
 };

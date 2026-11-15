@@ -18,6 +18,8 @@ export function ProductPanel({
   text,
   image,
   video,
+  brand,
+  feature,
   alt,
   media,
   link,
@@ -40,11 +42,15 @@ export function ProductPanel({
       <div
         className="product-panel-media"
         style={
-          video
-            ? ({ "--panel-backdrop": video.backdrop } as CSSProperties)
-            : undefined
+          {
+            "--panel-backdrop": video?.backdrop ?? brand?.background,
+            "--panel-brand": brand?.color,
+          } as CSSProperties
         }
       >
+        {media === "brand" && brand ? (
+          <brand.Mark className="product-panel-brand-mark" />
+        ) : null}
         {media === "bleed" && video && playClip ? (
           <video
             className="product-panel-video"
@@ -74,6 +80,7 @@ export function ProductPanel({
             </h3>
           </div>
         </div>
+        {feature ? <div className="product-panel-stage">{feature}</div> : null}
         {media === "frame" ? (
           <div className="product-panel-stage">
             <div className="product-panel-frame">

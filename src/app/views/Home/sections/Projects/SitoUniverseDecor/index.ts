@@ -1,0 +1,1 @@
+export { SitoUniverseDecor } from "./SitoUniverseDecor";

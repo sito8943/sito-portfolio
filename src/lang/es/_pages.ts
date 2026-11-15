@@ -147,6 +147,32 @@ export const _pages: Resources["_pages"] = {
         period: "Periodo",
         place: "Lugar",
         kind: "Proyecto",
+        status: "Estado",
+      },
+      universe: {
+        name: "Sito Universe",
+        tagline: "Mis productos",
+        about:
+          "De la idea al despliegue: productos propios, diseñados y construidos por mí.",
+        kind: "Proyectos personales",
+        status: "En producción",
+        products: {
+          sitoWallet: {
+            title: "Sito Wallet",
+            kind: "Finanzas personales",
+            text: "Organiza tu dinero, ahorra más y decide mejor, en web y en móvil.",
+          },
+          sitoNotas: {
+            title: "Sito Notas",
+            kind: "Notas",
+            text: "Notas rápidas y privadas, también sin conexión.",
+          },
+          sitoDeck: {
+            title: "Sito Presentation Deck",
+            kind: "Presentaciones",
+            text: "Presentaciones que tu agente de IA escribe directamente en la biblioteca de tu equipo.",
+          },
+        },
       },
       stages: {
         inmersoft: {
@@ -186,7 +212,7 @@ export const _pages: Resources["_pages"] = {
     skills: {
       title: "Con qué construyo",
       experience: "años de experiencia",
-      production: "Productos en producción",
+      production: "productos en producción",
       hint: "Elige un stack para ver sus herramientas",
       stacks: {
         frontend: "Frontend",

@@ -148,4 +148,34 @@
   .product-panel-cta:is(:hover, :focus-visible) .product-panel-cta-arrow {
     @apply -rotate-45;
   }
+
+  /* Brand chapter: the product's colour as the page, its mark large in the centre. */
+  .product-panel[data-media="brand"] .product-panel-media {
+    @apply grid place-items-center;
+    background-color: var(--panel-backdrop);
+  }
+
+  /* Shade the bottom so the facts and copy read on any brand colour. */
+  .product-panel[data-media="brand"] .product-panel-media::after {
+    @apply absolute inset-0;
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgb(2 21 46 / 0%) 45%,
+      rgb(2 21 46 / 75%) 100%
+    );
+  }
+
+  .product-panel-brand-mark {
+    @apply h-auto max-h-[30%] w-auto max-w-[40%] md:max-h-[22%];
+    color: var(--panel-brand);
+  }
+
+  /* Phones: the clip is very wide; scale it so its circle nearly fills the width
+     (its sides are plain backdrop), centred between the heading and the facts. */
+  @variant md {
+    .product-panel[data-clip="true"] .product-panel-media :is(video, img) {
+      @apply absolute left-1/2 top-[44%] h-auto w-[200%] max-w-none -translate-x-1/2 -translate-y-1/2;
+    }
+  }
 }

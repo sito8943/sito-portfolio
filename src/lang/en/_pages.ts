@@ -146,6 +146,32 @@ export const _pages = {
         period: "Period",
         place: "Place",
         kind: "Project",
+        status: "Status",
+      },
+      universe: {
+        name: "Sito Universe",
+        tagline: "My products",
+        about:
+          "From idea to deploy: my own products, designed and built by me.",
+        kind: "Personal projects",
+        status: "In production",
+        products: {
+          sitoWallet: {
+            title: "Sito Wallet",
+            kind: "Personal finance",
+            text: "Organise your money, save more and decide better, on web and mobile.",
+          },
+          sitoNotas: {
+            title: "Sito Notas",
+            kind: "Notes",
+            text: "Quick, private notes that also work offline.",
+          },
+          sitoDeck: {
+            title: "Sito Presentation Deck",
+            kind: "Presentations",
+            text: "Presentations your AI agent writes straight into your team's library.",
+          },
+        },
       },
       stages: {
         inmersoft: {
@@ -186,7 +212,7 @@ export const _pages = {
     skills: {
       title: "What I build with",
       experience: "years of experience",
-      production: "Products in production",
+      production: "products in production",
       hint: "Pick a stack to see its tools",
       stacks: {
         frontend: "Frontend",

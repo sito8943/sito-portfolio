@@ -103,4 +103,36 @@
   .stage-intro[data-brand="harbourSpace"] .stage-intro-tagline {
     @apply mt-1 text-base opacity-80;
   }
+
+  /* Sito Universe: my own identity. Navy page, red label, Poppins (the landing's own type). */
+  .stage-intro[data-brand="sitoUniverse"] {
+    color: #ffffff;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--color-primary) 22%,
+      var(--color-primary) 78%,
+      transparent 100%
+    );
+  }
+
+  .stage-intro[data-brand="sitoUniverse"] .stage-intro-label {
+    @apply text-slight;
+  }
+
+  .stage-intro[data-brand="sitoUniverse"] .stage-intro-tagline::before {
+    @apply hidden;
+  }
+
+  .sito-universe-logo {
+    @apply flex items-center gap-5;
+  }
+
+  .sito-universe-logo-mark {
+    @apply h-20 w-auto text-secondary md:h-14;
+  }
+
+  .sito-universe-logo-word {
+    @apply h-16 w-auto text-white md:h-11;
+  }
 }
