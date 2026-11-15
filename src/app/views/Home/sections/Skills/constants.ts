@@ -1,6 +1,6 @@
 import {
   faCode,
-  faInfinity,
+  faCodeBranch,
   faMobileScreen,
   faPenNib,
   faServer,
@@ -81,7 +81,7 @@ export const STACKS: Stack[] = [
   },
   {
     id: "devops",
-    icon: faInfinity,
+    icon: faCodeBranch,
     tools: [
       { id: "Docker", slug: "docker", brand: "#2496ED", link: LINKS.DOCKER },
       { id: "Git", slug: "git", brand: "#F05032", link: LINKS.GIT },
