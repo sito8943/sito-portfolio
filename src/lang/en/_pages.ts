@@ -137,21 +137,36 @@ export const _pages = {
       },
     },
     projects: {
-      title: "Professional Projects",
-      text: "Come and check out my ",
-      seeMore: "GitHub",
-      projects: {
-        "m2g-fotos": {
-          title: "M2G Fotos",
-          text: "Official website M2G Photos. Photography Studio in Santiago de Cuba",
+      title: "Journey",
+      lead: "Three stages: from building for others to building my own products.",
+      stageLabel: "Stage {{number}}",
+      visit: "Visit site",
+      labels: {
+        role: "Role",
+        period: "Period",
+        place: "Place",
+        kind: "Project",
+      },
+      stages: {
+        inmersoft: {
+          name: "Inmersoft",
+          tagline: "Transformación e Innovación",
+          about:
+            "A Santiago de Cuba startup driving creative, sustainable tourism through technology.",
+          period: "Jun 2021 — Oct 2023",
+          place: "Santiago de Cuba · Hybrid",
         },
-        "descubre-trinidad": {
+      },
+      products: {
+        descubreTrinidad: {
           title: "Descubre Trinidad",
-          text: "Let yourself be carried away by the charm of the City of Encounters.",
+          kind: "Tourism website",
+          text: "The guide to Trinidad de Cuba: experiences, routes, local flavour and its own app, in several languages.",
         },
-        "sito-library": {
-          title: "Sito library",
-          text: "Web with all my resources, brand identity, libraries and projects",
+        inmersoftWeb: {
+          title: "Inmersoft",
+          kind: "Landing page",
+          text: "Inmersoft's own website: digital solutions for cities, museums and hotels.",
         },
       },
     },

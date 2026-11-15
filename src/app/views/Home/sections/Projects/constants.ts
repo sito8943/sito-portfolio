@@ -1,24 +1,29 @@
 import { LINKS } from "@/shared/config";
 
-import type { Project } from "./types";
+import descubreTrinidad from "@/assets/images/projects/descubre-trinidad.jpg";
+import inmersoftWeb from "@/assets/images/projects/inmersoft-web.jpg";
 
-export const PROJECTS: Project[] = [
+import type { Stage } from "./types";
+
+/** Role in every stage. A job title, the same in every language. */
+export const ROLE = "Fullstack Developer";
+
+export const STAGES: Stage[] = [
   {
-    id: "m2g-fotos",
-    link: LINKS.PROJECT_M2G_FOTOS,
-    image:
-      "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Group%203_GS4a4h2tQ.png",
-  },
-  {
-    id: "descubre-trinidad",
-    image:
-      "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/sito-portfolio_OhYw223Ki.jpg",
-    link: LINKS.PROJECT_DESCUBRE_TRINIDAD,
-  },
-  {
-    id: "sito-library",
-    image:
-      "https://ik.imagekit.io/lgqp0wffgtp/SitoPortafolio/Imagekit_yqb3gsC7a.png",
-    link: LINKS.PROJECT_SITO_LIBRARY,
+    id: "inmersoft",
+    products: [
+      {
+        id: "descubreTrinidad",
+        image: descubreTrinidad,
+        media: "bleed",
+        link: LINKS.PROJECT_DESCUBRE_TRINIDAD,
+      },
+      {
+        id: "inmersoftWeb",
+        image: inmersoftWeb,
+        media: "frame",
+        link: LINKS.INMERSOFT,
+      },
+    ],
   },
 ];

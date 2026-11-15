@@ -1,0 +1,1 @@
+export { InmersoftDecor } from "./InmersoftDecor";

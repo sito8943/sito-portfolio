@@ -18,6 +18,7 @@ export const LINKS = {
   PROJECT_DESCUBRE_TRINIDAD:
     import.meta.env.VITE_LINK_PROJECT_DESCUBRE_TRINIDAD ||
     "https://descubretrinidad.com",
+  INMERSOFT: "https://inmersoft.net/",
   PROJECT_SITO_LIBRARY:
     import.meta.env.VITE_LINK_PROJECT_SITO_LIBRARY ||
     "https://recursos.sito8943.com/",

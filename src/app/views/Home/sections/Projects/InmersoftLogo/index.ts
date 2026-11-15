@@ -1,0 +1,1 @@
+export { InmersoftLogo } from "./InmersoftLogo";
