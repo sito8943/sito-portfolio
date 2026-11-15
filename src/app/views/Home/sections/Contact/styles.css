@@ -47,19 +47,20 @@
   }
 
   /* Brand lockup: mark on the left, wordmark over the email link. */
+  /* Mark as tall as the text block beside it, like the brand card. */
   .contact-lockup {
-    @apply flex items-center gap-6 mt-8 md:gap-4;
+    @apply flex items-center gap-7 mt-8 md:gap-5;
   }
 
   .contact-lockup-mark {
-    @apply h-24 w-auto text-secondary md:h-16;
+    @apply h-[4.75rem] w-auto shrink-0 text-secondary md:h-14;
   }
 
   .contact-lockup-text {
-    @apply flex flex-col items-start gap-2;
+    @apply flex flex-col items-start gap-1;
   }
 
   .contact-lockup-word {
-    @apply h-12 w-auto text-white md:h-9;
+    @apply h-11 w-auto text-white md:h-8;
   }
 }
