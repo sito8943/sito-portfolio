@@ -10,8 +10,8 @@ import { LINKS } from "@/shared/config";
 
 import type { Stack } from "./types";
 
-/** Year of the first professional frontend work. */
-export const CAREER_START_YEAR = 2020;
+/** Year of the first professional job (Inmersoft, June 2021). */
+export const CAREER_START_YEAR = 2021;
 
 export const TABS_ID = "skills-stacks";
 
