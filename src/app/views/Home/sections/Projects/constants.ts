@@ -1,9 +1,9 @@
 import { LINKS } from "@/shared/config";
 
-import descubreTrinidad from "@/assets/images/projects/descubre-trinidad.jpg";
-import inmersoftWeb from "@/assets/images/projects/inmersoft-web.jpg";
-import harbourSpaceWeb from "@/assets/images/projects/harbour-space-web.jpg";
-import sitoDeck from "@/assets/images/projects/sito-deck.jpg";
+import descubreTrinidad from "@/assets/images/projects/descubre-trinidad.webp";
+import inmersoftWeb from "@/assets/images/projects/inmersoft-web.webp";
+import harbourSpaceWeb from "@/assets/images/projects/harbour-space-web.webp";
+import sitoDeck from "@/assets/images/projects/sito-deck.webp";
 import harbourSpaceHeroMp4 from "@/assets/videos/harbour-space-hero.mp4";
 import harbourSpaceHeroWebm from "@/assets/videos/harbour-space-hero.webm";
 

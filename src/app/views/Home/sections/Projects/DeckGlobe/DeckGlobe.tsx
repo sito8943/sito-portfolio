@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 import { useGlobe } from "./useGlobe";
-import { useOnScreen } from "./useOnScreen";
+import { useOnScreen } from "@/shared/hooks";
 
 /**
  * The Presentation Deck's Creative Layer globe piece: a dotted world that spins with glowing

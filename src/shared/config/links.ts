@@ -13,8 +13,6 @@ export const LINKS = {
     "https://www.linkedin.com/in/sito8943",
 
   // Projects
-  PROJECT_M2G_FOTOS:
-    import.meta.env.VITE_LINK_PROJECT_M2G_FOTOS || "https://m2g-fotos.web.app/",
   PROJECT_DESCUBRE_TRINIDAD:
     import.meta.env.VITE_LINK_PROJECT_DESCUBRE_TRINIDAD ||
     "https://descubretrinidad.com",
@@ -23,9 +21,6 @@ export const LINKS = {
   SITO_WALLET: "https://wallet.sito8943.com/",
   SITO_NOTAS: "https://notas.sito8943.com/",
   SITO_DECK: "https://deck.sito8943.com/",
-  PROJECT_SITO_LIBRARY:
-    import.meta.env.VITE_LINK_PROJECT_SITO_LIBRARY ||
-    "https://recursos.sito8943.com/",
 
   // Skills / Tech
   REACT: import.meta.env.VITE_LINK_REACT || "https://reactjs.org/",

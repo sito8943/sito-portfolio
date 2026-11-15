@@ -1,9 +1,11 @@
+import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-import { useInViewOnce } from "@/shared/hooks";
+import { useInViewOnce, useOnScreen } from "@/shared/hooks";
 
+import { PRELOAD_MARGIN } from "./constants";
 import { useReducedMotion } from "./useReducedMotion";
 import type { ProductPanelProps } from "./types";
 
@@ -28,9 +30,19 @@ export function ProductPanel({
   hideTitle = false,
 }: ProductPanelProps) {
   const reducedMotion = useReducedMotion();
-  // The clip loads only once the panel nears the screen, so it never weighs on the first load.
-  const { ref, inView } = useInViewOnce<HTMLElement>(0);
+  // Media (image or clip) loads only once the panel is a screen away, never on the first load.
+  const { ref, inView } = useInViewOnce<HTMLElement>(0, PRELOAD_MARGIN);
   const playClip = Boolean(video) && inView && !reducedMotion;
+  // Once loaded, the clip only plays while the panel is on screen.
+  const onScreen = useOnScreen(ref);
+  const clipRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const clip = clipRef.current;
+    if (!clip) return;
+    if (onScreen) void clip.play().catch(() => undefined);
+    else clip.pause();
+  }, [onScreen, playClip]);
 
   return (
     <article
@@ -53,8 +65,8 @@ export function ProductPanel({
         ) : null}
         {media === "bleed" && video && playClip ? (
           <video
+            ref={clipRef}
             className="product-panel-video"
-            autoPlay
             muted
             loop
             playsInline
@@ -66,7 +78,7 @@ export function ProductPanel({
             <source src={video.mp4} type="video/mp4" />
           </video>
         ) : null}
-        {media === "bleed" && !playClip ? (
+        {media === "bleed" && inView && !playClip ? (
           <img src={image} alt={alt} loading="lazy" decoding="async" />
         ) : null}
       </div>

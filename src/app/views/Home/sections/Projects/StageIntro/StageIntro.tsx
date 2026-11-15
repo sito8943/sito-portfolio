@@ -35,9 +35,9 @@ export function StageIntro({
         <p className="stage-intro-label stage-reveal" style={step(0)}>
           {label}
         </p>
-        <div className="stage-intro-logo-wrap stage-reveal" style={step(1)}>
+        <h3 className="stage-intro-logo-wrap stage-reveal" style={step(1)}>
           {logo}
-        </div>
+        </h3>
         <p className="stage-intro-tagline stage-reveal" style={step(2)}>
           {tagline}
         </p>
