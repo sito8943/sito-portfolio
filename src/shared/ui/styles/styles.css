@@ -34,6 +34,7 @@
 @import "../../../app/views/Home/sections/Projects/ProjectCard/styles.css";
 @import "../../../app/views/Home/sections/Projects/FloatingIcons/styles.css";
 @import "../../../app/views/Home/sections/Contact/styles.css";
-@import "../../../app/views/Home/sections/Contact/FloatingIcons/styles.css";
+@import "../../../app/views/Home/sections/Contact/CopyEmail/styles.css";
+@import "../../../app/views/Home/sections/Contact/RevealText/animations.css";
 @import "../../../app/views/Home/sections/Footer/styles.css";
 @import "../../../app/views/NotFound/styles.css";

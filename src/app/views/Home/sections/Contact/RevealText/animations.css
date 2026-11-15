@@ -1,0 +1,11 @@
+/* Each word starts dim and brightens to the text colour, in sequence. */
+.reveal-word {
+  animation: reveal-word 600ms ease-out both;
+  animation-delay: var(--reveal-delay);
+}
+
+@keyframes reveal-word {
+  from {
+    color: rgb(255 255 255 / 22%);
+  }
+}

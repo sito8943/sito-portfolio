@@ -1,0 +1,35 @@
+@layer components {
+  .copy-email {
+    @apply relative flex items-center gap-2 text-sm;
+  }
+
+  .copy-email-address {
+    @apply flex items-center gap-3 text-white-hover transition-colors hover:text-white;
+  }
+
+  .copy-email-arrow {
+    @apply text-xs transition-transform duration-300;
+  }
+
+  .copy-email-address:hover .copy-email-arrow,
+  .copy-email-address:focus-visible .copy-email-arrow {
+    @apply translate-x-1;
+  }
+
+  .copy-email-button {
+    @apply grid place-items-center size-7 rounded-full bg-transparent text-xs text-white-hover/70 cursor-pointer transition-colors hover:bg-white/10 hover:text-white;
+  }
+
+  .copy-email-button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-white;
+  }
+
+  .copy-email[data-copied="true"] .copy-email-button {
+    @apply text-green;
+  }
+
+  /* Confirmation floats under the line so the layout never shifts. */
+  .copy-email-status {
+    @apply absolute left-0 top-full mt-1 text-xs text-green whitespace-nowrap;
+  }
+}

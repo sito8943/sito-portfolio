@@ -169,10 +169,11 @@ export const _pages = {
       },
     },
     contact: {
-      title: "Get In Touch",
-      body: "Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-      button: "Say Hello 👋",
+      title: "Let's talk",
+      body: "My inbox is always open: proposals, questions or just to say hi.",
       downloadCV: "Download CV",
+      copy: "Copy email",
+      copied: "Copied!",
     },
   },
   footer: {

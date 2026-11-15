@@ -170,10 +170,11 @@ export const _pages: Resources["_pages"] = {
       },
     },
     contact: {
-      title: "Ponerse en contacto",
-      body: "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!",
-      button: "Di hola 👋",
+      title: "Hablemos",
+      body: "Mi bandeja siempre está abierta: propuestas, preguntas o solo para saludar.",
       downloadCV: "Descargar CV",
+      copy: "Copiar email",
+      copied: "¡Copiado!",
     },
   },
   footer: {

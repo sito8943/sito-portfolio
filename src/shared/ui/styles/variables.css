@@ -2,6 +2,7 @@
 /* Sub-layer: our component classes (direct in `components`) always win over @sito/ui. */
 @import "@sito/ui/styles.css" layer(components.sito-ui);
 @import "@fontsource/roboto/400.css";
+@import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/700.css";
 
 /* Desktop-first breakpoints (max-width): `md:` means "768px and below" */

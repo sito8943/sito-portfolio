@@ -2,11 +2,14 @@ import { useTranslation } from "@/features/i18n";
 
 import { LINKS, SECTIONS } from "@/shared/config";
 import { useInViewOnce } from "@/shared/hooks";
+import { MiniLogo, SitoLogo } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 import { buttonClassName } from "@/shared/utils";
 
-import { FloatingIcons } from "./FloatingIcons";
+import { Chevrons } from "./Chevrons";
+import { CopyEmail } from "./CopyEmail";
+import { RevealText } from "./RevealText";
 
 export function Contact() {
   const { ref, inView } = useInViewOnce();
@@ -14,52 +17,48 @@ export function Contact() {
   const { t } = useTranslation();
 
   return (
-    <Section id={SECTIONS.contact} className="inner-section contact-section">
-      <FloatingIcons />
-      <div className="section-stack" ref={ref}>
+    <Section id={SECTIONS.contact} className="contact-section">
+      <div className="contact-panel" ref={ref}>
+        <Chevrons />
         {inView ? (
-          <>
-            <InView delay="100ms">
-              <h2 className="section-title">
-                {t("_pages:home.contact.title")}
-              </h2>
+          <div className="contact-content">
+            <RevealText
+              as="h2"
+              className="contact-title"
+              text={t("_pages:home.contact.title")}
+            />
+            <RevealText
+              className="contact-lead"
+              text={t("_pages:home.contact.body")}
+              startMs={200}
+            />
+            <InView delay="700ms" className="contact-actions">
+              <a
+                aria-label="download cv"
+                href={LINKS.CONTACT_CV_URL}
+                target="_blank"
+                rel="noreferrer"
+                className={buttonClassName({
+                  color: "primary",
+                  variant: "submit",
+                  className: "contact-action",
+                })}
+              >
+                {t("_pages:home.contact.downloadCV")}
+              </a>
             </InView>
-            <InView delay="200ms">
-              <p className="contact-lead body">
-                {t("_pages:home.contact.body")}
-              </p>
+            <InView delay="900ms" className="contact-lockup">
+              <MiniLogo className="contact-lockup-mark" />
+              <div className="contact-lockup-text">
+                <SitoLogo className="contact-lockup-word" />
+                <CopyEmail
+                  email={LINKS.CONTACT_EMAIL}
+                  copyLabel={t("_pages:home.contact.copy")}
+                  copiedLabel={t("_pages:home.contact.copied")}
+                />
+              </div>
             </InView>
-            <div className="contact-actions">
-              <InView delay="300ms">
-                <a
-                  aria-label={`email ${LINKS.CONTACT_EMAIL}`}
-                  href={`mailto:${LINKS.CONTACT_EMAIL}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={buttonClassName({
-                    color: "primary",
-                    variant: "submit",
-                  })}
-                >
-                  {t("_pages:home.contact.button")}
-                </a>
-              </InView>
-              <InView delay="400ms">
-                <a
-                  aria-label="download cv"
-                  href={LINKS.CONTACT_CV_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={buttonClassName({
-                    color: "primary",
-                    variant: "submit",
-                  })}
-                >
-                  {t("_pages:home.contact.downloadCV")}
-                </a>
-              </InView>
-            </div>
-          </>
+          </div>
         ) : null}
       </div>
     </Section>

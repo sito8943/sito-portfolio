@@ -3,11 +3,63 @@
     background-color: transparent;
   }
 
+  /* Brand panel: navy card, content left, logo chevrons fading in on the right. */
+  .contact-panel {
+    @apply relative overflow-hidden mx-auto w-full max-w-6xl min-h-[420px] rounded-3xl border border-white/10 px-24 py-20 md:px-6 md:py-12 md:rounded-2xl;
+    background-color: color-mix(
+      in srgb,
+      var(--color-primary) 70%,
+      var(--color-pdark)
+    );
+  }
+
+  .contact-chevrons {
+    @apply pointer-events-none absolute right-0 top-0 h-full w-auto text-white/[0.06] md:opacity-60;
+  }
+
+  .contact-chevrons path {
+    stroke: currentColor;
+    stroke-width: 34;
+    stroke-linejoin: miter;
+  }
+
+  .contact-content {
+    @apply relative flex flex-col items-start gap-6 max-w-2xl;
+  }
+
+  .contact-title {
+    @apply text-5xl leading-tight md:text-4xl;
+  }
+
+  /* Deck-style statement: large, regular weight. */
   .contact-lead {
-    @apply text-center md:w-[90%] w-[50%] m-auto mb-4;
+    @apply -mt-2 text-3xl leading-snug text-white md:text-xl;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
   }
 
   .contact-actions {
-    @apply flex flex-wrap gap-2 items-center justify-center;
+    @apply flex flex-wrap items-center gap-4;
+  }
+
+  .contact-action {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* Brand lockup: mark on the left, wordmark over the email link. */
+  .contact-lockup {
+    @apply flex items-center gap-6 mt-8 md:gap-4;
+  }
+
+  .contact-lockup-mark {
+    @apply h-24 w-auto text-secondary md:h-16;
+  }
+
+  .contact-lockup-text {
+    @apply flex flex-col items-start gap-2;
+  }
+
+  .contact-lockup-word {
+    @apply h-12 w-auto text-white md:h-9;
   }
 }
