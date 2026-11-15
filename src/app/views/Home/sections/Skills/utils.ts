@@ -1,10 +1,11 @@
-import { SIMPLE_ICONS_CDN } from "./constants";
+import { STACK_ICONS } from "./constants";
+import type { StackIconSlug } from "./types";
 
 /** Whole years elapsed since `start`. */
 export const yearsSince = (start: number) => new Date().getFullYear() - start;
 
-/** CSS mask url for a simple-icons logo. */
-export const iconUrl = (slug: string) => `url(${SIMPLE_ICONS_CDN}/${slug}.svg)`;
+/** CSS mask url for a stack logo. */
+export const iconUrl = (slug: StackIconSlug) => `url(${STACK_ICONS[slug]})`;
 
 /** Tab index after an arrow/Home/End key, or null for other keys. */
 export const nextTabIndex = (key: string, current: number, total: number) => {

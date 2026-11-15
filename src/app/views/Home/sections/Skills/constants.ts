@@ -15,8 +15,40 @@ export const CAREER_START_YEAR = 2020;
 
 export const TABS_ID = "skills-stacks";
 
-export const SIMPLE_ICONS_CDN =
-  "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons";
+/**
+ * Brand logos (simple-icons 13.21.0, single-colour SVGs) hosted on ImageKit; painted through a
+ * CSS mask, so the host must send CORS headers.
+ */
+export const STACK_ICONS = {
+  react: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/react_Ykdi4sT8rH.svg",
+  typescript:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/typescript__Ec0SoSNxj.svg",
+  vite: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/vite_wiv6q4eSeD.svg",
+  tailwindcss:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/tailwindcss_Q8QNl5Ppxm.svg",
+  mui: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/mui_XnSlvo3aWT.svg",
+  nodedotjs:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/nodedotjs_lYtuZ2kze.svg",
+  express: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/express_xDqioeOE-.svg",
+  laravel:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/laravel_VXQcSE6Uuj.svg",
+  springboot:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/springboot_o7Blg1OO0a.svg",
+  mysql: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/mysql_dCESWdj_h.svg",
+  postgresql:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/postgresql_TiiFw_J00z.svg",
+  mongodb:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/mongodb_gn1FtOURvA.svg",
+  firebase:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/firebase_vNGMHsYiOc.svg",
+  docker: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/docker_RSDHvHpxt.svg",
+  git: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/git_yypxWsN2go.svg",
+  githubactions:
+    "https://ik.imagekit.io/lgqp0wffgtp/portfolio/githubactions_pGJdDnCLGP.svg",
+  expo: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/expo_u5e6kyVGC.svg",
+  kotlin: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/kotlin_KcPON_0UK.svg",
+  figma: "https://ik.imagekit.io/lgqp0wffgtp/portfolio/figma_6ZeCqaiTN.svg",
+} as const;
 
 export const STACKS: Stack[] = [
   {

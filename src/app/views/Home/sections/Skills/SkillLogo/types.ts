@@ -1,6 +1,8 @@
+import type { StackIconSlug } from "../types";
+
 export type SkillLogoProps = {
-  /** simple-icons slug. */
-  slug?: string | undefined;
+  /** Logo in `STACK_ICONS`. */
+  slug?: StackIconSlug | undefined;
   /** Fallback letters when there is no slug. */
   monogram?: string | undefined;
 };
