@@ -1,6 +1,6 @@
 @layer components {
   .feature-card {
-    @apply relative bg-dark-background w-full min-h-[250px] p-7 rounded-xl border-[1px] border-placeholder-dark;
+    @apply relative bg-dark-background w-full min-h-[200px] p-7 rounded-xl border-[1px] border-placeholder-dark;
   }
 
   /* Border light: hidden until the logo lands on Features (see animations.css). */
@@ -47,19 +47,6 @@
 
   .feature-card-body {
     @apply mb-5 text-balance text-white-hover;
-  }
-
-  .feature-card-tags {
-    @apply flex flex-wrap gap-2;
-    list-style: none;
-    padding: 0;
-  }
-
-  .feature-card-tag {
-    color: var(--feature-accent);
-    border: 1px solid color-mix(in srgb, var(--feature-accent) 25%, transparent);
-    background-color: color-mix(in srgb, var(--feature-accent) 9%, transparent);
-    @apply rounded-full px-3 py-1 text-xs font-bold;
   }
 
   @media (width < 640px) {
