@@ -28,7 +28,8 @@
 @import "../../../app/views/Home/sections/Features/animations.css";
 @import "../../../app/views/Home/sections/About/AboutCard/styles.css";
 @import "../../../app/views/Home/sections/Skills/styles.css";
-@import "../../../app/views/Home/sections/Skills/FloatingIcons/styles.css";
+@import "../../../app/views/Home/sections/Skills/animations.css";
+@import "../../../app/views/Home/sections/Skills/SkillLogo/styles.css";
 @import "../../../app/views/Home/sections/Projects/styles.css";
 @import "../../../app/views/Home/sections/Projects/ProjectCard/styles.css";
 @import "../../../app/views/Home/sections/Projects/FloatingIcons/styles.css";

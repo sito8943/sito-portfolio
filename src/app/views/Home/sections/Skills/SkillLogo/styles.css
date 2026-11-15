@@ -1,0 +1,14 @@
+@layer components {
+  /* Painted with --skill-brand, set on the parent chip. */
+  .skill-logo {
+    @apply block size-5 shrink-0;
+    background-color: var(--skill-brand);
+    mask: var(--skill-icon) center / contain no-repeat;
+  }
+
+  .skill-monogram {
+    @apply grid place-items-center size-5 shrink-0 rounded-[4px] border-[1.5px] text-[9px] font-bold leading-none;
+    color: var(--skill-brand);
+    border-color: var(--skill-brand);
+  }
+}

@@ -4,7 +4,7 @@ export const _pages = {
     home: "Home",
     features: "Features",
     about: "About me",
-    skills: "Skills",
+    skills: "Stack",
     projects: "Projects",
     contact: "Contact me",
   },
@@ -125,17 +125,14 @@ export const _pages = {
         uiUx: {
           title: "UI/UX Design",
           body: "Designing clear, intuitive interfaces around real user needs and smooth journeys.",
-          tags: ["Figma", "Prototyping"],
         },
         web: {
           title: "Web Development",
           body: "Building responsive, high-performance web experiences with modern frontend tools.",
-          tags: ["React", "TypeScript", "Tailwind"],
         },
         mobile: {
           title: "Mobile Development",
           body: "Building mobile apps for Android and iOS with modern development tools.",
-          tags: ["React Native", "Kotlin"],
         },
       },
     },
@@ -159,10 +156,17 @@ export const _pages = {
       },
     },
     skills: {
-      title: "My skills",
-      body: "As a Frontend developer building web applications for [year] years I have enhanced the following skills:",
-      age: " years of experience",
-      other: "Other skills",
+      title: "What I build with",
+      experience: "years of experience",
+      production: "Products in production",
+      hint: "Pick a stack to see its tools",
+      stacks: {
+        frontend: "Frontend",
+        backend: "Backend",
+        devops: "DevOps",
+        mobile: "Mobile",
+        design: "Design",
+      },
     },
     contact: {
       title: "Get In Touch",

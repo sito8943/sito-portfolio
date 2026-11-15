@@ -5,7 +5,7 @@ export const _pages: Resources["_pages"] = {
     home: "Inicio",
     features: "¿Qué hago?",
     about: "Acerca de Mí",
-    skills: "Habilidades",
+    skills: "Stack",
     projects: "Proyectos",
     contact: "Contacto",
   },
@@ -126,17 +126,14 @@ export const _pages: Resources["_pages"] = {
         uiUx: {
           title: "Diseño UI/UX",
           body: "Diseño interfaces claras e intuitivas, centradas en las necesidades de las personas.",
-          tags: ["Figma", "Prototipado"],
         },
         web: {
           title: "Desarrollo web",
           body: "Creo experiencias web adaptables y rápidas con herramientas modernas de frontend.",
-          tags: ["React", "TypeScript", "Tailwind"],
         },
         mobile: {
           title: "Desarrollo móvil",
           body: "Desarrollo aplicaciones móviles para Android e iOS con herramientas modernas.",
-          tags: ["React Native", "Kotlin"],
         },
       },
     },
@@ -160,10 +157,17 @@ export const _pages: Resources["_pages"] = {
       },
     },
     skills: {
-      title: "Mis Habilidades",
-      body: "Como desarrollador de Frontend desarrollando de aplicaciones web por [year] años he potenciado las siguientes habilidades:",
-      age: " años de experiencia",
-      other: "Otras habilidades",
+      title: "Con qué construyo",
+      experience: "años de experiencia",
+      production: "Productos en producción",
+      hint: "Elige un stack para ver sus herramientas",
+      stacks: {
+        frontend: "Frontend",
+        backend: "Backend",
+        devops: "DevOps",
+        mobile: "Móvil",
+        design: "Diseño",
+      },
     },
     contact: {
       title: "Ponerse en contacto",
