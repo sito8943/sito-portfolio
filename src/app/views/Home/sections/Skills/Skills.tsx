@@ -117,9 +117,6 @@ export function Skills() {
         </InView>
 
         <InView delay="900ms" className="skills-panel-wrap">
-          <p className="skills-active-name" aria-hidden="true">
-            {t(`_pages:home.skills.stacks.${stack.id}`)}
-          </p>
           <ul
             key={stack.id}
             role="tabpanel"
