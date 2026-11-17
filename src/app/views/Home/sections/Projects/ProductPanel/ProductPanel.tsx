@@ -10,11 +10,10 @@ import { useReducedMotion } from "./useReducedMotion";
 import type { ProductPanelProps } from "./types";
 
 /**
- * A full-screen product chapter that sticks while the next one slides over it: big index and
+ * A full-screen product chapter that sticks while the next one slides over it: big
  * title, its screenshot, a facts list and a link to the live site.
  */
 export function ProductPanel({
-  index,
   eyebrow,
   title,
   text,
@@ -84,7 +83,6 @@ export function ProductPanel({
       </div>
       <div className="product-panel-content">
         <div className="product-panel-top">
-          <span className="product-panel-index">{index}</span>
           <div className="product-panel-heading">
             <span className="product-panel-eyebrow">{eyebrow}</span>
             <h3 className="product-panel-title" data-hidden={hideTitle}>

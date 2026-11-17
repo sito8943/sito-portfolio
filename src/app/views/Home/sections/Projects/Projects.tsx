@@ -55,7 +55,7 @@ export function Projects() {
               ]}
             />
             <div className="projects-panels">
-              {stage.products.map((product, p) => {
+              {stage.products.map((product) => {
                 const title = t(
                   `_pages:home.projects.products.${product.id}.title`,
                 );
@@ -65,7 +65,6 @@ export function Projects() {
                 return (
                   <ProductPanel
                     key={product.id}
-                    index={String(p + 1).padStart(2, "0")}
                     eyebrow={`${name} · ${kind}`}
                     title={title}
                     text={t(`_pages:home.projects.products.${product.id}.text`)}

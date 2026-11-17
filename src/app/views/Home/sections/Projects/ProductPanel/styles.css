@@ -88,12 +88,7 @@
   }
 
   .product-panel-top {
-    @apply flex items-start justify-between gap-6;
-  }
-
-  .product-panel-index {
-    @apply text-6xl font-normal leading-none md:text-4xl;
-    font-family: "Poppins", sans-serif;
+    @apply flex items-start justify-end gap-6;
   }
 
   .product-panel-heading {
