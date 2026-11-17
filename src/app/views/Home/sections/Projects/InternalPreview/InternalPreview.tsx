@@ -9,15 +9,24 @@ import {
   PORTAL_TILES,
 } from "./constants";
 import type { InternalPreviewProps } from "./types";
+import { useThemeCycle } from "./useThemeCycle";
 
 /**
  * Internal platforms shown without showing them: a skeleton admin (navigation, table with
  * statuses) in front of a skeleton portal (profile, course tiles with progress). No real text or
- * data, only shapes. Sized in container units, so it scales as one piece. Decorative.
+ * data, only shapes. Sized in container units, so it scales as one piece. Every so often both
+ * apps fade between light and dark. Decorative.
  */
 export function InternalPreview({ badge }: InternalPreviewProps) {
+  const { ref, theme } = useThemeCycle<HTMLDivElement>();
+
   return (
-    <div className="internal-preview" aria-hidden="true">
+    <div
+      ref={ref}
+      className="internal-preview"
+      data-theme={theme}
+      aria-hidden="true"
+    >
       <div className="internal-preview-card internal-preview-portal">
         <span className="internal-preview-bar" />
         <div className="internal-preview-portal-head">

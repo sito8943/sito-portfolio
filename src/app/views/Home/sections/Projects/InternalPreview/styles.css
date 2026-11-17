@@ -1,25 +1,57 @@
 @layer components {
   /* Two skeleton apps, front admin over back portal. Every size is in container units (cqw),
      so the whole piece scales as one image on any screen. */
+  /* Palette, light by default; the values fade (see animations.css) when the theme flips. */
   .internal-preview {
     --ip-violet: #4b2695;
     --ip-violet-soft: #e9e3f8;
     --ip-ink: #d9d4e6;
     --ip-ink-soft: #ece9f2;
+    --ip-surface: #ffffff;
+    --ip-chrome: #f6f4fb;
+    --ip-nav: #faf9fd;
+    --ip-title: #b9b1cf;
+    --ip-rule: rgb(0 0 0 / 6%);
+    --ip-check: rgb(0 0 0 / 15%);
+    --ip-live: #d6f2e9;
+    --ip-live-edge: rgb(0 153 123 / 20%);
+    --ip-draft: #fbecd4;
+    --ip-draft-edge: rgb(215 148 46 / 20%);
     @apply relative block aspect-[16/10] h-full max-h-[26rem] w-auto max-w-full;
     container-type: inline-size;
   }
 
+  .internal-preview[data-theme="dark"] {
+    --ip-violet: #8b6cf0;
+    --ip-violet-soft: #2c2546;
+    --ip-ink: #3a3157;
+    --ip-ink-soft: #2c2546;
+    --ip-surface: #17122b;
+    --ip-chrome: #201a3a;
+    --ip-nav: #1b1532;
+    --ip-title: #5a4f80;
+    --ip-rule: rgb(255 255 255 / 7%);
+    --ip-check: rgb(255 255 255 / 20%);
+    --ip-live: #0f3b33;
+    --ip-live-edge: rgb(45 212 191 / 25%);
+    --ip-draft: #45321a;
+    --ip-draft-edge: rgb(245 165 36 / 25%);
+  }
+
   .internal-preview-card {
-    @apply absolute flex flex-col overflow-hidden bg-white ring-1 ring-[rgb(0_0_0/5%)];
+    @apply absolute flex flex-col overflow-hidden;
+    background-color: var(--ip-surface);
     border-radius: 1.6cqw;
     box-shadow:
+      0 0 0 1px var(--ip-rule),
       0 2cqw 5cqw rgb(16 6 48 / 45%),
       0 0.4cqw 1cqw rgb(16 6 48 / 25%);
   }
 
   .internal-preview-bar {
-    @apply block shrink-0 border-b border-[rgb(0_0_0/6%)] bg-[#f6f4fb];
+    @apply block shrink-0 border-b;
+    border-color: var(--ip-rule);
+    background-color: var(--ip-chrome);
     height: 3.2cqw;
     background-image:
       radial-gradient(circle, #ff5f57 0.5cqw, transparent 0.6cqw),
@@ -109,7 +141,9 @@
   }
 
   .internal-preview-nav {
-    @apply flex shrink-0 flex-col border-r border-[rgb(0_0_0/6%)] bg-[#faf9fd];
+    @apply flex shrink-0 flex-col border-r;
+    border-color: var(--ip-rule);
+    background-color: var(--ip-nav);
     width: 20%;
     gap: 1.2cqw;
     padding: 2cqw 1.6cqw;
@@ -146,7 +180,7 @@
 
   .internal-preview-title {
     height: 1.4cqw;
-    background-color: #b9b1cf;
+    background-color: var(--ip-title);
   }
 
   .internal-preview-button {
@@ -157,7 +191,8 @@
   }
 
   .internal-preview-row {
-    @apply flex items-center border-t border-[rgb(0_0_0/6%)];
+    @apply flex items-center border-t;
+    border-color: var(--ip-rule);
     gap: 1.4cqw;
     padding: 1.35cqw 0;
   }
@@ -167,7 +202,8 @@
   }
 
   .internal-preview-check {
-    @apply block shrink-0 border border-[rgb(0_0_0/15%)];
+    @apply block shrink-0 border;
+    border-color: var(--ip-check);
     width: 1.4cqw;
     height: 1.4cqw;
     border-radius: 0.35cqw;
@@ -180,13 +216,13 @@
   }
 
   .internal-preview-status[data-status="live"] {
-    background-color: #d6f2e9;
-    box-shadow: inset 0 0 0 0.25cqw #00997b33;
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
   }
 
   .internal-preview-status[data-status="draft"] {
-    background-color: #fbecd4;
-    box-shadow: inset 0 0 0 0.25cqw #d7942e33;
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
   }
 
   /* Glass badge pinned to the portal's lower corner. */

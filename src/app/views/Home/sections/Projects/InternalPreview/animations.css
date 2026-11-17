@@ -1,0 +1,94 @@
+/* The palette is registered as colours so a theme flip fades every surface, line, gradient and
+   shadow at once. Unlayered hand-written motion; reduced motion never flips (useThemeCycle). */
+@property --ip-violet {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #4b2695;
+}
+
+@property --ip-violet-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e9e3f8;
+}
+
+@property --ip-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #d9d4e6;
+}
+
+@property --ip-ink-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ece9f2;
+}
+
+@property --ip-surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+
+@property --ip-chrome {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f6f4fb;
+}
+
+@property --ip-nav {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #faf9fd;
+}
+
+@property --ip-title {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b9b1cf;
+}
+
+@property --ip-rule {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(0 0 0 / 6%);
+}
+
+@property --ip-check {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(0 0 0 / 15%);
+}
+
+@property --ip-live {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #d6f2e9;
+}
+
+@property --ip-live-edge {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(0 153 123 / 20%);
+}
+
+@property --ip-draft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fbecd4;
+}
+
+@property --ip-draft-edge {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(215 148 46 / 20%);
+}
+
+.internal-preview {
+  transition-property:
+    --ip-violet, --ip-violet-soft, --ip-ink, --ip-ink-soft, --ip-surface,
+    --ip-chrome, --ip-nav, --ip-title, --ip-rule, --ip-check, --ip-live,
+    --ip-live-edge, --ip-draft, --ip-draft-edge;
+  transition-duration: 1600ms;
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
