@@ -15,6 +15,11 @@ export const CAREER_START_YEAR = 2021;
 
 export const TABS_ID = "skills-stacks";
 
+/** How long the highlight figures take to count up from 0. */
+export const COUNT_UP_MS = 1400;
+
+export const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
 /**
  * Brand logos (simple-icons 13.21.0, single-colour SVGs) hosted on ImageKit; painted through a
  * CSS mask, so the host must send CORS headers.

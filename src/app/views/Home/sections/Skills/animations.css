@@ -64,3 +64,20 @@
     box-shadow: 0 0 14px rgb(255 255 255 / 35%);
   }
 }
+
+/* Each new figure while counting (remounted by its value) comes in from a blur. */
+.skills-highlight-number {
+  animation: skills-count-blur 220ms ease-out both;
+}
+
+@keyframes skills-count-blur {
+  from {
+    filter: blur(6px);
+    opacity: 0.4;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}

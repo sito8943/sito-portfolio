@@ -13,6 +13,8 @@ import { PRODUCTS_IN_PRODUCTION } from "../Projects/constants";
 
 import { CAREER_START_YEAR, STACKS, TABS_ID } from "./constants";
 import { SkillLogo } from "./SkillLogo";
+import { useCountUp } from "./useCountUp";
+import { useRevealed } from "./useRevealed";
 import { nextTabIndex, yearsSince } from "./utils";
 
 export function Skills() {
@@ -21,6 +23,10 @@ export function Skills() {
   /** Last diamond the pointer touched; the logo stays there after the pointer leaves. */
   const [lastHovered, setLastHovered] = useState<number | null>(null);
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
+  const years = yearsSince(CAREER_START_YEAR);
+  const highlights = useRevealed<HTMLUListElement>();
+  const yearsShown = useCountUp(years, highlights.revealed);
+  const productsShown = useCountUp(PRODUCTS_IN_PRODUCTION, highlights.revealed);
 
   const stack = STACKS[active] ?? STACKS[0]!;
   /** Diamond the travelling logo frames: the last hovered one, else the active one. */
@@ -53,17 +59,29 @@ export function Skills() {
         </InView>
 
         <InView delay="250ms">
-          <ul className="skills-highlights">
+          <ul ref={highlights.ref} className="skills-highlights">
             <li className="skills-highlight">
-              <strong className="skills-highlight-number">
-                {yearsSince(CAREER_START_YEAR)}
+              <strong
+                key={yearsShown}
+                className="skills-highlight-number"
+                aria-hidden="true"
+              >
+                {yearsShown}
               </strong>
+              <span className="skills-highlight-value">{years}</span>
               {t("_pages:home.skills.experience")}
             </li>
             <li className="skills-highlight">
-              <strong className="skills-highlight-number">
-                {PRODUCTS_IN_PRODUCTION}
+              <strong
+                key={productsShown}
+                className="skills-highlight-number"
+                aria-hidden="true"
+              >
+                {productsShown}
               </strong>
+              <span className="skills-highlight-value">
+                {PRODUCTS_IN_PRODUCTION}
+              </span>
               {t("_pages:home.skills.production")}
             </li>
           </ul>
