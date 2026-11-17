@@ -8,8 +8,9 @@ import {
   ADMIN_ROWS,
   PORTAL_TILES,
 } from "./constants";
+import { useThemeCycle } from "../useThemeCycle";
+
 import type { InternalPreviewProps } from "./types";
-import { useThemeCycle } from "./useThemeCycle";
 
 /**
  * Internal platforms shown without showing them: a skeleton admin (navigation, table with

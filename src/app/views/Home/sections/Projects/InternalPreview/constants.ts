@@ -15,8 +15,3 @@ export const ADMIN_NAV_ACTIVE = 1;
 
 /** Course tiles in the portal, with how far each one is done (%). */
 export const PORTAL_TILES = [72, 38, 90] as const;
-
-/** The two apps swap between light and dark this often while on screen. */
-export const THEME_CYCLE_MS = 10_000;
-
-export const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";

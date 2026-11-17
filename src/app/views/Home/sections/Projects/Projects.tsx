@@ -4,6 +4,7 @@ import { SECTIONS } from "@/shared/config";
 
 import { ROLE, STAGE_BRANDS, STAGES } from "./constants";
 import { ProductPanel } from "./ProductPanel";
+import { ClientPreview } from "./ClientPreview";
 import { InternalPreview } from "./InternalPreview";
 import { StageIntro } from "./StageIntro";
 import { UniverseStage } from "./UniverseStage";
@@ -76,6 +77,16 @@ export function Projects() {
                       product.feature === "internalPreview" ? (
                         <InternalPreview
                           badge={t("_pages:home.projects.privateAccess")}
+                        />
+                      ) : product.feature === "clientDashboard" ||
+                        product.feature === "clientBoard" ? (
+                        <ClientPreview
+                          variant={
+                            product.feature === "clientDashboard"
+                              ? "dashboard"
+                              : "board"
+                          }
+                          badge={t("_pages:home.projects.confidential")}
                         />
                       ) : null
                     }

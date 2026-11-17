@@ -141,6 +141,7 @@ export const _pages = {
       lead: "Three stages: from building for others to building my own products.",
       stageLabel: "Stage {{number}}",
       visit: "Visit site",
+      confidential: "Confidential",
       privateAccess: "Private access",
       labels: {
         role: "Role",
@@ -183,6 +184,13 @@ export const _pages = {
           period: "Jun 2021 — Oct 2023",
           place: "Santiago de Cuba · Hybrid",
         },
+        aoshield: {
+          name: "AOShield",
+          tagline: "It's time for a sharp I.T. solution",
+          about: "IT solutions for Canadian businesses, from Edmonton.",
+          period: "Oct 2023 — Feb 2026",
+          place: "Canada · Remote",
+        },
         harbourSpace: {
           name: "Harbour.Space",
           tagline: "The State-of-the-Art Institute",
@@ -202,6 +210,16 @@ export const _pages = {
           title: "Inmersoft",
           kind: "Landing page",
           text: "Inmersoft's own website: digital solutions for cities, museums and hotels.",
+        },
+        aoshieldClientA: {
+          title: "Custom platform",
+          kind: "Client project",
+          text: "A custom web platform built for one of AOShield's clients. It's under a confidentiality agreement, so I can't show names or screens.",
+        },
+        aoshieldClientB: {
+          title: "Management app",
+          kind: "Client project",
+          text: "A management app for another AOShield client. Also confidential: here I can only say it exists and that I built it.",
         },
         harbourSpaceWeb: {
           title: "Harbour.Space",

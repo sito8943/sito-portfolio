@@ -7,6 +7,8 @@ import sitoDeck from "@/assets/images/projects/sito-deck.webp";
 import harbourSpaceHeroMp4 from "@/assets/videos/harbour-space-hero.mp4";
 import harbourSpaceHeroWebm from "@/assets/videos/harbour-space-hero.webm";
 
+import { AOShieldDecor } from "./AOShieldDecor";
+import { AOShieldLogo } from "./AOShieldLogo";
 import { HarbourSpaceDecor } from "./HarbourSpaceDecor";
 import { HarbourSpaceLogo } from "./HarbourSpaceLogo";
 import { InmersoftDecor } from "./InmersoftDecor";
@@ -18,6 +20,7 @@ import type { Stage, StageBrand, StageId, UniverseProduct } from "./types";
 /** Each stage's identity pieces: its logo and its motifs. */
 export const STAGE_BRANDS: Record<StageId, StageBrand> = {
   inmersoft: { Logo: InmersoftLogo, Decor: InmersoftDecor },
+  aoshield: { Logo: AOShieldLogo, Decor: AOShieldDecor },
   harbourSpace: { Logo: HarbourSpaceLogo, Decor: HarbourSpaceDecor },
 };
 
@@ -39,6 +42,26 @@ export const STAGES: Stage[] = [
         image: inmersoftWeb,
         media: "frame",
         link: LINKS.INMERSOFT,
+      },
+    ],
+  },
+  {
+    id: "aoshield",
+    // Client projects under NDA: no client or tool names, drawn as skeletons, never shown.
+    products: [
+      {
+        id: "aoshieldClientA",
+        image: "",
+        media: "brand",
+        brand: { background: "#1b2150", color: "#fbfbfb" },
+        feature: "clientDashboard",
+      },
+      {
+        id: "aoshieldClientB",
+        image: "",
+        media: "brand",
+        brand: { background: "#1b2150", color: "#fbfbfb" },
+        feature: "clientBoard",
       },
     ],
   },

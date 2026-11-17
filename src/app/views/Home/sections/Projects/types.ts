@@ -24,7 +24,7 @@ export type Product = {
   /** No public site (internal tools): the chapter has no "visit" link. */
   link?: string;
   /** A live piece drawn large in the middle of the chapter. */
-  feature?: "internalPreview";
+  feature?: "internalPreview" | "clientDashboard" | "clientBoard";
   /** Live products this chapter stands for (internal tools grouped in one), 1 by default. */
   count?: number;
 };
