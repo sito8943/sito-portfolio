@@ -20,8 +20,6 @@ export type ProductVideo = {
 };
 
 export type ProductPanelProps = {
-  /** "01" */
-  index: string;
   /** Small line over the title: stage and kind of product. */
   eyebrow: string;
   title: string;

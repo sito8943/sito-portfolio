@@ -36,7 +36,7 @@ export function UniverseStage({ number }: { number: number }) {
         ]}
       />
       <div className="projects-panels">
-        {UNIVERSE_PRODUCTS.map((product, p) => {
+        {UNIVERSE_PRODUCTS.map((product) => {
           const title = t(
             `_pages:home.projects.universe.products.${product.id}.title`,
           );
@@ -46,7 +46,6 @@ export function UniverseStage({ number }: { number: number }) {
           return (
             <ProductPanel
               key={product.id}
-              index={String(p + 1).padStart(2, "0")}
               eyebrow={`${name} · ${kind}`}
               title={title}
               text={t(
