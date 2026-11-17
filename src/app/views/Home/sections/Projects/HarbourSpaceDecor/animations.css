@@ -28,3 +28,35 @@
 .stage-intro[data-shown="true"] .hs-decor-circuit circle {
   stroke-dashoffset: 0;
 }
+
+/* Once drawn, a pulse of light runs along each long trace, like a signal. */
+.hs-decor-circuit .hs-decor-pulse {
+  stroke: #e2d8ff;
+  stroke-width: 2.5;
+  /* Gap longer than the path: one pulse only, hidden before its start and past its end. */
+  stroke-dasharray: 0.12 1.2;
+  stroke-dashoffset: 0.12;
+  opacity: 0;
+  filter: drop-shadow(0 0 4px oklch(0.712 0.166 292.8));
+  transition: opacity 600ms ease-out 1.6s;
+}
+
+@keyframes hs-pulse {
+  from {
+    stroke-dashoffset: 0.12;
+  }
+
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+.stage-intro[data-shown="true"] .hs-decor-circuit .hs-decor-pulse {
+  opacity: 1;
+  animation: hs-pulse 3.2s cubic-bezier(0.65, 0, 0.35, 1) 1.6s infinite
+    backwards;
+}
+
+.stage-intro[data-shown="true"] .hs-decor-circuit .hs-decor-pulse-late {
+  animation-delay: 3.2s;
+}

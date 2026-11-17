@@ -6,7 +6,7 @@ import { REDUCED_MOTION_QUERY, THEME_CYCLE_MS } from "./constants";
 
 /**
  * Light or dark, flipping every `THEME_CYCLE_MS` while the element is on screen (paused
- * off screen, never with reduced motion).
+ * off screen, never with reduced motion). Also says whether it is on screen, to run its motion.
  */
 export function useThemeCycle<T extends Element>() {
   const ref = useRef<T>(null);
@@ -22,5 +22,5 @@ export function useThemeCycle<T extends Element>() {
     return () => window.clearInterval(timer);
   }, [onScreen]);
 
-  return { ref, theme: dark ? "dark" : "light" } as const;
+  return { ref, onScreen, theme: dark ? "dark" : "light" } as const;
 }

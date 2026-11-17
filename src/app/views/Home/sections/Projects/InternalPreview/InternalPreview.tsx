@@ -15,17 +15,19 @@ import type { InternalPreviewProps } from "./types";
 /**
  * Internal platforms shown without showing them: a skeleton admin (navigation, table with
  * statuses) in front of a skeleton portal (profile, course tiles with progress). No real text or
- * data, only shapes. Sized in container units, so it scales as one piece. Every so often both
- * apps fade between light and dark. Decorative.
+ * data, only shapes. Sized in container units, so it scales as one piece. While on screen it
+ * moves like it is in use (see animations.css) and both apps fade between light and dark.
+ * Decorative.
  */
 export function InternalPreview({ badge }: InternalPreviewProps) {
-  const { ref, theme } = useThemeCycle<HTMLDivElement>();
+  const { ref, theme, onScreen } = useThemeCycle<HTMLDivElement>();
 
   return (
     <div
       ref={ref}
       className="internal-preview"
       data-theme={theme}
+      data-on={onScreen}
       aria-hidden="true"
     >
       <div className="internal-preview-card internal-preview-portal">
@@ -79,7 +81,11 @@ export function InternalPreview({ badge }: InternalPreviewProps) {
               <span className="internal-preview-button" />
             </span>
             {ADMIN_ROWS.map((row, i) => (
-              <span key={i} className="internal-preview-row">
+              <span
+                key={i}
+                className="internal-preview-row"
+                style={{ "--row-i": i } as CSSProperties}
+              >
                 <span className="internal-preview-check" />
                 <span
                   className="internal-preview-line"

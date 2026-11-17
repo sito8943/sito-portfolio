@@ -92,3 +92,92 @@
   transition-duration: 1600ms;
   transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
 }
+
+/* ---- In use: motion shared by every skeleton app, only while on screen ([data-on]).
+   Smooth, slow and looping; reduced motion turns it all off (base.css) and leaves the
+   resting state, which is each element's normal style. ---- */
+
+@property --progress {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* Floating pieces breathe up and down, out of step with each other. */
+@keyframes ip-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -0.8cqw;
+  }
+}
+
+.internal-preview[data-on="true"]
+  :is(.internal-preview-portal, .internal-preview-badge) {
+  animation: ip-float 7s ease-in-out infinite;
+}
+
+.internal-preview[data-on="true"] .internal-preview-badge {
+  animation-duration: 6s;
+  animation-delay: -2s;
+}
+
+/* Admin: a selection walks down the rows, one every 1.6 s, as if someone reviews them. */
+.internal-preview-row {
+  margin-inline: -0.8cqw;
+  padding-inline: 0.8cqw;
+  border-radius: 0.6cqw;
+}
+
+@keyframes ip-row-focus {
+  0%,
+  16%,
+  100% {
+    background-color: transparent;
+  }
+
+  4%,
+  12% {
+    background-color: var(--ip-violet-soft);
+  }
+}
+
+.internal-preview[data-on="true"] .internal-preview-row {
+  animation: ip-row-focus 11.2s ease-in-out infinite;
+  animation-delay: calc(var(--row-i, 0) * 1.6s);
+}
+
+/* Drafts get published now and then: amber eases to green, then back. */
+@keyframes ip-publish {
+  0%,
+  40%,
+  100% {
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
+  }
+
+  50%,
+  85% {
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
+  }
+}
+
+.internal-preview[data-on="true"]
+  .internal-preview-status[data-status="draft"] {
+  animation: ip-publish 9s ease-in-out infinite;
+}
+
+/* Portal: course progress fills in on arrival. */
+@keyframes ip-progress {
+  from {
+    --progress: 0%;
+  }
+}
+
+.internal-preview[data-on="true"] .internal-preview-progress {
+  animation: ip-progress 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}

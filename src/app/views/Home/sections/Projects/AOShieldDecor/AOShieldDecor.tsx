@@ -8,7 +8,8 @@ const SHIELD = "M-40 -46 0 -56l40 10v38c0 28-18 48-40 58-22-10-40-30-40-58z";
 
 /**
  * AOShield's motif: the logo's shield as nested outlines around the content, like layers of
- * protection, over a faint dot grid. Decorative; the outlines draw in when the intro reveals.
+ * protection, over a faint dot grid. Decorative; the outlines draw in when the intro reveals,
+ * then a light keeps running around the inner one.
  */
 export function AOShieldDecor() {
   return (
@@ -25,6 +26,13 @@ export function AOShieldDecor() {
             style={step(i)}
           />
         ))}
+        <path
+          d={SHIELD}
+          transform="scale(1.5)"
+          vectorEffect="non-scaling-stroke"
+          pathLength={1}
+          className="aos-decor-trace"
+        />
       </svg>
     </div>
   );

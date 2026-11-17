@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 import { CHART_AREA, CHART_LINE, FEED, KPIS } from "./constants";
 
 /** Dashboard skeleton: toolbar, key figures, a chart and a feed. Shapes only. */
@@ -12,8 +14,12 @@ export function ClientDashboard() {
         <span className="internal-preview-button" />
       </span>
       <span className="client-preview-kpis">
-        {KPIS.map((kpi) => (
-          <span key={kpi.width} className="client-preview-kpi">
+        {KPIS.map((kpi, i) => (
+          <span
+            key={kpi.width}
+            className="client-preview-kpi"
+            style={{ "--kpi-i": i } as CSSProperties}
+          >
             <span
               className="internal-preview-line internal-preview-line-soft"
               style={{ width: "50%" }}
@@ -38,8 +44,12 @@ export function ClientDashboard() {
           </svg>
         </span>
         <span className="client-preview-feed">
-          {FEED.map((width) => (
-            <span key={width} className="client-preview-feed-item">
+          {FEED.map((width, i) => (
+            <span
+              key={width}
+              className="client-preview-feed-item"
+              style={{ "--feed-i": i } as CSSProperties}
+            >
               <span className="client-preview-dot" />
               <span
                 className="internal-preview-line"

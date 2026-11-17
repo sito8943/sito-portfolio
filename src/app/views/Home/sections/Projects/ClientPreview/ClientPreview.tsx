@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,10 +12,11 @@ import type { ClientPreviewProps } from "./types";
 /**
  * A client project under NDA shown without showing it: a skeleton app, shapes only, in
  * AOShield's blue. `dashboard` (figures, chart, feed, a toast) or `board` (task columns, a mini
- * calendar). Shares `InternalPreview`'s palette, pieces and light/dark cycle. Decorative.
+ * calendar). Shares `InternalPreview`'s palette, pieces, light/dark cycle and in-use motion.
+ * Decorative.
  */
 export function ClientPreview({ variant, badge }: ClientPreviewProps) {
-  const { ref, theme } = useThemeCycle<HTMLDivElement>();
+  const { ref, theme, onScreen } = useThemeCycle<HTMLDivElement>();
 
   return (
     <div
@@ -22,6 +24,7 @@ export function ClientPreview({ variant, badge }: ClientPreviewProps) {
       className="internal-preview client-preview"
       data-variant={variant}
       data-theme={theme}
+      data-on={onScreen}
       aria-hidden="true"
     >
       <div className="internal-preview-card client-preview-app">
@@ -52,6 +55,7 @@ export function ClientPreview({ variant, badge }: ClientPreviewProps) {
               <span
                 key={day}
                 className="client-preview-day"
+                style={{ "--day-i": day } as CSSProperties}
                 data-booked={CALENDAR_BOOKED.some((d) => d === day)}
                 data-today={day === CALENDAR_TODAY}
               />

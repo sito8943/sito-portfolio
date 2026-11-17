@@ -31,6 +31,11 @@ export const COLUMNS = [
   ],
 ] as const;
 
+/** Index of each column's first task, so every card gets its own turn to lift. */
+export const TASK_OFFSETS = COLUMNS.map((_, c) =>
+  COLUMNS.slice(0, c).reduce((total, column) => total + column.length, 0),
+);
+
 /** Board's mini calendar: 4 weeks × 7 days; these days are booked, this one is today. */
 export const CALENDAR_DAYS = 28;
 export const CALENDAR_BOOKED = [3, 9, 10, 16, 23] as const;

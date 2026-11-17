@@ -1,4 +1,6 @@
-import { COLUMNS } from "./constants";
+import type { CSSProperties } from "react";
+
+import { COLUMNS, TASK_OFFSETS } from "./constants";
 
 /** Board skeleton: toolbar and task columns with tagged cards. Shapes only. */
 export function ClientBoard() {
@@ -22,8 +24,14 @@ export function ClientBoard() {
               />
               <span className="client-preview-count" />
             </span>
-            {tasks.map((task) => (
-              <span key={task.width} className="client-preview-task">
+            {tasks.map((task, t) => (
+              <span
+                key={task.width}
+                className="client-preview-task"
+                style={
+                  { "--task-i": (TASK_OFFSETS[c] ?? 0) + t } as CSSProperties
+                }
+              >
                 <span className="client-preview-tag" data-tag={task.tag} />
                 <span
                   className="internal-preview-line"
