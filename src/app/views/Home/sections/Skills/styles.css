@@ -7,16 +7,28 @@
     @apply flex flex-col items-center gap-8 mx-auto max-w-4xl;
   }
 
+  /* The two proof points, as headline figures: brand-red number over a small caps label. */
   .skills-highlights {
-    @apply flex flex-wrap justify-center gap-3;
+    @apply flex justify-center gap-12 sm:gap-6;
   }
 
   .skills-highlight {
-    @apply flex items-center gap-2 px-4 py-2 rounded-full text-sm text-white-hover bg-white/5 border border-white/10;
+    @apply flex flex-col items-center gap-2 text-center text-xs uppercase tracking-[0.2em] text-white-hover;
+  }
+
+  .skills-highlight + .skills-highlight {
+    @apply border-l border-white/10 pl-12 sm:pl-6;
   }
 
   .skills-highlight-number {
-    @apply text-base font-bold text-white;
+    @apply text-6xl font-bold leading-none tracking-normal text-secondary md:text-5xl;
+    font-family: "Poppins", sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Final figure for screen readers; the counting one is decorative. */
+  .skills-highlight-value {
+    @apply sr-only;
   }
 
   /* Wraps instead of shrinking: one row of 5 on desktop, 3 + 2 below 1024px. */

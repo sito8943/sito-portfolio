@@ -15,3 +15,6 @@ export const nextTabIndex = (key: string, current: number, total: number) => {
   if (key === "End") return total - 1;
   return null;
 };
+
+/** Fast start, gentle landing: `t` and the result both run 0 to 1. */
+export const easeOutCubic = (t: number) => 1 - (1 - t) ** 3;

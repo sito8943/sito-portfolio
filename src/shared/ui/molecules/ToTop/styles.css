@@ -16,4 +16,14 @@
   .to-top[data-shown="false"] {
     @apply -z-10 scale-0;
   }
+
+  /* Hidden button: the anchor keeps its box under the cursor, so drop its hover and tooltip. */
+  .to-top-anchor:has(.to-top[data-shown="false"]) {
+    @apply pointer-events-none;
+  }
+
+  .to-top-anchor:has(.to-top[data-shown="false"]) .sito-ui-tooltip__content {
+    @apply invisible opacity-0;
+    transition-delay: 0s;
+  }
 }

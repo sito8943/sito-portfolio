@@ -1,1 +1,0 @@
-export { CopyEmail } from "./CopyEmail";
