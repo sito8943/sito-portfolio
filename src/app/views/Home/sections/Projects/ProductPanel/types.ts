@@ -4,9 +4,9 @@ import type { StageFact } from "../StageIntro";
 
 export type ProductMedia = "bleed" | "frame" | "brand";
 
-/** A product shown by its brand (no app screenshots): its mark on its own colours. */
+/** A product shown by its brand (no app screenshots): its mark (if any) on its own colours. */
 export type ProductBrand = {
-  Mark: ComponentType<{ className?: string }>;
+  Mark?: ComponentType<{ className?: string }> | undefined;
   background: string;
   color: string;
 };
@@ -32,7 +32,8 @@ export type ProductPanelProps = {
   alt: string;
   /** `bleed`: the screenshot fills the panel; `frame`: in a browser frame; `brand`: the product's mark on its colours. */
   media: ProductMedia;
-  link: string;
+  /** Omitted when there is no public site: no "visit" link. */
+  link?: string | undefined;
   visitLabel: string;
   facts: StageFact[];
   /** The media already shows the name (e.g. a logo in the clip): keep the title for screen readers only. */

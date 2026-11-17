@@ -44,8 +44,6 @@ export const STAGES: Stage[] = [
   },
   {
     id: "harbourSpace",
-    // The CMS and Student Space: internal, so counted but not shown.
-    unlisted: 2,
     products: [
       {
         id: "harbourSpaceWeb",
@@ -58,6 +56,15 @@ export const STAGES: Stage[] = [
         media: "bleed",
         hideTitle: true,
         link: LINKS.HARBOUR_SPACE,
+      },
+      {
+        // Two internal platforms: named generically, drawn as skeletons, never shown (private).
+        id: "harbourSpaceInternal",
+        image: "",
+        media: "brand",
+        brand: { background: "#3f1f89", color: "#fbfbfb" },
+        feature: "internalPreview",
+        count: 2,
       },
     ],
   },
@@ -88,9 +95,9 @@ export const UNIVERSE_PRODUCTS: UniverseProduct[] = [
   },
 ];
 
-/** Every live product in the journey, unlisted ones included (the Stack highlight counts them). */
+/** Every live product in the journey, grouped internal ones included (the Stack highlight counts them). */
 export const PRODUCTS_IN_PRODUCTION =
-  STAGES.reduce(
-    (total, stage) => total + stage.products.length + (stage.unlisted ?? 0),
+  STAGES.flatMap((stage) => stage.products).reduce(
+    (total, product) => total + (product.count ?? 1),
     0,
   ) + UNIVERSE_PRODUCTS.length;

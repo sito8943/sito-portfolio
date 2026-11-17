@@ -142,6 +142,7 @@ export const _pages: Resources["_pages"] = {
       lead: "Tres etapas: de construir para otros a construir mis propios productos.",
       stageLabel: "Etapa {{number}}",
       visit: "Visitar sitio",
+      privateAccess: "Acceso privado",
       labels: {
         role: "Rol",
         period: "Periodo",
@@ -206,6 +207,11 @@ export const _pages: Resources["_pages"] = {
           title: "Harbour.Space",
           kind: "Web institucional",
           text: "La web pública de Harbour.Space: programas, admisiones y cursos para estudiantes de todo el mundo.",
+        },
+        harbourSpaceInternal: {
+          title: "Herramientas internas",
+          kind: "Plataformas internas",
+          text: "Plataformas internas para el equipo y los estudiantes. Son privadas, así que aquí solo puedo contarlas, no enseñarlas.",
         },
       },
     },

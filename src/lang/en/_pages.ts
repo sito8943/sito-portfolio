@@ -141,6 +141,7 @@ export const _pages = {
       lead: "Three stages: from building for others to building my own products.",
       stageLabel: "Stage {{number}}",
       visit: "Visit site",
+      privateAccess: "Private access",
       labels: {
         role: "Role",
         period: "Period",
@@ -206,6 +207,11 @@ export const _pages = {
           title: "Harbour.Space",
           kind: "University website",
           text: "Harbour.Space's public website: programmes, admissions and courses for students from all over the world.",
+        },
+        harbourSpaceInternal: {
+          title: "Internal tools",
+          kind: "Internal platforms",
+          text: "Internal platforms for the team and the students. They're private, so here I can only tell, not show.",
         },
       },
     },

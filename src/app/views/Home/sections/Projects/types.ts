@@ -19,15 +19,20 @@ export type Product = {
   media: ProductMedia;
   /** The media already shows the product's name. */
   hideTitle?: boolean;
-  link: string;
+  /** Shown by a drawn mark on a colour instead of a screenshot (`media: "brand"`). */
+  brand?: ProductBrand;
+  /** No public site (internal tools): the chapter has no "visit" link. */
+  link?: string;
+  /** A live piece drawn large in the middle of the chapter. */
+  feature?: "internalPreview";
+  /** Live products this chapter stands for (internal tools grouped in one), 1 by default. */
+  count?: number;
 };
 
 /** A career stage: the company's intro, then its products as stacked panels. */
 export type Stage = {
   id: StageId;
   products: Product[];
-  /** Live products not shown as chapters (internal tools): they only count. */
-  unlisted?: number;
 };
 
 /** A stage's identity pieces, drawn in its intro. */
