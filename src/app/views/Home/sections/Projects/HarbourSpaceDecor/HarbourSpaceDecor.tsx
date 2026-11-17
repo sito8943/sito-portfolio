@@ -4,14 +4,15 @@ import type { CSSProperties } from "react";
 const step = (i: number) => ({ "--decor-i": i }) as CSSProperties;
 
 /**
- * Harbour.Space's graphic motifs (as on harbour.space): the hero's big circle with a diagonal
- * lattice, and thin line-art circuits ending in small circles and diamonds. Decorative; they
+ * Harbour.Space's graphic motifs (as on harbour.space): their diagonal lattice spread over the
+ * whole intro (not the hero's circle, which the website clip right after already shows), and
+ * thin line-art circuits ending in small circles and diamonds. Decorative; they
  * draw in when the stage intro reveals.
  */
 export function HarbourSpaceDecor() {
   return (
     <div className="hs-decor" aria-hidden="true">
-      <span className="hs-decor-circle" />
+      <span className="hs-decor-lattice" />
       <svg
         className="hs-decor-circuit hs-decor-circuit-left"
         viewBox="0 0 220 160"
