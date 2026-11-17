@@ -35,10 +35,16 @@
 @import "../../../app/views/Home/sections/Projects/StageIntro/animations.css";
 @import "../../../app/views/Home/sections/Projects/InmersoftDecor/styles.css";
 @import "../../../app/views/Home/sections/Projects/InmersoftDecor/animations.css";
+@import "../../../app/views/Home/sections/Projects/AOShieldDecor/styles.css";
+@import "../../../app/views/Home/sections/Projects/AOShieldDecor/animations.css";
 @import "../../../app/views/Home/sections/Projects/HarbourSpaceDecor/styles.css";
 @import "../../../app/views/Home/sections/Projects/HarbourSpaceDecor/animations.css";
 @import "../../../app/views/Home/sections/Projects/ProductPanel/styles.css";
 @import "../../../app/views/Home/sections/Projects/DeckGlobe/styles.css";
+@import "../../../app/views/Home/sections/Projects/InternalPreview/styles.css";
+@import "../../../app/views/Home/sections/Projects/InternalPreview/animations.css";
+@import "../../../app/views/Home/sections/Projects/ClientPreview/styles.css";
+@import "../../../app/views/Home/sections/Projects/ClientPreview/animations.css";
 @import "../../../app/views/Home/sections/Projects/SitoUniverseDecor/styles.css";
 @import "../../../app/views/Home/sections/Projects/SitoUniverseDecor/animations.css";
 @import "../../../app/views/Home/sections/Contact/styles.css";

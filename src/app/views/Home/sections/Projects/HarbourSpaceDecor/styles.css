@@ -12,9 +12,9 @@
     );
   }
 
-  /* The hero's circle: their violet with a fine diagonal lattice, behind the content. */
-  .hs-decor-circle {
-    @apply absolute left-1/2 top-1/2 size-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full md:size-80;
+  /* Their lattice over the whole intro: violet glow at the centre, fading out to the edges. */
+  .hs-decor-lattice {
+    @apply absolute inset-0;
     background:
       repeating-linear-gradient(
         45deg,
@@ -26,7 +26,13 @@
         rgb(255 255 255 / 7%) 0 1px,
         transparent 1px 28px
       ),
-      radial-gradient(circle, #4b2695 0%, rgb(75 38 149 / 55%) 70%);
+      radial-gradient(
+        ellipse at center,
+        rgb(75 38 149 / 55%) 0%,
+        rgb(75 38 149 / 20%) 55%,
+        transparent 80%
+      );
+    mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
   }
 
   .hs-decor-circuit {

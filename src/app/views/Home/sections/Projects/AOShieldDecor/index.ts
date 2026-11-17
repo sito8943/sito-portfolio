@@ -1,0 +1,1 @@
+export { AOShieldDecor } from "./AOShieldDecor";

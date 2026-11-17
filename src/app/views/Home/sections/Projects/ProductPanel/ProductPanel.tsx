@@ -11,7 +11,7 @@ import type { ProductPanelProps } from "./types";
 
 /**
  * A full-screen product chapter that sticks while the next one slides over it: big
- * title, its screenshot, a facts list and a link to the live site.
+ * title, its screenshot, a facts list and a link to the live site (when there is one).
  */
 export function ProductPanel({
   eyebrow,
@@ -59,7 +59,7 @@ export function ProductPanel({
           } as CSSProperties
         }
       >
-        {media === "brand" && brand ? (
+        {media === "brand" && brand?.Mark ? (
           <brand.Mark className="product-panel-brand-mark" />
         ) : null}
         {media === "bleed" && video && playClip ? (
@@ -110,18 +110,20 @@ export function ProductPanel({
           </dl>
           <div className="product-panel-copy">
             <p>{text}</p>
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className="product-panel-cta"
-            >
-              {visitLabel}
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="product-panel-cta-arrow"
-              />
-            </a>
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="product-panel-cta"
+              >
+                {visitLabel}
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="product-panel-cta-arrow"
+                />
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

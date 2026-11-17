@@ -7,6 +7,8 @@ import sitoDeck from "@/assets/images/projects/sito-deck.webp";
 import harbourSpaceHeroMp4 from "@/assets/videos/harbour-space-hero.mp4";
 import harbourSpaceHeroWebm from "@/assets/videos/harbour-space-hero.webm";
 
+import { AOShieldDecor } from "./AOShieldDecor";
+import { AOShieldLogo } from "./AOShieldLogo";
 import { HarbourSpaceDecor } from "./HarbourSpaceDecor";
 import { HarbourSpaceLogo } from "./HarbourSpaceLogo";
 import { InmersoftDecor } from "./InmersoftDecor";
@@ -18,6 +20,7 @@ import type { Stage, StageBrand, StageId, UniverseProduct } from "./types";
 /** Each stage's identity pieces: its logo and its motifs. */
 export const STAGE_BRANDS: Record<StageId, StageBrand> = {
   inmersoft: { Logo: InmersoftLogo, Decor: InmersoftDecor },
+  aoshield: { Logo: AOShieldLogo, Decor: AOShieldDecor },
   harbourSpace: { Logo: HarbourSpaceLogo, Decor: HarbourSpaceDecor },
 };
 
@@ -43,9 +46,27 @@ export const STAGES: Stage[] = [
     ],
   },
   {
+    id: "aoshield",
+    // Client projects under NDA: no client or tool names, drawn as skeletons, never shown.
+    products: [
+      {
+        id: "aoshieldClientA",
+        image: "",
+        media: "brand",
+        brand: { background: "#1b2150", color: "#fbfbfb" },
+        feature: "clientDashboard",
+      },
+      {
+        id: "aoshieldClientB",
+        image: "",
+        media: "brand",
+        brand: { background: "#1b2150", color: "#fbfbfb" },
+        feature: "clientBoard",
+      },
+    ],
+  },
+  {
     id: "harbourSpace",
-    // The CMS and Student Space: internal, so counted but not shown.
-    unlisted: 2,
     products: [
       {
         id: "harbourSpaceWeb",
@@ -58,6 +79,15 @@ export const STAGES: Stage[] = [
         media: "bleed",
         hideTitle: true,
         link: LINKS.HARBOUR_SPACE,
+      },
+      {
+        // Two internal platforms: named generically, drawn as skeletons, never shown (private).
+        id: "harbourSpaceInternal",
+        image: "",
+        media: "brand",
+        brand: { background: "#3f1f89", color: "#fbfbfb" },
+        feature: "internalPreview",
+        count: 2,
       },
     ],
   },
@@ -88,9 +118,9 @@ export const UNIVERSE_PRODUCTS: UniverseProduct[] = [
   },
 ];
 
-/** Every live product in the journey, unlisted ones included (the Stack highlight counts them). */
+/** Every live product in the journey, grouped internal ones included (the Stack highlight counts them). */
 export const PRODUCTS_IN_PRODUCTION =
-  STAGES.reduce(
-    (total, stage) => total + stage.products.length + (stage.unlisted ?? 0),
+  STAGES.flatMap((stage) => stage.products).reduce(
+    (total, product) => total + (product.count ?? 1),
     0,
   ) + UNIVERSE_PRODUCTS.length;

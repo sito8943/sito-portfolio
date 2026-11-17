@@ -1,0 +1,245 @@
+@layer components {
+  /* Client projects reuse InternalPreview's palette and pieces, in AOShield's blue. */
+  .client-preview {
+    --ip-violet: #1e74b6;
+    --ip-violet-soft: #dbe8f5;
+  }
+
+  .client-preview[data-theme="dark"] {
+    --ip-violet: #6878d6;
+    --ip-violet-soft: #252b4a;
+    --ip-surface: #121626;
+    --ip-chrome: #1a1f33;
+    --ip-nav: #161a2c;
+    --ip-ink: #2f3550;
+    --ip-ink-soft: #242a40;
+    --ip-title: #4b5378;
+  }
+
+  .client-preview-app {
+    @apply left-0 top-0 h-[90%] w-[90%];
+  }
+
+  .client-preview[data-variant="board"] .client-preview-app {
+    @apply left-auto right-0;
+  }
+
+  .client-preview-body {
+    @apply flex min-h-0 flex-1 flex-col;
+    gap: 1.8cqw;
+    padding: 2.2cqw 2.6cqw;
+  }
+
+  .client-preview-toolbar {
+    @apply flex items-center justify-between;
+  }
+
+  /* Dashboard */
+  .client-preview-kpis {
+    @apply grid grid-cols-3;
+    gap: 1.6cqw;
+  }
+
+  .client-preview-kpi {
+    @apply flex flex-col;
+    gap: 1cqw;
+    padding: 1.6cqw;
+    border-radius: 1cqw;
+    background-color: var(--ip-nav);
+    box-shadow: inset 0 0 0 1px var(--ip-rule);
+  }
+
+  .client-preview-figure {
+    @apply block rounded-full;
+    height: 2.2cqw;
+    background-color: var(--ip-title);
+  }
+
+  .client-preview-trend {
+    @apply block rounded-full;
+    width: 5cqw;
+    height: 1.4cqw;
+  }
+
+  .client-preview-trend[data-up="true"] {
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
+  }
+
+  .client-preview-trend[data-up="false"] {
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
+  }
+
+  .client-preview-split {
+    @apply grid min-h-0 flex-1 grid-cols-[1.7fr_1fr];
+    gap: 1.6cqw;
+  }
+
+  .client-preview-chart {
+    @apply block min-h-0;
+    padding: 1.6cqw;
+    border-radius: 1cqw;
+    box-shadow: inset 0 0 0 1px var(--ip-rule);
+  }
+
+  .client-preview-chart svg {
+    @apply block size-full overflow-visible;
+  }
+
+  .client-preview-chart-area {
+    fill: var(--ip-violet);
+    opacity: 0.16;
+  }
+
+  .client-preview-chart-line {
+    fill: none;
+    stroke: var(--ip-violet);
+    stroke-width: 2;
+  }
+
+  .client-preview-feed {
+    @apply flex flex-col justify-around;
+  }
+
+  .client-preview-feed-item {
+    @apply flex items-center;
+    gap: 1cqw;
+  }
+
+  .client-preview-feed-item .internal-preview-line {
+    @apply flex-none;
+  }
+
+  .client-preview-dot {
+    @apply block shrink-0 rounded-full;
+    width: 1.6cqw;
+    height: 1.6cqw;
+    background-color: var(--ip-violet);
+  }
+
+  .client-preview-toast {
+    @apply bottom-[2%] right-0 z-10 flex w-[38%] flex-row items-center;
+    gap: 1.4cqw;
+    padding: 1.8cqw 2cqw;
+  }
+
+  .client-preview-toast-icon {
+    @apply grid shrink-0 place-items-center rounded-full;
+    width: 4cqw;
+    height: 4cqw;
+    font-size: 1.8cqw;
+    color: var(--ip-surface);
+    background-color: #00997b;
+  }
+
+  /* Board */
+  .client-preview-columns {
+    @apply grid min-h-0 flex-1 grid-cols-3;
+    gap: 1.6cqw;
+  }
+
+  .client-preview-column {
+    @apply flex min-h-0 flex-col overflow-hidden;
+    gap: 1.2cqw;
+    padding: 1.4cqw;
+    border-radius: 1cqw;
+    background-color: var(--ip-nav);
+    box-shadow: inset 0 0 0 1px var(--ip-rule);
+  }
+
+  .client-preview-column-head {
+    @apply flex items-center;
+    gap: 1cqw;
+  }
+
+  .client-preview-count {
+    @apply ml-auto block rounded-full;
+    width: 2.6cqw;
+    height: 1.6cqw;
+    background-color: var(--ip-ink-soft);
+  }
+
+  .client-preview-task {
+    @apply flex flex-col;
+    gap: 0.9cqw;
+    padding: 1.3cqw;
+    border-radius: 0.8cqw;
+    background-color: var(--ip-surface);
+    box-shadow:
+      0 0 0 1px var(--ip-rule),
+      0 0.3cqw 0.8cqw rgb(16 6 48 / 8%);
+  }
+
+  .client-preview-tag {
+    @apply block rounded-full;
+    width: 5cqw;
+    height: 1.2cqw;
+  }
+
+  .client-preview-tag[data-tag="accent"] {
+    background-color: var(--ip-violet-soft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-violet);
+  }
+
+  .client-preview-tag[data-tag="green"] {
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
+  }
+
+  .client-preview-tag[data-tag="amber"] {
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
+  }
+
+  .client-preview-avatars {
+    @apply flex;
+  }
+
+  .client-preview-avatar {
+    @apply block rounded-full;
+    width: 2.2cqw;
+    height: 2.2cqw;
+    background: linear-gradient(135deg, #8fa0ee, var(--ip-violet));
+    box-shadow: 0 0 0 0.3cqw var(--ip-surface);
+  }
+
+  .client-preview-avatar + .client-preview-avatar {
+    margin-left: -0.6cqw;
+    background: linear-gradient(135deg, #7fd6c4, #00997b);
+  }
+
+  .client-preview-calendar {
+    @apply bottom-0 left-0 z-10 w-[34%];
+    gap: 1.4cqw;
+    padding: 2cqw;
+  }
+
+  .client-preview-days {
+    @apply grid grid-cols-7;
+    gap: 0.8cqw;
+  }
+
+  .client-preview-day {
+    @apply block aspect-square rounded-full;
+    background-color: var(--ip-ink-soft);
+  }
+
+  .client-preview-day[data-booked="true"] {
+    background-color: var(--ip-violet-soft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-violet);
+  }
+
+  .client-preview-day[data-today="true"] {
+    background-color: var(--ip-violet);
+  }
+
+  /* Badges overlap the app's free edge, like the internal tools' one. */
+  .client-preview-badge {
+    @apply bottom-auto right-0 top-[40%];
+  }
+
+  .client-preview[data-variant="board"] .client-preview-badge {
+    @apply left-0 right-auto top-[24%];
+  }
+}

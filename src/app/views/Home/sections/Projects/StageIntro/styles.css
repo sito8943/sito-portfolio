@@ -73,6 +73,31 @@
 
   /* Harbour.Space (harbour.space) in dark mode: its footer's deep violet (#2A1751) as the
      page, white text, DM Sans (free stand-in for Apercu Pro), heavy uppercase like its titles. */
+  /* AOShield (aoshield.com) in dark mode: its navy (#242a56) as the page, white text, Poppins,
+     its periwinkle (#6878d6) for the label and the rule. */
+  .stage-intro[data-brand="aoshield"] {
+    color: #ffffff;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #242a56 22%,
+      #242a56 78%,
+      transparent 100%
+    );
+  }
+
+  .stage-intro[data-brand="aoshield"] * {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .stage-intro[data-brand="aoshield"] .stage-intro-label {
+    color: #a3adf0;
+  }
+
+  .stage-intro[data-brand="aoshield"] .stage-intro-tagline::before {
+    background-color: #6878d6;
+  }
+
   .stage-intro[data-brand="harbourSpace"] {
     color: #ffffff;
     background: linear-gradient(

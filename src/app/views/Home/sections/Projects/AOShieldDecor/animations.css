@@ -1,0 +1,49 @@
+/* AOShield motifs drawing in with the stage intro (.stage-intro[data-shown]).
+   Unlayered hand-written motion; reduced motion shows them at once (base.css). */
+
+.aos-decor-grid {
+  opacity: 0;
+  transition: opacity 1200ms ease-out;
+}
+
+/* Shields: each outline draws along its path (pathLength = 1), inner first. */
+.aos-decor-shields path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1400ms cubic-bezier(0.65, 0, 0.35, 1);
+  transition-delay: calc(300ms + var(--decor-i, 0) * 220ms);
+}
+
+.stage-intro[data-shown="true"] .aos-decor-grid {
+  opacity: 1;
+}
+
+.stage-intro[data-shown="true"] .aos-decor-shields path {
+  stroke-dashoffset: 0;
+}
+
+/* Once drawn, a short light keeps running around the inner shield. */
+.aos-decor-shields .aos-decor-trace {
+  stroke: #c3cbff;
+  stroke-width: 2.5;
+  stroke-dasharray: 0.08 0.92;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #6878d6);
+  transition: opacity 600ms ease-out 1.8s;
+}
+
+@keyframes aos-trace {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stage-intro[data-shown="true"] .aos-decor-shields .aos-decor-trace {
+  opacity: 1;
+  animation: aos-trace 6s linear 1.8s infinite backwards;
+}

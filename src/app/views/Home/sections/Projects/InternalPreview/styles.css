@@ -1,0 +1,240 @@
+@layer components {
+  /* Two skeleton apps, front admin over back portal. Every size is in container units (cqw),
+     so the whole piece scales as one image on any screen. */
+  /* Palette, light by default; the values fade (see animations.css) when the theme flips. */
+  .internal-preview {
+    --ip-violet: #4b2695;
+    --ip-violet-soft: #e9e3f8;
+    --ip-ink: #d9d4e6;
+    --ip-ink-soft: #ece9f2;
+    --ip-surface: #ffffff;
+    --ip-chrome: #f6f4fb;
+    --ip-nav: #faf9fd;
+    --ip-title: #b9b1cf;
+    --ip-rule: rgb(0 0 0 / 6%);
+    --ip-check: rgb(0 0 0 / 15%);
+    --ip-live: #d6f2e9;
+    --ip-live-edge: rgb(0 153 123 / 20%);
+    --ip-draft: #fbecd4;
+    --ip-draft-edge: rgb(215 148 46 / 20%);
+    @apply relative block aspect-[16/10] h-full max-h-[26rem] w-auto max-w-full;
+    container-type: inline-size;
+  }
+
+  .internal-preview[data-theme="dark"] {
+    --ip-violet: #8b6cf0;
+    --ip-violet-soft: #2c2546;
+    --ip-ink: #3a3157;
+    --ip-ink-soft: #2c2546;
+    --ip-surface: #17122b;
+    --ip-chrome: #201a3a;
+    --ip-nav: #1b1532;
+    --ip-title: #5a4f80;
+    --ip-rule: rgb(255 255 255 / 7%);
+    --ip-check: rgb(255 255 255 / 20%);
+    --ip-live: #0f3b33;
+    --ip-live-edge: rgb(45 212 191 / 25%);
+    --ip-draft: #45321a;
+    --ip-draft-edge: rgb(245 165 36 / 25%);
+  }
+
+  .internal-preview-card {
+    @apply absolute flex flex-col overflow-hidden;
+    background-color: var(--ip-surface);
+    border-radius: 1.6cqw;
+    box-shadow:
+      0 0 0 1px var(--ip-rule),
+      0 2cqw 5cqw rgb(16 6 48 / 45%),
+      0 0.4cqw 1cqw rgb(16 6 48 / 25%);
+  }
+
+  .internal-preview-bar {
+    @apply block shrink-0 border-b;
+    border-color: var(--ip-rule);
+    background-color: var(--ip-chrome);
+    height: 3.2cqw;
+    background-image:
+      radial-gradient(circle, #ff5f57 0.5cqw, transparent 0.6cqw),
+      radial-gradient(circle, #febc2e 0.5cqw, transparent 0.6cqw),
+      radial-gradient(circle, #28c840 0.5cqw, transparent 0.6cqw);
+    background-size: 1.6cqw 1.6cqw;
+    background-position:
+      1.6cqw center,
+      3.4cqw center,
+      5.2cqw center;
+    background-repeat: no-repeat;
+  }
+
+  .internal-preview-line {
+    @apply block rounded-full;
+    height: 0.9cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .internal-preview-line-soft {
+    background-color: var(--ip-ink-soft);
+  }
+
+  /* Back: the portal, up and to the right, a little smaller. */
+  .internal-preview-portal {
+    @apply right-0 top-0 w-[54%] h-[62%];
+  }
+
+  .internal-preview-portal-head {
+    @apply flex items-center;
+    gap: 1.4cqw;
+    padding: 2cqw 2.2cqw 1.4cqw;
+  }
+
+  .internal-preview-avatar {
+    @apply block shrink-0 rounded-full;
+    width: 4cqw;
+    height: 4cqw;
+    background: linear-gradient(135deg, #8b6cf0, var(--ip-violet));
+  }
+
+  .internal-preview-lines {
+    @apply flex flex-1 flex-col;
+    gap: 0.9cqw;
+  }
+
+  .internal-preview-tiles {
+    @apply grid grid-cols-3;
+    gap: 1.4cqw;
+    padding: 0.6cqw 2.2cqw 2.2cqw;
+  }
+
+  .internal-preview-tile {
+    @apply flex flex-col;
+    gap: 0.9cqw;
+  }
+
+  .internal-preview-tile-thumb {
+    @apply block aspect-[4/3] w-full;
+    border-radius: 0.8cqw;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        rgb(255 255 255 / 18%) 0 1px,
+        transparent 1px 1.4cqw
+      ),
+      linear-gradient(135deg, #6a46d6, var(--ip-violet));
+  }
+
+  .internal-preview-progress {
+    @apply block overflow-hidden rounded-full;
+    height: 0.6cqw;
+    background: linear-gradient(
+      90deg,
+      var(--ip-violet) var(--progress),
+      var(--ip-violet-soft) var(--progress)
+    );
+  }
+
+  /* Front: the admin, down and to the left, over the portal. */
+  .internal-preview-admin {
+    @apply bottom-0 left-0 z-10 w-[70%] h-[74%];
+  }
+
+  .internal-preview-admin-body {
+    @apply flex min-h-0 flex-1;
+  }
+
+  .internal-preview-nav {
+    @apply flex shrink-0 flex-col border-r;
+    border-color: var(--ip-rule);
+    background-color: var(--ip-nav);
+    width: 20%;
+    gap: 1.2cqw;
+    padding: 2cqw 1.6cqw;
+  }
+
+  .internal-preview-logo {
+    @apply block;
+    width: 3cqw;
+    height: 3cqw;
+    margin-bottom: 0.8cqw;
+    border-radius: 0.8cqw;
+    background-color: var(--ip-violet);
+  }
+
+  .internal-preview-nav-item {
+    @apply block w-full rounded-full;
+    height: 0.9cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .internal-preview-nav-item[data-active="true"] {
+    background-color: var(--ip-violet);
+  }
+
+  .internal-preview-main {
+    @apply flex flex-1 flex-col;
+    padding: 2cqw 2.4cqw;
+  }
+
+  .internal-preview-toolbar {
+    @apply flex items-center justify-between;
+    margin-bottom: 1.6cqw;
+  }
+
+  .internal-preview-title {
+    height: 1.4cqw;
+    background-color: var(--ip-title);
+  }
+
+  .internal-preview-button {
+    @apply block rounded-full;
+    width: 8cqw;
+    height: 2.6cqw;
+    background-color: var(--ip-violet);
+  }
+
+  .internal-preview-row {
+    @apply flex items-center border-t;
+    border-color: var(--ip-rule);
+    gap: 1.4cqw;
+    padding: 1.35cqw 0;
+  }
+
+  .internal-preview-row .internal-preview-line {
+    @apply flex-none;
+  }
+
+  .internal-preview-check {
+    @apply block shrink-0 border;
+    border-color: var(--ip-check);
+    width: 1.4cqw;
+    height: 1.4cqw;
+    border-radius: 0.35cqw;
+  }
+
+  .internal-preview-status {
+    @apply ml-auto block shrink-0 rounded-full;
+    width: 5.4cqw;
+    height: 1.8cqw;
+  }
+
+  .internal-preview-status[data-status="live"] {
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
+  }
+
+  .internal-preview-status[data-status="draft"] {
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
+  }
+
+  /* Glass badge pinned to the portal's lower corner. */
+  .internal-preview-badge {
+    @apply absolute z-20 flex items-center whitespace-nowrap rounded-full text-white ring-1 ring-white/25 backdrop-blur-md;
+    right: 3%;
+    bottom: 33%;
+    gap: 1cqw;
+    padding: 1.1cqw 2cqw;
+    font-size: max(0.75rem, 1.7cqw);
+    letter-spacing: 0.04em;
+    background-color: rgb(30 12 80 / 55%);
+    box-shadow: 0 1cqw 3cqw rgb(16 6 48 / 40%);
+  }
+}

@@ -1,0 +1,43 @@
+@layer components {
+  /* AOShield motifs in its periwinkle (#6878d6), readable on the navy intro. */
+  .aos-decor {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+    color: #6878d6;
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 22%,
+      #000 78%,
+      transparent 100%
+    );
+  }
+
+  .aos-decor-grid {
+    @apply absolute inset-0;
+    background-image: radial-gradient(
+      circle,
+      rgb(104 120 214 / 35%) 1px,
+      transparent 1.5px
+    );
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+  }
+
+  .aos-decor-shields {
+    @apply absolute left-1/2 top-1/2 size-[38rem] -translate-x-1/2 -translate-y-1/2 md:size-[26rem];
+  }
+
+  .aos-decor-shields path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  .aos-decor-shields path:nth-child(2) {
+    opacity: 0.6;
+  }
+
+  .aos-decor-shields path:nth-child(3) {
+    opacity: 0.3;
+  }
+}
