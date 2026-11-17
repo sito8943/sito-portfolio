@@ -225,9 +225,9 @@ export const _pages = {
     contact: {
       title: "Let's talk",
       body: "My inbox is always open: proposals, questions or just to say hi.",
+      write: "Email me",
       downloadCV: "Download CV",
-      copy: "Copy email",
-      copied: "Copied!",
+      also: "Also on",
     },
   },
   footer: {

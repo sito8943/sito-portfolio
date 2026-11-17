@@ -41,11 +41,42 @@
     @apply -mt-2 max-w-xl;
   }
 
+  .contact-actions {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
   .contact-action {
     @apply px-6 py-3 text-base;
   }
 
-  /* Signature: isotype in red beside the logotype, over the email link. */
+  /* Outlined on navy: white edge and text so it reads as the second way in. */
+  .contact-action-cv {
+    @apply border-white/40 text-white hover:border-white;
+  }
+
+  .contact-socials {
+    @apply flex flex-wrap items-center gap-x-5 gap-y-2 text-sm;
+  }
+
+  .contact-socials-label {
+    @apply text-white/60;
+  }
+
+  .contact-socials-list {
+    @apply flex items-center gap-5;
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-social-link {
+    @apply flex items-center gap-2 text-white/80 transition-colors hover:text-white;
+  }
+
+  .contact-social-link:focus-visible {
+    @apply outline-2 outline-offset-2 outline-white;
+  }
+
+  /* Signature: isotype in red beside the logotype. */
   .contact-lockup {
     @apply flex items-center gap-4 self-start;
   }
@@ -66,22 +97,17 @@
     @apply block size-full;
   }
 
-  /* As tall as the isotype: logotype (40) + gap (6) + email line (18) = 64px. */
-  .contact-lockup-text {
-    @apply flex flex-col gap-1.5;
-  }
-
   .contact-lockup-word {
-    @apply aspect-[170/77] h-10 w-auto self-start text-white md:h-8;
+    @apply aspect-[170/77] h-10 w-auto text-white md:h-8;
   }
 
-  /* Hovering the email: the isotype turns like a compass finding north and the chevrons drift. */
-  .contact-panel:has(.copy-email-address:is(:hover, :focus-visible))
+  /* Hovering "email me": the isotype turns like a compass finding north and the chevrons drift. */
+  .contact-panel:has(.contact-action-write:is(:hover, :focus-visible))
     .contact-lockup-mark {
     @apply rotate-90;
   }
 
-  .contact-panel:has(.copy-email-address:is(:hover, :focus-visible))
+  .contact-panel:has(.contact-action-write:is(:hover, :focus-visible))
     .contact-chevrons {
     @apply translate-x-4;
   }

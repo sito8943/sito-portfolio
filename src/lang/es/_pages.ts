@@ -225,9 +225,9 @@ export const _pages: Resources["_pages"] = {
     contact: {
       title: "Hablemos",
       body: "Mi bandeja siempre está abierta: propuestas, preguntas o solo para saludar.",
+      write: "Escríbeme",
       downloadCV: "Descargar CV",
-      copy: "Copiar email",
-      copied: "¡Copiado!",
+      also: "También en",
     },
   },
   footer: {
