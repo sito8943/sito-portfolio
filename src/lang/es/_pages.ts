@@ -32,7 +32,7 @@ export const _pages: Resources["_pages"] = {
       title: "Acerca de mí",
       subtitle: "pero mi nombre real es Carlos Andrés Mora González",
       me: {
-        title: "Acerca de mí",
+        title: "De ideas a código",
         text: "Me encanta convertir ideas en código 👨🏻‍💻",
         more: "y aprender algo nuevo cada día 📚",
         content: [

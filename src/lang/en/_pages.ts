@@ -31,7 +31,7 @@ export const _pages = {
       title: "About me",
       subtitle: "but my real name is Carlos Andrés Mora González",
       me: {
-        title: "About me",
+        title: "From ideas to code",
         text: "I love turning ideas into code 👨🏻‍💻",
         more: "and learning something new every day 📚",
         content: [
