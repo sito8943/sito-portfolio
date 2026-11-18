@@ -1,11 +1,11 @@
 @layer components {
   .footer {
-    @apply flex justify-center px-3 py-8 bg-pdark border-t border-white/10;
+    @apply flex justify-center py-8 bg-pdark border-t border-white/10;
   }
 
-  /* Logo | copyright, centred on the page | socials and language. */
+  /* Logo | copyright, centred on the page | socials and language. Same box as `.header-bar`. */
   .footer-bar {
-    @apply w-[90%] grid grid-cols-[1fr_auto_1fr] items-center gap-8;
+    @apply w-[90%] max-w-7xl grid grid-cols-[1fr_auto_1fr] items-center gap-8;
   }
 
   .footer-logo {
@@ -18,8 +18,10 @@
     line-height: normal;
   }
 
+  /* Ends where the navbar's last link does: past it, the bar keeps the (invisible on desktop)
+     menu button's box. */
   .footer-end {
-    @apply flex items-center justify-end gap-8;
+    @apply flex items-center justify-end gap-8 pr-(--sito-ui-size-icon-button);
   }
 
   .footer-socials {
