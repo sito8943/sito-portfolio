@@ -16,6 +16,7 @@ export const _common = {
     closeDrawer: "Close navigation drawer",
     closeModal: "Close popup dialog",
     openDrawer: "Open navigation drawer",
+    language: "Language",
   },
   buttons: {
     see: "See",

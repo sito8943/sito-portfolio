@@ -17,6 +17,7 @@ export const _common: Resources["_common"] = {
     closeDrawer: "Cerrar menú desplegable",
     closeModal: "Cerrar dialogo emergente",
     openDrawer: "Abrir menú desplegable",
+    language: "Idioma",
   },
   buttons: {
     see: "Ver",

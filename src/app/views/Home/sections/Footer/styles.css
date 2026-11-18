@@ -21,6 +21,10 @@
     line-height: normal;
   }
 
+  .footer-end {
+    @apply flex items-center gap-8;
+  }
+
   .footer-socials {
     @apply flex items-center justify-end gap-5;
   }
@@ -37,6 +41,10 @@
 
     .footer-brand {
       @apply order-last flex-col gap-2;
+    }
+
+    .footer-end {
+      @apply flex-col gap-6;
     }
 
     .footer-socials {
