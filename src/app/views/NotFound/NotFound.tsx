@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/features/i18n";
 
 // @fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsDown,
   faBan,
   faCircleExclamation,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from "@/shared/ui/atoms";
 
 // lib
 import { ROUTES } from "@/shared/config";
@@ -21,7 +22,7 @@ const NotFound = () => {
     <div className="not-found">
       <div className="not-found-alert scale-animation">
         <div className="not-found-alert-tilt">
-          <FontAwesomeIcon
+          <Icon
             icon={faCircleExclamation}
             className="not-found-alert-icon float-y"
           />
@@ -29,14 +30,11 @@ const NotFound = () => {
       </div>
       <div className="not-found-thumb scale-animation">
         <div className="not-found-thumb-tilt">
-          <FontAwesomeIcon
-            icon={faThumbsDown}
-            className="not-found-thumb-icon float-y"
-          />
+          <Icon icon={faThumbsDown} className="not-found-thumb-icon float-y" />
         </div>
       </div>
       <div className="not-found-ban scale-animation">
-        <FontAwesomeIcon icon={faBan} className="not-found-ban-icon float-y" />
+        <Icon icon={faBan} className="not-found-ban-icon float-y" />
       </div>
 
       <div className="not-found-code">
@@ -52,7 +50,7 @@ const NotFound = () => {
         aria-label={t("_common:ariaLabels.toHome")}
         className={buttonClassName({ color: "primary", variant: "submit" })}
       >
-        <FontAwesomeIcon icon={faHome} />
+        <Icon icon={faHome} />
         {t("_pages:notFound.goHome")}
       </Link>
     </div>

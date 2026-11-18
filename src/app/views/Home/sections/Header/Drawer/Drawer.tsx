@@ -6,11 +6,10 @@ import { scrollTo } from "some-javascript-utils/browser";
 import { IconButton } from "@sito/ui";
 
 // @fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 import { useActiveSection } from "@/shared/hooks";
-import { SitoLogo } from "@/shared/ui/atoms";
+import { Icon, SitoLogo } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { buttonClassName } from "@/shared/utils";
 
@@ -35,7 +34,7 @@ export function Drawer({ visible, links, handleClose }: DrawerProps) {
           aria-label={t("_common:ariaLabels.closeDrawer")}
           className="drawer-close"
           onClick={handleClose}
-          icon={<FontAwesomeIcon icon={faClose} />}
+          icon={<Icon icon={faClose} />}
         />
         <nav className="drawer-nav">
           {visible ? (

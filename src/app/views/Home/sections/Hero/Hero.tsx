@@ -1,10 +1,9 @@
 import { useTranslation } from "@/features/i18n";
 
 import { Tooltip } from "@sito/ui";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LINKS, PROFESSIONAL_SOCIALS, SECTIONS } from "@/shared/config";
-import { LazyImage } from "@/shared/ui/atoms";
+import { Icon, LazyImage } from "@/shared/ui/atoms";
 import { InView } from "@/shared/ui/molecules";
 import { Section } from "@/shared/ui/templates";
 import { buttonClassName, scrollToSection } from "@/shared/utils";
@@ -73,7 +72,7 @@ export function Hero() {
                           className="hero-social-link"
                           aria-label={`${t("_common:ariaLabels.linkTo")} ${item.text}`}
                         >
-                          <FontAwesomeIcon icon={item.icon} />
+                          <Icon icon={item.icon} />
                         </a>
                       </Tooltip>
                     </li>

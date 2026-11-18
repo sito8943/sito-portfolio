@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from "@/shared/ui/atoms";
 
 import { useInViewOnce, useOnScreen } from "@/shared/hooks";
 
@@ -118,10 +119,7 @@ export function ProductPanel({
                 className="product-panel-cta"
               >
                 {visitLabel}
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  className="product-panel-cta-arrow"
-                />
+                <Icon icon={faArrowRight} className="product-panel-cta-arrow" />
               </a>
             ) : null}
           </div>

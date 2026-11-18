@@ -1,11 +1,10 @@
 import { useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useTranslation } from "@/features/i18n";
 
 import { LINKS, PROFESSIONAL_SOCIALS, SECTIONS } from "@/shared/config";
 import { useInViewOnce } from "@/shared/hooks";
-import { MiniLogo, SitoLogo } from "@/shared/ui/atoms";
+import { Icon, MiniLogo, SitoLogo } from "@/shared/ui/atoms";
 import { Section } from "@/shared/ui/templates";
 import { buttonClassName } from "@/shared/utils";
 
@@ -79,7 +78,7 @@ export function Contact() {
                     rel="noreferrer"
                     className="contact-social-link"
                   >
-                    <FontAwesomeIcon icon={item.icon} />
+                    <Icon icon={item.icon} />
                     {item.text}
                   </a>
                 </li>

@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from "@/shared/ui/atoms";
 
 import { useThemeCycle } from "../useThemeCycle";
 
@@ -34,7 +35,7 @@ export function ClientPreview({ variant, badge }: ClientPreviewProps) {
       {variant === "dashboard" ? (
         <div className="internal-preview-card client-preview-toast">
           <span className="client-preview-toast-icon">
-            <FontAwesomeIcon icon={faCheck} />
+            <Icon icon={faCheck} />
           </span>
           <span className="internal-preview-lines">
             <span className="internal-preview-line" style={{ width: "70%" }} />
@@ -64,7 +65,7 @@ export function ClientPreview({ variant, badge }: ClientPreviewProps) {
         </div>
       )}
       <span className="internal-preview-badge client-preview-badge">
-        <FontAwesomeIcon icon={faLock} />
+        <Icon icon={faLock} />
         {badge}
       </span>
     </div>
