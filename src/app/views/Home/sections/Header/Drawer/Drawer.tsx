@@ -24,6 +24,8 @@ export function Drawer({ visible, links, handleClose }: DrawerProps) {
   return (
     <div
       aria-hidden={!visible}
+      // Closed, nothing inside can take focus (aria-hidden alone does not stop it).
+      inert={!visible}
       onClick={handleClose}
       data-open={visible}
       className="drawer"
