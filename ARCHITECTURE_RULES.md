@@ -147,7 +147,7 @@ Rules:
 
 ## 7) Routing Conventions
 
-- `react-router-dom` with `BrowserRouter`; routes are declared in `src/app/App.tsx`.
+- `react-router-dom` with `BrowserRouter`; routes are declared in `src/app/AppRoutes.tsx`.
 - Paths live in `shared/config/routes.ts` (`ROUTES`). Never hardcode route strings in
   `<Link to=...>` or `navigate(...)`.
 - Home is a single-page site: navigation uses in-page anchors. Section ids live once in
