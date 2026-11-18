@@ -25,6 +25,8 @@
   --color-white: #fbfbfb;
   --color-white-hover: #c2c7cc;
   --color-placeholder-dark: #636362;
+  /* Muted text that still reads on the dark backgrounds (WCAG AA, 4.6:1 on #222). */
+  --color-muted: #8a8a89;
   --color-dark-background2: #1b1b1b;
   --color-dark-background: #222222;
   --color-light-background2: #fbfbfb;
@@ -34,6 +36,8 @@
   --color-pdark: #02152e;
   --color-secondary: #cd212a;
   --color-slight: #d74d54;
+  /* Red for small text on the dark backgrounds (WCAG AA, 4.8:1 on #222). */
+  --color-slight-text: #e0676d;
   --color-sdark: #8f171d;
   --color-yellow: #d7942e;
   --color-green: #00997b;

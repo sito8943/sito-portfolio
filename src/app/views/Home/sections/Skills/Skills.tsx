@@ -137,35 +137,36 @@ export function Skills() {
         </InView>
 
         <InView delay="900ms" className="skills-panel-wrap">
-          <ul
+          <div
             key={stack.id}
             role="tabpanel"
             id={`${TABS_ID}-panel`}
             aria-labelledby={`${TABS_ID}-tab-${stack.id}`}
-            className="skills-chips"
           >
-            {stack.tools.map((tool, i) => (
-              <li
-                key={tool.id}
-                className="skills-chip-item"
-                style={
-                  { "--skills-chip-delay": `${i * 60}ms` } as CSSProperties
-                }
-              >
-                <a
-                  className="skills-chip"
-                  style={{ "--skill-brand": tool.brand } as CSSProperties}
-                  aria-label={`${t("_common:ariaLabels.linkTo")} ${tool.id}`}
-                  href={tool.link}
-                  target="_blank"
-                  rel="noreferrer"
+            <ul className="skills-chips">
+              {stack.tools.map((tool, i) => (
+                <li
+                  key={tool.id}
+                  className="skills-chip-item"
+                  style={
+                    { "--skills-chip-delay": `${i * 60}ms` } as CSSProperties
+                  }
                 >
-                  <SkillLogo slug={tool.slug} monogram={tool.monogram} />
-                  {tool.id}
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    className="skills-chip"
+                    style={{ "--skill-brand": tool.brand } as CSSProperties}
+                    aria-label={`${t("_common:ariaLabels.linkTo")} ${tool.id}`}
+                    href={tool.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SkillLogo slug={tool.slug} monogram={tool.monogram} />
+                    {tool.id}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </InView>
       </div>
     </Section>

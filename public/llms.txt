@@ -1,0 +1,29 @@
+# Sito (Carlos Andrés Mora González)
+
+> Portfolio of Sito, a fullstack developer who designs and builds web and mobile products, from the first sketch to production. Based in Barcelona.
+
+The site is a single page per language. Sections: about, what I do, stack, projects (career stages) and contact.
+
+## Pages
+
+- [Portfolio (English)](https://sito8943.com/en/): about, stack, projects and contact
+- [Portfolio (Español)](https://sito8943.com/es/): la misma web en español
+
+## Career
+
+- Inmersoft (Jun 2021 — Oct 2023, Santiago de Cuba): fullstack developer. [Descubre Trinidad](https://descubretrinidad.com), [Inmersoft](https://inmersoft.net/)
+- AOShield (Oct 2023 — Feb 2026, Canada, remote): fullstack developer on client platforms (under NDA)
+- Harbour.Space (Sep 2025 — present, Barcelona): fullstack developer. [Harbour.Space](https://harbour.space/)
+
+## Own products (Sito Universe)
+
+- [Sito Wallet](https://wallet.sito8943.com/): personal finance, on web and mobile
+- [Sito Notas](https://notas.sito8943.com/): quick, private notes that also work offline
+- [Sito Presentation Deck](https://deck.sito8943.com/): presentations your AI agent writes straight into your team's library
+
+## Contact
+
+- [GitHub](https://github.com/sito8943)
+- [LinkedIn](https://www.linkedin.com/in/sito8943)
+- [CV](https://drive.google.com/file/d/1s495FvKAtHrPlfItnx1oVCEDs1HJiZNp/view?usp=sharing)
+- Email: sito8943@gmail.com

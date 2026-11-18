@@ -116,7 +116,7 @@
   }
 
   .product-panel-fact dt {
-    @apply text-white/60;
+    @apply text-white/70;
   }
 
   .product-panel-fact dd {
