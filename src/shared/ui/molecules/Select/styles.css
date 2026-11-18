@@ -1,0 +1,86 @@
+/* Ported from the presentation deck's Select, on the portfolio's dark tokens. */
+@layer components {
+  .select {
+    @apply relative;
+  }
+
+  /* Same press feedback as `.sito-ui-button`. */
+  .select-trigger {
+    @apply flex w-full items-center gap-2 rounded-lg border border-white/10 bg-dark-background2 px-3 py-1.5 text-sm text-white cursor-pointer;
+    @apply hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-slight aria-expanded:border-slight;
+    font-family: "Poppins", sans-serif;
+    transition:
+      color var(--sito-ui-motion-duration-normal)
+        var(--sito-ui-motion-easing-standard),
+      background-color var(--sito-ui-motion-duration-normal)
+        var(--sito-ui-motion-easing-standard),
+      border-color var(--sito-ui-motion-duration-normal)
+        var(--sito-ui-motion-easing-standard),
+      scale var(--sito-ui-motion-duration-press)
+        var(--sito-ui-motion-easing-press);
+  }
+
+  .select-trigger:active {
+    scale: var(--sito-ui-button-active-scale);
+  }
+
+  .select-icon {
+    @apply text-white-hover;
+  }
+
+  .select-value {
+    @apply flex-1 truncate text-left;
+  }
+
+  .select-chevron {
+    @apply text-xs text-white-hover transition-transform;
+  }
+
+  .select-trigger[aria-expanded="true"] .select-chevron {
+    @apply rotate-180;
+  }
+
+  /* The list matches `@sito/ui` menus; `data-placement` says where it opens from the trigger. */
+  .select-list {
+    @apply absolute isolate z-(--sito-ui-z-index-context-menu) max-h-64 min-w-full overflow-y-auto;
+    @apply rounded-(--sito-ui-radius-context-menu) border border-white/10 bg-dark-background2 p-1 shadow-(--sito-ui-shadow-context-menu) outline-none;
+  }
+
+  .select-list[data-placement="bottom-start"] {
+    @apply top-full left-0 mt-1;
+  }
+
+  .select-list[data-placement="bottom-end"] {
+    @apply top-full right-0 mt-1;
+  }
+
+  .select-list[data-placement="top-start"] {
+    @apply bottom-full left-0 mb-1;
+  }
+
+  .select-list[data-placement="top-end"] {
+    @apply right-0 bottom-full mb-1;
+  }
+
+  .select-option {
+    @apply flex cursor-pointer items-center gap-2 rounded-(--sito-ui-radius-context-menu-item) py-1.5 pr-3 pl-2 text-sm whitespace-nowrap text-white-hover;
+    @apply data-hovered:text-white aria-selected:text-slight-text;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .select-check {
+    @apply w-[1.25em];
+  }
+
+  /* The check shows on the chosen option only. */
+  .select-option[aria-selected="false"] .select-check {
+    @apply invisible;
+  }
+
+  /* Gliding background under the active option, behind its content (`useFluidHover`). */
+  .fluid-highlight {
+    @apply pointer-events-none absolute top-0 left-0 -z-10 rounded-lg bg-white/10 opacity-0;
+    @apply transition-[transform,width,height,opacity] duration-200 ease-out;
+    @apply data-jump:transition-opacity;
+  }
+}

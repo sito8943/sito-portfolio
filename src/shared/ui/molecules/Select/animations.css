@@ -1,0 +1,11 @@
+/* The list pops in, like the deck's (unlayered, hand-written motion). */
+.select-list {
+  animation: select-pop-in 120ms ease-out;
+}
+
+@keyframes select-pop-in {
+  from {
+    opacity: 0;
+    scale: 0.97;
+  }
+}

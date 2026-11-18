@@ -1,54 +1,38 @@
 import { Tooltip } from "@sito/ui";
 
-import { useTranslation } from "@/features/i18n";
+import { LanguageSelect } from "@/features/i18n";
 
-import { NAV_LINKS, SOCIALS } from "@/shared/config";
+import { SOCIALS } from "@/shared/config";
 import { Icon, SitoLogo } from "@/shared/ui/atoms";
-import { scrollToSection } from "@/shared/utils";
 
-/** Closing bar: brand and copyright, quick section links and every social profile. */
+import { FOOTER_DOCK_ID } from "../../constants";
+
+/** Closing bar: logo, centred copyright, every social profile and the language selector. */
 export function Footer() {
-  const { t } = useTranslation();
-
   return (
     <footer id="footer" className="footer">
       <div className="footer-bar">
-        <div className="footer-brand">
-          <SitoLogo className="footer-logo" />
-          <p className="footer-copy">{`© ${new Date().getFullYear()}`}</p>
-        </div>
-        <nav
-          className="footer-nav"
-          aria-label={t("_common:ariaLabels.footerNav")}
-        >
-          <ul className="footer-links">
-            {NAV_LINKS.map((item) => (
-              <li key={item}>
+        <SitoLogo className="footer-logo" />
+        <p id={FOOTER_DOCK_ID} className="footer-copy">
+          {`© ${new Date().getFullYear()}`}
+        </p>
+        <div className="footer-end">
+          <div className="footer-socials">
+            {SOCIALS.map((item) => (
+              <Tooltip key={item.link} label={item.text}>
                 <a
-                  href={`#${item}`}
-                  className="footer-link"
-                  onClick={() => scrollToSection(item)}
+                  href={item.link}
+                  rel="noreferrer"
+                  target="_blank"
+                  aria-label={item.text}
+                  className="footer-social"
                 >
-                  {t(`_pages:routes.${item}`)}
+                  <Icon icon={item.icon} />
                 </a>
-              </li>
+              </Tooltip>
             ))}
-          </ul>
-        </nav>
-        <div className="footer-socials">
-          {SOCIALS.map((item) => (
-            <Tooltip key={item.link} label={item.text}>
-              <a
-                href={item.link}
-                rel="noreferrer"
-                target="_blank"
-                aria-label={item.text}
-                className="footer-social"
-              >
-                <Icon icon={item.icon} />
-              </a>
-            </Tooltip>
-          ))}
+          </div>
+          <LanguageSelect placement="top-end" />
         </div>
       </div>
     </footer>

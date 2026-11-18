@@ -9,15 +9,11 @@
 
   /* The two proof points, as headline figures: brand-red number over a small caps label. */
   .skills-highlights {
-    @apply flex justify-center gap-12 sm:gap-6;
+    @apply flex justify-center gap-24 sm:gap-12;
   }
 
   .skills-highlight {
     @apply flex flex-col items-center gap-2 text-center text-xs uppercase tracking-[0.2em] text-white-hover;
-  }
-
-  .skills-highlight + .skills-highlight {
-    @apply border-l border-white/10 pl-12 sm:pl-6;
   }
 
   .skills-highlight-number {
