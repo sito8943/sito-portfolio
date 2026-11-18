@@ -24,7 +24,10 @@ export default defineConfig({
       ],
       image: { href: AVATAR_SRC, srcset: AVATAR_SRCSET, sizes: AVATAR_SIZES },
     }),
-    langPages({ siteUrl: "https://sito8943.com" }),
+    langPages({
+      siteUrl: "https://sito8943.com",
+      prerender: "/src/entry-server.tsx",
+    }),
   ],
   resolve: {
     tsconfigPaths: true,
