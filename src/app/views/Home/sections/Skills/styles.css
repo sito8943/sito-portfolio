@@ -21,7 +21,7 @@
   }
 
   .skills-highlight-number {
-    @apply text-6xl font-bold leading-none tracking-normal text-secondary md:text-5xl;
+    @apply text-6xl font-bold leading-none tracking-normal text-slight md:text-5xl;
     font-family: "Poppins", sans-serif;
     font-variant-numeric: tabular-nums;
   }
@@ -113,11 +113,11 @@
   }
 
   .skills-tab[aria-selected="true"] .skills-tab-name {
-    @apply text-slight;
+    @apply text-slight-text;
   }
 
   .skills-hint {
-    @apply -mt-4 text-xs tracking-wide text-placeholder-dark;
+    @apply -mt-4 text-xs tracking-wide text-muted;
   }
 
   .skills-panel-wrap {
