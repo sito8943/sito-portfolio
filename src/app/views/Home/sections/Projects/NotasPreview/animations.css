@@ -1,0 +1,62 @@
+/* Sito Notas in use, only while on screen ([data-on]); keyframes shared with InternalPreview
+   and ClientPreview. Reduced motion turns it off (base.css). */
+
+/* Notes take turns lifting, as if picked to open. */
+.internal-preview[data-on="true"] .notas-preview-note {
+  animation: cp-lift 9s ease-in-out infinite;
+  animation-delay: calc(var(--note-i, 0) * 1.5s);
+}
+
+/* The editor's lines type in, one after another, then clear and start again. */
+@keyframes np-type {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  14%,
+  86% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  94%,
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.internal-preview[data-on="true"] .notas-preview-typed {
+  animation: np-type 9s steps(14, end) infinite both;
+  animation-delay: calc(0.4s + var(--line-i, 0) * 1.3s);
+}
+
+/* The open item gets ticked, then unticked. */
+@keyframes np-tick {
+  0%,
+  40%,
+  100% {
+    color: transparent;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-check);
+  }
+
+  50%,
+  85% {
+    color: var(--ip-surface);
+    background-color: var(--ip-violet);
+    box-shadow: inset 0 0 0 0 transparent;
+  }
+}
+
+.internal-preview[data-on="true"]
+  .notas-preview-check[data-done="false"]
+  .notas-preview-box {
+  animation: np-tick 7s ease-in-out 2s infinite;
+}
+
+.internal-preview[data-on="true"] .notas-preview-editor {
+  animation: ip-float 7s ease-in-out infinite;
+}
+
+.internal-preview[data-on="true"] .notas-preview-icon {
+  animation: ip-float 6s ease-in-out -2s infinite;
+}

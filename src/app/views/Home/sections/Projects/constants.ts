@@ -13,8 +13,6 @@ import { HarbourSpaceDecor } from "./HarbourSpaceDecor";
 import { HarbourSpaceLogo } from "./HarbourSpaceLogo";
 import { InmersoftDecor } from "./InmersoftDecor";
 import { InmersoftLogo } from "./InmersoftLogo";
-import { NotasMark } from "./NotasMark";
-import { WalletMark } from "./WalletMark";
 import type { Stage, StageBrand, StageId, UniverseProduct } from "./types";
 
 /** Each stage's identity pieces: its logo and its motifs. */
@@ -93,28 +91,30 @@ export const STAGES: Stage[] = [
   },
 ];
 
-/** Sito Universe: my own products. Wallet and Notas show their brand, not app data (private). */
+/** Sito Universe: my own products. Wallet and Notas are drawn as skeletons, never shown (private data). */
 export const UNIVERSE_PRODUCTS: UniverseProduct[] = [
   {
     id: "sitoWallet",
     link: LINKS.SITO_WALLET,
     media: "brand",
     image: "",
-    brand: { Mark: WalletMark, background: "#00997b", color: "#fbfbfb" },
+    brand: { background: "#00997b", color: "#fbfbfb" },
+    feature: "wallet",
   },
   {
     id: "sitoNotas",
     link: LINKS.SITO_NOTAS,
     media: "brand",
     image: "",
-    brand: { Mark: NotasMark, background: "#0f131c", color: "#8bb6f8" },
+    brand: { background: "#0f131c", color: "#8bb6f8" },
+    feature: "notas",
   },
   {
     id: "sitoDeck",
     link: LINKS.SITO_DECK,
     media: "bleed",
     image: sitoDeck,
-    feature: "globe",
+    feature: "deck",
   },
 ];
 

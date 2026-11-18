@@ -4,8 +4,10 @@ import { ROLE, UNIVERSE_PRODUCTS } from "../constants";
 import { SitoUniverseDecor } from "../SitoUniverseDecor";
 import { SitoUniverseLogo } from "../SitoUniverseLogo";
 import { StageIntro } from "../StageIntro";
-import { DeckGlobe } from "../DeckGlobe";
+import { DeckPreview } from "../DeckPreview";
+import { NotasPreview } from "../NotasPreview";
 import { ProductPanel } from "../ProductPanel";
+import { WalletPreview } from "../WalletPreview";
 
 /** Last stage: my own products (no period), in my own brand, around the isotype. */
 export function UniverseStage({ number }: { number: number }) {
@@ -53,7 +55,15 @@ export function UniverseStage({ number }: { number: number }) {
               )}
               image={product.image}
               brand={product.brand}
-              feature={product.feature === "globe" ? <DeckGlobe /> : null}
+              feature={
+                product.feature === "deck" ? (
+                  <DeckPreview />
+                ) : product.feature === "wallet" ? (
+                  <WalletPreview />
+                ) : product.feature === "notas" ? (
+                  <NotasPreview />
+                ) : null
+              }
               alt={title}
               media={product.media}
               link={product.link}

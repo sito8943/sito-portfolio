@@ -60,9 +60,6 @@ export function ProductPanel({
           } as CSSProperties
         }
       >
-        {media === "brand" && brand?.Mark ? (
-          <brand.Mark className="product-panel-brand-mark" />
-        ) : null}
         {media === "bleed" && video && playClip ? (
           <video
             ref={clipRef}

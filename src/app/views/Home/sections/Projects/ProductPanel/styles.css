@@ -161,11 +161,6 @@
     );
   }
 
-  .product-panel-brand-mark {
-    @apply h-auto max-h-[30%] w-auto max-w-[40%] md:max-h-[22%];
-    color: var(--panel-brand);
-  }
-
   /* Phones: the clip is very wide; scale it so its circle nearly fills the width
      (its sides are plain backdrop), centred between the heading and the facts. */
   @variant md {
