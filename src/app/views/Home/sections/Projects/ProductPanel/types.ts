@@ -1,12 +1,11 @@
-import type { ComponentType, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import type { StageFact } from "../StageIntro";
 
 export type ProductMedia = "bleed" | "frame" | "brand";
 
-/** A product shown by its brand (no app screenshots): its mark (if any) on its own colours. */
+/** A product shown on its own colours instead of a screenshot. */
 export type ProductBrand = {
-  Mark?: ComponentType<{ className?: string }> | undefined;
   background: string;
   color: string;
 };

@@ -1,0 +1,53 @@
+/* Sito Presentation Deck in use, only while on screen ([data-on]); keyframes shared with
+   InternalPreview and ClientPreview. Reduced motion turns it off (base.css). */
+
+/* The selected slide walks down the rail, one every 2 s. */
+@keyframes dp-select {
+  0%,
+  20%,
+  100% {
+    box-shadow: 0 0 0 1px var(--ip-rule);
+  }
+
+  3%,
+  17% {
+    box-shadow: 0 0 0 0.3cqw var(--ip-violet);
+  }
+}
+
+.internal-preview[data-on="true"] .deck-preview-thumb {
+  animation: dp-select 10s ease-in-out infinite;
+  animation-delay: calc(var(--slide-i, 0) * 2s);
+}
+
+/* The slide's title builds in. */
+.internal-preview[data-on="true"] .deck-preview-slide-title {
+  animation: cp-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.internal-preview[data-on="true"] .deck-preview-slide-title-short {
+  animation-delay: 0.45s;
+}
+
+/* The talk moves along: progress fills, then starts again. */
+@keyframes dp-progress {
+  from {
+    --progress: 0%;
+  }
+
+  to {
+    --progress: 100%;
+  }
+}
+
+.internal-preview[data-on="true"] .deck-preview-progress {
+  animation: dp-progress 10s linear infinite;
+}
+
+.internal-preview[data-on="true"] .deck-preview-controls {
+  animation: ip-float 7s ease-in-out infinite;
+}
+
+.internal-preview[data-on="true"] .deck-preview-icon {
+  animation: ip-float 6s ease-in-out -2s infinite;
+}

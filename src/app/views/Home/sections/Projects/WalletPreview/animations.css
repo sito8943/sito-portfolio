@@ -1,0 +1,63 @@
+/* Sito Wallet in use, only while on screen ([data-on]); keyframes shared with InternalPreview
+   and ClientPreview. Reduced motion turns it off (base.css). */
+
+/* Monthly bars grow in, one month after another. */
+@keyframes wp-bar {
+  from {
+    scale: 1 0;
+  }
+}
+
+.internal-preview[data-on="true"] .wallet-preview-bar {
+  animation: wp-bar 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.3s + var(--bar-i, 0) * 0.12s);
+}
+
+/* The balance counts up and its trend draws in. */
+.internal-preview[data-on="true"] .wallet-preview-balance-figure {
+  animation: cp-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.internal-preview[data-on="true"] .wallet-preview-balance svg {
+  animation: cp-reveal 2s cubic-bezier(0.65, 0, 0.35, 1) 0.4s both;
+}
+
+/* A selection walks down the accounts. */
+.internal-preview[data-on="true"] .wallet-preview-account {
+  animation: ip-row-focus 6.4s ease-in-out infinite;
+  animation-delay: calc(var(--row-i, 0) * 1.6s);
+}
+
+/* The add button calls now and then. */
+@keyframes wp-call {
+  0%,
+  60%,
+  100% {
+    box-shadow:
+      0 0.8cqw 1.8cqw rgb(0 60 48 / 35%),
+      0 0 0 0 var(--ip-violet-soft);
+  }
+
+  75% {
+    box-shadow:
+      0 0.8cqw 1.8cqw rgb(0 60 48 / 35%),
+      0 0 0 1cqw transparent;
+  }
+}
+
+.internal-preview[data-on="true"] .wallet-preview-add {
+  animation: wp-call 4s ease-out infinite;
+}
+
+/* A quick transaction is saved and fades, again and again. */
+.internal-preview[data-on="true"] .wallet-preview-quick {
+  animation: cp-toast 8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s infinite both;
+}
+
+.internal-preview[data-on="true"] .wallet-preview-chart {
+  animation: ip-float 7s ease-in-out infinite;
+}
+
+.internal-preview[data-on="true"] .wallet-preview-icon {
+  animation: ip-float 6s ease-in-out -2s infinite;
+}

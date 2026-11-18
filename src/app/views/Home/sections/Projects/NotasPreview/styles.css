@@ -1,0 +1,188 @@
+@layer components {
+  /* Sito Notas: reuses InternalPreview's palette and pieces, in the Notas blue. */
+  .notas-preview {
+    --ip-violet: #2f6fd6;
+    --ip-violet-soft: #e1ebfb;
+    --ip-chrome: #f4f6fa;
+    --ip-nav: #f7f9fc;
+    --ip-ink: #d6dce8;
+    --ip-ink-soft: #e9edf4;
+    --ip-title: #aab6cc;
+  }
+
+  .notas-preview[data-theme="dark"] {
+    --ip-violet: #8bb6f8;
+    --ip-violet-soft: #1c2840;
+    --ip-surface: #0f131c;
+    --ip-chrome: #161b26;
+    --ip-nav: #131823;
+    --ip-ink: #2a3346;
+    --ip-ink-soft: #1d2431;
+    --ip-title: #46536e;
+  }
+
+  /* The app, back left: search, category tabs and the notes grid. */
+  .notas-preview-app {
+    @apply left-0 top-0 h-[88%] w-[76%];
+  }
+
+  .notas-preview-body {
+    @apply flex min-h-0 flex-1 flex-col;
+    gap: 1.6cqw;
+    padding: 2cqw 2.4cqw;
+  }
+
+  .notas-preview-header {
+    @apply flex items-center;
+    gap: 1.6cqw;
+  }
+
+  .notas-preview-logo {
+    @apply block shrink-0;
+    width: 3.4cqw;
+    height: 3.4cqw;
+    color: var(--ip-violet);
+  }
+
+  .notas-preview-search {
+    @apply block flex-1 rounded-full;
+    height: 3cqw;
+    background-color: var(--ip-nav);
+    box-shadow: inset 0 0 0 1px var(--ip-rule);
+  }
+
+  .notas-preview-tabs {
+    @apply flex;
+    gap: 1cqw;
+  }
+
+  .notas-preview-tab {
+    @apply block rounded-full;
+    height: 2.4cqw;
+    background-color: var(--ip-ink-soft);
+  }
+
+  .notas-preview-tab[data-active="true"] {
+    background-color: var(--ip-violet);
+  }
+
+  .notas-preview-grid {
+    @apply grid min-h-0 flex-1 grid-cols-3 overflow-hidden;
+    gap: 1.4cqw;
+    /* Room for a note to lift without being cut. */
+    margin: -1cqw -1cqw 0;
+    padding: 1cqw 1cqw 0;
+  }
+
+  .notas-preview-column {
+    @apply flex flex-col;
+    gap: 1.4cqw;
+  }
+
+  .notas-preview-note {
+    @apply flex flex-col;
+    gap: 0.9cqw;
+    padding: 1.4cqw;
+    border-radius: 1cqw;
+    background-color: var(--ip-nav);
+    box-shadow:
+      0 0 0 1px var(--ip-rule),
+      0 0.3cqw 0.8cqw rgb(16 6 48 / 8%);
+  }
+
+  .notas-preview-note .client-preview-tag {
+    margin-top: 0.3cqw;
+  }
+
+  /* Editor, front right: a note being written. */
+  .notas-preview-editor {
+    @apply bottom-0 right-0 z-10 h-[62%] w-[42%];
+  }
+
+  .notas-preview-toolbar {
+    @apply flex shrink-0 items-center border-b;
+    border-color: var(--ip-rule);
+    gap: 0.9cqw;
+    padding: 1.3cqw 2cqw;
+    background-color: var(--ip-chrome);
+  }
+
+  .notas-preview-tool {
+    @apply block;
+    width: 2cqw;
+    height: 2cqw;
+    border-radius: 0.5cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .notas-preview-text {
+    @apply flex flex-col;
+    gap: 1.2cqw;
+    padding: 2.2cqw 2.4cqw;
+  }
+
+  .notas-preview-heading {
+    @apply block rounded-full;
+    width: 52%;
+    height: 1.8cqw;
+    margin-bottom: 0.4cqw;
+    background-color: var(--ip-title);
+  }
+
+  .notas-preview-typed {
+    @apply block rounded-full;
+    width: var(--typed);
+    height: 0.9cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .notas-preview-check {
+    @apply flex items-center;
+    gap: 1.1cqw;
+  }
+
+  .notas-preview-check:first-of-type {
+    margin-top: 0.6cqw;
+  }
+
+  .notas-preview-check .internal-preview-line {
+    @apply flex-none;
+  }
+
+  .notas-preview-box {
+    @apply grid shrink-0 place-items-center;
+    width: 1.9cqw;
+    height: 1.9cqw;
+    border-radius: 0.45cqw;
+    font-size: 1.2cqw;
+    color: transparent;
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-check);
+  }
+
+  .notas-preview-check[data-done="true"] .notas-preview-box {
+    color: var(--ip-surface);
+    background-color: var(--ip-violet);
+    box-shadow: none;
+  }
+
+  /* App icon, as installed, up on the right over the free corner. */
+  .notas-preview-icon {
+    @apply absolute z-20 grid place-items-center;
+    right: 6%;
+    top: 4%;
+    width: 12cqw;
+    height: 12cqw;
+    border-radius: 3cqw;
+    color: #8bb6f8;
+    background-color: #0f131c;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 18%),
+      0 1.6cqw 4cqw rgb(4 8 20 / 55%);
+  }
+
+  .notas-preview-icon-mark {
+    @apply block;
+    width: 56%;
+    height: 56%;
+  }
+}

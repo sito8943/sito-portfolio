@@ -1,0 +1,169 @@
+@layer components {
+  /* Sito Presentation Deck: reuses InternalPreview's palette and pieces, in the Deck's teal.
+     The open slide stays dark in both themes, like the deck's own slides. */
+  .deck-preview {
+    --ip-violet: #3d7d74;
+    --ip-violet-soft: #dcece9;
+    --ip-chrome: #f4f6fa;
+    --ip-nav: #f7f9fc;
+    --ip-ink: #d6dce8;
+    --ip-ink-soft: #e8eef8;
+    --ip-title: #aab6cc;
+  }
+
+  .deck-preview[data-theme="dark"] {
+    --ip-violet: #6cc0b2;
+    --ip-violet-soft: #17302c;
+    --ip-surface: #0f141c;
+    --ip-chrome: #1a212c;
+    --ip-nav: #141a24;
+    --ip-ink: #2a3346;
+    --ip-ink-soft: #1d2431;
+    --ip-title: #46536e;
+  }
+
+  .deck-preview-app {
+    @apply left-0 top-0 h-[86%] w-[84%];
+  }
+
+  .deck-preview-body {
+    @apply flex min-h-0 flex-1;
+  }
+
+  /* Rail of thumbnails, like the editor's slide list. */
+  .deck-preview-rail {
+    @apply flex shrink-0 flex-col border-r;
+    border-color: var(--ip-rule);
+    background-color: var(--ip-nav);
+    width: 17%;
+    gap: 1.2cqw;
+    padding: 1.8cqw 1.6cqw;
+  }
+
+  .deck-preview-thumb {
+    @apply flex aspect-video w-full flex-col justify-center;
+    gap: 0.6cqw;
+    padding: 0 1.2cqw;
+    border-radius: 0.6cqw;
+    background-color: #0c1f44;
+    box-shadow: 0 0 0 1px var(--ip-rule);
+  }
+
+  .deck-preview-thumb-line {
+    @apply block rounded-full;
+    width: 70%;
+    height: 0.6cqw;
+    background-color: rgb(255 255 255 / 55%);
+  }
+
+  .deck-preview-thumb-line + .deck-preview-thumb-line {
+    width: 46%;
+    background-color: rgb(255 255 255 / 25%);
+  }
+
+  .deck-preview-main {
+    @apply flex min-w-0 flex-1 flex-col;
+    padding: 1.8cqw 2.4cqw 2.4cqw;
+  }
+
+  .deck-preview-toolbar {
+    margin-bottom: 1.4cqw;
+  }
+
+  /* The open slide: copy on the left, the deck's globe on the right. */
+  .deck-preview-slide {
+    @apply relative grid aspect-video w-full grid-cols-[1fr_1fr] items-center overflow-hidden;
+    padding: 0 0 0 3.2cqw;
+    border-radius: 1cqw;
+    background:
+      radial-gradient(
+        circle at 78% 50%,
+        rgb(77 141 255 / 28%),
+        transparent 55%
+      ),
+      #041e42;
+    box-shadow: 0 0 0 1px var(--ip-rule);
+  }
+
+  .deck-preview-slide-copy {
+    @apply flex flex-col;
+    gap: 1cqw;
+  }
+
+  .deck-preview-slide-kicker {
+    @apply block rounded-full;
+    width: 30%;
+    height: 0.8cqw;
+    margin-bottom: 0.4cqw;
+    background-color: #ff6b72;
+  }
+
+  .deck-preview-slide-title {
+    @apply block rounded-full;
+    width: 92%;
+    height: 2.2cqw;
+    background-color: rgb(255 255 255 / 88%);
+    transform-origin: left center;
+  }
+
+  .deck-preview-slide-title-short {
+    width: 64%;
+    margin-bottom: 0.8cqw;
+  }
+
+  .deck-preview-slide-line {
+    @apply block rounded-full;
+    height: 0.8cqw;
+    background-color: rgb(138 180 248 / 45%);
+  }
+
+  .deck-preview-slide-globe {
+    @apply grid h-full place-items-center;
+    padding: 1.6cqw 0;
+  }
+
+  /* Presenter controls, floating under the slide. */
+  .deck-preview-controls {
+    @apply absolute z-20 flex items-center rounded-full text-white ring-1 ring-white/20 backdrop-blur-md;
+    left: 38%;
+    bottom: 2%;
+    gap: 1.6cqw;
+    padding: 1.2cqw 2.2cqw;
+    font-size: max(0.6rem, 1.4cqw);
+    background-color: rgb(4 30 66 / 70%);
+    box-shadow: 0 1cqw 3cqw rgb(2 10 30 / 45%);
+  }
+
+  .deck-preview-progress {
+    @apply block overflow-hidden rounded-full;
+    --progress: 40%;
+    width: 18cqw;
+    height: 0.6cqw;
+    background: linear-gradient(
+      90deg,
+      #8ab4f8 var(--progress),
+      rgb(255 255 255 / 20%) var(--progress)
+    );
+  }
+
+  /* App icon, up on the right over the free corner. */
+  .deck-preview-icon {
+    @apply absolute z-20 grid place-items-center;
+    right: 0;
+    top: 8%;
+    width: 12cqw;
+    height: 12cqw;
+    border-radius: 3cqw;
+    color: #fbfbfb;
+    background-color: #3d7d74;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 22%),
+      0 1.6cqw 4cqw rgb(2 10 30 / 50%);
+  }
+
+  .deck-preview-icon-mark {
+    @apply block;
+    width: 62%;
+    height: 62%;
+  }
+}

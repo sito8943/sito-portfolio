@@ -51,5 +51,5 @@ export type UniverseProduct = {
   image: string;
   brand?: ProductBrand;
   /** A live showcase piece drawn large in its chapter. */
-  feature?: "globe";
+  feature?: "deck" | "wallet" | "notas";
 };

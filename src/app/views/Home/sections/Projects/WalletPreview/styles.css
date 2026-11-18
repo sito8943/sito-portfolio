@@ -1,0 +1,272 @@
+@layer components {
+  /* Sito Wallet: reuses InternalPreview's palette and pieces, in the Wallet's green. */
+  .wallet-preview {
+    --ip-violet: #00997b;
+    --ip-violet-soft: #d6f2e9;
+    --ip-chrome: #f3f8f6;
+    --ip-nav: #f6faf8;
+    --ip-ink: #d3e2dd;
+    --ip-ink-soft: #e7efec;
+    --ip-title: #a9c4bb;
+  }
+
+  .wallet-preview[data-theme="dark"] {
+    --ip-violet: #2dc3a0;
+    --ip-violet-soft: #12332c;
+    --ip-surface: #0f1917;
+    --ip-chrome: #15211e;
+    --ip-nav: #13201c;
+    --ip-ink: #26403a;
+    --ip-ink-soft: #1b2e29;
+    --ip-title: #3d5f56;
+  }
+
+  /* Keep the 16:10 box on narrow screens too (the phone is sized against it). */
+  .wallet-preview,
+  .notas-preview,
+  .deck-preview {
+    @apply h-auto w-full max-w-[41.6rem];
+  }
+
+  /* Phone, front left: the app as most people use it. */
+  .wallet-preview-phone {
+    @apply left-[8%] top-0 z-10 h-full;
+    width: 33cqw;
+    gap: 1.6cqw;
+    padding: 1.2cqw 2.2cqw 0;
+    border-radius: 4cqw;
+  }
+
+  .wallet-preview-notch {
+    @apply mx-auto block shrink-0 rounded-full;
+    width: 9cqw;
+    height: 1.4cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .wallet-preview-header {
+    @apply flex items-center;
+    gap: 1.2cqw;
+  }
+
+  .wallet-preview-header .internal-preview-title {
+    width: 38%;
+  }
+
+  .wallet-preview-logo {
+    @apply block shrink-0;
+    width: 3.8cqw;
+    height: 3.8cqw;
+    color: var(--ip-violet);
+  }
+
+  .wallet-preview-me {
+    @apply ml-auto block shrink-0 rounded-full;
+    width: 3cqw;
+    height: 3cqw;
+    background: linear-gradient(135deg, #7fd6c4, var(--ip-violet));
+  }
+
+  .wallet-preview-search {
+    @apply block shrink-0 rounded-full;
+    height: 3cqw;
+    background-color: var(--ip-nav);
+    box-shadow: inset 0 0 0 1px var(--ip-rule);
+  }
+
+  .wallet-preview-balance {
+    @apply flex shrink-0 flex-col;
+    gap: 0.9cqw;
+    padding: 1.8cqw 2cqw 1.4cqw;
+    border-radius: 1.8cqw;
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgb(255 255 255 / 22%),
+        transparent 60%
+      ),
+      var(--ip-violet);
+  }
+
+  .wallet-preview-balance-label {
+    @apply block rounded-full;
+    width: 40%;
+    height: 0.8cqw;
+    background-color: rgb(255 255 255 / 45%);
+  }
+
+  .wallet-preview-balance-figure {
+    @apply block rounded-full;
+    width: 62%;
+    height: 2.4cqw;
+    background-color: rgb(255 255 255 / 85%);
+    transform-origin: left center;
+  }
+
+  .wallet-preview-balance svg {
+    @apply block w-full overflow-visible;
+    height: 4cqw;
+  }
+
+  .wallet-preview-balance path {
+    fill: none;
+    stroke: rgb(255 255 255 / 85%);
+    stroke-width: 2;
+  }
+
+  .wallet-preview-accounts {
+    @apply flex flex-col;
+  }
+
+  .wallet-preview-account {
+    @apply flex items-center border-t;
+    border-color: var(--ip-rule);
+    gap: 1.2cqw;
+    margin-inline: -0.8cqw;
+    padding: 1.05cqw 0.8cqw;
+    border-radius: 0.6cqw;
+  }
+
+  .wallet-preview-account .internal-preview-line {
+    @apply flex-none;
+  }
+
+  .wallet-preview-account-icon {
+    @apply block shrink-0 rounded-full;
+    width: 2.8cqw;
+    height: 2.8cqw;
+    background-color: var(--ip-violet-soft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-violet);
+  }
+
+  .wallet-preview-amount {
+    @apply ml-auto block shrink-0 rounded-full;
+    width: 5.6cqw;
+    height: 1.7cqw;
+  }
+
+  .wallet-preview-amount[data-income="true"] {
+    background-color: var(--ip-live);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-live-edge);
+  }
+
+  .wallet-preview-amount[data-income="false"] {
+    background-color: var(--ip-draft);
+    box-shadow: inset 0 0 0 0.25cqw var(--ip-draft-edge);
+  }
+
+  /* Bottom bar: two tabs, the add button raised in the middle, two tabs. */
+  .wallet-preview-nav {
+    @apply mt-auto flex items-center justify-around border-t;
+    border-color: var(--ip-rule);
+    margin-inline: -2.2cqw;
+    padding: 1.2cqw 2.2cqw 1.6cqw;
+    background-color: var(--ip-chrome);
+  }
+
+  .wallet-preview-tab {
+    @apply order-2 block;
+    width: 2.4cqw;
+    height: 2.4cqw;
+    border-radius: 0.7cqw;
+    background-color: var(--ip-ink);
+  }
+
+  .wallet-preview-tab:nth-child(-n + 2) {
+    @apply order-none;
+  }
+
+  .wallet-preview-tab[data-active="true"] {
+    background-color: var(--ip-violet);
+  }
+
+  .wallet-preview-add {
+    @apply order-1 grid shrink-0 place-items-center rounded-full;
+    width: 4.6cqw;
+    height: 4.6cqw;
+    margin-top: -2.4cqw;
+    font-size: 1.9cqw;
+    color: var(--ip-surface);
+    background-color: var(--ip-violet);
+    box-shadow: 0 0.8cqw 1.8cqw rgb(0 60 48 / 35%);
+  }
+
+  /* Chart, behind on the right: money in and out per month. */
+  .wallet-preview-chart {
+    @apply right-0 top-[7%] h-[52%] w-[60%];
+    gap: 1.6cqw;
+    padding: 2.2cqw 2.4cqw 2.2cqw 4.4cqw;
+  }
+
+  .wallet-preview-chart-head {
+    @apply mb-0;
+  }
+
+  .wallet-preview-legend {
+    @apply block rounded-full;
+    width: 8cqw;
+    height: 1.6cqw;
+    background-color: var(--ip-violet-soft);
+  }
+
+  .wallet-preview-bars {
+    @apply flex min-h-0 flex-1 items-end justify-around border-b;
+    border-color: var(--ip-rule);
+  }
+
+  .wallet-preview-month {
+    @apply flex h-full items-end;
+    gap: 0.5cqw;
+  }
+
+  .wallet-preview-bar {
+    @apply block;
+    width: 2cqw;
+    border-radius: 0.5cqw 0.5cqw 0 0;
+    transform-origin: bottom center;
+  }
+
+  .wallet-preview-bar[data-flow="in"] {
+    background-color: var(--ip-violet);
+  }
+
+  .wallet-preview-bar[data-flow="out"] {
+    background-color: var(--ip-title);
+  }
+
+  /* Quick transaction, front right, coming and going. */
+  .wallet-preview-quick {
+    @apply bottom-[8%] right-[3%] z-10 flex-row items-center;
+    width: 42%;
+    gap: 1.4cqw;
+    padding: 1.8cqw 2cqw;
+  }
+
+  .wallet-preview-quick-icon {
+    @apply block shrink-0 rounded-full;
+    width: 4cqw;
+    height: 4cqw;
+    background: linear-gradient(135deg, #7fd6c4, var(--ip-violet));
+  }
+
+  /* App icon, as installed on a phone, over the phone's lower corner. */
+  .wallet-preview-icon {
+    @apply absolute z-20 grid place-items-center;
+    left: 0;
+    bottom: 16%;
+    width: 12cqw;
+    height: 12cqw;
+    border-radius: 3cqw;
+    color: #fbfbfb;
+    background-color: #00997b;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 25%),
+      0 1.6cqw 4cqw rgb(0 40 32 / 45%);
+  }
+
+  .wallet-preview-icon-mark {
+    @apply block;
+    width: 78%;
+    height: 78%;
+  }
+}
