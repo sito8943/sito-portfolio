@@ -20,16 +20,16 @@ export function Hero() {
       <div className="hero-panel">
         <div className="hero-layout">
           <div className="hero-copy">
-            <InView delay="100ms">
+            <InView appear delay="100ms">
               <h1 className="hero-title">
                 <span className="hero-name">{t("_pages:home.hero.name")}</span>
                 <span className="hero-role">{t("_pages:home.hero.role")}</span>
               </h1>
             </InView>
-            <InView delay="200ms">
+            <InView appear delay="200ms">
               <p className="hero-text">{t("_pages:home.hero.text")}</p>
             </InView>
-            <InView delay="300ms">
+            <InView appear delay="300ms">
               <div className="hero-actions">
                 <a
                   href={`#${SECTIONS.projects}`}
@@ -56,7 +56,7 @@ export function Hero() {
                 </a>
               </div>
             </InView>
-            <InView delay="400ms">
+            <InView appear delay="400ms">
               <nav
                 className="hero-social"
                 aria-label={t("_pages:home.hero.meet")}
@@ -87,7 +87,7 @@ export function Hero() {
               data-logo-anchor={LOGO_ANCHORS.hero}
               aria-hidden="true"
             />
-            <InView delay="200ms" className="hero-image-in-view">
+            <InView appear delay="200ms" className="hero-image-in-view">
               <LazyImage
                 alt={t("_pages:home.hero.name")}
                 src={AVATAR_SRC}

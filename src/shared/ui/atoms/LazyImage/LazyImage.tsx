@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // images
 import crash from "@/assets/images/crash.webp";
@@ -12,11 +12,19 @@ export function LazyImage({
   className,
   ...rest
 }: LazyImageProps) {
+  const ref = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
 
+  // A prerendered image can finish loading before React takes over and misses `onLoad`.
+  useEffect(() => {
+    const image = ref.current;
+    if (image?.complete && image.naturalWidth > 0) setLoaded(true);
+  }, []);
+
   return (
     <img
+      ref={ref}
       loading="lazy"
       decoding="async"
       {...rest}

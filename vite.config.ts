@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 import { langPages } from "./plugins/langPages";
+import { inlineCss } from "./plugins/inlineCss";
 import { preloads } from "./plugins/preloads";
 import {
   AVATAR_SIZES,
@@ -15,6 +16,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    inlineCss(),
     preloads({
       // Hero title (Poppins 700), body (Roboto 400) and the hero role line (Poppins 400).
       fonts: [
@@ -24,7 +26,10 @@ export default defineConfig({
       ],
       image: { href: AVATAR_SRC, srcset: AVATAR_SRCSET, sizes: AVATAR_SIZES },
     }),
-    langPages({ siteUrl: "https://sito8943.com" }),
+    langPages({
+      siteUrl: "https://sito8943.com",
+      prerender: "/src/entry-server.tsx",
+    }),
   ],
   resolve: {
     tsconfigPaths: true,
@@ -37,6 +42,7 @@ export default defineConfig({
     },
   },
   build: {
+    modulePreload: false,
     rollupOptions: {
       output: {
         manualChunks: (id) => {

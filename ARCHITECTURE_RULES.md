@@ -147,12 +147,15 @@ Rules:
 
 ## 7) Routing Conventions
 
-- `react-router-dom` with `BrowserRouter`; routes are declared in `src/app/App.tsx`.
+- `react-router-dom` with `BrowserRouter`; routes are declared in `src/app/AppRoutes.tsx`.
 - Paths live in `shared/config/routes.ts` (`ROUTES`). Never hardcode route strings in
   `<Link to=...>` or `navigate(...)`.
 - Home is a single-page site: navigation uses in-page anchors. Section ids live once in
   `shared/config/site.ts` (`SECTIONS`, `NAV_LINKS`). Do not hardcode `#section` strings elsewhere.
-- Views are lazy-loaded (`@loadable/component`) so each route ships its own chunk.
+- Views are lazy-loaded (`@loadable/component`) so each route ships its own chunk. Exception:
+  `Home` is in the entry chunk, since it is almost every visit's first paint.
+- Routes live in `app/AppRoutes.tsx`, without a router: `App` wraps them in `BrowserRouter`,
+  `src/entry-server.tsx` in `StaticRouter` for the build-time prerender.
 
 ---
 
@@ -166,7 +169,11 @@ Rules:
   `@/features/i18n`, not from `react-i18next`, so `t("_pages:…")` is checked.
 - Each language is its own page (`/en/`, `/es/`): `plugins/langPages.ts` writes the translated
   `<title>`, description, social meta and hreflang (from `src/lang/<lng>/meta.ts`) into
-  `dist/<lng>/index.html` at build time. `/` redirects to the saved or browser language.
+  `dist/<lng>/index.html` at build time, together with the home prerendered from
+  `src/entry-server.tsx` (`main.tsx` hydrates it). `/` redirects to the saved or browser language.
+  Prerendered code must render the same on the server and on the first client render: read
+  `window`, `document` or storage only in effects. Above-the-fold `InView` uses `appear`, so it
+  shows without JS.
   Adding a language: add it to `LANGS`, create its folder and add a rewrite in `firebase.json`.
 - Avoid hardcoded user-facing strings in components; read them with `useTranslation()`.
 - Shared UI never calls `useTranslation()`: it receives text through props.

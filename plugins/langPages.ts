@@ -1,14 +1,21 @@
-import type { Plugin } from "vite";
+import { createServer, type Plugin } from "vite";
 
 import { DEFAULT_LANG, LANGS, dictionaries, type Lang } from "../src/lang";
 
 /** Comment in `index.html` replaced by the localized `<title>` and meta tags. */
 const MARKER = "<!-- lang-head -->";
 
+/** Comment inside `#root` replaced by the prerendered page (left empty on `/index.html`). */
+const APP_MARKER = "<!-- app-html -->";
+
 type LangPagesOptions = {
   /** Public origin, without trailing slash (canonical and hreflang URLs). */
   siteUrl: string;
+  /** Module exporting `render(lang): Promise<string>`, the home's HTML in that language. */
+  prerender: string;
 };
+
+type PrerenderModule = { render: (lang: Lang) => Promise<string> };
 
 const escapeHtml = (value: string) =>
   value
@@ -55,21 +62,47 @@ function renderRedirect() {
   return `<script>(function(){if(location.pathname!=="/")return;var L=${langs},s=null;try{s=localStorage.getItem("i18nextLng")}catch(e){}var c=[s].concat(navigator.languages||[navigator.language]);var l="${DEFAULT_LANG}";for(var i=0;i<c.length;i++){var v=(c[i]||"").slice(0,2).toLowerCase();if(L.indexOf(v)>-1){l=v;break}}location.replace("/"+l+"/"+location.search+location.hash)})()</script>`;
 }
 
-const localize = (html: string, lang: Lang, head: string) =>
+const localize = (html: string, lang: Lang, head: string, app = "") =>
   html
     .replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
-    .replace(MARKER, head);
+    .replace(MARKER, head)
+    .replace(APP_MARKER, app);
+
+/** Renders each language's home through Vite's SSR loader (same config, aliases and plugins). */
+async function prerenderAll(configFile: string | undefined, entry: string) {
+  const server = await createServer({
+    configFile,
+    appType: "custom",
+    logLevel: "error",
+    server: { middlewareMode: true, hmr: false, ws: false },
+    // Packages that import their own CSS cannot run as plain Node modules.
+    ssr: { noExternal: ["@sito/ui"] },
+  });
+  try {
+    const { render } = (await server.ssrLoadModule(entry)) as PrerenderModule;
+    const pages = {} as Record<Lang, string>;
+    for (const lang of LANGS) pages[lang] = await render(lang);
+    return pages;
+  } finally {
+    await server.close();
+  }
+}
 
 /**
  * Build: emits one static page per language (`/en/index.html`, `/es/index.html`) with translated
- * metadata, so crawlers and link previews see it without running JS. `/index.html` keeps the
- * default language's metadata plus the language redirect.
- * Dev: serves the default language's metadata.
+ * metadata and the home already rendered, so crawlers, link previews and the first paint need no
+ * JS. `/index.html` keeps the default language's metadata plus the language redirect, and an
+ * empty root (it is also the 404 fallback).
+ * Dev: serves the default language's metadata, no prerender.
  */
-export function langPages({ siteUrl }: LangPagesOptions): Plugin {
+export function langPages({ siteUrl, prerender }: LangPagesOptions): Plugin {
+  let configFile: string | undefined;
   return {
     name: "lang-pages",
     enforce: "post",
+    configResolved(config) {
+      configFile = config.configFile;
+    },
     transformIndexHtml: {
       order: "post",
       handler(html, ctx) {
@@ -82,7 +115,7 @@ export function langPages({ siteUrl }: LangPagesOptions): Plugin {
         return html;
       },
     },
-    generateBundle(_, bundle) {
+    async generateBundle(_, bundle) {
       const index = bundle["index.html"];
       if (index?.type !== "asset" || typeof index.source !== "string") {
         this.error("lang-pages: index.html not found in the bundle");
@@ -91,11 +124,15 @@ export function langPages({ siteUrl }: LangPagesOptions): Plugin {
       if (!html.includes(MARKER))
         this.error(`lang-pages: ${MARKER} missing from index.html`);
 
+      if (!html.includes(APP_MARKER))
+        this.error(`lang-pages: ${APP_MARKER} missing from index.html`);
+
+      const pages = await prerenderAll(configFile, prerender);
       for (const lang of LANGS) {
         this.emitFile({
           type: "asset",
           fileName: `${lang}/index.html`,
-          source: localize(html, lang, renderHead(lang, siteUrl)),
+          source: localize(html, lang, renderHead(lang, siteUrl), pages[lang]),
         });
       }
       index.source = localize(
