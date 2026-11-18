@@ -1,0 +1,5 @@
+@layer components {
+  .language-select {
+    @apply w-40;
+  }
+}

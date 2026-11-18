@@ -18,3 +18,6 @@ export const DETECTION = {
   lookupFromPathIndex: 0,
   caches: ["localStorage"],
 };
+
+/** Name of each language in itself, for the selector. */
+export const LANGUAGE_NAMES = { en: "English", es: "Español" } as const;
