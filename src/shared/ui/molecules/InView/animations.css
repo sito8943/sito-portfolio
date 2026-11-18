@@ -12,3 +12,15 @@
   transform: translateY(0px);
   opacity: 1;
 }
+
+/* `appear`: the same rise, played on first paint (no observer, no script needed). */
+@keyframes in-view-appear {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+.in-view[data-shown="appear"] {
+  animation: in-view-appear 400ms ease-in-out var(--in-view-delay, 0.3s) both;
+}
