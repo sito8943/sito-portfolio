@@ -9,6 +9,8 @@ import { Spinner } from "@sito/ui";
 
 import { PageLayout } from "@/shared/ui/templates";
 
+import { FOOTER_DOCK_ID } from "./constants";
+
 // sections
 import { Header } from "./sections/Header";
 import { Hero } from "./sections/Hero";
@@ -50,6 +52,7 @@ function Home() {
           <ToTop
             label={t("_common:ariaLabels.toTop")}
             tooltip={t("_common:tooltips.toTop")}
+            dockTo={FOOTER_DOCK_ID}
           />
         }
         header={<Header />}
