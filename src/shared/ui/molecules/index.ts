@@ -4,3 +4,5 @@ export { Marquee } from "./Marquee";
 export type { MarqueeProps } from "./Marquee";
 export { ToTop } from "./ToTop";
 export type { ToTopProps } from "./ToTop";
+export { Select } from "./Select";
+export type { SelectOption, SelectPlacement, SelectProps } from "./Select";
