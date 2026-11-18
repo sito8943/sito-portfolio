@@ -4,7 +4,7 @@
   }
 
   .footer-bar {
-    @apply w-[90%] grid grid-cols-[1fr_auto_1fr] items-center gap-8;
+    @apply w-[90%] flex items-center justify-between gap-8;
   }
 
   .footer-brand {
@@ -15,18 +15,9 @@
     @apply h-6 w-auto text-secondary;
   }
 
-  /* Same box as the footer links (font's own line height), centred on the logo. */
+  /* Font's own line height, centred on the logo. */
   .footer-copy {
     @apply text-sm text-white-hover;
-    line-height: normal;
-  }
-
-  .footer-links {
-    @apply flex flex-wrap justify-center gap-x-6 gap-y-2;
-  }
-
-  .footer-link {
-    @apply block text-sm text-white-hover transition-colors hover:text-white;
     line-height: normal;
   }
 
@@ -38,7 +29,7 @@
     @apply text-xl text-white-hover transition-colors hover:text-slight;
   }
 
-  /* Stacked; copyright goes last so the fixed "to top" button never covers a link. */
+  /* Stacked; copyright goes last so the fixed "to top" button never covers a social link. */
   @variant lg {
     .footer-bar {
       @apply flex flex-col gap-6;
