@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { IconButton, Tooltip } from "@sito/ui";
 
 // fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from "@/shared/ui/atoms";
 
 // utils
 import { scrollTo } from "some-javascript-utils/browser";
@@ -27,7 +28,7 @@ export function ToTop({ label, tooltip }: ToTopProps) {
     <Tooltip label={tooltip} align="end" className="to-top-anchor">
       <IconButton
         onClick={() => scrollTo(0)}
-        icon={<FontAwesomeIcon icon={faArrowUp} />}
+        icon={<Icon icon={faArrowUp} />}
         aria-label={label}
         color="primary"
         variant="submit"

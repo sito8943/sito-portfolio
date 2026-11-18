@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from "@/shared/ui/atoms";
 
 import {
   ADMIN_NAV,
@@ -102,7 +103,7 @@ export function InternalPreview({ badge }: InternalPreviewProps) {
       </div>
 
       <span className="internal-preview-badge">
-        <FontAwesomeIcon icon={faLock} />
+        <Icon icon={faLock} />
         {badge}
       </span>
     </div>

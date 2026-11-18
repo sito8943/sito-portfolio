@@ -1,3 +1,5 @@
+export { Icon } from "./Icon";
+export type { IconProps } from "./Icon";
 export { LazyImage } from "./LazyImage";
 export type { LazyImageProps } from "./LazyImage";
 export { MiniLogo } from "./MiniLogo";

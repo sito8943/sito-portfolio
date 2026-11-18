@@ -1,4 +1,4 @@
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import type { STACK_ICONS } from "./constants";
 

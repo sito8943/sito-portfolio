@@ -8,12 +8,11 @@ import { scrollTo } from "some-javascript-utils/browser";
 import { IconButton } from "@sito/ui";
 
 // @fortawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { NAV_LINKS } from "@/shared/config";
 import { useActiveSection } from "@/shared/hooks";
-import { SitoLogo } from "@/shared/ui/atoms";
+import { Icon, SitoLogo } from "@/shared/ui/atoms";
 import { buttonClassName, scrollToSection } from "@/shared/utils";
 
 import { DESKTOP_QUERY } from "./constants";
@@ -92,7 +91,7 @@ export function Header() {
             aria-label={t("_common:ariaLabels.openDrawer")}
             aria-expanded={showDrawer}
             onClick={() => setShowDrawer(!showDrawer)}
-            icon={<FontAwesomeIcon icon={faBars} />}
+            icon={<Icon icon={faBars} />}
           />
         </nav>
       </div>

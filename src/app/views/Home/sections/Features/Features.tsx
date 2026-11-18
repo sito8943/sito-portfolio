@@ -1,5 +1,6 @@
 import { useTranslation } from "@/features/i18n";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { Icon } from "@/shared/ui/atoms";
 
 import { SECTIONS } from "@/shared/config";
 import { useInViewOnce } from "@/shared/hooks";
@@ -40,7 +41,7 @@ export function Features() {
                 <li key={id} className="features-grid-item" data-tone={tone}>
                   <InView delay={`${(i + 1) * 200}ms`}>
                     <FeatureCard
-                      icon={<FontAwesomeIcon icon={icon} aria-hidden="true" />}
+                      icon={<Icon icon={icon} aria-hidden="true" />}
                       title={t(`_pages:home.features.cards.${id}.title`)}
                       body={t(`_pages:home.features.cards.${id}.body`)}
                     />

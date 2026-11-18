@@ -3,12 +3,27 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 import { langPages } from "./plugins/langPages";
+import { preloads } from "./plugins/preloads";
+import {
+  AVATAR_SIZES,
+  AVATAR_SRC,
+  AVATAR_SRCSET,
+} from "./src/app/views/Home/sections/Hero/constants";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    preloads({
+      // Hero title (Poppins 700), body (Roboto 400) and the hero role line (Poppins 400).
+      fonts: [
+        /poppins-latin-700-normal-[^.]+\.woff2$/,
+        /poppins-latin-400-normal-[^.]+\.woff2$/,
+        /roboto-latin-400-normal-[^.]+\.woff2$/,
+      ],
+      image: { href: AVATAR_SRC, srcset: AVATAR_SRCSET, sizes: AVATAR_SIZES },
+    }),
     langPages({ siteUrl: "https://sito8943.com" }),
   ],
   resolve: {

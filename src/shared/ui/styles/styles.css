@@ -6,6 +6,7 @@
 
 /* Component stylesheets (co-located styles.css / animations.css, imported here as one stylesheet).
    Order: shared → app, so view styles can refine shared ones. */
+@import "../atoms/Icon/styles.css";
 @import "../atoms/LazyImage/styles.css";
 @import "../molecules/InView/animations.css";
 @import "../molecules/Marquee/styles.css";

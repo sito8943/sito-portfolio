@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tooltip } from "@sito/ui";
 
 import { useTranslation } from "@/features/i18n";
 
 import { NAV_LINKS, SOCIALS } from "@/shared/config";
-import { SitoLogo } from "@/shared/ui/atoms";
+import { Icon, SitoLogo } from "@/shared/ui/atoms";
 import { scrollToSection } from "@/shared/utils";
 
 /** Closing bar: brand and copyright, quick section links and every social profile. */
@@ -46,7 +45,7 @@ export function Footer() {
                 aria-label={item.text}
                 className="footer-social"
               >
-                <FontAwesomeIcon icon={item.icon} />
+                <Icon icon={item.icon} />
               </a>
             </Tooltip>
           ))}

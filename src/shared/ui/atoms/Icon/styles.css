@@ -1,0 +1,11 @@
+/* Font Awesome's own sizing for inline SVG icons (from fontawesome-svg-core/styles.css), which
+   its runtime used to inject. Unlayered on purpose, exactly like the injected rule, so every
+   icon keeps the size and alignment it had. */
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}

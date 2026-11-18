@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+
+import { Icon } from "@/shared/ui/atoms";
 import type { CSSProperties, KeyboardEvent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useTranslation } from "@/features/i18n";
 
@@ -121,10 +122,7 @@ export function Skills() {
                     }
                     data-locked={i === logoTarget && logoLocked}
                   />
-                  <FontAwesomeIcon
-                    icon={item.icon}
-                    className="skills-diamond-icon"
-                  />
+                  <Icon icon={item.icon} className="skills-diamond-icon" />
                 </span>
                 <span className="skills-tab-name">
                   {t(`_pages:home.skills.stacks.${item.id}`)}
