@@ -10,7 +10,7 @@ import { buttonClassName, scrollToSection } from "@/shared/utils";
 
 import { LOGO_ANCHORS } from "../../constants";
 
-import { AVATAR_SRC } from "./constants";
+import { AVATAR_SIZES, AVATAR_SRC, AVATAR_SRCSET } from "./constants";
 
 export function Hero() {
   const { t } = useTranslation();
@@ -91,6 +91,8 @@ export function Hero() {
               <LazyImage
                 alt={t("_pages:home.hero.name")}
                 src={AVATAR_SRC}
+                srcSet={AVATAR_SRCSET}
+                sizes={AVATAR_SIZES}
                 loading="eager"
                 fetchPriority="high"
                 className="hero-avatar"
