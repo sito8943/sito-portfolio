@@ -5,15 +5,17 @@ import { LanguageSelect } from "@/features/i18n";
 import { SOCIALS } from "@/shared/config";
 import { Icon, SitoLogo } from "@/shared/ui/atoms";
 
-/** Closing bar: brand and copyright, every social profile and the language selector. */
+import { FOOTER_DOCK_ID } from "../../constants";
+
+/** Closing bar: logo, centred copyright, every social profile and the language selector. */
 export function Footer() {
   return (
     <footer id="footer" className="footer">
       <div className="footer-bar">
-        <div className="footer-brand">
-          <SitoLogo className="footer-logo" />
-          <p className="footer-copy">{`© ${new Date().getFullYear()}`}</p>
-        </div>
+        <SitoLogo className="footer-logo" />
+        <p id={FOOTER_DOCK_ID} className="footer-copy">
+          {`© ${new Date().getFullYear()}`}
+        </p>
         <div className="footer-end">
           <div className="footer-socials">
             {SOCIALS.map((item) => (

@@ -27,3 +27,6 @@ export const LOGO_ANCHOR_MOVE_EVENT = "logo-anchor-move";
 
 /** Set to "true" on an anchor once the logo has landed (dissolved) on it; never reset. */
 export const LOGO_LANDED_ATTRIBUTE = "data-logo-landed";
+
+/** Id of the footer's copyright: the "to top" button lines up with it at the page bottom. */
+export const FOOTER_DOCK_ID = "footer-dock";
